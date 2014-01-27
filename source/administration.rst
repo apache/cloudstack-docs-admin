@@ -16,7 +16,7 @@
 Managing Accounts, Users and Domains
 ====================================
 
-3.1. Accounts, Users, and Domains
+Accounts, Users, and Domains
 ---------------------------------
 
 Accounts
@@ -85,7 +85,7 @@ account by using the assignVirtualMachine API. A domain or sub-domain
 administrator can do the same for VMs within the domain from one account
 to any other account in the domain or any of its sub-domains.
 
-3.1.1. Dedicating Resources to Accounts and Domains
+Dedicating Resources to Accounts and Domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The root administrator can dedicate resources to a specific domain or
@@ -118,7 +118,7 @@ There are several types of dedication available:
    infrastructure if possible. Otherwise, the VM can be deployed in
    shared infrastructure.
 
-3.1.1.1. How to Dedicate a Zone, Cluster, Pod, or Host to an Account or Domain
+How to Dedicate a Zone, Cluster, Pod, or Host to an Account or Domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For explicit dedication: When deploying a new zone, pod, cluster, or
@@ -138,7 +138,7 @@ permissible to allow some use of shared resources when dedicated
 resources are not available. Whenever a user creates a VM based on this
 service offering, it is allocated on one of the dedicated hosts.
 
-3.1.1.2. How to Use Dedicated Hosts
+How to Use Dedicated Hosts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To use an explicitly dedicated host, use the explicit-dedicated type of
@@ -148,7 +148,7 @@ end user can choose to place it on dedicated infrastructure. This
 operation will succeed only if some infrastructure has already been
 assigned as dedicated to the user's account or domain.
 
-3.1.1.3. Behavior of Dedicated Hosts, Clusters, Pods, and Zones
+Behavior of Dedicated Hosts, Clusters, Pods, and Zones
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The administrator can live migrate VMs away from dedicated hosts if
@@ -178,7 +178,7 @@ VMs of a specific account (the default system account). However, a host
 with system VMs or virtual routers can be used for preferred implicit
 dedication.
 
-3.2. Using an LDAP Server for User Authentication
+Using an LDAP Server for User Authentication
 -------------------------------------------------
 
 You can use an external LDAP server such as Microsoft Active Directory
@@ -212,7 +212,7 @@ command ldapConfig and provide the following:
 
    SSL keystore and password, if SSL is used
 
-3.2.1. Example LDAP Configuration Commands
+Example LDAP Configuration Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To understand the examples in this section, you need to know the basic
@@ -255,7 +255,7 @@ matched up based on email address.
 The next few sections explain some of the concepts you will need to know
 when filling out the ldapConfig parameters.
 
-3.2.2. Search Base
+Search Base
 ~~~~~~~~~~~~~~~~~~
 
 An LDAP query is relative to a given node of the LDAP directory tree,
@@ -280,7 +280,7 @@ Active Directory
 
 OU=testing, DC=company
 
-3.2.3. Query Filter
+Query Filter
 ~~~~~~~~~~~~~~~~~~~
 
 The query filter is used to find a mapped user in the external LDAP
@@ -327,7 +327,7 @@ To find a user by email address:
 
     (mail=%e)
 
-3.2.4. Search User Bind DN
+Search User Bind DN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The bind DN is the user on the external LDAP server permitted to search
@@ -349,7 +349,7 @@ Active Directory
 
 CN=Administrator, OU=testing, DC=company, DC=com
 
-3.2.5. SSL Keystore Path and Password
+SSL Keystore Path and Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the LDAP server requires SSL, you need to enable it in the ldapConfig
@@ -373,7 +373,7 @@ people to use your cloud – say, if the users are strictly internal to
 your organization, or just friends who are sharing your cloud – you can
 still keep track of what services they use and how much of them.
 
-4.1. Service Offerings, Disk Offerings, Network Offerings, and Templates
+Service Offerings, Disk Offerings, Network Offerings, and Templates
 ------------------------------------------------------------------------
 
 A user creating a new instance can make a variety of choices about its
@@ -415,7 +415,7 @@ Router with System Service Offerings.
 User Interface
 ==============
 
-5.1. Log In to the UI
+Log In to the UI
 ---------------------
 
 CloudStack provides a web-based UI that can be used by both
@@ -460,7 +460,7 @@ enter Comp1/sales.
 For more guidance about the choices that appear when you log in to this
 UI, see Logging In as the Root Administrator.
 
-5.1.1. End User's UI Overview
+End User's UI Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The CloudStack UI helps users of cloud infrastructure to view and use
@@ -469,7 +469,7 @@ data volumes and snapshots, guest networks, and IP addresses. If the
 user is a member or administrator of one or more CloudStack projects,
 the UI can provide a project-oriented view.
 
-5.1.2. Root Administrator's UI Overview
+Root Administrator's UI Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The CloudStack UI helps the CloudStack administrator provision, view,
@@ -482,7 +482,7 @@ screen and the navigation bar on the left provide access to a variety of
 administrative functions. The root administrator can also use the UI to
 perform all the same tasks that are present in the end-user’s UI.
 
-5.1.3. Logging In as the Root Administrator
+Logging In as the Root Administrator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the Management Server software is installed and running, you can
@@ -548,7 +548,7 @@ functionality, create or delete user accounts, and take many actions
 that should be performed only by an authorized person. Please change the
 default password to a new, unique password.
 
-5.1.4. Changing the Root Password
+Changing the Root Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 During installation and ongoing cloud administration, you will need to
@@ -599,7 +599,7 @@ new, unique value.
 
    Type the new password, and click OK.
 
-5.2. Using SSH Keys for Authentication
+Using SSH Keys for Authentication
 --------------------------------------
 
 In addition to the username and password authentication, CloudStack
@@ -611,7 +611,7 @@ Because each cloud user has their own SSH key, one cloud user cannot log
 in to another cloud user's instances unless they share their SSH key
 files. Using a single SSH key pair, you can manage multiple instances.
 
-5.2.1.  Creating an Instance Template that Supports SSH Keys
+Creating an Instance Template that Supports SSH Keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a instance template that supports SSH Keys.
@@ -660,7 +660,7 @@ Create a instance template that supports SSH Keys.
 
    Stop the instance.
 
-5.2.2. Creating the SSH Keypair
+Creating the SSH Keypair
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You must make a call to the createSSHKeyPair api method. You can either
@@ -723,7 +723,7 @@ different, and you will need to use the API keys.
 
    Save the file.
 
-5.2.3. Creating an Instance
+Creating an Instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you save the SSH keypair file, you must create an instance by
@@ -745,7 +745,7 @@ Substitute the template, service offering and security group IDs (if you
 are using the security group feature) that are in your cloud
 environment.
 
-5.2.4. Logging In Using the SSH Keypair
+Logging In Using the SSH Keypair
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To test your SSH key generation is successful, check whether you can log
@@ -772,7 +772,7 @@ call resetSSHKeyForVirtualMachine.
 Using Projects to Organize Users and Resources
 ==============================================
 
-6.1. Overview of Projects
+Overview of Projects
 -------------------------
 
 Projects are used to organize people and resources. CloudStack users
@@ -823,7 +823,7 @@ project can use any service offering or disk offering available in its
 domain; however, you can not create private service and disk offerings
 at the project level..
 
-6.2. Configuring Projects
+Configuring Projects
 -------------------------
 
 Before CloudStack users start using projects, the CloudStack
@@ -831,7 +831,7 @@ administrator must set up various systems to support them, including
 membership invitations, limits on project resources, and controls on who
 can create projects.
 
-6.2.1. Setting Up Invitations
+Setting Up Invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack can be set up either so that project administrators can add
@@ -909,7 +909,7 @@ and set up the invitations feature in CloudStack.
 
        service cloudstack-management restart
 
-6.2.2. Setting Resource Limits for Projects
+Setting Resource Limits for Projects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The CloudStack administrator can set global default limits to control
@@ -922,7 +922,7 @@ global defaults set by the CloudStack root administrator. The root
 administrator can also set lower resource limits for any project in the
 cloud
 
-6.2.2.1. Setting Per-Project Resource Limits
+Setting Per-Project Resource Limits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The CloudStack root administrator or the domain administrator of the
@@ -967,7 +967,7 @@ new limit.
 
    Click Apply.
 
-6.2.2.2. Setting the Global Project Resource Limits
+Setting the Global Project Resource Limits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -1023,7 +1023,7 @@ new limit.
 
        # service cloudstack-management restart
 
-6.2.3. Setting Project Creator Permissions
+Setting Project Creator Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can configure CloudStack to allow any user to create a new project,
@@ -1060,7 +1060,7 @@ or you can restrict that ability to just CloudStack administrators.
 
        # service cloudstack-management restart
 
-6.3. Creating a New Project
+Creating a New Project
 ---------------------------
 
 CloudStack administrators and domain administrators can create projects.
@@ -1097,7 +1097,7 @@ to true, end users can also create projects.
 
    Click Save.
 
-6.4. Adding Members to a Project
+Adding Members to a Project
 --------------------------------
 
 New members can be added to a project by the project’s administrator,
@@ -1115,7 +1115,7 @@ to add members in CloudStack, but only one way is enabled at a time:
    If invitations are not enabled, you can add members directly through
    the UI.
 
-6.4.1. Sending Project Membership Invitations
+Sending Project Membership Invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use these steps to add a new member to a project if the invitations
@@ -1176,7 +1176,7 @@ not turned on, use the procedure in Adding Project Members From the UI.
    When an invitation is accepted, the new member will appear in the
    project’s Accounts tab.
 
-6.4.2. Adding Project Members From the UI
+Adding Project Members From the UI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The steps below tell how to add a new member to a project if the
@@ -1213,7 +1213,7 @@ Invitations” <#send-projects-membership-invitation>`__.
    Add Account. You can add only people who have an account in this
    cloud and within the same domain as the project.
 
-6.5. Accepting a Membership Invitation
+Accepting a Membership Invitation
 --------------------------------------
 
 If you have received an invitation to join a CloudStack project, and you
@@ -1243,7 +1243,7 @@ want to accept the invitation, follow these steps:
    If you received an email invitation, click the Enter Token button,
    and provide the project ID and unique ID code (token) from the email.
 
-6.6. Suspending or Deleting a Project
+Suspending or Deleting a Project
 -------------------------------------
 
 When a project is suspended, it retains the resources it owns, but they
@@ -1282,7 +1282,7 @@ parent domain, or the CloudStack root administrator.
 
    To suspend, use |deletebutton.png: suspends a project|
 
-6.7. Using the Project View
+Using the Project View
 ---------------------------
 
 If you are a member of a project, you can use CloudStack’s project view
@@ -1330,7 +1330,7 @@ storage, and networks to your cloud. If you are unfamiliar with these
 entities, please begin by looking through `Chapter 2, *Cloud
 Infrastructure Concepts* <#cloud-infrastructure-concepts>`__.
 
-7.1. Overview of Provisioning Steps
+Overview of Provisioning Steps
 -----------------------------------
 
 After the Management Server is installed and running, you can add the
@@ -1386,14 +1386,14 @@ following basic structure:
 
 |provisioning-overview.png: Conceptual overview of a basic deployment|
 
-7.2. Adding Regions (optional)
+Adding Regions (optional)
 ------------------------------
 
 Grouping your cloud resources into geographic regions is an optional
 step when provisioning the cloud. For an overview of regions, see
 `Section 2.1, “About Regions” <#about-regions>`__.
 
-7.2.1. The First Region: The Default Region
+The First Region: The Default Region
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you do not take action to define regions, then all the zones in your
@@ -1402,7 +1402,7 @@ region is assigned the region ID of 1. You can change the name or URL of
 the default region by displaying the region in the CloudStack UI and
 clicking the Edit button.
 
-7.2.2. Adding a Region
+Adding a Region
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Use these steps to add a second region in addition to the default
@@ -1512,7 +1512,7 @@ region.
 
    Restart the Management Servers in region 2.
 
-7.2.3. Adding Third and Subsequent Regions
+Adding Third and Subsequent Regions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add the third region, and subsequent additional regions, the steps
@@ -1615,7 +1615,7 @@ repeat certain steps additional times for each additional region:
 
    Restart the Management Servers in the new region.
 
-7.2.4. Deleting a Region
+Deleting a Region
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Log in to each of the other regions, navigate to the one you want to
@@ -1642,7 +1642,7 @@ in a 3-region cloud:
 
    Repeat these steps for <region.2.IP.address>:8080/client.
 
-7.3. Adding a Zone
+Adding a Zone
 ------------------
 
 When you add a new zone, you will be prompted to configure the zone’s
@@ -1699,7 +1699,7 @@ and secondary storage.
       `Section 7.3.2, “Advanced Zone
       Configuration” <#advanced-zone-configuration>`__
 
-7.3.1. Basic Zone Configuration
+Basic Zone Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -2029,7 +2029,7 @@ and secondary storage.
       remaining fields in the screen vary depending on what you choose
       here.
 
-7.3.2. Advanced Zone Configuration
+Advanced Zone Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -2417,7 +2417,7 @@ and secondary storage.
 
    Click Launch.
 
-7.4. Adding a Pod
+Adding a Pod
 -----------------
 
 When you created a new zone, CloudStack adds the first pod for you. You
@@ -2470,14 +2470,14 @@ can add more pods at any time using the procedure in this section.
 
    Click OK.
 
-7.5. Adding a Cluster
+Adding a Cluster
 ---------------------
 
 You need to tell CloudStack about the hosts that it will manage. Hosts
 exist inside clusters, so before you begin adding hosts to the cloud,
 you must add at least one cluster.
 
-7.5.1. Add Cluster: KVM or XenServer
+Add Cluster: KVM or XenServer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These steps assume you have already installed the hypervisor on the
@@ -2517,7 +2517,7 @@ hosts and logged in to the CloudStack UI.
 
    Click OK.
 
-7.5.2. Add Cluster: vSphere
+Add Cluster: vSphere
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Host management for vSphere is done through a combination of vCenter and
@@ -2694,7 +2694,7 @@ To add a vSphere cluster to CloudStack:
       There might be a slight delay while the cluster is provisioned. It
       will automatically display in the UI.
 
-7.6. Adding a Host
+Adding a Host
 ------------------
 
 #. 
@@ -2728,12 +2728,12 @@ To add a vSphere cluster to CloudStack:
 
       `Section 7.6.2, “Adding a Host (vSphere)” <#host-add-vsphere>`__
 
-7.6.1. Adding a Host (XenServer or KVM)
+Adding a Host (XenServer or KVM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 XenServer and KVM hosts can be added to a cluster at any time.
 
-7.6.1.1. Requirements for XenServer and KVM Hosts
+Requirements for XenServer and KVM Hosts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning:: Make sure the hypervisor host does not have any VMs already running
@@ -2756,7 +2756,7 @@ Configuration requirements:
 For hardware requirements, see the installation section for your
 hypervisor in the CloudStack Installation Guide.
 
-7.6.1.1.1. XenServer Host Additional Requirements
+XenServer Host Additional Requirements
 '''''''''''''''''''''''''''''''''''''''''''''''''
 
 If network bonding is in use, the administrator must cable the new host
@@ -2792,7 +2792,7 @@ bonds on the new hosts in the cluster.
 
        # ./cloud-setup-bonding.sh
 
-7.6.1.1.2. KVM Host Additional Requirements
+KVM Host Additional Requirements
 '''''''''''''''''''''''''''''''''''''''''''
 
 -  
@@ -2812,7 +2812,7 @@ bonds on the new hosts in the cluster.
    on the KVM host and set the parameter network.bridge.type to
    openvswitch before adding the host to CloudStack
 
-7.6.1.2. Adding a XenServer or KVM Host
+Adding a XenServer or KVM Host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -2882,17 +2882,17 @@ bonds on the new hosts in the cluster.
 
    Repeat for additional hosts.
 
-7.6.2. Adding a Host (vSphere)
+Adding a Host (vSphere)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For vSphere servers, we recommend creating the cluster of hosts in
 vCenter and then adding the entire cluster to CloudStack. See Add
 Cluster: vSphere.
 
-7.7. Add Primary Storage
+Add Primary Storage
 ------------------------
 
-7.7.1. System Requirements for Primary Storage
+System Requirements for Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Hardware requirements:
@@ -2924,7 +2924,7 @@ When setting up primary storage, follow these restrictions:
    global configuration parameter system.vm.local.storage.required to
    true, or else you will not be able to start VMs.
 
-7.7.2. Adding Primary Storage
+Adding Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you create a new zone, the first primary storage is added as part
@@ -3073,7 +3073,7 @@ through the CloudStack UI.
 
    Click OK.
 
-7.7.3. Configuring a Storage Plug-in
+Configuring a Storage Plug-in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Primary storage that is based on a custom plug-in (ex. SolidFire) must
@@ -3228,7 +3228,7 @@ MVIP%3D192.168.138.180%3A443
 7.8. Add Secondary Storage
 --------------------------
 
-7.8.1. System Requirements for Secondary Storage
+System Requirements for Secondary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -3258,7 +3258,7 @@ MVIP%3D192.168.138.180%3A443
    Each Secondary Storage server must be available to all hosts in the
    zone.
 
-7.8.2. Adding Secondary Storage
+Adding Secondary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you create a new zone, the first secondary storage is added as part
@@ -3359,7 +3359,7 @@ CloudStack will destroy any existing data.
 
       Path. The path to the zone's Secondary Staging Store.
 
-7.8.3. Adding an NFS Secondary Staging Store for Each Zone
+Adding an NFS Secondary Staging Store for Each Zone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Every zone must have at least one NFS store provisioned; multiple NFS
@@ -3403,7 +3403,7 @@ zone:
 
       Path. The path to the zone's Secondary Staging Store.
 
-7.9. Initialize and Test
+Initialize and Test
 ------------------------
 
 After everything is configured, CloudStack will perform its
@@ -3489,7 +3489,7 @@ In this chapter we discuss compute, disk, and system service offerings.
 Network offerings are discussed in the section on setting up networking
 for users.
 
-8.1. Compute and Disk Service Offerings
+Compute and Disk Service Offerings
 ---------------------------------------
 
 A service offering is a set of virtual hardware features such as CPU
@@ -3549,7 +3549,7 @@ The disk offering specifies:
 
    Tags on the data disk
 
-8.1.1. Creating a New Compute Offering
+Creating a New Compute Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a new compute offering:
@@ -3721,7 +3721,7 @@ To create a new compute offering:
 
    Click Add.
 
-8.1.2. Creating a New Disk Offering
+Creating a New Disk Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a new disk offering:
@@ -3817,7 +3817,7 @@ To create a new disk offering:
 
    Click Add.
 
-8.1.3. Modifying or Deleting a Service Offering
+Modifying or Deleting a Service Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Service offerings cannot be changed once created. This applies to both
@@ -3830,7 +3830,7 @@ referencing it have been deleted. After deletion by the administrator, a
 service offering will not be available to end users that are creating
 new instances.
 
-8.2. System Service Offerings
+System Service Offerings
 -----------------------------
 
 System service offerings provide a choice of CPU speed, number of CPUs,
@@ -3849,7 +3849,7 @@ of the virtual router by applying a new network offering that contains a
 different system service offering. All virtual routers in that network
 will begin using the settings from the new service offering.
 
-8.2.1. Creating a New System Service Offering
+Creating a New System Service Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a system service offering:
@@ -3945,7 +3945,7 @@ To create a system service offering:
 
    Click Add.
 
-8.3. Network Throttling
+Network Throttling
 -----------------------
 
 Network throttling is the process of controlling the network access and
@@ -4083,7 +4083,7 @@ while egress traffic will be limited to 200 Mbps. In an isolated
 network, ingress traffic will be limited to 10 Mbps and egress to 200
 Mbps.
 
-8.4. Changing the Default System Offering for System VMs
+Changing the Default System Offering for System VMs
 --------------------------------------------------------
 
 You can manually change the system offering for a particular System VM.
@@ -4169,7 +4169,7 @@ default system offering used for System VMs.
 Setting Up Networking for Users
 ===============================
 
-9.1. Overview of Setting Up Networking for Users
+Overview of Setting Up Networking for Users
 ------------------------------------------------
 
 People using cloud infrastructure have a variety of needs and
@@ -4202,14 +4202,14 @@ set up networking for your users:
    Provide more ways for a network to be accessed by a user, such as
    through a project of which the user is a member
 
-9.2. About Virtual Networks
+About Virtual Networks
 ---------------------------
 
 A virtual network is a logical construct that enables multi-tenancy on a
 single physical network. In CloudStack a virtual network can be shared
 or isolated.
 
-9.2.1. Isolated Networks
+Isolated Networks
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 An isolated network can be accessed only by virtual machines of a single
@@ -4232,7 +4232,7 @@ account. Isolated networks have the following properties.
 For more information, see `Section 15.5.1, “Configure Guest Traffic in
 an Advanced Zone” <#configure-guest-traffic-in-advanced-zone>`__.
 
-9.2.2. Shared Networks
+Shared Networks
 ~~~~~~~~~~~~~~~~~~~~~~
 
 A shared network can be accessed by virtual machines that belong to many
@@ -4270,7 +4270,7 @@ Basic zones in CloudStack 3.0.3 and later versions.
 For information, see `Section 15.5.3, “Configuring a Shared Guest
 Network” <#creating-shared-network>`__.
 
-9.2.3. Runtime Allocation of Virtual Network Resources
+Runtime Allocation of Virtual Network Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you define a new virtual network, all your settings for that
@@ -4280,7 +4280,7 @@ When all virtual machines have left the virtual network, the network
 resources are garbage collected so they can be allocated again. This
 helps to conserve network resources.
 
-9.3. Network Service Providers
+Network Service Providers
 ------------------------------
 
 .. note:: For the most up-to-date list of supported network service providers, see
@@ -4427,7 +4427,7 @@ No
 
 No
 
-9.4. Network Offerings
+Network Offerings
 ----------------------
 
 .. note:: For the most up-to-date list of supported network services, see the
@@ -4507,7 +4507,7 @@ CloudStack also has internal network offerings for use by CloudStack
 system VMs. These network offerings are not visible to users but can be
 modified by administrators.
 
-9.4.1. Creating a New Network Offering
+Creating a New Network Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a network offering:
@@ -4827,7 +4827,7 @@ To create a network offering:
 Working with Virtual Machines
 =============================
 
-10.1. About Working with Virtual Machines
+About Working with Virtual Machines
 -----------------------------------------
 
 CloudStack provides administrators with complete control over the
@@ -4885,13 +4885,13 @@ unexpectedly. If an HA-enabled VM is shut down from inside the VM,
 CloudStack will restart it. To shut down an HA-enabled VM, you must go
 through the CloudStack UI or API.
 
-10.2. Best Practices for Virtual Machines
+Best Practices for Virtual Machines
 -----------------------------------------
 
 For VMs to work as expected and provide excellent service, follow these
 guidelines.
 
-10.2.1. Monitor VMs for Max Capacity
+Monitor VMs for Max Capacity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The CloudStack administrator should monitor the total number of VM
@@ -4911,7 +4911,7 @@ cluster is at most (N-1) \* (per-host-limit). Once a cluster reaches
 this number of VMs, use the CloudStack UI to disable allocation of more
 VMs to the cluster.
 
-10.2.2. Install Required Tools and Drivers
+Install Required Tools and Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Be sure the following are installed on each VM:
@@ -4950,7 +4950,7 @@ following techniques:
    updateVirtualMachine API. After installing the tools and updating the
    virtual machine, stop and start the VM.
 
-10.3. VM Lifecycle
+VM Lifecycle
 ------------------
 
 Virtual machines can be in the following states:
@@ -4983,7 +4983,7 @@ The user can manually restart the virtual machine from the down state.
 The system will start the virtual machine from the down state
 automatically if the virtual machine is marked as HA-enabled.
 
-10.4. Creating VMs
+Creating VMs
 ------------------
 
 Virtual machines are usually created from a template. Users can also
@@ -5064,7 +5064,7 @@ shutdown.
 
    Click Submit and your VM will be created and started.
 
-10.5. Accessing VMs
+Accessing VMs
 -------------------
 
 Any user can access their own virtual machines. The administrator can
@@ -5109,14 +5109,14 @@ To access a VM directly over the network:
    create a firewall rule to allow access. See `Section 15.22, “IP
    Forwarding and Firewalling” <#ip-forwarding-firewalling>`__.
 
-10.6. Stopping and Starting VMs
+Stopping and Starting VMs
 -------------------------------
 
 Once a VM instance is created, you can stop, restart, or delete it as
 needed. In the CloudStack UI, click Instances, select the VM, and use
 the Stop, Start, Reboot, and Destroy buttons.
 
-10.7. Assigning VMs to Hosts
+Assigning VMs to Hosts
 ----------------------------
 
 At any point in time, each virtual machine instance is running on a
@@ -5173,7 +5173,7 @@ There are several ways:
    allocators. These custom allocators can provide any policy the
    administrator desires.
 
-10.7.1. Affinity Groups
+Affinity Groups
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 By defining affinity groups and assigning VMs to them, the user or
@@ -5302,7 +5302,7 @@ To delete an affinity group:
    longer follow the host allocation rules from its former affinity
    group.
 
-10.8. Virtual Machine Snapshots
+Virtual Machine Snapshots
 -------------------------------
 
 (Supported on VMware and XenServer)
@@ -5363,7 +5363,7 @@ snapshots <http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&e
    managed by CloudStack. Any snapshots that you make directly on the
    hypervisor will not be tracked in CloudStack.
 
-10.8.2. Configuring VM Snapshots
+Configuring VM Snapshots
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The cloud administrator can use global configuration variables to
@@ -5387,7 +5387,7 @@ vmsnapshot.create.wait
 Number of seconds to wait for a snapshot job to succeed before declaring
 failure and issuing an error.
 
-10.8.3. Using VM Snapshots
+Using VM Snapshots
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a VM snapshot using the CloudStack UI:
@@ -5467,7 +5467,7 @@ snapshot:
 .. note:: VM snapshots are deleted automatically when a VM is destroyed. You don't
 have to manually delete the snapshots in this case.
 
-10.9. Changing the VM Name, OS, or Group
+Changing the VM Name, OS, or Group
 ----------------------------------------
 
 After a VM is created, you can modify the display name, operating
@@ -5517,7 +5517,7 @@ To access a VM through the CloudStack UI:
 
    Click Apply.
 
-10.10. Appending a Display Name to the Guest VM’s Internal Name
+Appending a Display Name to the Guest VM’s Internal Name
 ---------------------------------------------------------------
 
 Every guest VM has an internal name. The host uses the internal name to
@@ -5590,7 +5590,7 @@ i-<user\_id>-<vm\_id>-<instance.name>
 
 i-<user\_id>-<vm\_id>-<instance.name>
 
-10.11. Changing the Service Offering for a VM
+Changing the Service Offering for a VM
 ---------------------------------------------
 
 To upgrade or downgrade the level of compute resources available to a
@@ -5632,7 +5632,7 @@ virtual machine, you can change the VM's compute offering.
 
    Click OK.
 
-10.11.1. CPU and Memory Scaling for Running VMs
+CPU and Memory Scaling for Running VMs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 (Supported on VMware and XenServer)
@@ -5671,7 +5671,7 @@ Dynamic CPU and RAM scaling can be used in the following cases:
    versions will not have the dynamic scaling capability unless you
    update them using the following procedure.
 
-10.11.2. Updating Existing VMs
+Updating Existing VMs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are upgrading from a previous version of CloudStack, and you want
@@ -5710,7 +5710,7 @@ scaling capability, update the VMs using the following steps:
 
    Restart the VM.
 
-10.11.3. Configuring Dynamic CPU and RAM Scaling
+Configuring Dynamic CPU and RAM Scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To configure this feature, use the following new global configuration
@@ -5726,7 +5726,7 @@ variables:
    scale.retry: How many times to attempt the scaling operation. Default
    = 2.
 
-10.11.4. How to Dynamically Scale CPU and RAM
+How to Dynamically Scale CPU and RAM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To modify the CPU and/or RAM capacity of a virtual machine, you need to
@@ -5744,7 +5744,7 @@ cluster. If there is no host in the cluster that can fulfill the
 requested level of CPU and RAM, the scaling operation will fail. The VM
 will continue to run as it was before.
 
-10.11.5. Limitations
+Limitations
 ~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -5780,7 +5780,7 @@ will continue to run as it was before.
    issue with these operating systems, which will freeze if an attempt
    is made to dynamically scale from less than 3 GB to more than 3 GB.
 
-10.12. Resetting the Virtual Machine Root Volume on Reboot
+Resetting the Virtual Machine Root Volume on Reboot
 ----------------------------------------------------------
 
 For secure environments, and to ensure that VM state is not persisted
@@ -5788,7 +5788,7 @@ across reboots, you can reset the root disk. For more information, see
 `Section 13.4.7, “Reset VM to New Root Disk on
 Reboot” <#reset-vm-reboot>`__.
 
-10.13. Moving VMs Between Hosts (Manual Live Migration)
+Moving VMs Between Hosts (Manual Live Migration)
 -------------------------------------------------------
 
 The CloudStack administrator can move a running VM from one host to
@@ -5856,7 +5856,7 @@ To manually live migrate a virtual machine
 
    Click OK.
 
-10.14. Deleting VMs
+Deleting VMs
 -------------------
 
 Users can delete their own virtual machines. A running virtual machine
@@ -5882,7 +5882,7 @@ To delete a virtual machine:
    Click the Destroy Instance button. |Destroyinstance.png: button to
    destroy an instance|
 
-10.15. Working with ISOs
+Working with ISOs
 ------------------------
 
 CloudStack supports ISOs and their attachment to guest VMs. An ISO is a
@@ -5905,7 +5905,7 @@ can also attach ISO images to guest VMs. For example, this enables
 installing PV drivers into Windows. ISO images are not
 hypervisor-specific.
 
-10.15.1. Adding an ISO
+Adding an ISO
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To make additional operating system or other software available for use
@@ -6077,7 +6077,7 @@ part of a template.
 
    Click OK.
 
-10.15.3. Changing a VM's Base Image
+Changing a VM's Base Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Every VM is created from a base image, which is a template or ISO which
@@ -6112,14 +6112,14 @@ already in use by the VM.
 Working with Hosts
 ==================
 
-11.1. Adding Hosts
+Adding Hosts
 ------------------
 
 Additional hosts can be added at any time to provide more capacity for
 guest VMs. For requirements and instructions, see `Section 7.6, “Adding
 a Host” <#host-add>`__.
 
-11.2. Scheduled Maintenance and Maintenance Mode for Hosts
+Scheduled Maintenance and Maintenance Mode for Hosts
 ----------------------------------------------------------
 
 You can place a host into maintenance mode. When maintenance mode is
@@ -6128,7 +6128,7 @@ the guest VMs already running on the host are seamlessly migrated to
 another host not in maintenance mode. This migration uses live migration
 technology and does not interrupt the execution of the guest.
 
-11.2.1. vCenter and Maintenance Mode
+vCenter and Maintenance Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enter maintenance mode on a vCenter host, both vCenter and CloudStack
@@ -6178,7 +6178,7 @@ maintenance modes that work closely together.
       When the host comes back online, the VMs that were migrated off of
       it may be migrated back to it manually and new VMs can be added.
 
-11.2.2. XenServer and Maintenance Mode
+XenServer and Maintenance Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For XenServer, you can take a server offline temporarily by using the
@@ -6231,7 +6231,7 @@ have been successfully migrated off the server.
 
    Click Exit Maintenance Mode.
 
-11.3. Disabling and Enabling Zones, Pods, and Clusters
+Disabling and Enabling Zones, Pods, and Clusters
 ------------------------------------------------------
 
 You can enable or disable a zone, pod, or cluster without permanently
@@ -6282,13 +6282,13 @@ To disable and enable a zone, pod, or cluster:
 
    Click the Enable/Disable button. |image32|
 
-11.4. Removing Hosts
+Removing Hosts
 --------------------
 
 Hosts can be removed from the cloud as needed. The procedure to remove a
 host depends on the hypervisor type.
 
-11.4.1. Removing XenServer and KVM Hosts
+Removing XenServer and KVM Hosts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A node cannot be removed from a cluster until it has been placed in
@@ -6313,7 +6313,7 @@ migrated to other Hosts. To remove a Host from the cloud:
    Then you may power down the Host, re-use its IP address, re-install
    it, etc
 
-11.4.2. Removing vSphere Hosts
+Removing vSphere Hosts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To remove this type of host, first place it in maintenance mode, as
@@ -6323,14 +6323,14 @@ CloudStack to remove the host. CloudStack will not direct commands to a
 host that has been removed using CloudStack. However, the host may still
 exist in the vCenter cluster.
 
-11.5. Re-Installing Hosts
+Re-Installing Hosts
 -------------------------
 
 You can re-install a host after placing it in maintenance mode and then
 removing it. If a host is down and cannot be placed in maintenance mode,
 it should still be removed before the re-install.
 
-11.6. Maintaining Hypervisors on Hosts
+Maintaining Hypervisors on Hosts
 --------------------------------------
 
 When running hypervisor software on hosts, be sure all the hotfixes
@@ -6349,7 +6349,7 @@ VMs.
 XenServer in the CloudStack Knowledge
 Base <http://docs.cloudstack.org/Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`__.
 
-11.7. Changing Host Password
+Changing Host Password
 ----------------------------
 
 The password for a XenServer Node, KVM Node, or vSphere Node may be
@@ -6394,7 +6394,7 @@ To change a Node's password:
 
        mysql> update cloud.host set password='password' where id=5 or id=10 or id=12;
 
-11.8. Over-Provisioning and Service Offering Limits
+Over-Provisioning and Service Offering Limits
 ---------------------------------------------------
 
 (Supported for XenServer, KVM, and VMware)
@@ -6451,7 +6451,7 @@ configured for that cluster. It is up to the administrator to be sure
 the host is actually suitable for the level of over-provisioning which
 has been set.
 
-11.8.1. Limitations on Over-Provisioning in XenServer and KVM
+Limitations on Over-Provisioning in XenServer and KVM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -6466,7 +6466,7 @@ has been set.
    that a VM can use. The hypervisor adjusts the memory within the set
    limits based on the memory contention.
 
-11.8.2. Requirements for Over-Provisioning
+Requirements for Over-Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Several prerequisites are required in order for over-provisioning to
@@ -6474,7 +6474,7 @@ function properly. The feature is dependent on the OS type, hypervisor
 capabilities, and certain scripts. It is the administrator's
 responsibility to ensure that these requirements are met.
 
-11.8.2.1. Balloon Driver
+Balloon Driver
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 All VMs should have a balloon driver installed in them. The hypervisor
@@ -6502,7 +6502,7 @@ installed in all Linux kernel versions 2.6.25 and greater. The
 administrator must set CONFIG\_VIRTIO\_BALLOON=y in the virtio
 configuration.
 
-11.8.2.2. Hypervisor capabilities
+Hypervisor capabilities
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The hypervisor must be capable of using the memory ballooning.
@@ -6518,7 +6518,7 @@ VMware, KVM
 
 Memory ballooning is supported by default.
 
-11.8.3. Setting Over-Provisioning Ratios
+Setting Over-Provisioning Ratios
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are two ways the root admin can set CPU and RAM over-provisioning
@@ -6568,7 +6568,7 @@ To change the over-provisioning ratios for an existing cluster:
    .. note:: In XenServer, due to a constraint of this hypervisor, you can not use
    an over-provisioning factor greater than 4.
 
-11.8.4. Service Offering Limits and Over-Provisioning
+Service Offering Limits and Over-Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Service offering limits (e.g. 1 GHz, 1 core) are strictly enforced for
@@ -6588,7 +6588,7 @@ offering. For example, a guest created from a 2 GHz service offering
 will receive twice the CPU allocation as a guest created from a 1 GHz
 service offering. CloudStack does not perform memory over-provisioning.
 
-11.9. VLAN Provisioning
+VLAN Provisioning
 -----------------------
 
 CloudStack automatically creates and destroys interfaces bridged to
@@ -6617,7 +6617,7 @@ if you run out of VLANs. Another advantage is that you can use the same
 set of IPs for different customers, each one with their own routers and
 the guest networks on different physical NICs.
 
-11.9.1. VLAN Allocation Example
+VLAN Allocation Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 VLANs are required for public and guest traffic. The following is an
@@ -6664,7 +6664,7 @@ greater than 1000
 
 Reserved for future use
 
-11.9.2. Adding Non Contiguous VLAN Ranges
+Adding Non Contiguous VLAN Ranges
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack provides you with the flexibility to add non contiguous VLAN
@@ -6715,7 +6715,7 @@ range.
 
    Click Apply.
 
-11.9.3. Assigning VLANs to Isolated Networks
+Assigning VLANs to Isolated Networks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack provides you the ability to control VLAN assignment to
@@ -6784,7 +6784,7 @@ CloudStack ships with a default template. In order to present more
 choices to users, CloudStack administrators and users can create
 templates and add them to CloudStack.
 
-12.1. Creating Templates: Overview
+Creating Templates: Overview
 ----------------------------------
 
 CloudStack ships with a default template for the CentOS operating
@@ -6812,7 +6812,7 @@ snapshot, or import a VHD from another system into CloudStack.
 The various techniques for creating templates are described in the next
 few sections.
 
-12.2. Requirements for Templates
+Requirements for Templates
 --------------------------------
 
 -  
@@ -6825,14 +6825,14 @@ few sections.
    For vSphere, install VMware Tools on each template that you create.
    This will enable console view to work properly.
 
-12.3. Best Practices for Templates
+Best Practices for Templates
 ----------------------------------
 
 If you plan to use large templates (100 GB or larger), be sure you have
 a 10-gigabit network to support the large templates. A slower network
 can lead to timeouts and other errors when large templates are used.
 
-12.4. The Default Template
+The Default Template
 --------------------------
 
 CloudStack includes a CentOS template. This template is downloaded by
@@ -6877,7 +6877,7 @@ block most access to the template excluding ssh.
     ACCEPT     tcp  --  anywhere        anywhere       state NEW tcp dpt:ssh
     REJECT     all  --  anywhere        anywhere       reject-with icmp-host-
 
-12.5. Private and Public Templates
+Private and Public Templates
 ----------------------------------
 
 When a user creates a template, it can be designated private or public.
@@ -6895,7 +6895,7 @@ in a private Zone, it is available only to users in the domain assigned
 to that Zone. If a public template is created in a public Zone, it is
 available to all users in all domains.
 
-12.6. Creating a Template from an Existing Virtual Machine
+Creating a Template from an Existing Virtual Machine
 ----------------------------------------------------------
 
 Once you have at least one VM set up in the way you want, you can use it
@@ -6972,7 +6972,7 @@ The new template will be visible in the Templates section when the
 template creation process has been completed. The template is then
 available when creating a new VM.
 
-12.7. Creating a Template from a Snapshot
+Creating a Template from a Snapshot
 -----------------------------------------
 
 If you do not want to stop the VM in order to use the Create Template
@@ -6981,7 +6981,7 @@ Existing Virtual Machine” <#create-template-from-existing-vm>`__), you
 can create a template directly from any snapshot through the CloudStack
 UI.
 
-12.8. Uploading Templates
+Uploading Templates
 -------------------------
 
 vSphere Templates and ISOs
@@ -7080,14 +7080,14 @@ To upload a template:
       the Featured Templates list. Only an administrator can make a
       template Featured.
 
-12.9. Exporting Templates
+Exporting Templates
 -------------------------
 
 End users and Administrators may export templates from the CloudStack.
 Navigate to the template in the UI and choose the Download function from
 the Actions menu.
 
-12.10. Creating a Linux Template
+Creating a Linux Template
 --------------------------------
 
 Linux templates should be prepared using this documentation in order to
@@ -7124,7 +7124,7 @@ An overview of the procedure is as follow:
    For more information, see `Section 12.6, “Creating a Template from an
    Existing Virtual Machine” <#create-template-from-existing-vm>`__.
 
-12.10.1. System preparation for Linux
+System preparation for Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will prepare a basic Linux installation for
@@ -7368,7 +7368,7 @@ templating.
 .. note:: Templated VMs for both Ubuntu and CentOS may require a reboot after
 provisioning in order to pickup the hostname.
 
-12.11. Creating a Windows Template
+Creating a Windows Template
 ----------------------------------
 
 Windows templates must be prepared with Sysprep before they can be
@@ -7408,7 +7408,7 @@ An overview of the procedure is as follows:
    The preparation steps are complete. Now you can actually create the
    template as described in Creating the Windows Template.
 
-12.11.1. System Preparation for Windows Server 2008 R2
+System Preparation for Windows Server 2008 R2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For Windows 2008 R2, you run Windows System Image Manager to create a
@@ -7539,7 +7539,7 @@ Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-
    The Windows 2008 R2 VM will automatically shut down after sysprep is
    complete.
 
-12.11.2. System Preparation for Windows Server 2003 R2
+System Preparation for Windows Server 2003 R2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Earlier versions of Windows have a different sysprep tool. Follow these
@@ -7649,7 +7649,7 @@ steps for Windows Server 2003 R2.
 
    After this step the machine will automatically shut down
 
-12.12. Importing Amazon Machine Images
+Importing Amazon Machine Images
 --------------------------------------
 
 The following procedures describe how to import an Amazon Machine Image
@@ -7860,7 +7860,7 @@ To import an AMI:
        [root@xenhost a9c5b8c8-536b-a193-a6dc-51af3e5ff799]# bzip2 -c cad7317c-258b-4ef7-b207-cdf0283a7923.vhd > CentOS_6.2_x64.vhd.bz2
        [root@xenhost a9c5b8c8-536b-a193-a6dc-51af3e5ff799]# scp CentOS_6.2_x64.vhd.bz2 webserver:/var/www/html/templates/
 
-12.13. Converting a Hyper-V VM to a Template
+Converting a Hyper-V VM to a Template
 --------------------------------------------
 
 To convert a Hyper-V VM to a XenServer-compatible CloudStack template,
@@ -7991,7 +7991,7 @@ distribution.
 
 The template will be created, and you can create instances from it.
 
-12.14. Adding Password Management to Your Templates
+Adding Password Management to Your Templates
 ---------------------------------------------------
 
 CloudStack provides an optional password reset feature that allows users
@@ -8015,7 +8015,7 @@ any password changes.
 If the script is unable to contact the virtual router during instance
 boot it will not set the password but boot will continue normally.
 
-12.14.1. Linux OS Installation
+Linux OS Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following steps to begin the Linux OS installation:
@@ -8053,14 +8053,14 @@ Use the following steps to begin the Linux OS installation:
 
        chkconfig --add cloud-set-guest-password
 
-12.14.2. Windows OS Installation
+Windows OS Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download the installer, CloudInstanceManager.msi, from the `Download
 page <http://sourceforge.net/projects/cloudstack/files/Password%20Management%20Scripts/CloudInstanceManager.msi/download>`__
 and run the installer in the newly created Windows VM.
 
-12.15. Deleting Templates
+Deleting Templates
 -------------------------
 
 Templates may be deleted. In general, when a template spans multiple
@@ -8087,7 +8087,7 @@ always accessed using NFS.
 There is no ephemeral storage in CloudStack. All volumes on all nodes
 are persistent.
 
-13.2. Primary Storage
+Primary Storage
 ---------------------
 
 This section gives concepts and technical details about CloudStack
@@ -8096,7 +8096,7 @@ primary storage through the CloudStack UI, see the Installation Guide.
 
 `Section 2.6, “About Primary Storage” <#about-primary-storage>`__
 
-13.2.1. Best Practices for Primary Storage
+Best Practices for Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -8126,7 +8126,7 @@ primary storage through the CloudStack UI, see the Installation Guide.
    Service. Currently this feature is supported for data disks (Disk
    Offerings).
 
-13.2.2. Runtime Behavior of Primary Storage
+Runtime Behavior of Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Root volumes are created automatically when a virtual machine is
@@ -8150,7 +8150,7 @@ on and space is taken from that storage (either from preallocated
 storage or from a storage system (ex. a SAN), depending on how the
 primary storage was added to CloudStack).
 
-13.2.3. Hypervisor Support for Primary Storage
+Hypervisor Support for Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following table shows storage options and parameters for different
@@ -8266,7 +8266,7 @@ example, you could provision 2 NFS servers in primary storage. Or you
 could provision 1 iSCSI LUN initially and then add a second iSCSI LUN
 when the first approaches capacity.
 
-13.2.4. Storage Tags
+Storage Tags
 ~~~~~~~~~~~~~~~~~~~~
 
 Storage may be "tagged". A tag is a text string attribute associated
@@ -8287,7 +8287,7 @@ same set of tags on the primary storage for all clusters in a pod. Even
 if different devices are used to present those tags, the set of exposed
 tags can be the same.
 
-13.2.5. Maintenance Mode for Primary Storage
+Maintenance Mode for Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Primary storage may be placed into maintenance mode. This is useful, for
@@ -8301,7 +8301,7 @@ The CloudStack will bring the device back online and attempt to start
 all guests that were running at the time of the entry into maintenance
 mode.
 
-13.3. Secondary Storage
+Secondary Storage
 -----------------------
 
 This section gives concepts and technical details about CloudStack
@@ -8311,7 +8311,7 @@ Installation Guide.
 
 `Section 2.7, “About Secondary Storage” <#about-secondary-storage>`__
 
-13.4. Working With Volumes
+Working With Volumes
 --------------------------
 
 A volume provides storage to a guest VM. The volume can provide for a
@@ -8339,7 +8339,7 @@ hypervisor type may not be used on a guest of another hypervisor type.
 hypervisor versions 6.0 and above. For the VMs on other hypervisor
 types, the data disk limit is 6.
 
-13.4.1. Creating a New Volume
+Creating a New Volume
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can add more data disk volumes to a guest VM at any time, up to the
@@ -8350,7 +8350,7 @@ are not allocated on the physical storage device until you attach the
 volume. This optimization allows the CloudStack to provision the volume
 nearest to the guest that will use it when the first attachment is made.
 
-13.4.1.1. Using Local Storage for Data Volumes
+Using Local Storage for Data Volumes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can create data volumes on local storage (supported with XenServer,
@@ -8375,7 +8375,7 @@ different host, nor migrate the volume itself away to a different host.
 If you want to put a host into maintenance mode, you must first stop any
 VMs with local data volumes on that host.
 
-13.4.1.2. To Create a New Volume
+To Create a New Volume
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -8416,7 +8416,7 @@ VMs with local data volumes on that host.
 
    To start using the volume, continue to Attaching a Volume
 
-13.4.2. Uploading an Existing Volume to a Virtual Machine
+Uploading an Existing Volume to a Virtual Machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Existing data can be made accessible to a virtual machine. This is
@@ -8508,7 +8508,7 @@ To upload a volume:
    complete. Click Instances - Volumes, find the name you specified in
    step 5, and make sure the status is Uploaded.
 
-13.4.3. Attaching a Volume
+Attaching a Volume
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can attach a volume to a guest VM to provide extra disk storage.
@@ -8545,7 +8545,7 @@ volume from one storage pool to another.
    When the volume has been attached, you should be able to see it by
    clicking Instances, the instance name, and View Volumes.
 
-13.4.4. Detaching and Moving Volumes
+Detaching and Moving Volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: This procedure is different from moving volumes from one storage pool to
@@ -8580,7 +8580,7 @@ may take several minutes for the volume to be moved to the new VM.
    To move the volume to another VM, follow the steps in
    `Section 13.4.3, “Attaching a Volume” <#attaching-volume>`__.
 
-13.4.5. VM Storage Migration
+VM Storage Migration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Supported in XenServer, KVM, and VMware.
@@ -8612,7 +8612,7 @@ allowed only if the source and target storage pool are accessible to the
 source host; that is, the host where the VM is running when the live
 migration operation is requested.
 
-13.4.5.1. Migrating a Data Volume to a New Storage Pool
+Migrating a Data Volume to a New Storage Pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are two situations when you might want to migrate a disk:
@@ -8627,7 +8627,7 @@ There are two situations when you might want to migrate a disk:
    Detach the disk from its current VM, move it to new storage, and
    attach it to a new VM.
 
-13.4.5.1.1. Migrating Storage For a Running VM
+Migrating Storage For a Running VM
 ''''''''''''''''''''''''''''''''''''''''''''''
 
 (Supported on XenServer and VMware)
@@ -8661,7 +8661,7 @@ There are two situations when you might want to migrate a disk:
    Watch for the volume status to change to Migrating, then back to
    Ready.
 
-13.4.5.1.2. Migrating Storage and Attaching to a Different VM
+Migrating Storage and Attaching to a Different VM
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 #. 
@@ -8692,7 +8692,7 @@ There are two situations when you might want to migrate a disk:
    the new storage server. See `Section 13.4.3, “Attaching a
    Volume” <#attaching-volume>`__
 
-13.4.5.2. Migrating a VM Root Volume to a New Storage Pool
+Migrating a VM Root Volume to a New Storage Pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (XenServer, VMware) You can live migrate a VM's root disk from one
@@ -8732,7 +8732,7 @@ be restarted.
 
    (KVM only) Restart the VM.
 
-13.4.6. Resizing Volumes
+Resizing Volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack provides the ability to resize data disks; CloudStack
@@ -8816,7 +8816,7 @@ To resize a volume:
 
    Click OK.
 
-13.4.7. Reset VM to New Root Disk on Reboot
+Reset VM to New Root Disk on Reboot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can specify that you want to discard the root disk and create a new
@@ -8832,7 +8832,7 @@ True. VMs created from this service offering will have their disks reset
 upon reboot. See `Section 8.1.1, “Creating a New Compute
 Offering” <#creating-compute-offerings>`__.
 
-13.4.8. Volume Deletion and Garbage Collection
+Volume Deletion and Garbage Collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The deletion of a volume does not delete the snapshots that have been
@@ -8858,7 +8858,7 @@ determine when the physical deletion of volumes will occur.
 Administrators should adjust these values depending on site policies
 around data retention.
 
-13.5. Working with Volume Snapshots
+Working with Volume Snapshots
 -----------------------------------
 
 (Supported for the following hypervisors: **XenServer**, **VMware
@@ -8888,7 +8888,7 @@ to a VM.
 A completed snapshot is copied from primary storage to secondary
 storage, where it is stored until deleted or purged by newer snapshot.
 
-13.5.1. How to Snapshot a Volume
+How to Snapshot a Volume
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -8911,7 +8911,7 @@ storage, where it is stored until deleted or purged by newer snapshot.
 
    Click the Snapshot button. |image43|
 
-13.5.2. Automatic Snapshot Creation and Retention
+Automatic Snapshot Creation and Retention
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 (Supported for the following hypervisors: **XenServer**, **VMware
@@ -8933,7 +8933,7 @@ those snapshots that are taken as part of an automatic recurring
 snapshot policy. Additional manual snapshots can be created and
 retained.
 
-13.5.3. Incremental Snapshots and Backup
+Incremental Snapshots and Backup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Snapshots are created on primary storage where a disk resides. After a
@@ -8958,7 +8958,7 @@ Y
 
 N
 
-13.5.4. Volume Status
+Volume Status
 ~~~~~~~~~~~~~~~~~~~~~
 
 When a snapshot operation is triggered by means of a recurring snapshot
@@ -8971,7 +8971,7 @@ inactive.
 When a snapshot is taken manually, a snapshot is always created
 regardless of whether a volume has been active or not.
 
-13.5.5. Snapshot Restore
+Snapshot Restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are two paths to restoring snapshots. Users can create a volume
@@ -8980,7 +8980,7 @@ recovered as needed. Alternatively, a template may be created from the
 snapshot of a root disk. The user can then boot a VM from this template
 to effect recovery of the root disk.
 
-13.5.6. Snapshot Job Throttling
+Snapshot Job Throttling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When a snapshot of a virtual machine is requested, the snapshot job runs
@@ -9009,7 +9009,7 @@ The admin can also set job.expire.minutes to place a maximum on how long
 a snapshot request will wait in the queue. If this limit is reached, the
 snapshot request fails and returns an error message.
 
-13.5.7. VMware Volume Snapshot Performance
+VMware Volume Snapshot Performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you take a snapshot of a data or root volume on VMware, CloudStack
@@ -9043,7 +9043,7 @@ template storage space, consumed by guest instances.
 The Usage Server runs at least once per day. It can be configured to run
 multiple times per day.
 
-14.1. Configuring the Usage Server
+Configuring the Usage Server
 ----------------------------------
 
 To configure the usage server:
@@ -9196,7 +9196,7 @@ usage.stats.job.aggregation.range, the Usage Server will ignore the data
 between midnight and 2 AM. That data will be included in the next day's
 run.
 
-14.2. Setting Usage Limits
+Setting Usage Limits
 --------------------------
 
 CloudStack provides several administrator control points for capping
@@ -9209,7 +9209,7 @@ limit a domain and all subdomains to the creation of 100 VMs.
 
 This section covers the following topics:
 
-14.3. Globally Configured Limits
+Globally Configured Limits
 --------------------------------
 
 In a zone, the guest virtual network has a 24 bit CIDR by default. This
@@ -9289,7 +9289,7 @@ scheduled.
 To modify global configuration parameters, use the global configuration
 screen in the CloudStack UI. See Setting Global Configuration Parameters
 
-14.4. Limiting Resource Usage
+Limiting Resource Usage
 -----------------------------
 
 CloudStack allows you to control resource usage based on the types of
@@ -9372,7 +9372,7 @@ Maximum secondary storage space that can be used for an account.
 
 Default is 400.
 
-14.4.1. User Permission
+User Permission
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The root administrator, domain administrators and users are able to list
@@ -9395,7 +9395,7 @@ and ``api.log`` files.
    The end users will the privilege to list resource limits. Use the
    listResourceLimits API.
 
-14.4.2. Limit Usage Considerations
+Limit Usage Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -9444,7 +9444,7 @@ and ``api.log`` files.
    5 more VMs because VM limit is 10. However, the user cannot deploy
    any more instances because the CPU limit has been exhausted.
 
-14.4.3. Limiting Resource Usage in a Domain
+Limiting Resource Usage in a Domain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack allows the configuration of limits on a domain basis. With a
@@ -9529,7 +9529,7 @@ To set a domain limit:
 
    Click Apply.
 
-14.4.4. Default Account Resource Limits
+Default Account Resource Limits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can limit resource use by accounts. The default limits are set by
@@ -9639,7 +9639,7 @@ infrastructure with the security and user perception that the guests
 have a private LAN. The CloudStack virtual router is the main component
 providing networking features for guest traffic.
 
-15.1. Guest Traffic
+Guest Traffic
 -------------------
 
 A network can carry guest traffic only between VMs within one zone.
@@ -9670,7 +9670,7 @@ addresses.
 Source NAT is automatically configured in the virtual router to forward
 outbound traffic for all guest VMs
 
-15.2. Networking in a Pod
+Networking in a Pod
 -------------------------
 
 The figure below illustrates network setup within a single pod. The
@@ -9702,7 +9702,7 @@ We recommend the use of multiple physical Ethernet cards to implement
 each network interface as well as redundant switch fabric in order to
 maximize throughput and improve reliability.
 
-15.3. Networking in a Zone
+Networking in a Zone
 --------------------------
 
 The following figure illustrates the network setup within a single zone.
@@ -9717,7 +9717,7 @@ Class C private address space.
 Each zone has its own set of public IP addresses. Public IP addresses
 from different zones do not overlap.
 
-15.4. Basic Zone Physical Network Configuration
+Basic Zone Physical Network Configuration
 -----------------------------------------------
 
 In a basic network, configuring the physical network is fairly
@@ -9725,14 +9725,14 @@ straightforward. You only need to configure one guest network to carry
 traffic that is generated by guest VMs. When you first add a zone to
 CloudStack, you set up the guest network through the Add Zone screens.
 
-15.5. Advanced Zone Physical Network Configuration
+Advanced Zone Physical Network Configuration
 --------------------------------------------------
 
 Within a zone that uses advanced networking, you need to tell the
 Management Server how the physical network is set up to carry different
 kinds of traffic in isolation.
 
-15.5.1. Configure Guest Traffic in an Advanced Zone
+Configure Guest Traffic in an Advanced Zone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These steps assume you have already logged in to the CloudStack UI. To
@@ -9790,13 +9790,13 @@ configure the base guest network:
 
    Click OK.
 
-15.5.2. Configure Public Traffic in an Advanced Zone
+Configure Public Traffic in an Advanced Zone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In a zone that uses advanced networking, you need to configure at least
 one range of IP addresses for Internet traffic.
 
-15.5.3. Configuring a Shared Guest Network
+Configuring a Shared Guest Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -9929,7 +9929,7 @@ one range of IP addresses for Internet traffic.
 
    Click OK to confirm.
 
-15.6. Using Multiple Guest Networks
+Using Multiple Guest Networks
 -----------------------------------
 
 In zones that use advanced networking, additional networks for guest
@@ -9955,7 +9955,7 @@ with access to that network. These zone-wide networks provide little or
 no isolation between guests.Networks that are assigned to a specific
 account provide strong isolation.
 
-15.6.1. Adding an Additional Guest Network
+Adding an Additional Guest Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -10005,7 +10005,7 @@ account provide strong isolation.
 
    Click Create.
 
-15.6.2. Reconfiguring Networks in VMs
+Reconfiguring Networks in VMs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack provides you the ability to move VMs between networks and
@@ -10016,13 +10016,13 @@ be accommodated with ease.
 
 This feature is supported on XenServer, VMware, and KVM hypervisors.
 
-15.6.2.1. Prerequisites
+Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Ensure that vm-tools are running on guest VMs for adding or removing
 networks to work on VMware hypervisor.
 
-15.6.2.2. Adding a Network
+Adding a Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -10087,7 +10087,7 @@ networks to work on VMware hypervisor.
 
       CIDR (for IPv6)
 
-15.6.2.3. Removing a Network
+Removing a Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -10118,7 +10118,7 @@ networks to work on VMware hypervisor.
 
    Click Yes to confirm.
 
-15.6.2.4. Selecting the Default Network
+Selecting the Default Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -10150,7 +10150,7 @@ networks to work on VMware hypervisor.
 
    Click Yes to confirm.
 
-15.6.3. Changing the Network Offering on a Guest Network
+Changing the Network Offering on a Guest Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A user or administrator can change the network offering that is
@@ -10201,7 +10201,7 @@ associated with an existing guest network.
 
    If you stopped any VMs, restart them.
 
-15.7. IP Reservation in Isolated Guest Networks
+IP Reservation in Isolated Guest Networks
 -----------------------------------------------
 
 In isolated guest networks, a part of the guest IP address space can be
@@ -10225,7 +10225,7 @@ CloudStack to the same network and assign them the Reserved IP
 addresses. CloudStack guest VMs cannot acquire IPs from the Reserved IP
 Range.
 
-15.7.1. IP Reservation Considerations
+IP Reservation Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Consider the following before you reserve an IP range for non-CloudStack
@@ -10308,7 +10308,7 @@ machines:
    guestvmcidr=10.1.1.0/24 or enter 10.1.1.0/24 in the CIDR field in the
    UI.
 
-15.7.2. Limitations
+Limitations
 ~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -10323,7 +10323,7 @@ machines:
    devices) IP Reservation becomes void if any. Reconfigure IP
    Reservation in the new re-implemeted network.
 
-15.7.3. Best Practices
+Best Practices
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Apply IP Reservation to the guest network as soon as the network state
@@ -10331,7 +10331,7 @@ changes to Implemented. If you apply reservation soon after the first
 guest VM is deployed, lesser conflicts occurs while applying
 reservation.
 
-15.7.4. Reserving an IP Range
+Reserving an IP Range
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -10364,7 +10364,7 @@ reservation.
    Wait for the update to complete. The Network CIDR and the Reserved IP
    Range are displayed on the Details page.
 
-15.8. Reserving Public IP Addresses and VLANs for Accounts
+Reserving Public IP Addresses and VLANs for Accounts
 ----------------------------------------------------------
 
 CloudStack provides you the ability to reserve a set of public IP
@@ -10405,7 +10405,7 @@ This feature provides you the following capabilities:
 
    The maximum IPs per account limit cannot be superseded.
 
-15.8.1. Dedicating IP Address Ranges to an Account
+Dedicating IP Address Ranges to an Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -10526,7 +10526,7 @@ This feature provides you the following capabilities:
 
          Click Add.
 
-15.8.2. Dedicating VLAN Ranges to an Account
+Dedicating VLAN Ranges to an Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -10582,7 +10582,7 @@ This feature provides you the following capabilities:
 
       ****Domain****: The domain associated with the account.
 
-15.9. Configuring Multiple IP Addresses on a Single NIC
+Configuring Multiple IP Addresses on a Single NIC
 -------------------------------------------------------
 
 CloudStack provides you the ability to associate multiple private IP
@@ -10602,7 +10602,7 @@ which the IP should be associated.
 This feature is supported on XenServer, KVM, and VMware hypervisors.
 Note that Basic zone security groups are not supported on VMware.
 
-15.9.1. Use Cases
+Use Cases
 ~~~~~~~~~~~~~~~~~
 
 Some of the use cases are described below:
@@ -10625,13 +10625,13 @@ Some of the use cases are described below:
    multiple SSL certificates on a single instance, each associated with
    a distinct IP address.
 
-15.9.2. Guidelines
+Guidelines
 ~~~~~~~~~~~~~~~~~~
 
 To prevent IP conflict, configure different subnets when multiple
 networks are connected to the same VM.
 
-15.9.3. Assigning Additional IPs to a VM
+Assigning Additional IPs to a VM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -10667,7 +10667,7 @@ networks are connected to the same VM.
    Allocated. You can now use the IP address in Port Forwarding or
    StaticNAT rules.
 
-15.9.4. Port Forwarding and StaticNAT Services Changes
+Port Forwarding and StaticNAT Services Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Because multiple IPs can be associated per NIC, you are allowed to
@@ -10679,7 +10679,7 @@ what IP address NAT need to be configured. If vmguestip is passed, NAT
 is configured on the specified private IP of the VM. if not passed, NAT
 is configured on the primary IP of the VM.
 
-15.10. About Multiple IP Ranges
+About Multiple IP Ranges
 -------------------------------
 
 .. note:: The feature can only be implemented on IPv4 addresses.
@@ -10707,7 +10707,7 @@ subnet, the remove operation fails.
 
 This feature is supported on KVM, xenServer, and VMware hypervisors.
 
-15.11. About Elastic IP
+About Elastic IP
 -----------------------
 
 Elastic IP (EIP) addresses are the IP addresses that are associated with
@@ -10801,10 +10801,10 @@ New deployments which use the default shared network offering with EIP
 and ELB services to create a shared network in the Basic zone will
 continue allocating public IPs to each user VM.
 
-15.12. Portable IPs
+Portable IPs
 -------------------
 
-15.12.1. About Portable IP
+About Portable IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Portable IPs in CloudStack are region-level pool of IPs, which are
@@ -10849,7 +10849,7 @@ Before transferring to another network, ensure that no network rules
 (Firewall, Static NAT, Port Forwarding, and so on) exist on that
 portable IP.
 
-15.12.2. Configuring Portable IPs
+Configuring Portable IPs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -10939,7 +10939,7 @@ portable IP.
    Allocated. You can now use the IP address in port forwarding or
    static NAT rules.
 
-15.12.4. Transferring Portable IP
+Transferring Portable IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An IP can be transferred from one network to another only if Static NAT
@@ -10961,7 +10961,7 @@ following:
 
     http://localhost:8096/client/api?command=enableStaticNat&response=json&ipaddressid=a4bc37b2-4b4e-461d-9a62-b66414618e36&virtualmachineid=Y&networkid=X
 
-15.13. Multiple Subnets in Shared Network
+Multiple Subnets in Shared Network
 -----------------------------------------
 
 CloudStack provides you with the flexibility to add guest IP ranges from
@@ -10974,7 +10974,7 @@ turn allows you to employ higher number of subnets and thus reduce the
 address management overhead. You can delete the IP ranges you have
 added.
 
-15.13.1. Prerequisites and Guidelines
+Prerequisites and Guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -11003,7 +11003,7 @@ added.
    CloudStack supports only one gateway for a subnet; overlapping
    subnets are not currently supported
 
-15.13.2. Adding Multiple Subnets to a Shared Network
+Adding Multiple Subnets to a Shared Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -11079,7 +11079,7 @@ added.
 
    Click OK.
 
-15.14. Isolation in Advanced Zone Using Private VLAN
+Isolation in Advanced Zone Using Private VLAN
 ----------------------------------------------------
 
 Isolation of guest traffic in shared networks can be achieved by using
@@ -11104,7 +11104,7 @@ VMs.
    PVLAN-enabled shared network can be a part of multiple networks of a
    guest VM.
 
-15.14.1. About Private VLAN
+About Private VLAN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In an Ethernet switch, a VLAN is a broadcast domain where hosts can
@@ -11174,7 +11174,7 @@ For further reading:
    `Private VLAN (PVLAN) on vNetwork Distributed Switch - Concept
    Overview (1010691) <http://kb.vmware.com>`__
 
-15.14.2. Prerequisites
+Prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -11212,7 +11212,7 @@ For further reading:
    CloudStack managed to simulate PVLAN on OVS for XenServer and KVM by
    modifying the flow table.
 
-15.14.3. Creating a PVLAN-Enabled Guest Network
+Creating a PVLAN-Enabled Guest Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -11338,10 +11338,10 @@ For further reading:
 
    Click OK to confirm.
 
-15.15. Security Groups
+Security Groups
 ----------------------
 
-15.15.1. About Security Groups
+About Security Groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Security groups provide a way to isolate traffic to VMs. A security
@@ -11376,7 +11376,7 @@ If no ingress rules are specified, then no traffic will be allowed in,
 except for responses to any traffic that has been allowed out through an
 egress rule.
 
-15.15.2. Adding a Security Group
+Adding a Security Group
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A user or administrator can define a new security group.
