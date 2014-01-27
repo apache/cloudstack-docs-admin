@@ -6,7 +6,6 @@
    "License"); you may not use this file except in compliance
    with the License.  You may obtain a copy of the License at
    http://www.apache.org/licenses/LICENSE-2.0
-
    Unless required by applicable law or agreed to in writing,
    software distributed under the License is distributed on an
    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -14,1791 +13,8 @@
    specific language governing permissions and limitations
    under the License.
 
-|Product Site|\ |Documentation Site|
-
-Apache CloudStack 4.3.0
-
-Edition 1
-
-Apache CloudStack
-~~~~~~~~~~~~~~~~~
-
-Legal Notice
-============
-
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements. See the NOTICE file distributed with
-this work for additional information regarding copyright ownership. The
-ASF licenses this file to you under the Apache License, Version 2.0 (the
-"License"); you may not use this file except in compliance with the
-License. You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Abstract
-        
-
-Administration Guide for CloudStack.
-
-`1. Concepts <#concepts>`__
-
-`1.1. What Is CloudStack? <#whatis>`__
-
-`1.2. What Can CloudStack Do? <#feature-overview>`__
-
-`1.3. Deployment Architecture
-Overview <#deployment-architecture-overview>`__
-
-`1.3.1. Management Server Overview <#management-server-overview>`__
-
-`1.3.2. Cloud Infrastructure
-Overview <#cloud-infrastructure-overview>`__
-
-`1.3.3. Networking Overview <#networking-overview>`__
-
-`2. Cloud Infrastructure Concepts <#cloud-infrastructure-concepts>`__
-
-`2.1. About Regions <#about-regions>`__
-
-`2.2. About Zones <#about-zones>`__
-
-`2.3. About Pods <#about-pods>`__
-
-`2.4. About Clusters <#about-clusters>`__
-
-`2.5. About Hosts <#about-hosts>`__
-
-`2.6. About Primary Storage <#about-primary-storage>`__
-
-`2.7. About Secondary Storage <#about-secondary-storage>`__
-
-`2.8. About Physical Networks <#about-physical-networks>`__
-
-`2.8.1. Basic Zone Network Traffic
-Types <#basic-zone-network-traffic-types>`__
-
-`2.8.2. Basic Zone Guest IP
-Addresses <#basic-zone-guest-ip-addresses>`__
-
-`2.8.3. Advanced Zone Network Traffic
-Types <#advanced-zone-network-traffic-types>`__
-
-`2.8.4. Advanced Zone Guest IP
-Addresses <#advanced-zone-guest-ip-addresses>`__
-
-`2.8.5. Advanced Zone Public IP
-Addresses <#advanced-zone-public-ip-addresses>`__
-
-`2.8.6. System Reserved IP Addresses <#system-reserved-ip-addresses>`__
-
-`3. Accounts <#accounts>`__
-
-`3.1. Accounts, Users, and Domains <#accounts-users-domains>`__
-
-`3.1.1. Dedicating Resources to Accounts and
-Domains <#dedicated-host-cluster-pod>`__
-
-`3.2. Using an LDAP Server for User
-Authentication <#LDAPserver-for-user-authentication>`__
-
-`3.2.1. Example LDAP Configuration
-Commands <#example-LDAP-configuration-commands>`__
-
-`3.2.2. Search Base <#search-base>`__
-
-`3.2.3. Query Filter <#query-filter>`__
-
-`3.2.4. Search User Bind DN <#search-user-bind-dn>`__
-
-`3.2.5. SSL Keystore Path and
-Password <#SSL-keystore-path-and-password>`__
-
-`4. User Services Overview <#user-services-overview>`__
-
-`4.1. Service Offerings, Disk Offerings, Network Offerings, and
-Templates <#offerings-and-templates>`__
-
-`5. User Interface <#ui>`__
-
-`5.1. Log In to the UI <#log-in>`__
-
-`5.1.1. End User's UI Overview <#end-user-ui-overview>`__
-
-`5.1.2. Root Administrator's UI Overview <#root-admin-ui-overview>`__
-
-`5.1.3. Logging In as the Root Administrator <#log-in-root-admin>`__
-
-`5.1.4. Changing the Root Password <#changing-root-password>`__
-
-`5.2. Using SSH Keys for Authentication <#using-sshkeys>`__
-
-`5.2.1. Creating an Instance Template that Supports SSH
-Keys <#create-ssh-template>`__
-
-`5.2.2. Creating the SSH Keypair <#create-ssh-keypair>`__
-
-`5.2.3. Creating an Instance <#creating-ssh-instance>`__
-
-`5.2.4. Logging In Using the SSH Keypair <#logging-in-ssh>`__
-
-`5.2.5. Resetting SSH Keys <#reset-ssh>`__
-
-`6. Using Projects to Organize Users and Resources <#projects>`__
-
-`6.1. Overview of Projects <#projects-overview>`__
-
-`6.2. Configuring Projects <#configuring-projects>`__
-
-`6.2.1. Setting Up Invitations <#set-up-invitations>`__
-
-`6.2.2. Setting Resource Limits for
-Projects <#set-resource-limits-for-projects>`__
-
-`6.2.3. Setting Project Creator
-Permissions <#set-projects-creator-permissions>`__
-
-`6.3. Creating a New Project <#create-new-projects>`__
-
-`6.4. Adding Members to a Project <#add-members-to-projects>`__
-
-`6.4.1. Sending Project Membership
-Invitations <#send-projects-membership-invitation>`__
-
-`6.4.2. Adding Project Members From the
-UI <#add-projects-members-from-ui>`__
-
-`6.5. Accepting a Membership Invitation <#accept-membership-invite>`__
-
-`6.6. Suspending or Deleting a Project <#suspend-project>`__
-
-`6.7. Using the Project View <#use-project-view>`__
-
-`7. Steps to Provisioning Your Cloud
-Infrastructure <#provisioning-steps>`__
-
-`7.1. Overview of Provisioning Steps <#provisioning-steps-overview>`__
-
-`7.2. Adding Regions (optional) <#region-add>`__
-
-`7.2.1. The First Region: The Default Region <#region-first>`__
-
-`7.2.2. Adding a Region <#region-add-2>`__
-
-`7.2.3. Adding Third and Subsequent Regions <#region-add-n>`__
-
-`7.2.4. Deleting a Region <#region-delete>`__
-
-`7.3. Adding a Zone <#zone-add>`__
-
-`7.3.1. Basic Zone Configuration <#basic-zone-configuration>`__
-
-`7.3.2. Advanced Zone Configuration <#advanced-zone-configuration>`__
-
-`7.4. Adding a Pod <#pod-add>`__
-
-`7.5. Adding a Cluster <#cluster-add>`__
-
-`7.5.1. Add Cluster: KVM or XenServer <#add-clusters-kvm-xenserver>`__
-
-`7.5.2. Add Cluster: vSphere <#add-clusters-vsphere>`__
-
-`7.6. Adding a Host <#host-add>`__
-
-`7.6.1. Adding a Host (XenServer or
-KVM) <#host-add-xenserver-kvm-ovm>`__
-
-`7.6.2. Adding a Host (vSphere) <#host-add-vsphere>`__
-
-`7.7. Add Primary Storage <#primary-storage-add>`__
-
-`7.7.1. System Requirements for Primary
-Storage <#sys-require-primary-storage>`__
-
-`7.7.2. Adding Primary Storage <#adding-primary-storage>`__
-
-`7.7.3. Configuring a Storage Plug-in <#idp140221224805280>`__
-
-`7.8. Add Secondary Storage <#secondary-storage-add>`__
-
-`7.8.1. System Requirements for Secondary
-Storage <#sys-require-secondary-storage>`__
-
-`7.8.2. Adding Secondary Storage <#adding-secondary-storage>`__
-
-`7.8.3. Adding an NFS Secondary Staging Store for Each
-Zone <#secondary-staging-store>`__
-
-`7.9. Initialize and Test <#initialize-and-test>`__
-
-`8. Service Offerings <#offerings>`__
-
-`8.1. Compute and Disk Service
-Offerings <#compute-disk-service-offerings>`__
-
-`8.1.1. Creating a New Compute Offering <#creating-compute-offerings>`__
-
-`8.1.2. Creating a New Disk Offering <#creating-disk-offerings>`__
-
-`8.1.3. Modifying or Deleting a Service
-Offering <#modify-delete-service-offerings>`__
-
-`8.2. System Service Offerings <#system-service-offerings>`__
-
-`8.2.1. Creating a New System Service
-Offering <#creating-system-service-offerings>`__
-
-`8.3. Network Throttling <#network-rate>`__
-
-`8.4. Changing the Default System Offering for System
-VMs <#sys-offering-sysvm>`__
-
-`9. Setting Up Networking for Users <#set-up-network-for-users>`__
-
-`9.1. Overview of Setting Up Networking for
-Users <#networks-for-users-overview>`__
-
-`9.2. About Virtual Networks <#about-virtual-networks>`__
-
-`9.2.1. Isolated Networks <#isolated-networks>`__
-
-`9.2.2. Shared Networks <#shared-networks>`__
-
-`9.2.3. Runtime Allocation of Virtual Network
-Resources <#runtime-allocation-virtual-network-resources>`__
-
-`9.3. Network Service Providers <#network-service-providers>`__
-
-`9.4. Network Offerings <#network-offerings>`__
-
-`9.4.1. Creating a New Network Offering <#creating-network-offerings>`__
-
-`10. Working With Virtual Machines <#virtual-machines>`__
-
-`10.1. About Working with Virtual Machines <#about-working-with-vms>`__
-
-`10.2. Best Practices for Virtual Machines <#best-practices-vm>`__
-
-`10.2.1. Monitor VMs for Max Capacity <#best-practices-vm-monitoring>`__
-
-`10.2.2. Install Required Tools and
-Drivers <#best-practices-vm-tools>`__
-
-`10.3. VM Lifecycle <#vm-lifecycle>`__
-
-`10.4. Creating VMs <#creating-vms>`__
-
-`10.5. Accessing VMs <#accessing-vms>`__
-
-`10.6. Stopping and Starting VMs <#stopping-and-starting-vms>`__
-
-`10.7. Assigning VMs to Hosts <#host-allocation>`__
-
-`10.7.1. Affinity Groups <#affinity-groups>`__
-
-`10.8. Virtual Machine Snapshots <#vm-snapshots>`__
-
-`10.8.1. Limitations on VM Snapshots <#vm-snapshot-restrictions>`__
-
-`10.8.2. Configuring VM Snapshots <#vm-snapshot-configure>`__
-
-`10.8.3. Using VM Snapshots <#vm-snapshot-usage>`__
-
-`10.9. Changing the VM Name, OS, or
-Group <#changing-vm-name-os-group>`__
-
-`10.10. Appending a Display Name to the Guest VM’s Internal
-Name <#append-displayname-vms>`__
-
-`10.11. Changing the Service Offering for a
-VM <#changing-service-offering-for-vm>`__
-
-`10.11.1. CPU and Memory Scaling for Running
-VMs <#change-cpu-ram-for-vm>`__
-
-`10.11.2. Updating Existing VMs <#update-vms>`__
-
-`10.11.3. Configuring Dynamic CPU and RAM
-Scaling <#configure-dynamic-scaling>`__
-
-`10.11.4. How to Dynamically Scale CPU and
-RAM <#dynamic-scaling-howto>`__
-
-`10.11.5. Limitations <#dynamic-scaling-limitations>`__
-
-`10.12. Resetting the Virtual Machine Root Volume on
-Reboot <#reset-volume-on-reboot-vm>`__
-
-`10.13. Moving VMs Between Hosts (Manual Live
-Migration) <#manual-live-migration>`__
-
-`10.14. Deleting VMs <#deleting-vms>`__
-
-`10.15. Working with ISOs <#working-with-iso>`__
-
-`10.15.1. Adding an ISO <#add-iso>`__
-
-`10.15.2. Attaching an ISO to a VM <#attach-iso-to-vm>`__
-
-`10.15.3. Changing a VM's Base Image <#update-iso-vm>`__
-
-`11. Working With Hosts <#working-with-hosts>`__
-
-`11.1. Adding Hosts <#adding-hosts>`__
-
-`11.2. Scheduled Maintenance and Maintenance Mode for
-Hosts <#scheduled-maintenance-maintenance-mode-hosts>`__
-
-`11.2.1. vCenter and Maintenance Mode <#vcenter-maintenance-mode>`__
-
-`11.2.2. XenServer and Maintenance Mode <#xenserver-maintenance-mode>`__
-
-`11.3. Disabling and Enabling Zones, Pods, and
-Clusters <#disable-enable-zones-pods-clusters>`__
-
-`11.4. Removing Hosts <#removing-hosts>`__
-
-`11.4.1. Removing XenServer and KVM
-Hosts <#removing-xenserver-kvm-hosts>`__
-
-`11.4.2. Removing vSphere Hosts <#removing-vsphere-hosts>`__
-
-`11.5. Re-Installing Hosts <#re-install-hosts>`__
-
-`11.6. Maintaining Hypervisors on
-Hosts <#maintain-hypervisors-on-hosts>`__
-
-`11.7. Changing Host Password <#change-host-password>`__
-
-`11.8. Over-Provisioning and Service Offering
-Limits <#over-provisioning-service-offering-limits>`__
-
-`11.8.1. Limitations on Over-Provisioning in XenServer and
-KVM <#overcommit-limitations>`__
-
-`11.8.2. Requirements for
-Over-Provisioning <#overcommit-prerequisites>`__
-
-`11.8.3. Setting Over-Provisioning Ratios <#create-overcommit>`__
-
-`11.8.4. Service Offering Limits and
-Over-Provisioning <#op-service-offering-limits>`__
-
-`11.9. VLAN Provisioning <#vlan-provisioning>`__
-
-`11.9.1. VLAN Allocation Example <#vlan-allocation-eg>`__
-
-`11.9.2. Adding Non Contiguous VLAN Ranges <#non-contiguous-vlan>`__
-
-`11.9.3. Assigning VLANs to Isolated
-Networks <#vlan-assign-isolated-nw>`__
-
-`12. Working with Templates <#working-with-templates>`__
-
-`12.1. Creating Templates: Overview <#create-templates-overview>`__
-
-`12.2. Requirements for Templates <#requirements-templates>`__
-
-`12.3. Best Practices for Templates <#best-practices-templates>`__
-
-`12.4. The Default Template <#default-template>`__
-
-`12.5. Private and Public Templates <#private-public-template>`__
-
-`12.6. Creating a Template from an Existing Virtual
-Machine <#create-template-from-existing-vm>`__
-
-`12.7. Creating a Template from a
-Snapshot <#create-template-from-snapshot>`__
-
-`12.8. Uploading Templates <#upload-template>`__
-
-`12.9. Exporting Templates <#export-template>`__
-
-`12.10. Creating a Linux Template <#create-linux-template>`__
-
-`12.10.1. System preparation for Linux <#prepare-linux-template>`__
-
-`12.11. Creating a Windows Template <#create-windows-template>`__
-
-`12.11.1. System Preparation for Windows Server 2008
-R2 <#sysprep-windows-server-2008R2>`__
-
-`12.11.2. System Preparation for Windows Server 2003
-R2 <#sysprep-for-windows-server-2003R2>`__
-
-`12.12. Importing Amazon Machine Images <#import-ami>`__
-
-`12.13. Converting a Hyper-V VM to a
-Template <#convert-hyperv-vm-to-template>`__
-
-`12.14. Adding Password Management to Your
-Templates <#add-password-management-to-templates>`__
-
-`12.14.1. Linux OS Installation <#linux-installation>`__
-
-`12.14.2. Windows OS Installation <#windows-installation>`__
-
-`12.15. Deleting Templates <#delete-templates>`__
-
-`13. Working With Storage <#storage>`__
-
-`13.1. Storage Overview <#storage-overview>`__
-
-`13.2. Primary Storage <#primary-storage>`__
-
-`13.2.1. Best Practices for Primary
-Storage <#best-practices-primary-storage>`__
-
-`13.2.2. Runtime Behavior of Primary
-Storage <#runtime-behavior-of-primary-storage>`__
-
-`13.2.3. Hypervisor Support for Primary
-Storage <#hypervisor-support-for-primarystorage>`__
-
-`13.2.4. Storage Tags <#storage-tags>`__
-
-`13.2.5. Maintenance Mode for Primary
-Storage <#maintenance-mode-for-primary-storage.xml>`__
-
-`13.3. Secondary Storage <#secondary-storage>`__
-
-`13.4. Working With Volumes <#working-with-volumes>`__
-
-`13.4.1. Creating a New Volume <#creating-new-volumes>`__
-
-`13.4.2. Uploading an Existing Volume to a Virtual
-Machine <#upload-existing-volume-to-vm>`__
-
-`13.4.3. Attaching a Volume <#attaching-volume>`__
-
-`13.4.4. Detaching and Moving Volumes <#detach-move-volumes>`__
-
-`13.4.5. VM Storage Migration <#vm-storage-migration>`__
-
-`13.4.6. Resizing Volumes <#resizing-volumes>`__
-
-`13.4.7. Reset VM to New Root Disk on Reboot <#reset-vm-reboot>`__
-
-`13.4.8. Volume Deletion and Garbage
-Collection <#volume-deletion-garbage-collection>`__
-
-`13.5. Working with Volume Snapshots <#working-with-snapshots>`__
-
-`13.5.1. How to Snapshot a Volume <#how-to-volume-snapshot>`__
-
-`13.5.2. Automatic Snapshot Creation and
-Retention <#automatic-snapshot-creation-retention>`__
-
-`13.5.3. Incremental Snapshots and
-Backup <#incremental-snapshots-backup>`__
-
-`13.5.4. Volume Status <#volume-status>`__
-
-`13.5.5. Snapshot Restore <#snapshot-restore>`__
-
-`13.5.6. Snapshot Job Throttling <#snapshot-throttling>`__
-
-`13.5.7. VMware Volume Snapshot
-Performance <#snapshot-performance-vmware>`__
-
-`14. Working with Usage <#work-with-usage>`__
-
-`14.1. Configuring the Usage Server <#configure-usage-server>`__
-
-`14.2. Setting Usage Limits <#set-usage-limit>`__
-
-`14.3. Globally Configured Limits <#globally-configured-limits>`__
-
-`14.4. Limiting Resource Usage <#limit-accounts-domains>`__
-
-`14.4.1. User Permission <#user-permission-rn>`__
-
-`14.4.2. Limit Usage Considerations <#consideration-rn>`__
-
-`14.4.3. Limiting Resource Usage in a Domain <#per-domain-limits>`__
-
-`14.4.4. Default Account Resource
-Limits <#default-account-resource-limit>`__
-
-`15. Managing Networks and Traffic <#networks>`__
-
-`15.1. Guest Traffic <#guest-traffic>`__
-
-`15.2. Networking in a Pod <#networking-in-a-pod>`__
-
-`15.3. Networking in a Zone <#networking-in-a-zone>`__
-
-`15.4. Basic Zone Physical Network
-Configuration <#basic-zone-physical-network-configuration>`__
-
-`15.5. Advanced Zone Physical Network
-Configuration <#advanced-zone-physical-network-configuration>`__
-
-`15.5.1. Configure Guest Traffic in an Advanced
-Zone <#configure-guest-traffic-in-advanced-zone>`__
-
-`15.5.2. Configure Public Traffic in an Advanced
-Zone <#configure-public-traffic-in-an-advanced-zone>`__
-
-`15.5.3. Configuring a Shared Guest
-Network <#creating-shared-network>`__
-
-`15.6. Using Multiple Guest Networks <#using-multiple-guest-networks>`__
-
-`15.6.1. Adding an Additional Guest
-Network <#add-additional-guest-network>`__
-
-`15.6.2. Reconfiguring Networks in VMs <#add-remove-nic-ui>`__
-
-`15.6.3. Changing the Network Offering on a Guest
-Network <#change-network-offering-on-guest-network>`__
-
-`15.7. IP Reservation in Isolated Guest
-Networks <#reserved-ip-addresses-non-csvms>`__
-
-`15.7.1. IP Reservation Considerations <#ip-reserve-consider>`__
-
-`15.7.2. Limitations <#ip-reserv-limition>`__
-
-`15.7.3. Best Practices <#best-practice-ipreserv>`__
-
-`15.7.4. Reserving an IP Range <#reserve-ip>`__
-
-`15.8. Reserving Public IP Addresses and VLANs for
-Accounts <#ip-vlan-tenant>`__
-
-`15.8.1. Dedicating IP Address Ranges to an
-Account <#howto-dedicate-ip>`__
-
-`15.8.2. Dedicating VLAN Ranges to an Account <#howto-dedicate-vlan>`__
-
-`15.9. Configuring Multiple IP Addresses on a Single
-NIC <#multiple-ip-nic>`__
-
-`15.9.1. Use Cases <#usecases-mip>`__
-
-`15.9.2. Guidelines <#guideline-nic>`__
-
-`15.9.3. Assigning Additional IPs to a VM <#workflow-rn>`__
-
-`15.9.4. Port Forwarding and StaticNAT Services Changes <#caveats>`__
-
-`15.10. About Multiple IP Ranges <#multiple-ip-range>`__
-
-`15.11. About Elastic IP <#elastic-ip>`__
-
-`15.12. Portable IPs <#portable-ip>`__
-
-`15.12.1. About Portable IP <#about-pip>`__
-
-`15.12.2. Configuring Portable IPs <#config-pip>`__
-
-`15.12.3. Acquiring a Portable IP <#acquire-pip>`__
-
-`15.12.4. Transferring Portable IP <#transfer-pip>`__
-
-`15.13. Multiple Subnets in Shared Network <#add-ip-range>`__
-
-`15.13.1. Prerequisites and Guidelines <#guidelines-multiplesubnet>`__
-
-`15.13.2. Adding Multiple Subnets to a Shared
-Network <#how-to-add-ip>`__
-
-`15.14. Isolation in Advanced Zone Using Private VLAN <#pvlan>`__
-
-`15.14.1. About Private VLAN <#about-pvlan>`__
-
-`15.14.2. Prerequisites <#prereq-pvlan>`__
-
-`15.14.3. Creating a PVLAN-Enabled Guest Network <#ability-pvlan>`__
-
-`15.15. Security Groups <#security-groups>`__
-
-`15.15.1. About Security Groups <#about-security-groups>`__
-
-`15.15.2. Adding a Security Group <#add-security-group>`__
-
-`15.15.3. Security Groups in Advanced Zones (KVM
-Only) <#security-groups-advanced-zones>`__
-
-`15.15.4. Enabling Security Groups <#enable-security-groups>`__
-
-`15.15.5. Adding Ingress and Egress Rules to a Security
-Group <#add-ingress-egress-rules>`__
-
-`15.16. External Firewalls and Load
-Balancers <#external-firewalls-and-load-balancers>`__
-
-`15.16.1. About Using a NetScaler Load
-Balancer <#using-netscaler-load-balancers>`__
-
-`15.16.2. Configuring SNMP Community String on a RHEL
-Server <#configure-snmp-rhel>`__
-
-`15.16.3. Initial Setup of External Firewalls and Load
-Balancers <#initial-setup-of-external-firewalls-loadbalancer>`__
-
-`15.16.4. Ongoing Configuration of External Firewalls and Load
-Balancers <#ongoing-config-of-external-firewalls-ld>`__
-
-`15.16.5. Load Balancer Rules <#load-balancer-rules>`__
-
-`15.16.6. Configuring AutoScale <#autoscale>`__
-
-`15.17. Global Server Load Balancing Support <#gslb>`__
-
-`15.17.1. About Global Server Load Balancing <#about-gslb>`__
-
-`15.17.2. Configuring GSLB <#gslb-workflow>`__
-
-`15.17.3. Known Limitation <#idp140221228139200>`__
-
-`15.18. Guest IP Ranges <#guest-ip-ranges>`__
-
-`15.19. Acquiring a New IP Address <#acquire-new-ip-address>`__
-
-`15.20. Releasing an IP Address <#release-ip-address>`__
-
-`15.21. Static NAT <#static-nat>`__
-
-`15.21.1. Enabling or Disabling Static
-NAT <#enable-disable-static-nat>`__
-
-`15.22. IP Forwarding and Firewalling <#ip-forwarding-firewalling>`__
-
-`15.22.1. Firewall Rules <#firewall-rules>`__
-
-`15.22.2. Egress Firewall Rules in an Advanced
-Zone <#egress-firewall-rule>`__
-
-`15.22.3. Port Forwarding <#port-forwarding>`__
-
-`15.23. IP Load Balancing <#ip-load-balancing>`__
-
-`15.24. DNS and DHCP <#dns-dhcp>`__
-
-`15.25. Remote Access VPN <#vpn>`__
-
-`15.25.1. Configuring Remote Access VPN <#configure-vpn>`__
-
-`15.25.2. Configuring Remote Access VPN in VPC <#configure-vpn-vpc>`__
-
-`15.25.3. Using Remote Access VPN with
-Windows <#using-vpn-with-windows>`__
-
-`15.25.4. Using Remote Access VPN with Mac OS X <#using-vpn-with-mac>`__
-
-`15.25.5. Setting Up a Site-to-Site VPN
-Connection <#site-to-site-vpn>`__
-
-`15.26. About Inter-VLAN Routing (nTier Apps) <#inter-vlan-routing>`__
-
-`15.27. Configuring a Virtual Private Cloud <#configure-vpc>`__
-
-`15.27.1. About Virtual Private Clouds <#vpc>`__
-
-`15.27.2. Adding a Virtual Private Cloud <#add-vpc>`__
-
-`15.27.3. Adding Tiers <#add-tier>`__
-
-`15.27.4. Configuring Network Access Control List <#configure-acl>`__
-
-`15.27.5. Adding a Private Gateway to a VPC <#add-gateway-vpc>`__
-
-`15.27.6. Deploying VMs to the Tier <#add-vm-to-tier>`__
-
-`15.27.7. Deploying VMs to VPC Tier and Shared
-Networks <#add-vm-tier-sharednw>`__
-
-`15.27.8. Acquiring a New IP Address for a
-VPC <#acquire-new-ip-for-vpc>`__
-
-`15.27.9. Releasing an IP Address Alloted to a
-VPC <#release-ip-for-vpc>`__
-
-`15.27.10. Enabling or Disabling Static NAT on a
-VPC <#enable-disable-static-nat-vpc>`__
-
-`15.27.11. Adding Load Balancing Rules on a
-VPC <#add-loadbalancer-rule-vpc>`__
-
-`15.27.12. Adding a Port Forwarding Rule on a
-VPC <#add-portforward-vpc>`__
-
-`15.27.13. Removing Tiers <#remove-tier>`__
-
-`15.27.14. Editing, Restarting, and Removing a Virtual Private
-Cloud <#remove-vpc>`__
-
-`15.28. Persistent Networks <#persistent-network>`__
-
-`15.28.1. Persistent Network
-Considerations <#persistent-network-consideration>`__
-
-`15.28.2. Creating a Persistent Guest
-Network <#set-up-persistent-network>`__
-
-`16. Working with System Virtual Machines <#working-with-system-vm>`__
-
-`16.1. The System VM Template <#system-vm-template>`__
-
-`16.2. Changing the Default System VM
-Template <#change-sysmvmtemplate>`__
-
-`16.3. Multiple System VM Support for
-VMware <#multiple-system-vm-vmware>`__
-
-`16.4. Console Proxy <#console-proxy>`__
-
-`16.4.1. Using a SSL Certificate for the Console Proxy <#use-cert>`__
-
-`16.4.2. Changing the Console Proxy SSL Certificate and
-Domain <#change-console-proxy-ssl-certificate-domain>`__
-
-`16.5. Virtual Router <#virtual-router>`__
-
-`16.5.1. Configuring the Virtual Router <#configure-virtual-router>`__
-
-`16.5.2. Upgrading a Virtual Router with System Service
-Offerings <#upgrade-virtual-router-with-service-offering>`__
-
-`16.5.3. Best Practices for Virtual
-Routers <#best-practices-virtual-router>`__
-
-`16.5.4. Service Monitoring Tool for Virtual Router <#vr-monitor>`__
-
-`16.5.5. Enhanced Upgrade for Virtual Routers <#vr-upgrade>`__
-
-`16.6. Secondary Storage VM <#secondary-storage-vm>`__
-
-`17. System Reliability and High
-Availability <#sys-reliability-and-ha>`__
-
-`17.1. HA for Management Server <#ha-management-server>`__
-
-`17.2. Management Server Load Balancing <#management-server-lb>`__
-
-`17.3. HA-Enabled Virtual Machines <#ha-enabled-vm>`__
-
-`17.4. HA for Hosts <#ha-for-hosts>`__
-
-`17.4.1. Dedicated HA Hosts <#dedicated-ha-hosts>`__
-
-`17.5. Primary Storage Outage and Data
-Loss <#primary-storage-outage-and-data-loss>`__
-
-`17.6. Secondary Storage Outage and Data
-Loss <#secondary-storage-outage-and-data-loss>`__
-
-`17.7. Database High Availability <#db-ha>`__
-
-`17.7.1. How to Set Up Database Replication <#db-ha-howto>`__
-
-`17.7.2. Configuring Database High Availability <#db-ha-configure>`__
-
-`17.7.3. Limitations on Database High
-Availability <#db-ha-limitations>`__
-
-`17.8. Limiting the Rate of API Requests <#api-throttling>`__
-
-`17.8.1. Configuring the API Request Rate <#api-throttling-configure>`__
-
-`17.8.2. Limitations on API Throttling <#api-throttling-limitations>`__
-
-`18. Managing the Cloud <#manage-cloud>`__
-
-`18.1. Using Tags to Organize Resources in the
-Cloud <#tagging-resources>`__
-
-`18.2. Changing the Database Configuration <#change-database-config>`__
-
-`18.3. Changing the Database Password <#change-database-password>`__
-
-`18.4. Administrator Alerts <#admin-alerts>`__
-
-`18.4.1. Sending Alerts to External SNMP and Syslog
-Managers <#external-snmp-manager>`__
-
-`18.5. Customizing the Network Domain Name <#customizing-dns>`__
-
-`18.6. Stopping and Restarting the Management
-Server <#stop-restart-management-server>`__
-
-`19. Setting Configuration Parameters <#global-config>`__
-
-`19.1. About Configuration
-Parameters <#about-global-config-parameters>`__
-
-`19.2. Setting Global Configuration Parameters <#global-config-howto>`__
-
-`19.3. Setting Local Configuration Parameters <#local-config-howto>`__
-
-`19.4. Granular Global Configuration Parameters <#granular-param>`__
-
-`20. CloudStack API <#api-overview>`__
-
-`20.1. Provisioning and Authentication API <#provisioning-auth-api>`__
-
-`20.2. User Data and Meta Data <#user-data-and-meta-data>`__
-
-`21. Tuning <#tuning>`__
-
-`21.1. Performance Monitoring <#performance-monitoring>`__
-
-`21.2. Increase Management Server Maximum
-Memory <#increase-management-server-max-memory>`__
-
-`21.3. Set Database Buffer Pool Size <#set-database-buffer-pool-size>`__
-
-`21.4. Set and Monitor Total VM Limits per
-Host <#set-monitor-total-vm-limits-per-host>`__
-
-`21.5. Configure XenServer dom0
-Memory <#configure-xenserver-dom0-memory>`__
-
-`22. Writing a Storage Plugin <#storage-plugins>`__
-
-`22.1. Overview of How to Write a Storage
-Plugin <#storage-plugin-steps>`__
-
-`22.2. Implementing DataStoreDriver <#datastoredriver>`__
-
-`22.3. Implementing DataStoreLifecycle <#datastorelifecycle>`__
-
-`22.4. Implementing DataStoreProvider <#datastoreprovider>`__
-
-`22.5. Implementing
-VMSnapshotStrategy <#implement-vmsnapshotstrategy>`__
-
-`22.6. Place the .jar File in the Right
-Directory <#storage-plugin-code-location>`__
-
-`22.7. Edit Configuration
-Files <#storage-plugin-componentcontext-xml>`__
-
-`22.8. Minimum Required Interfaces <#idp140221247665856>`__
-
-`22.8.1. Interface AmazonS3 <#idp140221247667152>`__
-
-`22.8.2. Class TransferManager <#idp140221236488768>`__
-
-`22.8.3. Class PutObjectRequest <#idp140221225664784>`__
-
-`23. Troubleshooting <#troubleshooting>`__
-
-`23.1. Events <#events>`__
-
-`23.1.1. Event Logs <#events-log>`__
-
-`23.1.2. Event Notification <#event-framework>`__
-
-`23.1.3. Standard Events <#standard-events>`__
-
-`23.1.4. Long Running Job Events <#long-running-job-events>`__
-
-`23.1.5. Event Log Queries <#event-log-queries>`__
-
-`23.1.6. Deleting and Archiving Events and
-Alerts <#delete-event-alerts>`__
-
-`23.2. Working with Server
-Logs <#troubleshooting-working-with-server-logs>`__
-
-`23.3. Data Loss on Exported Primary
-Storage <#troubleshooting-dataloss-on-exported-primary-storage>`__
-
-`23.4. Recovering a Lost Virtual
-Router <#troubleshooting-recover-lost-virtual-router>`__
-
-`23.5. Maintenance mode not working on
-vCenter <#troubleshooting-maintenance-mode-not-working-on-vCenter>`__
-
-`23.6. Unable to deploy VMs from uploaded vSphere
-template <#troubleshooting-unable-to-deploy-vms>`__
-
-`23.7. Unable to power on virtual machine on
-VMware <#troubleshooting-unable-to-power-on-vm>`__
-
-`23.8. Load balancer rules fail after changing network
-offering <#troubleshooting-lb-rules-fails>`__
-
-`A. Time Zones <#time-zones>`__
-
-`B. Event Types <#event-types>`__
-
-`C. Alerts <#alerts>`__
-
-`D. Revision History <#appe-cloudstack-Revision_History>`__
-
-`1.1. What Is CloudStack? <#whatis>`__
-
-`1.2. What Can CloudStack Do? <#feature-overview>`__
-
-`1.3. Deployment Architecture
-Overview <#deployment-architecture-overview>`__
-
-`1.3.1. Management Server Overview <#management-server-overview>`__
-
-`1.3.2. Cloud Infrastructure
-Overview <#cloud-infrastructure-overview>`__
-
-`1.3.3. Networking Overview <#networking-overview>`__
-
-1.1. What Is CloudStack?
-------------------------
-
-CloudStack is an open source software platform that pools computing
-resources to build public, private, and hybrid Infrastructure as a
-Service (IaaS) clouds. CloudStack manages the network, storage, and
-compute nodes that make up a cloud infrastructure. Use CloudStack to
-deploy, manage, and configure cloud computing environments.
-
-Typical users are service providers and enterprises. With CloudStack,
-you can:
-
--  
-
-   Set up an on-demand, elastic cloud computing service. Service
-   providers can sell self service virtual machine instances, storage
-   volumes, and networking configurations over the Internet.
-
--  
-
-   Set up an on-premise private cloud for use by employees. Rather than
-   managing virtual machines in the same way as physical machines, with
-   CloudStack an enterprise can offer self-service virtual machines to
-   users without involving IT departments.
-
-|1000-foot-view.png: Overview of CloudStack|
-
-1.2. What Can CloudStack Do?
-----------------------------
-
-**Multiple Hypervisor Support**
-
-CloudStack works with a variety of hypervisors, and a single cloud
-deployment can contain multiple hypervisor implementations. The current
-release of CloudStack supports pre-packaged enterprise solutions like
-Citrix XenServer and VMware vSphere, as well as KVM or Xen running on
-Ubuntu or CentOS.
-
-**Massively Scalable Infrastructure Management**
-
-CloudStack can manage tens of thousands of servers installed in multiple
-geographically distributed datacenters. The centralized management
-server scales linearly, eliminating the need for intermediate
-cluster-level management servers. No single component failure can cause
-a cloud-wide outage. Periodic maintenance of the management server can
-be performed without affecting the functioning of virtual machines
-running in the cloud.
-
-**Automatic Configuration Management**
-
-CloudStack automatically configures each guest virtual machine’s
-networking and storage settings.
-
-CloudStack internally manages a pool of virtual appliances to support
-the cloud itself. These appliances offer services such as firewalling,
-routing, DHCP, VPN access, console proxy, storage access, and storage
-replication. The extensive use of virtual appliances simplifies the
-installation, configuration, and ongoing management of a cloud
-deployment.
-
-**Graphical User Interface**
-
-CloudStack offers an administrator's Web interface, used for
-provisioning and managing the cloud, as well as an end-user's Web
-interface, used for running VMs and managing VM templates. The UI can be
-customized to reflect the desired service provider or enterprise look
-and feel.
-
-**API and Extensibility**
-
-CloudStack provides an API that gives programmatic access to all the
-management features available in the UI. The API is maintained and
-documented. This API enables the creation of command line tools and new
-user interfaces to suit particular needs. See the Developer’s Guide and
-API Reference, both available at `Apache CloudStack
-Guides <http://cloudstack.apache.org/docs/en-US/index.html>`__ and
-`Apache CloudStack API
-Reference <http://cloudstack.apache.org/docs/api/index.html>`__
-respectively.
-
-The CloudStack pluggable allocation architecture allows the creation of
-new types of allocators for the selection of storage and Hosts. See the
-Allocator Implementation Guide
-(`http://docs.cloudstack.org/CloudStack\_Documentation/Allocator\_Implementation\_Guide <http://docs.cloudstack.org/CloudStack_Documentation/Allocator_Implementation_Guide>`__).
-
-**High Availability**
-
-CloudStack has a number of features to increase the availability of the
-system. The Management Server itself may be deployed in a multi-node
-installation where the servers are load balanced. MySQL may be
-configured to use replication to provide for a manual failover in the
-event of database loss. For the hosts, CloudStack supports NIC bonding
-and the use of separate networks for storage as well as iSCSI Multipath.
-
-1.3. Deployment Architecture Overview
--------------------------------------
-
-A CloudStack installation consists of two parts: the Management Server
-and the cloud infrastructure that it manages. When you set up and manage
-a CloudStack cloud, you provision resources such as hosts, storage
-devices, and IP addresses into the Management Server, and the Management
-Server manages those resources.
-
-The minimum production installation consists of one machine running the
-CloudStack Management Server and another machine to act as the cloud
-infrastructure (in this case, a very simple infrastructure consisting of
-one host running hypervisor software). In its smallest deployment, a
-single machine can act as both the Management Server and the hypervisor
-host (using the KVM hypervisor).
-
-|basic-deployment.png: Basic two-machine deployment|
-
-A more full-featured installation consists of a highly-available
-multi-node Management Server installation and up to tens of thousands of
-hosts using any of several advanced networking setups. For information
-about deployment options, see the "Choosing a Deployment Architecture"
-section of the CloudStack Installation Guide.
-
-1.3.1. Management Server Overview
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Management Server is the CloudStack software that manages cloud
-resources. By interacting with the Management Server through its UI or
-API, you can configure and manage your cloud infrastructure.
-
-The Management Server runs on a dedicated server or VM. It controls
-allocation of virtual machines to hosts and assigns storage and IP
-addresses to the virtual machine instances. The Management Server runs
-in a Tomcat container and requires a MySQL database for persistence.
-
-The machine must meet the system requirements described in System
-Requirements.
-
-The Management Server:
-
--  
-
-   Provides the web user interface for the administrator and a reference
-   user interface for end users.
-
--  
-
-   Provides the APIs for CloudStack.
-
--  
-
-   Manages the assignment of guest VMs to particular hosts.
-
--  
-
-   Manages the assignment of public and private IP addresses to
-   particular accounts.
-
--  
-
-   Manages the allocation of storage to guests as virtual disks.
-
--  
-
-   Manages snapshots, templates, and ISO images, possibly replicating
-   them across data centers.
-
--  
-
-   Provides a single point of configuration for the cloud.
-
-1.3.2. Cloud Infrastructure Overview
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Management Server manages one or more zones (typically, datacenters)
-containing host computers where guest virtual machines will run. The
-cloud infrastructure is organized as follows:
-
--  
-
-   Zone: Typically, a zone is equivalent to a single datacenter. A zone
-   consists of one or more pods and secondary storage.
-
--  
-
-   Pod: A pod is usually one rack of hardware that includes a layer-2
-   switch and one or more clusters.
-
--  
-
-   Cluster: A cluster consists of one or more hosts and primary storage.
-
--  
-
-   Host: A single compute node within a cluster. The hosts are where the
-   actual cloud services run in the form of guest virtual machines.
-
--  
-
-   Primary storage is associated with a cluster, and it stores the disk
-   volumes for all the VMs running on hosts in that cluster.
-
--  
-
-   Secondary storage is associated with a zone, and it stores templates,
-   ISO images, and disk volume snapshots.
-
-|infrastructure\_overview.png: Nested organization of a zone|
-
-**More Information**
-
-For more information, see documentation on cloud infrastructure
-concepts.
-
-1.3.3. Networking Overview
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-CloudStack offers two types of networking scenario:
-
--  
-
-   Basic. For AWS-style networking. Provides a single network where
-   guest isolation can be provided through layer-3 means such as
-   security groups (IP address source filtering).
-
--  
-
-   Advanced. For more sophisticated network topologies. This network
-   model provides the most flexibility in defining guest networks.
-
-For more details, see Network Setup.
-
-`2.1. About Regions <#about-regions>`__
-
-`2.2. About Zones <#about-zones>`__
-
-`2.3. About Pods <#about-pods>`__
-
-`2.4. About Clusters <#about-clusters>`__
-
-`2.5. About Hosts <#about-hosts>`__
-
-`2.6. About Primary Storage <#about-primary-storage>`__
-
-`2.7. About Secondary Storage <#about-secondary-storage>`__
-
-`2.8. About Physical Networks <#about-physical-networks>`__
-
-`2.8.1. Basic Zone Network Traffic
-Types <#basic-zone-network-traffic-types>`__
-
-`2.8.2. Basic Zone Guest IP
-Addresses <#basic-zone-guest-ip-addresses>`__
-
-`2.8.3. Advanced Zone Network Traffic
-Types <#advanced-zone-network-traffic-types>`__
-
-`2.8.4. Advanced Zone Guest IP
-Addresses <#advanced-zone-guest-ip-addresses>`__
-
-`2.8.5. Advanced Zone Public IP
-Addresses <#advanced-zone-public-ip-addresses>`__
-
-`2.8.6. System Reserved IP Addresses <#system-reserved-ip-addresses>`__
-
-2.1. About Regions
-------------------
-
-To increase reliability of the cloud, you can optionally group resources
-into multiple geographic regions. A region is the largest available
-organizational unit within a CloudStack deployment. A region is made up
-of several availability zones, where each zone is roughly equivalent to
-a datacenter. Each region is controlled by its own cluster of Management
-Servers, running in one of the zones. The zones in a region are
-typically located in close geographical proximity. Regions are a useful
-technique for providing fault tolerance and disaster recovery.
-
-By grouping zones into regions, the cloud can achieve higher
-availability and scalability. User accounts can span regions, so that
-users can deploy VMs in multiple, widely-dispersed regions. Even if one
-of the regions becomes unavailable, the services are still available to
-the end-user through VMs deployed in another region. And by grouping
-communities of zones under their own nearby Management Servers, the
-latency of communications within the cloud is reduced compared to
-managing widely-dispersed zones from a single central Management Server.
-
-Usage records can also be consolidated and tracked at the region level,
-creating reports or invoices for each geographic region.
-
-|region-overview.png: Nested structure of a region.|
-
-Regions are visible to the end user. When a user starts a guest VM on a
-particular CloudStack Management Server, the user is implicitly
-selecting that region for their guest. Users might also be required to
-copy their private templates to additional regions to enable creation of
-guest VMs using their templates in those regions.
-
-2.2. About Zones
-----------------
-
-A zone is the second largest organizational unit within a CloudStack
-deployment. A zone typically corresponds to a single datacenter,
-although it is permissible to have multiple zones in a datacenter. The
-benefit of organizing infrastructure into zones is to provide physical
-isolation and redundancy. For example, each zone can have its own power
-supply and network uplink, and the zones can be widely separated
-geographically (though this is not required).
-
-A zone consists of:
-
--  
-
-   One or more pods. Each pod contains one or more clusters of hosts and
-   one or more primary storage servers.
-
--  
-
-   A zone may contain one or more primary storage servers, which are
-   shared by all the pods in the zone.
-
--  
-
-   Secondary storage, which is shared by all the pods in the zone.
-
-|zone-overview.png: Nested structure of a simple zone.|
-
-Zones are visible to the end user. When a user starts a guest VM, the
-user must select a zone for their guest. Users might also be required to
-copy their private templates to additional zones to enable creation of
-guest VMs using their templates in those zones.
-
-Zones can be public or private. Public zones are visible to all users.
-This means that any user may create a guest in that zone. Private zones
-are reserved for a specific domain. Only users in that domain or its
-subdomains may create guests in that zone.
-
-Hosts in the same zone are directly accessible to each other without
-having to go through a firewall. Hosts in different zones can access
-each other through statically configured VPN tunnels.
-
-For each zone, the administrator must decide the following.
-
--  
-
-   How many pods to place in each zone.
-
--  
-
-   How many clusters to place in each pod.
-
--  
-
-   How many hosts to place in each cluster.
-
--  
-
-   (Optional) How many primary storage servers to place in each zone and
-   total capacity for these storage servers.
-
--  
-
-   How many primary storage servers to place in each cluster and total
-   capacity for these storage servers.
-
--  
-
-   How much secondary storage to deploy in a zone.
-
-When you add a new zone using the CloudStack UI, you will be prompted to
-configure the zone’s physical network and add the first pod, cluster,
-host, primary storage, and secondary storage.
-
-In order to support zone-wide functions for VMware, CloudStack is aware
-of VMware Datacenters and can map each Datacenter to a CloudStack zone.
-To enable features like storage live migration and zone-wide primary
-storage for VMware hosts, CloudStack has to make sure that a zone
-contains only a single VMware Datacenter. Therefore, when you are
-creating a new CloudStack zone, you can select a VMware Datacenter for
-the zone. If you are provisioning multiple VMware Datacenters, each one
-will be set up as a single zone in CloudStack.
-
-Note
-----
-
-If you are upgrading from a previous CloudStack version, and your
-existing deployment contains a zone with clusters from multiple VMware
-Datacenters, that zone will not be forcibly migrated to the new model.
-It will continue to function as before. However, any new zone-wide
-operations, such as zone-wide primary storage and live storage
-migration, will not be available in that zone.
-
-2.3. About Pods
----------------
-
-A pod often represents a single rack. Hosts in the same pod are in the
-same subnet. A pod is the third-largest organizational unit within a
-CloudStack deployment. Pods are contained within zones. Each zone can
-contain one or more pods. A pod consists of one or more clusters of
-hosts and one or more primary storage servers. Pods are not visible to
-the end user.
-
-|pod-overview.png: Nested structure of a simple pod|
-
-2.4. About Clusters
--------------------
-
-A cluster provides a way to group hosts. To be precise, a cluster is a
-XenServer server pool, a set of KVM servers, , or a VMware cluster
-preconfigured in vCenter. The hosts in a cluster all have identical
-hardware, run the same hypervisor, are on the same subnet, and access
-the same shared primary storage. Virtual machine instances (VMs) can be
-live-migrated from one host to another within the same cluster, without
-interrupting service to the user.
-
-A cluster is the fourth-largest organizational unit within a CloudStack
-deployment. Clusters are contained within pods, and pods are contained
-within zones. Size of the cluster is limited by the underlying
-hypervisor, although the CloudStack recommends less in most cases; see
-Best Practices.
-
-A cluster consists of one or more hosts and one or more primary storage
-servers.
-
-|cluster-overview.png: Structure of a simple cluster|
-
-CloudStack allows multiple clusters in a cloud deployment.
-
-Even when local storage is used exclusively, clusters are still required
-organizationally, even if there is just one host per cluster.
-
-When VMware is used, every VMware cluster is managed by a vCenter
-server. An Administrator must register the vCenter server with
-CloudStack. There may be multiple vCenter servers per zone. Each vCenter
-server may manage multiple VMware clusters.
-
-2.5. About Hosts
-----------------
-
-A host is a single computer. Hosts provide the computing resources that
-run guest virtual machines. Each host has hypervisor software installed
-on it to manage the guest VMs. For example, a host can be a Citrix
-XenServer server, a Linux KVM-enabled server, an ESXi server, or a
-Windows Hyper-V server.
-
-The host is the smallest organizational unit within a CloudStack
-deployment. Hosts are contained within clusters, clusters are contained
-within pods, pods are contained within zones, and zones can be contained
-within regions.
-
-Hosts in a CloudStack deployment:
-
--  
-
-   Provide the CPU, memory, storage, and networking resources needed to
-   host the virtual machines
-
--  
-
-   Interconnect using a high bandwidth TCP/IP network and connect to the
-   Internet
-
--  
-
-   May reside in multiple data centers across different geographic
-   locations
-
--  
-
-   May have different capacities (different CPU speeds, different
-   amounts of RAM, etc.), although the hosts within a cluster must all
-   be homogeneous
-
-Additional hosts can be added at any time to provide more capacity for
-guest VMs.
-
-CloudStack automatically detects the amount of CPU and memory resources
-provided by the hosts.
-
-Hosts are not visible to the end user. An end user cannot determine
-which host their guest has been assigned to.
-
-For a host to function in CloudStack, you must do the following:
-
--  
-
-   Install hypervisor software on the host
-
--  
-
-   Assign an IP address to the host
-
--  
-
-   Ensure the host is connected to the CloudStack Management Server.
-
-2.6. About Primary Storage
---------------------------
-
-Primary storage is associated with a cluster or (in KVM and VMware) a
-zone, and it stores the disk volumes for all the VMs running on hosts.
-
-You can add multiple primary storage servers to a cluster or zone. At
-least one is required. It is typically located close to the hosts for
-increased performance. CloudStack manages the allocation of guest
-virtual disks to particular primary storage devices.
-
-It is useful to set up zone-wide primary storage when you want to avoid
-extra data copy operations. With cluster-based primary storage, data in
-the primary storage is directly available only to VMs within that
-cluster. If a VM in a different cluster needs some of the data, it must
-be copied from one cluster to another, using the zone's secondary
-storage as an intermediate step. This operation can be unnecessarily
-time-consuming.
-
-For Hyper-V, SMB/CIFS storage is supported. Note that Zone-wide Primary
-Storage is not supported in Hyper-V.
-
-CloudStack is designed to work with all standards-compliant iSCSI and
-NFS servers that are supported by the underlying hypervisor, including,
-for example:
-
--  
-
-   Dell EqualLogic™ for iSCSI
-
--  
-
-   Network Appliances filers for NFS and iSCSI
-
--  
-
-   Scale Computing for NFS
-
-If you intend to use only local disk for your installation, you can skip
-adding separate primary storage.
-
-2.7. About Secondary Storage
-----------------------------
-
-Secondary storage stores the following:
-
--  
-
-   Templates — OS images that can be used to boot VMs and can include
-   additional configuration information, such as installed applications
-
--  
-
-   ISO images — disc images containing data or bootable media for
-   operating systems
-
--  
-
-   Disk volume snapshots — saved copies of VM data which can be used for
-   data recovery or to create new templates
-
-The items in secondary storage are available to all hosts in the scope
-of the secondary storage, which may be defined as per zone or per
-region.
-
-To make items in secondary storage available to all hosts throughout the
-cloud, you can add object storage in addition to the zone-based NFS
-Secondary Staging Store. It is not necessary to copy templates and
-snapshots from one zone to another, as would be required when using zone
-NFS alone. Everything is available everywhere.
-
-For Hyper-V hosts, SMB/CIFS storage is supported.
-
-CloudStack provides plugins that enable both OpenStack Object Storage
-(Swift, `swift.openstack.org <http://swift.openstack.org>`__) and Amazon
-Simple Storage Service (S3) object storage. When using one of these
-storage plugins, you configure Swift or S3 storage for the entire
-CloudStack, then set up the NFS Secondary Staging Store for each zone.
-The NFS storage in each zone acts as a staging area through which all
-templates and other secondary storage data pass before being forwarded
-to Swift or S3. The backing object storage acts as a cloud-wide
-resource, making templates and other data available to any zone in the
-cloud.
-
-Warning
--------
-
-Heterogeneous Secondary Storage is not supported in Regions. For
-example, you cannot set up multiple zones, one using NFS secondary and
-the other using S3 or Swift secondary.
-
-2.8. About Physical Networks
-----------------------------
-
-Part of adding a zone is setting up the physical network. One or (in an
-advanced zone) more physical networks can be associated with each zone.
-The network corresponds to a NIC on the hypervisor host. Each physical
-network can carry one or more types of network traffic. The choices of
-traffic type for each network vary depending on whether you are creating
-a zone with basic networking or advanced networking.
-
-A physical network is the actual network hardware and wiring in a zone.
-A zone can have multiple physical networks. An administrator can:
-
--  
-
-   Add/Remove/Update physical networks in a zone
-
--  
-
-   Configure VLANs on the physical network
-
--  
-
-   Configure a name so the network can be recognized by hypervisors
-
--  
-
-   Configure the service providers (firewalls, load balancers, etc.)
-   available on a physical network
-
--  
-
-   Configure the IP addresses trunked to a physical network
-
--  
-
-   Specify what type of traffic is carried on the physical network, as
-   well as other properties like network speed
-
-2.8.1. Basic Zone Network Traffic Types
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When basic networking is used, there can be only one physical network in
-the zone. That physical network carries the following traffic types:
-
--  
-
-   Guest. When end users run VMs, they generate guest traffic. The guest
-   VMs communicate with each other over a network that can be referred
-   to as the guest network. Each pod in a basic zone is a broadcast
-   domain, and therefore each pod has a different IP range for the guest
-   network. The administrator must configure the IP range for each pod.
-
--  
-
-   Management. When CloudStack's internal resources communicate with
-   each other, they generate management traffic. This includes
-   communication between hosts, system VMs (VMs used by CloudStack to
-   perform various tasks in the cloud), and any other component that
-   communicates directly with the CloudStack Management Server. You must
-   configure the IP range for the system VMs to use.
-
-   Note
-   ----
-
-   We strongly recommend the use of separate NICs for management traffic
-   and guest traffic.
-
--  
-
-   Public. Public traffic is generated when VMs in the cloud access the
-   Internet. Publicly accessible IPs must be allocated for this purpose.
-   End users can use the CloudStack UI to acquire these IPs to implement
-   NAT between their guest network and the public network, as described
-   in Acquiring a New IP Address.
-
--  
-
-   Storage. While labeled "storage" this is specifically about secondary
-   storage, and doesn't affect traffic for primary storage. This
-   includes traffic such as VM templates and snapshots, which is sent
-   between the secondary storage VM and secondary storage servers.
-   CloudStack uses a separate Network Interface Controller (NIC) named
-   storage NIC for storage network traffic. Use of a storage NIC that
-   always operates on a high bandwidth network allows fast template and
-   snapshot copying. You must configure the IP range to use for the
-   storage network.
-
-In a basic network, configuring the physical network is fairly
-straightforward. In most cases, you only need to configure one guest
-network to carry traffic that is generated by guest VMs. If you use a
-NetScaler load balancer and enable its elastic IP and elastic load
-balancing (EIP and ELB) features, you must also configure a network to
-carry public traffic. CloudStack takes care of presenting the necessary
-network configuration steps to you in the UI when you add a new zone.
-
-2.8.2. Basic Zone Guest IP Addresses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When basic networking is used, CloudStack will assign IP addresses in
-the CIDR of the pod to the guests in that pod. The administrator must
-add a Direct IP range on the pod for this purpose. These IPs are in the
-same VLAN as the hosts.
-
-2.8.3. Advanced Zone Network Traffic Types
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When advanced networking is used, there can be multiple physical
-networks in the zone. Each physical network can carry one or more
-traffic types, and you need to let CloudStack know which type of network
-traffic you want each network to carry. The traffic types in an advanced
-zone are:
-
--  
-
-   Guest. When end users run VMs, they generate guest traffic. The guest
-   VMs communicate with each other over a network that can be referred
-   to as the guest network. This network can be isolated or shared. In
-   an isolated guest network, the administrator needs to reserve VLAN
-   ranges to provide isolation for each CloudStack account’s network
-   (potentially a large number of VLANs). In a shared guest network, all
-   guest VMs share a single network.
-
--  
-
-   Management. When CloudStack’s internal resources communicate with
-   each other, they generate management traffic. This includes
-   communication between hosts, system VMs (VMs used by CloudStack to
-   perform various tasks in the cloud), and any other component that
-   communicates directly with the CloudStack Management Server. You must
-   configure the IP range for the system VMs to use.
-
--  
-
-   Public. Public traffic is generated when VMs in the cloud access the
-   Internet. Publicly accessible IPs must be allocated for this purpose.
-   End users can use the CloudStack UI to acquire these IPs to implement
-   NAT between their guest network and the public network, as described
-   in “Acquiring a New IP Address” in the Administration Guide.
-
--  
-
-   Storage. While labeled "storage" this is specifically about secondary
-   storage, and doesn't affect traffic for primary storage. This
-   includes traffic such as VM templates and snapshots, which is sent
-   between the secondary storage VM and secondary storage servers.
-   CloudStack uses a separate Network Interface Controller (NIC) named
-   storage NIC for storage network traffic. Use of a storage NIC that
-   always operates on a high bandwidth network allows fast template and
-   snapshot copying. You must configure the IP range to use for the
-   storage network.
-
-These traffic types can each be on a separate physical network, or they
-can be combined with certain restrictions. When you use the Add Zone
-wizard in the UI to create a new zone, you are guided into making only
-valid choices.
-
-2.8.4. Advanced Zone Guest IP Addresses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When advanced networking is used, the administrator can create
-additional networks for use by the guests. These networks can span the
-zone and be available to all accounts, or they can be scoped to a single
-account, in which case only the named account may create guests that
-attach to these networks. The networks are defined by a VLAN ID, IP
-range, and gateway. The administrator may provision thousands of these
-networks if desired. Additionally, the administrator can reserve a part
-of the IP address space for non-CloudStack VMs and servers.
-
-2.8.5. Advanced Zone Public IP Addresses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When advanced networking is used, the administrator can create
-additional networks for use by the guests. These networks can span the
-zone and be available to all accounts, or they can be scoped to a single
-account, in which case only the named account may create guests that
-attach to these networks. The networks are defined by a VLAN ID, IP
-range, and gateway. The administrator may provision thousands of these
-networks if desired.
-
-2.8.6. System Reserved IP Addresses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In each zone, you need to configure a range of reserved IP addresses for
-the management network. This network carries communication between the
-CloudStack Management Server and various system VMs, such as Secondary
-Storage VMs, Console Proxy VMs, and DHCP.
-
-The reserved IP addresses must be unique across the cloud. You cannot,
-for example, have a host in one zone which has the same private IP
-address as a host in another zone.
-
-The hosts in a pod are assigned private IP addresses. These are
-typically RFC1918 addresses. The Console Proxy and Secondary Storage
-system VMs are also allocated private IP addresses in the CIDR of the
-pod that they are created in.
-
-Make sure computing servers and Management Servers use IP addresses
-outside of the System Reserved IP range. For example, suppose the System
-Reserved IP range starts at 192.168.154.2 and ends at 192.168.154.7.
-CloudStack can use .2 to .7 for System VMs. This leaves the rest of the
-pod CIDR, from .8 to .254, for the Management Server and hypervisor
-hosts.
-
-**In all zones:**
-
-Provide private IPs for the system in each pod and provision them in
-CloudStack.
-
-For KVM and XenServer, the recommended number of private IPs per pod is
-one per host. If you expect a pod to grow, add enough private IPs now to
-accommodate the growth.
-
-**In a zone that uses advanced networking:**
-
-For zones with advanced networking, we recommend provisioning enough
-private IPs for your total number of customers, plus enough for the
-required CloudStack System VMs. Typically, about 10 additional IPs are
-required for the System VMs. For more information about System VMs, see
-the section on working with SystemVMs in the Administrator's Guide.
-
-When advanced networking is being used, the number of private IP
-addresses available in each pod varies depending on which hypervisor is
-running on the nodes in that pod. Citrix XenServer and KVM use
-link-local addresses, which in theory provide more than 65,000 private
-IP addresses within the address block. As the pod grows over time, this
-should be more than enough for any reasonable number of hosts as well as
-IP addresses for guest virtual routers. VMWare ESXi, by contrast uses
-any administrator-specified subnetting scheme, and the typical
-administrator provides only 255 IPs per pod. Since these are shared by
-physical machines, the guest virtual router, and other entities, it is
-possible to run out of private IPs when scaling up a pod whose nodes are
-running ESXi.
-
-To ensure adequate headroom to scale private IP space in an ESXi pod
-that uses advanced networking, use one or both of the following
-techniques:
-
--  
-
-   Specify a larger CIDR block for the subnet. A subnet mask with a /20
-   suffix will provide more than 4,000 IP addresses.
-
--  
-
-   Create multiple pods, each with its own subnet. For example, if you
-   create 10 pods and each pod has 255 IPs, this will provide 2,550 IP
-   addresses.
-
-`3.1. Accounts, Users, and Domains <#accounts-users-domains>`__
-
-`3.1.1. Dedicating Resources to Accounts and
-Domains <#dedicated-host-cluster-pod>`__
-
-`3.2. Using an LDAP Server for User
-Authentication <#LDAPserver-for-user-authentication>`__
-
-`3.2.1. Example LDAP Configuration
-Commands <#example-LDAP-configuration-commands>`__
-
-`3.2.2. Search Base <#search-base>`__
-
-`3.2.3. Query Filter <#query-filter>`__
-
-`3.2.4. Search User Bind DN <#search-user-bind-dn>`__
-
-`3.2.5. SSL Keystore Path and
-Password <#SSL-keystore-path-and-password>`__
+Managing Accounts, Users and Domains
+====================================
 
 3.1. Accounts, Users, and Domains
 ---------------------------------
@@ -2006,14 +222,14 @@ Developer’s Guide.
 The following shows an example invocation of ldapConfig with an ApacheDS
 LDAP server
 
-.. code:: programlisting
+.. code:: bash
 
     http://127.0.0.1:8080/client/api?command=ldapConfig&hostname=127.0.0.1&searchbase=ou%3Dtesting%2Co%3Dproject&queryfilter=%28%26%28uid%3D%25u%29%29&binddn=cn%3DJohn+Singh%2Cou%3Dtesting%2Co%project&bindpass=secret&port=10389&ssl=true&truststore=C%3A%2Fcompany%2Finfo%2Ftrusted.ks&truststorepass=secret&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
 
 The command must be URL-encoded. Here is the same example without the
 URL encoding:
 
-.. code:: programlisting
+.. code:: bash
 
     http://127.0.0.1:8080/client/api?command=ldapConfig
     &hostname=127.0.0.1
@@ -2032,7 +248,7 @@ The following shows a similar command for Active Directory. Here, the
 search base is the testing group within a company, and the users are
 matched up based on email address.
 
-.. code:: programlisting
+.. code:: bash
 
     http://10.147.29.101:8080/client/api?command=ldapConfig&hostname=10.147.28.250&searchbase=OU%3Dtesting%2CDC%3Dcompany&queryfilter=%28%26%28mail%3D%25e%29%29 &binddn=CN%3DAdministrator%2COU%3Dtesting%2CDC%3Dcompany&bindpass=1111_aaaa&port=389&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
 
@@ -2095,19 +311,19 @@ to user attributes from the Active Directory schema.
 
 If the CloudStack user name is the same as the LDAP user ID:
 
-.. code:: programlisting
+.. code:: bash
 
     (uid=%u)
 
 If the CloudStack user name is the LDAP display name:
 
-.. code:: programlisting
+.. code:: bash
 
     (displayName=%u)
 
 To find a user by email address:
 
-.. code:: programlisting
+.. code:: bash
 
     (mail=%e)
 
@@ -2142,8 +358,8 @@ Before enabling SSL for ldapConfig, you need to get the certificate
 which the LDAP server is using and add it to a trusted keystore. You
 will need to know the path to the keystore and the password.
 
-`4.1. Service Offerings, Disk Offerings, Network Offerings, and
-Templates <#offerings-and-templates>`__
+User Services
+=============
 
 In addition to the physical and logical infrastructure of your cloud and
 the CloudStack software and servers, you also need a layer of user
@@ -2196,28 +412,8 @@ CloudStack root administrator, and is used for configuring virtual
 infrastructure resources. For more information, see Upgrading a Virtual
 Router with System Service Offerings.
 
-`5.1. Log In to the UI <#log-in>`__
-
-`5.1.1. End User's UI Overview <#end-user-ui-overview>`__
-
-`5.1.2. Root Administrator's UI Overview <#root-admin-ui-overview>`__
-
-`5.1.3. Logging In as the Root Administrator <#log-in-root-admin>`__
-
-`5.1.4. Changing the Root Password <#changing-root-password>`__
-
-`5.2. Using SSH Keys for Authentication <#using-sshkeys>`__
-
-`5.2.1. Creating an Instance Template that Supports SSH
-Keys <#create-ssh-template>`__
-
-`5.2.2. Creating the SSH Keypair <#create-ssh-keypair>`__
-
-`5.2.3. Creating an Instance <#creating-ssh-instance>`__
-
-`5.2.4. Logging In Using the SSH Keypair <#logging-in-ssh>`__
-
-`5.2.5. Resetting SSH Keys <#reset-ssh>`__
+User Interface
+==============
 
 5.1. Log In to the UI
 ---------------------
@@ -2229,7 +425,7 @@ available in popular browsers including IE7, IE8, IE9, Firefox 3.5+,
 Firefox 4, Safari 4, and Safari 5. The URL is: (substitute your own
 management server IP address)
 
-.. code:: programlisting
+.. code:: bash
 
     http://<management-server-ip-address>:8080/client
 
@@ -2298,7 +494,7 @@ provision, view, and manage your cloud infrastructure.
    Open your favorite Web browser and go to this URL. Substitute the IP
    address of your own Management Server:
 
-   .. code:: programlisting
+   .. code:: bash
 
        http://<management-server-ip-address>:8080/client
 
@@ -2345,10 +541,7 @@ provision, view, and manage your cloud infrastructure.
    chose experienced user, use the steps in `Section 5.1.4, “Changing
    the Root Password” <#changing-root-password>`__.
 
-Warning
--------
-
-You are logging in as the root administrator. This account manages the
+.. warning:: You are logging in as the root administrator. This account manages the
 CloudStack deployment, including physical infrastructure. The root
 administrator can modify configuration settings to change basic
 functionality, create or delete user accounts, and take many actions
@@ -2372,7 +565,7 @@ new, unique value.
    Open your favorite Web browser and go to this URL. Substitute the IP
    address of your own Management Server:
 
-   .. code:: programlisting
+   .. code:: bash
 
        http://<management-server-ip-address>:8080/client
 
@@ -2435,7 +628,7 @@ Create a instance template that supports SSH Keys.
    Script <http://sourceforge.net/projects/cloudstack/files/SSH%20Key%20Gen%20Script/>`__\ to
    the instance you have created.
 
-   .. code:: programlisting
+   .. code:: bash
 
        wget http://downloads.sourceforge.net/project/cloudstack/SSH%20Key%20Gen%20Script/cloud-set-guest-sshkey.in?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fcloudstack%2Ffiles%2FSSH%2520Key%2520Gen%2520Script%2F&ts=1331225219&use_mirror=iweb
 
@@ -2443,7 +636,7 @@ Create a instance template that supports SSH Keys.
 
    Copy the file to /etc/init.d.
 
-   .. code:: programlisting
+   .. code:: bash
 
        cp cloud-set-guest-sshkey.in /etc/init.d/
 
@@ -2451,7 +644,7 @@ Create a instance template that supports SSH Keys.
 
    Give the necessary permissions on the script:
 
-   .. code:: programlisting
+   .. code:: bash
 
        chmod +x /etc/init.d/cloud-set-guest-sshkey.in
 
@@ -2459,7 +652,7 @@ Create a instance template that supports SSH Keys.
 
    Run the script while starting up the operating system:
 
-   .. code:: programlisting
+   .. code:: bash
 
        chkconfig --add cloud-set-guest-sshkey.in
 
@@ -2477,10 +670,7 @@ call to the cloudstack api.
 For example, make a call from the cloudstack server to create a SSH
 keypair called "keypair-doc" for the admin account in the root domain:
 
-Note
-----
-
-Ensure that you adjust these values to meet your needs. If you are
+.. note:: Ensure that you adjust these values to meet your needs. If you are
 making the API call from a different server, your URL/PORT will be
 different, and you will need to use the API keys.
 
@@ -2488,13 +678,13 @@ different, and you will need to use the API keys.
 
    Run the following curl command:
 
-   .. code:: programlisting
+   .. code:: bash
 
        curl --globoff "http://localhost:8096/?command=createSSHKeyPair&name=keypair-doc&account=admin&domainid=5163440e-c44b-42b5-9109-ad75cae8e8a2"
 
    The output is something similar to what is given below:
 
-   .. code:: programlisting
+   .. code:: bash
 
        <?xml version="1.0" encoding="ISO-8859-1"?><createsshkeypairresponse cloud-stack-version="3.0.0.20120228045507"><keypair><name>keypair-doc</name><fingerprint>f6:77:39:d5:5e:77:02:22:6a:d8:7f:ce:ab:cd:b3:56</fingerprint><privatekey>-----BEGIN RSA PRIVATE KEY-----
        MIICXQIBAAKBgQCSydmnQ67jP6lNoXdX3noZjQdrMAWNQZ7y5SrEu4wDxplvhYci
@@ -2514,7 +704,7 @@ different, and you will need to use the API keys.
 
    Copy the key data into a file. The file looks like this:
 
-   .. code:: programlisting
+   .. code:: bash
 
        -----BEGIN RSA PRIVATE KEY-----
        MIICXQIBAAKBgQCSydmnQ67jP6lNoXdX3noZjQdrMAWNQZ7y5SrEu4wDxplvhYci
@@ -2542,15 +732,12 @@ Instance Template that Supports SSH Keys” <#create-ssh-template>`__.
 Ensure that you use the same SSH key name that you created at
 `Section 5.2.2, “Creating the SSH Keypair” <#create-ssh-keypair>`__.
 
-Note
-----
-
-You cannot create the instance by using the GUI at this time and
+.. note:: You cannot create the instance by using the GUI at this time and
 associate the instance with the newly created SSH keypair.
 
 A sample curl command to create a new instance is:
 
-.. code:: programlisting
+.. code:: bash
 
     curl --globoff http://localhost:<port number>/?command=deployVirtualMachine\&zoneId=1\&serviceOfferingId=18727021-7556-4110-9322-d625b52e0813\&templateId=e899c18a-ce13-4bbf-98a9-625c5026e0b5\&securitygroupids=ff03f02f-9e3b-48f8-834d-91b822da40c5\&account=admin\&domainid=1\&keypair=keypair-doc
 
@@ -2566,7 +753,7 @@ in to the cloud setup.
 
 For exaple, from a Linux OS, run:
 
-.. code:: programlisting
+.. code:: bash
 
     ssh -i ~/.ssh/keypair-doc <ip address>
 
@@ -2582,33 +769,8 @@ compromised SSH keypair can be changed, and the user can access the VM
 by using the new keypair. Just create or register a new keypair, then
 call resetSSHKeyForVirtualMachine.
 
-`6.1. Overview of Projects <#projects-overview>`__
-
-`6.2. Configuring Projects <#configuring-projects>`__
-
-`6.2.1. Setting Up Invitations <#set-up-invitations>`__
-
-`6.2.2. Setting Resource Limits for
-Projects <#set-resource-limits-for-projects>`__
-
-`6.2.3. Setting Project Creator
-Permissions <#set-projects-creator-permissions>`__
-
-`6.3. Creating a New Project <#create-new-projects>`__
-
-`6.4. Adding Members to a Project <#add-members-to-projects>`__
-
-`6.4.1. Sending Project Membership
-Invitations <#send-projects-membership-invitation>`__
-
-`6.4.2. Adding Project Members From the
-UI <#add-projects-members-from-ui>`__
-
-`6.5. Accepting a Membership Invitation <#accept-membership-invite>`__
-
-`6.6. Suspending or Deleting a Project <#suspend-project>`__
-
-`6.7. Using the Project View <#use-project-view>`__
+Using Projects to Organize Users and Resources
+==============================================
 
 6.1. Overview of Projects
 -------------------------
@@ -2743,7 +905,7 @@ and set up the invitations feature in CloudStack.
 
    Restart the Management Server:
 
-   .. code:: programlisting
+   .. code:: bash
 
        service cloudstack-management restart
 
@@ -2857,7 +1019,7 @@ new limit.
 
    Restart the Management Server.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # service cloudstack-management restart
 
@@ -2894,7 +1056,7 @@ or you can restrict that ability to just CloudStack administrators.
 
    Restart the Management Server.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # service cloudstack-management restart
 
@@ -3160,59 +1322,8 @@ and resources.
       until the new member accepts, the invitation timeout is reached,
       or you cancel the invitation.
 
-`7.1. Overview of Provisioning Steps <#provisioning-steps-overview>`__
-
-`7.2. Adding Regions (optional) <#region-add>`__
-
-`7.2.1. The First Region: The Default Region <#region-first>`__
-
-`7.2.2. Adding a Region <#region-add-2>`__
-
-`7.2.3. Adding Third and Subsequent Regions <#region-add-n>`__
-
-`7.2.4. Deleting a Region <#region-delete>`__
-
-`7.3. Adding a Zone <#zone-add>`__
-
-`7.3.1. Basic Zone Configuration <#basic-zone-configuration>`__
-
-`7.3.2. Advanced Zone Configuration <#advanced-zone-configuration>`__
-
-`7.4. Adding a Pod <#pod-add>`__
-
-`7.5. Adding a Cluster <#cluster-add>`__
-
-`7.5.1. Add Cluster: KVM or XenServer <#add-clusters-kvm-xenserver>`__
-
-`7.5.2. Add Cluster: vSphere <#add-clusters-vsphere>`__
-
-`7.6. Adding a Host <#host-add>`__
-
-`7.6.1. Adding a Host (XenServer or
-KVM) <#host-add-xenserver-kvm-ovm>`__
-
-`7.6.2. Adding a Host (vSphere) <#host-add-vsphere>`__
-
-`7.7. Add Primary Storage <#primary-storage-add>`__
-
-`7.7.1. System Requirements for Primary
-Storage <#sys-require-primary-storage>`__
-
-`7.7.2. Adding Primary Storage <#adding-primary-storage>`__
-
-`7.7.3. Configuring a Storage Plug-in <#idp140221224805280>`__
-
-`7.8. Add Secondary Storage <#secondary-storage-add>`__
-
-`7.8.1. System Requirements for Secondary
-Storage <#sys-require-secondary-storage>`__
-
-`7.8.2. Adding Secondary Storage <#adding-secondary-storage>`__
-
-`7.8.3. Adding an NFS Secondary Staging Store for Each
-Zone <#secondary-staging-store>`__
-
-`7.9. Initialize and Test <#initialize-and-test>`__
+Steps to Provision your Cloud Infrastructure
+============================================
 
 This section tells how to add regions, zones, pods, clusters, hosts,
 storage, and networks to your cloud. If you are unfamiliar with these
@@ -3308,7 +1419,7 @@ region.
    for the new region. The default region is automatically assigned a
    region ID of 1, so your first additional region might be region 2.
 
-   .. code:: programlisting
+   .. code:: bash
 
        cloudstack-setup-databases cloud:<dbpassword>@localhost --deploy-as=root:<password> -e <encryption_type> -m <management_server_key> -k <database_key> -r <region_id>
 
@@ -3369,7 +1480,7 @@ region.
 
       First, run this command to copy the contents of the database:
 
-      .. code:: programlisting
+      .. code:: bash
 
           # mysqldump -u root -p<mysql_password> -h <region1_db_host> cloud account user domain > region1.sql
 
@@ -3377,7 +1488,7 @@ region.
 
       Then run this command to put the data onto the region 2 database:
 
-      .. code:: programlisting
+      .. code:: bash
 
           # mysql -u root -p<mysql_password> -h <region2_db_host> cloud < region1.sql
 
@@ -3385,7 +1496,7 @@ region.
 
    Remove project accounts. Run these commands on the region 2 database:
 
-   .. code:: programlisting
+   .. code:: bash
 
        mysql> delete from account where type = 5;
 
@@ -3393,7 +1504,7 @@ region.
 
    Set the default zone as null:
 
-   .. code:: programlisting
+   .. code:: bash
 
        mysql> update account set default_zone_id = null;
 
@@ -3413,7 +1524,7 @@ repeat certain steps additional times for each additional region:
    Install CloudStack in each additional region. Set the region ID for
    each region during the database setup step.
 
-   .. code:: programlisting
+   .. code:: bash
 
        cloudstack-setup-databases cloud:<dbpassword>@localhost --deploy-as=root:<password> -e <encryption_type> -m <management_server_key> -k <database_key> -r <region_id>
 
@@ -3471,7 +1582,7 @@ repeat certain steps additional times for each additional region:
 
       First, run this command to copy the contents of the database:
 
-      .. code:: programlisting
+      .. code:: bash
 
           # mysqldump -u root -p<mysql_password> -h <region1_db_host> cloud account user domain > region1.sql
 
@@ -3480,7 +1591,7 @@ repeat certain steps additional times for each additional region:
       Then run this command to put the data onto the new region's
       database. For example, for region 3:
 
-      .. code:: programlisting
+      .. code:: bash
 
           # mysql -u root -p<mysql_password> -h <region3_db_host> cloud < region1.sql
 
@@ -3488,7 +1599,7 @@ repeat certain steps additional times for each additional region:
 
    Remove project accounts. Run these commands on the region 3 database:
 
-   .. code:: programlisting
+   .. code:: bash
 
        mysql> delete from account where type = 5;
 
@@ -3496,7 +1607,7 @@ repeat certain steps additional times for each additional region:
 
    Set the default zone as null:
 
-   .. code:: programlisting
+   .. code:: bash
 
        mysql> update account set default_zone_id = null;
 
@@ -3852,10 +1963,7 @@ and secondary storage.
    always add more hosts later. For an overview of what a host is, see
    About Hosts.
 
-   Note
-   ----
-
-   When you add a hypervisor host to CloudStack, the host must not have
+   .. note:: When you add a hypervisor host to CloudStack, the host must not have
    any VMs already running.
 
    Before you can configure the host, you need to install the hypervisor
@@ -4108,10 +2216,7 @@ and secondary storage.
    always add more hosts later. For an overview of what a host is, see
    `Section 2.5, “About Hosts” <#about-hosts>`__.
 
-   Note
-   ----
-
-   When you deploy CloudStack, the hypervisor host must not have any VMs
+   .. note:: When you deploy CloudStack, the hypervisor host must not have any VMs
    already running.
 
    Before you can configure the host, you need to install the hypervisor
@@ -4605,10 +2710,7 @@ To add a vSphere cluster to CloudStack:
    supported, as well as crucial additional steps to configure the
    hypervisor hosts for use with CloudStack.
 
-   Warning
-   -------
-
-   Be sure you have performed the additional CloudStack-specific
+   .. warning:: Be sure you have performed the additional CloudStack-specific
    configuration steps described in the hypervisor installation section
    for your particular hypervisor.
 
@@ -4634,10 +2736,7 @@ XenServer and KVM hosts can be added to a cluster at any time.
 7.6.1.1. Requirements for XenServer and KVM Hosts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Warning
--------
-
-Make sure the hypervisor host does not have any VMs already running
+.. warning:: Make sure the hypervisor host does not have any VMs already running
 before you add it to CloudStack.
 
 Configuration requirements:
@@ -4667,14 +2766,11 @@ For all additional hosts to be added to the cluster, run the following
 command. This will cause the host to join the master in a XenServer
 pool.
 
-.. code:: programlisting
+.. code:: bash
 
     # xe pool-join master-address=[master IP] master-username=root master-password=[your password]
 
-Note
-----
-
-When copying and pasting a command, be sure the command has pasted as a
+.. note:: When copying and pasting a command, be sure the command has pasted as a
 single line before executing. Some document viewers may introduce
 unwanted line breaks in copied text.
 
@@ -4692,7 +2788,7 @@ bonds on the new hosts in the cluster.
 
    Run the script:
 
-   .. code:: programlisting
+   .. code:: bash
 
        # ./cloud-setup-bonding.sh
 
@@ -4836,17 +2932,11 @@ of that procedure. You can add primary storage servers at any time, such
 as when adding a new cluster or adding more servers to an existing
 cluster.
 
-Warning
--------
-
-When using preallocated storage for primary storage, be sure there is
+.. warning:: When using preallocated storage for primary storage, be sure there is
 nothing on the storage (ex. you have an empty SAN volume or an empty NFS
 share). Adding the storage to CloudStack will destroy any existing data.
 
-Note
-----
-
-Primary storage can also be added at the zone level through the
+.. note:: Primary storage can also be added at the zone level through the
 CloudStack API (adding zone-level primary storage is not yet supported
 through the CloudStack UI).
 
@@ -4986,25 +3076,16 @@ through the CloudStack UI.
 7.7.3. Configuring a Storage Plug-in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note
-----
-
-Primary storage that is based on a custom plug-in (ex. SolidFire) must
+.. note:: Primary storage that is based on a custom plug-in (ex. SolidFire) must
 be added through the CloudStack API (described later in this section).
 There is no support at this time through the CloudStack UI to add this
 type of primary storage (although most of its features are available
 through the CloudStack UI).
 
-Note
-----
-
-At this time, a custom storage plug-in, such as the SolidFire storage
+.. note:: At this time, a custom storage plug-in, such as the SolidFire storage
 plug-in, can only be leveraged for data disks (through Disk Offerings).
 
-Note
-----
-
-The SolidFire storage plug-in for CloudStack is part of the standard
+.. note:: The SolidFire storage plug-in for CloudStack is part of the standard
 CloudStack install. There is no additional work required to add this
 component.
 
@@ -5184,10 +3265,7 @@ When you create a new zone, the first secondary storage is added as part
 of that procedure. You can add secondary storage servers at any time to
 add more servers to an existing zone.
 
-Warning
--------
-
-Ensure that nothing is stored on the server. Adding the server to
+.. warning:: Ensure that nothing is stored on the server. Adding the server to
 CloudStack will destroy any existing data.
 
 #. 
@@ -5238,10 +3316,7 @@ CloudStack will destroy any existing data.
       for zone-based storage, and the others for region-wide storage.
       For Hyper-V, select SMB/CIFS.
 
-      Warning
-      -------
-
-      Heterogeneous Secondary Storage is not supported in Regions. You
+      .. warning:: Heterogeneous Secondary Storage is not supported in Regions. You
       can use only a single NFS, S3, or Swift account per region.
 
    -  
@@ -5249,10 +3324,7 @@ CloudStack will destroy any existing data.
       Create NFS Secondary Staging Store. This box must always be
       checked.
 
-      Warning
-      -------
-
-      Even if the UI allows you to uncheck this box, do not do so. This
+      .. warning:: Even if the UI allows you to uncheck this box, do not do so. This
       checkbox and the three fields below it must be filled in. Even
       when Swift or S3 is used as the secondary storage provider, an NFS
       staging storage in each zone is still required.
@@ -5410,25 +3482,8 @@ Installation.
 If you decide to grow your deployment, you can add more hosts, primary
 storage, zones, pods, and clusters.
 
-`8.1. Compute and Disk Service
-Offerings <#compute-disk-service-offerings>`__
-
-`8.1.1. Creating a New Compute Offering <#creating-compute-offerings>`__
-
-`8.1.2. Creating a New Disk Offering <#creating-disk-offerings>`__
-
-`8.1.3. Modifying or Deleting a Service
-Offering <#modify-delete-service-offerings>`__
-
-`8.2. System Service Offerings <#system-service-offerings>`__
-
-`8.2.1. Creating a New System Service
-Offering <#creating-system-service-offerings>`__
-
-`8.3. Network Throttling <#network-rate>`__
-
-`8.4. Changing the Default System Offering for System
-VMs <#sys-offering-sysvm>`__
+Service Offerings
+=================
 
 In this chapter we discuss compute, disk, and system service offerings.
 Network offerings are discussed in the section on setting up networking
@@ -6045,7 +4100,7 @@ default system offering used for System VMs.
 
    Back up the database:
 
-   .. code:: programlisting
+   .. code:: bash
 
        mysqldump -u root -p cloud | bzip2 > cloud_backup.sql.bz2
 
@@ -6053,7 +4108,7 @@ default system offering used for System VMs.
 
    Open an MySQL prompt:
 
-   .. code:: programlisting
+   .. code:: bash
 
        mysql -u cloud -p cloud
 
@@ -6068,7 +4123,7 @@ default system offering used for System VMs.
 
       Take a note of the ID of the new offering.
 
-      .. code:: programlisting
+      .. code:: bash
 
           select id,name,unique_name,type from disk_offering;
 
@@ -6077,7 +4132,7 @@ default system offering used for System VMs.
       For the original default offering, set the value of unique\_name
       to NULL.
 
-      .. code:: programlisting
+      .. code:: bash
 
           # update disk_offering set unique_name = NULL where id = 10;
 
@@ -6093,7 +4148,7 @@ default system offering used for System VMs.
       (SSVM) offering, set unique\_name to 'Cloud.com-SecondaryStorage'.
       For example:
 
-      .. code:: programlisting
+      .. code:: bash
 
           update disk_offering set unique_name = 'Cloud.com-ConsoleProxy' where id = 16;
 
@@ -6102,7 +4157,7 @@ default system offering used for System VMs.
    Restart CloudStack Management Server. Restarting is required because
    the default offerings are loaded into the memory at startup.
 
-   .. code:: programlisting
+   .. code:: bash
 
        service cloudstack-management restart
 
@@ -6111,23 +4166,8 @@ default system offering used for System VMs.
    Destroy the existing CPVM or SSVM offerings and wait for them to be
    recreated. The new CPVM or SSVM are configured with the new offering.
 
-`9.1. Overview of Setting Up Networking for
-Users <#networks-for-users-overview>`__
-
-`9.2. About Virtual Networks <#about-virtual-networks>`__
-
-`9.2.1. Isolated Networks <#isolated-networks>`__
-
-`9.2.2. Shared Networks <#shared-networks>`__
-
-`9.2.3. Runtime Allocation of Virtual Network
-Resources <#runtime-allocation-virtual-network-resources>`__
-
-`9.3. Network Service Providers <#network-service-providers>`__
-
-`9.4. Network Offerings <#network-offerings>`__
-
-`9.4.1. Creating a New Network Offering <#creating-network-offerings>`__
+Setting Up Networking for Users
+===============================
 
 9.1. Overview of Setting Up Networking for Users
 ------------------------------------------------
@@ -6243,10 +4283,7 @@ helps to conserve network resources.
 9.3. Network Service Providers
 ------------------------------
 
-Note
-----
-
-For the most up-to-date list of supported network service providers, see
+.. note:: For the most up-to-date list of supported network service providers, see
 the CloudStack UI or call listNetworkServiceProviders.
 
 A service provider (also called a network element) is hardware or
@@ -6393,10 +4430,7 @@ No
 9.4. Network Offerings
 ----------------------
 
-Note
-----
-
-For the most up-to-date list of supported network services, see the
+.. note:: For the most up-to-date list of supported network services, see the
 CloudStack UI or call listNetworkServices.
 
 A network offering is a named set of network services, such as:
@@ -6456,10 +4490,7 @@ running a web server farm and require a scalable firewall solution, load
 balancing solution, and alternate networks for accessing the database
 backend.
 
-Note
-----
-
-If you create load balancing rules while using a network service
+.. note:: If you create load balancing rules while using a network service
 offering that includes an external load balancer device such as
 NetScaler, and later change the network service offering to one that
 uses the CloudStack virtual router, you must create a firewall rule on
@@ -6768,10 +4799,7 @@ To create a network offering:
       the conserve mode is on, you can define more than one service on
       the same public IP.
 
-      Note
-      ----
-
-      If StaticNAT is enabled, irrespective of the status of the
+      .. note:: If StaticNAT is enabled, irrespective of the status of the
       conserve mode, no port forwarding or load balancing rule can be
       created for the IP. However, you can add the firewall rules by
       using the createFirewallRule command.
@@ -6796,72 +4824,8 @@ To create a network offering:
 
    Click Add.
 
-`10.1. About Working with Virtual Machines <#about-working-with-vms>`__
-
-`10.2. Best Practices for Virtual Machines <#best-practices-vm>`__
-
-`10.2.1. Monitor VMs for Max Capacity <#best-practices-vm-monitoring>`__
-
-`10.2.2. Install Required Tools and
-Drivers <#best-practices-vm-tools>`__
-
-`10.3. VM Lifecycle <#vm-lifecycle>`__
-
-`10.4. Creating VMs <#creating-vms>`__
-
-`10.5. Accessing VMs <#accessing-vms>`__
-
-`10.6. Stopping and Starting VMs <#stopping-and-starting-vms>`__
-
-`10.7. Assigning VMs to Hosts <#host-allocation>`__
-
-`10.7.1. Affinity Groups <#affinity-groups>`__
-
-`10.8. Virtual Machine Snapshots <#vm-snapshots>`__
-
-`10.8.1. Limitations on VM Snapshots <#vm-snapshot-restrictions>`__
-
-`10.8.2. Configuring VM Snapshots <#vm-snapshot-configure>`__
-
-`10.8.3. Using VM Snapshots <#vm-snapshot-usage>`__
-
-`10.9. Changing the VM Name, OS, or
-Group <#changing-vm-name-os-group>`__
-
-`10.10. Appending a Display Name to the Guest VM’s Internal
-Name <#append-displayname-vms>`__
-
-`10.11. Changing the Service Offering for a
-VM <#changing-service-offering-for-vm>`__
-
-`10.11.1. CPU and Memory Scaling for Running
-VMs <#change-cpu-ram-for-vm>`__
-
-`10.11.2. Updating Existing VMs <#update-vms>`__
-
-`10.11.3. Configuring Dynamic CPU and RAM
-Scaling <#configure-dynamic-scaling>`__
-
-`10.11.4. How to Dynamically Scale CPU and
-RAM <#dynamic-scaling-howto>`__
-
-`10.11.5. Limitations <#dynamic-scaling-limitations>`__
-
-`10.12. Resetting the Virtual Machine Root Volume on
-Reboot <#reset-volume-on-reboot-vm>`__
-
-`10.13. Moving VMs Between Hosts (Manual Live
-Migration) <#manual-live-migration>`__
-
-`10.14. Deleting VMs <#deleting-vms>`__
-
-`10.15. Working with ISOs <#working-with-iso>`__
-
-`10.15.1. Adding an ISO <#add-iso>`__
-
-`10.15.2. Attaching an ISO to a VM <#attach-iso-to-vm>`__
-
-`10.15.3. Changing a VM's Base Image <#update-iso-vm>`__
+Working with Virtual Machines
+=============================
 
 10.1. About Working with Virtual Machines
 -----------------------------------------
@@ -6892,10 +4856,7 @@ names can be controlled by the user:
    Name – host name that the DHCP server assigns to the VM. Can be set
    by the user. Defaults to instance name
 
-Note
-----
-
-You can append the display name of a guest VM to its internal name. For
+.. note:: You can append the display name of a guest VM to its internal name. For
 more information, see `Section 10.10, “Appending a Display Name to the
 Guest VM’s Internal Name” <#append-displayname-vms>`__.
 
@@ -7030,10 +4991,7 @@ create blank virtual machines. A blank virtual machine is a virtual
 machine without an OS template. Users can attach an ISO file and install
 the OS from the CD/DVD-ROM.
 
-Note
-----
-
-You can create a VM without starting it. You can determine whether the
+.. note:: You can create a VM without starting it. You can determine whether the
 VM needs to be started as part of the VM deployment. A request
 parameter, startVM, in the deployVm API provides this feature. For more
 information, see the Developer's Guide
@@ -7071,18 +5029,12 @@ To create a VM from a template:
 
    Click Submit and your VM will be created and started.
 
-   Note
-   ----
-
-   For security reason, the internal name of the VM is visible only to
+   .. note:: For security reason, the internal name of the VM is visible only to
    the root admin.
 
 To create a VM from an ISO:
 
-Note
-----
-
-(XenServer) Windows VMs running on XenServer require PV drivers, which
+.. note:: (XenServer) Windows VMs running on XenServer require PV drivers, which
 may be provided in the template or added after the VM is created. The PV
 drivers are necessary for essential management functions such as
 mounting additional volumes and ISO images, live migration, and graceful
@@ -7456,10 +5408,7 @@ To create a VM snapshot using the CloudStack UI:
 
    Click the Take VM Snapshot button. |image22|
 
-   Note
-   ----
-
-   If a snapshot is already in progress, then clicking this button will
+   .. note:: If a snapshot is already in progress, then clicking this button will
    have no effect.
 
 #. 
@@ -7515,10 +5464,7 @@ snapshot:
 
    To revert to the snapshot, click the Revert button. |image24|
 
-Note
-----
-
-VM snapshots are deleted automatically when a VM is destroyed. You don't
+.. note:: VM snapshots are deleted automatically when a VM is destroyed. You don't
 have to manually delete the snapshots in this case.
 
 10.9. Changing the VM Name, OS, or Group
@@ -7902,10 +5848,7 @@ To manually live migrate a virtual machine
    From the list of suitable hosts, choose the one to which you want to
    move the VM.
 
-   Note
-   ----
-
-   If the VM's storage has to be migrated along with the VM, this will
+   .. note:: If the VM's storage has to be migrated along with the VM, this will
    be noted in the host list. CloudStack will take care of the storage
    migration for you.
 
@@ -8074,10 +6017,7 @@ part of a template.
 
          Red Hat Enterprise Linux 6
 
-      Note
-      ----
-
-      It is not recommended to choose an older version of the OS than
+      .. note:: It is not recommended to choose an older version of the OS than
       the version in the image. For example, choosing CentOS 5.4 to
       support a CentOS 6.2 image will usually not work. In these cases,
       choose Other.
@@ -8169,54 +6109,8 @@ restoreVirtualMachine call. In this case, the VM's root disk is
 destroyed and recreated, but from the same template or ISO that was
 already in use by the VM.
 
-`11.1. Adding Hosts <#adding-hosts>`__
-
-`11.2. Scheduled Maintenance and Maintenance Mode for
-Hosts <#scheduled-maintenance-maintenance-mode-hosts>`__
-
-`11.2.1. vCenter and Maintenance Mode <#vcenter-maintenance-mode>`__
-
-`11.2.2. XenServer and Maintenance Mode <#xenserver-maintenance-mode>`__
-
-`11.3. Disabling and Enabling Zones, Pods, and
-Clusters <#disable-enable-zones-pods-clusters>`__
-
-`11.4. Removing Hosts <#removing-hosts>`__
-
-`11.4.1. Removing XenServer and KVM
-Hosts <#removing-xenserver-kvm-hosts>`__
-
-`11.4.2. Removing vSphere Hosts <#removing-vsphere-hosts>`__
-
-`11.5. Re-Installing Hosts <#re-install-hosts>`__
-
-`11.6. Maintaining Hypervisors on
-Hosts <#maintain-hypervisors-on-hosts>`__
-
-`11.7. Changing Host Password <#change-host-password>`__
-
-`11.8. Over-Provisioning and Service Offering
-Limits <#over-provisioning-service-offering-limits>`__
-
-`11.8.1. Limitations on Over-Provisioning in XenServer and
-KVM <#overcommit-limitations>`__
-
-`11.8.2. Requirements for
-Over-Provisioning <#overcommit-prerequisites>`__
-
-`11.8.3. Setting Over-Provisioning Ratios <#create-overcommit>`__
-
-`11.8.4. Service Offering Limits and
-Over-Provisioning <#op-service-offering-limits>`__
-
-`11.9. VLAN Provisioning <#vlan-provisioning>`__
-
-`11.9.1. VLAN Allocation Example <#vlan-allocation-eg>`__
-
-`11.9.2. Adding Non Contiguous VLAN Ranges <#non-contiguous-vlan>`__
-
-`11.9.3. Assigning VLANs to Isolated
-Networks <#vlan-assign-isolated-nw>`__
+Working with Hosts
+==================
 
 11.1. Adding Hosts
 ------------------
@@ -8448,10 +6342,7 @@ essential that your hosts are completely up to date with the provided
 hypervisor patches. The hypervisor vendor is likely to refuse to support
 any system that is not up to date with patches.
 
-Note
-----
-
-The lack of up-do-date hotfixes can lead to data corruption and lost
+.. note:: The lack of up-do-date hotfixes can lead to data corruption and lost
 VMs.
 
 (XenServer) For more information, see `Highly Recommended Hotfixes for
@@ -8484,7 +6375,7 @@ To change a Node's password:
    determine these host IDs. For each hostname "h" (or vSphere cluster)
    that you are changing the password for, execute:
 
-   .. code:: programlisting
+   .. code:: bash
 
        mysql> select id from cloud.host where name like '%h%';
 
@@ -8499,7 +6390,7 @@ To change a Node's password:
    we change the passwords for hosts with IDs 5, 10, and 12 to
    "password".
 
-   .. code:: programlisting
+   .. code:: bash
 
        mysql> update cloud.host set password='password' where id=5 or id=10 or id=12;
 
@@ -8643,10 +6534,7 @@ done, CloudStack recalculates or scales the used and reserved capacities
 based on the new over-provisioning ratios, to ensure that CloudStack is
 correctly tracking the amount of free capacity.
 
-Note
-----
-
-It is safer not to deploy additional new VMs while the capacity
+.. note:: It is safer not to deploy additional new VMs while the capacity
 recalculation is underway, in case the new values for available capacity
 are not high enough to accommodate the new VMs. Just wait for the new
 used/available values to become available, to be sure there is room for
@@ -8677,10 +6565,7 @@ To change the over-provisioning ratios for an existing cluster:
    intially shown in these fields is the default value inherited from
    the global configuration settings.
 
-   Note
-   ----
-
-   In XenServer, due to a constraint of this hypervisor, you can not use
+   .. note:: In XenServer, due to a constraint of this hypervisor, you can not use
    an over-provisioning factor greater than 4.
 
 11.8.4. Service Offering Limits and Over-Provisioning
@@ -8879,57 +6764,11 @@ To enable you to assign VLANs to Isolated networks,
    network and the state is changed to Setup. In this state, the network
    will not be garbage collected.
 
-Note
-----
-
-You cannot change a VLAN once it's assigned to the network. The VLAN
+.. note:: You cannot change a VLAN once it's assigned to the network. The VLAN
 remains with the network for its entire life cycle.
 
-`12.1. Creating Templates: Overview <#create-templates-overview>`__
-
-`12.2. Requirements for Templates <#requirements-templates>`__
-
-`12.3. Best Practices for Templates <#best-practices-templates>`__
-
-`12.4. The Default Template <#default-template>`__
-
-`12.5. Private and Public Templates <#private-public-template>`__
-
-`12.6. Creating a Template from an Existing Virtual
-Machine <#create-template-from-existing-vm>`__
-
-`12.7. Creating a Template from a
-Snapshot <#create-template-from-snapshot>`__
-
-`12.8. Uploading Templates <#upload-template>`__
-
-`12.9. Exporting Templates <#export-template>`__
-
-`12.10. Creating a Linux Template <#create-linux-template>`__
-
-`12.10.1. System preparation for Linux <#prepare-linux-template>`__
-
-`12.11. Creating a Windows Template <#create-windows-template>`__
-
-`12.11.1. System Preparation for Windows Server 2008
-R2 <#sysprep-windows-server-2008R2>`__
-
-`12.11.2. System Preparation for Windows Server 2003
-R2 <#sysprep-for-windows-server-2003R2>`__
-
-`12.12. Importing Amazon Machine Images <#import-ami>`__
-
-`12.13. Converting a Hyper-V VM to a
-Template <#convert-hyperv-vm-to-template>`__
-
-`12.14. Adding Password Management to Your
-Templates <#add-password-management-to-templates>`__
-
-`12.14.1. Linux OS Installation <#linux-installation>`__
-
-`12.14.2. Windows OS Installation <#windows-installation>`__
-
-`12.15. Deleting Templates <#delete-templates>`__
+Working with Templates
+======================
 
 A template is a reusable configuration for virtual machines. When users
 launch VMs, they can choose from a list of templates in CloudStack.
@@ -9011,7 +6850,7 @@ size.
 The default template includes the standard iptables rules, which will
 block most access to the template excluding ssh.
 
-.. code:: programlisting
+.. code:: bash
 
     # iptables --list
     Chain INPUT (policy ACCEPT)
@@ -9106,10 +6945,7 @@ as the prototype for other VMs.
          PV (32-bit) or Other PV (64-bit). This choice is available only
          for XenServere:
 
-         Note
-         ----
-
-         Note: Generally you should not choose an older version of the
+         .. note:: Generally you should not choose an older version of the
          OS than the version in the image. For example, choosing CentOS
          5.4 to support a CentOS 6.2 image will in general not work. In
          those cases you should choose Other.
@@ -9203,10 +7039,7 @@ To upload a template:
 
          If the OS type of the stopped VM is not listed, choose Other.
 
-         Note
-         ----
-
-         You should not choose an older version of the OS than the
+         .. note:: You should not choose an older version of the OS than the
          version in the image. For example, choosing CentOS 5.4 to
          support a CentOS 6.2 image will in general not work. In those
          cases you should choose Other.
@@ -9306,15 +7139,12 @@ templating.
    unique to a machine. It is recommended that the name of "localhost"
    is used for installation.
 
-   Warning
-   -------
-
-   For CentOS, it is necessary to take unique identification out of the
+   .. warning:: For CentOS, it is necessary to take unique identification out of the
    interface configuration file, for this edit
    /etc/sysconfig/network-scripts/ifcfg-eth0 and change the content to
    the following.
 
-   .. code:: programlisting
+   .. code:: bash
 
                 DEVICE=eth0
                 TYPE=Ethernet
@@ -9327,7 +7157,7 @@ templating.
 
       Ubuntu
 
-      .. code:: programlisting
+      .. code:: bash
 
                           sudo -i
                           apt-get update
@@ -9339,7 +7169,7 @@ templating.
 
       CentOS
 
-      .. code:: programlisting
+      .. code:: bash
 
                           ifup eth0
                           yum update -y
@@ -9349,15 +7179,12 @@ templating.
 
    **Password management**
 
-   Note
-   ----
-
-   If preferred, custom users (such as ones created during the Ubuntu
+   .. note:: If preferred, custom users (such as ones created during the Ubuntu
    installation) should be removed. First ensure the root user account
    is enabled by giving it a password and then login as root to
    continue.
 
-   .. code:: programlisting
+   .. code:: bash
 
                 sudo passwd root
                 logout
@@ -9365,7 +7192,7 @@ templating.
    As root, remove any custom user accounts created during the
    installation process.
 
-   .. code:: programlisting
+   .. code:: bash
 
                 deluser myuser --remove-home
 
@@ -9399,7 +7226,7 @@ templating.
       /etc/dhcp/dhclient-exit-hooks.d/sethostname, and adjust the
       permissions.
 
-      .. code:: programlisting
+      .. code:: bash
 
                            #!/bin/sh
                            # dhclient change hostname script for Ubuntu
@@ -9426,10 +7253,7 @@ templating.
                   
                            chmod 774  /etc/dhcp/dhclient-exit-hooks.d/sethostname
 
-   Warning
-   -------
-
-   The following steps should be run when you are ready to template your
+   .. warning:: The following steps should be run when you are ready to template your
    Template Master. If the Template Master is rebooted during these
    steps you will have to run all the steps again. At the end of this
    process the Template Master should be shutdown and the template
@@ -9447,7 +7271,7 @@ templating.
 
       Ubuntu
 
-      .. code:: programlisting
+      .. code:: bash
 
                           rm -f /etc/udev/rules.d/70*
                           rm -f /var/lib/dhcp/dhclient.*
@@ -9456,7 +7280,7 @@ templating.
 
       CentOS
 
-      .. code:: programlisting
+      .. code:: bash
 
                           rm -f /etc/udev/rules.d/70*
                           rm -f /var/lib/dhclient/*
@@ -9469,7 +7293,7 @@ templating.
    SSH keys, which would decrease the security of the machines
    dramatically.
 
-   .. code:: programlisting
+   .. code:: bash
 
                 rm -f /etc/ssh/*key*
 
@@ -9479,7 +7303,7 @@ templating.
 
    It is good practice to remove old logs from the Template Master.
 
-   .. code:: programlisting
+   .. code:: bash
 
                 cat /dev/null > /var/log/audit/audit.log 2>/dev/null
                 cat /dev/null > /var/log/wtmp 2>/dev/null
@@ -9495,7 +7319,7 @@ templating.
    Master's hostname to be "localhost", run the following commands to
    change the hostname.
 
-   .. code:: programlisting
+   .. code:: bash
 
                 hostname localhost
                 echo "localhost" > /etc/hostname
@@ -9507,7 +7331,7 @@ templating.
    This step forces the user to change the password of the VM after the
    template has been deployed.
 
-   .. code:: programlisting
+   .. code:: bash
 
                 passwd --expire root
 
@@ -9517,7 +7341,7 @@ templating.
 
    The next step clears the bash commands you have just run.
 
-   .. code:: programlisting
+   .. code:: bash
 
                 history -c
                 unset HISTFILE
@@ -9529,7 +7353,7 @@ templating.
    Your now ready to shutdown your Template Master and create a
    template!
 
-   .. code:: programlisting
+   .. code:: bash
 
                 halt -p
 
@@ -9541,10 +7365,7 @@ templating.
    `Section 12.6, “Creating a Template from an Existing Virtual
    Machine” <#create-template-from-existing-vm>`__.
 
-Note
-----
-
-Templated VMs for both Ubuntu and CentOS may require a reboot after
+.. note:: Templated VMs for both Ubuntu and CentOS may require a reboot after
 provisioning in order to pickup the hostname.
 
 12.11. Creating a Windows Template
@@ -9554,10 +7375,7 @@ Windows templates must be prepared with Sysprep before they can be
 provisioned on multiple machines. Sysprep allows you to create a generic
 Windows template and avoid any possible SID conflicts.
 
-Note
-----
-
-(XenServer) Windows VMs running on XenServer require PV drivers, which
+.. note:: (XenServer) Windows VMs running on XenServer require PV drivers, which
 may be provided in the template or added after the VM is created. The PV
 drivers are necessary for essential management functions such as
 mounting additional volumes and ISO images, live migration, and graceful
@@ -9601,10 +7419,7 @@ Center <http://www.microsoft.com/en-us/download/details.aspx?id=9085>`__.
 
 Use the following steps to run sysprep for Windows 2008 R2:
 
-Note
-----
-
-The steps outlined here are derived from the excellent guide by Charity
+.. note:: The steps outlined here are derived from the excellent guide by Charity
 Shelbourne, originally published at `Windows Server 2008 Sysprep
 Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`__
 
@@ -9612,10 +7427,7 @@ Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-
 
    Download and install the Windows AIK
 
-   Note
-   ----
-
-   Windows AIK should not be installed on the Windows 2008 R2 VM you
+   .. note:: Windows AIK should not be installed on the Windows 2008 R2 VM you
    just created. Windows AIK should not be part of the template you
    create. It is only used to create the sysprep answer file.
 
@@ -9719,7 +7531,7 @@ Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-
    c:\\windows\\system32\\sysprep directory, you run the sysprep tool as
    follows:
 
-   .. code:: programlisting
+   .. code:: bash
 
        cd c:\Windows\System32\sysprep
        sysprep.exe /oobe /generalize /shutdown
@@ -9831,7 +7643,7 @@ steps for Windows Server 2003 R2.
 
    Run the following command to sysprep the image:
 
-   .. code:: programlisting
+   .. code:: bash
 
        c:\sysprep\sysprep.exe -reseal -mini -activated
 
@@ -9851,10 +7663,7 @@ You need to have a XenServer host with a file-based storage repository
 (either a local ext3 SR or an NFS SR) to convert to a VHD once the image
 file has been customized on the Centos/Fedora host.
 
-Note
-----
-
-When copying and pasting a command, be sure the command has pasted as a
+.. note:: When copying and pasting a command, be sure the command has pasted as a
 single line before executing. Some document viewers may introduce
 unwanted line breaks in copied text.
 
@@ -9864,7 +7673,7 @@ To import an AMI:
 
    Set up loopback on image file:
 
-   .. code:: programlisting
+   .. code:: bash
 
        # mkdir -p /mnt/loop/centos62
        # mount -o loop  CentOS_6.2_x64 /mnt/loop/centos54
@@ -9874,7 +7683,7 @@ To import an AMI:
    Install the kernel-xen package into the image. This downloads the PV
    kernel and ramdisk to the image.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # yum -c /mnt/loop/centos54/etc/yum.conf --installroot=/mnt/loop/centos62/ -y install kernel-xen
 
@@ -9882,7 +7691,7 @@ To import an AMI:
 
    Create a grub entry in /boot/grub/grub.conf.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # mkdir -p /mnt/loop/centos62/boot/grub
        # touch /mnt/loop/centos62/boot/grub/grub.conf
@@ -9893,7 +7702,7 @@ To import an AMI:
    Determine the name of the PV kernel that has been installed into the
    image.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # cd /mnt/loop/centos62
        # ls lib/modules/
@@ -9914,7 +7723,7 @@ To import an AMI:
    Based on your findings, create an entry in the grub.conf file. Below
    is an example entry.
 
-   .. code:: programlisting
+   .. code:: bash
 
        default=0
        timeout=5
@@ -9929,7 +7738,7 @@ To import an AMI:
    Edit etc/fstab, changing “sda1” to “xvda” and changing “sdb” to
    “xvdb”.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # cat etc/fstab
        /dev/xvda  /         ext3    defaults        1 1
@@ -9944,7 +7753,7 @@ To import an AMI:
    XenServer system is xvc0. Ensure that etc/inittab and etc/securetty
    have the following lines respectively:
 
-   .. code:: programlisting
+   .. code:: bash
 
        # grep xvc0 etc/inittab 
        co:2345:respawn:/sbin/agetty xvc0 9600 vt100-nav
@@ -9956,7 +7765,7 @@ To import an AMI:
    Ensure the ramdisk supports PV disk and PV network. Customize this
    for the kernel version you have determined above.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # chroot /mnt/loop/centos54
        # cd /boot/
@@ -9967,7 +7776,7 @@ To import an AMI:
 
    Change the password.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # passwd
        Changing password for user root.
@@ -9979,7 +7788,7 @@ To import an AMI:
 
    Exit out of chroot.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # exit
 
@@ -9988,7 +7797,7 @@ To import an AMI:
    Check etc/ssh/sshd\_config for lines allowing ssh login using a
    password.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # egrep "PermitRootLogin|PasswordAuthentication" /mnt/loop/centos54/etc/ssh/sshd_config  
        PermitRootLogin yes
@@ -10005,7 +7814,7 @@ To import an AMI:
 
    Unmount and delete loopback mount.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # umount /mnt/loop/centos54
        # losetup -d /dev/loop0
@@ -10017,7 +7826,7 @@ To import an AMI:
    XenServer has an NFS repository whose uuid is
    a9c5b8c8-536b-a193-a6dc-51af3e5ff799.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # scp CentOS_6.2_x64 xenhost:/var/run/sr-mount/a9c5b8c8-536b-a193-a6dc-51af3e5ff799/
 
@@ -10025,7 +7834,7 @@ To import an AMI:
 
    Log in to the Xenserver and create a VDI the same size as the image.
 
-   .. code:: programlisting
+   .. code:: bash
 
        [root@xenhost ~]# cd /var/run/sr-mount/a9c5b8c8-536b-a193-a6dc-51af3e5ff799
        [root@xenhost a9c5b8c8-536b-a193-a6dc-51af3e5ff799]#  ls -lh CentOS_6.2_x64
@@ -10037,7 +7846,7 @@ To import an AMI:
 
    Import the image file into the VDI. This may take 10–20 minutes.
 
-   .. code:: programlisting
+   .. code:: bash
 
        [root@xenhost a9c5b8c8-536b-a193-a6dc-51af3e5ff799]# xe vdi-import filename=CentOS_6.2_x64 uuid=cad7317c-258b-4ef7-b207-cdf0283a7923
 
@@ -10046,7 +7855,7 @@ To import an AMI:
    Locate a the VHD file. This is the file with the VDI’s UUID as its
    name. Compress it and upload it to your web server.
 
-   .. code:: programlisting
+   .. code:: bash
 
        [root@xenhost a9c5b8c8-536b-a193-a6dc-51af3e5ff799]# bzip2 -c cad7317c-258b-4ef7-b207-cdf0283a7923.vhd > CentOS_6.2_x64.vhd.bz2
        [root@xenhost a9c5b8c8-536b-a193-a6dc-51af3e5ff799]# scp CentOS_6.2_x64.vhd.bz2 webserver:/var/www/html/templates/
@@ -10229,7 +8038,7 @@ Use the following steps to begin the Linux OS installation:
 
    Run the following command to make the script executable:
 
-   .. code:: programlisting
+   .. code:: bash
 
        chmod +x /etc/init.d/cloud-set-guest-password
 
@@ -10240,7 +8049,7 @@ Use the following steps to begin the Linux OS installation:
 
    On Fedora, CentOS/RHEL, and Debian, run:
 
-   .. code:: programlisting
+   .. code:: bash
 
        chkconfig --add cloud-set-guest-password
 
@@ -10264,64 +8073,8 @@ When templates are deleted, the VMs instantiated from them will continue
 to run. However, new VMs cannot be created based on the deleted
 template.
 
-`13.1. Storage Overview <#storage-overview>`__
-
-`13.2. Primary Storage <#primary-storage>`__
-
-`13.2.1. Best Practices for Primary
-Storage <#best-practices-primary-storage>`__
-
-`13.2.2. Runtime Behavior of Primary
-Storage <#runtime-behavior-of-primary-storage>`__
-
-`13.2.3. Hypervisor Support for Primary
-Storage <#hypervisor-support-for-primarystorage>`__
-
-`13.2.4. Storage Tags <#storage-tags>`__
-
-`13.2.5. Maintenance Mode for Primary
-Storage <#maintenance-mode-for-primary-storage.xml>`__
-
-`13.3. Secondary Storage <#secondary-storage>`__
-
-`13.4. Working With Volumes <#working-with-volumes>`__
-
-`13.4.1. Creating a New Volume <#creating-new-volumes>`__
-
-`13.4.2. Uploading an Existing Volume to a Virtual
-Machine <#upload-existing-volume-to-vm>`__
-
-`13.4.3. Attaching a Volume <#attaching-volume>`__
-
-`13.4.4. Detaching and Moving Volumes <#detach-move-volumes>`__
-
-`13.4.5. VM Storage Migration <#vm-storage-migration>`__
-
-`13.4.6. Resizing Volumes <#resizing-volumes>`__
-
-`13.4.7. Reset VM to New Root Disk on Reboot <#reset-vm-reboot>`__
-
-`13.4.8. Volume Deletion and Garbage
-Collection <#volume-deletion-garbage-collection>`__
-
-`13.5. Working with Volume Snapshots <#working-with-snapshots>`__
-
-`13.5.1. How to Snapshot a Volume <#how-to-volume-snapshot>`__
-
-`13.5.2. Automatic Snapshot Creation and
-Retention <#automatic-snapshot-creation-retention>`__
-
-`13.5.3. Incremental Snapshots and
-Backup <#incremental-snapshots-backup>`__
-
-`13.5.4. Volume Status <#volume-status>`__
-
-`13.5.5. Snapshot Restore <#snapshot-restore>`__
-
-`13.5.6. Snapshot Job Throttling <#snapshot-throttling>`__
-
-`13.5.7. VMware Volume Snapshot
-Performance <#snapshot-performance-vmware>`__
+Working with Storage
+====================
 
 13.1. Storage Overview
 ----------------------
@@ -10582,10 +8335,7 @@ from a volume as well; this is the standard procedure for private
 template creation. Volumes are hypervisor-specific: a volume from one
 hypervisor type may not be used on a guest of another hypervisor type.
 
-Note
-----
-
-CloudStack supports attaching up to 13 data disks to a VM on XenServer
+.. note:: CloudStack supports attaching up to 13 data disks to a VM on XenServer
 hypervisor versions 6.0 and above. For the VMs on other hypervisor
 types, the data disk limit is 6.
 
@@ -10798,10 +8548,7 @@ volume from one storage pool to another.
 13.4.4. Detaching and Moving Volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note
-----
-
-This procedure is different from moving volumes from one storage pool to
+.. note:: This procedure is different from moving volumes from one storage pool to
 another as described in `Section 13.4.5, “VM Storage
 Migration” <#vm-storage-migration>`__.
 
@@ -10838,10 +8585,7 @@ may take several minutes for the volume to be moved to the new VM.
 
 Supported in XenServer, KVM, and VMware.
 
-Note
-----
-
-This procedure is different from moving disk volumes from one VM to
+.. note:: This procedure is different from moving disk volumes from one VM to
 another as described in `Section 13.4.4, “Detaching and Moving
 Volumes” <#detach-move-volumes>`__.
 
@@ -10863,10 +8607,7 @@ another, or to migrate a VM whose disks are on local storage, or even to
 migrate a VM’s disks from one storage repository to another, all while
 the VM is running.
 
-Note
-----
-
-Because of a limitation in VMware, live migration of storage for a VM is
+.. note:: Because of a limitation in VMware, live migration of storage for a VM is
 allowed only if the source and target storage pool are accessible to the
 source host; that is, the host where the VM is running when the live
 migration operation is requested.
@@ -10978,10 +8719,7 @@ be restarted.
    Click the Migrate button |Migrateinstance.png: button to migrate a VM
    or volume| and choose the destination from the dropdown list.
 
-   Note
-   ----
-
-   If the VM's storage has to be migrated along with the VM, this will
+   .. note:: If the VM's storage has to be migrated along with the VM, this will
    be noted in the host list. CloudStack will take care of the storage
    migration for you.
 
@@ -11285,30 +9023,13 @@ needed, on demand. To generate the OVA, CloudStack uses information in a
 properties file (\*.ova.meta) which it stored along with the original
 snapshot data.
 
-Note
-----
-
-For upgrading customers: This process applies only to newly created
+.. note:: For upgrading customers: This process applies only to newly created
 snapshots after upgrade to CloudStack 4.2. Snapshots that have already
 been taken and stored in OVA format will continue to exist in that
 format, and will continue to work as expected.
 
-`14.1. Configuring the Usage Server <#configure-usage-server>`__
-
-`14.2. Setting Usage Limits <#set-usage-limit>`__
-
-`14.3. Globally Configured Limits <#globally-configured-limits>`__
-
-`14.4. Limiting Resource Usage <#limit-accounts-domains>`__
-
-`14.4.1. User Permission <#user-permission-rn>`__
-
-`14.4.2. Limit Usage Considerations <#consideration-rn>`__
-
-`14.4.3. Limiting Resource Usage in a Domain <#per-domain-limits>`__
-
-`14.4.4. Default Account Resource
-Limits <#default-account-resource-limit>`__
+Working with Usage
+==================
 
 The Usage Server is an optional, separately-installed part of CloudStack
 that provides aggregated usage records which you can use to create
@@ -11360,7 +9081,7 @@ To configure the usage server:
    Restart the Management Server (as usual with any global configuration
    change) and also the Usage Server:
 
-   .. code:: programlisting
+   .. code:: bash
 
        # service cloudstack-management restart
        # service cloudstack-usage restart
@@ -11383,7 +9104,7 @@ execution are in different time zones. For example, with the following
 settings, the usage job will run at PST 00:15 and generate usage records
 for the 24 hours from 00:00:00 GMT to 23:59:59 GMT:
 
-.. code:: programlisting
+.. code:: bash
 
     usage.stats.job.exec.time = 00:15   
     usage.execution.timezone = PST
@@ -11470,10 +9191,7 @@ With this configuration, the Usage job will run every night at 2 AM EST
 and will process records for the previous day’s midnight-midnight as
 defined by the EST (America/New\_York) time zone.
 
-Note
-----
-
-Because the special value 1440 has been used for
+.. note:: Because the special value 1440 has been used for
 usage.stats.job.aggregation.range, the Usage Server will ignore the data
 between midnight and 2 AM. That data will be included in the next day's
 run.
@@ -11913,221 +9631,8 @@ resource limit.
 
    Click Apply.
 
-`15.1. Guest Traffic <#guest-traffic>`__
-
-`15.2. Networking in a Pod <#networking-in-a-pod>`__
-
-`15.3. Networking in a Zone <#networking-in-a-zone>`__
-
-`15.4. Basic Zone Physical Network
-Configuration <#basic-zone-physical-network-configuration>`__
-
-`15.5. Advanced Zone Physical Network
-Configuration <#advanced-zone-physical-network-configuration>`__
-
-`15.5.1. Configure Guest Traffic in an Advanced
-Zone <#configure-guest-traffic-in-advanced-zone>`__
-
-`15.5.2. Configure Public Traffic in an Advanced
-Zone <#configure-public-traffic-in-an-advanced-zone>`__
-
-`15.5.3. Configuring a Shared Guest
-Network <#creating-shared-network>`__
-
-`15.6. Using Multiple Guest Networks <#using-multiple-guest-networks>`__
-
-`15.6.1. Adding an Additional Guest
-Network <#add-additional-guest-network>`__
-
-`15.6.2. Reconfiguring Networks in VMs <#add-remove-nic-ui>`__
-
-`15.6.3. Changing the Network Offering on a Guest
-Network <#change-network-offering-on-guest-network>`__
-
-`15.7. IP Reservation in Isolated Guest
-Networks <#reserved-ip-addresses-non-csvms>`__
-
-`15.7.1. IP Reservation Considerations <#ip-reserve-consider>`__
-
-`15.7.2. Limitations <#ip-reserv-limition>`__
-
-`15.7.3. Best Practices <#best-practice-ipreserv>`__
-
-`15.7.4. Reserving an IP Range <#reserve-ip>`__
-
-`15.8. Reserving Public IP Addresses and VLANs for
-Accounts <#ip-vlan-tenant>`__
-
-`15.8.1. Dedicating IP Address Ranges to an
-Account <#howto-dedicate-ip>`__
-
-`15.8.2. Dedicating VLAN Ranges to an Account <#howto-dedicate-vlan>`__
-
-`15.9. Configuring Multiple IP Addresses on a Single
-NIC <#multiple-ip-nic>`__
-
-`15.9.1. Use Cases <#usecases-mip>`__
-
-`15.9.2. Guidelines <#guideline-nic>`__
-
-`15.9.3. Assigning Additional IPs to a VM <#workflow-rn>`__
-
-`15.9.4. Port Forwarding and StaticNAT Services Changes <#caveats>`__
-
-`15.10. About Multiple IP Ranges <#multiple-ip-range>`__
-
-`15.11. About Elastic IP <#elastic-ip>`__
-
-`15.12. Portable IPs <#portable-ip>`__
-
-`15.12.1. About Portable IP <#about-pip>`__
-
-`15.12.2. Configuring Portable IPs <#config-pip>`__
-
-`15.12.3. Acquiring a Portable IP <#acquire-pip>`__
-
-`15.12.4. Transferring Portable IP <#transfer-pip>`__
-
-`15.13. Multiple Subnets in Shared Network <#add-ip-range>`__
-
-`15.13.1. Prerequisites and Guidelines <#guidelines-multiplesubnet>`__
-
-`15.13.2. Adding Multiple Subnets to a Shared
-Network <#how-to-add-ip>`__
-
-`15.14. Isolation in Advanced Zone Using Private VLAN <#pvlan>`__
-
-`15.14.1. About Private VLAN <#about-pvlan>`__
-
-`15.14.2. Prerequisites <#prereq-pvlan>`__
-
-`15.14.3. Creating a PVLAN-Enabled Guest Network <#ability-pvlan>`__
-
-`15.15. Security Groups <#security-groups>`__
-
-`15.15.1. About Security Groups <#about-security-groups>`__
-
-`15.15.2. Adding a Security Group <#add-security-group>`__
-
-`15.15.3. Security Groups in Advanced Zones (KVM
-Only) <#security-groups-advanced-zones>`__
-
-`15.15.4. Enabling Security Groups <#enable-security-groups>`__
-
-`15.15.5. Adding Ingress and Egress Rules to a Security
-Group <#add-ingress-egress-rules>`__
-
-`15.16. External Firewalls and Load
-Balancers <#external-firewalls-and-load-balancers>`__
-
-`15.16.1. About Using a NetScaler Load
-Balancer <#using-netscaler-load-balancers>`__
-
-`15.16.2. Configuring SNMP Community String on a RHEL
-Server <#configure-snmp-rhel>`__
-
-`15.16.3. Initial Setup of External Firewalls and Load
-Balancers <#initial-setup-of-external-firewalls-loadbalancer>`__
-
-`15.16.4. Ongoing Configuration of External Firewalls and Load
-Balancers <#ongoing-config-of-external-firewalls-ld>`__
-
-`15.16.5. Load Balancer Rules <#load-balancer-rules>`__
-
-`15.16.6. Configuring AutoScale <#autoscale>`__
-
-`15.17. Global Server Load Balancing Support <#gslb>`__
-
-`15.17.1. About Global Server Load Balancing <#about-gslb>`__
-
-`15.17.2. Configuring GSLB <#gslb-workflow>`__
-
-`15.17.3. Known Limitation <#idp140221228139200>`__
-
-`15.18. Guest IP Ranges <#guest-ip-ranges>`__
-
-`15.19. Acquiring a New IP Address <#acquire-new-ip-address>`__
-
-`15.20. Releasing an IP Address <#release-ip-address>`__
-
-`15.21. Static NAT <#static-nat>`__
-
-`15.21.1. Enabling or Disabling Static
-NAT <#enable-disable-static-nat>`__
-
-`15.22. IP Forwarding and Firewalling <#ip-forwarding-firewalling>`__
-
-`15.22.1. Firewall Rules <#firewall-rules>`__
-
-`15.22.2. Egress Firewall Rules in an Advanced
-Zone <#egress-firewall-rule>`__
-
-`15.22.3. Port Forwarding <#port-forwarding>`__
-
-`15.23. IP Load Balancing <#ip-load-balancing>`__
-
-`15.24. DNS and DHCP <#dns-dhcp>`__
-
-`15.25. Remote Access VPN <#vpn>`__
-
-`15.25.1. Configuring Remote Access VPN <#configure-vpn>`__
-
-`15.25.2. Configuring Remote Access VPN in VPC <#configure-vpn-vpc>`__
-
-`15.25.3. Using Remote Access VPN with
-Windows <#using-vpn-with-windows>`__
-
-`15.25.4. Using Remote Access VPN with Mac OS X <#using-vpn-with-mac>`__
-
-`15.25.5. Setting Up a Site-to-Site VPN
-Connection <#site-to-site-vpn>`__
-
-`15.26. About Inter-VLAN Routing (nTier Apps) <#inter-vlan-routing>`__
-
-`15.27. Configuring a Virtual Private Cloud <#configure-vpc>`__
-
-`15.27.1. About Virtual Private Clouds <#vpc>`__
-
-`15.27.2. Adding a Virtual Private Cloud <#add-vpc>`__
-
-`15.27.3. Adding Tiers <#add-tier>`__
-
-`15.27.4. Configuring Network Access Control List <#configure-acl>`__
-
-`15.27.5. Adding a Private Gateway to a VPC <#add-gateway-vpc>`__
-
-`15.27.6. Deploying VMs to the Tier <#add-vm-to-tier>`__
-
-`15.27.7. Deploying VMs to VPC Tier and Shared
-Networks <#add-vm-tier-sharednw>`__
-
-`15.27.8. Acquiring a New IP Address for a
-VPC <#acquire-new-ip-for-vpc>`__
-
-`15.27.9. Releasing an IP Address Alloted to a
-VPC <#release-ip-for-vpc>`__
-
-`15.27.10. Enabling or Disabling Static NAT on a
-VPC <#enable-disable-static-nat-vpc>`__
-
-`15.27.11. Adding Load Balancing Rules on a
-VPC <#add-loadbalancer-rule-vpc>`__
-
-`15.27.12. Adding a Port Forwarding Rule on a
-VPC <#add-portforward-vpc>`__
-
-`15.27.13. Removing Tiers <#remove-tier>`__
-
-`15.27.14. Editing, Restarting, and Removing a Virtual Private
-Cloud <#remove-vpc>`__
-
-`15.28. Persistent Networks <#persistent-network>`__
-
-`15.28.1. Persistent Network
-Considerations <#persistent-network-consideration>`__
-
-`15.28.2. Creating a Persistent Guest
-Network <#set-up-persistent-network>`__
+Managing Networks and Traffic
+=============================
 
 In a CloudStack, guest VMs can communicate with each other using shared
 infrastructure with the security and user perception that the guests
@@ -12248,7 +9753,7 @@ configure the base guest network:
 
    The Add guest network window is displayed:
 
-   |networksetupzone.png: Depicts network setup in a single zone|
+   |addguestnetwork.png: Add Guest network setup in a single zone|
 
 #. 
 
@@ -13177,10 +10682,7 @@ is configured on the primary IP of the VM.
 15.10. About Multiple IP Ranges
 -------------------------------
 
-Note
-----
-
-The feature can only be implemented on IPv4 addresses.
+.. note:: The feature can only be implemented on IPv4 addresses.
 
 CloudStack provides you with the flexibility to add guest IP ranges from
 different subnets in Basic zones and security groups-enabled Advanced
@@ -13251,10 +10753,7 @@ The EIP work flow is as follows:
    Network Address Translation (INAT) and Reverse NAT (RNAT) rules
    between the public IP and the private IP.
 
-   Note
-   ----
-
-   Inbound NAT (INAT) is a type of NAT supported by NetScaler, in which
+   .. note:: Inbound NAT (INAT) is a type of NAT supported by NetScaler, in which
    the destination IP address is replaced in the packets from the public
    network, such as the Internet, with the private IP address of a VM in
    the private network. Reverse NAT (RNAT) is a type of NAT supported by
@@ -13294,10 +10793,7 @@ For more information on the Associate Public IP option, see
 `Section 9.4.1, “Creating a New Network
 Offering” <#creating-network-offerings>`__.
 
-Note
-----
-
-The Associate Public IP feature is designed only for use with user VMs.
+.. note:: The Associate Public IP feature is designed only for use with user VMs.
 The System VMs continue to get both public IP and private by default,
 irrespective of the network offering configuration.
 
@@ -13453,7 +10949,7 @@ you can use it for any service in the network.
 To transfer a portable IP across the networks, execute the following
 API:
 
-.. code:: programlisting
+.. code:: bash
 
     http://localhost:8096/client/api?command=enableStaticNat&response=json&ipaddressid=a4bc37b2-4b4e-461d-9a62-b66414618e36&virtualmachineid=a242c476-ef37-441e-9c7b-b303e2a9cb4f&networkid=6e7cd8d1-d1ba-4c35-bdaf-333354cbd49810
 
@@ -13461,7 +10957,7 @@ Replace the UUID with appropriate UUID. For example, if you want to
 transfer a portable IP to network X and VM Y in a network, execute the
 following:
 
-.. code:: programlisting
+.. code:: bash
 
     http://localhost:8096/client/api?command=enableStaticNat&response=json&ipaddressid=a4bc37b2-4b4e-461d-9a62-b66414618e36&virtualmachineid=Y&networkid=X
 
@@ -13712,10 +11208,7 @@ For further reading:
 
    Before you use PVLAN on XenServer and KVM, enable Open vSwitch (OVS).
 
-   Note
-   ----
-
-   OVS on XenServer and KVM does not support PVLAN natively. Therefore,
+   .. note:: OVS on XenServer and KVM does not support PVLAN natively. Therefore,
    CloudStack managed to simulate PVLAN on OVS for XenServer and KVM by
    modifying the flow table.
 
@@ -13860,10 +11353,7 @@ useful in zones that use basic networking, because there is a single
 guest network for all guest VMs. In advanced zones, security groups are
 supported only on the KVM hypervisor.
 
-Note
-----
-
-In a zone that uses advanced networking, you can instead define multiple
+.. note:: In a zone that uses advanced networking, you can instead define multiple
 guest networks to isolate traffic to VMs.
 
 Each CloudStack account comes with a default security group that denies
@@ -14111,10 +11601,7 @@ balancing in zones that use isolated networking in advanced zones. Set
 up an external load balancer when you want to provide load balancing
 through means other than CloudStack’s provided virtual router.
 
-Note
-----
-
-In a Basic zone, load balancing service is supported only if Elastic IP
+.. note:: In a Basic zone, load balancing service is supported only if Elastic IP
 or Elastic LB services are enabled.
 
 When NetScaler load balancer is used to provide EIP or ELB services in a
@@ -14213,10 +11700,7 @@ communication between the NetScaler device and the RHEL machine.
       Map the community name into a security name (local and mynetwork,
       depending on where the request is coming from):
 
-      Note
-      ----
-
-      Use a strong password instead of public when you edit the
+      .. note:: Use a strong password instead of public when you edit the
       following table.
 
       .. code:: screen
@@ -14225,10 +11709,7 @@ communication between the NetScaler device and the RHEL machine.
           com2sec    local      localhost     public
           com2sec   mynetwork   0.0.0.0       public
 
-      Note
-      ----
-
-      Setting to 0.0.0.0 allows all IPs to poll the NetScaler server.
+      .. note:: Setting to 0.0.0.0 allows all IPs to poll the NetScaler server.
 
    #. 
 
@@ -14361,10 +11842,7 @@ balance traffic received at a public IP to one or more VMs. A user
 creates a rule, specifies an algorithm, and assigns the rule to a set of
 VMs.
 
-Note
-----
-
-If you create load balancing rules while using a network service
+.. note:: If you create load balancing rules while using a network service
 offering that includes an external load balancer device such as
 NetScaler, and later change the network service offering to one that
 uses the CloudStack virtual router, you must create a firewall rule on
@@ -14578,10 +12056,7 @@ CloudStack uses the NetScaler load balancer to monitor all aspects of a
 system's health and work in unison with CloudStack to initiate scale-up
 or scale-down actions.
 
-Note
-----
-
-AutoScale is supported on NetScaler Release 10 Build 74.4006.e and
+.. note:: AutoScale is supported on NetScaler Release 10 Build 74.4006.e and
 beyond.
 
 Prerequisites
@@ -14595,10 +12070,7 @@ Before you configure an AutoScale rule, consider the following:
    AutoScale. When a VM is deployed by using a template and when it
    comes up, the application should be up and running.
 
-   Note
-   ----
-
-   If the application is not running, the NetScaler device considers the
+   .. note:: If the application is not running, the NetScaler device considers the
    VM as ineffective and continues provisioning the VMs unconditionally
    until the resource limit is exhausted.
 
@@ -14684,10 +12156,7 @@ Specify the following:
    rule has at least the configured number of active VM instances are
    available to serve the traffic.
 
-   Note
-   ----
-
-   If an application, such as SAP, running on a VM instance is down for
+   .. note:: If an application, such as SAP, running on a VM instance is down for
    some reason, the VM is then not counted as part of Min Instance
    parameter, and the AutoScale feature initiates a scaleup action if
    the number of active VM instances is below the configured value.
@@ -14709,10 +12178,7 @@ Specify the following:
    leads to a single load balancing rule exhausting the VM instances
    limit specified at the account or domain level.
 
-   Note
-   ----
-
-   If an application, such as SAP, running on a VM instance is down for
+   .. note:: If an application, such as SAP, running on a VM instance is down for
    some reason, the VM is not counted as part of Max Instance parameter.
    So there may be scenarios where the number of VMs provisioned for a
    scaleup action might be more than the configured Max Instance value.
@@ -15563,7 +13029,7 @@ function only if they are defined on the default network.
 
 #. 
 
-   Click the Static NAT |ReleaseIPButton.png: button to release an IP|
+   Click the Static NAT |enabledisablenat.png: button to enable/disable NAT|
    button.
 
    The button toggles between Enable and Disable, depending on whether
@@ -15972,10 +13438,7 @@ The VPN user database is shared across all the VPNs created by the
 account owner. All VPN users get access to all VPNs created by the
 account owner.
 
-Note
-----
-
-Make sure that not all traffic goes through the VPN. That is, the route
+.. note:: Make sure that not all traffic goes through the VPN. That is, the route
 installed by the VPN should be only for the guest network and not for
 all traffic.
 
@@ -16054,8 +13517,7 @@ To enable VPN for a particular network:
 
 #. 
 
-   Click the Enable VPN button. |AttachDiskButton.png: button to attach
-   a volume|
+   Click the Enable VPN button. |EnableVPNButton.png: button to enable a VPN|
 
    The IPsec key is displayed in a popup window.
 
@@ -16324,10 +13786,7 @@ The supported endpoints on the remote datacenters are:
 
    CloudStack virtual routers
 
-Note
-----
-
-In addition to the specific Cisco and Juniper devices listed above, the
+.. note:: In addition to the specific Cisco and Juniper devices listed above, the
 expectation is that any Cisco or Juniper device running on the supported
 operating systems are able to establish VPN connections.
 
@@ -16356,10 +13815,7 @@ To set up a Site-to-Site VPN connection, perform the following:
 15.25.5.1. Creating and Updating a VPN Customer Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Note
-----
-
-A VPN customer gateway can be connected to only one VPN gateway at a
+.. note:: A VPN customer gateway can be connected to only one VPN gateway at a
 time.
 
 To add a VPN Customer Gateway:
@@ -16406,10 +13862,7 @@ To add a VPN Customer Gateway:
       authenticate the customer gateway and the VPC VPN gateway to each
       other.
 
-      Note
-      ----
-
-      The IKE peers (VPN end points) authenticate each other by
+      .. note:: The IKE peers (VPN end points) authenticate each other by
       computing and sending a keyed hash of data that includes the
       Preshared key. If the receiving peer is able to create the same
       hash independently by using its Preshared key, it knows that both
@@ -16423,10 +13876,7 @@ To add a VPN Customer Gateway:
       AES256, and 3DES. Authentication is accomplished through the
       Preshared Keys.
 
-      Note
-      ----
-
-      The phase-1 is the first phase in the IKE process. In this initial
+      .. note:: The phase-1 is the first phase in the IKE process. In this initial
       negotiation phase, the two VPN endpoints agree on the methods to
       be used to provide security for the underlying IP traffic. The
       phase-1 authenticates the two VPN gateways to each other, by
@@ -16451,10 +13901,7 @@ To add a VPN Customer Gateway:
       within phase-2. The supported encryption algorithms are AES128,
       AES192, AES256, and 3DES.
 
-      Note
-      ----
-
-      The phase-2 is the second phase in the IKE process. The purpose of
+      .. note:: The phase-2 is the second phase in the IKE process. The purpose of
       IKE phase-2 is to negotiate IPSec security associations (SA) to
       set up the IPSec tunnel. In phase-2, new keying material is
       extracted from the Diffie-Hellman key exchange in phase-1, to
@@ -16477,10 +13924,7 @@ To add a VPN Customer Gateway:
       of the key exchanges increase as the DH groups grow larger, as
       does the time of the exchanges.
 
-      Note
-      ----
-
-      When PFS is turned on, for every negotiation of a new phase-2 SA
+      .. note:: When PFS is turned on, for every negotiation of a new phase-2 SA
       the two gateways must generate a new set of phase-1 keys. This
       adds an extra layer of protection that PFS adds, which ensures if
       the phase-2 SA’s have expired, the keys used for new phase-2 SA’s
@@ -16645,10 +14089,7 @@ related VPN connection is in error state.
 15.25.5.3. Creating a VPN Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Note
-----
-
-CloudStack supports creating up to 8 VPN connections.
+.. note:: CloudStack supports creating up to 8 VPN connections.
 
 #. 
 
@@ -16965,10 +14406,7 @@ The major advantages are:
    from a pre-specified set of guest VLANs. All the VMs of a certain
    tier of an account reside on the guest VLAN allotted to that account.
 
-   Note
-   ----
-
-   A VLAN allocated for an account cannot be shared between multiple
+   .. note:: A VLAN allocated for an account cannot be shared between multiple
    accounts.
 
 -  
@@ -17348,10 +14786,7 @@ other tiers within the VPC.
    All the VPC that you have created for the account is listed in the
    page.
 
-   Note
-   ----
-
-   The end users can see their own VPCs, while root and domain admin can
+   .. note:: The end users can see their own VPCs, while root and domain admin can
    see any VPC they are authorized to see.
 
 #. 
@@ -19040,10 +16475,7 @@ belonging to the same VPC.
 15.27.14. Editing, Restarting, and Removing a Virtual Private Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note
-----
-
-Ensure that all the tiers are removed before you remove a VPC.
+.. note:: Ensure that all the tiers are removed before you remove a VPC.
 
 #. 
 
@@ -19182,36 +16614,8 @@ To create a persistent network, perform the following:
 
    Click OK.
 
-`16.1. The System VM Template <#system-vm-template>`__
-
-`16.2. Changing the Default System VM
-Template <#change-sysmvmtemplate>`__
-
-`16.3. Multiple System VM Support for
-VMware <#multiple-system-vm-vmware>`__
-
-`16.4. Console Proxy <#console-proxy>`__
-
-`16.4.1. Using a SSL Certificate for the Console Proxy <#use-cert>`__
-
-`16.4.2. Changing the Console Proxy SSL Certificate and
-Domain <#change-console-proxy-ssl-certificate-domain>`__
-
-`16.5. Virtual Router <#virtual-router>`__
-
-`16.5.1. Configuring the Virtual Router <#configure-virtual-router>`__
-
-`16.5.2. Upgrading a Virtual Router with System Service
-Offerings <#upgrade-virtual-router-with-service-offering>`__
-
-`16.5.3. Best Practices for Virtual
-Routers <#best-practices-virtual-router>`__
-
-`16.5.4. Service Monitoring Tool for Virtual Router <#vr-monitor>`__
-
-`16.5.5. Enhanced Upgrade for Virtual Routers <#vr-upgrade>`__
-
-`16.6. Secondary Storage VM <#secondary-storage-vm>`__
+Working with System Virtual Machines
+====================================
 
 CloudStack uses several types of system virtual machines to perform
 tasks in the cloud. In general CloudStack manages these system VMs and
@@ -19344,10 +16748,7 @@ The AJAX application connects to this IP. The console proxy then proxies
 the connection to the VNC port for the requested VM on the Host hosting
 the guest.
 
-Note
-----
-
-The hypervisors will have many ports assigned to VNC usage so that
+.. note:: The hypervisors will have many ports assigned to VNC usage so that
 multiple VNC sessions can occur simultaneously.
 
 There is never any traffic to the guest virtual IP, and there is no need
@@ -19416,7 +16817,7 @@ the console proxy domain, SSL certificate, and private key:
 
       Generate a new 2048-bit private key
 
-      .. code:: programlisting
+      .. code:: bash
 
           openssl genrsa -des3 -out yourprivate.key 2048
 
@@ -19424,7 +16825,7 @@ the console proxy domain, SSL certificate, and private key:
 
       Generate a new certificate CSR
 
-      .. code:: programlisting
+      .. code:: bash
 
           openssl req -new -key yourprivate.key -out yourcertificate.csr
 
@@ -19438,7 +16839,7 @@ the console proxy domain, SSL certificate, and private key:
 
       Convert your private key format into PKCS#8 encrypted format.
 
-      .. code:: programlisting
+      .. code:: bash
 
           openssl pkcs8 -topk8 -in yourprivate.key -out yourprivate.pkcs8.encrypted.key
 
@@ -19447,7 +16848,7 @@ the console proxy domain, SSL certificate, and private key:
       Convert your PKCS#8 encrypted private key into the PKCS#8 format
       that is compliant with CloudStack
 
-      .. code:: programlisting
+      .. code:: bash
 
           openssl pkcs8 -in yourprivate.pkcs8.encrypted.key -out yourprivate.pkcs8.key
 
@@ -19468,7 +16869,7 @@ the console proxy domain, SSL certificate, and private key:
 
       The desired new domain name; for example, company.com
 
-   |updatessl.png: Updating Console Proxy SSL Certificate|
+..   |updatessl.png: Updating Console Proxy SSL Certificate|
 
 #. 
 
@@ -19600,10 +17001,7 @@ an unexpected reason. For example:
    The services that are terminated by the OS when memory or CPU is not
    sufficiently available for the service.
 
-Note
-----
-
-Only those services with daemons are monitored. The services that are
+.. note:: Only those services with daemons are monitored. The services that are
 failed due to errors in the service/daemon configuration file cannot be
 restarted by the Monitoring tool.
 
@@ -19755,7 +17153,7 @@ it is upgraded:
    Upgrade CPVM and SSVM either from the UI or by using the following
    script:
 
-   .. code:: programlisting
+   .. code:: bash
 
        # cloudstack-sysvmadm -d <IP address> -u cloud -p -s
 
@@ -19836,36 +17234,8 @@ Zone, copying templates between Zones, and snapshot backups.
 
 The administrator can log in to the secondary storage VM if needed.
 
-`17.1. HA for Management Server <#ha-management-server>`__
-
-`17.2. Management Server Load Balancing <#management-server-lb>`__
-
-`17.3. HA-Enabled Virtual Machines <#ha-enabled-vm>`__
-
-`17.4. HA for Hosts <#ha-for-hosts>`__
-
-`17.4.1. Dedicated HA Hosts <#dedicated-ha-hosts>`__
-
-`17.5. Primary Storage Outage and Data
-Loss <#primary-storage-outage-and-data-loss>`__
-
-`17.6. Secondary Storage Outage and Data
-Loss <#secondary-storage-outage-and-data-loss>`__
-
-`17.7. Database High Availability <#db-ha>`__
-
-`17.7.1. How to Set Up Database Replication <#db-ha-howto>`__
-
-`17.7.2. Configuring Database High Availability <#db-ha-configure>`__
-
-`17.7.3. Limitations on Database High
-Availability <#db-ha-limitations>`__
-
-`17.8. Limiting the Rate of API Requests <#api-throttling>`__
-
-`17.8.1. Configuring the API Request Rate <#api-throttling-configure>`__
-
-`17.8.2. Limitations on API Throttling <#api-throttling-limitations>`__
+System Reliability and High Availability
+========================================
 
 17.1. HA for Management Server
 ------------------------------
@@ -19993,10 +17363,7 @@ desired tag (for example, "ha\_host"), and restart the Management
 Server. Enter the value in the Host Tags field when adding the host(s)
 that you want to dedicate to HA-enabled VMs.
 
-Note
-----
-
-If you set ha.tag, be sure to actually use that tag on at least one host
+.. note:: If you set ha.tag, be sure to actually use that tag on at least one host
 in your cloud. If the tag specified in ha.tag is not set for any host in
 the cloud, the HA-enabled VMs will fail to restart after a crash.
 
@@ -20198,10 +17565,7 @@ settings:
 The following limitations exist in the current implementation of this
 feature.
 
-Note
-----
-
-Even with these limitations, CloudStack is still able to effectively use
+.. note:: Even with these limitations, CloudStack is still able to effectively use
 API throttling to avoid malicious attacks causing denial of service.
 
 -  
@@ -20217,22 +17581,8 @@ API throttling to avoid malicious attacks causing denial of service.
    The API commands resetApiLimit and getApiLimit are limited to the
    Management Server where the API is invoked.
 
-`18.1. Using Tags to Organize Resources in the
-Cloud <#tagging-resources>`__
-
-`18.2. Changing the Database Configuration <#change-database-config>`__
-
-`18.3. Changing the Database Password <#change-database-password>`__
-
-`18.4. Administrator Alerts <#admin-alerts>`__
-
-`18.4.1. Sending Alerts to External SNMP and Syslog
-Managers <#external-snmp-manager>`__
-
-`18.5. Customizing the Network Domain Name <#customizing-dns>`__
-
-`18.6. Stopping and Restarting the Management
-Server <#stop-restart-management-server>`__
+Managing the Cloud
+==================
 
 18.1. Using Tags to Organize Resources in the Cloud
 ---------------------------------------------------
@@ -20260,7 +17610,7 @@ An optional input parameter, "tags," exists on many of the list\* API
 commands. The following example shows how to use this new parameter to
 find all the volumes having tag region=canada OR tag city=Toronto:
 
-.. code:: programlisting
+.. code:: bash
 
     command=listVolumes
                     &listAll=true
@@ -20398,7 +17748,7 @@ add the encrypted password to
    the new ciphertext. Open ``/etc/cloudstack/management/db.properties``
    in a text editor, and update these parameters:
 
-   .. code:: programlisting
+   .. code:: bash
 
        db.cloud.password=ENC(encrypted_password_from_above) 
        db.usage.password=ENC(encrypted_password_from_above)
@@ -20470,13 +17820,13 @@ message incudes the fields alertType, message, podId, dataCenterId, and
 clusterId, in the following format. If any field does not have a valid
 value, it will not be included.
 
-.. code:: programlisting
+.. code:: bash
 
     Date severity_level Management_Server_IP_Address/Name  alertType:: value dataCenterId:: value  podId:: value  clusterId:: value  message:: value
 
 For example:
 
-.. code:: programlisting
+.. code:: bash
 
     Mar  4 10:13:47    WARN    localhost    alertType:: managementNode message:: Management server node 127.0.0.1 is up
 
@@ -20498,7 +17848,7 @@ alerts from CloudStack:
 
    Edit the file /etc/cloudstack/management/log4j-cloud.xml.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # vi /etc/cloudstack/management/log4j-cloud.xml
 
@@ -20509,10 +17859,7 @@ alerts from CloudStack:
    Syslog manager. To specify multiple external managers, separate the
    IP addresses and other configuration values with commas (,).
 
-   Note
-   ----
-
-   The recommended maximum number of SNMP or Syslog managers is 20 for
+   .. note:: The recommended maximum number of SNMP or Syslog managers is 20 for
    each.
 
    The following example shows how to configure two SNMP managers at IP
@@ -20520,7 +17867,7 @@ alerts from CloudStack:
    ports, and communities. Do not change the other values (name,
    threshold, class, and layout values).
 
-   .. code:: programlisting
+   .. code:: bash
 
        <appender name="SNMP" class="org.apache.cloudstack.alert.snmp.SnmpTrapAppender">
          <param name="Threshold" value="WARN"/>  <!-- Do not edit. The alert feature assumes WARN. -->
@@ -20538,7 +17885,7 @@ alerts from CloudStack:
    You can set Facility to any syslog-defined value, such as LOCAL0 -
    LOCAL7. Do not change the other values.
 
-   .. code:: programlisting
+   .. code:: bash
 
        <appender name="ALERTSYSLOG">
          <param name="Threshold" value="WARN"/>
@@ -20653,30 +18000,24 @@ throughout the cloud..
 To stop the Management Server, issue the following command at the
 operating system prompt on the Management Server node:
 
-.. code:: programlisting
+.. code:: bash
 
     # service cloudstack-management stop
 
 To start the Management Server:
 
-.. code:: programlisting
+.. code:: bash
 
     # service cloudstack-management start
 
 To stop the Management Server:
 
-.. code:: programlisting
+.. code:: bash
 
     # service cloudstack-management stop
 
-`19.1. About Configuration
-Parameters <#about-global-config-parameters>`__
-
-`19.2. Setting Global Configuration Parameters <#global-config-howto>`__
-
-`19.3. Setting Local Configuration Parameters <#local-config-howto>`__
-
-`19.4. Granular Global Configuration Parameters <#granular-param>`__
+Setting Configuration Parameters
+================================
 
 19.1. About Configuration Parameters
 ------------------------------------
@@ -21033,9 +18374,8 @@ blacklisted.routes
 Routes that are blacklisted cannot be used for creating static routes
 for a VPC Private Gateway.
 
-`20.1. Provisioning and Authentication API <#provisioning-auth-api>`__
-
-`20.2. User Data and Meta Data <#user-data-and-meta-data>`__
+CloudStack API
+==============
 
 The CloudStack API is a low level API that has been used to implement
 the CloudStack web UIs. It is also a good basis for implementing other
@@ -21081,7 +18421,7 @@ the user data:
 
    Run the following command to find the virtual router.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # cat /var/lib/dhclient/dhclient-eth0.leases | grep dhcp-server-identifier | tail -1
 
@@ -21090,7 +18430,7 @@ the user data:
    Access user data by running the following command using the result of
    the above command
 
-   .. code:: programlisting
+   .. code:: bash
 
        # curl http://10.1.1.1/latest/user-data
 
@@ -21128,18 +18468,8 @@ is also supported.) For metadata type, use one of the following:
 
    instance-id. The instance name of the VM
 
-`21.1. Performance Monitoring <#performance-monitoring>`__
-
-`21.2. Increase Management Server Maximum
-Memory <#increase-management-server-max-memory>`__
-
-`21.3. Set Database Buffer Pool Size <#set-database-buffer-pool-size>`__
-
-`21.4. Set and Monitor Total VM Limits per
-Host <#set-monitor-total-vm-limits-per-host>`__
-
-`21.5. Configure XenServer dom0
-Memory <#configure-xenserver-dom0-memory>`__
+Tuning
+======
 
 This section provides tips on how to improve the performance of your
 cloud.
@@ -21162,7 +18492,7 @@ JVM memory allocation can be insufficient. To increase the memory:
 
    Edit the Tomcat configuration file:
 
-   .. code:: programlisting
+   .. code:: bash
 
        /etc/cloudstack/management/tomcat6.conf
 
@@ -21177,7 +18507,7 @@ JVM memory allocation can be insufficient. To increase the memory:
 
    To put the new setting into effect, restart the Management Server.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # service cloudstack-management restart
 
@@ -21194,7 +18524,7 @@ cache data and indexes:
 
    Edit the MySQL configuration file:
 
-   .. code:: programlisting
+   .. code:: bash
 
        /etc/my.cnf
 
@@ -21207,7 +18537,7 @@ cache data and indexes:
    dedicated server. The following example assumes a dedicated server
    with 1024M of RAM.
 
-   .. code:: programlisting
+   .. code:: bash
 
        innodb_buffer_pool_size=700M
 
@@ -21215,7 +18545,7 @@ cache data and indexes:
 
    Restart the MySQL service.
 
-   .. code:: programlisting
+   .. code:: bash
 
        # service mysqld restart
 
@@ -21253,40 +18583,14 @@ to do this, see `Citrix Knowledgebase
 Article <http://support.citrix.com/article/CTX126531>`__.The article
 refers to XenServer 5.6, but the same information applies to XenServer 6
 
-`22.1. Overview of How to Write a Storage
-Plugin <#storage-plugin-steps>`__
-
-`22.2. Implementing DataStoreDriver <#datastoredriver>`__
-
-`22.3. Implementing DataStoreLifecycle <#datastorelifecycle>`__
-
-`22.4. Implementing DataStoreProvider <#datastoreprovider>`__
-
-`22.5. Implementing
-VMSnapshotStrategy <#implement-vmsnapshotstrategy>`__
-
-`22.6. Place the .jar File in the Right
-Directory <#storage-plugin-code-location>`__
-
-`22.7. Edit Configuration
-Files <#storage-plugin-componentcontext-xml>`__
-
-`22.8. Minimum Required Interfaces <#idp140221247665856>`__
-
-`22.8.1. Interface AmazonS3 <#idp140221247667152>`__
-
-`22.8.2. Class TransferManager <#idp140221236488768>`__
-
-`22.8.3. Class PutObjectRequest <#idp140221225664784>`__
+Troubleshooting
+===============
 
 This section gives an outline of how to implement a plugin to integrate
 a third-party storage provider. For details and an example, you will
 need to read the code.
 
-Note
-----
-
-Example code is available at: plugins/storage/volume/sample
+.. note:: Example code is available at: plugins/storage/volume/sample
 
 Third party storage providers can integrate with CloudStack to provide
 either primary storage or secondary storage. For example, CloudStack
@@ -21494,13 +18798,13 @@ VMSnapshotStrategy has the following methods:
 
 For a secondary storage plugin, place your .jar file here:
 
-.. code:: programlisting
+.. code:: bash
 
     plugins/storage/image/
 
 For a primary storage plugin, place your .jar file here:
 
-.. code:: programlisting
+.. code:: bash
 
     plugins/storage/volume/
 
@@ -21511,27 +18815,27 @@ First, edit the following file tell CloudStack to include your .jar
 file. Add a line to this file to tell the CloudStack Management Server
 that it now has a dependency on your code:
 
-.. code:: programlisting
+.. code:: bash
 
     client/pom.xml
 
 Place some facts about your code in the following file so CloudStack can
 run it:
 
-.. code:: programlisting
+.. code:: bash
 
     /client/tomcatconf/componentContext.xml.in
 
 In the section “Deployment configurations of various adapters,” add
 this:
 
-.. code:: programlisting
+.. code:: bash
 
     <bean>id=”some unique ID” class=”package name of your implementation of DataStoreProvider”</bean>
 
 In the section “Storage Providers,” add this:
 
-.. code:: programlisting
+.. code:: bash
 
     <property name=”providers”>
         <ref local=”same ID from the bean tag's id attribute”>
@@ -21672,41 +18976,8 @@ upload(PutObjectRequest putObjectRequest)
 
 Schedules a new transfer to upload data to Amazon S3.
 
-`23.1. Events <#events>`__
-
-`23.1.1. Event Logs <#events-log>`__
-
-`23.1.2. Event Notification <#event-framework>`__
-
-`23.1.3. Standard Events <#standard-events>`__
-
-`23.1.4. Long Running Job Events <#long-running-job-events>`__
-
-`23.1.5. Event Log Queries <#event-log-queries>`__
-
-`23.1.6. Deleting and Archiving Events and
-Alerts <#delete-event-alerts>`__
-
-`23.2. Working with Server
-Logs <#troubleshooting-working-with-server-logs>`__
-
-`23.3. Data Loss on Exported Primary
-Storage <#troubleshooting-dataloss-on-exported-primary-storage>`__
-
-`23.4. Recovering a Lost Virtual
-Router <#troubleshooting-recover-lost-virtual-router>`__
-
-`23.5. Maintenance mode not working on
-vCenter <#troubleshooting-maintenance-mode-not-working-on-vCenter>`__
-
-`23.6. Unable to deploy VMs from uploaded vSphere
-template <#troubleshooting-unable-to-deploy-vms>`__
-
-`23.7. Unable to power on virtual machine on
-VMware <#troubleshooting-unable-to-power-on-vm>`__
-
-`23.8. Load balancer rules fail after changing network
-offering <#troubleshooting-lb-rules-fails>`__
+Events
+======
 
 23.1. Events
 ------------
@@ -21828,7 +19099,7 @@ changes can control the behaviour.
 
       A sample bean is given below:
 
-      .. code:: programlisting
+      .. code:: bash
 
           <bean id="eventNotificationBus" class="org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus">
               <property name="name" value="eventNotificationBus"/>
@@ -21974,10 +19245,7 @@ parameters have been added:
    running the alert purge thread. The default is 86400 seconds (one
    day).
 
-Note
-----
-
-Archived alerts or events cannot be viewed in the UI or by using the
+.. note:: Archived alerts or events cannot be viewed in the UI or by using the
 API. They are maintained in the database for auditing or compliance
 purposes.
 
@@ -22034,14 +19302,11 @@ database activities for diagnostics purposes in
 messages. We recommend this command to find the problematic output in
 the Management Server log:.
 
-Note
-----
-
-When copying and pasting a command, be sure the command has pasted as a
+.. note:: When copying and pasting a command, be sure the command has pasted as a
 single line before executing. Some document viewers may introduce
 unwanted line breaks in copied text.
 
-.. code:: programlisting
+.. code:: bash
 
             grep -i -E 'exception|unable|fail|invalid|leak|warn|error' /var/log/cloudstack/management/management-server.log
 
@@ -22050,14 +19315,14 @@ the logs and you are interested in debugging the issue you can grep for
 this job ID in the management server log. For example, suppose that you
 find the following ERROR message:
 
-.. code:: programlisting
+.. code:: bash
 
             2010-10-04 13:49:32,595 ERROR [cloud.vm.UserVmManagerImpl] (Job-Executor-11:job-1076) Unable to find any host for [User|i-8-42-VM-untagged]
 
 Note that the job ID is 1076. You can track back the events relating to
 job 1076 with the following grep:
 
-.. code:: programlisting
+.. code:: bash
 
             grep "job-1076)" management-server.log
 
@@ -22086,7 +19351,7 @@ Solution
 When setting up LUN exports, restrict the range of IP addresses that are
 allowed access by specifying a subnet mask. For example:
 
-.. code:: programlisting
+.. code:: bash
 
     echo “/export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check)” > /etc/exports
 
@@ -23018,216 +20283,199 @@ UCS.DISASSOCIATEPROFILE
 The following is the list of alert type numbers. The current alerts can
 be found by calling listAlerts.
 
-.. code:: programlisting
+.. code:: bash
 
     MEMORY = 0 // Available Memory below configured threshold
 
-.. code:: programlisting
+.. code:: bash
 
     CPU = 1 // Unallocated CPU below configured threshold
 
-.. code:: programlisting
+.. code:: bash
 
     STORAGE =2 // Available Storage below configured threshold
 
-.. code:: programlisting
+.. code:: bash
 
     STORAGE_ALLOCATED = 3 // Remaining unallocated Storage is below configured threshold
 
-.. code:: programlisting
+.. code:: bash
 
     PUBLIC_IP = 4 // Number of unallocated virtual network public IPs is below configured threshold
 
-.. code:: programlisting
+.. code:: bash
 
     PRIVATE_IP = 5 // Number of unallocated private IPs is below configured threshold
 
-.. code:: programlisting
+.. code:: bash
 
     SECONDARY_STORAGE = 6 //  Available Secondary Storage in availability zone is below configured threshold
 
-.. code:: programlisting
+.. code:: bash
 
     HOST = 7 // Host related alerts like host disconnected
 
-.. code:: programlisting
+.. code:: bash
 
     USERVM = 8 // User VM stopped unexpectedly
 
-.. code:: programlisting
+.. code:: bash
 
     DOMAIN_ROUTER = 9 // Domain Router VM stopped unexpectedly
 
-.. code:: programlisting
+.. code:: bash
 
     CONSOLE_PROXY = 10 // Console Proxy VM stopped unexpectedly
 
-.. code:: programlisting
+.. code:: bash
 
     ROUTING = 11 // Lost connection to default route (to the gateway)
 
-.. code:: programlisting
+.. code:: bash
 
     STORAGE_MISC = 12 // Storage issue in system VMs
 
-.. code:: programlisting
+.. code:: bash
 
     USAGE_SERVER = 13 // No usage server process running
 
-.. code:: programlisting
+.. code:: bash
 
     MANAGMENT_NODE = 14 // Management network CIDR is not configured originally
 
-.. code:: programlisting
+.. code:: bash
 
     DOMAIN_ROUTER_MIGRATE = 15 // Domain Router VM Migration was unsuccessful
 
-.. code:: programlisting
+.. code:: bash
 
     CONSOLE_PROXY_MIGRATE = 16 // Console Proxy VM Migration was unsuccessful
 
-.. code:: programlisting
+.. code:: bash
 
     USERVM_MIGRATE = 17 // User VM Migration was unsuccessful
 
-.. code:: programlisting
+.. code:: bash
 
     VLAN = 18 // Number of unallocated VLANs is below configured threshold in availability zone
 
-.. code:: programlisting
+.. code:: bash
 
     SSVM = 19 // SSVM stopped unexpectedly
 
-.. code:: programlisting
+.. code:: bash
 
     USAGE_SERVER_RESULT = 20 // Usage job failed
 
-.. code:: programlisting
+.. code:: bash
 
     STORAGE_DELETE = 21 // Failed to delete storage pool
 
-.. code:: programlisting
+.. code:: bash
 
     UPDATE_RESOURCE_COUNT = 22 // Failed to update the resource count
 
-.. code:: programlisting
+.. code:: bash
 
     USAGE_SANITY_RESULT = 23 // Usage Sanity Check failed
 
-.. code:: programlisting
+.. code:: bash
 
     DIRECT_ATTACHED_PUBLIC_IP = 24 // Number of unallocated shared network IPs is low in availability zone
 
-.. code:: programlisting
+.. code:: bash
 
     LOCAL_STORAGE = 25 // Remaining unallocated Local Storage is below configured threshold
 
-.. code:: programlisting
+.. code:: bash
 
     RESOURCE_LIMIT_EXCEEDED = 26 //Generated when the resource limit exceeds the limit. Currently used for recurring snapshots only
 
-**Revision History**
-
-Revision 0-0
-
-Tue May 29 2012
-
-Jessica Tomechak
-
-+----------------------------------------+
-| Initial creation of book by publican   |
-+----------------------------------------+
-
-.. |Product Site| image:: Common_Content/images//image_left.png
-   :target: http://cloudstack.org
-.. |Documentation Site| image:: Common_Content/images//image_right.png
-   :target: http://docs.cloudstack.org
-.. |1000-foot-view.png: Overview of CloudStack| image:: ./images/1000-foot-view.png
-.. |basic-deployment.png: Basic two-machine deployment| image:: ./images/basic-deployment.png
-.. |infrastructure\_overview.png: Nested organization of a zone| image:: ./images/infrastructure-overview.png
-.. |region-overview.png: Nested structure of a region.| image:: ./images/region-overview.png
-.. |zone-overview.png: Nested structure of a simple zone.| image:: ./images/zone-overview.png
-.. |pod-overview.png: Nested structure of a simple pod| image:: ./images/pod-overview.png
-.. |cluster-overview.png: Structure of a simple cluster| image:: ./images/cluster-overview.png
-.. |dedicate-resource-button.png: button to dedicate a zone, pod, cluster, or host| image:: ./images/dedicate-resource-button.png
-.. |change-password.png: button to change a user's password| image:: ./images/change-password.png
-.. |searchbutton.png: Searches projects| image:: ./images/search-button.png
-.. |editbutton.png: Edits parameters| image:: ./images/edit-icon.png
-.. |deletebutton.png: Removes a project| image:: ./images/delete-button.png
-.. |deletebutton.png: suspends a project| image:: ./images/suspend-icon.png
-.. |provisioning-overview.png: Conceptual overview of a basic deployment| image:: ./images/provisioning-overview.png
-.. |vsphereclient.png: vSphere client| image:: ./images/vsphere-client.png
-.. |addcluster.png: add a cluster| image:: ./images/add-cluster.png
-.. |ConsoleButton.png: button to launch a console| image:: ./images/console-icon.png
-.. |basic-deployment.png: Basic two-machine CloudStack deployment| image:: ./images/vm-lifecycle.png
-.. |image20| image:: images/view-console-button.png
-.. |change-affinity-button.png: button to assign an affinity group to a virtual machine| image:: ./images/change-affinity-button.png
-.. |image22| image:: ./images/SnapshotButton.png
-.. |image23| image:: ./images/delete-button.png
-.. |image24| image:: ./images/revert-vm.png
-.. |StopButton.png: button to stop a VM| image:: ./images/stop-instance-icon.png
-.. |EditButton.png: button to edit the properties of a VM| image:: ./images/edit-icon.png
-.. |ChangeServiceButton.png: button to change the service of a VM| image:: ./images/change-service-icon.png
-.. |Migrateinstance.png: button to migrate an instance| image:: ./images/migrate-instance.png
-.. |Destroyinstance.png: button to destroy an instance| image:: ./images/destroy-instance.png
-.. |iso.png: depicts adding an iso image| image:: ./images/iso-icon.png
-.. |enable-disable.png: button to enable or disable zone, pod, or cluster.| image:: ./images/enable-disable.png
-.. |image32| image:: ./images/enable-disable.png
-.. |edit-icon.png: button to edit the VLAN range.| image:: ./images/edit-icon.png
-.. |sysmanager.png: System Image Manager| image:: ./images/sysmanager.png
-.. |software-license.png: Depicts hiding the EULA page.| image:: ./images/software-license.png
-.. |change-admin-password.png: Depicts changing the administrator password| image:: ./images/change-admin-password.png
-.. |AttachDiskButton.png: button to attach a volume| image:: ./images/attach-disk-icon.png
-.. |DetachDiskButton.png: button to detach a volume| image:: ./images/detach-disk-icon.png
-.. |Migrateinstance.png: button to migrate a volume| image:: ./images/migrate-instance.png
-.. |Migrateinstance.png: button to migrate a VM or volume| image:: ./images/migrate-instance.png
-.. |resize-volume-icon.png: button to display the resize volume option.| image:: ./images/resize-volume-icon.png
-.. |resize-volume.png: option to resize a volume.| image:: ./images/resize-volume.png
-.. |image43| image:: ./images/SnapshotButton.png
-.. |editbutton.png: edits the settings.| image:: ./images/edit-icon.png
-.. |editbutton.png: edits the settings| image:: ./images/edit-icon.png
-.. |guest-traffic-setup.png: Depicts a guest traffic setup| image:: ./images/guest-traffic-setup.png
-.. |networksinglepod.png: diagram showing logical view of network in a pod| image:: ./images/network-singlepod.png
-.. |networksetupzone.png: Depicts network setup in a single zone| image:: ./images/network-setup-zone.png
-.. |networksetupzone.png: Depicts network setup in a single zone| image:: ./images/add-guest-network.png
-.. |remove-nic.png: button to remove a NIC| image:: ./images/remove-nic.png
-.. |set-default-nic.png: button to set a NIC as default one.| image:: ./images/set-default-nic.png
-.. |EditButton.png: button to edit a network| image:: ./images/edit-icon.png
-.. |edit-icon.png: button to edit a network| image:: ./images/edit-icon.png
-.. |addAccount-icon.png: button to assign an IP range to an account.| image:: ./images/addAccount-icon.png
-.. |eip-ns-basiczone.png: Elastic IP in a NetScaler-enabled Basic Zone.| image:: ./images/eip-ns-basiczone.png
-.. |add-ip-range.png: adding an IP range to a network.| image:: ./images/add-ip-range.png
-.. |httpaccess.png: allows inbound HTTP access from anywhere| image:: ./images/http-access.png
-.. |autoscaleateconfig.png: Configuring AutoScale| image:: ./images/autoscale-config.png
-.. |EnableDisable.png: button to enable or disable AutoScale.| image:: ./images/enable-disable-autoscale.png
-.. |gslb.png: GSLB architecture| image:: ./images/gslb.png
-.. |gslb-add.png: adding a gslb rule| image:: ./images/add-gslb.png
-.. |ReleaseIPButton.png: button to release an IP| image:: ./images/release-ip-icon.png
-.. |ReleaseIPButton.png: button to release an IP| image:: ./images/enable-disable.png
-.. |egress-firewall-rule.png: adding an egress firewall rule| image:: ./images/egress-firewall-rule.png
-.. |AttachDiskButton.png: button to attach a volume| image:: ./images/vpn-icon.png
-.. |vpn-icon.png: button to enable VPN| image:: ./images/vpn-icon.png
-.. |addvpncustomergateway.png: adding a customer gateway.| image:: ./images/add-vpn-customer-gateway.png
-.. |edit.png: button to edit a VPN customer gateway| image:: ./images/edit-icon.png
-.. |delete.png: button to remove a VPN customer gateway| image:: ./images/delete-button.png
-.. |createvpnconnection.png: creating a VPN connection to the customer gateway.| image:: ./images/create-vpn-connection.png
-.. |remove-vpn.png: button to remove a VPN connection| image:: ./images/remove-vpn.png
-.. |reset-vpn.png: button to reset a VPN connection| image:: ./images/reset-vpn.png
-.. |mutltier.png: a multi-tier setup.| image:: ./images/multi-tier-app.png
-.. |add-vpc.png: adding a vpc.| image:: ./images/add-vpc.png
-.. |add-tier.png: adding a tier to a vpc.| image:: ./images/add-tier.png
-.. |replace-acl-icon.png: button to replace an ACL list| image:: ./images/replace-acl-icon.png
-.. |add-new-gateway-vpc.png: adding a private gateway for the VPC.| image:: ./images/add-new-gateway-vpc.png
-.. |replace-acl-icon.png: button to replace the default ACL behaviour.| image:: ./images/replace-acl-icon.png
-.. |add-vm-vpc.png: adding a VM to a vpc.| image:: ./images/add-vm-vpc.png
-.. |addvm-tier-sharednw.png: adding a VM to a VPC tier and shared network.| image:: ./images/addvm-tier-sharednw.png
-.. |release-ip-icon.png: button to release an IP.| image:: ./images/release-ip-icon.png
-.. |enable-disable.png: button to enable Static NAT.| image:: ./images/enable-disable.png
-.. |select-vmstatic-nat.png: selecting a tier to apply staticNAT.| image:: ./images/select-vm-staticnat-vpc.png
-.. |vpc-lb.png: Configuring internal LB for VPC| image:: ./images/vpc-lb.png
-.. |del-tier.png: button to remove a tier| image:: ./images/del-tier.png
-.. |remove-vpc.png: button to remove a VPC| image:: ./images/remove-vpc.png
-.. |edit-icon.png: button to edit a VPC| image:: ./images/edit-icon.png
-.. |restart-vpc.png: button to restart a VPC| image:: ./images/restart-vpc.png
-.. |updatessl.png: Updating Console Proxy SSL Certificate| image:: ./images/update-ssl.png
-.. |vr-upgrade.png: Button to upgrade VR to use the new template.| image:: ./images/vr-upgrade.png
+.. |1000-foot-view.png: Overview of CloudStack| image:: ./_static/images/1000-foot-view.png
+.. |basic-deployment.png: Basic two-machine deployment| image:: ./_static/images/basic-deployment.png
+.. |infrastructure\_overview.png: Nested organization of a zone| image:: ./_static/images/infrastructure-overview.png
+.. |region-overview.png: Nested structure of a region.| image:: ./_static/images/region-overview.png
+.. |zone-overview.png: Nested structure of a simple zone.| image:: ./_static/images/zone-overview.png
+.. |pod-overview.png: Nested structure of a simple pod| image:: ./_static/images/pod-overview.png
+.. |cluster-overview.png: Structure of a simple cluster| image:: ./_static/images/cluster-overview.png
+.. |dedicate-resource-button.png: button to dedicate a zone, pod, cluster, or host| image:: ./_static/images/dedicate-resource-button.png
+.. |change-password.png: button to change a user's password| image:: ./_static/images/change-password.png
+.. |searchbutton.png: Searches projects| image:: ./_static/images/search-button.png
+.. |editbutton.png: Edits parameters| image:: ./_static/images/edit-icon.png
+.. |deletebutton.png: Removes a project| image:: ./_static/images/delete-button.png
+.. |deletebutton.png: suspends a project| image:: ./_static/images/suspend-icon.png
+.. |provisioning-overview.png: Conceptual overview of a basic deployment| image:: ./_static/images/provisioning-overview.png
+.. |vsphereclient.png: vSphere client| image:: ./_static/images/vsphere-client.png
+.. |addcluster.png: add a cluster| image:: ./_static/images/add-cluster.png
+.. |ConsoleButton.png: button to launch a console| image:: ./_static/images/console-icon.png
+.. |basic-deployment.png: Basic two-machine CloudStack deployment| image:: ./_static/images/vm-lifecycle.png
+.. |image20| image:: ./_static/images/view-console-button.png
+.. |change-affinity-button.png: button to assign an affinity group to a virtual machine| image:: ./_static/images/change-affinity-button.png
+.. |image22| image:: ./_static/images/SnapshotButton.png
+.. |image23| image:: ./_static/images/delete-button.png
+.. |image24| image:: ./_static/images/revert-vm.png
+.. |StopButton.png: button to stop a VM| image:: ./_static/images/stop-instance-icon.png
+.. |EditButton.png: button to edit the properties of a VM| image:: ./_static/images/edit-icon.png
+.. |ChangeServiceButton.png: button to change the service of a VM| image:: ./_static/images/change-service-icon.png
+.. |Migrateinstance.png: button to migrate an instance| image:: ./_static/images/migrate-instance.png
+.. |Destroyinstance.png: button to destroy an instance| image:: ./_static/images/destroy-instance.png
+.. |iso.png: depicts adding an iso image| image:: ./_static/images/iso-icon.png
+.. |enable-disable.png: button to enable or disable zone, pod, or cluster.| image:: ./_static/images/enable-disable.png
+.. |image32| image:: ./_static/images/enable-disable.png
+.. |edit-icon.png: button to edit the VLAN range.| image:: ./_static/images/edit-icon.png
+.. |sysmanager.png: System Image Manager| image:: ./_static/images/sysmanager.png
+.. |software-license.png: Depicts hiding the EULA page.| image:: ./_static/images/software-license.png
+.. |change-admin-password.png: Depicts changing the administrator password| image:: ./_static/images/change-admin-password.png
+.. |AttachDiskButton.png: button to attach a volume| image:: ./_static/images/attach-disk-icon.png
+.. |DetachDiskButton.png: button to detach a volume| image:: ./_static/images/detach-disk-icon.png
+.. |Migrateinstance.png: button to migrate a volume| image:: ./_static/images/migrate-instance.png
+.. |Migrateinstance.png: button to migrate a VM or volume| image:: ./_static/images/migrate-instance.png
+.. |resize-volume-icon.png: button to display the resize volume option.| image:: ./_static/images/resize-volume-icon.png
+.. |resize-volume.png: option to resize a volume.| image:: ./_static/images/resize-volume.png
+.. |image43| image:: ./_static/images/SnapshotButton.png
+.. |editbutton.png: edits the settings.| image:: ./_static/images/edit-icon.png
+.. |editbutton.png: edits the settings| image:: ./_static/images/edit-icon.png
+.. |guest-traffic-setup.png: Depicts a guest traffic setup| image:: ./_static/images/guest-traffic-setup.png
+.. |networksinglepod.png: diagram showing logical view of network in a pod| image:: ./_static/images/network-singlepod.png
+.. |networksetupzone.png: Depicts network setup in a single zone| image:: ./_static/images/network-setup-zone.png
+.. |addguestnetwork.png: Add Guest network setup in a single zone| image:: ./_static/images/add-guest-network.png
+.. |remove-nic.png: button to remove a NIC| image:: ./_static/images/remove-nic.png
+.. |set-default-nic.png: button to set a NIC as default one.| image:: ./_static/images/set-default-nic.png
+.. |EditButton.png: button to edit a network| image:: ./_static/images/edit-icon.png
+.. |edit-icon.png: button to edit a network| image:: ./_static/images/edit-icon.png
+.. |addAccount-icon.png: button to assign an IP range to an account.| image:: ./_static/images/addAccount-icon.png
+.. |eip-ns-basiczone.png: Elastic IP in a NetScaler-enabled Basic Zone.| image:: ./_static/images/eip-ns-basiczone.png
+.. |add-ip-range.png: adding an IP range to a network.| image:: ./_static/images/add-ip-range.png
+.. |httpaccess.png: allows inbound HTTP access from anywhere| image:: ./_static/images/http-access.png
+.. |autoscaleateconfig.png: Configuring AutoScale| image:: ./_static/images/autoscale-config.png
+.. |EnableDisable.png: button to enable or disable AutoScale.| image:: ./_static/images/enable-disable-autoscale.png
+.. |gslb.png: GSLB architecture| image:: ./_static/images/gslb.png
+.. |gslb-add.png: adding a gslb rule| image:: ./_static/images/add-gslb.png
+.. |ReleaseIPButton.png: button to release an IP| image:: ./_static/images/release-ip-icon.png
+.. |enabledisablenat.png: button to enable/disable NAT| image:: ./_static/images/enable-disable.png
+.. |egress-firewall-rule.png: adding an egress firewall rule| image:: ./_static/images/egress-firewall-rule.png
+.. |EnableVPNButton.png: button to enable a VPN| image:: ./_static/images/vpn-icon.png
+.. |vpn-icon.png: button to enable VPN| image:: ./_static/images/vpn-icon.png
+.. |addvpncustomergateway.png: adding a customer gateway.| image:: ./_static/images/add-vpn-customer-gateway.png
+.. |edit.png: button to edit a VPN customer gateway| image:: ./_static/images/edit-icon.png
+.. |delete.png: button to remove a VPN customer gateway| image:: ./_static/images/delete-button.png
+.. |createvpnconnection.png: creating a VPN connection to the customer gateway.| image:: ./_static/images/create-vpn-connection.png
+.. |remove-vpn.png: button to remove a VPN connection| image:: ./_static/images/remove-vpn.png
+.. |reset-vpn.png: button to reset a VPN connection| image:: ./_static/images/reset-vpn.png
+.. |mutltier.png: a multi-tier setup.| image:: ./_static/images/multi-tier-app.png
+.. |add-vpc.png: adding a vpc.| image:: ./_static/images/add-vpc.png
+.. |add-tier.png: adding a tier to a vpc.| image:: ./_static/images/add-tier.png
+.. |replace-acl-icon.png: button to replace an ACL list| image:: ./_static/images/replace-acl-icon.png
+.. |add-new-gateway-vpc.png: adding a private gateway for the VPC.| image:: ./_static/images/add-new-gateway-vpc.png
+.. |replace-acl-icon.png: button to replace the default ACL behaviour.| image:: ./_static/images/replace-acl-icon.png
+.. |add-vm-vpc.png: adding a VM to a vpc.| image:: ./_static/images/add-vm-vpc.png
+.. |addvm-tier-sharednw.png: adding a VM to a VPC tier and shared network.| image:: ./_static/images/addvm-tier-sharednw.png
+.. |release-ip-icon.png: button to release an IP.| image:: ./_static/images/release-ip-icon.png
+.. |enable-disable.png: button to enable Static NAT.| image:: ./_static/images/enable-disable.png
+.. |select-vmstatic-nat.png: selecting a tier to apply staticNAT.| image:: ./_static/images/select-vm-staticnat-vpc.png
+.. |vpc-lb.png: Configuring internal LB for VPC| image:: ./_static/images/vpc-lb.png
+.. |del-tier.png: button to remove a tier| image:: ./_static/images/del-tier.png
+.. |remove-vpc.png: button to remove a VPC| image:: ./_static/images/remove-vpc.png
+.. |edit-icon.png: button to edit a VPC| image:: ./_static/images/edit-icon.png
+.. |restart-vpc.png: button to restart a VPC| image:: ./_static/images/restart-vpc.png
+.. |vr-upgrade.png: Button to upgrade VR to use the new template.| image:: ./_static/images/vr-upgrade.png
