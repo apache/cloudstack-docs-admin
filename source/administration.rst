@@ -11412,7 +11412,7 @@ A user or administrator can define a new security group.
    To make the security group useful, continue to Adding Ingress and
    Egress Rules to a Security Group.
 
-15.15.3. Security Groups in Advanced Zones (KVM Only)
+Security Groups in Advanced Zones (KVM Only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack provides the ability to use security groups to provide
@@ -11447,7 +11447,7 @@ The following are not supported for this feature:
 Security groups must be enabled in the zone in order for this feature to
 be used.
 
-15.15.4. Enabling Security Groups
+Enabling Security Groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order for security groups to function in a zone, the security groups
@@ -11458,7 +11458,7 @@ Configuration in the Advanced Installation Guide. The administrator can
 not enable security groups for an existing zone, only when creating a
 new zone.
 
-15.15.5. Adding Ingress and Egress Rules to a Security Group
+Adding Ingress and Egress Rules to a Security Group
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -11585,7 +11585,7 @@ new zone.
 
    Click Add.
 
-15.16. External Firewalls and Load Balancers
+External Firewalls and Load Balancers
 --------------------------------------------
 
 CloudStack is capable of replacing its Virtual Router with an external
@@ -11593,7 +11593,7 @@ Juniper SRX device and an optional external NetScaler or F5 load
 balancer for gateway and load balancing services. In this case, the VMs
 use the SRX as their gateway.
 
-15.16.1. About Using a NetScaler Load Balancer
+About Using a NetScaler Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Citrix NetScaler is supported as an external network element for load
@@ -11668,7 +11668,7 @@ CloudStack automatically – no manual configuration by the administrator
 is required. Once a VPX instance is added into CloudStack, it is treated
 the same as a VPX on an ESXi host.
 
-15.16.2. Configuring SNMP Community String on a RHEL Server
+Configuring SNMP Community String on a RHEL Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The SNMP Community string is similar to a user id or password that
@@ -11767,7 +11767,7 @@ communication between the NetScaler device and the RHEL machine.
 
        chkconfig snmpd on
 
-15.16.3. Initial Setup of External Firewalls and Load Balancers
+Initial Setup of External Firewalls and Load Balancers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the first VM is created for a new account, CloudStack programs the
@@ -11834,7 +11834,7 @@ NAT, and load balancing rules is measured and saved on each external
 element. This data is collected on a regular basis and stored in the
 CloudStack database.
 
-15.16.5. Load Balancer Rules
+Load Balancer Rules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A CloudStack user or administrator may create load balancing rules that
@@ -11849,7 +11849,7 @@ uses the CloudStack virtual router, you must create a firewall rule on
 the virtual router for each of your existing load balancing rules so
 that they continue to function.
 
-15.16.5.1. Adding a Load Balancer Rule
+Adding a Load Balancer Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -11967,7 +11967,7 @@ that they continue to function.
    The new load balancer rule appears in the list. You can repeat these
    steps to add more load balancer rules for this IP address.
 
-15.16.5.2. Sticky Session Policies for Load Balancer Rules
+Sticky Session Policies for Load Balancer Rules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sticky sessions are used in Web-based applications to ensure continued
@@ -11994,7 +11994,7 @@ For the most up to date list of available stickiness methods, see the
 CloudStack UI or call listNetworks and check the
 SupportedStickinessMethods capability.
 
-15.16.5.3. Health Checks for Load Balancer Rules
+Health Checks for Load Balancer Rules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (NetScaler load balancer only; requires NetScaler version 10.0)
@@ -12032,7 +12032,7 @@ For details on how to set a health check policy using the UI, see
 `Section 15.16.5.1, “Adding a Load Balancer
 Rule” <#add-load-balancer-rule>`__.
 
-15.16.6. Configuring AutoScale
+Configuring AutoScale
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 AutoScaling allows you to scale your back-end services or application
@@ -12337,7 +12337,7 @@ Runtime Considerations
    rule, NetScaler continues to show the VM as a service assigned to a
    rule.
 
-15.17. Global Server Load Balancing Support
+Global Server Load Balancing Support
 -------------------------------------------
 
 CloudStack supports Global Server Load Balancing (GSLB) functionalities
@@ -12368,7 +12368,7 @@ separated locations. GSLB can also provide an alternate location for
 accessing a resource in the event of a failure, or to provide a means of
 shifting traffic easily to simplify maintenance, or both.
 
-15.17.1.1. Components of GSLB
+Components of GSLB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A typical GSLB environment is comprised of the following components:
@@ -12435,7 +12435,7 @@ A typical GSLB environment is comprised of the following components:
    ADNS service, the NetScaler responds to DNS queries on the configured
    ADNS service IP and port.
 
-15.17.1.2. How Does GSLB Works in CloudStack?
+How Does GSLB Works in CloudStack?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Global server load balancing is used to manage the traffic flow to a web
@@ -12502,7 +12502,7 @@ of the virtual servers being load balanced, DNS request for the domain
 will be resolved to the public IP associated with the selected virtual
 server.
 
-15.17.2. Configuring GSLB
+Configuring GSLB
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To configure a GSLB deployment, you must first configure a standard load
@@ -12607,7 +12607,7 @@ As a domain administrator/ user perform the following:
    See `Section 15.17.2.4, “Assigning Load Balancing Rules to
    GSLB” <#assign-lb-gslb>`__.
 
-15.17.2.1. Prerequisites and Guidelines
+Prerequisites and Guidelines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  
@@ -12686,7 +12686,7 @@ As a domain administrator/ user perform the following:
 
    Statistics is collected from each GSLB virtual server.
 
-15.17.2.2. Enabling GSLB in NetScaler
+Enabling GSLB in NetScaler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In each zone, add GSLB-enabled NetScaler device for load balancing.
@@ -12858,7 +12858,7 @@ In each zone, add GSLB-enabled NetScaler device for load balancing.
 
    Click OK to confirm.
 
-15.17.2.4. Assigning Load Balancing Rules to GSLB
+Assigning Load Balancing Rules to GSLB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -12897,7 +12897,7 @@ In each zone, add GSLB-enabled NetScaler device for load balancing.
 
    Click OK to confirm.
 
-15.17.3. Known Limitation
+Known Limitation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently, CloudStack does not support orchestration of services across
@@ -12957,7 +12957,7 @@ Ranges” <#multiple-ip-range>`__.
    Allocated. You can now use the IP address in port forwarding or
    static NAT rules.
 
-15.20. Releasing an IP Address
+Releasing an IP Address
 ------------------------------
 
 When the last rule for an IP address is removed, you can release that IP
@@ -13040,7 +13040,7 @@ function only if they are defined on the default network.
    If you are enabling static NAT, a dialog appears where you can choose
    the destination VM and click Apply.
 
-15.22. IP Forwarding and Firewalling
+IP Forwarding and Firewalling
 ------------------------------------
 
 By default, all incoming traffic to the public IP address is rejected.
@@ -13136,7 +13136,7 @@ To create a firewall rule:
 
    Click Add.
 
-15.22.2. Egress Firewall Rules in an Advanced Zone
+Egress Firewall Rules in an Advanced Zone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The egress traffic originates from a private network to a public
@@ -13182,7 +13182,7 @@ Consider the following scenarios to apply egress firewall rules:
    upgrade existing network offerings with firewall service providers
    will have the default egress policy Deny.
 
-15.22.2.2. Configuring an Egress Firewall Rule
+Configuring an Egress Firewall Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -13236,7 +13236,7 @@ Consider the following scenarios to apply egress firewall rules:
 
    Click Add.
 
-15.22.2.3. Configuring the Default Egress Policy
+Configuring the Default Egress Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The default egress policy for Isolated guest network is configured by
@@ -13310,7 +13310,7 @@ This feature is supported only on virtual router and Juniper SRX.
    Based on your selection, the network will have the egress public
    traffic blocked or allowed.
 
-15.22.3. Port Forwarding
+Port Forwarding
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 A port forward service is a set of port forwarding rules that define a
@@ -13392,7 +13392,7 @@ To set up port forwarding:
 
    Click Add.
 
-15.23. IP Load Balancing
+IP Load Balancing
 ------------------------
 
 The user may choose to associate the same public IP for multiple guests.
@@ -13414,14 +13414,14 @@ policies.
 This is similar to port forwarding but the destination may be multiple
 IP addresses.
 
-15.24. DNS and DHCP
+DNS and DHCP
 -------------------
 
 The Virtual Router provides DNS and DHCP services to the guests. It
 proxies DNS requests to the DNS server configured on the Availability
 Zone.
 
-15.25. Remote Access VPN
+Remote Access VPN
 ------------------------
 
 CloudStack account owners can create virtual private networks (VPN) to
@@ -13461,7 +13461,7 @@ all traffic.
    information, see `Section 15.25.5, “Setting Up a Site-to-Site VPN
    Connection” <#site-to-site-vpn>`__
 
-15.25.1. Configuring Remote Access VPN
+Configuring Remote Access VPN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To set up VPN for the cloud:
@@ -13521,7 +13521,7 @@ To enable VPN for a particular network:
 
    The IPsec key is displayed in a popup window.
 
-15.25.2. Configuring Remote Access VPN in VPC
+Configuring Remote Access VPN in VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On enabling Remote Access VPN on a VPC, any VPN client present outside
@@ -13629,7 +13629,7 @@ Now, you need to add the VPN users.
 
    Repeat the same steps to add the VPN users.
 
-15.25.3. Using Remote Access VPN with Windows
+Using Remote Access VPN with Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The procedure to use VPN varies by Windows version. Generally, the user
@@ -13754,7 +13754,7 @@ differ slightly in older or newer releases of Mac OS X.
 
    Now click "Connect" and you will be connected to the CloudStack VPN.
 
-15.25.5. Setting Up a Site-to-Site VPN Connection
+Setting Up a Site-to-Site VPN Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A Site-to-Site VPN connection helps you establish a secure connection
@@ -13812,7 +13812,7 @@ To set up a Site-to-Site VPN connection, perform the following:
    Create VPN connection from the VPC VPN gateway to the customer VPN
    gateway.
 
-15.25.5.1. Creating and Updating a VPN Customer Gateway
+Creating and Updating a VPN Customer Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: A VPN customer gateway can be connected to only one VPN gateway at a
@@ -13991,7 +13991,7 @@ related VPN connection is in error state.
 
    Click OK.
 
-15.25.5.2. Creating a VPN gateway for the VPC
+Creating a VPN gateway for the VPC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -14086,7 +14086,7 @@ related VPN connection is in error state.
 
       Domain
 
-15.25.5.3. Creating a VPN Connection
+Creating a VPN Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: CloudStack supports creating up to 8 VPN connections.
@@ -14224,7 +14224,7 @@ related VPN connection is in error state.
 
       ESP Policy
 
-15.25.5.4. Site-to-Site VPN Connection Between VPC Networks
+Site-to-Site VPN Connection Between VPC Networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CloudStack provides you with the ability to establish a site-to-site VPN
@@ -14281,7 +14281,7 @@ This feature is supported on all the hypervisors.
    Wait for few seconds. The default is 30 seconds for both the VPN
    connections to show the Connected state.
 
-15.25.5.5. Restarting and Removing a VPN Connection
+Restarting and Removing a VPN Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -14379,7 +14379,7 @@ This feature is supported on all the hypervisors.
    present in the Details tab. |reset-vpn.png: button to reset a VPN
    connection|
 
-15.26. About Inter-VLAN Routing (nTier Apps)
+About Inter-VLAN Routing (nTier Apps)
 --------------------------------------------
 
 Inter-VLAN Routing (nTier Apps) is the capability to route network
@@ -14481,10 +14481,10 @@ Inter-VLAN setup:
 To set up a multi-tier Inter-VLAN deployment, see `Section 15.27,
 “Configuring a Virtual Private Cloud” <#configure-vpc>`__.
 
-15.27. Configuring a Virtual Private Cloud
+Configuring a Virtual Private Cloud
 ------------------------------------------
 
-15.27.1. About Virtual Private Clouds
+About Virtual Private Clouds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack Virtual Private Cloud is a private, isolated part of
@@ -14699,7 +14699,7 @@ Consider the following before you create a VPC:
 
    Remote access VPN is not supported in VPC networks.
 
-15.27.2. Adding a Virtual Private Cloud
+Adding a Virtual Private Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When creating the VPC, you simply provide the zone and a set of IP
@@ -14762,7 +14762,7 @@ addresses in the form of a Classless Inter-Domain Routing (CIDR) block.
 
    Click OK.
 
-15.27.3. Adding Tiers
+Adding Tiers
 ~~~~~~~~~~~~~~~~~~~~~
 
 Tiers are distinct locations within a VPC that act as isolated networks,
@@ -14858,7 +14858,7 @@ other tiers within the VPC.
 
    Continue with configuring access control list for the tier.
 
-15.27.4. Configuring Network Access Control List
+Configuring Network Access Control List
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Define Network Access Control List (ACL) on the VPC virtual router to
@@ -14871,7 +14871,7 @@ blocked. To open the ports, you must create a new network ACL. The
 network ACLs can be created for the tiers only if the NetworkACL service
 is supported.
 
-15.27.4.1. About Network ACL Lists
+About Network ACL Lists
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In CloudStack terminology, Network ACL is a group of Network ACL items.
@@ -14919,7 +14919,7 @@ Deny
 
 0.0.0.0/0
 
-15.27.4.2. Creating ACL Lists
+Creating ACL Lists
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -15001,7 +15001,7 @@ Deny
       **Description**: A short description of the ACL list that can be
       displayed to users.
 
-15.27.4.3. Creating an ACL Rule
+Creating an ACL Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -15097,7 +15097,7 @@ Deny
    rules you have created. Click the appropriate button in the Details
    tab.
 
-15.27.4.4. Creating a Tier with Custom ACL List
+Creating a Tier with Custom ACL List
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -15122,7 +15122,7 @@ Deny
 
    Click OK.
 
-15.27.4.5. Assigning a Custom ACL List to a Tier
+Assigning a Custom ACL List to a Tier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -15164,7 +15164,7 @@ Deny
 
    Click OK.
 
-15.27.5. Adding a Private Gateway to a VPC
+Adding a Private Gateway to a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A private gateway can be added by the root admin only. The VPC private
@@ -15296,7 +15296,7 @@ with duplicated VLAN and IP are allowed in the same data center.
    The new gateway appears in the list. You can repeat these steps to
    add more gateway for this VPC.
 
-15.27.5.1. Source NAT on Private Gateway
+Source NAT on Private Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You might want to deploy multiple VPCs with the same super CIDR and
@@ -15314,7 +15314,7 @@ specific to the private gateway are deleted.
 To enable source NAT on existing private gateways, delete them and
 create afresh with source NAT.
 
-15.27.5.2. ACL on Private Gateway
+ACL on Private Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The traffic on the VPC private gateway is controlled by creating both
@@ -15365,7 +15365,7 @@ Alternatively, you can do the following:
    Wait for few seconds. You can see that the new ACL rule is displayed
    in the Details page.
 
-15.27.5.3. Creating a Static Route
+Creating a Static Route
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CloudStack enables you to specify routing for the VPN connection you
@@ -15395,7 +15395,7 @@ to be routed back to the gateway.
 
    Wait for few seconds until the new route is created.
 
-15.27.5.4. Blacklisting Routes
+Blacklisting Routes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CloudStack enables you to block a list of routes so that they are not
@@ -15443,7 +15443,7 @@ blacklisted for the zone.
    Follow the on-screen instruction to add an instance. For information
    on adding an instance, see the Installation Guide.
 
-15.27.7. Deploying VMs to VPC Tier and Shared Networks
+Deploying VMs to VPC Tier and Shared Networks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack allows you deploy VMs on a VPC tier and one or more shared
@@ -15492,7 +15492,7 @@ service provider.
 
    Your VM will be deployed to the selected VPC tier and shared network.
 
-15.27.8. Acquiring a New IP Address for a VPC
+Acquiring a New IP Address for a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you acquire an IP address, all IP addresses are allocated to VPC,
@@ -15579,7 +15579,7 @@ associated to more than one network at a time.
    should appear with the state Allocated. You can now use the IP
    address in port forwarding, load balancing, and static NAT rules.
 
-15.27.9. Releasing an IP Address Alloted to a VPC
+Releasing an IP Address Alloted to a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The IP address is a limited resource. If you no longer need a particular
@@ -15769,7 +15769,7 @@ function only if they are defined on the default network.
 
    Select the tier and the destination VM, then click Apply.
 
-15.27.11. Adding Load Balancing Rules on a VPC
+Adding Load Balancing Rules on a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In a VPC, you can configure two types of load balancing—external LB and
@@ -15783,7 +15783,7 @@ reached at Web tier is redirected to another VM in that tier. External
 load balancing devices are not supported for internal LB. The service is
 provided by a internal LB VM configured on the target tier.
 
-15.27.11.1. Load Balancing Within a Tier (External LB)
+Load Balancing Within a Tier (External LB)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A CloudStack user or administrator may create load balancing rules that
@@ -15792,7 +15792,7 @@ to a network tier that provides load balancing service in a VPC. A user
 creates a rule, specifies an algorithm, and assigns the rule to a set of
 VMs within a tier.
 
-15.27.11.1.1. Enabling NetScaler as the LB Provider on a VPC Tier
+Enabling NetScaler as the LB Provider on a VPC Tier
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 #. 
@@ -15824,7 +15824,7 @@ VMs within a tier.
    `Section 15.27.11.1.3, “Creating an External LB
    Rule” <#ext-lb-vpc>`__.
 
-15.27.11.1.2. Creating a Network Offering for External LB
+Creating a Network Offering for External LB
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 To have external LB support on VPC, create a network offering as
@@ -15918,7 +15918,7 @@ follows:
 
    Click OK and the network offering is created.
 
-15.27.11.1.3. Creating an External LB Rule
+Creating an External LB Rule
 ''''''''''''''''''''''''''''''''''''''''''
 
 #. 
@@ -16053,7 +16053,7 @@ follows:
 The new load balancing rule appears in the list. You can repeat these
 steps to add more load balancing rules for this IP address.
 
-15.27.11.2. Load Balancing Across Tiers
+Load Balancing Across Tiers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CloudStack supports sharing workload across different tiers within your
@@ -16065,7 +16065,7 @@ VPC” <#add-loadbalancer-rule-vpc>`__. If you want the traffic coming
 from the Web tier to the Application tier to be balanced, use the
 internal load balancing feature offered by CloudStack.
 
-15.27.11.2.1. How Does Internal LB Work in VPC?
+How Does Internal LB Work in VPC?
 '''''''''''''''''''''''''''''''''''''''''''''''
 
 In this figure, a public LB rule is created for the public IP
@@ -16082,7 +16082,7 @@ configured on the VM, InternalLBVM2.
 
 |vpc-lb.png: Configuring internal LB for VPC|
 
-15.27.11.2.2. Guidelines
+Guidelines
 ''''''''''''''''''''''''
 
 -  
@@ -16113,7 +16113,7 @@ configured on the VM, InternalLBVM2.
 
    Only one tier can have Public LB support in a VPC.
 
-15.27.11.2.3. Enabling Internal LB on a VPC Tier
+Enabling Internal LB on a VPC Tier
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
 #. 
@@ -16127,7 +16127,7 @@ configured on the VM, InternalLBVM2.
    `Section 15.27.11.2.5, “Creating an Internal LB
    Rule” <#int-lb-vpc>`__.
 
-15.27.11.2.4. Creating a Network Offering for Internal LB
+Creating a Network Offering for Internal LB
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 To have internal LB support on VPC, either use the default offering,
@@ -16217,7 +16217,7 @@ network offering as follows:
 
    Click OK and the network offering is created.
 
-15.27.11.2.5. Creating an Internal LB Rule
+Creating an Internal LB Rule
 ''''''''''''''''''''''''''''''''''''''''''
 
 When you create the Internal LB rule and applies to a VM, an Internal LB
@@ -16310,7 +16310,7 @@ the location.
 
          Source
 
-15.27.12. Adding a Port Forwarding Rule on a VPC
+Adding a Port Forwarding Rule on a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -16429,7 +16429,7 @@ the location.
 
       You can test the rule by opening an SSH session to the instance.
 
-15.27.13. Removing Tiers
+Removing Tiers
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can remove a tier from a VPC. A removed tier cannot be revoked. When
@@ -16511,7 +16511,7 @@ belonging to the same VPC.
    To restart a VPC, select the VPC, then click the Restart button.
    |restart-vpc.png: button to restart a VPC|
 
-15.28. Persistent Networks
+Persistent Networks
 --------------------------
 
 The network that you can provision without having to deploy any VMs on
@@ -16536,7 +16536,7 @@ physical hardware, you can define the network as persistent and
 therefore even if all its VMs are destroyed the services will not be
 discontinued.
 
-15.28.1. Persistent Network Considerations
+Persistent Network Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -16580,7 +16580,7 @@ discontinued.
    is persistent, and shuts down the network only if it is
    non-persistent.
 
-15.28.2. Creating a Persistent Guest Network
+Creating a Persistent Guest Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a persistent network, perform the following:
@@ -16623,7 +16623,7 @@ creates, starts, and stops them as needed based on scale and immediate
 needs. However, the administrator should be aware of them and their
 roles to assist in debugging issues.
 
-16.1. The System VM Template
+The System VM Template
 ----------------------------
 
 The System VMs come from a single template. The System VM has the
@@ -16662,7 +16662,7 @@ following characteristics:
    Latest version of JRE from Sun/Oracle ensures improved security and
    speed
 
-16.2. Changing the Default System VM Template
+Changing the Default System VM Template
 ---------------------------------------------
 
 CloudStack allows you to change the default 32-bit System VM template to
@@ -16732,7 +16732,7 @@ The management server monitors and weights all commands sent to these
 System VMs and performs dynamic load balancing and scaling-up of more
 System VMs.
 
-16.4. Console Proxy
+Console Proxy
 -------------------
 
 The Console Proxy is a type of System Virtual Machine that has a role in
@@ -16769,7 +16769,7 @@ the capacity to handle new sessions is used.
 Console proxies can be restarted by administrators but this will
 interrupt existing console sessions for users.
 
-16.4.1. Using a SSL Certificate for the Console Proxy
+Using a SSL Certificate for the Console Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The console viewing functionality uses a dynamic DNS service under the
@@ -16788,7 +16788,7 @@ allows the browser to correctly connect to the console proxy's public
 IP, where it then expects and receives a SSL certificate for
 realhostip.com, and SSL is set up without browser warnings.
 
-16.4.2. Changing the Console Proxy SSL Certificate and Domain
+Changing the Console Proxy SSL Certificate and Domain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the administrator prefers, it is possible for the URL of the
@@ -16884,7 +16884,7 @@ The Management Server generates URLs of the form
 requests will be served with the new DNS domain name, certificate, and
 key.
 
-16.5. Virtual Router
+Virtual Router
 --------------------
 
 The virtual router is a type of System Virtual Machine. The virtual
@@ -16901,7 +16901,7 @@ basic test in debugging networking issues is to attempt to ping the
 virtual router from a guest VM. Some of the characteristics of the
 virtual router are determined by its associated system service offering.
 
-16.5.1. Configuring the Virtual Router
+Configuring the Virtual Router
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set the following:
@@ -16930,7 +16930,7 @@ You can set the following:
    router.stats.interval. If you are not using the virtual router to
    gather network usage statistics, set it to 0.
 
-16.5.2. Upgrading a Virtual Router with System Service Offerings
+Upgrading a Virtual Router with System Service Offerings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When CloudStack creates a virtual router, it uses default settings which
@@ -16962,7 +16962,7 @@ creating and applying a custom system service offering.
    follow the steps in `Section 15.6.3, “Changing the Network Offering
    on a Guest Network” <#change-network-offering-on-guest-network>`__.
 
-16.5.3. Best Practices for Virtual Routers
+Best Practices for Virtual Routers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
@@ -17036,7 +17036,7 @@ The following networks are supported:
 This feature is supported on the following hypervisors: XenServer,
 VMware, and KVM.
 
-16.5.5. Enhanced Upgrade for Virtual Routers
+Enhanced Upgrade for Virtual Routers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upgrading VR is made flexible. The CloudStack administrators will be
@@ -17303,7 +17303,7 @@ VIP for Port 8250 and one of your management servers crashes, the UI is
 still available but the system VMs will not be able to contact the
 management server.
 
-17.3. HA-Enabled Virtual Machines
+HA-Enabled Virtual Machines
 ---------------------------------
 
 The user can specify a virtual machine as HA-enabled. By default, all
@@ -17319,7 +17319,7 @@ Host in the same cluster.
 HA features work with iSCSI or NFS primary storage. HA with local
 storage is not supported.
 
-17.4. HA for Hosts
+HA for Hosts
 ------------------
 
 The user can specify a virtual machine as HA-enabled. By default, all
@@ -17335,7 +17335,7 @@ Host in the same cluster.
 HA features work with iSCSI or NFS primary storage. HA with local
 storage is not supported.
 
-17.4.1. Dedicated HA Hosts
+Dedicated HA Hosts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One or more hosts can be designated for use only by HA-enabled VMs that
@@ -17367,7 +17367,7 @@ that you want to dedicate to HA-enabled VMs.
 in your cloud. If the tag specified in ha.tag is not set for any host in
 the cloud, the HA-enabled VMs will fail to restart after a crash.
 
-17.5. Primary Storage Outage and Data Loss
+Primary Storage Outage and Data Loss
 ------------------------------------------
 
 When a primary storage outage occurs the hypervisor immediately stops
@@ -17404,7 +17404,7 @@ covers both the main CloudStack database and the Usage database.
 Replication is achieved using the MySQL connector parameters and two-way
 replication. Tested with MySQL 5.1 and 5.5.
 
-17.7.1. How to Set Up Database Replication
+How to Set Up Database Replication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Database replication in CloudStack is provided using the MySQL
@@ -17429,7 +17429,7 @@ References:
 
    `https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server <https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server>`__
 
-17.7.2. Configuring Database High Availability
+Configuring Database High Availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To control the database high availability behavior, use the following
@@ -17518,7 +17518,7 @@ feature.
    generated by replication on database nodes. If you do not clean up
    the log files, the disk can become full.
 
-17.8. Limiting the Rate of API Requests
+Limiting the Rate of API Requests
 ---------------------------------------
 
 You can limit the rate at which API requests can be placed for each
@@ -17530,7 +17530,7 @@ If the number of API calls exceeds the threshold, an error message is
 returned for any additional API calls. The caller will have to retry
 these API calls at another time.
 
-17.8.1. Configuring the API Request Rate
+Configuring the API Request Rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To control the API request rate, use the following global configuration
@@ -17559,7 +17559,7 @@ settings:
    One cache entry is needed for each account, to store the running API
    total for that account.
 
-17.8.2. Limitations on API Throttling
+Limitations on API Throttling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following limitations exist in the current implementation of this
@@ -17584,7 +17584,7 @@ API throttling to avoid malicious attacks causing denial of service.
 Managing the Cloud
 ==================
 
-18.1. Using Tags to Organize Resources in the Cloud
+Using Tags to Organize Resources in the Cloud
 ---------------------------------------------------
 
 A tag is a key-value pair that stores metadata about a resource in the
@@ -17681,7 +17681,7 @@ The following API commands have the "tags" input parameter:
 
    listStaticRoutes
 
-18.2. Changing the Database Configuration
+Changing the Database Configuration
 -----------------------------------------
 
 The CloudStack Management Server stores database configuration
@@ -17689,7 +17689,7 @@ information (e.g., hostname, port, credentials) in the file
 ``/etc/cloudstack/management/db.properties``. To effect a change, edit
 this file on each Management Server, then restart the Management Server.
 
-18.3. Changing the Database Password
+Changing the Database Password
 ------------------------------------
 
 You may need to change the password for the MySQL account used by
@@ -17791,7 +17791,7 @@ Emails will be sent to administrators under the following circumstances:
 
    The Host cluster runs low on CPU, memory, or storage resources
 
-18.4.1. Sending Alerts to External SNMP and Syslog Managers
+Sending Alerts to External SNMP and Syslog Managers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In addition to showing administrator alerts on the Dashboard in the
@@ -17804,7 +17804,7 @@ The alerts which can be sent are listed in `Appendix C,
 *Alerts* <#alerts>`__. You can also display the most up to date list by
 calling the API command listAlerts.
 
-18.4.1.1. SNMP Alert Details
+SNMP Alert Details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The supported protocol is SNMP version 2.
@@ -17812,7 +17812,7 @@ The supported protocol is SNMP version 2.
 Each SNMP trap contains the following information: message, podId,
 dataCenterId, clusterId, and generationTime.
 
-18.4.1.2. Syslog Alert Details
+Syslog Alert Details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CloudStack generates a syslog message for every alert. Each syslog
@@ -17830,7 +17830,7 @@ For example:
 
     Mar  4 10:13:47    WARN    localhost    alertType:: managementNode message:: Management server node 127.0.0.1 is up
 
-18.4.1.3. Configuring SNMP and Syslog Managers
+Configuring SNMP and Syslog Managers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To configure one or more SNMP managers or Syslog managers to receive
@@ -17912,14 +17912,14 @@ there is an error in the syntax of the <appender> entry in
 log4j-cloud.xml. Check to be sure that the format and settings are
 correct.
 
-18.4.1.4. Deleting an SNMP or Syslog Manager
+Deleting an SNMP or Syslog Manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To remove an external SNMP manager or Syslog manager so that it no
 longer receives alerts from CloudStack, remove the corresponding entry
 from the file /etc/cloudstack/management/log4j-cloud.xml.
 
-18.5. Customizing the Network Domain Name
+Customizing the Network Domain Name
 -----------------------------------------
 
 The root administrator can optionally assign a custom DNS suffix at the
@@ -17986,7 +17986,7 @@ rules.
    zone is used. If none is specified, the system looks for a value in
    the global configuration.
 
-18.6. Stopping and Restarting the Management Server
+Stopping and Restarting the Management Server
 ---------------------------------------------------
 
 The root administrator will need to stop and restart the Management
@@ -18105,7 +18105,7 @@ The default value is 20 minutes. Increase the timeout value to avoid
 timeout errors in VMware deployments because certain VMware operations
 take more than 20 minutes.
 
-19.2. Setting Global Configuration Parameters
+Setting Global Configuration Parameters
 ---------------------------------------------
 
 Use the following steps to set global configuration parameters. These
@@ -18145,7 +18145,7 @@ deployment.
    are viewing Hypervisor Capabilities, you must click the name of the
    hypervisor first to display the editing screen.
 
-19.3. Setting Local Configuration Parameters
+Setting Local Configuration Parameters
 --------------------------------------------
 
 Use the following steps to set local configuration parameters for an
@@ -18184,7 +18184,7 @@ the global configuration settings.
 
    In the Actions column, click the Edit icon to modify a value.
 
-19.4. Granular Global Configuration Parameters
+Granular Global Configuration Parameters
 ----------------------------------------------
 
 The following global configuration parameters have been made more
@@ -18393,7 +18393,7 @@ Guide <http://docs.cloudstack.org/CloudStack_Documentation/Developer's_Guide%3A_
 and `the API
 Reference <http://docs.cloudstack.org/CloudStack_Documentation/API_Reference%3A_CloudStack>`__.
 
-20.1. Provisioning and Authentication API
+Provisioning and Authentication API
 -----------------------------------------
 
 CloudStack expects that a customer will have their own user provisioning
@@ -18406,7 +18406,7 @@ authentication is done locally. However, external authentication is
 possible as well. For example, see Using an LDAP Server for User
 Authentication.
 
-20.2. User Data and Meta Data
+User Data and Meta Data
 -----------------------------
 
 CloudStack provides API access to attach up to 32KB of user data to a
@@ -18474,7 +18474,7 @@ Tuning
 This section provides tips on how to improve the performance of your
 cloud.
 
-21.1. Performance Monitoring
+Performance Monitoring
 ----------------------------
 
 Host and guest performance monitoring is available to end users and
@@ -18482,7 +18482,7 @@ administrators. This allows the user to monitor their utilization of
 resources and determine when it is appropriate to choose a more powerful
 service offering or larger disk.
 
-21.2. Increase Management Server Maximum Memory
+Increase Management Server Maximum Memory
 -----------------------------------------------
 
 If the Management Server is subject to high demand, the default maximum
@@ -18553,7 +18553,7 @@ For more information about the buffer pool, see "The InnoDB Buffer Pool"
 at `MySQL Reference
 Manual <http://dev.mysql.com/doc/refman/5.5/en/innodb-buffer-pool.html>`__.
 
-21.4. Set and Monitor Total VM Limits per Host
+Set and Monitor Total VM Limits per Host
 ----------------------------------------------
 
 The CloudStack administrator should monitor the total number of VM
@@ -18573,7 +18573,7 @@ cluster is at most (N-1) \* (per-host-limit). Once a cluster reaches
 this number of VMs, use the CloudStack UI to disable allocation of more
 VMs to the cluster.
 
-21.5. Configure XenServer dom0 Memory
+Configure XenServer dom0 Memory
 -------------------------------------
 
 Configure the XenServer dom0 settings to allocate more memory to dom0.
@@ -18621,7 +18621,7 @@ provider is selected, additional input fields may appear so that the
 user can provide the additional details required by that provider, such
 as a user name and password for a third-party storage account.
 
-22.1. Overview of How to Write a Storage Plugin
+Overview of How to Write a Storage Plugin
 -----------------------------------------------
 
 To add a third-party storage option to CloudStack, follow these general
@@ -18666,7 +18666,7 @@ steps (explained in more detail later in this section):
 
    Edit client/pom.xml.
 
-22.2. Implementing DataStoreDriver
+Implementing DataStoreDriver
 ----------------------------------
 
 DataStoreDriver contains the code that CloudStack will use to provision
@@ -18701,7 +18701,7 @@ The following methods are optional:
    canCopy() is optional. If you set it to true, then you must implement
    copyAsync().
 
-22.3. Implementing DataStoreLifecycle
+Implementing DataStoreLifecycle
 -------------------------------------
 
 DataStoreLifecycle contains the code to manage the storage operations
@@ -18732,7 +18732,7 @@ You must implement the following methods:
    want the storage to have: attachHost(), attachCluster(), or
    attachZone().
 
-22.4. Implementing DataStoreProvider
+Implementing DataStoreProvider
 ------------------------------------
 
 DataStoreProvider contains the main code of the data store.
@@ -18771,7 +18771,7 @@ The following methods are optional:
    getHostListener() is optional; it's for monitoring the status of the
    host.
 
-22.5. Implementing VMSnapshotStrategy
+Implementing VMSnapshotStrategy
 -------------------------------------
 
 VMSnapshotStrategy has the following methods:
@@ -18793,7 +18793,7 @@ VMSnapshotStrategy has the following methods:
    canHandle(). For a given VM snapshot, tells whether this
    implementation of VMSnapshotStrategy can handle it.
 
-22.6. Place the .jar File in the Right Directory
+Place the .jar File in the Right Directory
 ------------------------------------------------
 
 For a secondary storage plugin, place your .jar file here:
@@ -18808,7 +18808,7 @@ For a primary storage plugin, place your .jar file here:
 
     plugins/storage/volume/
 
-22.7. Edit Configuration Files
+Edit Configuration Files
 ------------------------------
 
 First, edit the following file tell CloudStack to include your .jar
@@ -18841,7 +18841,7 @@ In the section “Storage Providers,” add this:
         <ref local=”same ID from the bean tag's id attribute”>
     </property>
 
-22.8. Minimum Required Interfaces
+Minimum Required Interfaces
 ---------------------------------
 
 The classes, interfaces, and methods used by CloudStack from the Amazon
@@ -18849,7 +18849,7 @@ Web Services (AWS) Java SDK are listed in this section. An object
 storage that supports the S3 interface is minimally required to support
 the below in order to be compatible with CloudStack.
 
-22.8.1. Interface AmazonS3
+Interface AmazonS3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html <http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html>`__
@@ -18946,7 +18946,7 @@ setObjectAcl(String bucketName, String key, CannedAccessControlList acl)
 Sets the CannedAccessControlList for the specified object in Amazon S3
 using one of the pre-configured CannedAccessControlLists.
 
-22.8.2. Class TransferManager
+Class TransferManager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/transfer/TransferManager.html <http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/transfer/TransferManager.html>`__
@@ -18961,7 +18961,7 @@ upload(PutObjectRequest putObjectRequest)
 
 Schedules a new transfer to upload data to Amazon S3.
 
-22.8.3. Class PutObjectRequest
+Class PutObjectRequest
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/model/PutObjectRequest.html <http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/model/PutObjectRequest.html>`__
@@ -18979,7 +18979,7 @@ Schedules a new transfer to upload data to Amazon S3.
 Events
 ======
 
-23.1. Events
+Events
 ------------
 
 An event is essentially a significant or meaningful change in the state
@@ -18990,7 +18990,7 @@ and make the right business decision. In CloudStack an event could be a
 state change of virtual or physical resources, an action performed by an
 user (action events), or policy based events (alerts).
 
-23.1.1. Event Logs
+Event Logs
 ~~~~~~~~~~~~~~~~~~
 
 There are two types of events logged in the CloudStack Event Log.
@@ -19004,7 +19004,7 @@ information on the status of a pending job or can be used to identify a
 job that is hanging or has not started. The following sections provide
 more information on these events..
 
-23.1.2. Event Notification
+Event Notification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Event notification framework provides a means for the Management Server
@@ -19117,7 +19117,7 @@ changes can control the behaviour.
 
    Restart the Management Server.
 
-23.1.3. Standard Events
+Standard Events
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The events log records three types of standard events.
@@ -19150,7 +19150,7 @@ The events log records three types of standard events.
    ERROR. This event is generated when an operation has not been
    successfully performed
 
-23.1.4. Long Running Job Events
+Long Running Job Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The events log records three types of standard events.
@@ -19183,7 +19183,7 @@ The events log records three types of standard events.
    ERROR. This event is generated when an operation has not been
    successfully performed
 
-23.1.5. Event Log Queries
+Event Log Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Database logs can be queried from the user interface. The list of events
@@ -19214,7 +19214,7 @@ captured by the system includes:
 
    User login and logout
 
-23.1.6. Deleting and Archiving Events and Alerts
+Deleting and Archiving Events and Alerts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack provides you the ability to delete or archive the existing
@@ -19249,7 +19249,7 @@ parameters have been added:
 API. They are maintained in the database for auditing or compliance
 purposes.
 
-23.1.6.1. Permissions
+Permissions
 ^^^^^^^^^^^^^^^^^^^^^
 
 Consider the following:
@@ -19264,7 +19264,7 @@ Consider the following:
    The domain admin or end user can delete or archive one or multiple
    events.
 
-23.1.6.2. Procedure
+Procedure
 ^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -19293,7 +19293,7 @@ Consider the following:
 
    Click OK.
 
-23.2. Working with Server Logs
+Working with Server Logs
 ------------------------------
 
 The CloudStack Management Server logs all web site, middle tier, and
@@ -19329,7 +19329,7 @@ job 1076 with the following grep:
 The CloudStack Agent Server logs its activities in
 /var/log/cloudstack/agent/.
 
-23.3. Data Loss on Exported Primary Storage
+Data Loss on Exported Primary Storage
 -------------------------------------------
 
 Symptom
@@ -19363,7 +19363,7 @@ More Information
 See the export procedure in the "Secondary Storage" section of the
 CloudStack Installation Guide
 
-23.4. Recovering a Lost Virtual Router
+Recovering a Lost Virtual Router
 --------------------------------------
 
 Symptom
@@ -19408,7 +19408,7 @@ For more information about the API syntax, see the API Reference at
 `http://docs.cloudstack.org/CloudStack\_Documentation/API\_Reference%3A\_CloudStack <http://docs.cloudstack.org/CloudStack_Documentation/API_Reference%3A_CloudStack>`__\ API
 Reference.
 
-23.5. Maintenance mode not working on vCenter
+Maintenance mode not working on vCenter
 ---------------------------------------------
 
 Symptom
@@ -19433,7 +19433,7 @@ More Information
 See `Section 11.2, “Scheduled Maintenance and Maintenance Mode for
 Hosts” <#scheduled-maintenance-maintenance-mode-hosts>`__
 
-23.6. Unable to deploy VMs from uploaded vSphere template
+Unable to deploy VMs from uploaded vSphere template
 ---------------------------------------------------------
 
 Symptom
@@ -19453,7 +19453,7 @@ Solution
 
 Remove the ISO and re-upload the template.
 
-23.7. Unable to power on virtual machine on VMware
+Unable to power on virtual machine on VMware
 --------------------------------------------------
 
 Symptom
@@ -19490,7 +19490,7 @@ See the following:
 `VMware Knowledge Base
 Article <http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=10051/>`__
 
-23.8. Load balancer rules fail after changing network offering
+Load balancer rules fail after changing network offering
 --------------------------------------------------------------
 
 Symptom
