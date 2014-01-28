@@ -21,17 +21,174 @@
 Welcome to CloudStack Administration Documentation
 ==================================================
 
-Contents:
+.. toctree::
+   :maxdepth: 2
+
+Managing Accounts, Users and Domains
+------------------------------------------
+.. toctree::
+   :maxdepth: 2
+
+   accounts
+
+User Services
+--------------
+.. toctree::
+   :maxdepth: 2
+
+   user_services
+
+User Interface
+--------------
+.. toctree::
+   :maxdepth: 2
+
+   ui
+
+Using Projects to Organize User Resources
+------------------------------------------
+.. toctree::
+   :maxdepth: 2 
+
+   projects
+
+
+
+Steps to Provision your Cloud Infrastructure
+--------------------------------------------------------
 
 .. toctree::
    :maxdepth: 2
 
-Administration
---------------
-.. toctree::
-    :maxdepth: 2
+   provisioning
 
-    administration
+Service Offerings
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   service_offerings
+
+Setting up Networking for Users
+------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   networking
+
+Working with Virtual Machines
+------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   virtual_machines
+
+Working with Hosts
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   hosts
+
+Working with Templates
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   templates
+
+Working with Storage
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   storage
+
+Working with Usage
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   usage
+
+Managing Networks and Traffic
+------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   networking2
+
+Working with System Virtual Machines
+------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   systemvm
+
+System Reliability and Availability
+------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   reliability
+
+Managing the Cloud
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   management
+
+Setting Configuration Parameters
+------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   parameters
+
+CloudStack API
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   api
+
+Tuning
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tuning
+
+Troubleshooting
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   troubleshooting
+
+Events
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   events
 
 Indices and tables
 ==================
