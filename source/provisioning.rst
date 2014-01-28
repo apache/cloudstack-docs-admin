@@ -1901,7 +1901,7 @@ MVIP%3D192.168.138.180%3A443
 
 &signature=wqf8KzcPpY2JmT1Sxk%2F%2BWbgX3l8%3D
 
-7.8. Add Secondary Storage
+Add Secondary Storage
 --------------------------
 
 System Requirements for Secondary Storage

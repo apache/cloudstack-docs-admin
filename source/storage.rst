@@ -1,7 +1,7 @@
 Working with Storage
 ====================
 
-13.1. Storage Overview
+Storage Overview
 ----------------------
 
 CloudStack defines two types of storage: primary and secondary. Primary
