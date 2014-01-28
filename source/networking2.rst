@@ -1269,7 +1269,7 @@ Configuring Portable IPs
 
    Click OK.
 
-15.12.3. Acquiring a Portable IP
+Acquiring a Portable IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -2169,7 +2169,7 @@ The following objects are created on the load balancer:
    A self IP for the VLAN. This is always the second IP of the account's
    private subnet (e.g. 10.1.1.2).
 
-15.16.4. Ongoing Configuration of External Firewalls and Load Balancers
+Ongoing Configuration of External Firewalls and Load Balancers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Additional user actions (e.g. setting a port forward) will cause further
@@ -2722,7 +2722,7 @@ provider the GSLB service. Currently, NetScaler is the supported GSLB
 provider in CloudStack. GSLB functionality works in an Active-Active
 data center environment.
 
-15.17.1. About Global Server Load Balancing
+About Global Server Load Balancing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Global Server Load Balancing (GSLB) is an extension of load balancing
@@ -3156,7 +3156,7 @@ In each zone, add GSLB-enabled NetScaler device for load balancing.
 
    Click OK.
 
-15.17.2.3. Adding a GSLB Rule
+Adding a GSLB Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
@@ -3271,7 +3271,7 @@ Currently, CloudStack does not support orchestration of services across
 the zones. The notion of services and service providers in region are to
 be introduced.
 
-15.18. Guest IP Ranges
+Guest IP Ranges
 ----------------------
 
 The IP ranges for guest network traffic are set on a per-account basis
@@ -3285,7 +3285,7 @@ from different subnets. You can add or remove one IP range at a time.
 For more information, see `Section 15.10, “About Multiple IP
 Ranges” <#multiple-ip-range>`__.
 
-15.19. Acquiring a New IP Address
+Acquiring a New IP Address
 ---------------------------------
 
 #. 
@@ -3356,7 +3356,7 @@ picked up for any guest network again.
    Click the Release IP button. |ReleaseIPButton.png: button to release
    an IP|
 
-15.21. Static NAT
+Static NAT
 -----------------
 
 A static NAT rule maps a public IP address to the private IP address of
@@ -3365,7 +3365,7 @@ address always remains the same, which is why it is called “static” NAT.
 This section tells how to enable or disable static NAT for a particular
 IP address.
 
-15.21.1. Enabling or Disabling Static NAT
+Enabling or Disabling Static NAT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If port forwarding rules are already in effect for an IP address, you
@@ -3424,7 +3424,7 @@ that range to specific ports on user VMs. For example, one port
 forwarding rule could route incoming traffic on the public IP's port 33
 to port 100 on one user VM's private IP.
 
-15.22.1. Firewall Rules
+Firewall Rules
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, all incoming traffic to the public IP address is rejected by
@@ -3515,7 +3515,7 @@ egress firewall rule is applied, the traffic specific to the rule is
 allowed and the remaining traffic is blocked. When all the firewall
 rules are removed the default policy, Block, is applied.
 
-15.22.2.1. Prerequisites and Guidelines
+Prerequisites and Guidelines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Consider the following scenarios to apply egress firewall rules:
@@ -4065,7 +4065,7 @@ Vista. The commands should be similar for other Windows versions.
 
    Enter the user name and password from step `1 <#source-nat>`__.
 
-15.25.4. Using Remote Access VPN with Mac OS X
+Using Remote Access VPN with Mac OS X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, be sure you've configured the VPN settings in your CloudStack
@@ -5773,7 +5773,7 @@ creations. If you block an existing static route, it remains intact and
 continue functioning. You cannot add a static route if the route is
 blacklisted for the zone.
 
-15.27.6. Deploying VMs to the Tier
+Deploying VMs to the Tier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
@@ -6033,7 +6033,7 @@ still belongs to the same VPC.
    In the Details tab, click the Release IP button |release-ip-icon.png:
    button to release an IP.|
 
-15.27.10. Enabling or Disabling Static NAT on a VPC
+Enabling or Disabling Static NAT on a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A static NAT rule maps a public IP address to the private IP address of
@@ -6839,7 +6839,7 @@ belonging to the same VPC.
 
    Click Yes to confirm. Wait for some time for the tier to be removed.
 
-15.27.14. Editing, Restarting, and Removing a Virtual Private Cloud
+Editing, Restarting, and Removing a Virtual Private Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Ensure that all the tiers are removed before you remove a VPC.
@@ -6980,4 +6980,3 @@ To create a persistent network, perform the following:
 #. 
 
    Click OK.
-
