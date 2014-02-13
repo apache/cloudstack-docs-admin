@@ -97,7 +97,8 @@ region.
 
    .. code:: bash
 
-       cloudstack-setup-databases cloud:<dbpassword>@localhost --deploy-as=root:<password> -e <encryption_type> -m <management_server_key> -k <database_key> -r <region_id>
+       cloudstack-setup-databases cloud:<dbpassword>@localhost --deploy-as=root:<password> -e 
+       <encryption_type> -m <management_server_key> -k <database_key> -r <region_id>
 
 #. 
 
