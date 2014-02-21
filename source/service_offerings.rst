@@ -9,61 +9,85 @@ Compute and Disk Service Offerings
 ---------------------------------------
 
 A service offering is a set of virtual hardware features such as CPU
-core count and speed, memory, and disk size. The CloudStack
-administrator can set up various offerings, and then end users choose
-from the available offerings when they create a new VM. A service
-offering includes the following elements:
+core count and speed, memory, and disk size. The CloudStack administrator
+can set up various offerings, and then end users choose from the
+available offerings when they create a new VM. Based on the user’s
+selected offering, CloudStack emits usage records that can be integrated
+with billing systems.
 
--  
+Some characteristics of service offerings must be defined by the CloudStack
+administrator, and others can be left undefined so that the end-user can
+enter their own desired values. This is useful to reduce the number of
+offerings the CloudStack administrator has to define. Instead of defining a
+compute offering for every imaginable combination of values that a user
+might want, the administrator can define offerings that provide some
+flexibility to the users and can serve as the basis for several
+different VM configurations.
 
-   CPU, memory, and network resource guarantees
+A service offering includes the following elements:
 
--  
+-  CPU, memory, and network resource guarantees
 
-   How resources are metered
+-  How resources are metered
 
--  
+-  How the resource usage is charged
 
-   How the resource usage is charged
-
--  
-
-   How often the charges are generated
+-  How often the charges are generated
 
 For example, one service offering might allow users to create a virtual
 machine instance that is equivalent to a 1 GHz Intel® Core™ 2 CPU, with
 1 GB memory at $0.20/hour, with network traffic metered at $0.10/GB.
-Based on the user’s selected offering, CloudStack emits usage records
-that can be integrated with billing systems. CloudStack separates
-service offerings into compute offerings and disk offerings. The
-computing service offering specifies:
 
--  
+CloudStack separates service offerings into compute offerings and disk
+offerings. The compute service offering specifies:
 
-   Guest CPU
+-  Guest CPU (optional). If not defined by the CloudStack administrator,
+   users can pick the CPU attributes.
 
--  
+-  Guest RAM (optional). If not defined by the CloudStack administrator,
+   users can pick the RAM.
 
-   Guest RAM
+-  Guest Networking type (virtual or direct)
 
--  
-
-   Guest Networking type (virtual or direct)
-
--  
-
-   Tags on the root disk
+-  Tags on the root disk
 
 The disk offering specifies:
 
--  
+-  Disk size (optional). If not defined by the CloudStack administrator,
+   users can pick the disk size.
 
-   Disk size (optional). An offering without a disk size will allow
-   users to pick their own
+-  Tags on the data disk
 
--  
+Custom Compute Offering
+~~~~~~~~~~~~~~~~~~~~~~~
 
-   Tags on the data disk
+CloudStack provides you the flexibility to specify the desired values for
+the number of CPU, CPU speed, and memory while deploying a VM. As an
+admin, you create a Compute Offering by marking it as custom, and the
+users will be able to customize this dynamic Compute Offering by
+specifying the memory, and CPU at the time of VM creation or upgrade.
+Custom Compute Offering is same as the normal Compute Offering except
+that the values of the dynamic parameters will be set to zeros in the
+given set of templates. Use this offering to deploy VM by specifying
+custom values for the dynamic parameters. Memory, CPU and number of CPUs
+are considered as dynamic parameters.
+
+Dynamic Compute Offerings can be used in following cases: deploying a
+VM, changing the compute offering of a stopped VM and running VMs, which
+is nothing but scaling up. To support this feature a new field, Custom,
+has been added to the Create Compute Offering page. If the Custom field
+is checked, the user will be able to create a custom Compute Offering by
+filling in the desired values for number of CPU, CPU speed, and memory.
+See ? for more information on this.
+
+*Recording Usage Events for Dynamically Assigned Resources*.
+
+To support this feature, usage events has been enhanced to register
+events for dynamically assigned resources. Usage events are registered
+when a VM is created from a custom compute offering, and upon changing
+the compute offering of a stopped or running VM. The values of the
+parameters, such as CPU, speed, RAM are recorded.
+
 
 Creating a New Compute Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
