@@ -103,8 +103,8 @@ manage larger number of connection in your network.
 
    Restart the Management Server.
 
-16.3. Multiple System VM Support for VMware
--------------------------------------------
+Multiple System VM Support for VMware
+-------------------------------------
 
 Every CloudStack zone has single System VM for template processing tasks
 such as downloading templates, uploading templates, and uploading ISOs.
@@ -363,15 +363,12 @@ Best Practices for Virtual Routers
    destroy and recreate the single router available in the network, use
    the restartNetwork API with the cleanup=true parameter.
 
-16.5.4. Service Monitoring Tool for Virtual Router
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Service Monitoring Tool for Virtual Router
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Various services running on the CloudStack virtual routers can be
-monitored by using a Service Monitoring tool. The tool ensures that
-services are successfully running until CloudStack deliberately disables
-them. If a service goes down, the tool automatically restarts the VR,
-and if that does not bring up the VR, an alert as well as an event is
-generated indicating the failure.
+Various services running on the CloudStack virtual routers can be monitored by using a Service Monitoring tool. The tool ensures that
+services are successfully running until CloudStack deliberately disables them. If a service goes down, the tool automatically restarts the service, and if that does not help bringing up the service, an alert as well as an event is generated indicating the failure. A new global parameter, ``network.router.enableservicemonitoring``, has been introduced to control this feature. The default value is false, implies, monitoring is disabled. When you enable, ensure that the Management Server and the router are restarted.
+
 
 Monitoring tool can help to start a VR service, which is crashed due to
 an unexpected reason. For example:
@@ -385,9 +382,7 @@ an unexpected reason. For example:
    The services that are terminated by the OS when memory or CPU is not
    sufficiently available for the service.
 
-.. note:: Only those services with daemons are monitored. The services that are
-failed due to errors in the service/daemon configuration file cannot be
-restarted by the Monitoring tool.
+.. note:: Only those services with daemons are monitored. The services that are failed due to errors in the service/daemon configuration file cannot be restarted by the Monitoring tool. VPC networks are not supported.
 
 The following services are monitored in a VR:
 
@@ -416,6 +411,8 @@ The following networks are supported:
 -  
 
    Shared Networks in both Advanced and Basic zone
+
+   ..note:: VPC networks are not supported
 
 This feature is supported on the following hypervisors: XenServer,
 VMware, and KVM.
