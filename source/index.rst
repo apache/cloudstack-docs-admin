@@ -21,11 +21,11 @@
 Welcome to CloudStack Administration Documentation
 ==================================================
 
-.. toctree::
-   :maxdepth: 2
+
 
 Managing Accounts, Users and Domains
-------------------------------------------
+------------------------------------
+
 .. toctree::
    :maxdepth: 2
 
@@ -52,10 +52,8 @@ Using Projects to Organize User Resources
 
    projects
 
-
-
 Steps to Provision your Cloud Infrastructure
---------------------------------------------------------
+--------------------------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -63,7 +61,7 @@ Steps to Provision your Cloud Infrastructure
    provisioning
 
 Service Offerings
-----------------------------
+-----------------
 
 .. toctree::
    :maxdepth: 2
@@ -71,7 +69,7 @@ Service Offerings
    service_offerings
 
 Setting up Networking for Users
-------------------------------------------
+-------------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -79,7 +77,7 @@ Setting up Networking for Users
    networking
 
 Working with Virtual Machines
-------------------------------------------
+-----------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -87,7 +85,7 @@ Working with Virtual Machines
    virtual_machines
 
 Working with Hosts
-----------------------------
+------------------
 
 .. toctree::
    :maxdepth: 2
@@ -95,7 +93,7 @@ Working with Hosts
    hosts
 
 Working with Templates
-----------------------------
+----------------------
 
 .. toctree::
    :maxdepth: 2
@@ -103,7 +101,7 @@ Working with Templates
    templates
 
 Working with Storage
-----------------------------
+--------------------
 
 .. toctree::
    :maxdepth: 2
@@ -111,7 +109,7 @@ Working with Storage
    storage
 
 Working with Usage
-----------------------------
+------------------
 
 .. toctree::
    :maxdepth: 2
@@ -119,7 +117,7 @@ Working with Usage
    usage
 
 Managing Networks and Traffic
-------------------------------------------
+-----------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -127,7 +125,7 @@ Managing Networks and Traffic
    networking2
 
 Working with System Virtual Machines
-------------------------------------------
+------------------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -135,7 +133,7 @@ Working with System Virtual Machines
    systemvm
 
 System Reliability and Availability
-------------------------------------------
+-----------------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -143,7 +141,7 @@ System Reliability and Availability
    reliability
 
 Managing the Cloud
-----------------------------
+------------------
 
 .. toctree::
    :maxdepth: 2
@@ -151,7 +149,7 @@ Managing the Cloud
    management
 
 Setting Configuration Parameters
-------------------------------------------
+--------------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -159,7 +157,7 @@ Setting Configuration Parameters
    parameters
 
 CloudStack API
-----------------------------
+--------------
 
 .. toctree::
    :maxdepth: 2
@@ -167,7 +165,7 @@ CloudStack API
    api
 
 Tuning
-----------------------------
+------
 
 .. toctree::
    :maxdepth: 2
@@ -175,7 +173,7 @@ Tuning
    tuning
 
 Troubleshooting
-----------------------------
+---------------
 
 .. toctree::
    :maxdepth: 2
@@ -183,17 +181,10 @@ Troubleshooting
    troubleshooting
 
 Events
-----------------------------
+------
 
 .. toctree::
    :maxdepth: 2
 
    events
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
