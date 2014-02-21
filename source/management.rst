@@ -98,6 +98,29 @@ The following API commands have the "tags" input parameter:
 
    listStaticRoutes
 
+
+Reporting CPU Sockets
+---------------------
+
+PRODUCT manages different types of hosts that contains one or more
+physical CPU sockets. CPU socket is considered as a unit of measure used
+for licensing and billing cloud infrastructure. PRODUCT provides both UI
+and API support to collect the CPU socket statistics for billing
+purpose. The Infrastructure tab has a new tab for CPU sockets. You can
+view the statistics for CPU sockets managed by PRODUCT, which in turn
+reflects the size of the cloud. The CPU Socket page will give you the
+number of hosts and sockets used for each host type.
+
+1. Log in to the PRODUCT UI.
+
+2. In the left navigation bar, click Infrastructure.
+
+3. On CPU Sockets, click View all.
+
+   The CPU Socket page is displayed. The page shows the number of hosts
+   and CPU sockets based on hypervisor types.
+
+
 Changing the Database Configuration
 -----------------------------------------
 
