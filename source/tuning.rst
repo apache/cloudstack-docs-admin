@@ -60,8 +60,8 @@ JVM memory allocation can be insufficient. To increase the memory:
 For more information about memory issues, see "FAQ: Memory" at `Tomcat
 Wiki. <http://wiki.apache.org/tomcat/FAQ/Memory>`__
 
-21.3. Set Database Buffer Pool Size
------------------------------------
+Set Database Buffer Pool Size
+-----------------------------
 
 It is important to provide enough memory space for the MySQL database to
 cache data and indexes:

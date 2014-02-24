@@ -74,17 +74,10 @@ manage larger number of connection in your network.
    Based on the hypervisor you use, download the 64-bit template from
    the following location:
 
-   Hypervisor
-
-   Download Location
-
-   XenServer
-
-   http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-xen.vhd.bz2
-
-   KVM
-
-   http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-kvm.qcow2.bz2
+   Hypervisor  Download Location
+   ==========  ===============================================================================================
+   XenServer   http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-xen.vhd.bz2
+   KVM         http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-kvm.qcow2.bz2
 
 #. 
 
@@ -148,8 +141,7 @@ The AJAX application connects to this IP. The console proxy then proxies
 the connection to the VNC port for the requested VM on the Host hosting
 the guest.
 
-.. note:: The hypervisors will have many ports assigned to VNC usage so that
-multiple VNC sessions can occur simultaneously.
+.. note:: The hypervisors will have many ports assigned to VNC usage so that multiple VNC sessions can occur simultaneously.
 
 There is never any traffic to the guest virtual IP, and there is no need
 to enable VNC within the guest.
@@ -173,7 +165,7 @@ Using a SSL Certificate for the Console Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The console viewing functionality uses a dynamic DNS service under the
-domain name realhostip.com to assist in providing SSL security to
+domain name ``realhostip.com`` to assist in providing SSL security to
 console sessions. The console proxy is assigned a public IP address. In
 order to avoid browser warnings for mismatched SSL certificates, the URL
 for the new console window is set to the form of
@@ -269,7 +261,7 @@ the console proxy domain, SSL certificate, and private key:
 
       The desired new domain name; for example, company.com
 
-..   |updatessl.png: Updating Console Proxy SSL Certificate|
+   ..   |updatessl.png: Updating Console Proxy SSL Certificate|
 
 #. 
 
@@ -373,11 +365,7 @@ Best Practices for Virtual Routers
 
 -  
 
-   WARNING: Do not use the destroyRouter API when only one router is
-   available in the network, because restartNetwork API with the
-   cleanup=false parameter can't recreate it later. If you want to
-   destroy and recreate the single router available in the network, use
-   the restartNetwork API with the cleanup=true parameter.
+   .. warning:: Do not use the destroyRouter API when only one router is available in the network, because restartNetwork API with the cleanup=false parameter can't recreate it later. If you want to destroy and recreate the single router available in the network, use the restartNetwork API with the cleanup=true parameter.
 
 Service Monitoring Tool for Virtual Router
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -428,7 +416,7 @@ The following networks are supported:
 
    Shared Networks in both Advanced and Basic zone
 
-   ..note:: VPC networks are not supported
+   .. note:: VPC networks are not supported
 
 This feature is supported on the following hypervisors: XenServer,
 VMware, and KVM.
@@ -515,8 +503,8 @@ it is upgraded:
 
    NetworkACL
 
-16.5.5.1. Supported Virtual Routers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Supported Virtual Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  
 
@@ -530,8 +518,8 @@ it is upgraded:
 
    Redundant VR
 
-16.5.5.2. Upgrading Virtual Routers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Upgrading Virtual Routers
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
 
@@ -615,8 +603,8 @@ it is upgraded:
 
       Click OK to confirm.
 
-16.6. Secondary Storage VM
---------------------------
+Secondary Storage VM
+---------------------
 
 In addition to the hosts, CloudStack’s Secondary Storage VM mounts and
 writes to secondary storage.

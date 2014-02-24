@@ -256,9 +256,121 @@ same alerts to external SNMP or Syslog management software. This is
 useful if you prefer to use an SNMP or Syslog manager to monitor your
 cloud.
 
-The alerts which can be sent are listed in `Appendix C,
-*Alerts* <#alerts>`__. You can also display the most up to date list by
-calling the API command listAlerts.
+The alerts which can be sent are:
+
+The following is the list of alert type numbers. The current alerts can
+be found by calling listAlerts.
+
+::
+
+    MEMORY = 0 // Available Memory below configured threshold
+
+::
+
+    CPU = 1 // Unallocated CPU below configured threshold
+
+::
+
+    STORAGE =2 // Available Storage below configured threshold
+
+::
+
+    STORAGE_ALLOCATED = 3 // Remaining unallocated Storage is below configured threshold
+
+::
+
+    PUBLIC_IP = 4 // Number of unallocated virtual network public IPs is below configured threshold
+
+::
+
+    PRIVATE_IP = 5 // Number of unallocated private IPs is below configured threshold
+
+::
+
+    SECONDARY_STORAGE = 6 //  Available Secondary Storage in availability zone is below configured threshold
+
+::
+
+    HOST = 7 // Host related alerts like host disconnected
+
+::
+
+    USERVM = 8 // User VM stopped unexpectedly
+
+::
+
+    DOMAIN_ROUTER = 9 // Domain Router VM stopped unexpectedly
+
+::
+
+    CONSOLE_PROXY = 10 // Console Proxy VM stopped unexpectedly
+
+::
+
+    ROUTING = 11 // Lost connection to default route (to the gateway)
+
+::
+
+    STORAGE_MISC = 12 // Storage issue in system VMs
+
+::
+
+    USAGE_SERVER = 13 // No usage server process running
+
+::
+
+    MANAGMENT_NODE = 14 // Management network CIDR is not configured originally
+
+::
+
+    DOMAIN_ROUTER_MIGRATE = 15 // Domain Router VM Migration was unsuccessful
+
+::
+
+    CONSOLE_PROXY_MIGRATE = 16 // Console Proxy VM Migration was unsuccessful
+
+::
+
+    USERVM_MIGRATE = 17 // User VM Migration was unsuccessful
+
+::
+
+    VLAN = 18 // Number of unallocated VLANs is below configured threshold in availability zone
+
+::
+
+    SSVM = 19 // SSVM stopped unexpectedly
+
+::
+
+    USAGE_SERVER_RESULT = 20 // Usage job failed
+
+::
+
+    STORAGE_DELETE = 21 // Failed to delete storage pool
+
+::
+
+    UPDATE_RESOURCE_COUNT = 22 // Failed to update the resource count
+
+::
+
+    USAGE_SANITY_RESULT = 23 // Usage Sanity Check failed
+
+::
+
+    DIRECT_ATTACHED_PUBLIC_IP = 24 // Number of unallocated shared network IPs is low in availability zone
+
+::
+
+    LOCAL_STORAGE = 25 // Remaining unallocated Local Storage is below configured threshold
+
+::
+
+    RESOURCE_LIMIT_EXCEEDED = 26 //Generated when the resource limit exceeds the limit. Currently used for recurring snapshots only
+
+
+You can also display the most up to date list by calling the API command ``listAlerts``.
 
 SNMP Alert Details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -315,8 +427,7 @@ alerts from CloudStack:
    Syslog manager. To specify multiple external managers, separate the
    IP addresses and other configuration values with commas (,).
 
-   .. note:: The recommended maximum number of SNMP or Syslog managers is 20 for
-   each.
+   .. note:: The recommended maximum number of SNMP or Syslog managers is 20 for each.
 
    The following example shows how to configure two SNMP managers at IP
    addresses 10.1.1.1 and 10.1.1.2. Substitute your own IP addresses,
@@ -373,7 +484,7 @@ Deleting an SNMP or Syslog Manager
 
 To remove an external SNMP manager or Syslog manager so that it no
 longer receives alerts from CloudStack, remove the corresponding entry
-from the file /etc/cloudstack/management/log4j-cloud.xml.
+from the file ``/etc/cloudstack/management/log4j-cloud.xml``.
 
 Customizing the Network Domain Name
 -----------------------------------------

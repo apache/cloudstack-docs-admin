@@ -106,45 +106,26 @@ and set up the invitations feature in CloudStack.
    configuration parameters related to project invitations. Click the
    edit button to set each parameter.
 
-   Configuration Parameters
+  +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Configuration Parameters   | Description                                                                                                                                           |
+   +============================+=======================================================================================================================================================+
+   | project.invite.required    | Set to true to turn on the invitations feature.                                                                                                       |
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | project.email.sender       | The email address to show in the From field of invitation emails.                                                                                     |
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | project.invite.timeout     | Amount of time to allow for a new member to respond to the invitation.                                                                                |
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | project.smtp.host          | Name of the host that acts as an email server to handle invitations.                                                                                  |
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | project.smtp.password      | (Optional) Password required by the SMTP server. You must also set project.smtp.username and set project.smtp.useAuth to true.                        |
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | project.smtp.port          | SMTP server’s listening port.                                                                                                                         |
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | project.smtp.useAuth       | Set to true if the SMTP server requires a username and password.                                                                                      |
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | project.smtp.username      | (Optional) User name required by the SMTP server for authentication. You must also set project.smtp.password and set project.smtp.useAuth to true..   |
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-   Description
-
-   project.invite.required
-
-   Set to true to turn on the invitations feature.
-
-   project.email.sender
-
-   The email address to show in the From field of invitation emails.
-
-   project.invite.timeout
-
-   Amount of time to allow for a new member to respond to the
-   invitation.
-
-   project.smtp.host
-
-   Name of the host that acts as an email server to handle invitations.
-
-   project.smtp.password
-
-   (Optional) Password required by the SMTP server. You must also set
-   project.smtp.username and set project.smtp.useAuth to true.
-
-   project.smtp.port
-
-   SMTP server’s listening port.
-
-   project.smtp.useAuth
-
-   Set to true if the SMTP server requires a username and password.
-
-   project.smtp.username
-
-   (Optional) User name required by the SMTP server for authentication.
-   You must also set project.smtp.password and set project.smtp.useAuth
-   to true..
 
 #. 
 
@@ -235,30 +216,18 @@ Setting the Global Project Resource Limits
    project can have lower limits. Click the edit button to set each
    parameter. |editbutton.png: Edits parameters|
 
-   max.project.public.ips
+   +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | max.project.public.ips   | Maximum number of public IP addresses that can be owned by any project in the cloud. See About Public IP Addresses.          |
+   +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | max.project.snapshots    | Maximum number of snapshots that can be owned by any project in the cloud. See Working with Snapshots.                       |
+   +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | max.project.templates    | Maximum number of templates that can be owned by any project in the cloud. See Working with Templates.                       |
+   +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | max.project.uservms      | Maximum number of guest virtual machines that can be owned by any project in the cloud. See Working With Virtual Machines.   |
+   +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | max.project.volumes      | Maximum number of data volumes that can be owned by any project in the cloud. See Working with Volumes.                      |
+   +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
-   Maximum number of public IP addresses that can be owned by any
-   project in the cloud. See About Public IP Addresses.
-
-   max.project.snapshots
-
-   Maximum number of snapshots that can be owned by any project in the
-   cloud. See Working with Snapshots.
-
-   max.project.templates
-
-   Maximum number of templates that can be owned by any project in the
-   cloud. See Working with Templates.
-
-   max.project.uservms
-
-   Maximum number of guest virtual machines that can be owned by any
-   project in the cloud. See Working With Virtual Machines.
-
-   max.project.volumes
-
-   Maximum number of data volumes that can be owned by any project in
-   the cloud. See Working with Volumes.
 
 #. 
 
@@ -291,7 +260,7 @@ or you can restrict that ability to just CloudStack administrators.
    Click the edit button to set the parameter. |editbutton.png: Edits
    parameters|
 
-   allow.user.create.projects
+   ``allow.user.create.projects``
 
    Set to true to allow end users to create projects. Set to false if
    you want only the CloudStack root administrator and domain

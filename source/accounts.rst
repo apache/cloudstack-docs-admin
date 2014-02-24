@@ -21,14 +21,14 @@ Accounts, Users, and Domains
 ---------------------------------
 
 Accounts
-''''''''
+~~~~~~~~
 
 An account typically represents a customer of the service provider or a
 department in a large organization. Multiple users can exist in an
 account.
 
 Domains
-'''''''
+~~~~~~~
 
 Accounts are grouped by domains. Domains usually contain multiple
 accounts that have some logical relationship to each other and a set of
@@ -41,7 +41,7 @@ types of user accounts: root administrator, domain administrator, and
 user.
 
 Users
-'''''
+~~~~~
 
 Users are like aliases in the account. Users in the same account are not
 isolated from each other, but they are isolated from users in other
@@ -60,21 +60,21 @@ or delete other administrators, and change the password for any user in
 the system.
 
 Domain Administrators
-'''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~
 
 Domain administrators can perform administrative operations for users
 who belong to that domain. Domain administrators do not have visibility
 into physical servers or other domains.
 
 Root Administrator
-''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~
 
 Root administrators have complete access to the system, including
 managing templates, service offerings, customer care administrators, and
 domains
 
 Resource Ownership
-''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~
 
 Resources belong to the account, not individual users in that account.
 For example, billing, resource limits, and so on are maintained by the
@@ -87,7 +87,7 @@ administrator can do the same for VMs within the domain from one account
 to any other account in the domain or any of its sub-domains.
 
 Dedicating Resources to Accounts and Domains
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 
 The root administrator can dedicate resources to a specific domain or
 account that needs private infrastructure for additional security or
@@ -120,7 +120,7 @@ There are several types of dedication available:
    shared infrastructure.
 
 How to Dedicate a Zone, Cluster, Pod, or Host to an Account or Domain
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------------------------
 
 For explicit dedication: When deploying a new zone, pod, cluster, or
 host, the root administrator can click the Dedicated checkbox, then
@@ -140,17 +140,17 @@ resources are not available. Whenever a user creates a VM based on this
 service offering, it is allocated on one of the dedicated hosts.
 
 How to Use Dedicated Hosts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To use an explicitly dedicated host, use the explicit-dedicated type of
-affinity group (see `Section 10.7.1, “Affinity
+affinity group (see `“Affinity
 Groups” <#affinity-groups>`__). For example, when creating a new VM, an
 end user can choose to place it on dedicated infrastructure. This
 operation will succeed only if some infrastructure has already been
 assigned as dedicated to the user's account or domain.
 
 Behavior of Dedicated Hosts, Clusters, Pods, and Zones
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The administrator can live migrate VMs away from dedicated hosts if
 desired, whether the destination is a host reserved for a different
@@ -180,85 +180,181 @@ with system VMs or virtual routers can be used for preferred implicit
 dedication.
 
 Using an LDAP Server for User Authentication
-'''''''''''''''''''''''''''''''''''''''''''''''''
+-------------------------------------------------
 
-You can use an external LDAP server such as Microsoft Active Directory or
-OpenLDAP to authentication Cloudstack end users.
-
-In order to do this you must:
+You can use an external LDAP server such as Microsoft Active Directory
+or ApacheDS to authenticate CloudStack end-users. Just map CloudStack
+accounts to the corresponding LDAP accounts using a query filter. The
+query filter is written using the query syntax of the particular LDAP
+server, and can include special wildcard characters provided by
+CloudStack for matching common values such as the user’s email address
+and name. CloudStack will search the external LDAP directory tree
+starting at a specified base directory and return the distinguished name
+(DN) and password of the matching user. This information along with the
+given password is used to authenticate the user..
 
 To set up LDAP authentication in CloudStack, call the CloudStack API
 command ldapConfig and provide the following:
 
-- Set your LDAP configuration within Cloudstack
-- Create Cloudstack accounts for LDAP Users
+-  
 
-To setup LDAP authentication in Cloudstack, open the global settings page and
-search for LDAP.
+   Hostname or IP address and listening port of the LDAP server
 
-Set ldap.base to match your servers base directory.
+-  
 
-Review the defaults for the following and ensure they match your schema:
+   Base directory and query filter
 
- - ldap.email.attribute
- - ldap.firstname.attribute
- - ldap.lastname.attribute
- - ldap.username.attribute
- - ldap.user.object
+-  
 
-Optionally you can set the following:
+   Search user DN credentials, which give CloudStack permission to
+   search on the LDAP server
 
--
+-  
 
-   If you do not want to use anonymous binding you can set ldap.bind.principle
-   and ldap.bind.password as credentials for your LDAP server that will grant
-   Cloudstack permission to perform a search on the LDAP server.
+   SSL keystore and password, if SSL is used
 
--
+Example LDAP Configuration Commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   For SSL support set ldap.truststore to a path on the file system where your
-   trusted store is located. Along with this set ldap.truststore.password as
-   the password that unlocks the truststore.
+To understand the examples in this section, you need to know the basic
+concepts behind calling the CloudStack API, which are explained in the
+Developer’s Guide.
 
--
+The following shows an example invocation of ldapConfig with an ApacheDS
+LDAP server
 
-   If you wish to filter down the user set that is granted access to Cloudstack
-   via the LDAP attribute memberof you can do so using
-   ldap.search.group.principle
+.. code:: bash
 
-Finally, you can add your LDAP server. To do so select LDAP Configuration from
-the views section within global settings. Click on "Configure LDAP" and fill
-in your server's hostname and port.
+    http://127.0.0.1:8080/client/api?command=ldapConfig&hostname=127.0.0.1&searchbase=ou%3Dtesting%2Co%3Dproject&queryfilter=%28%26%28uid%3D%25u%29%29&binddn=cn%3DJohn+Singh%2Cou%3Dtesting%2Co%project&bindpass=secret&port=10389&ssl=true&truststore=C%3A%2Fcompany%2Finfo%2Ftrusted.ks&truststorepass=secret&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
 
-Example LDAP Configuration for Active Directory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The command must be URL-encoded. Here is the same example without the
+URL encoding:
 
-This shows the configuration settings required for using ActiveDirectory.
+.. code:: bash
 
-- samAccountName - Logon name
-- mail - Email Address
-- cn - Real name
+    http://127.0.0.1:8080/client/api?command=ldapConfig
+    &hostname=127.0.0.1
+    &searchbase=ou=testing,o=project
+    &queryfilter=(&(%uid=%u))
+    &binddn=cn=John+Singh,ou=testing,o=project
+    &bindpass=secret
+    &port=10389
+    &ssl=true
+    &truststore=C:/company/info/trusted.ks
+    &truststorepass=secret
+    &response=json
+    &apiKey=YourAPIKey&signature=YourSignatureHash
 
-Along with this the ldap.user.object name needs to be modified, by default
-ActiveDirectory uses the value "user" for this.
+The following shows a similar command for Active Directory. Here, the
+search base is the testing group within a company, and the users are
+matched up based on email address.
 
-Map the following attributes accordingly as shown below:
+.. code:: bash
 
-.. image:: ./_static/images/add-ldap-configuration-ad.png
+    http://10.147.29.101:8080/client/api?command=ldapConfig&hostname=10.147.28.250&searchbase=OU%3Dtesting%2CDC%3Dcompany&queryfilter=%28%26%28mail%3D%25e%29%29 &binddn=CN%3DAdministrator%2COU%3Dtesting%2CDC%3Dcompany&bindpass=1111_aaaa&port=389&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
 
-Example LDAP Configuration for OpenLDAP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The next few sections explain some of the concepts you will need to know
+when filling out the ldapConfig parameters.
 
-This shows the configuration settings required for using OpenLDAP.
-The default values supplied are suited for OpenLDAP.
+Search Base
+~~~~~~~~~~~~~~~~~~
 
-- uid - Login Name
-- mail - Email Address
-- cn - Real name
+An LDAP query is relative to a given node of the LDAP directory tree,
+called the search base. The search base is the distinguished name (DN)
+of a level of the directory tree below which all users can be found. The
+users can be in the immediate base directory or in some subdirectory.
+The search base may be equivalent to the organization, group, or domain
+name. The syntax for writing a DN varies depending on which LDAP server
+you are using. A full discussion of distinguished names is outside the
+scope of our documentation. The following table shows some examples of
+search bases to find users in the testing department..
 
-Along with this the ldap.user.object name needs to be modified, by default
-OpenLDAP uses the value "inetOrgPerson" for this.
+LDAP Server
 
-Map the following attributes accordingly as shown below:
+Example Search Base DN
 
-.. image:: ./_static/images/add-ldap-configuration-openldap.png
+ApacheDS
+
+ou=testing,o=project
+
+Active Directory
+
+OU=testing, DC=company
+
+Query Filter
+~~~~~~~~~~~~~~~~~~~
+
+The query filter is used to find a mapped user in the external LDAP
+server. The query filter should uniquely map the CloudStack user to LDAP
+user for a meaningful authentication. For more information about query
+filter syntax, consult the documentation for your LDAP server.
+
+The CloudStack query filter wildcards are:
+
+Query Filter Wildcard
+
+Description
+
+%u
+
+User name
+
+%e
+
+Email address
+
+%n
+
+First and last name
+
+The following examples assume you are using Active Directory, and refer
+to user attributes from the Active Directory schema.
+
+If the CloudStack user name is the same as the LDAP user ID:
+
+.. code:: bash
+
+    (uid=%u)
+
+If the CloudStack user name is the LDAP display name:
+
+.. code:: bash
+
+    (displayName=%u)
+
+To find a user by email address:
+
+.. code:: bash
+
+    (mail=%e)
+
+Search User Bind DN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The bind DN is the user on the external LDAP server permitted to search
+the LDAP directory within the defined search base. When the DN is
+returned, the DN and passed password are used to authenticate the
+CloudStack user with an LDAP bind. A full discussion of bind DNs is
+outside the scope of our documentation. The following table shows some
+examples of bind DNs.
+
+LDAP Server
+
+Example Bind DN
+
+ApacheDS
+
+cn=Administrator,dc=testing,ou=project,ou=org
+
+Active Directory
+
+CN=Administrator, OU=testing, DC=company, DC=com
+
+SSL Keystore Path and Password
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the LDAP server requires SSL, you need to enable it in the ldapConfig
+command by setting the parameters ssl, truststore, and truststorepass.
+Before enabling SSL for ldapConfig, you need to get the certificate
+which the LDAP server is using and add it to a trusted keystore. You
+will need to know the path to the keystore and the password.

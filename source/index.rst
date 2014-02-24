@@ -31,13 +31,6 @@ Managing Accounts, Users and Domains
 
    accounts
 
-User Services
---------------
-.. toctree::
-   :maxdepth: 2
-
-   user_services
-
 User Interface
 --------------
 .. toctree::
@@ -51,14 +44,6 @@ Using Projects to Organize User Resources
    :maxdepth: 2 
 
    projects
-
-Steps to Provision your Cloud Infrastructure
---------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   provisioning
 
 Service Offerings
 -----------------
@@ -148,14 +133,6 @@ Managing the Cloud
 
    management
 
-Setting Configuration Parameters
---------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   parameters
-
 CloudStack API
 --------------
 
@@ -172,16 +149,8 @@ Tuning
 
    tuning
 
-Troubleshooting
----------------
-
-.. toctree::
-   :maxdepth: 2
-
-   troubleshooting
-
-Events
-------
+Events and Troubleshooting
+--------------------------
 
 .. toctree::
    :maxdepth: 2
