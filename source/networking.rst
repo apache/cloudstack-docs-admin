@@ -131,8 +131,7 @@ helps to conserve network resources.
 Network Service Providers
 ------------------------------
 
-.. note:: For the most up-to-date list of supported network service providers, see
-the CloudStack UI or call listNetworkServiceProviders.
+.. note:: For the most up-to-date list of supported network service providers, see the CloudStack UI or call `listNetworkServiceProviders`.
 
 A service provider (also called a network element) is hardware or
 virtual appliance that makes a network service possible; for example, a
@@ -150,136 +149,39 @@ specify which network service provider they prefer (along with the other
 choices offered in network offerings). Otherwise, CloudStack will choose
 which provider to use whenever the service is called for.
 
-Supported Network Service Providers
-'''''''''''''''''''''''''''''''''''
+*Supported Network Service Providers*
 
 CloudStack ships with an internal list of the supported service
 providers, and you can choose from this list when creating a network
 offering.
 
-Virtual Router
-
-Citrix NetScaler
-
-Juniper SRX
-
-F5 BigIP
-
-Host based (KVM/Xen)
-
-Remote Access VPN
-
-Yes
-
-No
-
-No
-
-No
-
-No
-
-DNS/DHCP/User Data
-
-Yes
-
-No
-
-No
-
-No
-
-No
-
-Firewall
-
-Yes
-
-No
-
-Yes
-
-No
-
-No
-
-Load Balancing
-
-Yes
-
-Yes
-
-No
-
-Yes
-
-No
-
-Elastic IP
-
-No
-
-Yes
-
-No
-
-No
-
-No
-
-Elastic LB
-
-No
-
-Yes
-
-No
-
-No
-
-No
-
-Source NAT
-
-Yes
-
-No
-
-Yes
-
-No
-
-No
-
-Static NAT
-
-Yes
-
-Yes
-
-Yes
-
-No
-
-No
-
-Port Forwarding
-
-Yes
-
-No
-
-Yes
-
-No
-
-No
++----------------------+-----------+------------+----------+-------------+-------------+
+|                      | Virtual   | Citrix     | Juniper  | F5 BigIP    | Host based  |
+|                      | Router    | NetScaler  | SRX      |             | (KVM/Xen)   |
++======================+===========+============+==========+=============+=============+
+| Remote Access VPN    | Yes       | No         | No       | No          | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
+| DNS/DHCP/User Data   | Yes       | No         | No       | No          | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
+| Firewall             | Yes       | No         | Yes      | No          | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
+| Load Balancing       | Yes       | Yes        | No       | Yes         | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
+| Elastic IP           | No        | Yes        | No       | No          | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
+| Elastic LB           | No        | Yes        | No       | No          | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
+| Source NAT           | Yes       | No         | Yes      | No          | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
+| Static NAT           | Yes       | Yes        | Yes      | No          | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
+| Port Forwarding      | Yes       | No         | Yes      | No          | No          |
++----------------------+-----------+------------+----------+-------------+-------------+
 
 Network Offerings
 ----------------------
 
-.. note:: For the most up-to-date list of supported network services, see the
-CloudStack UI or call listNetworkServices.
+.. note:: For the most up-to-date list of supported network services, see the CloudStack UI or call listNetworkServices.
 
 A network offering is a named set of network services, such as:
 
@@ -338,12 +240,7 @@ running a web server farm and require a scalable firewall solution, load
 balancing solution, and alternate networks for accessing the database
 backend.
 
-.. note:: If you create load balancing rules while using a network service
-offering that includes an external load balancer device such as
-NetScaler, and later change the network service offering to one that
-uses the CloudStack virtual router, you must create a firewall rule on
-the virtual router for each of your existing load balancing rules so
-that they continue to function.
+.. note:: If you create load balancing rules while using a network service offering that includes an external load balancer device such as NetScaler, and later change the network service offering to one that uses the CloudStack virtual router, you must create a firewall rule on the virtual router for each of your existing load balancing rules so that they continue to function.
 
 When creating a new virtual network, the CloudStack administrator
 chooses which network offering to enable for that network. Each virtual
@@ -647,10 +544,7 @@ To create a network offering:
       the conserve mode is on, you can define more than one service on
       the same public IP.
 
-      .. note:: If StaticNAT is enabled, irrespective of the status of the
-      conserve mode, no port forwarding or load balancing rule can be
-      created for the IP. However, you can add the firewall rules by
-      using the createFirewallRule command.
+      .. note:: If StaticNAT is enabled, irrespective of the status of the conserve mode, no port forwarding or load balancing rule can be created for the IP. However, you can add the firewall rules by using the createFirewallRule command.
 
    -  
 

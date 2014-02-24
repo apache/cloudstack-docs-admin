@@ -128,8 +128,7 @@ choose a domain or account to own the resource.
 
 To explicitly dedicate an existing zone, pod, cluster, or host: log in
 as the root admin, find the resource in the UI, and click the Dedicate
-button. |dedicate-resource-button.png: button to dedicate a zone, pod,
-cluster, or host|
+button. |button to dedicate a zone, pod,cluster, or host|
 
 For implicit dedication: The administrator creates a compute service
 offering and in the Deployment Planner field, chooses
@@ -269,17 +268,10 @@ you are using. A full discussion of distinguished names is outside the
 scope of our documentation. The following table shows some examples of
 search bases to find users in the testing department..
 
-LDAP Server
-
-Example Search Base DN
-
-ApacheDS
-
-ou=testing,o=project
-
-Active Directory
-
-OU=testing, DC=company
+LDAP Server       Example Search Base DN
+================  =======================
+ApacheDS          OU=testing, O=project
+Active Directory  OU=testing, DC=company
 
 Query Filter
 ~~~~~~~~~~~~~~~~~~~
@@ -291,21 +283,11 @@ filter syntax, consult the documentation for your LDAP server.
 
 The CloudStack query filter wildcards are:
 
-Query Filter Wildcard
-
-Description
-
-%u
-
-User name
-
-%e
-
-Email address
-
-%n
-
-First and last name
+Query Filter Wildcard  Description
+=====================  ====================
+%u                     User name
+%e                     Email address
+%n                     First and last name
 
 The following examples assume you are using Active Directory, and refer
 to user attributes from the Active Directory schema.
@@ -338,17 +320,10 @@ CloudStack user with an LDAP bind. A full discussion of bind DNs is
 outside the scope of our documentation. The following table shows some
 examples of bind DNs.
 
-LDAP Server
-
-Example Bind DN
-
-ApacheDS
-
-cn=Administrator,dc=testing,ou=project,ou=org
-
-Active Directory
-
-CN=Administrator, OU=testing, DC=company, DC=com
+LDAP Server       Example Bind DN
+================  =================================================
+ApacheDS          CN=Administrator,DC=testing,OU=project,OU=org
+Active Directory  CN=Administrator, OU=testing, DC=company, DC=com
 
 SSL Keystore Path and Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -358,3 +333,5 @@ command by setting the parameters ssl, truststore, and truststorepass.
 Before enabling SSL for ldapConfig, you need to get the certificate
 which the LDAP server is using and add it to a trusted keystore. You
 will need to know the path to the keystore and the password.
+
+.. |button to dedicate a zone, pod,cluster, or host| image:: _static/images/dedicate-resource-button.png

@@ -191,10 +191,7 @@ as the prototype for other VMs.
          PV (32-bit) or Other PV (64-bit). This choice is available only
          for XenServere:
 
-         .. note:: Generally you should not choose an older version of the
-         OS than the version in the image. For example, choosing CentOS
-         5.4 to support a CentOS 6.2 image will in general not work. In
-         those cases you should choose Other.
+         .. note:: Generally you should not choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will in general not work. In those cases you should choose Other.
 
    -  
 
@@ -285,10 +282,7 @@ To upload a template:
 
          If the OS type of the stopped VM is not listed, choose Other.
 
-         .. note:: You should not choose an older version of the OS than the
-         version in the image. For example, choosing CentOS 5.4 to
-         support a CentOS 6.2 image will in general not work. In those
-         cases you should choose Other.
+         .. note:: You should not choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will in general not work. In those cases you should choose Other.
 
    -  
 
@@ -425,10 +419,7 @@ templating.
 
    **Password management**
 
-   .. note:: If preferred, custom users (such as ones created during the Ubuntu
-   installation) should be removed. First ensure the root user account
-   is enabled by giving it a password and then login as root to
-   continue.
+   .. note:: If preferred, custom users (such as ones created during the Ubuntu installation) should be removed. First ensure the root user account is enabled by giving it a password and then login as root to continue.
 
    .. code:: bash
 
@@ -460,16 +451,16 @@ templating.
       Ubuntu
 
       The hostname of a Templated VM is set by a custom script in
-      /etc/dhcp/dhclient-exit-hooks.d, this script first checks if the
+      `/etc/dhcp/dhclient-exit-hooks.d`, this script first checks if the
       current hostname is localhost, if true, it will get the host-name,
       domain-name and fixed-ip from the DHCP lease file and use those
-      values to set the hostname and append the /etc/hosts file for
+      values to set the hostname and append the `/etc/hosts` file for
       local hostname resolution. Once this script, or a user has changed
       the hostname from localhost, it will no longer adjust system files
       regardless of it's new hostname. The script also recreates
       openssh-server keys, which should have been deleted before
       templating (shown below). Save the following script to
-      /etc/dhcp/dhclient-exit-hooks.d/sethostname, and adjust the
+      `/etc/dhcp/dhclient-exit-hooks.d/sethostname`, and adjust the
       permissions.
 
       .. code:: bash
@@ -499,11 +490,7 @@ templating.
                   
                            chmod 774  /etc/dhcp/dhclient-exit-hooks.d/sethostname
 
-   .. warning:: The following steps should be run when you are ready to template your
-   Template Master. If the Template Master is rebooted during these
-   steps you will have to run all the steps again. At the end of this
-   process the Template Master should be shutdown and the template
-   created in order to create and deploy the final template.
+   .. warning:: The following steps should be run when you are ready to template your Template Master. If the Template Master is rebooted during these steps you will have to run all the steps again. At the end of this process the Template Master should be shutdown and the template created in order to create and deploy the final template.
 
 #. 
 
@@ -611,8 +598,7 @@ templating.
    `Section 12.6, “Creating a Template from an Existing Virtual
    Machine” <#create-template-from-existing-vm>`__.
 
-.. note:: Templated VMs for both Ubuntu and CentOS may require a reboot after
-provisioning in order to pickup the hostname.
+.. note:: Templated VMs for both Ubuntu and CentOS may require a reboot after provisioning in order to pickup the hostname.
 
 Creating a Windows Template
 ----------------------------------
@@ -621,11 +607,7 @@ Windows templates must be prepared with Sysprep before they can be
 provisioned on multiple machines. Sysprep allows you to create a generic
 Windows template and avoid any possible SID conflicts.
 
-.. note:: (XenServer) Windows VMs running on XenServer require PV drivers, which
-may be provided in the template or added after the VM is created. The PV
-drivers are necessary for essential management functions such as
-mounting additional volumes and ISO images, live migration, and graceful
-shutdown.
+.. note:: (XenServer) Windows VMs running on XenServer require PV drivers, which may be provided in the template or added after the VM is created. The PV drivers are necessary for essential management functions such as mounting additional volumes and ISO images, live migration, and graceful shutdown.
 
 An overview of the procedure is as follows:
 
@@ -665,17 +647,13 @@ Center <http://www.microsoft.com/en-us/download/details.aspx?id=9085>`__.
 
 Use the following steps to run sysprep for Windows 2008 R2:
 
-.. note:: The steps outlined here are derived from the excellent guide by Charity
-Shelbourne, originally published at `Windows Server 2008 Sysprep
-Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`__
+.. note:: The steps outlined here are derived from the excellent guide by Charity Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`__
 
 #. 
 
    Download and install the Windows AIK
 
-   .. note:: Windows AIK should not be installed on the Windows 2008 R2 VM you
-   just created. Windows AIK should not be part of the template you
-   create. It is only used to create the sysprep answer file.
+   .. note:: Windows AIK should not be installed on the Windows 2008 R2 VM you just created. Windows AIK should not be part of the template you create. It is only used to create the sysprep answer file.
 
 #. 
 
@@ -909,9 +887,7 @@ You need to have a XenServer host with a file-based storage repository
 (either a local ext3 SR or an NFS SR) to convert to a VHD once the image
 file has been customized on the Centos/Fedora host.
 
-.. note:: When copying and pasting a command, be sure the command has pasted as a
-single line before executing. Some document viewers may introduce
-unwanted line breaks in copied text.
+.. note:: When copying and pasting a command, be sure the command has pasted as a single line before executing. Some document viewers may introduce unwanted line breaks in copied text.
 
 To import an AMI:
 
@@ -1040,7 +1016,7 @@ To import an AMI:
 
 #. 
 
-   Check etc/ssh/sshd\_config for lines allowing ssh login using a
+   Check `etc/ssh/sshd_config` for lines allowing ssh login using a
    password.
 
    .. code:: bash

@@ -22,7 +22,6 @@ Welcome to CloudStack Administration Documentation
 ==================================================
 
 
-
 Managing Accounts, Users and Domains
 ------------------------------------
 
@@ -30,13 +29,6 @@ Managing Accounts, Users and Domains
    :maxdepth: 2
 
    accounts
-
-User Interface
---------------
-.. toctree::
-   :maxdepth: 2
-
-   ui
 
 Using Projects to Organize User Resources
 ------------------------------------------
@@ -69,14 +61,6 @@ Working with Virtual Machines
 
    virtual_machines
 
-Working with Hosts
-------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   hosts
-
 Working with Templates
 ----------------------
 
@@ -85,6 +69,14 @@ Working with Templates
 
    templates
 
+Working with Hosts
+------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   hosts
+
 Working with Storage
 --------------------
 
@@ -92,6 +84,14 @@ Working with Storage
    :maxdepth: 2
 
    storage
+
+Working with System Virtual Machines
+------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   systemvm
 
 Working with Usage
 ------------------
@@ -109,22 +109,6 @@ Managing Networks and Traffic
 
    networking2
 
-Working with System Virtual Machines
-------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   systemvm
-
-System Reliability and Availability
------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   reliability
-
 Managing the Cloud
 ------------------
 
@@ -133,13 +117,13 @@ Managing the Cloud
 
    management
 
-CloudStack API
---------------
+System Reliability and Availability
+-----------------------------------
 
 .. toctree::
    :maxdepth: 2
 
-   api
+   reliability
 
 Tuning
 ------

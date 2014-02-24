@@ -97,7 +97,7 @@ and set up the invitations feature in CloudStack.
 #. 
 
    In the search box, type project and click the search button.
-   |searchbutton.png: Searches projects|
+   |Searches projects|
 
 #. 
 
@@ -106,7 +106,7 @@ and set up the invitations feature in CloudStack.
    configuration parameters related to project invitations. Click the
    edit button to set each parameter.
 
-  +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Configuration Parameters   | Description                                                                                                                                           |
    +============================+=======================================================================================================================================================+
    | project.invite.required    | Set to true to turn on the invitations feature.                                                                                                       |
@@ -125,7 +125,6 @@ and set up the invitations feature in CloudStack.
    +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
    | project.smtp.username      | (Optional) User name required by the SMTP server for authentication. You must also set project.smtp.password and set project.smtp.useAuth to true..   |
    +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 #. 
 
@@ -214,7 +213,7 @@ Setting the Global Project Resource Limits
    per-project maximum resource amounts that apply to all projects in
    the cloud. No project can have more resources, but an individual
    project can have lower limits. Click the edit button to set each
-   parameter. |editbutton.png: Edits parameters|
+   parameter. |Edits parameters|
 
    +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
    | max.project.public.ips   | Maximum number of public IP addresses that can be owned by any project in the cloud. See About Public IP Addresses.          |
@@ -257,8 +256,7 @@ or you can restrict that ability to just CloudStack administrators.
 
 #. 
 
-   Click the edit button to set the parameter. |editbutton.png: Edits
-   parameters|
+   Click the edit button to set the parameter. |Edits parameters|
 
    ``allow.user.create.projects``
 
@@ -333,7 +331,7 @@ Sending Project Membership Invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use these steps to add a new member to a project if the invitations
-feature is enabled in the cloud as described in `Section 6.2.1, “Setting
+feature is enabled in the cloud as described in `“Setting
 Up Invitations” <#set-up-invitations>`__. If the invitations feature is
 not turned on, use the procedure in Adding Project Members From the UI.
 
@@ -373,7 +371,7 @@ not turned on, use the procedure in Adding Project Members From the UI.
       which the recipient will provide back to CloudStack when accepting
       the invitation. Email invitations will work only if the global
       parameters related to the SMTP server have been set. See
-      `Section 6.2.1, “Setting Up Invitations” <#set-up-invitations>`__.
+      `“Setting Up Invitations” <#set-up-invitations>`__.
 
 #. 
 
@@ -395,9 +393,9 @@ Adding Project Members From the UI
 
 The steps below tell how to add a new member to a project if the
 invitations feature is not enabled in the cloud. If the invitations
-feature is enabled cloud,as described in `Section 6.2.1, “Setting Up
+feature is enabled cloud,as described in `“Setting Up
 Invitations” <#set-up-invitations>`__, use the procedure in
-`Section 6.4.1, “Sending Project Membership
+`“Sending Project Membership
 Invitations” <#send-projects-membership-invitation>`__.
 
 #. 
@@ -492,9 +490,9 @@ parent domain, or the CloudStack root administrator.
 
    Click one of the buttons:
 
-   To delete, use |deletebutton.png: Removes a project|
+   To delete, use |Removes a project|
 
-   To suspend, use |deletebutton.png: suspends a project|
+   To suspend, use |Suspends a project|
 
 Using the Project View
 ---------------------------
@@ -535,3 +533,8 @@ and resources.
       not yet accepted. Pending invitations will remain in this list
       until the new member accepts, the invitation timeout is reached,
       or you cancel the invitation.
+
+.. |Edits Parameters| image:: _static/images/edit-icon.png
+.. |Searches projects| image:: _static/images/search-button.png
+.. |Removes a project| image:: _static/images/delete-button.png
+.. |Suspends a project| image:: _static/images/suspend-icon.png
