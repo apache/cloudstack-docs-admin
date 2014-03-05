@@ -46,9 +46,7 @@ names can be controlled by the user:
    Name – host name that the DHCP server assigns to the VM. Can be set
    by the user. Defaults to instance name
 
-.. note:: You can append the display name of a guest VM to its internal name. For
-more information, see `Section 10.10, “Appending a Display Name to the
-Guest VM’s Internal Name” <#append-displayname-vms>`__.
+.. note:: You can append the display name of a guest VM to its internal name. For more information, see `Section 10.10, “Appending a Display Name to the Guest VM’s Internal Name” <#append-displayname-vms>`__.
 
 Guest VMs can be configured to be Highly Available (HA). An HA-enabled
 VM is monitored by the system. If the system detects that the VM is
@@ -78,8 +76,7 @@ through the CloudStack UI or API.
 Best Practices for Virtual Machines
 -----------------------------------------
 
-For VMs to work as expected and provide excellent service, follow these
-guidelines.
+For VMs to work as expected and provide excellent service, follow these guidelines.
 
 Monitor VMs for Max Capacity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,10 +178,7 @@ create blank virtual machines. A blank virtual machine is a virtual
 machine without an OS template. Users can attach an ISO file and install
 the OS from the CD/DVD-ROM.
 
-.. note:: You can create a VM without starting it. You can determine whether the
-VM needs to be started as part of the VM deployment. A request
-parameter, startVM, in the deployVm API provides this feature. For more
-information, see the Developer's Guide
+.. note:: You can create a VM without starting it. You can determine whether the VM needs to be started as part of the VM deployment. A request parameter, startVM, in the deployVm API provides this feature. For more information, see the Developer's Guide.
 
 To create a VM from a template:
 
@@ -219,16 +213,11 @@ To create a VM from a template:
 
    Click Submit and your VM will be created and started.
 
-   .. note:: For security reason, the internal name of the VM is visible only to
-   the root admin.
+   .. note:: For security reason, the internal name of the VM is visible only to the root admin.
 
 To create a VM from an ISO:
 
-.. note:: (XenServer) Windows VMs running on XenServer require PV drivers, which
-may be provided in the template or added after the VM is created. The PV
-drivers are necessary for essential management functions such as
-mounting additional volumes and ISO images, live migration, and graceful
-shutdown.
+.. note:: (XenServer) Windows VMs running on XenServer require PV drivers, which may be provided in the template or added after the VM is created. The PV drivers are necessary for essential management functions such as mounting additional volumes and ISO images, live migration, and graceful shutdown.
 
 #. 
 
@@ -525,8 +514,8 @@ VMware documentation and the VMware Knowledge Base, especially
 `Understanding virtual machine
 snapshots <http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1015180>`__.
 
-10.8.1. Limitations on VM Snapshots
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Limitations on VM Snapshots
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
 
@@ -554,7 +543,7 @@ snapshots <http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&e
    hypervisor will not be tracked in CloudStack.
 
 Configuring VM Snapshots
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The cloud administrator can use global configuration variables to
 control the behavior of VM snapshots. To set these variables, go through
@@ -578,7 +567,7 @@ Number of seconds to wait for a snapshot job to succeed before declaring
 failure and issuing an error.
 
 Using VM Snapshots
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 To create a VM snapshot using the CloudStack UI:
 
@@ -598,8 +587,7 @@ To create a VM snapshot using the CloudStack UI:
 
    Click the Take VM Snapshot button. |image22|
 
-   .. note:: If a snapshot is already in progress, then clicking this button will
-   have no effect.
+   .. note:: If a snapshot is already in progress, then clicking this button will have no effect.
 
 #. 
 
@@ -654,8 +642,7 @@ snapshot:
 
    To revert to the snapshot, click the Revert button. |image24|
 
-.. note:: VM snapshots are deleted automatically when a VM is destroyed. You don't
-have to manually delete the snapshots in this case.
+.. note:: VM snapshots are deleted automatically when a VM is destroyed. You don't have to manually delete the snapshots in this case.
 
 Changing the VM Name, OS, or Group
 ----------------------------------------
@@ -1038,9 +1025,7 @@ To manually live migrate a virtual machine
    From the list of suitable hosts, choose the one to which you want to
    move the VM.
 
-   .. note:: If the VM's storage has to be migrated along with the VM, this will
-   be noted in the host list. CloudStack will take care of the storage
-   migration for you.
+   .. note:: If the VM's storage has to be migrated along with the VM, this will be noted in the host list. CloudStack will take care of the storage migration for you.
 
 #. 
 
@@ -1207,10 +1192,7 @@ part of a template.
 
          Red Hat Enterprise Linux 6
 
-      .. note:: It is not recommended to choose an older version of the OS than
-      the version in the image. For example, choosing CentOS 5.4 to
-      support a CentOS 6.2 image will usually not work. In these cases,
-      choose Other.
+      .. note:: It is not recommended to choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will usually not work. In these cases, choose Other.
 
    -  
 
@@ -1244,8 +1226,8 @@ part of a template.
    fail. The entire ISO must be available before CloudStack can work
    with it.
 
-10.15.2. Attaching an ISO to a VM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Attaching an ISO to a VM
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
 
@@ -1268,7 +1250,7 @@ part of a template.
    Click OK.
 
 Changing a VM's Base Image
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Every VM is created from a base image, which is a template or ISO which
 has been created and stored in CloudStack. Both cloud administrators and

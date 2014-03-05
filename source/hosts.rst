@@ -247,8 +247,7 @@ essential that your hosts are completely up to date with the provided
 hypervisor patches. The hypervisor vendor is likely to refuse to support
 any system that is not up to date with patches.
 
-.. note:: The lack of up-do-date hotfixes can lead to data corruption and lost
-VMs.
+.. note:: The lack of up-do-date hotfixes can lead to data corruption and lost VMs.
 
 (XenServer) For more information, see `Highly Recommended Hotfixes for
 XenServer in the CloudStack Knowledge
@@ -319,15 +318,12 @@ Over-provisioning ratios are dynamically substituted in CloudStack's
 capacity calculations. For example:
 
 Capacity = 2 GB
-
 Over-provisioning factor = 2
-
 Capacity after over-provisioning = 4 GB
 
 With this configuration, suppose you deploy 3 VMs of 1 GB each:
 
 Used = 3 GB
-
 Free = 1 GB
 
 The administrator can specify a memory over-provisioning ratio, and can
@@ -380,7 +376,7 @@ capabilities, and certain scripts. It is the administrator's
 responsibility to ensure that these requirements are met.
 
 Balloon Driver
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 All VMs should have a balloon driver installed in them. The hypervisor
 communicates with the balloon driver to free up and make the memory
@@ -439,11 +435,7 @@ done, CloudStack recalculates or scales the used and reserved capacities
 based on the new over-provisioning ratios, to ensure that CloudStack is
 correctly tracking the amount of free capacity.
 
-.. note:: It is safer not to deploy additional new VMs while the capacity
-recalculation is underway, in case the new values for available capacity
-are not high enough to accommodate the new VMs. Just wait for the new
-used/available values to become available, to be sure there is room for
-all the new VMs you want.
+.. note:: It is safer not to deploy additional new VMs while the capacity recalculation is underway, in case the new values for available capacity are not high enough to accommodate the new VMs. Just wait for the new used/available values to become available, to be sure there is room for all the new VMs you want.
 
 To change the over-provisioning ratios for an existing cluster:
 
@@ -470,8 +462,7 @@ To change the over-provisioning ratios for an existing cluster:
    intially shown in these fields is the default value inherited from
    the global configuration settings.
 
-   .. note:: In XenServer, due to a constraint of this hypervisor, you can not use
-   an over-provisioning factor greater than 4.
+   .. note:: In XenServer, due to a constraint of this hypervisor, you can not use an over-provisioning factor greater than 4.
 
 Service Offering Limits and Over-Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -528,46 +519,14 @@ VLAN Allocation Example
 VLANs are required for public and guest traffic. The following is an
 example of a VLAN allocation scheme:
 
-VLAN IDs
-
-Traffic type
-
-Scope
-
-less than 500
-
-Management traffic. Reserved for administrative purposes.
-
-CloudStack software can access this, hypervisors, system VMs.
-
-500-599
-
-VLAN carrying public traffic.
-
-CloudStack accounts.
-
-600-799
-
-VLANs carrying guest traffic.
-
-CloudStack accounts. Account-specific VLAN is chosen from this pool.
-
-800-899
-
-VLANs carrying guest traffic.
-
-CloudStack accounts. Account-specific VLAN chosen by CloudStack admin to
-assign to that account.
-
-900-999
-
-VLAN carrying guest traffic
-
-CloudStack accounts. Can be scoped by project, domain, or all accounts.
-
-greater than 1000
-
-Reserved for future use
+VLAN IDs            Traffic type                    Scope
+=================   =============================   ====================================================================================================
+less than 500       Management traffic.             Reserved for administrative purposes.  CloudStack software can access this, hypervisors, system VMs.
+500-599             VLAN carrying public traffic.   CloudStack accounts.
+600-799             VLANs carrying guest traffic.   CloudStack accounts. Account-specific VLAN is chosen from this pool.
+800-899             VLANs carrying guest traffic.   CloudStack accounts. Account-specific VLAN chosen by CloudStack admin to assign to that account.
+900-999             VLAN carrying guest traffic     CloudStack accounts. Can be scoped by project, domain, or all accounts.
+greater than 1000   Reserved for future use
 
 Adding Non Contiguous VLAN Ranges
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -669,6 +628,5 @@ To enable you to assign VLANs to Isolated networks,
    network and the state is changed to Setup. In this state, the network
    will not be garbage collected.
 
-.. note:: You cannot change a VLAN once it's assigned to the network. The VLAN
-remains with the network for its entire life cycle.
+.. note:: You cannot change a VLAN once it's assigned to the network. The VLAN remains with the network for its entire life cycle.
 

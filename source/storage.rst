@@ -276,9 +276,7 @@ from a volume as well; this is the standard procedure for private
 template creation. Volumes are hypervisor-specific: a volume from one
 hypervisor type may not be used on a guest of another hypervisor type.
 
-.. note:: CloudStack supports attaching up to 13 data disks to a VM on XenServer
-hypervisor versions 6.0 and above. For the VMs on other hypervisor
-types, the data disk limit is 6.
+.. note:: CloudStack supports attaching up to 13 data disks to a VM on XenServer hypervisor versions 6.0 and above. For the VMs on other hypervisor types, the data disk limit is 6.
 
 Creating a New Volume
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -414,21 +412,11 @@ To upload a volume:
       Format. Choose one of the following to indicate the disk image
       format of the volume.
 
-      Hypervisor
-
-      Disk Image Format
-
-      XenServer
-
-      VHD
-
-      VMware
-
-      OVA
-
-      KVM
-
-      QCOW2
+      Hypervisor  Disk Image Format
+      ==========  =================
+      XenServer   VHD
+      VMware      OVA
+      KVM         QCOW2
 
    -  
 
@@ -489,9 +477,7 @@ volume from one storage pool to another.
 Detaching and Moving Volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: This procedure is different from moving volumes from one storage pool to
-another as described in `Section 13.4.5, “VM Storage
-Migration” <#vm-storage-migration>`__.
+.. note:: This procedure is different from moving volumes from one storage pool to another as described in `Section 13.4.5, “VM Storage Migration” <#vm-storage-migration>`__.
 
 A volume can be detached from a guest VM and attached to another guest.
 Both CloudStack administrators and users can detach volumes from VMs and
@@ -526,9 +512,7 @@ VM Storage Migration
 
 Supported in XenServer, KVM, and VMware.
 
-.. note:: This procedure is different from moving disk volumes from one VM to
-another as described in `Section 13.4.4, “Detaching and Moving
-Volumes” <#detach-move-volumes>`__.
+.. note:: This procedure is different from moving disk volumes from one VM to another as described in `Section 13.4.4, “Detaching and Moving Volumes” <#detach-move-volumes>`__.
 
 You can migrate a virtual machine’s root disk volume or any additional
 data disk volume from one storage pool to another in the same zone.
@@ -548,10 +532,7 @@ another, or to migrate a VM whose disks are on local storage, or even to
 migrate a VM’s disks from one storage repository to another, all while
 the VM is running.
 
-.. note:: Because of a limitation in VMware, live migration of storage for a VM is
-allowed only if the source and target storage pool are accessible to the
-source host; that is, the host where the VM is running when the live
-migration operation is requested.
+.. note:: Because of a limitation in VMware, live migration of storage for a VM is allowed only if the source and target storage pool are accessible to the source host; that is, the host where the VM is running when the live migration operation is requested.
 
 Migrating a Data Volume to a New Storage Pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -660,9 +641,7 @@ be restarted.
    Click the Migrate button |Migrateinstance.png: button to migrate a VM
    or volume| and choose the destination from the dropdown list.
 
-   .. note:: If the VM's storage has to be migrated along with the VM, this will
-   be noted in the host list. CloudStack will take care of the storage
-   migration for you.
+   .. note:: If the VM's storage has to be migrated along with the VM, this will be noted in the host list. CloudStack will take care of the storage migration for you.
 
 #. 
 
@@ -788,12 +767,12 @@ determine when the physical deletion of volumes will occur.
 
 -  
 
-   expunge.delay: determines how old the volume must be before it is
+   `expunge.delay`: determines how old the volume must be before it is
    destroyed, in seconds
 
 -  
 
-   expunge.interval: determines how often to run the garbage collection
+   `expunge.interval`: determines how often to run the garbage collection
    check
 
 Administrators should adjust these values depending on site policies
@@ -964,8 +943,5 @@ needed, on demand. To generate the OVA, CloudStack uses information in a
 properties file (\*.ova.meta) which it stored along with the original
 snapshot data.
 
-.. note:: For upgrading customers: This process applies only to newly created
-snapshots after upgrade to CloudStack 4.2. Snapshots that have already
-been taken and stored in OVA format will continue to exist in that
-format, and will continue to work as expected.
+.. note:: For upgrading customers: This process applies only to newly created snapshots after upgrade to CloudStack 4.2. Snapshots that have already been taken and stored in OVA format will continue to exist in that format, and will continue to work as expected.
 

@@ -22,7 +22,6 @@ Welcome to CloudStack Administration Documentation
 ==================================================
 
 
-
 Managing Accounts, Users and Domains
 ------------------------------------
 
@@ -31,34 +30,12 @@ Managing Accounts, Users and Domains
 
    accounts
 
-User Services
---------------
-.. toctree::
-   :maxdepth: 2
-
-   user_services
-
-User Interface
---------------
-.. toctree::
-   :maxdepth: 2
-
-   ui
-
 Using Projects to Organize User Resources
 ------------------------------------------
 .. toctree::
    :maxdepth: 2 
 
    projects
-
-Steps to Provision your Cloud Infrastructure
---------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   provisioning
 
 Service Offerings
 -----------------
@@ -84,14 +61,6 @@ Working with Virtual Machines
 
    virtual_machines
 
-Working with Hosts
-------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   hosts
-
 Working with Templates
 ----------------------
 
@@ -100,6 +69,14 @@ Working with Templates
 
    templates
 
+Working with Hosts
+------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   hosts
+
 Working with Storage
 --------------------
 
@@ -107,6 +84,14 @@ Working with Storage
    :maxdepth: 2
 
    storage
+
+Working with System Virtual Machines
+------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   systemvm
 
 Working with Usage
 ------------------
@@ -124,13 +109,13 @@ Managing Networks and Traffic
 
    networking2
 
-Working with System Virtual Machines
-------------------------------------
+Managing the Cloud
+------------------
 
 .. toctree::
    :maxdepth: 2
 
-   systemvm
+   management
 
 System Reliability and Availability
 -----------------------------------
@@ -140,30 +125,6 @@ System Reliability and Availability
 
    reliability
 
-Managing the Cloud
-------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   management
-
-Setting Configuration Parameters
---------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   parameters
-
-CloudStack API
---------------
-
-.. toctree::
-   :maxdepth: 2
-
-   api
-
 Tuning
 ------
 
@@ -172,16 +133,8 @@ Tuning
 
    tuning
 
-Troubleshooting
----------------
-
-.. toctree::
-   :maxdepth: 2
-
-   troubleshooting
-
-Events
-------
+Events and Troubleshooting
+--------------------------
 
 .. toctree::
    :maxdepth: 2
