@@ -181,8 +181,7 @@ new, unique value.
 
 #. 
 
-   Click the Change Password button. |change-password.png: button to
-   change a user's password|
+   Click the Change Password button. |change-password.png|
 
 #. 
 
@@ -259,7 +258,8 @@ call to the cloudstack api.
 For example, make a call from the cloudstack server to create a SSH
 keypair called "keypair-doc" for the admin account in the root domain:
 
-.. note:: Ensure that you adjust these values to meet your needs. If you are making the API call from a different server, your URL/PORT will be different, and you will need to use the API keys.
+.. note:: 
+    Ensure that you adjust these values to meet your needs. If you are making the API call from a different server, your URL/PORT will be different, and you will need to use the API keys.
 
 #. 
 
@@ -356,3 +356,6 @@ reset the SSH keypair assigned to a virtual machine. A lost or
 compromised SSH keypair can be changed, and the user can access the VM
 by using the new keypair. Just create or register a new keypair, then
 call resetSSHKeyForVirtualMachine.
+
+.. |change-password.png| image:: _static/images/change-password.png
+   :alt: button to change a user's password

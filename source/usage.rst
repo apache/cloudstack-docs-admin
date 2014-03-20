@@ -30,7 +30,7 @@ The Usage Server runs at least once per day. It can be configured to run
 multiple times per day.
 
 Configuring the Usage Server
-----------------------------------
+----------------------------
 
 To configure the usage server:
 
@@ -173,13 +173,14 @@ With this configuration, the Usage job will run every night at 2 AM EST
 and will process records for the previous day’s midnight-midnight as
 defined by the EST (America/New\_York) time zone.
 
-.. note:: Because the special value 1440 has been used for
-usage.stats.job.aggregation.range, the Usage Server will ignore the data
-between midnight and 2 AM. That data will be included in the next day's
-run.
+.. note:: 
+    Because the special value 1440 has been used for
+    usage.stats.job.aggregation.range, the Usage Server will ignore the data
+    between midnight and 2 AM. That data will be included in the next day's
+    run.
 
 Setting Usage Limits
---------------------------
+--------------------
 
 CloudStack provides several administrator control points for capping
 resource usage by users. Some of these limits are global configuration
@@ -313,7 +314,7 @@ Maximum secondary storage space that can be used for an account.
 Default is 400.
 
 User Permission
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 The root administrator, domain administrators and users are able to list
 resources. Ensure that proper logs are maintained in the ``vmops.log``
@@ -336,7 +337,7 @@ and ``api.log`` files.
    listResourceLimits API.
 
 Limit Usage Considerations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
 
@@ -385,7 +386,7 @@ Limit Usage Considerations
    any more instances because the CPU limit has been exhausted.
 
 Limiting Resource Usage in a Domain
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack allows the configuration of limits on a domain basis. With a
 domain limit in place, all users still have their account limits. They
@@ -415,7 +416,7 @@ To set a domain limit:
 
 #. 
 
-   Click the Edit button |editbutton.png: edits the settings.|
+   Click the Edit button |editbutton.png|
 
 #. 
 
@@ -470,7 +471,7 @@ To set a domain limit:
    Click Apply.
 
 Default Account Resource Limits
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can limit resource use by accounts. The default limits are set by
 using Global configuration parameters, and they affect all accounts
@@ -497,7 +498,7 @@ resource limit.
 
 #. 
 
-   Click the Edit button. |editbutton.png: edits the settings|
+   Click the Edit button. |editbutton.png|
 
 #. 
 
@@ -1204,3 +1205,6 @@ aggregation period. The start date in the usage record will show the
 date and time of the earliest event. For other types of usage, such as
 IP addresses and VMs, the old unprocessed data is not included in daily
 aggregation.
+
+.. |editbutton.png| image:: _static/images/edit-icon.png
+   :alt: edits the settings.

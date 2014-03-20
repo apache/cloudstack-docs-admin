@@ -18,7 +18,7 @@ Managing Accounts, Users and Domains
 ====================================
 
 Accounts, Users, and Domains
----------------------------------
+----------------------------
 
 Accounts
 ~~~~~~~~
@@ -60,21 +60,21 @@ or delete other administrators, and change the password for any user in
 the system.
 
 Domain Administrators
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 Domain administrators can perform administrative operations for users
 who belong to that domain. Domain administrators do not have visibility
 into physical servers or other domains.
 
 Root Administrator
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Root administrators have complete access to the system, including
 managing templates, service offerings, customer care administrators, and
 domains
 
 Resource Ownership
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Resources belong to the account, not individual users in that account.
 For example, billing, resource limits, and so on are maintained by the
@@ -87,7 +87,7 @@ administrator can do the same for VMs within the domain from one account
 to any other account in the domain or any of its sub-domains.
 
 Dedicating Resources to Accounts and Domains
----------------------------------------------
+--------------------------------------------
 
 The root administrator can dedicate resources to a specific domain or
 account that needs private infrastructure for additional security or
@@ -179,7 +179,7 @@ with system VMs or virtual routers can be used for preferred implicit
 dedication.
 
 Using an LDAP Server for User Authentication
--------------------------------------------------
+--------------------------------------------
 
 You can use an external LDAP server such as Microsoft Active Directory
 or ApacheDS to authenticate CloudStack end-users. Just map CloudStack
@@ -213,7 +213,7 @@ command ldapConfig and provide the following:
    SSL keystore and password, if SSL is used
 
 Example LDAP Configuration Commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To understand the examples in this section, you need to know the basic
 concepts behind calling the CloudStack API, which are explained in the
@@ -256,7 +256,7 @@ The next few sections explain some of the concepts you will need to know
 when filling out the ldapConfig parameters.
 
 Search Base
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
 An LDAP query is relative to a given node of the LDAP directory tree,
 called the search base. The search base is the distinguished name (DN)
@@ -268,13 +268,15 @@ you are using. A full discussion of distinguished names is outside the
 scope of our documentation. The following table shows some examples of
 search bases to find users in the testing department..
 
+================  =======================
 LDAP Server       Example Search Base DN
 ================  =======================
 ApacheDS          OU=testing, O=project
 Active Directory  OU=testing, DC=company
+================  =======================
 
 Query Filter
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 The query filter is used to find a mapped user in the external LDAP
 server. The query filter should uniquely map the CloudStack user to LDAP
@@ -283,11 +285,13 @@ filter syntax, consult the documentation for your LDAP server.
 
 The CloudStack query filter wildcards are:
 
+=====================  ====================
 Query Filter Wildcard  Description
 =====================  ====================
 %u                     User name
 %e                     Email address
 %n                     First and last name
+=====================  ====================
 
 The following examples assume you are using Active Directory, and refer
 to user attributes from the Active Directory schema.
@@ -311,7 +315,7 @@ To find a user by email address:
     (mail=%e)
 
 Search User Bind DN
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 The bind DN is the user on the external LDAP server permitted to search
 the LDAP directory within the defined search base. When the DN is
@@ -320,18 +324,22 @@ CloudStack user with an LDAP bind. A full discussion of bind DNs is
 outside the scope of our documentation. The following table shows some
 examples of bind DNs.
 
+================  =================================================
 LDAP Server       Example Bind DN
 ================  =================================================
 ApacheDS          CN=Administrator,DC=testing,OU=project,OU=org
 Active Directory  CN=Administrator, OU=testing, DC=company, DC=com
+================  =================================================
+
 
 SSL Keystore Path and Password
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the LDAP server requires SSL, you need to enable it in the ldapConfig
 command by setting the parameters ssl, truststore, and truststorepass.
 Before enabling SSL for ldapConfig, you need to get the certificate
 which the LDAP server is using and add it to a trusted keystore. You
 will need to know the path to the keystore and the password.
+
 
 .. |button to dedicate a zone, pod,cluster, or host| image:: _static/images/dedicate-resource-button.png

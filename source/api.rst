@@ -28,13 +28,11 @@ some indication of their state.
 
 The API has a REST-like query basis and returns results in XML or JSON.
 
-See `the Developer’s
-Guide <http://docs.cloudstack.org/CloudStack_Documentation/Developer's_Guide%3A_CloudStack>`__
-and `the API
-Reference <http://docs.cloudstack.org/CloudStack_Documentation/API_Reference%3A_CloudStack>`__.
+See `the Developer’s Guide <https://cwiki.apache.org/confluence/display/CLOUDSTACK/Developers>`__
+and `the API Reference <http://cloudstack.apache.org/docs/api/>`__.
 
 Provisioning and Authentication API
------------------------------------------
+-----------------------------------
 
 CloudStack expects that a customer will have their own user provisioning
 infrastructure. It provides APIs to integrate with these existing
@@ -47,7 +45,7 @@ possible as well. For example, see Using an LDAP Server for User
 Authentication.
 
 User Data and Meta Data
------------------------------
+-----------------------
 
 CloudStack provides API access to attach up to 32KB of user data to a
 deployed VM. Deployed VMs also have access to instance metadata via the
@@ -57,17 +55,13 @@ User data can be accessed once the IP address of the virtual router is
 known. Once the IP address is known, use the following steps to access
 the user data:
 
-#. 
-
-   Run the following command to find the virtual router.
+#. Run the following command to find the virtual router.
 
    .. code:: bash
 
        # cat /var/lib/dhclient/dhclient-eth0.leases | grep dhcp-server-identifier | tail -1
 
-#. 
-
-   Access user data by running the following command using the result of
+#. Access user data by running the following command using the result of
    the above command
 
    .. code:: bash
