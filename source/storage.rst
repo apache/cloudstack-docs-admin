@@ -29,7 +29,7 @@ There is no ephemeral storage in CloudStack. All volumes on all nodes
 are persistent.
 
 Primary Storage
----------------------
+---------------
 
 This section gives concepts and technical details about CloudStack
 primary storage. For information about how to install and configure
@@ -38,7 +38,7 @@ primary storage through the CloudStack UI, see the Installation Guide.
 `Section 2.6, “About Primary Storage” <#about-primary-storage>`__
 
 Best Practices for Primary Storage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
 
@@ -68,7 +68,7 @@ Best Practices for Primary Storage
    Offerings).
 
 Runtime Behavior of Primary Storage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Root volumes are created automatically when a virtual machine is
 created. Root volumes are deleted when the VM is destroyed. Data volumes
@@ -92,90 +92,23 @@ storage or from a storage system (ex. a SAN), depending on how the
 primary storage was added to CloudStack).
 
 Hypervisor Support for Primary Storage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following table shows storage options and parameters for different
 hypervisors.
 
-VMware vSphere
-
-Citrix XenServer
-
-KVM
-
-Hyper-V
-
-****Format for Disks, Templates, and Snapshots****
-
-VMDK
-
-VHD
-
-QCOW2
-
-VHD
-
-Snapshots are not supported.
-
-**iSCSI support**
-
-VMFS
-
-Clustered LVM
-
-Yes, via Shared Mountpoint
-
-No
-
-**Fiber Channel support**
-
-VMFS
-
-Yes, via Existing SR
-
-Yes, via Shared Mountpoint
-
-No
-
-**NFS support**
-
-Y
-
-Y
-
-Y
-
-No
-
-**Local storage support**
-
-Y
-
-Y
-
-Y
-
-Y
-
-**Storage over-provisioning**
-
-NFS and iSCSI
-
-NFS
-
-NFS
-
-No
-
-**SMB/CIFS**
-
-No
-
-No
-
-No
-
-Yes
+============================================== ================ ==================== =========================== ============================
+                                               VMware vSphere   Citrix XenServer     KVM                         Hyper-V
+============================================== ================ ==================== =========================== ============================
+**Format for Disks, Templates, and Snapshots** VMDK             VHD                  QCOW2                       VHD
+                                                                                                                 Snapshots are not supported.
+**iSCSI support**                              VMFS             Clustered LVM        Yes, via Shared Mountpoint  No
+**Fiber Channel support**                      VMFS             Yes, via Existing SR Yes, via Shared Mountpoint  No
+**NFS support**                                Yes              Yes                  Yes                         No
+**Local storage support**                      Yes              Yes                  Yes                         Yes
+**Storage over-provisioning**                  NFS and iSCSI    NFS                  NFS                         No
+**SMB/CIFS**                                   No               No                   No                          Yes
+============================================== ================ ==================== =========================== ============================
 
 XenServer uses a clustered LVM system to store VM images on iSCSI and
 Fiber Channel volumes and does not support over-provisioning in the
@@ -208,7 +141,7 @@ could provision 1 iSCSI LUN initially and then add a second iSCSI LUN
 when the first approaches capacity.
 
 Storage Tags
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 Storage may be "tagged". A tag is a text string attribute associated
 with primary storage, a Disk Offering, or a Service Offering. Tags allow
@@ -229,7 +162,7 @@ if different devices are used to present those tags, the set of exposed
 tags can be the same.
 
 Maintenance Mode for Primary Storage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Primary storage may be placed into maintenance mode. This is useful, for
 example, to replace faulty RAM in a storage device. Maintenance mode for
@@ -243,7 +176,7 @@ all guests that were running at the time of the entry into maintenance
 mode.
 
 Secondary Storage
------------------------
+-----------------
 
 This section gives concepts and technical details about CloudStack
 secondary storage. For information about how to install and configure
@@ -253,7 +186,7 @@ Installation Guide.
 `Section 2.7, “About Secondary Storage” <#about-secondary-storage>`__
 
 Working With Volumes
---------------------------
+--------------------
 
 A volume provides storage to a guest VM. The volume can provide for a
 root disk or an additional data disk. CloudStack supports additional
@@ -276,10 +209,11 @@ from a volume as well; this is the standard procedure for private
 template creation. Volumes are hypervisor-specific: a volume from one
 hypervisor type may not be used on a guest of another hypervisor type.
 
-.. note:: CloudStack supports attaching up to 13 data disks to a VM on XenServer hypervisor versions 6.0 and above. For the VMs on other hypervisor types, the data disk limit is 6.
+.. note:: 
+   CloudStack supports attaching up to 13 data disks to a VM on XenServer hypervisor versions 6.0 and above. For the VMs on other hypervisor types, the data disk limit is 6.
 
 Creating a New Volume
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 You can add more data disk volumes to a guest VM at any time, up to the
 limits of your storage capacity. Both CloudStack administrators and
@@ -290,7 +224,7 @@ volume. This optimization allows the CloudStack to provision the volume
 nearest to the guest that will use it when the first attachment is made.
 
 Using Local Storage for Data Volumes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can create data volumes on local storage (supported with XenServer,
 KVM, and VMware). The data volume is placed on the same host as the VM
@@ -315,7 +249,7 @@ If you want to put a host into maintenance mode, you must first stop any
 VMs with local data volumes on that host.
 
 To Create a New Volume
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
 
@@ -356,7 +290,7 @@ To Create a New Volume
    To start using the volume, continue to Attaching a Volume
 
 Uploading an Existing Volume to a Virtual Machine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Existing data can be made accessible to a virtual machine. This is
 called uploading a volume to the VM. For example, this is useful to
@@ -412,11 +346,13 @@ To upload a volume:
       Format. Choose one of the following to indicate the disk image
       format of the volume.
 
+      ==========  =================
       Hypervisor  Disk Image Format
       ==========  =================
       XenServer   VHD
       VMware      OVA
       KVM         QCOW2
+      ==========  =================
 
    -  
 
@@ -425,7 +361,7 @@ To upload a volume:
       chosen in Format. For example, if Format is VHD, the URL might
       look like the following:
 
-      http://yourFileServerIP/userdata/myDataDisk.vhd
+      ``http://yourFileServerIP/userdata/myDataDisk.vhd``
 
    -  
 
@@ -438,7 +374,7 @@ To upload a volume:
    step 5, and make sure the status is Uploaded.
 
 Attaching a Volume
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 You can attach a volume to a guest VM to provide extra disk storage.
 Attach a volume when you first create a new volume, when you are moving
@@ -460,7 +396,7 @@ volume from one storage pool to another.
 #. 
 
    Click the volume name in the Volumes list, then click the Attach Disk
-   button |AttachDiskButton.png: button to attach a volume|
+   button |AttachDiskButton.png|
 
 #. 
 
@@ -475,9 +411,10 @@ volume from one storage pool to another.
    clicking Instances, the instance name, and View Volumes.
 
 Detaching and Moving Volumes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: This procedure is different from moving volumes from one storage pool to another as described in `Section 13.4.5, “VM Storage Migration” <#vm-storage-migration>`__.
+.. note:: 
+   This procedure is different from moving volumes from one storage pool to another as described in `Section 13.4.5, “VM Storage Migration” <#vm-storage-migration>`__.
 
 A volume can be detached from a guest VM and attached to another guest.
 Both CloudStack administrators and users can detach volumes from VMs and
@@ -500,7 +437,7 @@ may take several minutes for the volume to be moved to the new VM.
 #. 
 
    Click the name of the volume you want to detach, then click the
-   Detach Disk button. |DetachDiskButton.png: button to detach a volume|
+   Detach Disk button. |DetachDiskButton.png|
 
 #. 
 
@@ -508,11 +445,12 @@ may take several minutes for the volume to be moved to the new VM.
    `Section 13.4.3, “Attaching a Volume” <#attaching-volume>`__.
 
 VM Storage Migration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 Supported in XenServer, KVM, and VMware.
 
-.. note:: This procedure is different from moving disk volumes from one VM to another as described in `Section 13.4.4, “Detaching and Moving Volumes” <#detach-move-volumes>`__.
+.. note:: 
+   This procedure is different from moving disk volumes from one VM to another as described in `Section 13.4.4, “Detaching and Moving Volumes” <#detach-move-volumes>`__.
 
 You can migrate a virtual machine’s root disk volume or any additional
 data disk volume from one storage pool to another in the same zone.
@@ -532,10 +470,11 @@ another, or to migrate a VM whose disks are on local storage, or even to
 migrate a VM’s disks from one storage repository to another, all while
 the VM is running.
 
-.. note:: Because of a limitation in VMware, live migration of storage for a VM is allowed only if the source and target storage pool are accessible to the source host; that is, the host where the VM is running when the live migration operation is requested.
+.. note:: 
+   Because of a limitation in VMware, live migration of storage for a VM is allowed only if the source and target storage pool are accessible to the source host; that is, the host where the VM is running when the live migration operation is requested.
 
 Migrating a Data Volume to a New Storage Pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are two situations when you might want to migrate a disk:
 
@@ -550,7 +489,7 @@ There are two situations when you might want to migrate a disk:
    attach it to a new VM.
 
 Migrating Storage For a Running VM
-''''''''''''''''''''''''''''''''''''''''''''''
+''''''''''''''''''''''''''''''''''
 
 (Supported on XenServer and VMware)
 
@@ -575,8 +514,7 @@ Migrating Storage For a Running VM
 
 #. 
 
-   Click the Migrate Volume button |Migrateinstance.png: button to
-   migrate a volume| and choose the destination from the dropdown list.
+   Click the Migrate Volume button |Migrateinstance.png| and choose the destination from the dropdown list.
 
 #. 
 
@@ -584,7 +522,7 @@ Migrating Storage For a Running VM
    Ready.
 
 Migrating Storage and Attaching to a Different VM
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''''
 
 #. 
 
@@ -593,13 +531,12 @@ Migrating Storage and Attaching to a Different VM
 #. 
 
    Detach the disk from the VM. See `Section 13.4.4, “Detaching and
-   Moving Volumes” <#detach-move-volumes>`__ but skip the “reattach”
+   Moving Volumes” <#detach-move-volumes>`_ but skip the “reattach”
    step at the end. You will do that after migrating to new storage.
 
 #. 
 
-   Click the Migrate Volume button |Migrateinstance.png: button to
-   migrate a volume| and choose the destination from the dropdown list.
+   Click the Migrate Volume button |Migrateinstance.png| and choose the destination from the dropdown list.
 
 #. 
 
@@ -615,7 +552,7 @@ Migrating Storage and Attaching to a Different VM
    Volume” <#attaching-volume>`__
 
 Migrating a VM Root Volume to a New Storage Pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (XenServer, VMware) You can live migrate a VM's root disk from one
 storage pool to another, without stopping the VM first.
@@ -638,10 +575,10 @@ be restarted.
 
 #. 
 
-   Click the Migrate button |Migrateinstance.png: button to migrate a VM
-   or volume| and choose the destination from the dropdown list.
+   Click the Migrate button |Migrateinstance.png| and choose the destination from the dropdown list.
 
-   .. note:: If the VM's storage has to be migrated along with the VM, this will be noted in the host list. CloudStack will take care of the storage migration for you.
+   .. note:: 
+      If the VM's storage has to be migrated along with the VM, this will be noted in the host list. CloudStack will take care of the storage migration for you.
 
 #. 
 
@@ -653,7 +590,7 @@ be restarted.
    (KVM only) Restart the VM.
 
 Resizing Volumes
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 CloudStack provides the ability to resize data disks; CloudStack
 controls volume size by using disk offerings. This provides CloudStack
@@ -709,15 +646,14 @@ To resize a volume:
 #. 
 
    Select the volume name in the Volumes list, then click the Resize
-   Volume button |resize-volume-icon.png: button to display the resize
-   volume option.|
+   Volume button |resize-volume-icon.png|
 
 #. 
 
    In the Resize Volume pop-up, choose desired characteristics for the
    storage.
 
-   |resize-volume.png: option to resize a volume.|
+   |resize-volume.png|
 
    #. 
 
@@ -737,7 +673,7 @@ To resize a volume:
    Click OK.
 
 Reset VM to New Root Disk on Reboot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can specify that you want to discard the root disk and create a new
 one whenever a given VM is rebooted. This is useful for secure
@@ -753,7 +689,7 @@ upon reboot. See `Section 8.1.1, “Creating a New Compute
 Offering” <#creating-compute-offerings>`__.
 
 Volume Deletion and Garbage Collection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The deletion of a volume does not delete the snapshots that have been
 created from the volume
@@ -779,7 +715,7 @@ Administrators should adjust these values depending on site policies
 around data retention.
 
 Working with Volume Snapshots
------------------------------------
+-----------------------------
 
 (Supported for the following hypervisors: **XenServer**, **VMware
 vSphere**, and **KVM**)
@@ -809,7 +745,7 @@ A completed snapshot is copied from primary storage to secondary
 storage, where it is stored until deleted or purged by newer snapshot.
 
 How to Snapshot a Volume
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. 
 
@@ -829,10 +765,10 @@ How to Snapshot a Volume
 
 #. 
 
-   Click the Snapshot button. |image43|
+   Click the Snapshot button. |SnapshotButton.png|
 
 Automatic Snapshot Creation and Retention
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 (Supported for the following hypervisors: **XenServer**, **VMware
 vSphere**, and **KVM**)
@@ -854,7 +790,7 @@ snapshot policy. Additional manual snapshots can be created and
 retained.
 
 Incremental Snapshots and Backup
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Snapshots are created on primary storage where a disk resides. After a
 snapshot is created, it is immediately backed up to secondary storage
@@ -864,22 +800,16 @@ primary storage.
 CloudStack does incremental backups for some hypervisors. When
 incremental backups are supported, every N backup is a full backup.
 
-VMware vSphere
 
-Citrix XenServer
++------------------------------+------------------+------------------+-----+
+|                              | VMware vSphere   | Citrix XenServer | KVM |
++==============================+==================+==================+=====+
+| Support incremental backup   | No               | Yes              | No  |
++------------------------------+------------------+------------------+-----+
 
-KVM
-
-Support incremental backup
-
-N
-
-Y
-
-N
 
 Volume Status
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 When a snapshot operation is triggered by means of a recurring snapshot
 policy, a snapshot is skipped if a volume has remained inactive since
@@ -892,7 +822,7 @@ When a snapshot is taken manually, a snapshot is always created
 regardless of whether a volume has been active or not.
 
 Snapshot Restore
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 There are two paths to restoring snapshots. Users can create a volume
 from the snapshot. The volume can then be mounted to a VM and files
@@ -901,7 +831,7 @@ snapshot of a root disk. The user can then boot a VM from this template
 to effect recovery of the root disk.
 
 Snapshot Job Throttling
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 When a snapshot of a virtual machine is requested, the snapshot job runs
 on the same host where the VM is running or, in the case of a stopped
@@ -930,7 +860,7 @@ a snapshot request will wait in the queue. If this limit is reached, the
 snapshot request fails and returns an error message.
 
 VMware Volume Snapshot Performance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you take a snapshot of a data or root volume on VMware, CloudStack
 uses an efficient storage technique to improve performance.
@@ -943,5 +873,19 @@ needed, on demand. To generate the OVA, CloudStack uses information in a
 properties file (\*.ova.meta) which it stored along with the original
 snapshot data.
 
-.. note:: For upgrading customers: This process applies only to newly created snapshots after upgrade to CloudStack 4.2. Snapshots that have already been taken and stored in OVA format will continue to exist in that format, and will continue to work as expected.
+.. note:: 
+   For upgrading customers: This process applies only to newly created snapshots after upgrade to CloudStack 4.2. Snapshots that have already been taken and stored in OVA format will continue to exist in that format, and will continue to work as expected.
 
+
+.. |AttachDiskButton.png| image:: _static/images/attach-disk-icon.png
+   :alt: Attach Disk Button.
+.. |resize-volume-icon.png| image:: _static/images/resize-volume-icon.png
+   :alt: button to display the resize volume option.
+.. |resize-volume.png| image:: _static/images/resize-volume.png
+   :alt: option to resize a volume.
+.. |SnapshotButton.png| image:: _static/images/SnapshotButton.png
+   :alt: Snapshot Button.
+.. |DetachDiskButton.png| image:: _static/images/detach-disk-icon.png
+   :alt: Detach Disk Button.
+.. |Migrateinstance.png| image:: _static/images/migrate-instance.png
+   :alt: button to migrate a volume.

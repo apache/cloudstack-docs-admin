@@ -18,7 +18,7 @@ System Reliability and High Availability
 ========================================
 
 HA for Management Server
-------------------------------
+------------------------
 
 The CloudStack Management Server should be deployed in a multi-node
 configuration such that it is not susceptible to individual server
@@ -33,7 +33,7 @@ end user and admin UI, API, dynamic load distribution, and HA will cease
 to work.
 
 Management Server Load Balancing
---------------------------------------
+--------------------------------
 
 CloudStack can use a load balancer to provide a virtual IP for multiple
 Management Servers. The administrator is responsible for creating the
@@ -44,37 +44,13 @@ persistence is required.
 
 Even if persistence is not required, enabling it is permitted.
 
-Source Port
-
-Destination Port
-
-Protocol
-
-Persistence Required?
-
-80 or 443
-
-8080 (or 20400 with AJP)
-
-HTTP (or AJP)
-
-Yes
-
-8250
-
-8250
-
-TCP
-
-Yes
-
-8096
-
-8096
-
-HTTP
-
-No
+============== ======================== ================ =====================
+Source Port    Destination Port         Protocol         Persistence Required?
+============== ======================== ================ =====================
+80 or 443      8080 (or 20400 with AJP) HTTP (or AJP)    Yes
+8250           8250                     TCP              Yes
+8096           8096                     HTTP             No
+============== ======================== ================ =====================
 
 In addition to above settings, the administrator is responsible for
 setting the 'host' global config value from the management server IP to
@@ -84,7 +60,7 @@ still available but the system VMs will not be able to contact the
 management server.
 
 HA-Enabled Virtual Machines
----------------------------------
+---------------------------
 
 The user can specify a virtual machine as HA-enabled. By default, all
 virtual router VMs and Elastic Load Balancing VMs are automatically
@@ -100,7 +76,7 @@ HA features work with iSCSI or NFS primary storage. HA with local
 storage is not supported.
 
 HA for Hosts
-------------------
+------------
 
 The user can specify a virtual machine as HA-enabled. By default, all
 virtual router VMs and Elastic Load Balancing VMs are automatically
@@ -116,7 +92,7 @@ HA features work with iSCSI or NFS primary storage. HA with local
 storage is not supported.
 
 Dedicated HA Hosts
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 One or more hosts can be designated for use only by HA-enabled VMs that
 are restarting due to a host failure. Setting up a pool of such
@@ -143,10 +119,11 @@ desired tag (for example, "ha\_host"), and restart the Management
 Server. Enter the value in the Host Tags field when adding the host(s)
 that you want to dedicate to HA-enabled VMs.
 
-.. note:: If you set ha.tag, be sure to actually use that tag on at least one host in your cloud. If the tag specified in ha.tag is not set for any host in the cloud, the HA-enabled VMs will fail to restart after a crash.
+.. note:: 
+   If you set ha.tag, be sure to actually use that tag on at least one host in your cloud. If the tag specified in ha.tag is not set for any host in the cloud, the HA-enabled VMs will fail to restart after a crash.
 
 Primary Storage Outage and Data Loss
-------------------------------------------
+------------------------------------
 
 When a primary storage outage occurs the hypervisor immediately stops
 all VMs stored on that storage device. Guests that are marked for HA
@@ -159,7 +136,7 @@ up. Individual volumes in primary storage can be backed up using
 snapshots.
 
 Secondary Storage Outage and Data Loss
---------------------------------------------
+--------------------------------------
 
 For a Zone that has only one secondary storage server, a secondary
 storage outage will have feature level impact to the system but will not
@@ -174,7 +151,7 @@ be backed up periodically. Multiple secondary storage servers can be
 provisioned within each zone to increase the scalability of the system.
 
 Database High Availability
---------------------------------
+--------------------------
 
 To help ensure high availability of the databases that store the
 internal data for CloudStack, you can set up database replication. This
@@ -183,7 +160,7 @@ Replication is achieved using the MySQL connector parameters and two-way
 replication. Tested with MySQL 5.1 and 5.5.
 
 How to Set Up Database Replication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Database replication in CloudStack is provided using the MySQL
 replication capabilities. The steps to set up replication can be found
@@ -208,7 +185,7 @@ References:
    `https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server <https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server>`__
 
 Configuring Database High Availability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To control the database high availability behavior, use the following
 configuration settings in the file
@@ -275,7 +252,7 @@ tuning purposes:
    Example: ``db.cloud.initialTimeout=3600``
 
 Limitations on Database High Availability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following limitations exist in the current implementation of this
 feature.

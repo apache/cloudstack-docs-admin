@@ -18,7 +18,7 @@ Managing the Cloud
 ==================
 
 Using Tags to Organize Resources in the Cloud
----------------------------------------------------
+---------------------------------------------
 
 A tag is a key-value pair that stores metadata about a resource in the
 cloud. Tags are useful for categorizing resources. For example, you can
@@ -138,7 +138,7 @@ number of hosts and sockets used for each host type.
 
 
 Changing the Database Configuration
------------------------------------------
+-----------------------------------
 
 The CloudStack Management Server stores database configuration
 information (e.g., hostname, port, credentials) in the file
@@ -146,7 +146,7 @@ information (e.g., hostname, port, credentials) in the file
 this file on each Management Server, then restart the Management Server.
 
 Changing the Database Password
-------------------------------------
+------------------------------
 
 You may need to change the password for the MySQL account used by
 CloudStack. If so, you'll need to change the password in MySQL, and then
@@ -220,7 +220,7 @@ add the encrypted password to
                # service cloud-usage start
 
 Administrator Alerts
---------------------------
+--------------------
 
 The system provides alerts and events to help with the management of the
 cloud. Alerts are notices to an administrator, generally delivered by
@@ -248,7 +248,7 @@ Emails will be sent to administrators under the following circumstances:
    The Host cluster runs low on CPU, memory, or storage resources
 
 Sending Alerts to External SNMP and Syslog Managers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In addition to showing administrator alerts on the Dashboard in the
 CloudStack UI and sending them in email, CloudStack can also send the
@@ -373,7 +373,7 @@ be found by calling listAlerts.
 You can also display the most up to date list by calling the API command ``listAlerts``.
 
 SNMP Alert Details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 The supported protocol is SNMP version 2.
 
@@ -381,7 +381,7 @@ Each SNMP trap contains the following information: message, podId,
 dataCenterId, clusterId, and generationTime.
 
 Syslog Alert Details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 CloudStack generates a syslog message for every alert. Each syslog
 message incudes the fields alertType, message, podId, dataCenterId, and
@@ -399,7 +399,7 @@ For example:
     Mar  4 10:13:47    WARN    localhost    alertType:: managementNode message:: Management server node 127.0.0.1 is up
 
 Configuring SNMP and Syslog Managers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To configure one or more SNMP managers or Syslog managers to receive
 alerts from CloudStack:
@@ -480,14 +480,14 @@ log4j-cloud.xml. Check to be sure that the format and settings are
 correct.
 
 Deleting an SNMP or Syslog Manager
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To remove an external SNMP manager or Syslog manager so that it no
 longer receives alerts from CloudStack, remove the corresponding entry
 from the file ``/etc/cloudstack/management/log4j-cloud.xml``.
 
 Customizing the Network Domain Name
------------------------------------------
+-----------------------------------
 
 The root administrator can optionally assign a custom DNS suffix at the
 level of a network, account, domain, zone, or entire CloudStack
@@ -576,10 +576,4 @@ To start the Management Server:
 .. code:: bash
 
     # service cloudstack-management start
-
-To stop the Management Server:
-
-.. code:: bash
-
-    # service cloudstack-management stop
 

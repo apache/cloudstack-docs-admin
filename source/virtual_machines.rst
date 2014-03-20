@@ -18,7 +18,7 @@ Working with Virtual Machines
 =============================
 
 About Working with Virtual Machines
------------------------------------------
+-----------------------------------
 
 CloudStack provides administrators with complete control over the
 lifecycle of all guest VMs executing in the cloud. CloudStack provides
@@ -46,7 +46,8 @@ names can be controlled by the user:
    Name – host name that the DHCP server assigns to the VM. Can be set
    by the user. Defaults to instance name
 
-.. note:: You can append the display name of a guest VM to its internal name. For more information, see `Section 10.10, “Appending a Display Name to the Guest VM’s Internal Name” <#append-displayname-vms>`__.
+.. note:: 
+   You can append the display name of a guest VM to its internal name. For more information, see `Section 10.10, “Appending a Display Name to the Guest VM’s Internal Name” <#append-displayname-vms>`__.
 
 Guest VMs can be configured to be Highly Available (HA). An HA-enabled
 VM is monitored by the system. If the system detects that the VM is
@@ -74,12 +75,12 @@ CloudStack will restart it. To shut down an HA-enabled VM, you must go
 through the CloudStack UI or API.
 
 Best Practices for Virtual Machines
------------------------------------------
+-----------------------------------
 
 For VMs to work as expected and provide excellent service, follow these guidelines.
 
 Monitor VMs for Max Capacity
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The CloudStack administrator should monitor the total number of VM
 instances in each cluster, and disable allocation to the cluster if the
@@ -99,7 +100,7 @@ this number of VMs, use the CloudStack UI to disable allocation of more
 VMs to the cluster.
 
 Install Required Tools and Drivers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Be sure the following are installed on each VM:
 
@@ -138,11 +139,11 @@ following techniques:
    virtual machine, stop and start the VM.
 
 VM Lifecycle
-------------------
+------------
 
 Virtual machines can be in the following states:
 
-|basic-deployment.png: Basic two-machine CloudStack deployment|
+|basic-deployment.png|
 
 Once a virtual machine is destroyed, it cannot be recovered. All the
 resources used by the virtual machine will be reclaimed by the system.
@@ -171,14 +172,15 @@ The system will start the virtual machine from the down state
 automatically if the virtual machine is marked as HA-enabled.
 
 Creating VMs
-------------------
+------------
 
 Virtual machines are usually created from a template. Users can also
 create blank virtual machines. A blank virtual machine is a virtual
 machine without an OS template. Users can attach an ISO file and install
 the OS from the CD/DVD-ROM.
 
-.. note:: You can create a VM without starting it. You can determine whether the VM needs to be started as part of the VM deployment. A request parameter, startVM, in the deployVm API provides this feature. For more information, see the Developer's Guide.
+.. note:: 
+   You can create a VM without starting it. You can determine whether the VM needs to be started as part of the VM deployment. A request parameter, startVM, in the deployVm API provides this feature. For more information, see the Developer's Guide.
 
 To create a VM from a template:
 
@@ -213,11 +215,13 @@ To create a VM from a template:
 
    Click Submit and your VM will be created and started.
 
-   .. note:: For security reason, the internal name of the VM is visible only to the root admin.
+   .. note:: 
+      For security reason, the internal name of the VM is visible only to the root admin.
 
 To create a VM from an ISO:
 
-.. note:: (XenServer) Windows VMs running on XenServer require PV drivers, which may be provided in the template or added after the VM is created. The PV drivers are necessary for essential management functions such as mounting additional volumes and ISO images, live migration, and graceful shutdown.
+.. note:: 
+   (XenServer) Windows VMs running on XenServer require PV drivers, which may be provided in the template or added after the VM is created. The PV drivers are necessary for essential management functions such as mounting additional volumes and ISO images, live migration, and graceful shutdown.
 
 #. 
 
@@ -244,7 +248,7 @@ To create a VM from an ISO:
    Click Submit and your VM will be created and started.
 
 Accessing VMs
--------------------
+-------------
 
 Any user can access their own virtual machines. The administrator can
 access all VMs running in the cloud.
@@ -261,7 +265,7 @@ To access a VM through the CloudStack UI:
 
 #. 
 
-   Click the View Console button |image20|.
+   Click the View Console button |console-icon.png|.
 
 To access a VM directly over the network:
 
@@ -289,14 +293,14 @@ To access a VM directly over the network:
    Forwarding and Firewalling” <#ip-forwarding-firewalling>`__.
 
 Stopping and Starting VMs
--------------------------------
+-------------------------
 
 Once a VM instance is created, you can stop, restart, or delete it as
 needed. In the CloudStack UI, click Instances, select the VM, and use
 the Stop, Start, Reboot, and Destroy buttons.
 
 Assigning VMs to Hosts
-----------------------------
+----------------------
 
 At any point in time, each virtual machine instance is running on a
 single host. How does CloudStack determine which host to place a VM on?
@@ -353,7 +357,7 @@ There are several ways:
    administrator desires.
 
 Affinity Groups
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 By defining affinity groups and assigning VMs to them, the user or
 administrator can influence (but not dictate) which VMs should run on
@@ -435,8 +439,8 @@ To assign an existing VM to an affinity group:
 
 #. 
 
-   Click the Change Affinity button. |change-affinity-button.png: button
-   to assign an affinity group to a virtual machine|
+   Click the Change Affinity button. |change-affinity-button.png|
+
 
 View Members of an Affinity Group
 '''''''''''''''''''''''''''''''''
@@ -482,7 +486,7 @@ To delete an affinity group:
    group.
 
 Virtual Machine Snapshots
--------------------------------
+-------------------------
 
 (Supported on VMware and XenServer)
 
@@ -585,7 +589,7 @@ To create a VM snapshot using the CloudStack UI:
 
 #. 
 
-   Click the Take VM Snapshot button. |image22|
+   Click the Take VM Snapshot button. |VMSnapshotButton.png|
 
    .. note:: If a snapshot is already in progress, then clicking this button will have no effect.
 
@@ -638,14 +642,14 @@ snapshot:
 
    Depending on what you want to do:
 
-   To delete the snapshot, click the Delete button. |image23|
+   To delete the snapshot, click the Delete button. |delete-button.png|
 
-   To revert to the snapshot, click the Revert button. |image24|
+   To revert to the snapshot, click the Revert button. |revert-vm.png|
 
 .. note:: VM snapshots are deleted automatically when a VM is destroyed. You don't have to manually delete the snapshots in this case.
 
 Changing the VM Name, OS, or Group
-----------------------------------------
+----------------------------------
 
 After a VM is created, you can modify the display name, operating
 system, and the group it belongs to.
@@ -666,12 +670,11 @@ To access a VM through the CloudStack UI:
 
 #. 
 
-   Click the Stop button to stop the VM. |StopButton.png: button to stop
-   a VM|
+   Click the Stop button to stop the VM. |StopButton.png|
 
 #. 
 
-   Click Edit. |EditButton.png: button to edit the properties of a VM|
+   Click Edit. |EditButton.png|
 
 #. 
 
@@ -695,7 +698,7 @@ To access a VM through the CloudStack UI:
    Click Apply.
 
 Appending a Display Name to the Guest VM’s Internal Name
----------------------------------------------------------------
+--------------------------------------------------------
 
 Every guest VM has an internal name. The host uses the internal name to
 identify the guest VMs. CloudStack gives you an option to provide a
@@ -717,58 +720,18 @@ names easier in large data center deployments.
 The following table explains how a VM name is displayed in different
 scenarios.
 
-User-Provided Display Name
+============================= ======================= ==================== ===================================== ==========================
+User-Provided Display Name    vm.instancename.flag    Hostname on the VM   Name on vCenter                       Internal Name
+============================= ======================= ==================== ===================================== ==========================
+Yes                           True                    Display name         i-<user\_id>-<vm\_id>-displayName     i-<user\_id>-<vm\_id>-displayName
+No                            True                    UUID                 i-<user\_id>-<vm\_id>-<instance.name> i-<user\_id>-<vm\_id>-<instance.name>
+Yes                           False                   Display name         i-<user\_id>-<vm\_id>-<instance.name> i-<user\_id>-<vm\_id>-<instance.name>
+No                            False                   UUID                 i-<user\_id>-<vm\_id>-<instance.name> i-<user\_id>-<vm\_id>-<instance.name>
+============================= ======================= ==================== ===================================== ==========================
 
-vm.instancename.flag
-
-Hostname on the VM
-
-Name on vCenter
-
-Internal Name
-
-Yes
-
-True
-
-Display name
-
-i-<user\_id>-<vm\_id>-displayName
-
-i-<user\_id>-<vm\_id>-displayName
-
-No
-
-True
-
-UUID
-
-i-<user\_id>-<vm\_id>-<instance.name>
-
-i-<user\_id>-<vm\_id>-<instance.name>
-
-Yes
-
-False
-
-Display name
-
-i-<user\_id>-<vm\_id>-<instance.name>
-
-i-<user\_id>-<vm\_id>-<instance.name>
-
-No
-
-False
-
-UUID
-
-i-<user\_id>-<vm\_id>-<instance.name>
-
-i-<user\_id>-<vm\_id>-<instance.name>
 
 Changing the Service Offering for a VM
----------------------------------------------
+--------------------------------------
 
 To upgrade or downgrade the level of compute resources available to a
 virtual machine, you can change the VM's compute offering.
@@ -791,13 +754,11 @@ virtual machine, you can change the VM's compute offering.
    `Section 10.11.1, “CPU and Memory Scaling for Running
    VMs” <#change-cpu-ram-for-vm>`__.)
 
-   Click the Stop button to stop the VM. |StopButton.png: button to stop
-   a VM|
+   Click the Stop button to stop the VM. |StopButton.png|
 
 #. 
 
-   Click the Change Service button. |ChangeServiceButton.png: button to
-   change the service of a VM|
+   Click the Change Service button. |ChangeServiceButton.png|
 
    The Change service dialog box is displayed.
 
@@ -810,7 +771,7 @@ virtual machine, you can change the VM's compute offering.
    Click OK.
 
 CPU and Memory Scaling for Running VMs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 (Supported on VMware and XenServer)
 
@@ -849,7 +810,7 @@ Dynamic CPU and RAM scaling can be used in the following cases:
    update them using the following procedure.
 
 Updating Existing VMs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 If you are upgrading from a previous version of CloudStack, and you want
 your existing VMs created with previous versions to have the dynamic
@@ -888,7 +849,7 @@ scaling capability, update the VMs using the following steps:
    Restart the VM.
 
 Configuring Dynamic CPU and RAM Scaling
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To configure this feature, use the following new global configuration
 variables:
@@ -904,7 +865,7 @@ variables:
    = 2.
 
 How to Dynamically Scale CPU and RAM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To modify the CPU and/or RAM capacity of a virtual machine, you need to
 change the compute offering of the VM to a new compute offering that has
@@ -922,7 +883,7 @@ requested level of CPU and RAM, the scaling operation will fail. The VM
 will continue to run as it was before.
 
 Limitations
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
 -  
 
@@ -958,7 +919,7 @@ Limitations
    is made to dynamically scale from less than 3 GB to more than 3 GB.
 
 Resetting the Virtual Machine Root Volume on Reboot
-----------------------------------------------------------
+---------------------------------------------------
 
 For secure environments, and to ensure that VM state is not persisted
 across reboots, you can reset the root disk. For more information, see
@@ -966,7 +927,7 @@ across reboots, you can reset the root disk. For more information, see
 Reboot” <#reset-vm-reboot>`__.
 
 Moving VMs Between Hosts (Manual Live Migration)
--------------------------------------------------------
+------------------------------------------------
 
 The CloudStack administrator can move a running VM from one host to
 another without interrupting service to users or going into maintenance
@@ -1017,22 +978,22 @@ To manually live migrate a virtual machine
 
 #. 
 
-   Click the Migrate Instance button. |Migrateinstance.png: button to
-   migrate an instance|
+   Click the Migrate Instance button. |Migrateinstance.png|
 
 #. 
 
    From the list of suitable hosts, choose the one to which you want to
    move the VM.
 
-   .. note:: If the VM's storage has to be migrated along with the VM, this will be noted in the host list. CloudStack will take care of the storage migration for you.
+   .. note:: 
+      If the VM's storage has to be migrated along with the VM, this will be noted in the host list. CloudStack will take care of the storage migration for you.
 
 #. 
 
    Click OK.
 
 Deleting VMs
--------------------
+------------
 
 Users can delete their own virtual machines. A running virtual machine
 will be abruptly stopped before it is deleted. Administrators can delete
@@ -1054,11 +1015,10 @@ To delete a virtual machine:
 
 #. 
 
-   Click the Destroy Instance button. |Destroyinstance.png: button to
-   destroy an instance|
+   Click the Destroy Instance button. |Destroyinstance.png|
 
 Working with ISOs
-------------------------
+-----------------
 
 CloudStack supports ISOs and their attachment to guest VMs. An ISO is a
 read-only file that has an ISO/CD-ROM style file system. Users can
@@ -1081,7 +1041,7 @@ installing PV drivers into Windows. ISO images are not
 hypervisor-specific.
 
 Adding an ISO
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 To make additional operating system or other software available for use
 with guest VMs, you can add an ISO. The ISO is typically thought of as
@@ -1192,7 +1152,8 @@ part of a template.
 
          Red Hat Enterprise Linux 6
 
-      .. note:: It is not recommended to choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will usually not work. In these cases, choose Other.
+      .. note:: 
+         It is not recommended to choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will usually not work. In these cases, choose Other.
 
    -  
 
@@ -1239,7 +1200,7 @@ Attaching an ISO to a VM
 
 #. 
 
-   Click the Attach ISO button. |iso.png: depicts adding an iso image|
+   Click the Attach ISO button. |iso.png|
 
 #. 
 
@@ -1281,3 +1242,26 @@ restoreVirtualMachine call. In this case, the VM's root disk is
 destroyed and recreated, but from the same template or ISO that was
 already in use by the VM.
 
+.. |basic-deployment.png| image:: _static/images/basic-deployment.png
+   :alt: Basic two-machine CloudStack deployment
+.. |VMSnapshotButton.png| image:: _static/images/VMSnapshotButton.png
+   :alt: button to restart a VPC
+.. |delete-button.png| image:: _static/images/delete-button.png
+.. |EditButton.png| image:: _static/images/edit-icon.png
+   :alt: button to edit the properties of a VM
+.. |change-affinity-button.png| image:: _static/images/change-affinity-button.png
+   :alt: button to assign an affinity group to a virtual machine.
+.. |ChangeServiceButton.png| image:: _static/images/change-service-icon.png
+   :alt: button to change the service of a VM
+.. |Migrateinstance.png| image:: _static/images/migrate-instance.png
+   :alt: button to migrate an instance
+.. |Destroyinstance.png| image:: _static/images/destroy-instance.png
+   :alt: button to destroy an instance
+.. |iso.png| image:: _static/images/iso-icon.png
+   :alt: depicts adding an iso image
+.. |console-icon.png| image:: _static/images/console-icon.png
+   :alt: depicts adding an iso image
+.. |revert-vm.png| image:: _static/images/revert-vm.png
+   :alt: depicts adding an iso image
+.. |StopButton.png| image:: _static/images/stop-instance-icon.png
+   :alt: depicts adding an iso image
