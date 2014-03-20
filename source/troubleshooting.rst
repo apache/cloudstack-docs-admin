@@ -270,12 +270,12 @@ Trouble Shooting Steps
    XenServer, KVM and VMware types. You can configure traffic labels when
    you creating a new zone from the *Add Zone Wizard*.
 
-   .. image:: ../_static/images/networking-zone-traffic-labels.png
+   .. image:: _static/images/networking-zone-traffic-labels.png
 
    On an existing zone, you can modify the traffic labels by going to
    *Infrastructure, Zones, Physical Network* tab.
 
-   .. image:: ../_static/images/networking-infra-traffic-labels.png
+   .. image:: _static/images/networking-infra-traffic-labels.png
 
    List labels using *CloudMonkey* 
 
@@ -425,12 +425,12 @@ Trouble Shooting Steps
    in place. You can add *Ingress* rules under *Network, Guest Network, IP
    Address, Firewall* setting page.
 
-   .. image:: ../_static/images/networking-ingress-rule.png
+   .. image:: _static/images/networking-ingress-rule.png
 
 #. The VM Instances by default wont be able to access the Internet. Add
    Egress rules to permit traffic.
 
-   .. image:: ../_static/images/networking-egress-rule.png
+   .. image:: _static/images/networking-egress-rule.png
 
 #. Some users have reported that flushing IPTables rules (or changing
    routes) on the SSVM, CPVM or the Virtual Router makes the Internet work.
