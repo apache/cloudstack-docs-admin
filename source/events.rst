@@ -15,7 +15,7 @@
    
 
 Event Notification
-===================
+==================
 
 An event is essentially a significant or meaningful change in the state
 of both virtual and physical resources associated with a cloud
@@ -26,7 +26,7 @@ state change of virtual or physical resources, an action performed by an
 user (action events), or policy based events (alerts).
 
 Event Logs
------------
+----------
 
 There are two types of events logged in the CloudStack Event Log.
 Standard events log the success or failure of an event and can be used
@@ -153,7 +153,7 @@ changes can control the behaviour.
    Restart the Management Server.
 
 Standard Events
-----------------
+---------------
 
 The events log records three types of standard events.
 
@@ -186,7 +186,7 @@ The events log records three types of standard events.
    successfully performed
 
 Long Running Job Events
-------------------------
+-----------------------
 
 The events log records three types of standard events.
 
@@ -219,7 +219,7 @@ The events log records three types of standard events.
    successfully performed
 
 Event Log Queries
-------------------
+-----------------
 
 Database logs can be queried from the user interface. The list of events
 captured by the system includes:
@@ -250,7 +250,7 @@ captured by the system includes:
    User login and logout
 
 Deleting and Archiving Events and Alerts
------------------------------------------
+----------------------------------------
 
 CloudStack provides you the ability to delete or archive the existing
 alerts and events that you no longer want to implement. You can
@@ -285,7 +285,7 @@ API. They are maintained in the database for auditing or compliance
 purposes.
 
 Permissions
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 Consider the following:
 
@@ -403,7 +403,7 @@ See the export procedure in the "Secondary Storage" section of the
 CloudStack Installation Guide
 
 Recovering a Lost Virtual Router
---------------------------------------
+--------------------------------
 
 Symptom
 ~~~~~~~
@@ -444,11 +444,10 @@ cleanup=false parameter. For more information about redundant router
 setup, see Creating a New Network Offering.
 
 For more information about the API syntax, see the API Reference at
-`http://docs.cloudstack.org/CloudStack\_Documentation/API\_Reference%3A\_CloudStack <http://docs.cloudstack.org/CloudStack_Documentation/API_Reference%3A_CloudStack>`__\ API
-Reference.
+`http://cloudstack.apache.org/docs/api/ <http://cloudstack.apache.org/docs/api/>`_.
 
 Maintenance mode not working on vCenter
----------------------------------------------
+---------------------------------------
 
 Symptom
 ~~~~~~~
@@ -468,7 +467,7 @@ Use vCenter to place the host in maintenance mode.
 
 
 Unable to deploy VMs from uploaded vSphere template
----------------------------------------------------------
+---------------------------------------------------
 
 Symptom
 ~~~~~~~~
@@ -488,7 +487,7 @@ Solution
 Remove the ISO and re-upload the template.
 
 Unable to power on virtual machine on VMware
---------------------------------------------------
+--------------------------------------------
 
 Symptom
 ~~~~~~~
@@ -525,7 +524,7 @@ See the following:
 Article <http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=10051/>`__
 
 Load balancer rules fail after changing network offering
---------------------------------------------------------------
+--------------------------------------------------------
 
 Symptom
 ~~~~~~~

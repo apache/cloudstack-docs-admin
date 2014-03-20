@@ -31,7 +31,7 @@ your organization, or just friends who are sharing your cloud – you can
 still keep track of what services they use and how much of them.
 
 Service Offerings, Disk Offerings, Network Offerings, and Templates
-------------------------------------------------------------------------
+-------------------------------------------------------------------
 
 A user creating a new instance can make a variety of choices about its
 characteristics and capabilities. CloudStack provides several ways to

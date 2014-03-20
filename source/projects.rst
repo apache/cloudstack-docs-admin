@@ -18,7 +18,7 @@ Using Projects to Organize Users and Resources
 ==============================================
 
 Overview of Projects
--------------------------
+--------------------
 
 Projects are used to organize people and resources. CloudStack users
 within a single domain can group themselves into project teams so they
@@ -69,7 +69,7 @@ domain; however, you can not create private service and disk offerings
 at the project level..
 
 Configuring Projects
--------------------------
+--------------------
 
 Before CloudStack users start using projects, the CloudStack
 administrator must set up various systems to support them, including
@@ -77,7 +77,7 @@ membership invitations, limits on project resources, and controls on who
 can create projects.
 
 Setting Up Invitations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack can be set up either so that project administrators can add
 people directly to a project, or so that it is necessary to send an
@@ -135,7 +135,7 @@ and set up the invitations feature in CloudStack.
        service cloudstack-management restart
 
 Setting Resource Limits for Projects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The CloudStack administrator can set global default limits to control
 the amount of resources that can be owned by each project in the cloud.
@@ -148,7 +148,7 @@ administrator can also set lower resource limits for any project in the
 cloud
 
 Setting Per-Project Resource Limits
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The CloudStack root administrator or the domain administrator of the
 domain where the project resides can set new resource limits for an
@@ -193,7 +193,7 @@ new limit.
    Click Apply.
 
 Setting the Global Project Resource Limits
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
 
@@ -237,7 +237,7 @@ Setting the Global Project Resource Limits
        # service cloudstack-management restart
 
 Setting Project Creator Permissions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can configure CloudStack to allow any user to create a new project,
 or you can restrict that ability to just CloudStack administrators.
@@ -273,7 +273,7 @@ or you can restrict that ability to just CloudStack administrators.
        # service cloudstack-management restart
 
 Creating a New Project
----------------------------
+----------------------
 
 CloudStack administrators and domain administrators can create projects.
 If the global configuration parameter allow.user.create.projects is set
@@ -310,7 +310,7 @@ to true, end users can also create projects.
    Click Save.
 
 Adding Members to a Project
---------------------------------
+---------------------------
 
 New members can be added to a project by the project’s administrator,
 the domain administrator of the domain where the project resides or any
@@ -328,11 +328,11 @@ to add members in CloudStack, but only one way is enabled at a time:
    the UI.
 
 Sending Project Membership Invitations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use these steps to add a new member to a project if the invitations
 feature is enabled in the cloud as described in `“Setting
-Up Invitations” <#set-up-invitations>`__. If the invitations feature is
+Up Invitations” <#set-up-invitations>`_. If the invitations feature is
 not turned on, use the procedure in Adding Project Members From the UI.
 
 #. 
@@ -371,7 +371,7 @@ not turned on, use the procedure in Adding Project Members From the UI.
       which the recipient will provide back to CloudStack when accepting
       the invitation. Email invitations will work only if the global
       parameters related to the SMTP server have been set. See
-      `“Setting Up Invitations” <#set-up-invitations>`__.
+      `“Setting Up Invitations” <#set-up-invitations>`_.
 
 #. 
 
@@ -389,14 +389,14 @@ not turned on, use the procedure in Adding Project Members From the UI.
    project’s Accounts tab.
 
 Adding Project Members From the UI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The steps below tell how to add a new member to a project if the
 invitations feature is not enabled in the cloud. If the invitations
 feature is enabled cloud,as described in `“Setting Up
-Invitations” <#set-up-invitations>`__, use the procedure in
+Invitations” <#set-up-invitations>`_, use the procedure in
 `“Sending Project Membership
-Invitations” <#send-projects-membership-invitation>`__.
+Invitations” <#send-projects-membership-invitation>`_.
 
 #. 
 
@@ -426,7 +426,7 @@ Invitations” <#send-projects-membership-invitation>`__.
    cloud and within the same domain as the project.
 
 Accepting a Membership Invitation
---------------------------------------
+---------------------------------
 
 If you have received an invitation to join a CloudStack project, and you
 want to accept the invitation, follow these steps:
@@ -456,7 +456,7 @@ want to accept the invitation, follow these steps:
    and provide the project ID and unique ID code (token) from the email.
 
 Suspending or Deleting a Project
--------------------------------------
+--------------------------------
 
 When a project is suspended, it retains the resources it owns, but they
 can no longer be used. No new resources or members can be added to a
@@ -495,7 +495,7 @@ parent domain, or the CloudStack root administrator.
    To suspend, use |Suspends a project|
 
 Using the Project View
----------------------------
+----------------------
 
 If you are a member of a project, you can use CloudStack’s project view
 to see project members, resources consumed, and more. The project view

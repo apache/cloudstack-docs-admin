@@ -24,7 +24,7 @@ needs. However, the administrator should be aware of them and their
 roles to assist in debugging issues.
 
 The System VM Template
-----------------------------
+----------------------
 
 The System VMs come from a single template. The System VM has the
 following characteristics:
@@ -63,7 +63,7 @@ following characteristics:
    speed
 
 Changing the Default System VM Template
----------------------------------------------
+---------------------------------------
 
 CloudStack allows you to change the default 32-bit System VM template to
 64-bit one. Using the 64-bit template, upgrade the virtual router to
@@ -74,10 +74,12 @@ manage larger number of connection in your network.
    Based on the hypervisor you use, download the 64-bit template from
    the following location:
 
+   ==========  ================================================================================================
    Hypervisor  Download Location
-   ==========  ===============================================================================================
+   ==========  ================================================================================================
    XenServer   http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-xen.vhd.bz2
    KVM         http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-kvm.qcow2.bz2
+   ==========  ================================================================================================
 
 #. 
 
@@ -126,7 +128,7 @@ System VMs and performs dynamic load balancing and scaling-up of more
 System VMs.
 
 Console Proxy
--------------------
+-------------
 
 The Console Proxy is a type of System Virtual Machine that has a role in
 presenting a console view via the web UI. It connects the user’s browser
@@ -141,7 +143,8 @@ The AJAX application connects to this IP. The console proxy then proxies
 the connection to the VNC port for the requested VM on the Host hosting
 the guest.
 
-.. note:: The hypervisors will have many ports assigned to VNC usage so that multiple VNC sessions can occur simultaneously.
+.. note:: 
+   The hypervisors will have many ports assigned to VNC usage so that multiple VNC sessions can occur simultaneously.
 
 There is never any traffic to the guest virtual IP, and there is no need
 to enable VNC within the guest.
@@ -162,7 +165,7 @@ Console proxies can be restarted by administrators but this will
 interrupt existing console sessions for users.
 
 Using a SSL Certificate for the Console Proxy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The console viewing functionality uses a dynamic DNS service under the
 domain name ``realhostip.com`` to assist in providing SSL security to
@@ -181,7 +184,7 @@ IP, where it then expects and receives a SSL certificate for
 realhostip.com, and SSL is set up without browser warnings.
 
 Changing the Console Proxy SSL Certificate and Domain
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the administrator prefers, it is possible for the URL of the
 customer's console session to show a domain other than realhostip.com.
@@ -261,7 +264,7 @@ the console proxy domain, SSL certificate, and private key:
 
       The desired new domain name; for example, company.com
 
-   ..   |updatessl.png: Updating Console Proxy SSL Certificate|
+   ..   |updatessl.png|
 
 #. 
 
@@ -277,7 +280,7 @@ requests will be served with the new DNS domain name, certificate, and
 key.
 
 Virtual Router
---------------------
+--------------
 
 The virtual router is a type of System Virtual Machine. The virtual
 router is one of the most frequently used service providers in
@@ -294,7 +297,7 @@ virtual router from a guest VM. Some of the characteristics of the
 virtual router are determined by its associated system service offering.
 
 Configuring the Virtual Router
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set the following:
 
@@ -323,7 +326,7 @@ You can set the following:
    gather network usage statistics, set it to 0.
 
 Upgrading a Virtual Router with System Service Offerings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When CloudStack creates a virtual router, it uses default settings which
 are defined in a default system service offering. See `Section 8.2,
@@ -355,7 +358,7 @@ creating and applying a custom system service offering.
    on a Guest Network” <#change-network-offering-on-guest-network>`__.
 
 Best Practices for Virtual Routers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  
 
@@ -365,7 +368,8 @@ Best Practices for Virtual Routers
 
 -  
 
-   .. warning:: Do not use the destroyRouter API when only one router is available in the network, because restartNetwork API with the cleanup=false parameter can't recreate it later. If you want to destroy and recreate the single router available in the network, use the restartNetwork API with the cleanup=true parameter.
+   .. warning:: 
+      Do not use the destroyRouter API when only one router is available in the network, because restartNetwork API with the cleanup=false parameter can't recreate it later. If you want to destroy and recreate the single router available in the network, use the restartNetwork API with the cleanup=true parameter.
 
 Service Monitoring Tool for Virtual Router
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -386,7 +390,8 @@ an unexpected reason. For example:
    The services that are terminated by the OS when memory or CPU is not
    sufficiently available for the service.
 
-.. note:: Only those services with daemons are monitored. The services that are failed due to errors in the service/daemon configuration file cannot be restarted by the Monitoring tool. VPC networks are not supported.
+.. note:: 
+   Only those services with daemons are monitored. The services that are failed due to errors in the service/daemon configuration file cannot be restarted by the Monitoring tool. VPC networks are not supported.
 
 The following services are monitored in a VR:
 
@@ -422,7 +427,7 @@ This feature is supported on the following hypervisors: XenServer,
 VMware, and KVM.
 
 Enhanced Upgrade for Virtual Routers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upgrading VR is made flexible. The CloudStack administrators will be
 able to control the sequence of the VR upgrades. The sequencing is based
@@ -596,15 +601,14 @@ Upgrading Virtual Routers
 
    #. 
 
-      Click the Upgrade button to upgrade all the VRs. |vr-upgrade.png:
-      Button to upgrade VR to use the new template.|
+      Click the Upgrade button to upgrade all the VRs. |vr-upgrade.png|
 
    #. 
 
       Click OK to confirm.
 
 Secondary Storage VM
----------------------
+--------------------
 
 In addition to the hosts, CloudStack’s Secondary Storage VM mounts and
 writes to secondary storage.
@@ -619,3 +623,7 @@ Zone, copying templates between Zones, and snapshot backups.
 
 The administrator can log in to the secondary storage VM if needed.
 
+.. |updatessl.png| image:: _static/images/updatessl.png
+   :alt: Updating Console Proxy SSL Certificate
+.. |vr-upgrade.png| image:: _static/images/vr-upgrade.png
+   :alt: Button to upgrade VR to use the new template.
