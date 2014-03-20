@@ -13,7 +13,7 @@
    specific language governing permissions and limitations
    under the License.
 
-.. CloudStack Administration Documentation documentation master file, created by
+.. CloudStack Administration Documentation master file, created by
    sphinx-quickstart on Sat Jan 25 15:55:12 2014.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -140,4 +140,4 @@ Events and Troubleshooting
    :maxdepth: 2
 
    events
-
+   troubleshooting
