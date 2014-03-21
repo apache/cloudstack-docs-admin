@@ -724,7 +724,7 @@ set of VLANs and guest IP addresses for a tenant.
 Note that if an account has consumed all the VLANs and IPs dedicated to
 it, the account can acquire two more resources from the system.
 CloudStack provides the root admin with two configuration parameter to
-modify this default behaviorâ€”use.system.public.ips and
+modify this default behavior: use.system.public.ips and
 use.system.guest.vlans. These global parameters enable the root admin to
 disallow an account from acquiring public IPs and guest VLANs from the
 system, if the account has dedicated resources and these dedicated
@@ -935,7 +935,7 @@ Configuring Multiple IP Addresses on a Single NIC
 CloudStack provides you the ability to associate multiple private IP
 addresses per guest VM NIC. In addition to the primary IP, you can
 assign additional IPs to the guest VM NIC. This feature is supported on
-all the network configurationsâ€”Basic, Advanced, and VPC. Security
+all the network configurations: Basic, Advanced, and VPC. Security
 Groups, Static NAT and Port forwarding services are supported on these
 additional IPs.
 
@@ -6112,7 +6112,7 @@ function only if they are defined on the default network.
 Adding Load Balancing Rules on a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In a VPC, you can configure two types of load balancingâ€”external LB and
+In a VPC, you can configure two types of load balancing: external LB and
 internal LB. External LB is nothing but a LB rule created to redirect
 the traffic received at a public IP of the VPC virtual router. The
 traffic is load balanced within a tier based on your configuration.
