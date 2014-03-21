@@ -18,7 +18,7 @@ Working with Storage
 ====================
 
 Storage Overview
-----------------------
+----------------
 
 CloudStack defines two types of storage: primary and secondary. Primary
 storage can be accessed by either iSCSI or NFS. Additionally, direct
@@ -98,7 +98,7 @@ The following table shows storage options and parameters for different
 hypervisors.
 
 ============================================== ================ ==================== =========================== ============================
-                                               VMware vSphere   Citrix XenServer     KVM                         Hyper-V
+Storage media \\ hypervisor                    VMware vSphere   Citrix XenServer     KVM                         Hyper-V
 ============================================== ================ ==================== =========================== ============================
 **Format for Disks, Templates, and Snapshots** VMDK             VHD                  QCOW2                       VHD
                                                                                                                  Snapshots are not supported.
@@ -414,7 +414,7 @@ Detaching and Moving Volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: 
-   This procedure is different from moving volumes from one storage pool to another as described in `Section 13.4.5, “VM Storage Migration” <#vm-storage-migration>`__.
+   This procedure is different from moving volumes from one storage pool to another as described in `“VM Storage Migration” <#vm-storage-migration>`_.
 
 A volume can be detached from a guest VM and attached to another guest.
 Both CloudStack administrators and users can detach volumes from VMs and
@@ -442,7 +442,7 @@ may take several minutes for the volume to be moved to the new VM.
 #. 
 
    To move the volume to another VM, follow the steps in
-   `Section 13.4.3, “Attaching a Volume” <#attaching-volume>`__.
+   `“Attaching a Volume” <#attaching-a-volume>`_.
 
 VM Storage Migration
 ~~~~~~~~~~~~~~~~~~~~
@@ -450,7 +450,7 @@ VM Storage Migration
 Supported in XenServer, KVM, and VMware.
 
 .. note:: 
-   This procedure is different from moving disk volumes from one VM to another as described in `Section 13.4.4, “Detaching and Moving Volumes” <#detach-move-volumes>`__.
+   This procedure is different from moving disk volumes from one VM to another as described in `“Detaching and Moving Volumes” <#detaching-and-moving-volumes>`_.
 
 You can migrate a virtual machine’s root disk volume or any additional
 data disk volume from one storage pool to another in the same zone.
@@ -508,8 +508,8 @@ Migrating Storage For a Running VM
 
 #. 
 
-   Detach the disk from the VM. See `Section 13.4.4, “Detaching and
-   Moving Volumes” <#detach-move-volumes>`__ but skip the “reattach”
+   Detach the disk from the VM. See `“Detaching and
+   Moving Volumes” <#detaching-and-moving-volumes>`_ but skip the “reattach”
    step at the end. You will do that after migrating to new storage.
 
 #. 
@@ -530,8 +530,8 @@ Migrating Storage and Attaching to a Different VM
 
 #. 
 
-   Detach the disk from the VM. See `Section 13.4.4, “Detaching and
-   Moving Volumes” <#detach-move-volumes>`_ but skip the “reattach”
+   Detach the disk from the VM. See `“Detaching and
+   Moving Volumes” <#detaching-and-moving-volumes>`_ but skip the “reattach”
    step at the end. You will do that after migrating to new storage.
 
 #. 
@@ -548,8 +548,8 @@ Migrating Storage and Attaching to a Different VM
 #. 
 
    Attach the volume to any desired VM running in the same cluster as
-   the new storage server. See `Section 13.4.3, “Attaching a
-   Volume” <#attaching-volume>`__
+   the new storage server. See `“Attaching a
+   Volume” <#attaching-a-volume>`_
 
 Migrating a VM Root Volume to a New Storage Pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -685,8 +685,8 @@ this operation.
 
 When creating a new service offering, set the parameter isVolatile to
 True. VMs created from this service offering will have their disks reset
-upon reboot. See `Section 8.1.1, “Creating a New Compute
-Offering” <#creating-compute-offerings>`__.
+upon reboot. See `“Creating a New Compute
+Offering” <service_offerings.html#creating-a-new-compute-offering>`_.
 
 Volume Deletion and Garbage Collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -783,8 +783,8 @@ With each snapshot schedule, users can also specify the number of
 scheduled snapshots to be retained. Older snapshots that exceed the
 retention limit are automatically deleted. This user-defined limit must
 be equal to or lower than the global limit set by the CloudStack
-administrator. See `Section 14.3, “Globally Configured
-Limits” <#globally-configured-limits>`__. The limit applies only to
+administrator. See `“Globally Configured
+Limits” <usage.html#globally-configured-limits>`_. The limit applies only to
 those snapshots that are taken as part of an automatic recurring
 snapshot policy. Additional manual snapshots can be created and
 retained.

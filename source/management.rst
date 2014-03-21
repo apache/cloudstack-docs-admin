@@ -159,7 +159,7 @@ add the encrypted password to
    management server and the usage engine if you've deployed that
    component.
 
-   .. code:: screen
+   .. code:: bash
 
        # service cloudstack-management stop
        # service cloudstack-usage stop
@@ -169,13 +169,13 @@ add the encrypted password to
    Next, you'll update the password for the CloudStack user on the MySQL
    server.
 
-   .. code:: screen
+   .. code:: bash
 
        # mysql -u root -p
 
    At the MySQL shell, you'll change the password and flush privileges:
 
-   .. code:: screen
+   .. code:: bash
 
        update mysql.user set password=PASSWORD("newpassword123") where User='cloud';
        flush privileges;
@@ -187,12 +187,12 @@ add the encrypted password to
    password to CloudStack's database configuration
    (``/etc/cloudstack/management/db.properties``).
 
-   .. code:: screen
+   .. code:: bash
 
            # java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar \ org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh \ input="newpassword123" password="`cat /etc/cloudstack/management/key`" \ verbose=false 
 
-   File encryption type
-   --------------------
+File encryption type
+--------------------
 
    Note that this is for the file encryption type. If you're using the
    web encryption type then you'll use
@@ -214,7 +214,7 @@ add the encrypted password to
    After copying the new password over, you can now start CloudStack
    (and the usage engine, if necessary).
 
-   .. code:: screen
+   .. code:: bash
 
                # service cloudstack-management start
                # service cloud-usage start
@@ -502,9 +502,8 @@ these steps.
    -  
 
       At the network level, the DNS suffix can be assigned through the
-      UI when creating a new network, as described in `Section 15.6.1,
-      “Adding an Additional Guest
-      Network” <#add-additional-guest-network>`__ or with the
+      UI when creating a new network, as described in 
+      `“Adding an Additional Guest Network” <networking2#adding-an-additional-guest-network>`_ or with the
       updateNetwork command in the CloudStack API.
 
    -  

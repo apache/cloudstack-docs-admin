@@ -58,7 +58,7 @@ single physical network. In CloudStack a virtual network can be shared
 or isolated.
 
 Isolated Networks
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 An isolated network can be accessed only by virtual machines of a single
 account. Isolated networks have the following properties.
@@ -77,11 +77,11 @@ account. Isolated networks have the following properties.
    The network offering can be upgraded or downgraded but it is for the
    entire network
 
-For more information, see `Section 15.5.1, “Configure Guest Traffic in
-an Advanced Zone” <#configure-guest-traffic-in-advanced-zone>`_.
+For more information, see `“Configure Guest Traffic in
+an Advanced Zone” <networking2.html#configure-guest-traffic-in-an-advanced-zone>`_.
 
 Shared Networks
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 A shared network can be accessed by virtual machines that belong to many
 different accounts. Network Isolation on shared networks is accomplished
@@ -115,11 +115,11 @@ Basic zones in CloudStack 3.0.3 and later versions.
    service provider is virtual router. However, Source NAT per account
    is supported.
 
-For information, see `Section 15.5.3, “Configuring a Shared Guest
-Network” <#creating-shared-network>`_.
+For information, see `“Configuring a Shared Guest Network” <networking2.html#configuring-a-shared-guest-network>`_.
+
 
 Runtime Allocation of Virtual Network Resources
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you define a new virtual network, all your settings for that
 network are stored in CloudStack. The actual network resources are
@@ -129,7 +129,7 @@ resources are garbage collected so they can be allocated again. This
 helps to conserve network resources.
 
 Network Service Providers
-------------------------------
+-------------------------
 
 .. note:: 
    For the most up-to-date list of supported network service providers, see the CloudStack UI or call `listNetworkServiceProviders`.
@@ -180,7 +180,7 @@ offering.
 +----------------------+-----------+------------+----------+-------------+-------------+
 
 Network Offerings
-----------------------
+-----------------
 
 .. note:: 
    For the most up-to-date list of supported network services, see the CloudStack UI or call listNetworkServices.
@@ -298,16 +298,16 @@ To create a network offering:
       **Guest Type**. Choose whether the guest network is isolated or
       shared.
 
-      For a description of this term, see `Section 9.2, “About Virtual
-      Networks” <#about-virtual-networks>`__.
+      For a description of this term, see `“About Virtual
+      Networks” <#about-virtual-networks>`_.
 
    -  
 
       **Persistent**. Indicate whether the guest network is persistent
       or not. The network that you can provision without having to
       deploy a VM on it is termed persistent network. For more
-      information, see `Section 15.28, “Persistent
-      Networks” <#persistent-network>`__.
+      information, see `“Persistent
+      Networks” <networking2.html#persistent-networks>`_.
 
    -  
 
@@ -323,8 +323,8 @@ To create a network offering:
       Private Cloud-enabled. A Virtual Private Cloud (VPC) is a private,
       isolated part of CloudStack. A VPC can have its own virtual
       network topology that resembles a traditional physical network.
-      For more information on VPCs, see `Section 15.27.1, “About Virtual
-      Private Clouds” <#vpc>`__.
+      For more information on VPCs, see `“About Virtual
+      Private Clouds” <networking2.html#about-virtual-private-clouds>`_.
 
    -  
 
@@ -339,34 +339,33 @@ To create a network offering:
       Based on the guest network type selected, you can see the
       following supported services:
 
-      =================== ======================================================================= ============= =============
-      Supported Services  Description                                                              Isolated     Shared   
-      =================== ======================================================================= ============= =============
-      DHCP                For more information, see `Section 15.24, “DNS and DHCP” <#dns-dhcp>`_. Supported     Supported
-      DNS                 For more information, see `Section 15.24, “DNS and DHCP” <#dns-dhcp>`_. Supported     Supported
-      Load Balancer       If you select Load Balancer, you can choose the CloudStack virtual      Supported     Supported
+      =================== ============================================================================ ============= =============
+      Supported Services  Description                                                                  Isolated      Shared   
+      =================== ============================================================================ ============= =============
+      DHCP                For more information, see `“DNS and DHCP” <networking2.html#dns-and-dhcp>`_. Supported     Supported
+      DNS                 For more information, see `“DNS and DHCP” <networking2.html#dns-and-dhcp>`_. Supported     Supported
+      Load Balancer       If you select Load Balancer, you can choose the CloudStack virtual           Supported     Supported
                           router or any other load balancers that have been configured in
                           the cloud.
-      Firewall            For more information, see the Administration Guide.                     Supported     Supported
-      Source NAT          If you select Source NAT, you can choose the CloudStack virtual         Supported     Supported
+      Firewall            For more information, see the Administration Guide.                          Supported     Supported
+      Source NAT          If you select Source NAT, you can choose the CloudStack virtual              Supported     Supported
                           router or any other Source NAT providers that have been configured
                           in the cloud.
-      Static NAT          If you select Static NAT, you can choose the CloudStack virtual         Supported     Supported
+      Static NAT          If you select Static NAT, you can choose the CloudStack virtual              Supported     Supported
                           router or any other Static NAT providers that have been configured
                           in the cloud.
-      Port Forwarding     If you select Port Forwarding, you can choose the CloudStack            Supported     Not Supported
+      Port Forwarding     If you select Port Forwarding, you can choose the CloudStack                 Supported     Not Supported
                           virtual router or any other Port Forwarding providers that have
                           been configured in the cloud.
-      VPN                 For more information, see `Section 15.25, “Remote Access                Supported     Not Supported
-                          VPN” <#vpn>`__.
-      User Data           For more information, see `Section 20.2, “User Data and Meta            Not Supported Supported
-                          Data” <#user-data-and-meta-data>`_.
-      Network ACL         For more information, see `Section 15.27.4, “Configuring Network        Supported     Not Supported
-                          Access Control List” <#configure-acl>`_.
-      Security Groups     For more information, see `Section 15.15.2, “Adding a Security          Not Supported Supported
-                          Group” <#add-security-group>`__.
-      =================== ======================================================================= ============= =============
-
+      VPN                 For more information, see `“Remote Access                                    Supported     Not Supported
+                          VPN” <networking2.html#remote-access-vpn>`_.
+      User Data           For more information, see `“User Data and Meta                               Not Supported Supported
+                          Data” <api.html#user-data-and-meta-data>`_.
+      Network ACL         For more information, see `“Configuring Network Access                       Supported     Not Supported
+                          Control List” <networking2.html#configuring-network-access-control-list>`_.
+      Security Groups     For more information, see `“Adding a Security                                Not Supported Supported
+                          Group” <networking2.html#adding-a-security-group>`_.
+      =================== ============================================================================ ============= =============
 
    -  
 
@@ -380,8 +379,7 @@ To create a network offering:
       system service offering and any custom system service offerings
       that have been defined by the CloudStack root administrator.
 
-      For more information, see `Section 8.2, “System Service
-      Offerings” <#system-service-offerings>`_.
+      For more information, see `“System Service Offerings” <service_offerings.html#system-service-offerings>`_.
 
    -  
 
@@ -439,8 +437,7 @@ To create a network offering:
 
          Elastic IP is enabled.
 
-      For information on Elastic IP, see `Section 15.11, “About Elastic
-      IP” <#elastic-ip>`_.
+      For information on Elastic IP, see `“About Elastic IP” <networking2.html#about-elastic-ip>`_.
 
    -  
 
