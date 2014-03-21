@@ -264,11 +264,7 @@ the console proxy domain, SSL certificate, and private key:
 
       The desired new domain name; for example, company.com
 
-<<<<<<< HEAD
      |update-ssl.png|
-=======
-   ..   |updatessl.png|
->>>>>>> upstream/master
 
 #. 
 
@@ -625,11 +621,7 @@ Zone, copying templates between Zones, and snapshot backups.
 
 The administrator can log in to the secondary storage VM if needed.
 
-<<<<<<< HEAD
 .. |update-ssl.png| image:: _static/images/update-ssl.png
-=======
-.. |updatessl.png| image:: _static/images/updatessl.png
->>>>>>> upstream/master
    :alt: Updating Console Proxy SSL Certificate
 .. |vr-upgrade.png| image:: _static/images/vr-upgrade.png
    :alt: Button to upgrade VR to use the new template.

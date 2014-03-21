@@ -326,7 +326,6 @@ Procedure
 
 #. 
 
-<<<<<<< HEAD
    Click OK.
 
 
@@ -550,4 +549,3 @@ load balancing rules so that they continue to function.
 
 =======
    Click OK.
->>>>>>> upstream/master

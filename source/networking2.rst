@@ -1627,11 +1627,7 @@ Creating a PVLAN-Enabled Guest Network
       Isolated VLAN.
 
       For the description on Secondary Isolated VLAN, see
-<<<<<<< HEAD
       `About Private VLAN" <#about-private-vlan>`_.
-=======
-      `Section 15.14.1, “About Private VLAN” <#about-pvlan>`_.
->>>>>>> upstream/master
 
    -  
 
@@ -1970,11 +1966,7 @@ policy-based route must be set up so that all traffic originated from
 the guest VM's are directed to NetScaler device. This is required to
 ensure that the outbound traffic from the guest VM's is routed to a
 public IP by using NAT.For more information on Elastic IP, see
-<<<<<<< HEAD
 `"About Elastic IP" <#about-elastic-ip>`_.
-=======
-`Section 15.11, “About Elastic IP” <#elastic-ip>`_.
->>>>>>> upstream/master
 
 The NetScaler can be set up in direct (outside the firewall) mode. It
 must be added before any load balancing rules are deployed on guest VMs
@@ -2208,11 +2200,9 @@ VMs.
    uses the CloudStack virtual router, you must create a firewall rule on
    the virtual router for each of your existing load balancing rules so
    that they continue to function.
-<<<<<<< HEAD
 
 .. _adding-lb-rule:
-=======
->>>>>>> upstream/master
+
 
 Adding a Load Balancer Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2249,11 +2239,8 @@ Adding a Load Balancer Rule
    Addresses page when the rule is created.
 
    To do that, select the name of the network, then click Add Load
-<<<<<<< HEAD
+
    Balancer tab. Continue with #7.
-=======
-   Balancer tab. Continue with `7 <#config-lb>`_.
->>>>>>> upstream/master
 
 #. 
 
@@ -2667,11 +2654,8 @@ AutoScale is currently enabled or not. After the maintenance operations
 are done, you can enable the AutoScale configuration back. To enable,
 open the AutoScale configuration page again, then click the Enable
 AutoScale |EnableDisable.png| button.
-<<<<<<< HEAD
 
 .. _update-autoscale:
-=======
->>>>>>> upstream/master
 
 Updating an AutoScale Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2962,12 +2946,7 @@ above, the administrator of xyztelco is the one who sets up GSLB:
    In each zone that are participating in GSLB, add GSLB-enabled
    NetScaler device.
 
-<<<<<<< HEAD
    For more information, see :ref:`enabling-gslb-in-ns`.
-=======
-   For more information, see `Section 15.17.2.2, “Enabling GSLB in
-   NetScaler” <#enable-glsb-ns>`_.
->>>>>>> upstream/master
 
 As a domain administrator/ user perform the following:
 
@@ -2975,22 +2954,13 @@ As a domain administrator/ user perform the following:
 
    Add a GSLB rule on both the sites.
 
-<<<<<<< HEAD
    See ":ref:`adding-gslb-rule`".
-=======
-   See `Section 15.17.2.3, “Adding a GSLB Rule” <#gslb-add>`_.
->>>>>>> upstream/master
 
 #. 
 
    Assign load balancer rules.
 
-<<<<<<< HEAD
    See ":ref:`assigning-lb-rule-gslb`".
-=======
-   See `Section 15.17.2.4, “Assigning Load Balancing Rules to
-   GSLB” <#assign-lb-gslb>`_.
->>>>>>> upstream/master
 
 Prerequisites and Guidelines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3341,13 +3311,8 @@ Acquiring a New IP Address
    If you want Portable IP click Yes in the confirmation dialog. If you
    want a normal Public IP click No.
 
-<<<<<<< HEAD
    For more information on Portable IP, see `"Portable
    IPs" <#portable-ips>`_.
-=======
-   For more information on Portable IP, see `Section 15.12, “Portable
-   IPs” <#portable-ip>`_.
->>>>>>> upstream/master
 
    Within a few moments, the new IP address should appear with the state
    Allocated. You can now use the IP address in port forwarding or
@@ -3463,20 +3428,11 @@ incoming requests from certain IP addresses.
 
 You cannot use firewall rules to open ports for an elastic IP address.
 When elastic IP is used, outside access is instead controlled through
-<<<<<<< HEAD
 the use of security groups. See `"Adding a Security
 Group" <#adding-a-security-group>`_.
 
 In an advanced zone, you can also create egress firewall rules by using
 the virtual router. For more information, see ":ref:`egress-fw-rules`".
-=======
-the use of security groups. See `Section 15.15.2, “Adding a Security
-Group” <#add-security-group>`_.
-
-In an advanced zone, you can also create egress firewall rules by using
-the virtual router. For more information, see `Section 15.22.2, “Egress
-Firewall Rules in an Advanced Zone” <#egress-firewall-rule>`_.
->>>>>>> upstream/master
 
 Firewall rules can be created using the Firewall tab in the Management
 Server UI. This tab is not displayed by default when CloudStack is
@@ -4091,12 +4047,7 @@ Vista. The commands should be similar for other Windows versions.
 #.
 
    In Type of VPN, choose L2TP IPsec VPN, then click IPsec settings.
-   Select Use preshared key. Enter the preshared key from step
-<<<<<<< HEAD
-   #1.
-=======
-   `1 <#source-nat>`_.
->>>>>>> upstream/master
+   Select Use preshared key. Enter the preshared key from step #1.
 
 #. 
 
@@ -4105,11 +4056,7 @@ Vista. The commands should be similar for other Windows versions.
 
 #. 
 
-<<<<<<< HEAD
    Enter the user name and password from step #1.
-=======
-   Enter the user name and password from step `1 <#source-nat>`_.
->>>>>>> upstream/master
 
 Using Remote Access VPN with Mac OS X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4212,12 +4159,7 @@ To set up a Site-to-Site VPN connection, perform the following:
 
    Create a Virtual Private Cloud (VPC).
 
-<<<<<<< HEAD
    See ":ref:`configuring-vpc`".
-=======
-   See `Section 15.27, “Configuring a Virtual Private
-   Cloud” <#configure-vpc>`_.
->>>>>>> upstream/master
 
 #. 
 
@@ -4351,11 +4293,7 @@ To add a VPN Customer Gateway:
          When PFS is turned on, for every negotiation of a new phase-2 SA
          the two gateways must generate a new set of phase-1 keys. This
          adds an extra layer of protection that PFS adds, which ensures if
-<<<<<<< HEAD
          the phase-2 SA's have expired, the keys used for new phase-2 SA's
-=======
-         the phase-2 SA’s have expired, the keys used for new phase-2 SA’s
->>>>>>> upstream/master
          have not been generated from the current phase-1 keying material.
 
    -  
@@ -4853,14 +4791,8 @@ The major advantages are:
 
    -  
 
-<<<<<<< HEAD
       **VPN Gateway**: For more information, see `"Creating a VPN gateway for the
       VPC" <#creating-a-vpn-gateway-for-the-vpc>`_.
-=======
-      **VPN Gateway**: For more information, see `Section 15.25.5.2,
-      “Creating a VPN gateway for the
-      VPC” <#create-vpn-gateway-for-vpc>`_.
->>>>>>> upstream/master
 
    -  
 
@@ -4871,12 +4803,7 @@ The major advantages are:
 
    -  
 
-<<<<<<< HEAD
       **Private Gateway**: For more information, see ":ref:`adding-priv-gw-vpc`".
-=======
-      **Private Gateway**: For more information, see `Section 15.27.5,
-      “Adding a Private Gateway to a VPC” <#add-gateway-vpc>`_.
->>>>>>> upstream/master
 
 -  
 
@@ -4911,16 +4838,10 @@ The following figure shows the possible deployment scenarios of a
 Inter-VLAN setup:
 
 |mutltier.png|
-<<<<<<< HEAD
 
 To set up a multi-tier Inter-VLAN deployment, see ":ref:`configuring-vpc`".
 
 .. _configuring-vpc:
-=======
-
-To set up a multi-tier Inter-VLAN deployment, see `Section 15.27,
-“Configuring a Virtual Private Cloud” <#configure-vpc>`_.
->>>>>>> upstream/master
 
 Configuring a Virtual Private Cloud
 -----------------------------------
@@ -4977,12 +4898,7 @@ A VPC is comprised of the following network components:
 
    **Private Gateway**: All the traffic to and from a private network
    routed to the VPC through the private gateway. For more information,
-<<<<<<< HEAD
    see ":ref:`adding-priv-gw-vpc`".
-=======
-   see `Section 15.27.5, “Adding a Private Gateway to a
-   VPC” <#add-gateway-vpc>`_.
->>>>>>> upstream/master
 
 -  
 
@@ -4992,34 +4908,19 @@ A VPC is comprised of the following network components:
 
    **Site-to-Site VPN Connection**: A hardware-based VPN connection
    between your VPC and your datacenter, home network, or co-location
-<<<<<<< HEAD
    facility. For more information, see ":ref:`setting-s2s-vpn-conn`".
-=======
-   facility. For more information, see `Section 15.25.5, “Setting Up a
-   Site-to-Site VPN Connection” <#site-to-site-vpn>`_.
->>>>>>> upstream/master
 
 -  
 
    **Customer Gateway**: The customer side of a VPN Connection. For more
-<<<<<<< HEAD
    information, see `"Creating and Updating a VPN
    Customer Gateway" <#creating-and-updating-a-vpn-customer-gateway>`_.
-=======
-   information, see `Section 15.25.5.1, “Creating and Updating a VPN
-   Customer Gateway” <#create-vpn-customer-gateway>`_.
->>>>>>> upstream/master
 
 -  
 
    **NAT Instance**: An instance that provides Port Address Translation
    for instances to access the Internet via the public gateway. For more
-<<<<<<< HEAD
    information, see ":ref:`enabling-disabling-static-nat-on-vpc`".
-=======
-   information, see `Section 15.27.10, “Enabling or Disabling Static NAT
-   on a VPC” <#enable-disable-static-nat-vpc>`_.
->>>>>>> upstream/master
 
 -  
 
@@ -5027,12 +4928,7 @@ A VPC is comprised of the following network components:
    ACL items are nothing but numbered rules that are evaluated in order,
    starting with the lowest numbered rule. These rules determine whether
    traffic is allowed in or out of any tier associated with the network
-<<<<<<< HEAD
    ACL. For more information, see ":ref:`conf-net-acl`".
-=======
-   ACL. For more information, see `Section 15.27.4, “Configuring Network
-   Access Control List” <#configure-acl>`_.
->>>>>>> upstream/master
 
 Network Architecture in a VPC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5781,19 +5677,11 @@ Alternatively, you can do the following:
 
    -  
 
-<<<<<<< HEAD
       Use the Quickview. See 3.
 
    -  
 
       Use the Details tab. See 4 through .
-=======
-      Use the Quickview. See `3 <#quickview>`_.
-
-   -  
-
-      Use the Details tab. See `4 <#details-tab>`_ through .
->>>>>>> upstream/master
 
 #. 
 
@@ -6116,11 +6004,8 @@ still belongs to the same VPC.
 #. 
 
    In the Details tab, click the Release IP button |release-ip-icon.png|
-<<<<<<< HEAD
 
 .. _enabling-disabling-static-nat-on-vpc:
-=======
->>>>>>> upstream/master
 
 Enabling or Disabling Static NAT on a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6337,13 +6222,7 @@ follows:
       Private Cloud-enabled. A Virtual Private Cloud (VPC) is a private,
       isolated part of CloudStack. A VPC can have its own virtual
       network topology that resembles a traditional physical network.
-<<<<<<< HEAD
-      For more information on VPCs, see `"About Virtual
-      Private Clouds" <#about-virtual-private-clouds>`_.
-=======
-      For more information on VPCs, see `Section 15.27.1, “About Virtual
-      Private Clouds” <#vpc>`_.
->>>>>>> upstream/master
+      For more information on VPCs, see `"About Virtual Private Clouds" <#about-virtual-private-clouds>`_.
 
    -  
 
@@ -6523,13 +6402,8 @@ CloudStack supports sharing workload across different tiers within your
 VPC. Assume that multiple tiers are set up in your environment, such as
 Web tier and Application tier. Traffic to each tier is balanced on the
 VPC virtual router on the public side, as explained in
-<<<<<<< HEAD
-`"Adding Load Balancing Rules on a
-VPC" <#adding-load-balancing-rules-on-a-vpc>`_. If you want the traffic coming
-=======
-`Section 15.27.11, “Adding Load Balancing Rules on a
-VPC” <#add-loadbalancer-rule-vpc>`_. If you want the traffic coming
->>>>>>> upstream/master
+`"Adding Load Balancing Rules on a VPC" <#adding-load-balancing-rules-on-a-vpc>`_. 
+If you want the traffic coming
 from the Web tier to the Application tier to be balanced, use the
 internal load balancing feature offered by CloudStack.
 
@@ -7057,12 +6931,7 @@ To create a persistent network, perform the following:
 
    Create a network offering with the Persistent option enabled.
 
-<<<<<<< HEAD
    See `"Creating a New Network Offering" <networking.html#creating-a-new-network-offering>`_.
-=======
-   See `Section 9.4.1, “Creating a New Network
-   Offering” <#creating-network-offerings>`_.
->>>>>>> upstream/master
 
 #. 
 

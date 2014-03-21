@@ -651,11 +651,7 @@ Center <http://www.microsoft.com/en-us/download/details.aspx?id=9085>`_.
 Use the following steps to run sysprep for Windows 2008 R2:
 
 .. note:: 
-<<<<<<< HEAD
     The steps outlined here are derived from the excellent guide by Charity Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`_
-=======
-    The steps outlined here are derived from the excellent guide by Charity Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`__
->>>>>>> upstream/master
 
 #. 
 

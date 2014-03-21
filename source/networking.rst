@@ -77,13 +77,8 @@ account. Isolated networks have the following properties.
    The network offering can be upgraded or downgraded but it is for the
    entire network
 
-<<<<<<< HEAD
 For more information, see `“Configure Guest Traffic in
 an Advanced Zone” <networking2.html#configure-guest-traffic-in-an-advanced-zone>`_.
-=======
-For more information, see `Section 15.5.1, “Configure Guest Traffic in
-an Advanced Zone” <#configure-guest-traffic-in-advanced-zone>`_.
->>>>>>> upstream/master
 
 Shared Networks
 ~~~~~~~~~~~~~~~
@@ -120,13 +115,8 @@ Basic zones in CloudStack 3.0.3 and later versions.
    service provider is virtual router. However, Source NAT per account
    is supported.
 
-<<<<<<< HEAD
-For information, see `“Configuring a Shared Guest
-Network” <networking2.html#configuring-a-shared-guest-network>`_.
-=======
-For information, see `Section 15.5.3, “Configuring a Shared Guest
-Network” <#creating-shared-network>`_.
->>>>>>> upstream/master
+For information, see `“Configuring a Shared Guest Network” <networking2.html#configuring-a-shared-guest-network>`_.
+
 
 Runtime Allocation of Virtual Network Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -349,7 +339,6 @@ To create a network offering:
       Based on the guest network type selected, you can see the
       following supported services:
 
-<<<<<<< HEAD
       =================== ============================================================================ ============= =============
       Supported Services  Description                                                                  Isolated      Shared   
       =================== ============================================================================ ============= =============
@@ -377,36 +366,6 @@ To create a network offering:
       Security Groups     For more information, see `“Adding a Security                                Not Supported Supported
                           Group” <networking2.html#adding-a-security-group>`_.
       =================== ============================================================================ ============= =============
-=======
-      =================== ======================================================================= ============= =============
-      Supported Services  Description                                                              Isolated     Shared   
-      =================== ======================================================================= ============= =============
-      DHCP                For more information, see `Section 15.24, “DNS and DHCP” <#dns-dhcp>`_. Supported     Supported
-      DNS                 For more information, see `Section 15.24, “DNS and DHCP” <#dns-dhcp>`_. Supported     Supported
-      Load Balancer       If you select Load Balancer, you can choose the CloudStack virtual      Supported     Supported
-                          router or any other load balancers that have been configured in
-                          the cloud.
-      Firewall            For more information, see the Administration Guide.                     Supported     Supported
-      Source NAT          If you select Source NAT, you can choose the CloudStack virtual         Supported     Supported
-                          router or any other Source NAT providers that have been configured
-                          in the cloud.
-      Static NAT          If you select Static NAT, you can choose the CloudStack virtual         Supported     Supported
-                          router or any other Static NAT providers that have been configured
-                          in the cloud.
-      Port Forwarding     If you select Port Forwarding, you can choose the CloudStack            Supported     Not Supported
-                          virtual router or any other Port Forwarding providers that have
-                          been configured in the cloud.
-      VPN                 For more information, see `Section 15.25, “Remote Access                Supported     Not Supported
-                          VPN” <#vpn>`__.
-      User Data           For more information, see `Section 20.2, “User Data and Meta            Not Supported Supported
-                          Data” <#user-data-and-meta-data>`_.
-      Network ACL         For more information, see `Section 15.27.4, “Configuring Network        Supported     Not Supported
-                          Access Control List” <#configure-acl>`_.
-      Security Groups     For more information, see `Section 15.15.2, “Adding a Security          Not Supported Supported
-                          Group” <#add-security-group>`__.
-      =================== ======================================================================= ============= =============
->>>>>>> upstream/master
-
 
    -  
 
@@ -420,12 +379,7 @@ To create a network offering:
       system service offering and any custom system service offerings
       that have been defined by the CloudStack root administrator.
 
-<<<<<<< HEAD
       For more information, see `“System Service Offerings” <service_offerings.html#system-service-offerings>`_.
-=======
-      For more information, see `Section 8.2, “System Service
-      Offerings” <#system-service-offerings>`_.
->>>>>>> upstream/master
 
    -  
 
@@ -483,12 +437,7 @@ To create a network offering:
 
          Elastic IP is enabled.
 
-<<<<<<< HEAD
       For information on Elastic IP, see `“About Elastic IP” <networking2.html#about-elastic-ip>`_.
-=======
-      For information on Elastic IP, see `Section 15.11, “About Elastic
-      IP” <#elastic-ip>`_.
->>>>>>> upstream/master
 
    -  
 
