@@ -502,9 +502,8 @@ these steps.
    -  
 
       At the network level, the DNS suffix can be assigned through the
-      UI when creating a new network, as described in `Section 15.6.1,
-      “Adding an Additional Guest
-      Network” <#add-additional-guest-network>`__ or with the
+      UI when creating a new network, as described in 
+      `“Adding an Additional Guest Network” <networking2#adding-an-additional-guest-network>`_ or with the
       updateNetwork command in the CloudStack API.
 
    -  

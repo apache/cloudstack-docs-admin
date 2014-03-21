@@ -156,8 +156,8 @@ individual project. The project owner can set resource limits only if
 the owner is also a domain or root administrator.
 
 The new limits must be below the global default limits set by the
-CloudStack administrator (as described in `Section 6.2.2, “Setting
-Resource Limits for Projects” <#set-resource-limits-for-projects>`__).
+CloudStack administrator (as described in `“Setting
+Resource Limits for Projects” <#setting-resource-limits-for-projects>`_).
 If the project already owns more of a given type of resource than the
 new maximum, the resources are not affected; however, the project can
 not add any new resources of that type until the total drops below the
@@ -332,7 +332,7 @@ Sending Project Membership Invitations
 
 Use these steps to add a new member to a project if the invitations
 feature is enabled in the cloud as described in `“Setting
-Up Invitations” <#set-up-invitations>`_. If the invitations feature is
+Up Invitations” <#setting-up-invitations>`_. If the invitations feature is
 not turned on, use the procedure in Adding Project Members From the UI.
 
 #. 
@@ -371,7 +371,7 @@ not turned on, use the procedure in Adding Project Members From the UI.
       which the recipient will provide back to CloudStack when accepting
       the invitation. Email invitations will work only if the global
       parameters related to the SMTP server have been set. See
-      `“Setting Up Invitations” <#set-up-invitations>`_.
+      `“Setting Up Invitations” <#setting-up-invitations>`_.
 
 #. 
 
@@ -394,9 +394,9 @@ Adding Project Members From the UI
 The steps below tell how to add a new member to a project if the
 invitations feature is not enabled in the cloud. If the invitations
 feature is enabled cloud,as described in `“Setting Up
-Invitations” <#set-up-invitations>`_, use the procedure in
+Invitations” <#setting-up-invitations>`_, use the procedure in
 `“Sending Project Membership
-Invitations” <#send-projects-membership-invitation>`_.
+Invitations” <#sending-project-membership-invitations>`_.
 
 #. 
 
