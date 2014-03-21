@@ -281,8 +281,8 @@ parameters have been added:
    day).
 
 .. note:: Archived alerts or events cannot be viewed in the UI or by using the
-API. They are maintained in the database for auditing or compliance
-purposes.
+      API. They are maintained in the database for auditing or compliance
+      purposes.
 
 Permissions
 ~~~~~~~~~~~
@@ -344,9 +344,10 @@ database activities for diagnostics purposes in
 messages. We recommend this command to find the problematic output in
 the Management Server log:.
 
-.. note:: When copying and pasting a command, be sure the command has pasted as a
-single line before executing. Some document viewers may introduce
-unwanted line breaks in copied text.
+.. note:: 
+      When copying and pasting a command, be sure the command has pasted as a
+      single line before executing. Some document viewers may introduce
+      unwanted line breaks in copied text.
 
 .. code:: bash
 
@@ -548,8 +549,11 @@ Solution
 
 Create a firewall rule on the virtual router for each of your existing
 load balancing rules so that they continue to function.
+<<<<<<< HEAD
 
 
 =======
    Click OK.
 >>>>>>> 8475ba5... fix merge to upstream
+=======
+>>>>>>> caa1183... fixed sphinx warnings

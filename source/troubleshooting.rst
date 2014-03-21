@@ -25,9 +25,10 @@ database activities for diagnostics purposes in
 messages. We recommend this command to find the problematic output in
 the Management Server log:.
 
-.. note:: When copying and pasting a command, be sure the command has pasted as a
-single line before executing. Some document viewers may introduce
-unwanted line breaks in copied text.
+.. note:: 
+    When copying and pasting a command, be sure the command has pasted as a
+    single line before executing. Some document viewers may introduce
+    unwanted line breaks in copied text.
 
 .. code:: bash
 
