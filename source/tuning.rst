@@ -97,7 +97,7 @@ cache data and indexes:
 
 For more information about the buffer pool, see "The InnoDB Buffer Pool"
 at `MySQL Reference
-Manual <http://dev.mysql.com/doc/refman/5.5/en/innodb-buffer-pool.html>`__.
+Manual <http://dev.mysql.com/doc/refman/5.5/en/innodb-buffer-pool.html>`_.
 
 Set and Monitor Total VM Limits per Host
 ----------------------------------------
@@ -126,7 +126,7 @@ Configure the XenServer dom0 settings to allocate more memory to dom0.
 This can enable XenServer to handle larger numbers of virtual machines.
 We recommend 2940 MB of RAM for XenServer dom0. For instructions on how
 to do this, see `Citrix Knowledgebase
-Article <http://support.citrix.com/article/CTX126531>`__.The article
+Article <http://support.citrix.com/article/CTX126531>`_.The article
 refers to XenServer 5.6, but the same information applies to XenServer 6
 
 

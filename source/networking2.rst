@@ -575,7 +575,7 @@ associated with an existing guest network.
 
 #. 
 
-   Wait for the update to complete. Don’t try to restart VMs until the
+   Wait for the update to complete. Don't try to restart VMs until the
    network change is complete.
 
 #. 
@@ -645,49 +645,17 @@ machines:
    For example, the following table describes three scenarios of guest
    network creation:
 
-   Case
-
-   CIDR
-
-   Network CIDR
-
-   Reserved IP Range for Non-CloudStack VMs
-
-   Description
-
-   1
-
-   10.1.1.0/24
-
-   None
-
-   None
-
-   No IP Reservation.
-
-   2
-
-   10.1.1.0/26
-
-   10.1.1.0/24
-
-   10.1.1.64 to 10.1.1.254
-
-   IP Reservation configured by the UpdateNetwork API with
-   guestvmcidr=10.1.1.0/26 or enter 10.1.1.0/26 in the CIDR field in the
-   UI.
-
-   3
-
-   10.1.1.0/24
-
-   None
-
-   None
-
-   Removing IP Reservation by the UpdateNetwork API with
-   guestvmcidr=10.1.1.0/24 or enter 10.1.1.0/24 in the CIDR field in the
-   UI.
+   ===== ============= =============== =========================================== ========================================================
+   Case  CIDR          Network CIDR    Reserved IP Range for Non-CloudStack VMs    Description
+   ===== ============= =============== =========================================== ========================================================
+   1     10.1.1.0/24   None            None                                        No IP Reservation.
+   2     10.1.1.0/26   10.1.1.0/24     10.1.1.64 to 10.1.1.254                     IP Reservation configured by the UpdateNetwork API with
+                                                                                   guestvmcidr=10.1.1.0/26 or enter 10.1.1.0/26 in the CIDR 
+                                                                                   field in the UI.
+   3     10.1.1.0/24   None            None                                        Removing IP Reservation by the UpdateNetwork API with
+                                                                                   guestvmcidr=10.1.1.0/24 or enter 10.1.1.0/24 in the CIDR 
+                                                                                   field in the UI.
+   ===== ============= =============== =========================================== ========================================================
 
 Limitations
 ~~~~~~~~~~~
@@ -756,7 +724,7 @@ set of VLANs and guest IP addresses for a tenant.
 Note that if an account has consumed all the VLANs and IPs dedicated to
 it, the account can acquire two more resources from the system.
 CloudStack provides the root admin with two configuration parameter to
-modify this default behavior—use.system.public.ips and
+modify this default behaviorâ€”use.system.public.ips and
 use.system.guest.vlans. These global parameters enable the root admin to
 disallow an account from acquiring public IPs and guest VLANs from the
 system, if the account has dedicated resources and these dedicated
@@ -967,7 +935,7 @@ Configuring Multiple IP Addresses on a Single NIC
 CloudStack provides you the ability to associate multiple private IP
 addresses per guest VM NIC. In addition to the primary IP, you can
 assign additional IPs to the guest VM NIC. This feature is supported on
-all the network configurations—Basic, Advanced, and VPC. Security
+all the network configurationsâ€”Basic, Advanced, and VPC. Security
 Groups, Static NAT and Port forwarding services are supported on these
 additional IPs.
 
@@ -1170,8 +1138,8 @@ offering. Later, the user can acquire an IP for the VM and enable static
 NAT.
 
 For more information on the Associate Public IP option, see
-`Section 9.4.1, “Creating a New Network
-Offering” <#creating-network-offerings>`__.
+`"Creating a New Network
+Offering" <networking.html#creating-a-new-network-offering>`_.
 
 .. note:: 
    The Associate Public IP feature is designed only for use with user VMs.
@@ -1469,7 +1437,7 @@ within the same VLAN. In a PVLAN-enabled shared network, a user VM
 cannot reach other user VM though they can reach the DHCP server and
 gateway, this would in turn allow users to control traffic within a
 network and help them deploy multiple applications without communication
-between application as well as prevent communication with other users’
+between application as well as prevent communication with other users'
 VMs.
 
 -  
@@ -1659,7 +1627,7 @@ Creating a PVLAN-Enabled Guest Network
       Isolated VLAN.
 
       For the description on Secondary Isolated VLAN, see
-      `Section 15.14.1, “About Private VLAN” <#about-pvlan>`_.
+      `About Private VLAN" <#about-private-vlan>`_.
 
    -  
 
@@ -1981,7 +1949,7 @@ About Using a NetScaler Load Balancer
 Citrix NetScaler is supported as an external network element for load
 balancing in zones that use isolated networking in advanced zones. Set
 up an external load balancer when you want to provide load balancing
-through means other than CloudStack’s provided virtual router.
+through means other than CloudStack's provided virtual router.
 
 .. note:: 
    In a Basic zone, load balancing service is supported only if Elastic IP or Elastic LB services are enabled.
@@ -1998,7 +1966,7 @@ policy-based route must be set up so that all traffic originated from
 the guest VM's are directed to NetScaler device. This is required to
 ensure that the outbound traffic from the guest VM's is routed to a
 public IP by using NAT.For more information on Elastic IP, see
-`Section 15.11, “About Elastic IP” <#elastic-ip>`_.
+`"About Elastic IP" <#about-elastic-ip>`_.
 
 The NetScaler can be set up in direct (outside the firewall) mode. It
 must be added before any load balancing rules are deployed on guest VMs
@@ -2046,7 +2014,7 @@ a single appliance to support multi-tenant usage
 
 CloudStack will dynamically provision, configure, and manage the life
 cycle of VPX instances on the SDX. Provisioned instances are added into
-CloudStack automatically – no manual configuration by the administrator
+CloudStack automatically - no manual configuration by the administrator
 is required. Once a VPX instance is added into CloudStack, it is treated
 the same as a VPX on an ESXi host.
 
@@ -2233,6 +2201,8 @@ VMs.
    the virtual router for each of your existing load balancing rules so
    that they continue to function.
 
+.. _adding-lb-rule:
+
 Adding a Load Balancer Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2268,7 +2238,7 @@ Adding a Load Balancer Rule
    Addresses page when the rule is created.
 
    To do that, select the name of the network, then click Add Load
-   Balancer tab. Continue with `7 <#config-lb>`_.
+   Balancer tab. Continue with #7.
 
 #. 
 
@@ -2304,15 +2274,13 @@ Adding a Load Balancer Rule
    -  
 
       **AutoScale**: Click Configure and complete the AutoScale
-      configuration as explained in `Section 15.16.6, “Configuring
-      AutoScale” <#autoscale>`__.
+      configuration as explained in :ref:`conf-autoscale`.
 
    -  
 
       **Health Check**: (Optional; NetScaler load balancers only) Click
       Configure and fill in the characteristics of the health check
-      policy. See `Section 15.16.5.3, “Health Checks for Load Balancer
-      Rules” <#health-checks-for-lb-rules>`__.
+      policy. See :ref:`health-check`.
 
       -  
 
@@ -2366,7 +2334,7 @@ parameters. The parameters are name-value pairs or flags, which are
 defined by the load balancer vendor. The stickiness method could be load
 balancer-generated cookie, application-generated cookie, or
 source-based. In the source-based method, the source IP address is used
-to identify the user and locate the user’s stored data. In the other
+to identify the user and locate the user's stored data. In the other
 methods, cookies are used. The cookie generated by the load balancer or
 application is included in request and response URLs to create
 persistence. The cookie name can be specified by the administrator or
@@ -2377,6 +2345,8 @@ whether they are cached.
 For the most up to date list of available stickiness methods, see the
 CloudStack UI or call listNetworks and check the
 SupportedStickinessMethods capability.
+
+.. _health-check:
 
 Health Checks for Load Balancer Rules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2413,8 +2383,9 @@ is 600 seconds). You can override this value for an individual health
 check policy.
 
 For details on how to set a health check policy using the UI, see
-`Section 15.16.5.1, “Adding a Load Balancer
-Rule” <#add-load-balancer-rule>`__.
+:ref:`adding-lb-rule`.
+
+.. _conf-autoscale:
 
 Configuring AutoScale
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2472,25 +2443,23 @@ Before you configure an AutoScale rule, consider the following:
    monitor the SNMP-based counter, ensure that the SNMP agent is
    installed in the template used for creating the AutoScale VMs, and
    the SNMP operations work with the configured SNMP community and port
-   by using standard SNMP managers. For example, see `Section 15.16.2,
-   “Configuring SNMP Community String on a RHEL
-   Server” <#configure-snmp-rhel>`__ to configure SNMP on a RHEL
+   by using standard SNMP managers. For example, see `"Configuring SNMP Community String on a RHEL
+   Server" <#configuring-snmp-community-string-on-a-rhel-server>`_ to configure SNMP on a RHEL
    machine.
 
 -  
 
    Ensure that the endpointe.url parameter present in the Global
    Settings is set to the Management Server API URL. For example,
-   http://10.102.102.22:8080/client/api. In a multi-node Management
+   ``http://10.102.102.22:8080/client/api``. In a multi-node Management
    Server deployment, use the virtual IP address configured in the load
-   balancer for the management server’s cluster. Additionally, ensure
+   balancer for the management server's cluster. Additionally, ensure
    that the NetScaler device has access to this IP address to provide
    AutoScale support.
 
    If you update the endpointe.url, disable the AutoScale functionality
    of the load balancer rules in the system, then enable them back to
-   reflect the changes. For more information see `Updating an AutoScale
-   Configuration <#update-autoscale>`__
+   reflect the changes. For more information see :ref:`update-autoscale`.
 
 -  
 
@@ -2684,6 +2653,8 @@ are done, you can enable the AutoScale configuration back. To enable,
 open the AutoScale configuration page again, then click the Enable
 AutoScale |EnableDisable.png| button.
 
+.. _update-autoscale:
+
 Updating an AutoScale Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2795,11 +2766,11 @@ A typical GSLB environment is comprised of the following components:
    Citrix NetScaler terminology, a load balancing or content switching
    virtual server represents one or many servers on the local network.
    Clients send their requests to the load balancing or content
-   switching virtual server’s virtual IP (VIP) address, and the virtual
+   switching virtual server's virtual IP (VIP) address, and the virtual
    server balances the load across the local servers. After a GSLB
    virtual server selects a GSLB service representing either a local or
    a remote load balancing or content switching virtual server, the
-   client sends the request to that virtual server’s VIP address.
+   client sends the request to that virtual server's VIP address.
 
 -  
 
@@ -2973,8 +2944,7 @@ above, the administrator of xyztelco is the one who sets up GSLB:
    In each zone that are participating in GSLB, add GSLB-enabled
    NetScaler device.
 
-   For more information, see `Section 15.17.2.2, “Enabling GSLB in
-   NetScaler” <#enable-glsb-ns>`_.
+   For more information, see :ref:`enabling-gslb-in-ns`.
 
 As a domain administrator/ user perform the following:
 
@@ -2982,14 +2952,13 @@ As a domain administrator/ user perform the following:
 
    Add a GSLB rule on both the sites.
 
-   See `Section 15.17.2.3, “Adding a GSLB Rule” <#gslb-add>`_.
+   See ":ref:`adding-gslb-rule`".
 
 #. 
 
    Assign load balancer rules.
 
-   See `Section 15.17.2.4, “Assigning Load Balancing Rules to
-   GSLB” <#assign-lb-gslb>`_.
+   See ":ref:`assigning-lb-rule-gslb`".
 
 Prerequisites and Guidelines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3069,6 +3038,8 @@ Prerequisites and Guidelines
    virtual server on the same zone.
 
    Statistics is collected from each GSLB virtual server.
+
+.. _enabling-gslb-in-ns:
 
 Enabling GSLB in NetScaler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3173,6 +3144,8 @@ In each zone, add GSLB-enabled NetScaler device for load balancing.
 
    Click OK.
 
+.. _adding-gslb-rule:
+
 Adding a GSLB Rule
 ^^^^^^^^^^^^^^^^^^
 
@@ -3242,6 +3215,8 @@ Adding a GSLB Rule
 
    Click OK to confirm.
 
+.. _assigning-lb-rule-gslb:
+
 Assigning Load Balancing Rules to GSLB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3299,8 +3274,8 @@ their clients.
 In shared networks in Basic zone and Security Group-enabled Advanced
 networks, you will have the flexibility to add multiple guest IP ranges
 from different subnets. You can add or remove one IP range at a time.
-For more information, see `Section 15.10, “About Multiple IP
-Ranges” <#multiple-ip-range>`__.
+For more information, see `"About Multiple IP
+Ranges" <#about-multiple-ip-ranges>`_.
 
 Acquiring a New IP Address
 --------------------------
@@ -3334,8 +3309,8 @@ Acquiring a New IP Address
    If you want Portable IP click Yes in the confirmation dialog. If you
    want a normal Public IP click No.
 
-   For more information on Portable IP, see `Section 15.12, “Portable
-   IPs” <#portable-ip>`_.
+   For more information on Portable IP, see `"Portable
+   IPs" <#portable-ips>`_.
 
    Within a few moments, the new IP address should appear with the state
    Allocated. You can now use the IP address in port forwarding or
@@ -3378,7 +3353,7 @@ Static NAT
 
 A static NAT rule maps a public IP address to the private IP address of
 a VM in order to allow Internet traffic into the VM. The public IP
-address always remains the same, which is why it is called “static” NAT.
+address always remains the same, which is why it is called â€œstaticâ€ NAT.
 This section tells how to enable or disable static NAT for a particular
 IP address.
 
@@ -3430,8 +3405,7 @@ IP Forwarding and Firewalling
 By default, all incoming traffic to the public IP address is rejected.
 All outgoing traffic from the guests is also blocked by default.
 
-To allow outgoing traffic, follow the procedure in `Section 15.22.2,
-“Egress Firewall Rules in an Advanced Zone” <#egress-firewall-rule>`__.
+To allow outgoing traffic, follow the procedure in :ref:`egress-fw-rules`.
 
 To allow incoming traffic, users may set up firewall rules and/or port
 forwarding rules. For example, you can use a firewall rule to open a
@@ -3452,12 +3426,11 @@ incoming requests from certain IP addresses.
 
 You cannot use firewall rules to open ports for an elastic IP address.
 When elastic IP is used, outside access is instead controlled through
-the use of security groups. See `Section 15.15.2, “Adding a Security
-Group” <#add-security-group>`_.
+the use of security groups. See `"Adding a Security
+Group" <#adding-a-security-group>`_.
 
 In an advanced zone, you can also create egress firewall rules by using
-the virtual router. For more information, see `Section 15.22.2, “Egress
-Firewall Rules in an Advanced Zone” <#egress-firewall-rule>`_.
+the virtual router. For more information, see ":ref:`egress-fw-rules`".
 
 Firewall rules can be created using the Firewall tab in the Management
 Server UI. This tab is not displayed by default when CloudStack is
@@ -3519,6 +3492,8 @@ To create a firewall rule:
 #. 
 
    Click Add.
+
+.. _egress-fw-rules:
 
 Egress Firewall Rules in an Advanced Zone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3741,8 +3716,8 @@ To set up port forwarding:
 #. 
 
    Choose an existing IP address or acquire a new IP address. See
-   `Section 15.19, “Acquiring a New IP
-   Address” <#acquire-new-ip-address>`__. Click the name of the IP
+   `"Acquiring a New IP
+   Address" <#acquiring-a-new-ip-address>`_. Click the name of the IP
    address in the list.
 
 #. 
@@ -3837,14 +3812,13 @@ account owner.
 -  
 
    **Site to Site**. In this scenario, two private subnets are connected
-   over the public Internet with a secure VPN tunnel. The cloud user’s
+   over the public Internet with a secure VPN tunnel. The cloud user's
    subnet (for example, an office network) is connected through a
-   gateway to the network in the cloud. The address of the user’s
+   gateway to the network in the cloud. The address of the user's
    gateway must be preconfigured on the VPN server in the cloud. Note
    that although L2TP-over-IPsec can be used to set up Site-to-Site
    VPNs, this is not the primary intent of this feature. For more
-   information, see `Section 15.25.5, “Setting Up a Site-to-Site VPN
-   Connection” <#site-to-site-vpn>`__
+   information, see ":ref:`setting-s2s-vpn-conn`".
 
 Configuring Remote Access VPN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3865,17 +3839,17 @@ To set up VPN for the cloud:
 
    -  
 
-      remote.access.vpn.client.ip.range – The range of IP addresses to
+      remote.access.vpn.client.ip.range - The range of IP addresses to
       be allocated to remote access VPN clients. The first IP in the
       range is used by the VPN server.
 
    -  
 
-      remote.access.vpn.psk.length – Length of the IPSec key.
+      remote.access.vpn.psk.length - Length of the IPSec key.
 
    -  
 
-      remote.access.vpn.user.limit – Maximum number of VPN users per
+      remote.access.vpn.user.limit - Maximum number of VPN users per
       account.
 
 To enable VPN for a particular network:
@@ -4046,13 +4020,13 @@ Vista. The commands should be similar for other Windows versions.
 #. 
 
    In the next dialog, enter the source NAT IP from step
-   `1 <#source-nat>`__ and give the connection a name. Check Don't
+   #1 and give the connection a name. Check Don't
    connect now.
 
 #. 
 
    In the next dialog, enter the user name and password selected in step
-   `1 <#source-nat>`__.
+   #1.
 
 #. 
 
@@ -4072,7 +4046,7 @@ Vista. The commands should be similar for other Windows versions.
 
    In Type of VPN, choose L2TP IPsec VPN, then click IPsec settings.
    Select Use preshared key. Enter the preshared key from step
-   `1 <#source-nat>`_.
+   #1.
 
 #. 
 
@@ -4081,7 +4055,7 @@ Vista. The commands should be similar for other Windows versions.
 
 #. 
 
-   Enter the user name and password from step `1 <#source-nat>`_.
+   Enter the user name and password from step #1.
 
 Using Remote Access VPN with Mac OS X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4139,6 +4113,8 @@ differ slightly in older or newer releases of Mac OS X.
 
    Now click "Connect" and you will be connected to the CloudStack VPN.
 
+.. _setting-s2s-vpn-conn:
+
 Setting Up a Site-to-Site VPN Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -4182,8 +4158,7 @@ To set up a Site-to-Site VPN connection, perform the following:
 
    Create a Virtual Private Cloud (VPC).
 
-   See `Section 15.27, “Configuring a Virtual Private
-   Cloud” <#configure-vpc>`_.
+   See ":ref:`configuring-vpc`".
 
 #. 
 
@@ -4238,7 +4213,7 @@ To add a VPN Customer Gateway:
 
       **CIDR list**: The guest CIDR list of the remote subnets. Enter a
       CIDR or a comma-separated list of CIDRs. Ensure that a guest CIDR
-      list is not overlapped with the VPC’s CIDR, or another guest CIDR.
+      list is not overlapped with the VPC's CIDR, or another guest CIDR.
       The CIDR must be RFC1918-compliant.
 
    -  
@@ -4317,7 +4292,7 @@ To add a VPN Customer Gateway:
          When PFS is turned on, for every negotiation of a new phase-2 SA
          the two gateways must generate a new set of phase-1 keys. This
          adds an extra layer of protection that PFS adds, which ensures if
-         the phase-2 SA’s have expired, the keys used for new phase-2 SA’s
+         the phase-2 SA's have expired, the keys used for new phase-2 SA's
          have not been generated from the current phase-1 keying material.
 
    -  
@@ -4338,7 +4313,7 @@ To add a VPN Customer Gateway:
       **Dead Peer Detection**: A method to detect an unavailable
       Internet Key Exchange (IKE) peer. Select this option if you want
       the virtual router to query the liveliness of its IKE peer at
-      regular intervals. It’s recommended to have the same configuration
+      regular intervals. It's recommended to have the same configuration
       of DPD on both side of VPN connection.
 
 #. 
@@ -4628,29 +4603,28 @@ This feature is supported on all the hypervisors.
 
    Create two VPCs. For example, VPC A and VPC B.
 
-   For more information, see `Section 15.27, “Configuring a Virtual
-   Private Cloud” <#configure-vpc>`__.
+   For more information, see ":ref:`configuring-vpc`".
 
 #. 
 
    Create VPN gateways on both the VPCs you created.
 
-   For more information, see `Section 15.25.5.2, “Creating a VPN gateway
-   for the VPC” <#create-vpn-gateway-for-vpc>`__.
+   For more information, see `"Creating a VPN gateway
+   for the VPC" <#creating-a-vpn-gateway-for-the-vpc>`_.
 
 #. 
 
    Create VPN customer gateway for both the VPCs.
 
-   For more information, see `Section 15.25.5.1, “Creating and Updating
-   a VPN Customer Gateway” <#create-vpn-customer-gateway>`__.
+   For more information, see `"Creating and Updating
+   a VPN Customer Gateway" <#creating-and-updating-a-vpn-customer-gateway>`_.
 
 #. 
 
    Enable a VPN connection on VPC A in passive mode.
 
-   For more information, see `Section 15.25.5.3, “Creating a VPN
-   Connection” <#create-vpn-connection-vpc>`__.
+   For more information, see `"Creating a VPN
+   Connection" <#creating-a-vpn-connection>`_.
 
    Ensure that the customer gateway is pointed to VPC B. The VPN
    connection is shown in the Disconnected state.
@@ -4816,9 +4790,8 @@ The major advantages are:
 
    -  
 
-      **VPN Gateway**: For more information, see `Section 15.25.5.2,
-      “Creating a VPN gateway for the
-      VPC” <#create-vpn-gateway-for-vpc>`_.
+      **VPN Gateway**: For more information, see `"Creating a VPN gateway for the
+      VPC" <#creating-a-vpn-gateway-for-the-vpc>`_.
 
    -  
 
@@ -4829,8 +4802,7 @@ The major advantages are:
 
    -  
 
-      **Private Gateway**: For more information, see `Section 15.27.5,
-      “Adding a Private Gateway to a VPC” <#add-gateway-vpc>`_.
+      **Private Gateway**: For more information, see ":ref:`adding-priv-gw-vpc`".
 
 -  
 
@@ -4866,8 +4838,9 @@ Inter-VLAN setup:
 
 |mutltier.png|
 
-To set up a multi-tier Inter-VLAN deployment, see `Section 15.27,
-“Configuring a Virtual Private Cloud” <#configure-vpc>`_.
+To set up a multi-tier Inter-VLAN deployment, see ":ref:`configuring-vpc`".
+
+.. _configuring-vpc:
 
 Configuring a Virtual Private Cloud
 -----------------------------------
@@ -4924,8 +4897,7 @@ A VPC is comprised of the following network components:
 
    **Private Gateway**: All the traffic to and from a private network
    routed to the VPC through the private gateway. For more information,
-   see `Section 15.27.5, “Adding a Private Gateway to a
-   VPC” <#add-gateway-vpc>`_.
+   see ":ref:`adding-priv-gw-vpc`".
 
 -  
 
@@ -4935,21 +4907,19 @@ A VPC is comprised of the following network components:
 
    **Site-to-Site VPN Connection**: A hardware-based VPN connection
    between your VPC and your datacenter, home network, or co-location
-   facility. For more information, see `Section 15.25.5, “Setting Up a
-   Site-to-Site VPN Connection” <#site-to-site-vpn>`_.
+   facility. For more information, see ":ref:`setting-s2s-vpn-conn`".
 
 -  
 
    **Customer Gateway**: The customer side of a VPN Connection. For more
-   information, see `Section 15.25.5.1, “Creating and Updating a VPN
-   Customer Gateway” <#create-vpn-customer-gateway>`_.
+   information, see `"Creating and Updating a VPN
+   Customer Gateway" <#creating-and-updating-a-vpn-customer-gateway>`_.
 
 -  
 
    **NAT Instance**: An instance that provides Port Address Translation
    for instances to access the Internet via the public gateway. For more
-   information, see `Section 15.27.10, “Enabling or Disabling Static NAT
-   on a VPC” <#enable-disable-static-nat-vpc>`_.
+   information, see ":ref:`enabling-disabling-static-nat-on-vpc`".
 
 -  
 
@@ -4957,8 +4927,7 @@ A VPC is comprised of the following network components:
    ACL items are nothing but numbered rules that are evaluated in order,
    starting with the lowest numbered rule. These rules determine whether
    traffic is allowed in or out of any tier associated with the network
-   ACL. For more information, see `Section 15.27.4, “Configuring Network
-   Access Control List” <#configure-acl>`_.
+   ACL. For more information, see ":ref:`conf-net-acl`".
 
 Network Architecture in a VPC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5228,8 +5197,8 @@ other tiers within the VPC.
       This option is only visible if the network offering you selected
       is VLAN-enabled.
 
-      For more information, see `Section 11.9.3, “Assigning VLANs to
-      Isolated Networks” <#vlan-assign-isolated-nw>`__.
+      For more information, see `"Assigning VLANs to
+      Isolated Networks" <hosts.html#assigning-vlans-to-isolated-networks>`_.
 
    -  
 
@@ -5246,6 +5215,8 @@ other tiers within the VPC.
 #. 
 
    Continue with configuring access control list for the tier.
+
+.. _conf-net-acl:
 
 Configuring Network Access Control List
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5444,7 +5415,7 @@ Creating an ACL Rule
 
       **Protocol Number**: The protocol number associated with IPv4 or
       IPv6. For more information, see `Protocol
-      Numbers <http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml>`__.
+      Numbers <http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml>`_.
 
    -  
 
@@ -5528,6 +5499,8 @@ Assigning a Custom ACL List to a Tier
 #. 
 
    Click OK.
+
+.. _adding-priv-gw-vpc:
 
 Adding a Private Gateway to a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5647,19 +5620,19 @@ with duplicated VLAN and IP are allowed in the same data center.
       **Source NAT**: Select this option to enable the source NAT
       service on the VPC private gateway.
 
-      See `Section 15.27.5.1, “Source NAT on Private
-      Gateway” <#sourcenat-private-gateway>`__.
+      See ":ref:`source-nat-priv-gw`".
 
    -  
 
       **ACL**: Controls both ingress and egress traffic on a VPC private
       gateway. By default, all the traffic is blocked.
 
-      See `Section 15.27.5.2, “ACL on Private
-      Gateway” <#acl-private-gateway>`__.
+      See ":ref:`acl-priv-gw`".
 
    The new gateway appears in the list. You can repeat these steps to
    add more gateway for this VPC.
+
+.. _source-nat-priv-gw:
 
 Source NAT on Private Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5678,6 +5651,8 @@ specific to the private gateway are deleted.
 
 To enable source NAT on existing private gateways, delete them and
 create afresh with source NAT.
+
+.. _acl-priv-gw:
 
 ACL on Private Gateway
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -5701,11 +5676,11 @@ Alternatively, you can do the following:
 
    -  
 
-      Use the Quickview. See `3 <#quickview>`_.
+      Use the Quickview. See 3.
 
    -  
 
-      Use the Details tab. See `4 <#details-tab>`_ through .
+      Use the Details tab. See 4 through .
 
 #. 
 
@@ -6029,6 +6004,8 @@ still belongs to the same VPC.
 
    In the Details tab, click the Release IP button |release-ip-icon.png|
 
+.. _enabling-disabling-static-nat-on-vpc:
+
 Enabling or Disabling Static NAT on a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -6135,7 +6112,7 @@ function only if they are defined on the default network.
 Adding Load Balancing Rules on a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In a VPC, you can configure two types of load balancing—external LB and
+In a VPC, you can configure two types of load balancingâ€”external LB and
 internal LB. External LB is nothing but a LB rule created to redirect
 the traffic received at a public IP of the VPC virtual router. The
 traffic is load balanced within a tier based on your configuration.
@@ -6167,15 +6144,14 @@ Enabling NetScaler as the LB Provider on a VPC Tier
 
 #. 
 
-   Create a network offering, as given in `Section 15.27.11.1.2,
-   “Creating a Network Offering for External LB” <#ext-lb-offering>`__.
+   Create a network offering, as given in ":ref:`create-net-offering-ext-lb`".
 
 #. 
 
    Create a VPC with Netscaler as the Public LB provider.
 
-   For more information, see `Section 15.27.2, “Adding a Virtual Private
-   Cloud” <#add-vpc>`__.
+   For more information, see `"Adding a Virtual Private
+   Cloud" <#adding-a-virtual-private-cloud>`_.
 
 #. 
 
@@ -6184,8 +6160,9 @@ Enabling NetScaler as the LB Provider on a VPC Tier
 #. 
 
    Create an external load balancing rule and apply, as given in
-   `Section 15.27.11.1.3, “Creating an External LB
-   Rule” <#ext-lb-vpc>`__.
+   :ref:`create-ext-lb-rule`.
+
+.. _create-net-offering-ext-lb:
 
 Creating a Network Offering for External LB
 '''''''''''''''''''''''''''''''''''''''''''
@@ -6244,8 +6221,8 @@ follows:
       Private Cloud-enabled. A Virtual Private Cloud (VPC) is a private,
       isolated part of CloudStack. A VPC can have its own virtual
       network topology that resembles a traditional physical network.
-      For more information on VPCs, see `Section 15.27.1, “About Virtual
-      Private Clouds” <#vpc>`_.
+      For more information on VPCs, see `"About Virtual
+      Private Clouds" <#about-virtual-private-clouds>`_.
 
    -  
 
@@ -6280,6 +6257,8 @@ follows:
 #. 
 
    Click OK and the network offering is created.
+
+.. _create-ext-lb-rule:
 
 Creating an External LB Rule
 ''''''''''''''''''''''''''''
@@ -6423,8 +6402,8 @@ CloudStack supports sharing workload across different tiers within your
 VPC. Assume that multiple tiers are set up in your environment, such as
 Web tier and Application tier. Traffic to each tier is balanced on the
 VPC virtual router on the public side, as explained in
-`Section 15.27.11, “Adding Load Balancing Rules on a
-VPC” <#add-loadbalancer-rule-vpc>`_. If you want the traffic coming
+`"Adding Load Balancing Rules on a
+VPC" <#adding-load-balancing-rules-on-a-vpc>`_. If you want the traffic coming
 from the Web tier to the Application tier to be balanced, use the
 internal load balancing feature offered by CloudStack.
 
@@ -6481,14 +6460,14 @@ Enabling Internal LB on a VPC Tier
 
 #. 
 
-   Create a network offering, as given in `Section 15.27.11.2.5,
-   “Creating an Internal LB Rule” <#int-lb-vpc>`__.
+   Create a network offering, as given in :ref:`creating-net-offering-internal-lb`.
 
 #. 
 
-   Create an internal load balancing rule and apply, as given in
-   `Section 15.27.11.2.5, “Creating an Internal LB
-   Rule” <#int-lb-vpc>`__.
+   Create an internal load balancing rule and apply, as given in :ref:`create-int-lb-rule`.
+
+
+.. _creating-net-offering-internal-lb:
 
 Creating a Network Offering for Internal LB
 '''''''''''''''''''''''''''''''''''''''''''
@@ -6548,8 +6527,8 @@ network offering as follows:
       Private Cloud-enabled. A Virtual Private Cloud (VPC) is a private,
       isolated part of CloudStack. A VPC can have its own virtual
       network topology that resembles a traditional physical network.
-      For more information on VPCs, see `Section 15.27.1, “About Virtual
-      Private Clouds” <#vpc>`__.
+      For more information on VPCs, see `"About Virtual
+      Private Clouds" <#about-virtual-private-clouds>`_.
 
    -  
 
@@ -6579,6 +6558,8 @@ network offering as follows:
 #. 
 
    Click OK and the network offering is created.
+
+.. _create-int-lb-rule:
 
 Creating an Internal LB Rule
 ''''''''''''''''''''''''''''
@@ -6950,8 +6931,7 @@ To create a persistent network, perform the following:
 
    Create a network offering with the Persistent option enabled.
 
-   See `Section 9.4.1, “Creating a New Network
-   Offering” <#creating-network-offerings>`_.
+   See `"Creating a New Network Offering" <networking.html#creating-a-new-network-offering>`_.
 
 #. 
 

@@ -261,57 +261,26 @@ resource types for Domain, Project, and Accounts.
 To control the behaviour of this feature, the following configuration
 parameters have been added:
 
-Parameter Name
-
-Description
-
-max.account.cpus
-
-Maximum number of CPU cores that can be used for an account.
-
-Default is 40.
-
-max.account.ram (MB)
-
-Maximum RAM that can be used for an account.
-
-Default is 40960.
-
-max.account.primary.storage (GB)
-
-Maximum primary storage space that can be used for an account.
-
-Default is 200.
-
-max.account.secondary.storage (GB)
-
-Maximum secondary storage space that can be used for an account.
-
-Default is 400.
-
-max.project.cpus
-
-Maximum number of CPU cores that can be used for an account.
-
-Default is 40.
-
-max.project.ram (MB)
-
-Maximum RAM that can be used for an account.
-
-Default is 40960.
-
-max.project.primary.storage (GB)
-
-Maximum primary storage space that can be used for an account.
-
-Default is 200.
-
-max.project.secondary.storage (GB)
-
-Maximum secondary storage space that can be used for an account.
-
-Default is 400.
+=================================== =================================================================
+Parameter Name                      Description
+=================================== =================================================================
+max.account.cpus                    Maximum number of CPU cores that can be used for an account.
+                                    Default is 40.
+max.account.ram (MB)                Maximum RAM that can be used for an account.
+                                    Default is 40960.
+max.account.primary.storage (GB)    Maximum primary storage space that can be used for an account.
+                                    Default is 200.
+max.account.secondary.storage (GB)  Maximum secondary storage space that can be used for an account.
+                                    Default is 400.
+max.project.cpus                    Maximum number of CPU cores that can be used for an account.
+                                    Default is 40.
+max.project.ram (MB)                Maximum RAM that can be used for an account.
+                                    Default is 40960.
+max.project.primary.storage (GB)    Maximum primary storage space that can be used for an account.
+                                    Default is 200.
+max.project.secondary.storage (GB)  Maximum secondary storage space that can be used for an account.
+                                    Default is 400.
+=================================== =================================================================
 
 User Permission
 ~~~~~~~~~~~~~~~

@@ -150,7 +150,7 @@ as the prototype for other VMs.
 #. 
 
    Create and start a virtual machine using any of the techniques given
-   in `Section 10.4, “Creating VMs” <#creating-vms>`__.
+   in `“Creating VMs” <virtual_machines.html#creating-vms>`_.
 
 #. 
 
@@ -198,15 +198,14 @@ as the prototype for other VMs.
 
       **Public**. Choose Yes to make this template accessible to all
       users of this CloudStack installation. The template will appear in
-      the Community Templates list. See `Section 12.5, “Private and
-      Public Templates” <#private-public-template>`__.
+      the Community Templates list. See `“Private and
+      Public Templates” <#private-and-public-templates>`_.
 
    -  
 
       **Password Enabled**. Choose Yes if your template has the
-      CloudStack password change script installed. See `Section 12.14,
-      “Adding Password Management to Your
-      Templates” <#add-password-management-to-templates>`__.
+      CloudStack password change script installed. See 
+      :ref:`adding-password-management-to-templates`.
 
 #. 
 
@@ -220,8 +219,8 @@ Creating a Template from a Snapshot
 -----------------------------------
 
 If you do not want to stop the VM in order to use the Create Template
-menu item (as described in `Section 12.6, “Creating a Template from an
-Existing Virtual Machine” <#create-template-from-existing-vm>`__), you
+menu item (as described in `“Creating a Template from an
+Existing Virtual Machine” <#creating-a-template-from-an-existing-virtual-machine>`_), you
 can create a template directly from any snapshot through the CloudStack
 UI.
 
@@ -299,8 +298,7 @@ To upload a template:
    -  
 
       **Password Enabled**. Choose Yes if your template has the
-      CloudStack password change script installed. See Adding Password
-      Management to Your Templates
+      CloudStack password change script installed. See :ref:`adding-password-management-to-templates`.
 
    -  
 
@@ -312,8 +310,8 @@ To upload a template:
 
       **Public**. Choose Yes to make this template accessible to all
       users of this CloudStack installation. The template will appear in
-      the Community Templates list. See `Section 12.5, “Private and
-      Public Templates” <#private-public-template>`__.
+      the Community Templates list. See `“Private and
+      Public Templates” <#private-and-public-templates>`_.
 
    -  
 
@@ -345,15 +343,15 @@ An overview of the procedure is as follow:
 
    Upload your Linux ISO.
 
-   For more information, see `Section 10.15.1, “Adding an
-   ISO” <#add-iso>`__.
+   For more information, see `“Adding an
+   ISO” <virtual_machines.html#adding-an-iso>`_.
 
 #. 
 
    Create a VM Instance with this ISO.
 
-   For more information, see `Section 10.4, “Creating
-   VMs” <#creating-vms>`__.
+   For more information, see `“Creating
+   VMs” <virtual_machines.html#creating-vms>`_.
 
 #. 
 
@@ -363,8 +361,8 @@ An overview of the procedure is as follow:
 
    Create a template from the VM.
 
-   For more information, see `Section 12.6, “Creating a Template from an
-   Existing Virtual Machine” <#create-template-from-existing-vm>`__.
+   For more information, see `“Creating a Template from an
+   Existing Virtual Machine” <#creating-a-template-from-an-existing-virtual-machine>`_.
 
 System preparation for Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -437,8 +435,7 @@ templating.
 
                 deluser myuser --remove-home
 
-   See `Section 12.14, “Adding Password Management to Your
-   Templates” <#add-password-management-to-templates>`__ for
+   See :ref:`adding-password-management-to-templates` for
    instructions to setup the password management script, this will allow
    CloudStack to change your root password from the web interface.
 
@@ -600,8 +597,8 @@ templating.
    **Create the template!**
 
    You are now ready to create the template, for more information see
-   `Section 12.6, “Creating a Template from an Existing Virtual
-   Machine” <#create-template-from-existing-vm>`__.
+   `“Creating a Template from an Existing Virtual
+   Machine” <#creating-a-template-from-an-existing-virtual-machine>`_.
 
 .. note:: Templated VMs for both Ubuntu and CentOS may require a reboot after provisioning in order to pickup the hostname.
 
@@ -621,15 +618,15 @@ An overview of the procedure is as follows:
 
    Upload your Windows ISO.
 
-   For more information, see `Section 10.15.1, “Adding an
-   ISO” <#add-iso>`__.
+   For more information, see `“Adding an
+   ISO” <virtual_machines.html#adding-an-iso>`_.
 
 #. 
 
    Create a VM Instance with this ISO.
 
-   For more information, see `Section 10.4, “Creating
-   VMs” <#creating-vms>`__.
+   For more information, see `“Creating
+   VMs” <virtual_machines.html#creating-vms>`_.
 
 #. 
 
@@ -649,12 +646,12 @@ For Windows 2008 R2, you run Windows System Image Manager to create a
 custom sysprep response XML file. Windows System Image Manager is
 installed as part of the Windows Automated Installation Kit (AIK).
 Windows AIK can be downloaded from `Microsoft Download
-Center <http://www.microsoft.com/en-us/download/details.aspx?id=9085>`__.
+Center <http://www.microsoft.com/en-us/download/details.aspx?id=9085>`_.
 
 Use the following steps to run sysprep for Windows 2008 R2:
 
 .. note:: 
-    The steps outlined here are derived from the excellent guide by Charity Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`__
+    The steps outlined here are derived from the excellent guide by Charity Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`_
 
 #. 
 
@@ -728,7 +725,7 @@ Use the following steps to run sysprep for Windows 2008 R2:
       input the MAK into the Windows System Image Manager. If you use
       KMS host for activation you need not enter the Product Key.
       Details of Windows Volume Activation can be found at
-      `http://technet.microsoft.com/en-us/library/bb892849.aspx <http://technet.microsoft.com/en-us/library/bb892849.aspx>`__
+      `http://technet.microsoft.com/en-us/library/bb892849.aspx <http://technet.microsoft.com/en-us/library/bb892849.aspx>`_
 
    #. 
 
@@ -1036,8 +1033,7 @@ To import an AMI:
 
    If you need the template to be enabled to reset passwords from the
    CloudStack UI or API, install the password change script into the
-   image at this point. See `Section 12.14, “Adding Password Management
-   to Your Templates” <#add-password-management-to-templates>`__.
+   image at this point. See :ref:`adding-password-management-to-templates`.
 
 #. 
 
@@ -1181,8 +1177,8 @@ following steps:
 #. 
 
    Prepare the VM as desired. For example, run sysprep on Windows VMs.
-   See `Section 12.11, “Creating a Windows
-   Template” <#create-windows-template>`__.
+   See `“Creating a Windows
+   Template” <#creating-a-windows-template>`_.
 
 Either option above will create a VM in HVM mode. This is fine for
 Windows VMs, but Linux VMs may not perform optimally. Converting a Linux
@@ -1219,6 +1215,8 @@ distribution.
       Format. VHD
 
 The template will be created, and you can create instances from it.
+
+.. _adding-password-management-to-templates:
 
 Adding Password Management to Your Templates
 --------------------------------------------
@@ -1286,7 +1284,7 @@ Windows OS Installation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Download the installer, CloudInstanceManager.msi, from the `Download
-page <http://sourceforge.net/projects/cloudstack/files/Password%20Management%20Scripts/CloudInstanceManager.msi/download>`__
+page <http://sourceforge.net/projects/cloudstack/files/Password%20Management%20Scripts/CloudInstanceManager.msi/download>`_
 and run the installer in the newly created Windows VM.
 
 Deleting Templates

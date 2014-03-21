@@ -143,7 +143,7 @@ How to Use Dedicated Hosts
 
 To use an explicitly dedicated host, use the explicit-dedicated type of
 affinity group (see `“Affinity
-Groups” <#affinity-groups>`__). For example, when creating a new VM, an
+Groups” <virtual_machines.html#affinity-groups>`_). For example, when creating a new VM, an
 end user can choose to place it on dedicated infrastructure. This
 operation will succeed only if some infrastructure has already been
 assigned as dedicated to the user's account or domain.
