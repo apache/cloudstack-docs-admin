@@ -332,7 +332,11 @@ Sending Project Membership Invitations
 
 Use these steps to add a new member to a project if the invitations
 feature is enabled in the cloud as described in `“Setting
+<<<<<<< HEAD
 Up Invitations” <#setting-up-invitations>`_. If the invitations feature is
+=======
+Up Invitations” <#set-up-invitations>`_. If the invitations feature is
+>>>>>>> upstream/master
 not turned on, use the procedure in Adding Project Members From the UI.
 
 #. 
@@ -371,7 +375,11 @@ not turned on, use the procedure in Adding Project Members From the UI.
       which the recipient will provide back to CloudStack when accepting
       the invitation. Email invitations will work only if the global
       parameters related to the SMTP server have been set. See
+<<<<<<< HEAD
       `“Setting Up Invitations” <#setting-up-invitations>`_.
+=======
+      `“Setting Up Invitations” <#set-up-invitations>`_.
+>>>>>>> upstream/master
 
 #. 
 
@@ -394,9 +402,15 @@ Adding Project Members From the UI
 The steps below tell how to add a new member to a project if the
 invitations feature is not enabled in the cloud. If the invitations
 feature is enabled cloud,as described in `“Setting Up
+<<<<<<< HEAD
 Invitations” <#setting-up-invitations>`_, use the procedure in
 `“Sending Project Membership
 Invitations” <#sending-project-membership-invitations>`_.
+=======
+Invitations” <#set-up-invitations>`_, use the procedure in
+`“Sending Project Membership
+Invitations” <#send-projects-membership-invitation>`_.
+>>>>>>> upstream/master
 
 #. 
 

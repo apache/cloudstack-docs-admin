@@ -326,6 +326,7 @@ Procedure
 
 #. 
 
+<<<<<<< HEAD
    Click OK.
 
 
@@ -547,3 +548,6 @@ Create a firewall rule on the virtual router for each of your existing
 load balancing rules so that they continue to function.
 
 
+=======
+   Click OK.
+>>>>>>> upstream/master

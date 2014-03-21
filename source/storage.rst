@@ -98,7 +98,11 @@ The following table shows storage options and parameters for different
 hypervisors.
 
 ============================================== ================ ==================== =========================== ============================
+<<<<<<< HEAD
 Storage media \\ hypervisor                    VMware vSphere   Citrix XenServer     KVM                         Hyper-V
+=======
+                                               VMware vSphere   Citrix XenServer     KVM                         Hyper-V
+>>>>>>> upstream/master
 ============================================== ================ ==================== =========================== ============================
 **Format for Disks, Templates, and Snapshots** VMDK             VHD                  QCOW2                       VHD
                                                                                                                  Snapshots are not supported.
@@ -414,7 +418,11 @@ Detaching and Moving Volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: 
+<<<<<<< HEAD
    This procedure is different from moving volumes from one storage pool to another as described in `“VM Storage Migration” <#vm-storage-migration>`_.
+=======
+   This procedure is different from moving volumes from one storage pool to another as described in `Section 13.4.5, “VM Storage Migration” <#vm-storage-migration>`__.
+>>>>>>> upstream/master
 
 A volume can be detached from a guest VM and attached to another guest.
 Both CloudStack administrators and users can detach volumes from VMs and
@@ -450,7 +458,11 @@ VM Storage Migration
 Supported in XenServer, KVM, and VMware.
 
 .. note:: 
+<<<<<<< HEAD
    This procedure is different from moving disk volumes from one VM to another as described in `“Detaching and Moving Volumes” <#detaching-and-moving-volumes>`_.
+=======
+   This procedure is different from moving disk volumes from one VM to another as described in `Section 13.4.4, “Detaching and Moving Volumes” <#detach-move-volumes>`__.
+>>>>>>> upstream/master
 
 You can migrate a virtual machine’s root disk volume or any additional
 data disk volume from one storage pool to another in the same zone.
@@ -530,8 +542,13 @@ Migrating Storage and Attaching to a Different VM
 
 #. 
 
+<<<<<<< HEAD
    Detach the disk from the VM. See `“Detaching and
    Moving Volumes” <#detaching-and-moving-volumes>`_ but skip the “reattach”
+=======
+   Detach the disk from the VM. See `Section 13.4.4, “Detaching and
+   Moving Volumes” <#detach-move-volumes>`_ but skip the “reattach”
+>>>>>>> upstream/master
    step at the end. You will do that after migrating to new storage.
 
 #. 

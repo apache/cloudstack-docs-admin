@@ -47,7 +47,11 @@ names can be controlled by the user:
    by the user. Defaults to instance name
 
 .. note:: 
+<<<<<<< HEAD
    You can append the display name of a guest VM to its internal name. For more information, see `“Appending a Display Name to the Guest VM’s Internal Name” <#appending-a-display-name-to-the-guest-vms-internal-name>`_.
+=======
+   You can append the display name of a guest VM to its internal name. For more information, see `Section 10.10, “Appending a Display Name to the Guest VM’s Internal Name” <#append-displayname-vms>`__.
+>>>>>>> upstream/master
 
 Guest VMs can be configured to be Highly Available (HA). An HA-enabled
 VM is monitored by the system. If the system detects that the VM is
