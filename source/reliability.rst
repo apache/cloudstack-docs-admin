@@ -178,11 +178,11 @@ References:
 
 -  
 
-   `http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html <http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html>`__
+   `http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html <http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html>`_
 
 -  
 
-   `https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server <https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server>`__
+   `https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server <https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server>`_
 
 Configuring Database High Availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

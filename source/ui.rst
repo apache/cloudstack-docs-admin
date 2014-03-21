@@ -130,8 +130,8 @@ provision, view, and manage your cloud infrastructure.
 
    You should set a new root administrator password. If you chose basic
    setup, you’ll be prompted to create a new password right away. If you
-   chose experienced user, use the steps in `Section 5.1.4, “Changing
-   the Root Password” <#changing-root-password>`__.
+   chose experienced user, use the steps in `“Changing
+   the Root Password” <#changing-the-root-password>`_.
 
 .. warning:: 
 
