@@ -47,7 +47,7 @@ names can be controlled by the user:
    by the user. Defaults to instance name
 
 .. note:: 
-   You can append the display name of a guest VM to its internal name. For more information, see `Section 10.10, “Appending a Display Name to the Guest VM’s Internal Name” <#append-displayname-vms>`__.
+   You can append the display name of a guest VM to its internal name. For more information, see `“Appending a Display Name to the Guest VM’s Internal Name” <#appending-a-display-name-to-the-guest-vms-internal-name>`_.
 
 Guest VMs can be configured to be Highly Available (HA). An HA-enabled
 VM is monitored by the system. If the system detects that the VM is
@@ -66,7 +66,7 @@ IP and the guest VM’s private IP. The VM’s original IP address is then
 released and returned to the pool of available public IPs. Optionally,
 you can also decide not to allocate a public IP to a VM in an
 EIP-enabled Basic zone. For more information on Elastic IP, see
-`Section 15.11, “About Elastic IP” <#elastic-ip>`__.
+`“About Elastic IP” <networking2.html#about-elastic-ip>`_.
 
 CloudStack cannot distinguish a guest VM that was shut down by the user
 (such as with the “shutdown” command in Linux) from a VM that shut down
@@ -204,7 +204,7 @@ To create a VM from a template:
 
    Select a template, then follow the steps in the wizard. For more
    information about how the templates came to be in this list, see
-   `Chapter 12, *Working with Templates* <#working-with-templates>`__.
+   `*Working with Templates* <templates.html>`_.
 
 #. 
 
@@ -275,8 +275,8 @@ To access a VM directly over the network:
    a basic zone, a new VM might be assigned to a security group which
    allows incoming traffic. This depends on what security group you
    picked when creating the VM. In other cases, you can open a port by
-   setting up a port forwarding policy. See `Section 15.22, “IP
-   Forwarding and Firewalling” <#ip-forwarding-firewalling>`__.
+   setting up a port forwarding policy. See `“IP
+   Forwarding and Firewalling” <networking2.html#ip-forwarding-and-firewalling>`_.
 
 #. 
 
@@ -289,8 +289,8 @@ To access a VM directly over the network:
 #. 
 
    If the network has an external firewall device, you will need to
-   create a firewall rule to allow access. See `Section 15.22, “IP
-   Forwarding and Firewalling” <#ip-forwarding-firewalling>`__.
+   create a firewall rule to allow access. See `“IP
+   Forwarding and Firewalling” <networking2.html#ip-forwarding-and-firewalling>`_.
 
 Stopping and Starting VMs
 -------------------------
@@ -412,8 +412,8 @@ To assign a new VM to an affinity group:
 
 -  
 
-   Create the VM as usual, as described in `Section 10.4, “Creating
-   VMs” <#creating-vms>`__. In the Add Instance wizard, there is a new
+   Create the VM as usual, as described in `“Creating
+   VMs” <virtual_machines.html#creating-vms>`_. In the Add Instance wizard, there is a new
    Affinity tab where you can select the affinity group.
 
 Change Affinity Group for an Existing VM
@@ -516,7 +516,7 @@ original.
 If you need more information about VM snapshots on VMware, check out the
 VMware documentation and the VMware Knowledge Base, especially
 `Understanding virtual machine
-snapshots <http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1015180>`__.
+snapshots <http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1015180>`_.
 
 Limitations on VM Snapshots
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -751,8 +751,7 @@ virtual machine, you can change the VM's compute offering.
 #. 
 
    (Skip this step if you have enabled dynamic VM scaling; see
-   `Section 10.11.1, “CPU and Memory Scaling for Running
-   VMs” <#change-cpu-ram-for-vm>`__.)
+   :ref:`cpu-and-memory-scaling`.)
 
    Click the Stop button to stop the VM. |StopButton.png|
 
@@ -769,6 +768,8 @@ virtual machine, you can change the VM's compute offering.
 #. 
 
    Click OK.
+
+.. _cpu-and-memory-scaling:
 
 CPU and Memory Scaling for Running VMs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -870,8 +871,8 @@ How to Dynamically Scale CPU and RAM
 To modify the CPU and/or RAM capacity of a virtual machine, you need to
 change the compute offering of the VM to a new compute offering that has
 the desired CPU and RAM values. You can use the same steps described
-above in `Section 10.11, “Changing the Service Offering for a
-VM” <#changing-service-offering-for-vm>`__, but skip the step where you
+above in `“Changing the Service Offering for a
+VM” <#changing-the-service-offering-for-a-vm>`_, but skip the step where you
 stop the virtual machine. Of course, you might have to create a new
 compute offering first.
 
@@ -899,7 +900,7 @@ Limitations
    When scaling memory or CPU for a Linux VM on VMware, you might need
    to run scripts in addition to the other steps mentioned above. For
    more information, see `Hot adding memory in Linux
-   (1012764) <http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1012764>`__
+   (1012764) <http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1012764>`_
    in the VMware Knowledge Base.
 
 -  
@@ -908,7 +909,7 @@ Limitations
    up will fail on VMware because of a known issue where CloudStack and
    vCenter calculate the available capacity differently. For more
    information, see
-   `https://issues.apache.org/jira/browse/CLOUDSTACK-1809 <https://issues.apache.org/jira/browse/CLOUDSTACK-1809>`__.
+   `https://issues.apache.org/jira/browse/CLOUDSTACK-1809 <https://issues.apache.org/jira/browse/CLOUDSTACK-1809>`_.
 
 -  
 
@@ -923,8 +924,8 @@ Resetting the Virtual Machine Root Volume on Reboot
 
 For secure environments, and to ensure that VM state is not persisted
 across reboots, you can reset the root disk. For more information, see
-`Section 13.4.7, “Reset VM to New Root Disk on
-Reboot” <#reset-vm-reboot>`__.
+`“Reset VM to New Root Disk on
+Reboot” <storage.html#reset-vm-to-new-root-disk-on-reboot>`_.
 
 Moving VMs Between Hosts (Manual Live Migration)
 ------------------------------------------------
