@@ -15,7 +15,7 @@
    
 
 Event Notification
-===================
+==================
 
 An event is essentially a significant or meaningful change in the state
 of both virtual and physical resources associated with a cloud
@@ -26,7 +26,7 @@ state change of virtual or physical resources, an action performed by an
 user (action events), or policy based events (alerts).
 
 Event Logs
------------
+----------
 
 There are two types of events logged in the CloudStack Event Log.
 Standard events log the success or failure of an event and can be used
@@ -153,7 +153,7 @@ changes can control the behaviour.
    Restart the Management Server.
 
 Standard Events
-----------------
+---------------
 
 The events log records three types of standard events.
 
@@ -186,7 +186,7 @@ The events log records three types of standard events.
    successfully performed
 
 Long Running Job Events
-------------------------
+-----------------------
 
 The events log records three types of standard events.
 
@@ -219,7 +219,7 @@ The events log records three types of standard events.
    successfully performed
 
 Event Log Queries
-------------------
+-----------------
 
 Database logs can be queried from the user interface. The list of events
 captured by the system includes:
@@ -250,7 +250,7 @@ captured by the system includes:
    User login and logout
 
 Deleting and Archiving Events and Alerts
------------------------------------------
+----------------------------------------
 
 CloudStack provides you the ability to delete or archive the existing
 alerts and events that you no longer want to implement. You can
@@ -285,7 +285,7 @@ API. They are maintained in the database for auditing or compliance
 purposes.
 
 Permissions
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 Consider the following:
 
@@ -327,224 +327,3 @@ Procedure
 #. 
 
    Click OK.
-
-
-TroubleShooting
-===============
-
-Working with Server Logs
-------------------------
-
-The CloudStack Management Server logs all web site, middle tier, and
-database activities for diagnostics purposes in
-`/var/log/cloudstack/management/`. The CloudStack logs a variety of error
-messages. We recommend this command to find the problematic output in
-the Management Server log:.
-
-.. note:: When copying and pasting a command, be sure the command has pasted as a
-single line before executing. Some document viewers may introduce
-unwanted line breaks in copied text.
-
-.. code:: bash
-
-            grep -i -E 'exception|unable|fail|invalid|leak|warn|error' /var/log/cloudstack/management/management-server.log
-
-The CloudStack processes requests with a Job ID. If you find an error in
-the logs and you are interested in debugging the issue you can grep for
-this job ID in the management server log. For example, suppose that you
-find the following ERROR message:
-
-.. code:: bash
-
-            2010-10-04 13:49:32,595 ERROR [cloud.vm.UserVmManagerImpl] (Job-Executor-11:job-1076) Unable to find any host for [User|i-8-42-VM-untagged]
-
-Note that the job ID is 1076. You can track back the events relating to
-job 1076 with the following grep:
-
-.. code:: bash
-
-            grep "job-1076)" management-server.log
-
-The CloudStack Agent Server logs its activities in `/var/log/cloudstack/agent/`.
-
-
-Data Loss on Exported Primary Storage
--------------------------------------
-
-Symptom
-~~~~~~~
-
-Loss of existing data on primary storage which has been exposed as a
-Linux NFS server export on an iSCSI volume.
-
-Cause
-~~~~~
-
-It is possible that a client from outside the intended pool has mounted
-the storage. When this occurs, the LVM is wiped and all data in the
-volume is lost
-
-Solution
-~~~~~~~~
-
-When setting up LUN exports, restrict the range of IP addresses that are
-allowed access by specifying a subnet mask. For example:
-
-.. code:: bash
-
-    echo “/export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check)” > /etc/exports
-
-Adjust the above command to suit your deployment needs.
-
-More Information
-~~~~~~~~~~~~~~~~
-
-See the export procedure in the "Secondary Storage" section of the
-CloudStack Installation Guide
-
-Recovering a Lost Virtual Router
---------------------------------------
-
-Symptom
-~~~~~~~
-
-A virtual router is running, but the host is disconnected. A virtual
-router no longer functions as expected.
-
-Cause
-~~~~~
-
-The Virtual router is lost or down.
-
-Solution
-~~~~~~~~
-
-If you are sure that a virtual router is down forever, or no longer
-functions as expected, destroy it. You must create one afresh while
-keeping the backup router up and running (it is assumed this is in a
-redundant router setup):
-
--  
-
-   Force stop the router. Use the stopRouter API with forced=true
-   parameter to do so.
-
--  
-
-   Before you continue with destroying this router, ensure that the
-   backup router is running. Otherwise the network connection will be
-   lost.
-
--  
-
-   Destroy the router by using the destroyRouter API.
-
-Recreate the missing router by using the restartNetwork API with
-cleanup=false parameter. For more information about redundant router
-setup, see Creating a New Network Offering.
-
-For more information about the API syntax, see the API Reference at
-`http://docs.cloudstack.org/CloudStack\_Documentation/API\_Reference%3A\_CloudStack <http://docs.cloudstack.org/CloudStack_Documentation/API_Reference%3A_CloudStack>`__\ API
-Reference.
-
-Maintenance mode not working on vCenter
----------------------------------------------
-
-Symptom
-~~~~~~~
-
-Host was placed in maintenance mode, but still appears live in vCenter.
-
-Cause
-~~~~~~
-
-The CloudStack administrator UI was used to place the host in scheduled
-maintenance mode. This mode is separate from vCenter's maintenance mode.
-
-Solution
-~~~~~~~~
-
-Use vCenter to place the host in maintenance mode.
-
-
-Unable to deploy VMs from uploaded vSphere template
----------------------------------------------------------
-
-Symptom
-~~~~~~~~
-
-When attempting to create a VM, the VM will not deploy.
-
-Cause
-~~~~~
-
-If the template was created by uploading an OVA file that was created
-using vSphere Client, it is possible the OVA contained an ISO image. If
-it does, the deployment of VMs from the template will fail.
-
-Solution
-~~~~~~~~
-
-Remove the ISO and re-upload the template.
-
-Unable to power on virtual machine on VMware
---------------------------------------------------
-
-Symptom
-~~~~~~~
-
-Virtual machine does not power on. You might see errors like:
-
--  
-
-   Unable to open Swap File
-
--  
-
-   Unable to access a file since it is locked
-
--  
-
-   Unable to access Virtual machine configuration
-
-Cause
-~~~~~
-
-A known issue on VMware machines. ESX hosts lock certain critical
-virtual machine files and file systems to prevent concurrent changes.
-Sometimes the files are not unlocked when the virtual machine is powered
-off. When a virtual machine attempts to power on, it can not access
-these critical files, and the virtual machine is unable to power on.
-
-Solution
-~~~~~~~~
-
-See the following:
-
-`VMware Knowledge Base
-Article <http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=10051/>`__
-
-Load balancer rules fail after changing network offering
---------------------------------------------------------------
-
-Symptom
-~~~~~~~
-
-After changing the network offering on a network, load balancer rules
-stop working.
-
-Cause
-~~~~~
-
-Load balancing rules were created while using a network service offering
-that includes an external load balancer device such as NetScaler, and
-later the network service offering changed to one that uses the
-CloudStack virtual router.
-
-Solution
-~~~~~~~~
-
-Create a firewall rule on the virtual router for each of your existing
-load balancing rules so that they continue to function.
-
-

@@ -31,7 +31,7 @@ choices to users, CloudStack administrators and users can create
 templates and add them to CloudStack.
 
 Creating Templates: Overview
-----------------------------------
+----------------------------
 
 CloudStack ships with a default template for the CentOS operating
 system. There are a variety of ways to add more templates.
@@ -59,7 +59,7 @@ The various techniques for creating templates are described in the next
 few sections.
 
 Requirements for Templates
---------------------------------
+--------------------------
 
 -  
 
@@ -72,14 +72,14 @@ Requirements for Templates
    This will enable console view to work properly.
 
 Best Practices for Templates
-----------------------------------
+----------------------------
 
 If you plan to use large templates (100 GB or larger), be sure you have
 a 10-gigabit network to support the large templates. A slower network
 can lead to timeouts and other errors when large templates are used.
 
 The Default Template
---------------------------
+--------------------
 
 CloudStack includes a CentOS template. This template is downloaded by
 the Secondary Storage VM after the primary and secondary storage are
@@ -124,7 +124,7 @@ block most access to the template excluding ssh.
     REJECT     all  --  anywhere        anywhere       reject-with icmp-host-
 
 Private and Public Templates
-----------------------------------
+----------------------------
 
 When a user creates a template, it can be designated private or public.
 
@@ -142,7 +142,7 @@ to that Zone. If a public template is created in a public Zone, it is
 available to all users in all domains.
 
 Creating a Template from an Existing Virtual Machine
-----------------------------------------------------------
+----------------------------------------------------
 
 Once you have at least one VM set up in the way you want, you can use it
 as the prototype for other VMs.
@@ -191,7 +191,8 @@ as the prototype for other VMs.
          PV (32-bit) or Other PV (64-bit). This choice is available only
          for XenServere:
 
-         .. note:: Generally you should not choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will in general not work. In those cases you should choose Other.
+         .. note:: 
+            Generally you should not choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will in general not work. In those cases you should choose Other.
 
    -  
 
@@ -216,7 +217,7 @@ template creation process has been completed. The template is then
 available when creating a new VM.
 
 Creating a Template from a Snapshot
------------------------------------------
+-----------------------------------
 
 If you do not want to stop the VM in order to use the Create Template
 menu item (as described in `Section 12.6, “Creating a Template from an
@@ -225,7 +226,7 @@ can create a template directly from any snapshot through the CloudStack
 UI.
 
 Uploading Templates
--------------------------
+-------------------
 
 vSphere Templates and ISOs
 --------------------------
@@ -260,7 +261,7 @@ To upload a template:
    -  
 
       **URL**. The Management Server will download the file from the
-      specified URL, such as http://my.web.server/filename.vhd.gz.
+      specified URL, such as ``http://my.web.server/filename.vhd.gz``.
 
    -  
 
@@ -282,7 +283,8 @@ To upload a template:
 
          If the OS type of the stopped VM is not listed, choose Other.
 
-         .. note:: You should not choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will in general not work. In those cases you should choose Other.
+         .. note:: 
+            You should not choose an older version of the OS than the version in the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will in general not work. In those cases you should choose Other.
 
    -  
 
@@ -321,14 +323,14 @@ To upload a template:
       template Featured.
 
 Exporting Templates
--------------------------
+-------------------
 
 End users and Administrators may export templates from the CloudStack.
 Navigate to the template in the UI and choose the Download function from
 the Actions menu.
 
 Creating a Linux Template
---------------------------------
+-------------------------
 
 Linux templates should be prepared using this documentation in order to
 prepare your linux VMs for template deployment. For ease of
@@ -365,7 +367,7 @@ An overview of the procedure is as follow:
    Existing Virtual Machine” <#create-template-from-existing-vm>`__.
 
 System preparation for Linux
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will prepare a basic Linux installation for
 templating.
@@ -379,10 +381,11 @@ templating.
    unique to a machine. It is recommended that the name of "localhost"
    is used for installation.
 
-   .. warning:: For CentOS, it is necessary to take unique identification out of the
-   interface configuration file, for this edit
-   /etc/sysconfig/network-scripts/ifcfg-eth0 and change the content to
-   the following.
+   .. warning:: 
+      For CentOS, it is necessary to take unique identification out of the
+      interface configuration file, for this edit
+      /etc/sysconfig/network-scripts/ifcfg-eth0 and change the content to
+      the following. 
 
    .. code:: bash
 
@@ -419,7 +422,8 @@ templating.
 
    **Password management**
 
-   .. note:: If preferred, custom users (such as ones created during the Ubuntu installation) should be removed. First ensure the root user account is enabled by giving it a password and then login as root to continue.
+   .. note:: 
+      If preferred, custom users (such as ones created during the Ubuntu installation) should be removed. First ensure the root user account is enabled by giving it a password and then login as root to continue.
 
    .. code:: bash
 
@@ -465,32 +469,33 @@ templating.
 
       .. code:: bash
 
-                           #!/bin/sh
-                           # dhclient change hostname script for Ubuntu
-                           oldhostname=$(hostname -s)
-                           if [ $oldhostname = 'localhost' ]
-                           then
-                            sleep 10 # Wait for configuration to be written to disk
-                            hostname=$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /host-name/ { host = $3 }  END { printf host } ' | sed 's/[";]//g' )
-                            fqdn="$hostname.$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /domain-name/ { domain = $3 }  END { printf domain } ' | sed 's/[";]//g')"
-                            ip=$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /fixed-address/ { lease = $2 }  END { printf lease } ' | sed 's/[";]//g')
-                            echo "cloudstack-hostname: Hostname _localhost_ detected. Changing hostname and adding hosts."
-                            echo " Hostname: $hostname \n FQDN: $fqdn \n IP: $ip"
-                            # Update /etc/hosts
-                            awk -v i="$ip" -v f="$fqdn" -v h="$hostname" "/^127/{x=1} !/^127/ && x { x=0; print i,f,h; } { print $0; }" /etc/hosts > /etc/hosts.dhcp.tmp
-                            mv /etc/hosts /etc/hosts.dhcp.bak
-                            mv /etc/hosts.dhcp.tmp /etc/hosts
-                            # Rename Host
-                            echo $hostname > /etc/hostname
-                            hostname $hostname
-                            # Recreate SSH2
-                            dpkg-reconfig openssh-server
-                           fi
-                           ### End of Script ###
-                  
-                           chmod 774  /etc/dhcp/dhclient-exit-hooks.d/sethostname
+            #!/bin/sh
+            # dhclient change hostname script for Ubuntu
+            oldhostname=$(hostname -s)
+            if [ $oldhostname = 'localhost' ]
+            then
+                sleep 10 # Wait for configuration to be written to disk
+                hostname=$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /host-name/ { host = $3 }  END { printf host } ' | sed     's/[";]//g' )
+                fqdn="$hostname.$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /domain-name/ { domain = $3 }  END { printf     domain } ' | sed 's/[";]//g')"
+                ip=$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /fixed-address/ { lease = $2 }  END { printf lease } ' | sed     's/[";]//g')
+                echo "cloudstack-hostname: Hostname _localhost_ detected. Changing hostname and adding hosts."
+                echo " Hostname: $hostname \n FQDN: $fqdn \n IP: $ip"
+                # Update /etc/hosts
+                awk -v i="$ip" -v f="$fqdn" -v h="$hostname" "/^127/{x=1} !/^127/ && x { x=0; print i,f,h; } { print $0; }" /etc/  hosts > /etc/hosts.dhcp.tmp
+                mv /etc/hosts /etc/hosts.dhcp.bak
+                mv /etc/hosts.dhcp.tmp /etc/hosts
+                # Rename Host
+                echo $hostname > /etc/hostname
+                hostname $hostname
+                # Recreate SSH2
+                dpkg-reconfig openssh-server
+            fi
+            ### End of Script ###
+            
+            chmod 774  /etc/dhcp/dhclient-exit-hooks.d/sethostname
 
-   .. warning:: The following steps should be run when you are ready to template your Template Master. If the Template Master is rebooted during these steps you will have to run all the steps again. At the end of this process the Template Master should be shutdown and the template created in order to create and deploy the final template.
+   .. warning:: 
+        The following steps should be run when you are ready to template your Template Master. If the Template Master is rebooted during these steps you will have to run all the steps again. At the end of this process the Template Master should be shutdown and the template created in order to create and deploy the final template.
 
 #. 
 
@@ -607,7 +612,8 @@ Windows templates must be prepared with Sysprep before they can be
 provisioned on multiple machines. Sysprep allows you to create a generic
 Windows template and avoid any possible SID conflicts.
 
-.. note:: (XenServer) Windows VMs running on XenServer require PV drivers, which may be provided in the template or added after the VM is created. The PV drivers are necessary for essential management functions such as mounting additional volumes and ISO images, live migration, and graceful shutdown.
+.. note:: 
+    (XenServer) Windows VMs running on XenServer require PV drivers, which may be provided in the template or added after the VM is created. The PV drivers are necessary for essential management functions such as mounting additional volumes and ISO images, live migration, and graceful shutdown.
 
 An overview of the procedure is as follows:
 
@@ -637,7 +643,7 @@ An overview of the procedure is as follows:
    template as described in Creating the Windows Template.
 
 System Preparation for Windows Server 2008 R2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For Windows 2008 R2, you run Windows System Image Manager to create a
 custom sysprep response XML file. Windows System Image Manager is
@@ -647,7 +653,8 @@ Center <http://www.microsoft.com/en-us/download/details.aspx?id=9085>`__.
 
 Use the following steps to run sysprep for Windows 2008 R2:
 
-.. note:: The steps outlined here are derived from the excellent guide by Charity Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`__
+.. note:: 
+    The steps outlined here are derived from the excellent guide by Charity Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. <http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-windows-server-2008-sysprep-mini-setup.aspx>`__
 
 #. 
 
@@ -702,7 +709,7 @@ Use the following steps to run sysprep for Windows 2008 R2:
       more information, including examples on the setting you are
       attempting to configure.
 
-      |sysmanager.png: System Image Manager|
+      |sysmanager.png|
 
    #. 
 
@@ -712,7 +719,7 @@ Use the following steps to run sysprep for Windows 2008 R2:
       High-light the OOBE setting, and add the setting to the Pass 7
       oobeSystem. In Settings, set HideEULAPage true.
 
-      |software-license.png: Depicts hiding the EULA page.|
+      |software-license.png|
 
    #. 
 
@@ -732,8 +739,7 @@ Use the following steps to run sysprep for Windows 2008 R2:
       oobeSystem configuration pass of your answer file. Under Settings,
       specify a password next to Value.
 
-      |change-admin-password.png: Depicts changing the administrator
-      password|
+      |change-admin-password.png|
 
       You may read the AIK documentation and set many more options that
       suit your deployment. The steps above are the minimum needed to
@@ -764,7 +770,7 @@ Use the following steps to run sysprep for Windows 2008 R2:
    complete.
 
 System Preparation for Windows Server 2003 R2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Earlier versions of Windows have a different sysprep tool. Follow these
 steps for Windows Server 2003 R2.
@@ -874,7 +880,7 @@ steps for Windows Server 2003 R2.
    After this step the machine will automatically shut down
 
 Importing Amazon Machine Images
---------------------------------------
+-------------------------------
 
 The following procedures describe how to import an Amazon Machine Image
 (AMI) into CloudStack when using the XenServer hypervisor.
@@ -887,7 +893,8 @@ You need to have a XenServer host with a file-based storage repository
 (either a local ext3 SR or an NFS SR) to convert to a VHD once the image
 file has been customized on the Centos/Fedora host.
 
-.. note:: When copying and pasting a command, be sure the command has pasted as a single line before executing. Some document viewers may introduce unwanted line breaks in copied text.
+.. note:: 
+    When copying and pasting a command, be sure the command has pasted as a single line before executing. Some document viewers may introduce unwanted line breaks in copied text.
 
 To import an AMI:
 
@@ -1083,7 +1090,7 @@ To import an AMI:
        [root@xenhost a9c5b8c8-536b-a193-a6dc-51af3e5ff799]# scp CentOS_6.2_x64.vhd.bz2 webserver:/var/www/html/templates/
 
 Converting a Hyper-V VM to a Template
---------------------------------------------
+-------------------------------------
 
 To convert a Hyper-V VM to a XenServer-compatible CloudStack template,
 you will need a standalone XenServer host with an attached NFS VHD SR.
@@ -1214,7 +1221,7 @@ distribution.
 The template will be created, and you can create instances from it.
 
 Adding Password Management to Your Templates
----------------------------------------------------
+--------------------------------------------
 
 CloudStack provides an optional password reset feature that allows users
 to set a temporary admin or root password as well as reset the existing
@@ -1238,7 +1245,7 @@ If the script is unable to contact the virtual router during instance
 boot it will not set the password but boot will continue normally.
 
 Linux OS Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 Use the following steps to begin the Linux OS installation:
 
@@ -1248,7 +1255,7 @@ Use the following steps to begin the Linux OS installation:
 
    -  
 
-      `http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in <http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in>`__
+      `http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in <http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in>`_
 
 #. 
 
@@ -1276,14 +1283,14 @@ Use the following steps to begin the Linux OS installation:
        chkconfig --add cloud-set-guest-password
 
 Windows OS Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Download the installer, CloudInstanceManager.msi, from the `Download
 page <http://sourceforge.net/projects/cloudstack/files/Password%20Management%20Scripts/CloudInstanceManager.msi/download>`__
 and run the installer in the newly created Windows VM.
 
 Deleting Templates
--------------------------
+------------------
 
 Templates may be deleted. In general, when a template spans multiple
 Zones, only the copy that is selected for deletion will be deleted; the
@@ -1295,3 +1302,9 @@ When templates are deleted, the VMs instantiated from them will continue
 to run. However, new VMs cannot be created based on the deleted
 template.
 
+.. |sysmanager.png| image:: _static/images/sysmanager.png
+   :alt: System Image Manager
+.. |software-license.png| image:: _static/images/software-license.png
+   :alt: Depicts hiding the EULA page.
+.. |change-admin-password.png| image:: _static/images/change-admin-password.png
+   :alt: Depicts changing the administrator password

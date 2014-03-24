@@ -30,7 +30,7 @@ just friends who are sharing your cloud – you can still keep track of
 what services they use and how much of them.
 
 Service Offerings, Disk Offerings, Network Offerings, and Templates
-------------------------------------------------------------------------
+-------------------------------------------------------------------
 
 A user creating a new instance can make a variety of choices about its
 characteristics and capabilities. CloudStack provides several ways to
@@ -62,7 +62,7 @@ System Service Offerings.
 
 
 Compute and Disk Service Offerings
----------------------------------------
+----------------------------------
 
 A service offering is a set of virtual hardware features such as CPU
 core count and speed, memory, and disk size. The CloudStack administrator
@@ -146,7 +146,7 @@ parameters, such as CPU, speed, RAM are recorded.
 
 
 Creating a New Compute Offering
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a new compute offering:
 
@@ -318,7 +318,7 @@ To create a new compute offering:
    Click Add.
 
 Creating a New Disk Offering
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a new disk offering:
 
@@ -414,7 +414,7 @@ To create a new disk offering:
    Click Add.
 
 Modifying or Deleting a Service Offering
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Service offerings cannot be changed once created. This applies to both
 compute offerings and disk offerings.
@@ -427,7 +427,7 @@ service offering will not be available to end users that are creating
 new instances.
 
 System Service Offerings
------------------------------
+------------------------
 
 System service offerings provide a choice of CPU speed, number of CPUs,
 tags, and RAM size, just as other service offerings do. But rather than
@@ -446,7 +446,7 @@ different system service offering. All virtual routers in that network
 will begin using the settings from the new service offering.
 
 Creating a New System Service Offering
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a system service offering:
 
@@ -542,7 +542,7 @@ To create a system service offering:
    Click Add.
 
 Network Throttling
------------------------
+------------------
 
 Network throttling is the process of controlling the network access and
 bandwidth usage based on certain rules. CloudStack controls this
@@ -583,57 +583,23 @@ defaulted to the global parameter value.
 The following table gives you an overview of how network rate is applied
 on different types of networks in CloudStack.
 
-Networks
+=============================================== ===============================
+Networks                                        Network Rate Is Taken from
+=============================================== ===============================
+Guest network of Virtual Router                 Guest Network Offering
+Public network of Virtual Router                Guest Network Offering
+Storage network of Secondary Storage VM         System Network Offering
+Management network of Secondary Storage VM      System Network Offering
+Storage network of Console Proxy VM             System Network Offering
+Management network of Console Proxy VM          System Network Offering
+Storage network of Virtual Router               System Network Offering
+Management network of Virtual Router            System Network Offering
+Public network of Secondary Storage VM          System Network Offering
+Public network of Console Proxy VM              System Network Offering
+Default network of a guest VM                   Compute Offering
+Additional networks of a guest VM               Corresponding Network Offerings
+=============================================== ===============================
 
-Network Rate Is Taken from
-
-Guest network of Virtual Router
-
-Guest Network Offering
-
-Public network of Virtual Router
-
-Guest Network Offering
-
-Storage network of Secondary Storage VM
-
-System Network Offering
-
-Management network of Secondary Storage VM
-
-System Network Offering
-
-Storage network of Console Proxy VM
-
-System Network Offering
-
-Management network of Console Proxy VM
-
-System Network Offering
-
-Storage network of Virtual Router
-
-System Network Offering
-
-Management network of Virtual Router
-
-System Network Offering
-
-Public network of Secondary Storage VM
-
-System Network Offering
-
-Public network of Console Proxy VM
-
-System Network Offering
-
-Default network of a guest VM
-
-Compute Offering
-
-Additional networks of a guest VM
-
-Corresponding Network Offerings
 
 A guest VM must have a default network, and can also have many
 additional networks. Depending on various parameters, such as the host
@@ -680,7 +646,7 @@ network, ingress traffic will be limited to 10 Mbps and egress to 200
 Mbps.
 
 Changing the Default System Offering for System VMs
---------------------------------------------------------
+---------------------------------------------------
 
 You can manually change the system offering for a particular System VM.
 Additionally, as a CloudStack administrator, you can also change the

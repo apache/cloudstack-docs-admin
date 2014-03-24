@@ -21,7 +21,7 @@ This section provides tips on how to improve the performance of your
 cloud.
 
 Performance Monitoring
-----------------------------
+----------------------
 
 Host and guest performance monitoring is available to end users and
 administrators. This allows the user to monitor their utilization of
@@ -29,7 +29,7 @@ resources and determine when it is appropriate to choose a more powerful
 service offering or larger disk.
 
 Increase Management Server Maximum Memory
------------------------------------------------
+-----------------------------------------
 
 If the Management Server is subject to high demand, the default maximum
 JVM memory allocation can be insufficient. To increase the memory:
@@ -58,7 +58,7 @@ JVM memory allocation can be insufficient. To increase the memory:
        # service cloudstack-management restart
 
 For more information about memory issues, see "FAQ: Memory" at `Tomcat
-Wiki. <http://wiki.apache.org/tomcat/FAQ/Memory>`__
+Wiki. <http://wiki.apache.org/tomcat/FAQ/Memory>`_
 
 Set Database Buffer Pool Size
 -----------------------------
@@ -100,7 +100,7 @@ at `MySQL Reference
 Manual <http://dev.mysql.com/doc/refman/5.5/en/innodb-buffer-pool.html>`__.
 
 Set and Monitor Total VM Limits per Host
-----------------------------------------------
+----------------------------------------
 
 The CloudStack administrator should monitor the total number of VM
 instances in each cluster, and disable allocation to the cluster if the
@@ -120,7 +120,7 @@ this number of VMs, use the CloudStack UI to disable allocation of more
 VMs to the cluster.
 
 Configure XenServer dom0 Memory
--------------------------------------
+-------------------------------
 
 Configure the XenServer dom0 settings to allocate more memory to dom0.
 This can enable XenServer to handle larger numbers of virtual machines.

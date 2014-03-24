@@ -140,4 +140,4 @@ Events and Troubleshooting
    :maxdepth: 2
 
    events
-
+   troubleshooting
