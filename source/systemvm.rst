@@ -264,7 +264,7 @@ the console proxy domain, SSL certificate, and private key:
 
       The desired new domain name; for example, company.com
 
-   ..   |updatessl.png|
+     |update-ssl.png|
 
 #. 
 
@@ -329,24 +329,22 @@ Upgrading a Virtual Router with System Service Offerings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When CloudStack creates a virtual router, it uses default settings which
-are defined in a default system service offering. See `Section 8.2,
-“System Service Offerings” <#system-service-offerings>`__. All the
+are defined in a default system service offering. See `“System Service 
+Offerings” <#system-service-offerings>`_. All the
 virtual routers in a single guest network use the same system service
 offering. You can upgrade the capabilities of the virtual router by
 creating and applying a custom system service offering.
 
 #. 
 
-   Define your custom system service offering. See `Section 8.2.1,
-   “Creating a New System Service
-   Offering” <#creating-system-service-offerings>`__. In System VM Type,
+   Define your custom system service offering. See `“Creating a New System Service
+   Offering” <#creating-a-new-system-service-offering>`_. In System VM Type,
    choose Domain Router.
 
 #. 
 
    Associate the system service offering with a network offering. See
-   `Section 9.4.1, “Creating a New Network
-   Offering” <#creating-network-offerings>`__.
+   `“Creating a New Network Offering” <networking.html#creating-a-new-network-offering>`_.
 
 #. 
 
@@ -354,8 +352,8 @@ creating and applying a custom system service offering.
    routers to use the new system service offering. If this is a new
    network, follow the steps in Adding an Additional Guest Network on
    page 66. To change the service offering for existing virtual routers,
-   follow the steps in `Section 15.6.3, “Changing the Network Offering
-   on a Guest Network” <#change-network-offering-on-guest-network>`__.
+   follow the steps in `“Changing the Network Offering
+   on a Guest Network” <networking2.html#changing-the-network-offering-on-a-guest-network>`_.
 
 Best Practices for Virtual Routers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -623,7 +621,7 @@ Zone, copying templates between Zones, and snapshot backups.
 
 The administrator can log in to the secondary storage VM if needed.
 
-.. |updatessl.png| image:: _static/images/updatessl.png
+.. |update-ssl.png| image:: _static/images/update-ssl.png
    :alt: Updating Console Proxy SSL Certificate
 .. |vr-upgrade.png| image:: _static/images/vr-upgrade.png
    :alt: Button to upgrade VR to use the new template.
