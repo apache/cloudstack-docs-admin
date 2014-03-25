@@ -167,10 +167,8 @@ interrupt existing console sessions for users.
 Using a SSL Certificate for the Console Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**NOTE** In the past CloudStack used the ``realhostip.com`` dynamic 
-DNS resolution service. As this service will be shut down as of 
-June 30th, 2014, CloudStack has stopped using the service as of version
-4.3.
+.. note::
+   In the past CloudStack used the ``realhostip.com`` dynamic  DNS resolution service. As this service will be shut down as of  June 30th, 2014, CloudStack has stopped using the service as of version 4.3.
 
 By default, the console viewing functionality uses plaintext HTTP. In 
 any production environment, the console proxy connection should be
