@@ -290,8 +290,8 @@ To create a new compute offering:
       Implicit Dedication will deploy VMs on private infrastructure that
       is dedicated to a specific domain or account. If you choose this
       planner, then you must also pick a value for Planner Mode. See
-      `Section 3.1.1, “Dedicating Resources to Accounts and
-      Domains” <#dedicated-host-cluster-pod>`__.
+      `“Dedicating Resources to Accounts and
+      Domains” <accounts.html#dedicating-resources-to-accounts-and-domains>`_.
 
       Bare Metal is used with bare metal hosts. See Bare Metal
       Installation in the Installation Guide.
