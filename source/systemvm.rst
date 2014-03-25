@@ -200,10 +200,8 @@ proxy domain, SSL certificate, and private key:
    your public IP range into your existing DNS server with the format
    aaa-bbb-ccc-ddd.consoleproxy.company.com -> aaa.bbb.ccc.ddd.
 
-   **NOTE** In these steps you will notice *consoleproxy.company.com* -
-   For security best practices, we recommend creating a wildcard SSL
-   certificate on a separate subdomain so in the event that the certificate
-   is compromised, a malicious user cannot impersonate a company.com domain.
+   .. note::
+      In these steps you will notice *consoleproxy.company.com* -For security best practices, we recommend creating a wildcard SSL certificate on a separate subdomain so in the event that the certificate is compromised, a malicious user cannot impersonate a company.com domain.
 
 #. 
 
@@ -282,7 +280,7 @@ The Management Server generates URLs of the form
 requests will be served with the new DNS domain name, certificate, and
 key.
 
-Load-balancing Console Proies
+Load-balancing Console Proxies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 An alternative to using dynamic DNS or creating a range of DNS entries 
 as described in the last section would be to create a SSL certificate
