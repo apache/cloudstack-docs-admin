@@ -77,8 +77,7 @@ account. Isolated networks have the following properties.
    The network offering can be upgraded or downgraded but it is for the
    entire network
 
-For more information, see `“Configure Guest Traffic in
-an Advanced Zone” <networking2.html#configure-guest-traffic-in-an-advanced-zone>`_.
+For more information, see `“Configure Guest Traffic in an Advanced Zone” <networking2.html#configure-guest-traffic-in-an-advanced-zone>`_.
 
 Shared Networks
 ~~~~~~~~~~~~~~~
@@ -113,15 +112,8 @@ Basic zones in CloudStack 3.0.3 and later versions.
 
    Source NAT per zone is not supported in Shared Network when the
    service provider is virtual router. However, Source NAT per account
-   is supported.
+   is supported. For information, see `“Configuring a Shared Guest Network” <networking2.html#configuring-a-shared-guest-network>`_.
 
-<<<<<<< HEAD
-For information, see `“Configuring a Shared Guest
-Network” <networking2.html#configuring-a-shared-guest-network>`_.
-=======
-For information, see `“Configuring a Shared Guest Network” <networking2.html#configuring-a-shared-guest-network>`_.
-
->>>>>>> 8475ba5... fix merge to upstream
 
 Runtime Allocation of Virtual Network Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -371,10 +363,7 @@ To create a network offering:
       Security Groups     For more information, see `“Adding a Security                                Not Supported Supported
                           Group” <networking2.html#adding-a-security-group>`_.
       =================== ============================================================================ ============= =============
-<<<<<<< HEAD
 
-=======
->>>>>>> 8475ba5... fix merge to upstream
 
    -  
 

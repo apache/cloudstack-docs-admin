@@ -130,12 +130,13 @@ provision, view, and manage your cloud infrastructure.
 
    You should set a new root administrator password. If you chose basic
    setup, you’ll be prompted to create a new password right away. If you
-   chose experienced user, use the steps in `“Changing
-   the Root Password” <#changing-the-root-password>`_.
+   chose experienced user, use the steps in :ref:`changing-root-password`.
 
 .. warning:: 
 
    You are logging in as the root administrator. This account manages the CloudStack deployment, including physical infrastructure. The root administrator can modify configuration settings to change basic functionality, create or delete user accounts, and take many actions that should be performed only by an authorized person. Please change the default password to a new, unique password.
+
+.. _changing-root-password:
 
 Changing the Root Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -212,9 +213,7 @@ Create an instance template that supports SSH Keys.
 
 #. 
 
-   Download the cloudstack script from `The SSH Key Gen
-   Script <http://sourceforge.net/projects/cloudstack/files/SSH%20Key%20Gen%20Script/>`__\ to
-   the instance you have created.
+   Download the cloudstack script from `The SSH Key Gen Script <http://sourceforge.net/projects/cloudstack/files/SSH%20Key%20Gen%20Script/>`_ to the instance you have created.
 
    .. sourcecode:: bash
 

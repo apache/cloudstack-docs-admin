@@ -1138,8 +1138,7 @@ offering. Later, the user can acquire an IP for the VM and enable static
 NAT.
 
 For more information on the Associate Public IP option, see
-`"Creating a New Network
-Offering" <networking.html#creating-a-new-network-offering>`_.
+`"Creating a New Network Offering" <networking.html#creating-a-new-network-offering>`_.
 
 .. note:: 
    The Associate Public IP feature is designed only for use with user VMs.
@@ -2202,10 +2201,6 @@ VMs.
    that they continue to function.
 
 .. _adding-lb-rule:
-<<<<<<< HEAD
-=======
-
->>>>>>> 8475ba5... fix merge to upstream
 
 Adding a Load Balancer Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2242,10 +2237,6 @@ Adding a Load Balancer Rule
    Addresses page when the rule is created.
 
    To do that, select the name of the network, then click Add Load
-<<<<<<< HEAD
-=======
-
->>>>>>> 8475ba5... fix merge to upstream
    Balancer tab. Continue with #7.
 
 #. 
@@ -4053,12 +4044,7 @@ Vista. The commands should be similar for other Windows versions.
 #.
 
    In Type of VPN, choose L2TP IPsec VPN, then click IPsec settings.
-<<<<<<< HEAD
-   Select Use preshared key. Enter the preshared key from step
-   #1.
-=======
    Select Use preshared key. Enter the preshared key from step #1.
->>>>>>> 8475ba5... fix merge to upstream
 
 #. 
 
@@ -6233,12 +6219,7 @@ follows:
       Private Cloud-enabled. A Virtual Private Cloud (VPC) is a private,
       isolated part of CloudStack. A VPC can have its own virtual
       network topology that resembles a traditional physical network.
-<<<<<<< HEAD
-      For more information on VPCs, see `"About Virtual
-      Private Clouds" <#about-virtual-private-clouds>`_.
-=======
       For more information on VPCs, see `"About Virtual Private Clouds" <#about-virtual-private-clouds>`_.
->>>>>>> 8475ba5... fix merge to upstream
 
    -  
 
@@ -6418,13 +6399,8 @@ CloudStack supports sharing workload across different tiers within your
 VPC. Assume that multiple tiers are set up in your environment, such as
 Web tier and Application tier. Traffic to each tier is balanced on the
 VPC virtual router on the public side, as explained in
-<<<<<<< HEAD
-`"Adding Load Balancing Rules on a
-VPC" <#adding-load-balancing-rules-on-a-vpc>`_. If you want the traffic coming
-=======
 `"Adding Load Balancing Rules on a VPC" <#adding-load-balancing-rules-on-a-vpc>`_. 
 If you want the traffic coming
->>>>>>> 8475ba5... fix merge to upstream
 from the Web tier to the Application tier to be balanced, use the
 internal load balancing feature offered by CloudStack.
 

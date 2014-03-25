@@ -206,7 +206,7 @@ Solution
 See the following:
 
 `VMware Knowledge Base
-Article <http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=10051/>`__
+Article <http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=10051/>`_
 
 Load balancer rules fail after changing network offering
 --------------------------------------------------------

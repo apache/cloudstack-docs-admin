@@ -35,7 +35,7 @@ This section gives concepts and technical details about CloudStack
 primary storage. For information about how to install and configure
 primary storage through the CloudStack UI, see the Installation Guide.
 
-`Section 2.6, “About Primary Storage” <#about-primary-storage>`__
+`“About Primary Storage” <http://docs.cloudstack.apache.org/en/latest/concepts.html#about-primary-storage>`_
 
 Best Practices for Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,7 +183,7 @@ secondary storage. For information about how to install and configure
 secondary storage through the CloudStack UI, see the Advanced
 Installation Guide.
 
-`Section 2.7, “About Secondary Storage” <#about-secondary-storage>`__
+`“About Secondary Storage” <http://docs.cloudstack.apache.org/en/latest/concepts.html#about-secondary-storage>`_
 
 Working With Volumes
 --------------------
