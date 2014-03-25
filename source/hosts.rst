@@ -21,8 +21,8 @@ Adding Hosts
 ------------
 
 Additional hosts can be added at any time to provide more capacity for
-guest VMs. For requirements and instructions, see `“Adding
-a Host” <http://docs.cloudstack.apache.org/projects/cloudstack-installation/en/latest/configuration.html#adding-a-host>`_.
+guest VMs. For requirements and instructions, see 
+`“Adding a Host” <http://docs.cloudstack.apache.org/projects/cloudstack-installation/en/latest/configuration.html#adding-a-host>`_.
 
 Scheduled Maintenance and Maintenance Mode for Hosts
 ----------------------------------------------------
@@ -204,7 +204,7 @@ migrated to other Hosts. To remove a Host from the cloud:
    Place the node in maintenance mode.
 
    See `“Scheduled Maintenance and Maintenance Mode for
-   Hosts” <#scheduled-maintenance-and-maintenance-mode-for-hosts>`__.
+   Hosts” <#scheduled-maintenance-and-maintenance-mode-for-hosts>`_.
 
 #. 
 
@@ -249,9 +249,7 @@ any system that is not up to date with patches.
 .. note:: 
    The lack of up-do-date hotfixes can lead to data corruption and lost VMs.
 
-(XenServer) For more information, see `Highly Recommended Hotfixes for
-XenServer in the CloudStack Knowledge
-Base <http://docs.cloudstack.org/Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`__.
+(XenServer) For more information, see `Highly Recommended Hotfixes for XenServer in the CloudStack Knowledge Base <http://docs.cloudstack.org/Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_.
 
 Changing Host Password
 ----------------------

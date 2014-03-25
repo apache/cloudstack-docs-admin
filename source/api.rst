@@ -28,8 +28,8 @@ some indication of their state.
 
 The API has a REST-like query basis and returns results in XML or JSON.
 
-See `the Developer’s Guide <https://cwiki.apache.org/confluence/display/CLOUDSTACK/Developers>`__
-and `the API Reference <http://cloudstack.apache.org/docs/api/>`__.
+See `the Developer’s Guide <https://cwiki.apache.org/confluence/display/CLOUDSTACK/Development+101>`_
+and `the API Reference <http://cloudstack.apache.org/docs/api/>`_.
 
 Provisioning and Authentication API
 -----------------------------------

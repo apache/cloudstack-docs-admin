@@ -21,6 +21,13 @@
 Welcome to CloudStack Administration Documentation
 ==================================================
 
+User Interface
+--------------
+
+.. toctree::
+   :maxdepth: 2
+
+   ui
 
 Managing Accounts, Users and Domains
 ------------------------------------
