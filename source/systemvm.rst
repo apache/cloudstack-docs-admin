@@ -167,39 +167,41 @@ interrupt existing console sessions for users.
 Using a SSL Certificate for the Console Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The console viewing functionality uses a dynamic DNS service under the
-domain name ``realhostip.com`` to assist in providing SSL security to
-console sessions. The console proxy is assigned a public IP address. In
-order to avoid browser warnings for mismatched SSL certificates, the URL
-for the new console window is set to the form of
-https://aaa-bbb-ccc-ddd.realhostip.com. You will see this URL during
-console session creation. CloudStack includes the realhostip.com SSL
-certificate in the console proxy VM. Of course, CloudStack cannot know
-about the DNS A records for our customers' public IPs prior to shipping
-the software. CloudStack therefore runs a dynamic DNS server that is
-authoritative for the realhostip.com domain. It maps the aaa-bbb-ccc-ddd
-part of the DNS name to the IP address aaa.bbb.ccc.ddd on lookups. This
-allows the browser to correctly connect to the console proxy's public
-IP, where it then expects and receives a SSL certificate for
-realhostip.com, and SSL is set up without browser warnings.
+.. note::
+   In the past CloudStack used the ``realhostip.com`` dynamic  DNS resolution service. As this service will be shut down as of  June 30th, 2014, CloudStack has stopped using the service as of version 4.3.
+
+By default, the console viewing functionality uses plaintext HTTP. In 
+any production environment, the console proxy connection should be
+encrypted via SSL at the mininum.
+
+A CloudStack administrator has 2 ways to secure the console proxy
+communication with SSL:
+
+-
+   Set up a SSL wild-card certificate and domain name resolution
+   
+-
+   Set up SSL certificate for specific FQDN and configure load-balancer
+
 
 Changing the Console Proxy SSL Certificate and Domain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the administrator prefers, it is possible for the URL of the
-customer's console session to show a domain other than realhostip.com.
-The administrator can customize the displayed domain by selecting a
-different domain and uploading a new SSL certificate and private key.
-The domain must run a DNS service that is capable of resolving queries
-for addresses of the form aaa-bbb-ccc-ddd.your.domain to an IPv4 IP
-address in the form aaa.bbb.ccc.ddd, for example, 202.8.44.1. To change
-the console proxy domain, SSL certificate, and private key:
+The administrator can configure SSL encryption  by selecting a domain 
+and uploading a new SSL certificate and private key. The domain must 
+run a DNS service that is capable of resolving queries for addresses 
+of the form aaa-bbb-ccc-ddd.your.domain to an IPv4 IP address in the
+form aaa.bbb.ccc.ddd, for example, 202.8.44.1. To change the console 
+proxy domain, SSL certificate, and private key:
 
 #. 
 
    Set up dynamic name resolution or populate all possible DNS names in
    your public IP range into your existing DNS server with the format
-   aaa-bbb-ccc-ddd.company.com -> aaa.bbb.ccc.ddd.
+   aaa-bbb-ccc-ddd.consoleproxy.company.com -> aaa.bbb.ccc.ddd.
+
+   .. note::
+      In these steps you will notice *consoleproxy.company.com* -For security best practices, we recommend creating a wildcard SSL certificate on a separate subdomain so in the event that the certificate is compromised, a malicious user cannot impersonate a company.com domain.
 
 #. 
 
@@ -218,7 +220,8 @@ the console proxy domain, SSL certificate, and private key:
 
    #. 
 
-      Generate a new certificate CSR
+      Generate a new certificate CSR. Ensure the creation of a wildcard 
+      certificate, eg *.consoleproxy.company.com
 
       .. code:: bash
 
@@ -262,22 +265,31 @@ the console proxy domain, SSL certificate, and private key:
 
    -  
 
-      The desired new domain name; for example, company.com
+      The desired domain name, prefixed with ``*.``; for example, *.consoleproxy.company.com
 
      |update-ssl.png|
 
 #. 
-
-   The desired new domain name; for example, company.com
 
    This stops all currently running console proxy VMs, then restarts
    them with the new certificate and key. Users might notice a brief
    interruption in console availability.
 
 The Management Server generates URLs of the form
-"aaa-bbb-ccc-ddd.company.com" after this change is made. The new console
+"aaa-bbb-ccc-ddd.consoleproxy.company.com" after this change is made. The new console
 requests will be served with the new DNS domain name, certificate, and
 key.
+
+Load-balancing Console Proxies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+An alternative to using dynamic DNS or creating a range of DNS entries 
+as described in the last section would be to create a SSL certificate
+for a specific domain name, configure CloudStack to use that particular
+FQDN, and then configure a load balancer to load balance the console
+proxy's IP address behind the FQDN. As the functionality for this is still
+new, please see https://cwiki.apache.org/confluence/display/CLOUDSTACK/Realhost+IP+changes
+for more details.
+
 
 Virtual Router
 --------------
