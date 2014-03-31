@@ -1,0 +1,458 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 
+# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-31 14:08-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../management.rst:18
+# 62fa0deba316409090e6e208765342a7
+msgid "Managing the Cloud"
+msgstr ""
+
+#: ../../management.rst:21
+# a792503e467d4d97a1d4aa55140452a5
+msgid "Using Tags to Organize Resources in the Cloud"
+msgstr ""
+
+#: ../../management.rst:23
+# c61cae44c33f4a3b93bcbde61e020c22
+msgid "A tag is a key-value pair that stores metadata about a resource in the cloud. Tags are useful for categorizing resources. For example, you can tag a user VM with a value that indicates the user's city of residence. In this case, the key would be \"city\" and the value might be \"Toronto\" or \"Tokyo.\" You can then request CloudStack to find all resources that have a given tag; for example, VMs for users in a given city."
+msgstr ""
+
+#: ../../management.rst:30
+# b8bee7f6ee524c41a62546c3926fc5a6
+msgid "You can tag a user virtual machine, volume, snapshot, guest network, template, ISO, firewall rule, port forwarding rule, public IP address, security group, load balancer rule, project, VPC, network ACL, or static route. You can not tag a remote access VPN."
+msgstr ""
+
+#: ../../management.rst:35
+# 41f9c119f564420ebc0b2ce07d6a5211
+msgid "You can work with tags through the UI or through the API commands createTags, deleteTags, and listTags. You can define multiple tags for each resource. There is no limit on the number of tags you can define. Each tag can be up to 255 characters long. Users can define tags on the resources they own, and administrators can define tags on any resources in the cloud."
+msgstr ""
+
+#: ../../management.rst:42
+# 4987c5d196e64161aae21901c96b4c37
+msgid "An optional input parameter, \"tags,\" exists on many of the list\\* API commands. The following example shows how to use this new parameter to find all the volumes having tag region=canada OR tag city=Toronto:"
+msgstr ""
+
+#: ../../management.rst:55
+# 7914681bd50244bcaf4169707987eb00
+msgid "The following API commands have the \"tags\" input parameter:"
+msgstr ""
+
+#: ../../management.rst:59
+# 61fbca041dee4db2aade53a7cf792de7
+msgid "listVirtualMachines"
+msgstr ""
+
+#: ../../management.rst:63
+# ba0235266c3845cc96ba7fcf7de44466
+msgid "listVolumes"
+msgstr ""
+
+#: ../../management.rst:67
+# 1c68c5c60b174ea2a71f39ba93a211ac
+msgid "listSnapshots"
+msgstr ""
+
+#: ../../management.rst:71
+# 9f05731121b4498e9e51a500a79f2511
+msgid "listNetworks"
+msgstr ""
+
+#: ../../management.rst:75
+# 36599c953977457c84ecffc6c9395338
+msgid "listTemplates"
+msgstr ""
+
+#: ../../management.rst:79
+# c3b6ffcb5da240cea465ea296dd4ccfd
+msgid "listIsos"
+msgstr ""
+
+#: ../../management.rst:83
+# 6a47e3c18c6f476bb22295c172479796
+msgid "listFirewallRules"
+msgstr ""
+
+#: ../../management.rst:87
+# 08d8500b98314effbb3d7916236f7e2b
+msgid "listPortForwardingRules"
+msgstr ""
+
+#: ../../management.rst:91
+# 2a42e7c362bc427eba13e2d7e7bf7380
+msgid "listPublicIpAddresses"
+msgstr ""
+
+#: ../../management.rst:95
+# 4509004a0c73478ca0a184d142eb4a57
+msgid "listSecurityGroups"
+msgstr ""
+
+#: ../../management.rst:99
+# fd868f656abb4c0fb6f87da360511519
+msgid "listLoadBalancerRules"
+msgstr ""
+
+#: ../../management.rst:103
+# e65694d6fab44e9d946a5866f926091c
+msgid "listProjects"
+msgstr ""
+
+#: ../../management.rst:107
+# 830852c2a7c84d06b6c01a444f0b1b66
+msgid "listVPCs"
+msgstr ""
+
+#: ../../management.rst:111
+# 9f2367d8d4df4802bb1c90dcd52a411f
+msgid "listNetworkACLs"
+msgstr ""
+
+#: ../../management.rst:115
+# 8afa8bc38679406e95930eda004cc27b
+msgid "listStaticRoutes"
+msgstr ""
+
+#: ../../management.rst:119
+# 073cb1458dc443a1b9e2e791e168eafe
+msgid "Reporting CPU Sockets"
+msgstr ""
+
+#: ../../management.rst:121
+# d3bc3b48bddd4f228b7fde7ad5520fd3
+msgid "PRODUCT manages different types of hosts that contains one or more physical CPU sockets. CPU socket is considered as a unit of measure used for licensing and billing cloud infrastructure. PRODUCT provides both UI and API support to collect the CPU socket statistics for billing purpose. The Infrastructure tab has a new tab for CPU sockets. You can view the statistics for CPU sockets managed by PRODUCT, which in turn reflects the size of the cloud. The CPU Socket page will give you the number of hosts and sockets used for each host type."
+msgstr ""
+
+#: ../../management.rst:130
+# 179f99e5b8df40a1ba2a0197f6341be2
+msgid "Log in to the PRODUCT UI."
+msgstr ""
+
+#: ../../management.rst:132
+# 57d62b4d9b054608adfe2e064e3dd8f8
+msgid "In the left navigation bar, click Infrastructure."
+msgstr ""
+
+#: ../../management.rst:134
+# 8e60a5440ac44537a259df5ffe6c34a6
+msgid "On CPU Sockets, click View all."
+msgstr ""
+
+#: ../../management.rst:136
+# 1ae3d6da93ee4bbd939915b25643adf5
+msgid "The CPU Socket page is displayed. The page shows the number of hosts and CPU sockets based on hypervisor types."
+msgstr ""
+
+#: ../../management.rst:141
+# 4478c2a6941346c4a839b782797026a0
+msgid "Changing the Database Configuration"
+msgstr ""
+
+#: ../../management.rst:143
+# b70d57ac66ee464eae4b05c578e89c8e
+msgid "The CloudStack Management Server stores database configuration information (e.g., hostname, port, credentials) in the file ``/etc/cloudstack/management/db.properties``. To effect a change, edit this file on each Management Server, then restart the Management Server."
+msgstr ""
+
+#: ../../management.rst:149
+# d69ee7ee9b9646d7a8a016fccc2db9e4
+msgid "Changing the Database Password"
+msgstr ""
+
+#: ../../management.rst:151
+# d84602682dbf4f349b1478edbbf567d1
+msgid "You may need to change the password for the MySQL account used by CloudStack. If so, you'll need to change the password in MySQL, and then add the encrypted password to ``/etc/cloudstack/management/db.properties``."
+msgstr ""
+
+#: ../../management.rst:158
+# 46979db784d447698778e73ecb8eaf02
+msgid "Before changing the password, you'll need to stop CloudStack's management server and the usage engine if you've deployed that component."
+msgstr ""
+
+#: ../../management.rst:169
+# 530bd78524724552bfa1d927234ca3b7
+msgid "Next, you'll update the password for the CloudStack user on the MySQL server."
+msgstr ""
+
+#: ../../management.rst:176
+# 342e9a0cf7114011a7a6e9909df7a65a
+msgid "At the MySQL shell, you'll change the password and flush privileges:"
+msgstr ""
+
+#: ../../management.rst:186
+# c906e56dd67a40f9a09b8fd0c69cca61
+msgid "The next step is to encrypt the password and copy the encrypted password to CloudStack's database configuration (``/etc/cloudstack/management/db.properties``)."
+msgstr ""
+
+#: ../../management.rst:195
+# 966a4c741fcc455d95a07582cd1148e2
+msgid "File encryption type"
+msgstr ""
+
+#: ../../management.rst:197
+# 6b56e1a2563f4b379240d045e9066699
+msgid "Note that this is for the file encryption type. If you're using the web encryption type then you'll use password=\"management\\_server\\_secret\\_key\""
+msgstr ""
+
+#: ../../management.rst:203
+# 12e8a0b52c124abfa87ae48dfc2bef1f
+msgid "Now, you'll update ``/etc/cloudstack/management/db.properties`` with the new ciphertext. Open ``/etc/cloudstack/management/db.properties`` in a text editor, and update these parameters:"
+msgstr ""
+
+#: ../../management.rst:214
+# 05fa3e47277c4963819e7b9d1ac941db
+msgid "After copying the new password over, you can now start CloudStack (and the usage engine, if necessary)."
+msgstr ""
+
+#: ../../management.rst:223
+# ab0e0b55f2304115bfd6653d5a7e0dd9
+msgid "Administrator Alerts"
+msgstr ""
+
+#: ../../management.rst:225
+# 4fc127299b7e4745978235d4354bbccb
+msgid "The system provides alerts and events to help with the management of the cloud. Alerts are notices to an administrator, generally delivered by e-mail, notifying the administrator that an error has occurred in the cloud. Alert behavior is configurable."
+msgstr ""
+
+#: ../../management.rst:230
+# 76ae47fe37774d1483c1b5363a6d4202
+msgid "Events track all of the user and administrator actions in the cloud. For example, every guest VM start creates an associated event. Events are stored in the Management Server’s database."
+msgstr ""
+
+#: ../../management.rst:234
+# a1e3c013206f4c6ab4e6995a41e2fb3b
+msgid "Emails will be sent to administrators under the following circumstances:"
+msgstr ""
+
+#: ../../management.rst:238
+# 3bd4b2bfb7784f4c85a053970508cc79
+msgid "The Management Server cluster runs low on CPU, memory, or storage resources"
+msgstr ""
+
+#: ../../management.rst:243
+# b200b975c0a74ffcba301baf70b4cbee
+msgid "The Management Server loses heartbeat from a Host for more than 3 minutes"
+msgstr ""
+
+#: ../../management.rst:248
+# ccb116becdc34d05b675e0dd815eb45f
+msgid "The Host cluster runs low on CPU, memory, or storage resources"
+msgstr ""
+
+#: ../../management.rst:251
+# 34703bd556ff4860a1b4276a8c595679
+msgid "Sending Alerts to External SNMP and Syslog Managers"
+msgstr ""
+
+#: ../../management.rst:253
+# 2cd893dc03494c9f9d2e89a38be1365e
+msgid "In addition to showing administrator alerts on the Dashboard in the CloudStack UI and sending them in email, CloudStack can also send the same alerts to external SNMP or Syslog management software. This is useful if you prefer to use an SNMP or Syslog manager to monitor your cloud."
+msgstr ""
+
+#: ../../management.rst:259
+# 183fd5a09ba94d239b50995e39c6d1bb
+msgid "The alerts which can be sent are:"
+msgstr ""
+
+#: ../../management.rst:261
+# 9c0f28eb90514f2885638a6cc4c911d0
+msgid "The following is the list of alert type numbers. The current alerts can be found by calling listAlerts."
+msgstr ""
+
+#: ../../management.rst:373
+# fcd80afc6c874d05a553c2385a73b1de
+msgid "You can also display the most up to date list by calling the API command ``listAlerts``."
+msgstr ""
+
+#: ../../management.rst:376
+# 55bd3cff1d234d10b6874e5bd2208730
+msgid "SNMP Alert Details"
+msgstr ""
+
+#: ../../management.rst:378
+# b7f474def21a45019ad42f1dcb03434e
+msgid "The supported protocol is SNMP version 2."
+msgstr ""
+
+#: ../../management.rst:380
+# 93853f006fe94159a30cfacd98bacaef
+msgid "Each SNMP trap contains the following information: message, podId, dataCenterId, clusterId, and generationTime."
+msgstr ""
+
+#: ../../management.rst:384
+# 7b720e085e5a440280e905349f42fd5e
+msgid "Syslog Alert Details"
+msgstr ""
+
+#: ../../management.rst:386
+# 632fd4dd34df40eaab1b80869ea0ef29
+msgid "CloudStack generates a syslog message for every alert. Each syslog message incudes the fields alertType, message, podId, dataCenterId, and clusterId, in the following format. If any field does not have a valid value, it will not be included."
+msgstr ""
+
+#: ../../management.rst:395
+# 16294475b8e9426f92abe561d0af9d18
+msgid "For example:"
+msgstr ""
+
+#: ../../management.rst:402
+# 033011aa33934bbea10d0f9348ad5744
+msgid "Configuring SNMP and Syslog Managers"
+msgstr ""
+
+#: ../../management.rst:404
+# 6c85d75e087e497288d50df030ecea6f
+msgid "To configure one or more SNMP managers or Syslog managers to receive alerts from CloudStack:"
+msgstr ""
+
+#: ../../management.rst:409
+# c688dbbc722f42a5be3cb7cec4b0b7e8
+msgid "For an SNMP manager, install the CloudStack MIB file on your SNMP manager system. This maps the SNMP OIDs to trap types that can be more easily read by users. The file must be publicly available. For more information on how to install this file, consult the documentation provided with the SNMP manager."
+msgstr ""
+
+#: ../../management.rst:417
+# b89ad48e4ed84c129f21d619c068d364
+msgid "Edit the file /etc/cloudstack/management/log4j-cloud.xml."
+msgstr ""
+
+#: ../../management.rst:425
+# 4b3128207e8349a9ad7401fc69b17a2b
+msgid "Add an entry using the syntax shown below. Follow the appropriate example depending on whether you are adding an SNMP manager or a Syslog manager. To specify multiple external managers, separate the IP addresses and other configuration values with commas (,)."
+msgstr ""
+
+#: ../../management.rst:430
+# fd1b4680483c4c89a013cdc0b216cd85
+msgid "The recommended maximum number of SNMP or Syslog managers is 20 for each."
+msgstr ""
+
+#: ../../management.rst:432
+# e2aaea38ebe14fa09cad5de41d56840f
+msgid "The following example shows how to configure two SNMP managers at IP addresses 10.1.1.1 and 10.1.1.2. Substitute your own IP addresses, ports, and communities. Do not change the other values (name, threshold, class, and layout values)."
+msgstr ""
+
+#: ../../management.rst:450
+# 3b890460b1ab4e089a42043ac96ead1b
+msgid "The following example shows how to configure two Syslog managers at IP addresses 10.1.1.1 and 10.1.1.2. Substitute your own IP addresses. You can set Facility to any syslog-defined value, such as LOCAL0 - LOCAL7. Do not change the other values."
+msgstr ""
+
+#: ../../management.rst:468
+# 6519d2611cb9461c9db740d0a6a88955
+msgid "If your cloud has multiple Management Server nodes, repeat these steps to edit log4j-cloud.xml on every instance."
+msgstr ""
+
+#: ../../management.rst:473
+# 8f72a4c1d1a8453b87cc53aa201f48b4
+msgid "If you have made these changes while the Management Server is running, wait a few minutes for the change to take effect."
+msgstr ""
+
+#: ../../management.rst:476
+# 27c6084b918c4be5af71768e4b0d44db
+msgid "**Troubleshooting:** If no alerts appear at the configured SNMP or Syslog manager after a reasonable amount of time, it is likely that there is an error in the syntax of the <appender> entry in log4j-cloud.xml. Check to be sure that the format and settings are correct."
+msgstr ""
+
+#: ../../management.rst:483
+# 6c4c318782b24c9f8ca91f295b54c425
+msgid "Deleting an SNMP or Syslog Manager"
+msgstr ""
+
+#: ../../management.rst:485
+# 333c2a71b97e46b2b464c7febe95676e
+msgid "To remove an external SNMP manager or Syslog manager so that it no longer receives alerts from CloudStack, remove the corresponding entry from the file ``/etc/cloudstack/management/log4j-cloud.xml``."
+msgstr ""
+
+#: ../../management.rst:490
+# 41d170a469ed480ba6aeb1e5fad947d3
+msgid "Customizing the Network Domain Name"
+msgstr ""
+
+#: ../../management.rst:492
+# 710127df750e46a29414e4b5949fdd84
+msgid "The root administrator can optionally assign a custom DNS suffix at the level of a network, account, domain, zone, or entire CloudStack installation, and a domain administrator can do so within their own domain. To specify a custom domain name and put it into effect, follow these steps."
+msgstr ""
+
+#: ../../management.rst:500
+# 987b6416037e4b1ea4964ea02e0857b8
+msgid "Set the DNS suffix at the desired scope"
+msgstr ""
+
+#: ../../management.rst:504
+# 4a55e259b9f540b28cdf2a67892b7742
+msgid "At the network level, the DNS suffix can be assigned through the UI when creating a new network, as described in `“Adding an Additional Guest Network” <networking2#adding-an-additional-guest-network>`_ or with the updateNetwork command in the CloudStack API."
+msgstr ""
+
+#: ../../management.rst:511
+# 9bbd2a476c3946808b3e2adb221d3e39
+msgid "At the account, domain, or zone level, the DNS suffix can be assigned with the appropriate CloudStack API commands: createAccount, editAccount, createDomain, editDomain, createZone, or editZone."
+msgstr ""
+
+#: ../../management.rst:518
+# 96dae8eb905745c4bdd5bd0cdd34a994
+msgid "At the global level, use the configuration parameter guest.domain.suffix. You can also use the CloudStack API command updateConfiguration. After modifying this global configuration, restart the Management Server to put the new setting into effect."
+msgstr ""
+
+#: ../../management.rst:525
+# 9a8fe7370653486b84e2578fe98f0907
+msgid "To make the new DNS suffix take effect for an existing network, call the CloudStack API command updateNetwork. This step is not necessary when the DNS suffix was specified while creating a new network."
+msgstr ""
+
+#: ../../management.rst:529
+# b990678db82f4ca593bdbf4d333df20e
+msgid "The source of the network domain that is used depends on the following rules."
+msgstr ""
+
+#: ../../management.rst:534
+# 128ab344160241e0b8edba4e6f9eb6ce
+msgid "For all networks, if a network domain is specified as part of a network's own configuration, that value is used."
+msgstr ""
+
+#: ../../management.rst:539
+# 39bda91169304fcbb776da4b1eb65182
+msgid "For an account-specific network, the network domain specified for the account is used. If none is specified, the system looks for a value in the domain, zone, and global configuration, in that order."
+msgstr ""
+
+#: ../../management.rst:545
+# 7e6ca25cc96d442cb4abbcaa1a058fb6
+msgid "For a domain-specific network, the network domain specified for the domain is used. If none is specified, the system looks for a value in the zone and global configuration, in that order."
+msgstr ""
+
+#: ../../management.rst:551
+# 3366663c410b4c01bc0ede1967e0057c
+msgid "For a zone-specific network, the network domain specified for the zone is used. If none is specified, the system looks for a value in the global configuration."
+msgstr ""
+
+#: ../../management.rst:556
+# 574bfe6275184a228bf29c18f7d01f4e
+msgid "Stopping and Restarting the Management Server"
+msgstr ""
+
+#: ../../management.rst:558
+# 03e70a994f15444d8c76fed8ea185b6c
+msgid "The root administrator will need to stop and restart the Management Server from time to time."
+msgstr ""
+
+#: ../../management.rst:561
+# 03739589fbc44d29b6c184ac61cd2bc1
+msgid "For example, after changing a global configuration parameter, a restart is required. If you have multiple Management Server nodes, restart all of them to put the new parameter value into effect consistently throughout the cloud.."
+msgstr ""
+
+#: ../../management.rst:566
+# d45ce656da614e40af35f65d5da5b4c4
+msgid "To stop the Management Server, issue the following command at the operating system prompt on the Management Server node:"
+msgstr ""
+
+#: ../../management.rst:573
+# d6a59f81a7de46bfba9fc759713e09d5
+msgid "To start the Management Server:"
+msgstr ""
+

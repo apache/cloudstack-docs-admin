@@ -15,6 +15,7 @@
 # under the License.
 
 /build
+/source/locale/pot/.doctrees
 
 # OS generated files #
 ######################

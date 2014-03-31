@@ -1,0 +1,104 @@
+[main]
+host = https://www.transifex.com
+type = PO
+
+[apache-cloudstack-administration-rtd.accounts]
+file_filter = source/locale/<lang>/LC_MESSAGES/accounts.po
+source_file = source/locale/pot/accounts.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.administration]
+file_filter = source/locale/<lang>/LC_MESSAGES/administration.po
+source_file = source/locale/pot/administration.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.api]
+file_filter = source/locale/<lang>/LC_MESSAGES/api.po
+source_file = source/locale/pot/api.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.events]
+file_filter = source/locale/<lang>/LC_MESSAGES/events.po
+source_file = source/locale/pot/events.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.hosts]
+file_filter = source/locale/<lang>/LC_MESSAGES/hosts.po
+source_file = source/locale/pot/hosts.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.index]
+file_filter = source/locale/<lang>/LC_MESSAGES/index.po
+source_file = source/locale/pot/index.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.management]
+file_filter = source/locale/<lang>/LC_MESSAGES/management.po
+source_file = source/locale/pot/management.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking.po
+source_file = source/locale/pot/networking.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking2]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking2.po
+source_file = source/locale/pot/networking2.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.projects]
+file_filter = source/locale/<lang>/LC_MESSAGES/projects.po
+source_file = source/locale/pot/projects.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.reliability]
+file_filter = source/locale/<lang>/LC_MESSAGES/reliability.po
+source_file = source/locale/pot/reliability.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.service_offerings]
+file_filter = source/locale/<lang>/LC_MESSAGES/service_offerings.po
+source_file = source/locale/pot/service_offerings.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.storage]
+file_filter = source/locale/<lang>/LC_MESSAGES/storage.po
+source_file = source/locale/pot/storage.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.systemvm]
+file_filter = source/locale/<lang>/LC_MESSAGES/systemvm.po
+source_file = source/locale/pot/systemvm.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.templates]
+file_filter = source/locale/<lang>/LC_MESSAGES/templates.po
+source_file = source/locale/pot/templates.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.troubleshooting]
+file_filter = source/locale/<lang>/LC_MESSAGES/troubleshooting.po
+source_file = source/locale/pot/troubleshooting.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.tuning]
+file_filter = source/locale/<lang>/LC_MESSAGES/tuning.po
+source_file = source/locale/pot/tuning.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.ui]
+file_filter = source/locale/<lang>/LC_MESSAGES/ui.po
+source_file = source/locale/pot/ui.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.usage]
+file_filter = source/locale/<lang>/LC_MESSAGES/usage.po
+source_file = source/locale/pot/usage.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.virtual_machines]
+file_filter = source/locale/<lang>/LC_MESSAGES/virtual_machines.po
+source_file = source/locale/pot/virtual_machines.pot
+source_lang = en
+

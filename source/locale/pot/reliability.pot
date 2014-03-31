@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 
+# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-31 14:08-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../reliability.rst:18
+# 42f93e7b838b4f629ef21f938464dbc1
+msgid "System Reliability and High Availability"
+msgstr ""
+
+#: ../../reliability.rst:21
+# d4f935885bde4f5fa5bd434efc73f99d
+msgid "HA for Management Server"
+msgstr ""
+
+#: ../../reliability.rst:23
+# e5b86e788b984534a8773e9b0e137860
+msgid "The CloudStack Management Server should be deployed in a multi-node configuration such that it is not susceptible to individual server failures. The Management Server itself (as distinct from the MySQL database) is stateless and may be placed behind a load balancer."
+msgstr ""
+
+#: ../../reliability.rst:28
+# 931b292dc1f74dbd9e98310a33755f2e
+msgid "Normal operation of Hosts is not impacted by an outage of all Management Serves. All guest VMs will continue to work."
+msgstr ""
+
+#: ../../reliability.rst:31
+# 53c840831c6a4a97abe49f13dd6971fe
+msgid "When the Management Server is down, no new VMs can be created, and the end user and admin UI, API, dynamic load distribution, and HA will cease to work."
+msgstr ""
+
+#: ../../reliability.rst:36
+# e2cde8cb07bc44a6910e13f99d712af1
+msgid "Management Server Load Balancing"
+msgstr ""
+
+#: ../../reliability.rst:38
+# 40b039f7bb73453883a04bd362d24d0f
+msgid "CloudStack can use a load balancer to provide a virtual IP for multiple Management Servers. The administrator is responsible for creating the load balancer rules for the Management Servers. The application requires persistence or stickiness across multiple sessions. The following chart lists the ports that should be load balanced and whether or not persistence is required."
+msgstr ""
+
+#: ../../reliability.rst:45
+# 8245b999edf543b8b855b4b82d1265b2
+msgid "Even if persistence is not required, enabling it is permitted."
+msgstr ""
+
+#: ../../reliability.rst:48
+# b04bd18b0d6a453da2ac167e9125242a
+msgid "Source Port"
+msgstr ""
+
+#: ../../reliability.rst:48
+# ebb2d9d219f340f4b0093d48ed13ae6a
+msgid "Destination Port"
+msgstr ""
+
+#: ../../reliability.rst:48
+# 31d3c75bdca44069961fd1d368c585ce
+msgid "Protocol"
+msgstr ""
+
+#: ../../reliability.rst:48
+# 39f21fee6f9a4961bb1505eeb987cb10
+msgid "Persistence Required?"
+msgstr ""
+
+#: ../../reliability.rst:50
+# 8d5dca5870cd499b8c812aaec487689f
+msgid "80 or 443"
+msgstr ""
+
+#: ../../reliability.rst:50
+# 288469eaaf774c19a13c8fe7c98b96f9
+msgid "8080 (or 20400 with AJP)"
+msgstr ""
+
+#: ../../reliability.rst:50
+# dbee0ed7df2d4c69966a3470fcda672d
+msgid "HTTP (or AJP)"
+msgstr ""
+
+#: ../../reliability.rst:50
+#: ../../reliability.rst:51
+# 93f39d72b22a47079b7592a8cae8c45f
+# f3f32f1a6d394b3fa117251394a644fb
+msgid "Yes"
+msgstr ""
+
+#: ../../reliability.rst:51
+#: ../../reliability.rst:51
+# c0aabddc4c074140b57cb568da9e53b3
+# 8fd23a1c5df9479d9afd5712e0002a06
+msgid "8250"
+msgstr ""
+
+#: ../../reliability.rst:51
+# 85c5e2e6a7fd4b50bd15b6abcaa54b68
+msgid "TCP"
+msgstr ""
+
+#: ../../reliability.rst:52
+#: ../../reliability.rst:52
+# af8641ff7dea44debac63cb552e1eba2
+# 0400986df3d04ae68ba993a8b0e52af9
+msgid "8096"
+msgstr ""
+
+#: ../../reliability.rst:52
+# 163b9f4609284288aa510edc22883546
+msgid "HTTP"
+msgstr ""
+
+#: ../../reliability.rst:52
+# 0e1c03c950fe4e3e858d6bb9a5fc20d2
+msgid "No"
+msgstr ""
+
+#: ../../reliability.rst:55
+# c0703d8275f042169efecb8f1c34e24e
+msgid "In addition to above settings, the administrator is responsible for setting the 'host' global config value from the management server IP to load balancer virtual IP address. If the 'host' value is not set to the VIP for Port 8250 and one of your management servers crashes, the UI is still available but the system VMs will not be able to contact the management server."
+msgstr ""
+
+#: ../../reliability.rst:63
+# 1d47e0a3a4304c5688d0eab5f738a7d1
+msgid "HA-Enabled Virtual Machines"
+msgstr ""
+
+#: ../../reliability.rst:65
+#: ../../reliability.rst:81
+# 988f2b0a1cee49ad8e2adff19be0e125
+# 949f6e66114f428586d4157ff19ae45f
+msgid "The user can specify a virtual machine as HA-enabled. By default, all virtual router VMs and Elastic Load Balancing VMs are automatically configured as HA-enabled. When an HA-enabled VM crashes, CloudStack detects the crash and restarts the VM automatically within the same Availability Zone. HA is never performed across different Availability Zones. CloudStack has a conservative policy towards restarting VMs and ensures that there will never be two instances of the same VM running at the same time. The Management Server attempts to start the VM on another Host in the same cluster."
+msgstr ""
+
+#: ../../reliability.rst:75
+#: ../../reliability.rst:91
+# 6dfc9dedb8e8424cb2e303f598a5b0ef
+# ceb436b58de14beba4dd06668804afaa
+msgid "HA features work with iSCSI or NFS primary storage. HA with local storage is not supported."
+msgstr ""
+
+#: ../../reliability.rst:79
+# da466f3482fa41629f951ec50aa2631e
+msgid "HA for Hosts"
+msgstr ""
+
+#: ../../reliability.rst:95
+# df16c2c0607a4c61b64c304e0777c42c
+msgid "Dedicated HA Hosts"
+msgstr ""
+
+#: ../../reliability.rst:97
+# ac98a112bb4a41d6a10c2e9fd2af8886
+msgid "One or more hosts can be designated for use only by HA-enabled VMs that are restarting due to a host failure. Setting up a pool of such dedicated HA hosts as the recovery destination for all HA-enabled VMs is useful to:"
+msgstr ""
+
+#: ../../reliability.rst:104
+# 1d9c1f1284e849da8df6aef8c6b79917
+msgid "Make it easier to determine which VMs have been restarted as part of the CloudStack high-availability function. If a VM is running on a dedicated HA host, then it must be an HA-enabled VM whose original host failed. (With one exception: It is possible for an administrator to manually migrate any VM to a dedicated HA host.)."
+msgstr ""
+
+#: ../../reliability.rst:112
+# c54e253d01d046bca426de20270f3f89
+msgid "Keep HA-enabled VMs from restarting on hosts which may be reserved for other purposes."
+msgstr ""
+
+#: ../../reliability.rst:115
+# 203f11cbe6f5426c9cbb6c8e066737b4
+msgid "The dedicated HA option is set through a special host tag when the host is created. To allow the administrator to dedicate hosts to only HA-enabled VMs, set the global configuration variable ha.tag to the desired tag (for example, \"ha\\_host\"), and restart the Management Server. Enter the value in the Host Tags field when adding the host(s) that you want to dedicate to HA-enabled VMs."
+msgstr ""
+
+#: ../../reliability.rst:123
+# ad8a1db8b7c54f3fbedd9f2ead6994d8
+msgid "If you set ha.tag, be sure to actually use that tag on at least one host in your cloud. If the tag specified in ha.tag is not set for any host in the cloud, the HA-enabled VMs will fail to restart after a crash."
+msgstr ""
+
+#: ../../reliability.rst:126
+# d286858984534e66a45c79482130eb8a
+msgid "Primary Storage Outage and Data Loss"
+msgstr ""
+
+#: ../../reliability.rst:128
+# aa482325b164497797fcc8925e319b83
+msgid "When a primary storage outage occurs the hypervisor immediately stops all VMs stored on that storage device. Guests that are marked for HA will be restarted as soon as practical when the primary storage comes back on line. With NFS, the hypervisor may allow the virtual machines to continue running depending on the nature of the issue. For example, an NFS hang will cause the guest VMs to be suspended until storage connectivity is restored.Primary storage is not designed to be backed up. Individual volumes in primary storage can be backed up using snapshots."
+msgstr ""
+
+#: ../../reliability.rst:139
+# 33fbc63d82cb4eafb2178c004fb912a1
+msgid "Secondary Storage Outage and Data Loss"
+msgstr ""
+
+#: ../../reliability.rst:141
+# 2a93ea5d2f0e4da6939e8f13391dad91
+msgid "For a Zone that has only one secondary storage server, a secondary storage outage will have feature level impact to the system but will not impact running guest VMs. It may become impossible to create a VM with the selected template for a user. A user may also not be able to save snapshots or examine/restore saved snapshots. These features will automatically be available when the secondary storage comes back online."
+msgstr ""
+
+#: ../../reliability.rst:148
+# 0131fdfdae154752be6146df6032f176
+msgid "Secondary storage data loss will impact recently added user data including templates, snapshots, and ISO images. Secondary storage should be backed up periodically. Multiple secondary storage servers can be provisioned within each zone to increase the scalability of the system."
+msgstr ""
+
+#: ../../reliability.rst:154
+# 32e946f31bec452b97aee852fdedbfb3
+msgid "Database High Availability"
+msgstr ""
+
+#: ../../reliability.rst:156
+# 24f4f434b1ce4281b25606d418fccc6a
+msgid "To help ensure high availability of the databases that store the internal data for CloudStack, you can set up database replication. This covers both the main CloudStack database and the Usage database. Replication is achieved using the MySQL connector parameters and two-way replication. Tested with MySQL 5.1 and 5.5."
+msgstr ""
+
+#: ../../reliability.rst:163
+# efec316eee4b461987bf261d0d56a86c
+msgid "How to Set Up Database Replication"
+msgstr ""
+
+#: ../../reliability.rst:165
+# 0817e84d25fd413cbd639d20eba36e91
+msgid "Database replication in CloudStack is provided using the MySQL replication capabilities. The steps to set up replication can be found in the MySQL documentation (links are provided below). It is suggested that you set up two-way replication, which involves two database nodes. In this case, for example, you might have node1 and node2."
+msgstr ""
+
+#: ../../reliability.rst:171
+# fe0744bc687148038eea8aeed5de6c19
+msgid "You can also set up chain replication, which involves more than two nodes. In this case, you would first set up two-way replication with node1 and node2. Next, set up one-way replication from node2 to node3. Then set up one-way replication from node3 to node4, and so on for all the additional nodes."
+msgstr ""
+
+#: ../../reliability.rst:177
+# 0384ce5c101a4318a81921b85dd616fb
+msgid "References:"
+msgstr ""
+
+#: ../../reliability.rst:181
+# c14908b4a0ea4700ab13002919e09120
+msgid "`http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html <http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html>`_"
+msgstr ""
+
+#: ../../reliability.rst:185
+# 10b1becde5ca4283b66ab4115c633fcd
+msgid "`https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server <https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server>`_"
+msgstr ""
+
+#: ../../reliability.rst:188
+# a1a34eb9cd884a308f39baf29410a2d7
+msgid "Configuring Database High Availability"
+msgstr ""
+
+#: ../../reliability.rst:190
+# 037e1ed319cb45afa95431f629bb98f6
+msgid "To control the database high availability behavior, use the following configuration settings in the file /etc/cloudstack/management/db.properties."
+msgstr ""
+
+#: ../../reliability.rst:194
+# 65be31716ae147b190ef26c95d3f20a7
+msgid "**Required Settings**"
+msgstr ""
+
+#: ../../reliability.rst:196
+# 983f7044f00b474b9377e8715f91f5d6
+msgid "Be sure you have set the following in db.properties:"
+msgstr ""
+
+#: ../../reliability.rst:200
+# 7fcf4985b7104c20b8363c6d5f1b2c5c
+msgid "``db.ha.enabled``: set to true if you want to use the replication feature."
+msgstr ""
+
+#: ../../reliability.rst:203
+# e4167706f93b47dc856a1acf6a26bd1b
+msgid "Example: ``db.ha.enabled=true``"
+msgstr ""
+
+#: ../../reliability.rst:207
+# d4ae850e4ab24d3d988e5c2f04454c0f
+msgid "``db.cloud.slaves``: set to a comma-delimited set of slave hosts for the cloud database. This is the list of nodes set up with replication. The master node is not in the list, since it is already mentioned elsewhere in the properties file."
+msgstr ""
+
+#: ../../reliability.rst:212
+# 4964061ca5f747aab4d1a379ad79e066
+msgid "Example: ``db.cloud.slaves=node2,node3,node4``"
+msgstr ""
+
+#: ../../reliability.rst:216
+# b9de2539c2864fd28ae3e261f396f19f
+msgid "``db.usage.slaves``: set to a comma-delimited set of slave hosts for the usage database. This is the list of nodes set up with replication. The master node is not in the list, since it is already mentioned elsewhere in the properties file."
+msgstr ""
+
+#: ../../reliability.rst:221
+# 2a099840b3e046b8b70eb0874e152f0c
+msgid "Example: ``db.usage.slaves=node2,node3,node4``"
+msgstr ""
+
+#: ../../reliability.rst:223
+# ecbb9cad4a2f4f6b851ab724105cf548
+msgid "**Optional Settings**"
+msgstr ""
+
+#: ../../reliability.rst:225
+# beb50c0c502942fc93950ab5d64e62e1
+msgid "The following settings must be present in db.properties, but you are not required to change the default values unless you wish to do so for tuning purposes:"
+msgstr ""
+
+#: ../../reliability.rst:231
+# 88199ce67b78476db5890126b9fa443e
+msgid "``db.cloud.secondsBeforeRetryMaster``: The number of seconds the MySQL connector should wait before trying again to connect to the master after the master went down. Default is 1 hour. The retry might happen sooner if db.cloud.queriesBeforeRetryMaster is reached first."
+msgstr ""
+
+#: ../../reliability.rst:236
+# a6a0d838e7734aec9c8e8a441d61f582
+msgid "Example: ``db.cloud.secondsBeforeRetryMaster=3600``"
+msgstr ""
+
+#: ../../reliability.rst:240
+# c87ff2e5eef14dc098a850ea37ab8641
+msgid "``db.cloud.queriesBeforeRetryMaster``: The minimum number of queries to be sent to the database before trying again to connect to the master after the master went down. Default is 5000. The retry might happen sooner if db.cloud.secondsBeforeRetryMaster is reached first."
+msgstr ""
+
+#: ../../reliability.rst:245
+# 3219915768bf4a108afabb00a195ecda
+msgid "Example: ``db.cloud.queriesBeforeRetryMaster=5000``"
+msgstr ""
+
+#: ../../reliability.rst:249
+# b67a476758de4af7b0154ae8360f24cb
+msgid "``db.cloud.initialTimeout``: Initial time the MySQL connector should wait before trying again to connect to the master. Default is 3600."
+msgstr ""
+
+#: ../../reliability.rst:252
+# bfdaf629f4eb48c0ac92eee0b8757ccd
+msgid "Example: ``db.cloud.initialTimeout=3600``"
+msgstr ""
+
+#: ../../reliability.rst:255
+# 909b81bf9974499e9cc66b8a3210b542
+msgid "Limitations on Database High Availability"
+msgstr ""
+
+#: ../../reliability.rst:257
+# d4d81b0c77f7473cbef77ab8ade71f76
+msgid "The following limitations exist in the current implementation of this feature."
+msgstr ""
+
+#: ../../reliability.rst:262
+# d3fd890ab3da46e798aa4e47b67e394f
+msgid "Slave hosts can not be monitored through CloudStack. You will need to have a separate means of monitoring."
+msgstr ""
+
+#: ../../reliability.rst:267
+# 80173b87cb9e44a38c93854d4adcfa19
+msgid "Events from the database side are not integrated with the CloudStack Management Server events system."
+msgstr ""
+
+#: ../../reliability.rst:272
+# 2cc19c99cbfa4e3796e358a8b8ea6365
+msgid "You must periodically perform manual clean-up of bin log files generated by replication on database nodes. If you do not clean up the log files, the disk can become full."
+msgstr ""
+

@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 
+# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-31 14:08-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../tuning.rst:18
+# a09f44bbf5fe4885aa5f5856bae80ea4
+msgid "Tuning"
+msgstr ""
+
+#: ../../tuning.rst:20
+# eb683307decf4141bcb683821c79ee03
+msgid "This section provides tips on how to improve the performance of your cloud."
+msgstr ""
+
+#: ../../tuning.rst:24
+# 0ae5216b7aa04aed8e4ba37ced396c59
+msgid "Performance Monitoring"
+msgstr ""
+
+#: ../../tuning.rst:26
+# 4b6618cc525444739c5aec508caf360f
+msgid "Host and guest performance monitoring is available to end users and administrators. This allows the user to monitor their utilization of resources and determine when it is appropriate to choose a more powerful service offering or larger disk."
+msgstr ""
+
+#: ../../tuning.rst:32
+# 276e9fb4d3d343ff908423a78692e732
+msgid "Increase Management Server Maximum Memory"
+msgstr ""
+
+#: ../../tuning.rst:34
+# 411d58758d4c45029bda78e8e3a11012
+msgid "If the Management Server is subject to high demand, the default maximum JVM memory allocation can be insufficient. To increase the memory:"
+msgstr ""
+
+#: ../../tuning.rst:39
+# d48e389d98ec45acb7f98d594f33935d
+msgid "Edit the Tomcat configuration file:"
+msgstr ""
+
+#: ../../tuning.rst:47
+# 279ab9737d40423aa83a711cc6156296
+msgid "Change the command-line parameter -XmxNNNm to a higher value of N."
+msgstr ""
+
+#: ../../tuning.rst:49
+# 4a5af47c21964e2f9365ab8534002b04
+msgid "For example, if the current value is -Xmx128m, change it to -Xmx1024m or higher."
+msgstr ""
+
+#: ../../tuning.rst:54
+# 0b7931e36ac34cd8a33dc0c4a60e549e
+msgid "To put the new setting into effect, restart the Management Server."
+msgstr ""
+
+#: ../../tuning.rst:60
+# 922da07d183b4c1fb87754cee9ee711c
+msgid "For more information about memory issues, see \"FAQ: Memory\" at `Tomcat Wiki. <http://wiki.apache.org/tomcat/FAQ/Memory>`_"
+msgstr ""
+
+#: ../../tuning.rst:64
+# 2abdd3204b2647e7b0d236deba7e6dc7
+msgid "Set Database Buffer Pool Size"
+msgstr ""
+
+#: ../../tuning.rst:66
+# 3dc24e56555f45a3a78f54a9c01167cb
+msgid "It is important to provide enough memory space for the MySQL database to cache data and indexes:"
+msgstr ""
+
+#: ../../tuning.rst:71
+# 1ad70fcf154640e0bd9f10edc5194af6
+msgid "Edit the MySQL configuration file:"
+msgstr ""
+
+#: ../../tuning.rst:79
+# 98a251615df34d0ebe59198a671cfb7a
+msgid "Insert the following line in the [mysqld] section, below the datadir line. Use a value that is appropriate for your situation. We recommend setting the buffer pool at 40% of RAM if MySQL is on the same server as the management server or 70% of RAM if MySQL has a dedicated server. The following example assumes a dedicated server with 1024M of RAM."
+msgstr ""
+
+#: ../../tuning.rst:92
+# f4b16571708a45d6bdccae5a0c4eea4f
+msgid "Restart the MySQL service."
+msgstr ""
+
+#: ../../tuning.rst:98
+# e96855539cae48449d32a81ed8982be7
+msgid "For more information about the buffer pool, see \"The InnoDB Buffer Pool\" at `MySQL Reference Manual <http://dev.mysql.com/doc/refman/5.5/en/innodb-buffer-pool.html>`_."
+msgstr ""
+
+#: ../../tuning.rst:103
+# 5bde2eb730ae44e1ac63a015a63a84ef
+msgid "Set and Monitor Total VM Limits per Host"
+msgstr ""
+
+#: ../../tuning.rst:105
+# 4d031105d275433294098273f33fe211
+msgid "The CloudStack administrator should monitor the total number of VM instances in each cluster, and disable allocation to the cluster if the total is approaching the maximum that the hypervisor can handle. Be sure to leave a safety margin to allow for the possibility of one or more hosts failing, which would increase the VM load on the other hosts as the VMs are automatically redeployed. Consult the documentation for your chosen hypervisor to find the maximum permitted number of VMs per host, then use CloudStack global configuration settings to set this as the default limit. Monitor the VM activity in each cluster at all times. Keep the total number of VMs below a safe level that allows for the occasional host failure. For example, if there are N hosts in the cluster, and you want to allow for one host in the cluster to be down at any given time, the total number of VM instances you can permit in the cluster is at most (N-1) \\* (per-host-limit). Once a cluster reaches this number of VMs, use the CloudStack UI to disable allocation of more VMs to the cluster."
+msgstr ""
+
+#: ../../tuning.rst:123
+# e32b5f442e7246fb98e590d27b87fbb5
+msgid "Configure XenServer dom0 Memory"
+msgstr ""
+
+#: ../../tuning.rst:125
+# 6614a82a183a4312bdbccca333889df7
+msgid "Configure the XenServer dom0 settings to allocate more memory to dom0. This can enable XenServer to handle larger numbers of virtual machines. We recommend 2940 MB of RAM for XenServer dom0. For instructions on how to do this, see `Citrix Knowledgebase Article <http://support.citrix.com/article/CTX126531>`_.The article refers to XenServer 5.6, but the same information applies to XenServer 6"
+msgstr ""
+
