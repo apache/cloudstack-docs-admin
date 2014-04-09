@@ -1243,6 +1243,174 @@ restoreVirtualMachine call. In this case, the VM's root disk is
 destroyed and recreated, but from the same template or ISO that was
 already in use by the VM.
 
+Using SSH Keys for Authentication
+---------------------------------
+
+In addition to the username and password authentication, CloudStack
+supports using SSH keys to log in to the cloud infrastructure for
+additional security. You can use the createSSHKeyPair API to generate
+the SSH keys.
+
+Because each cloud user has their own SSH key, one cloud user cannot log
+in to another cloud user's instances unless they share their SSH key
+files. Using a single SSH key pair, you can manage multiple instances.
+
+Creating an Instance Template that Supports SSH Keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Create an instance template that supports SSH Keys.
+
+#. 
+
+   Create a new instance by using the template provided by cloudstack.
+
+   For more information on creating a new instance, see
+
+#. 
+
+   Download the cloudstack script from `The SSH Key Gen Script <http://sourceforge.net/projects/cloudstack/files/SSH%20Key%20Gen%20Script/>`_ to the instance you have created.
+
+   .. sourcecode:: bash
+
+       wget http://downloads.sourceforge.net/project/cloudstack/SSH%20Key%20Gen%20Script/cloud-set-guest-sshkey.in?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fcloudstack%2Ffiles%2FSSH%2520Key%2520Gen%2520Script%2F&ts=1331225219&use_mirror=iweb
+
+#. 
+
+   Copy the file to /etc/init.d.
+
+   .. sourcecode:: bash
+
+       cp cloud-set-guest-sshkey.in /etc/init.d/
+
+#. 
+
+   Give the necessary permissions on the script:
+
+   .. sourcecode:: bash
+
+       chmod +x /etc/init.d/cloud-set-guest-sshkey.in
+
+#. 
+
+   Run the script while starting up the operating system:
+
+   .. sourcecode:: bash
+
+       chkconfig --add cloud-set-guest-sshkey.in
+
+#. 
+
+   Stop the instance.
+
+Creating the SSH Keypair
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You must make a call to the createSSHKeyPair api method. You can either
+use the CloudStack Python API library or the curl commands to make the
+call to the cloudstack api.
+
+For example, make a call from the cloudstack server to create a SSH
+keypair called "keypair-doc" for the admin account in the root domain:
+
+.. note:: 
+    Ensure that you adjust these values to meet your needs. If you are making the API call from a different server, your URL/PORT will be different, and you will need to use the API keys.
+
+#. 
+
+   Run the following curl command:
+
+   .. sourcecode:: bash
+
+       curl --globoff "http://localhost:8096/?command=createSSHKeyPair&name=keypair-doc&account=admin&domainid=5163440e-c44b-42b5-9109-ad75cae8e8a2"
+
+   The output is something similar to what is given below:
+
+   .. sourcecode:: bash
+
+       <?xml version="1.0" encoding="ISO-8859-1"?><createsshkeypairresponse cloud-stack-version="3.0.0.20120228045507"><keypair><name>keypair-doc</name><fingerprint>f6:77:39:d5:5e:77:02:22:6a:d8:7f:ce:ab:cd:b3:56</fingerprint><privatekey>-----BEGIN RSA PRIVATE KEY-----
+       MIICXQIBAAKBgQCSydmnQ67jP6lNoXdX3noZjQdrMAWNQZ7y5SrEu4wDxplvhYci
+       dXYBeZVwakDVsU2MLGl/K+wefwefwefwefwefJyKJaogMKn7BperPD6n1wIDAQAB
+       AoGAdXaJ7uyZKeRDoy6wA0UmF0kSPbMZCR+UTIHNkS/E0/4U+6lhMokmFSHtu
+       mfDZ1kGGDYhMsdytjDBztljawfawfeawefawfawfawQQDCjEsoRdgkduTy
+       QpbSGDIa11Jsc+XNDx2fgRinDsxXI/zJYXTKRhSl/LIPHBw/brW8vzxhOlSOrwm7
+       VvemkkgpAkEAwSeEw394LYZiEVv395ar9MLRVTVLwpo54jC4tsOxQCBlloocK
+       lYaocpk0yBqqOUSBawfIiDCuLXSdvBo1Xz5ICTM19vgvEp/+kMuECQBzm
+       nVo8b2Gvyagqt/KEQo8wzH2THghZ1qQ1QRhIeJG2aissEacF6bGB2oZ7Igim5L14
+       4KR7OeEToyCLC2k+02UCQQCrniSnWKtDVoVqeK/zbB32JhW3Wullv5p5zUEcd
+       KfEEuzcCUIxtJYTahJ1pvlFkQ8anpuxjSEDp8x/18bq3
+       -----END RSA PRIVATE KEY-----
+       </privatekey></keypair></createsshkeypairresponse>
+
+#. 
+
+   Copy the key data into a file. The file looks like this:
+
+   .. sourcecode:: bash
+
+       -----BEGIN RSA PRIVATE KEY-----
+       MIICXQIBAAKBgQCSydmnQ67jP6lNoXdX3noZjQdrMAWNQZ7y5SrEu4wDxplvhYci
+       dXYBeZVwakDVsU2MLGl/K+wefwefwefwefwefJyKJaogMKn7BperPD6n1wIDAQAB
+       AoGAdXaJ7uyZKeRDoy6wA0UmF0kSPbMZCR+UTIHNkS/E0/4U+6lhMokmFSHtu
+       mfDZ1kGGDYhMsdytjDBztljawfawfeawefawfawfawQQDCjEsoRdgkduTy
+       QpbSGDIa11Jsc+XNDx2fgRinDsxXI/zJYXTKRhSl/LIPHBw/brW8vzxhOlSOrwm7
+       VvemkkgpAkEAwSeEw394LYZiEVv395ar9MLRVTVLwpo54jC4tsOxQCBlloocK
+       lYaocpk0yBqqOUSBawfIiDCuLXSdvBo1Xz5ICTM19vgvEp/+kMuECQBzm
+       nVo8b2Gvyagqt/KEQo8wzH2THghZ1qQ1QRhIeJG2aissEacF6bGB2oZ7Igim5L14
+       4KR7OeEToyCLC2k+02UCQQCrniSnWKtDVoVqeK/zbB32JhW3Wullv5p5zUEcd
+       KfEEuzcCUIxtJYTahJ1pvlFkQ8anpuxjSEDp8x/18bq3
+       -----END RSA PRIVATE KEY-----
+
+#. 
+
+   Save the file.
+
+Creating an Instance
+~~~~~~~~~~~~~~~~~~~~
+
+After you save the SSH keypair file, you must create an instance by
+using the template that you created at `Section 5.2.1, “ Creating an
+Instance Template that Supports SSH Keys” <#create-ssh-template>`__.
+Ensure that you use the same SSH key name that you created at
+`Section 5.2.2, “Creating the SSH Keypair” <#create-ssh-keypair>`__.
+
+.. note:: 
+
+   You cannot create the instance by using the GUI at this time and associate the instance with the newly created SSH keypair.
+
+A sample curl command to create a new instance is:
+
+.. sourcecode:: bash
+
+    curl --globoff http://localhost:<port number>/?command=deployVirtualMachine\&zoneId=1\&serviceOfferingId=18727021-7556-4110-9322-d625b52e0813\&templateId=e899c18a-ce13-4bbf-98a9-625c5026e0b5\&securitygroupids=ff03f02f-9e3b-48f8-834d-91b822da40c5\&account=admin\&domainid=1\&keypair=keypair-doc
+
+Substitute the template, service offering and security group IDs (if you
+are using the security group feature) that are in your cloud
+environment.
+
+Logging In Using the SSH Keypair
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To test your SSH key generation is successful, check whether you can log
+in to the cloud setup.
+
+For example, from a Linux OS, run:
+
+.. sourcecode:: bash
+
+    ssh -i ~/.ssh/keypair-doc <ip address>
+
+The -i parameter tells the ssh client to use a ssh key found at
+~/.ssh/keypair-doc.
+
+Resetting SSH Keys
+~~~~~~~~~~~~~~~~~~
+
+With the API command resetSSHKeyForVirtualMachine, a user can set or
+reset the SSH keypair assigned to a virtual machine. A lost or
+compromised SSH keypair can be changed, and the user can access the VM
+by using the new keypair. Just create or register a new keypair, then
+call resetSSHKeyForVirtualMachine.
+
 .. |basic-deployment.png| image:: _static/images/basic-deployment.png
    :alt: Basic two-machine CloudStack deployment
 .. |VMSnapshotButton.png| image:: _static/images/VMSnapshotButton.png
