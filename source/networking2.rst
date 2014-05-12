@@ -6952,6 +6952,8 @@ To create a persistent network, perform the following:
 
    Click OK.
 
+.. include:: palo_alto_config.rst
+
 .. |guest-traffic-setup.png| image:: _static/images/guest-traffic-setup.png
    :alt: Depicts a guest traffic setup
 .. |networksinglepod.png| image:: _static/images/network-singlepod.png
