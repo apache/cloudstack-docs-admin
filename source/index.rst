@@ -21,6 +21,20 @@
 Welcome to CloudStack Administration Documentation
 ==================================================
 
+.. figure:: /_static/images/acslogo.png
+    :align: center
+
+.. warning:: We are in the process of changing documentation format as well as hosting mechanism.
+             Please be patient with us as we migrate our entire documentation to this new setup.
+
+This guide is aimed at Administrators of a CloudStack based Cloud, for Release Notes, Installation and General introduction to CloudStack see the following guides:
+
+- `Documentation Start <http://docs.cloudstack.apache.org>`_
+
+- `Installation Guide <http://docs.cloudstack.apache.org/projects/cloudstack-installation>`_
+
+- `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_- 
+
 User Interface
 --------------
 
