@@ -33,7 +33,7 @@ This guide is aimed at Administrators of a CloudStack based Cloud, for Release N
 
 - `Installation Guide <http://docs.cloudstack.apache.org/projects/cloudstack-installation>`_
 
-- `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_- 
+- `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
 
 User Interface
 --------------
