@@ -114,7 +114,7 @@ Managing Networks and Traffic
 .. toctree::
    :maxdepth: 2
 
-   networking2
+   networking_and_traffic
 
 Managing the Cloud
 ------------------
