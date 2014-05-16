@@ -221,7 +221,7 @@ proxy domain, SSL certificate, and private key:
    #. 
 
       Generate a new certificate CSR. Ensure the creation of a wildcard 
-      certificate, eg *.consoleproxy.company.com
+      certificate, eg ``*.consoleproxy.company.com``
 
       .. code:: bash
 
@@ -265,7 +265,7 @@ proxy domain, SSL certificate, and private key:
 
    -  
 
-      The desired domain name, prefixed with ``*.``; for example, *.consoleproxy.company.com
+      The desired domain name, prefixed with ``*.``; for example, ``*.consoleproxy.company.com``
 
      |update-ssl.png|
 
@@ -281,7 +281,7 @@ requests will be served with the new DNS domain name, certificate, and
 key.
 
 Load-balancing Console Proxies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 An alternative to using dynamic DNS or creating a range of DNS entries 
 as described in the last section would be to create a SSL certificate
 for a specific domain name, configure CloudStack to use that particular
@@ -534,7 +534,7 @@ Supported Virtual Routers
    Redundant VR
 
 Upgrading Virtual Routers
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. 
 
