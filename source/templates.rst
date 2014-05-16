@@ -485,7 +485,8 @@ templating.
                 echo $hostname > /etc/hostname
                 hostname $hostname
                 # Recreate SSH2
-                dpkg-reconfig openssh-server
+                export DEBIAN_FRONTEND=noninteractive
+                dpkg-reconfigure openssh-server
             fi
             ### End of Script ###
             
