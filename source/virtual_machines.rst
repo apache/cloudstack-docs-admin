@@ -400,7 +400,7 @@ To add an affinity group:
 
       Type. The only supported type shipped with CloudStack is Host
       Anti-Affinity. This indicates that the VMs in this group should
-      avoid being placed on the same VM with each other. If you see
+      avoid being placed on the same host with each other. If you see
       other types in this list, it means that your installation of
       CloudStack has been extended with customized affinity group
       plugins.
