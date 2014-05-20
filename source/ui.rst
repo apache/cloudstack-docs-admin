@@ -13,6 +13,7 @@
    specific language governing permissions and limitations
    under the License.
 
+
 User Interface
 ==============
 
@@ -28,7 +29,7 @@ management server IP address)
 
 .. sourcecode:: bash
 
-    http://<management-server-ip-address>:8080/client
+   http://<management-server-ip-address>:8080/client
 
 On a fresh Management Server installation, a guided tour splash screen
 appears. On later visits, you’ll see a login screen where you specify
@@ -36,8 +37,8 @@ the following to proceed to your Dashboard:
 
 Username -> The user ID of your account. The default username is admin.
 
-Password -> The password associated with the user ID. The password for the default
-username is password.
+Password -> The password associated with the user ID. The password for 
+the default username is password.
 
 Domain -> If you are a root user, leave this field blank.
 
@@ -52,6 +53,7 @@ enter Comp1/sales.
 For more guidance about the choices that appear when you log in to this
 UI, see Logging In as the Root Administrator.
 
+
 End User's UI Overview
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -60,6 +62,7 @@ their cloud resources, including virtual machines, templates and ISOs,
 data volumes and snapshots, guest networks, and IP addresses. If the
 user is a member or administrator of one or more CloudStack projects,
 the UI can provide a project-oriented view.
+
 
 Root Administrator's UI Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,6 +77,7 @@ screen and the navigation bar on the left provide access to a variety of
 administrative functions. The root administrator can also use the UI to
 perform all the same tasks that are present in the end-user’s UI.
 
+
 Logging In as the Root Administrator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -81,26 +85,20 @@ After the Management Server software is installed and running, you can
 run the CloudStack user interface. This UI is there to help you
 provision, view, and manage your cloud infrastructure.
 
-#. 
-
-   Open your favorite Web browser and go to this URL. Substitute the IP
+#. Open your favorite Web browser and go to this URL. Substitute the IP
    address of your own Management Server:
 
    .. sourcecode:: bash
 
-       http://<management-server-ip-address>:8080/client
+      http://<management-server-ip-address>:8080/client
 
    After logging into a fresh Management Server installation, a guided
    tour splash screen appears. On later visits, you’ll be taken directly
    into the Dashboard.
 
-#. 
+#. If you see the first-time splash screen, choose one of the following.
 
-   If you see the first-time splash screen, choose one of the following.
-
-   -  
-
-      **Continue with basic setup.** Choose this if you're just trying
+   -  **Continue with basic setup.** Choose this if you're just trying
       CloudStack, and you want a guided walkthrough of the simplest
       possible configuration so that you can get started right away.
       We'll help you set up a cloud with the following features: a
@@ -112,9 +110,7 @@ provision, view, and manage your cloud infrastructure.
       information you need, but if you want just a bit more detail, you
       can follow along in the Trial Installation Guide.
 
-   -  
-
-      **I have used CloudStack before.** Choose this if you have already
+   -  **I have used CloudStack before.** Choose this if you have already
       gone through a design phase and planned a more sophisticated
       deployment, or you are ready to start scaling up a trial cloud
       that you set up earlier with the basic setup screens. In the
@@ -126,15 +122,17 @@ provision, view, and manage your cloud infrastructure.
 
       The root administrator Dashboard appears.
 
-#. 
-
-   You should set a new root administrator password. If you chose basic
+#. You should set a new root administrator password. If you chose basic
    setup, you’ll be prompted to create a new password right away. If you
    chose experienced user, use the steps in :ref:`changing-root-password`.
 
-.. warning:: 
-
-   You are logging in as the root administrator. This account manages the CloudStack deployment, including physical infrastructure. The root administrator can modify configuration settings to change basic functionality, create or delete user accounts, and take many actions that should be performed only by an authorized person. Please change the default password to a new, unique password.
+.. warning::
+   You are logging in as the root administrator. This account manages the 
+   CloudStack deployment, including physical infrastructure. The root 
+   administrator can modify configuration settings to change basic 
+   functionality, create or delete user accounts, and take many actions 
+   that should be performed only by an authorized person. Please change 
+   the default password to a new, unique password.
 
 .. _changing-root-password:
 
@@ -150,43 +148,27 @@ many actions that should be performed only by an authorized person. When
 first installing CloudStack, be sure to change the default password to a
 new, unique value.
 
-#. 
-
-   Open your favorite Web browser and go to this URL. Substitute the IP
+#. Open your favorite Web browser and go to this URL. Substitute the IP
    address of your own Management Server:
 
    .. sourcecode:: bash
 
-       http://<management-server-ip-address>:8080/client
+      http://<management-server-ip-address>:8080/client
 
-#. 
-
-   Log in to the UI using the current root user ID and password. The
+#. Log in to the UI using the current root user ID and password. The
    default is admin, password.
 
-#. 
+#. Click Accounts.
 
-   Click Accounts.
+#. Click the admin account name.
 
-#. 
+#. Click View Users.
 
-   Click the admin account name.
+#. Click the admin user name.
 
-#. 
+#. Click the Change Password button. |change-password.png|
 
-   Click View Users.
-
-#. 
-
-   Click the admin user name.
-
-#. 
-
-   Click the Change Password button. |change-password.png|
-
-#. 
-
-   Type the new password, and click OK.
+#. Type the new password, and click OK.
 
 
 .. |change-password.png| image:: _static/images/change-password.png

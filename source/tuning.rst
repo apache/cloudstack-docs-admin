@@ -20,6 +20,7 @@ Tuning
 This section provides tips on how to improve the performance of your
 cloud.
 
+
 Performance Monitoring
 ----------------------
 
@@ -28,37 +29,33 @@ administrators. This allows the user to monitor their utilization of
 resources and determine when it is appropriate to choose a more powerful
 service offering or larger disk.
 
+
 Increase Management Server Maximum Memory
 -----------------------------------------
 
 If the Management Server is subject to high demand, the default maximum
 JVM memory allocation can be insufficient. To increase the memory:
 
-#. 
-
-   Edit the Tomcat configuration file:
+#. Edit the Tomcat configuration file:
 
    .. code:: bash
 
-       /etc/cloudstack/management/tomcat6.conf
+      /etc/cloudstack/management/tomcat6.conf
 
-#. 
-
-   Change the command-line parameter -XmxNNNm to a higher value of N.
+#. Change the command-line parameter -XmxNNNm to a higher value of N.
 
    For example, if the current value is -Xmx128m, change it to -Xmx1024m
    or higher.
 
-#. 
-
-   To put the new setting into effect, restart the Management Server.
+#. To put the new setting into effect, restart the Management Server.
 
    .. code:: bash
 
-       # service cloudstack-management restart
+      # service cloudstack-management restart
 
 For more information about memory issues, see "FAQ: Memory" at `Tomcat
 Wiki. <http://wiki.apache.org/tomcat/FAQ/Memory>`_
+
 
 Set Database Buffer Pool Size
 -----------------------------
@@ -66,17 +63,13 @@ Set Database Buffer Pool Size
 It is important to provide enough memory space for the MySQL database to
 cache data and indexes:
 
-#. 
-
-   Edit the MySQL configuration file:
+#. Edit the MySQL configuration file:
 
    .. code:: bash
 
-       /etc/my.cnf
+      /etc/my.cnf
 
-#. 
-
-   Insert the following line in the [mysqld] section, below the datadir
+#. Insert the following line in the [mysqld] section, below the datadir
    line. Use a value that is appropriate for your situation. We
    recommend setting the buffer pool at 40% of RAM if MySQL is on the
    same server as the management server or 70% of RAM if MySQL has a
@@ -85,19 +78,18 @@ cache data and indexes:
 
    .. code:: bash
 
-       innodb_buffer_pool_size=700M
+      innodb_buffer_pool_size=700M
 
-#. 
-
-   Restart the MySQL service.
+#. Restart the MySQL service.
 
    .. code:: bash
 
-       # service mysqld restart
+      # service mysqld restart
 
 For more information about the buffer pool, see "The InnoDB Buffer Pool"
 at `MySQL Reference
 Manual <http://dev.mysql.com/doc/refman/5.5/en/innodb-buffer-pool.html>`_.
+
 
 Set and Monitor Total VM Limits per Host
 ----------------------------------------
@@ -118,6 +110,7 @@ any given time, the total number of VM instances you can permit in the
 cluster is at most (N-1) \* (per-host-limit). Once a cluster reaches
 this number of VMs, use the CloudStack UI to disable allocation of more
 VMs to the cluster.
+
 
 Configure XenServer dom0 Memory
 -------------------------------

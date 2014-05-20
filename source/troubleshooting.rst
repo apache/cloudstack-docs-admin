@@ -13,6 +13,7 @@
    specific language governing permissions and limitations
    under the License.
    
+
 TroubleShooting
 ===============
 
@@ -26,13 +27,13 @@ messages. We recommend this command to find the problematic output in
 the Management Server log:.
 
 .. note:: 
-    When copying and pasting a command, be sure the command has pasted as a
-    single line before executing. Some document viewers may introduce
-    unwanted line breaks in copied text.
+   When copying and pasting a command, be sure the command has pasted as a
+   single line before executing. Some document viewers may introduce
+   unwanted line breaks in copied text.
 
 .. code:: bash
 
-            grep -i -E 'exception|unable|fail|invalid|leak|warn|error' /var/log/cloudstack/management/management-server.log
+   grep -i -E 'exception|unable|fail|invalid|leak|warn|error' /var/log/cloudstack/management/management-server.log
 
 The CloudStack processes requests with a Job ID. If you find an error in
 the logs and you are interested in debugging the issue you can grep for
@@ -41,14 +42,14 @@ find the following ERROR message:
 
 .. code:: bash
 
-            2010-10-04 13:49:32,595 ERROR [cloud.vm.UserVmManagerImpl] (Job-Executor-11:job-1076) Unable to find any host for [User|i-8-42-VM-untagged]
+   2010-10-04 13:49:32,595 ERROR [cloud.vm.UserVmManagerImpl] (Job-Executor-11:job-1076) Unable to find any host for [User|i-8-42-VM-untagged]
 
 Note that the job ID is 1076. You can track back the events relating to
 job 1076 with the following grep:
 
 .. code:: bash
 
-            grep "job-1076)" management-server.log
+   grep "job-1076)" management-server.log
 
 The CloudStack Agent Server logs its activities in `/var/log/cloudstack/agent/`.
 
@@ -62,12 +63,14 @@ Symptom
 Loss of existing data on primary storage which has been exposed as a
 Linux NFS server export on an iSCSI volume.
 
+
 Cause
 ~~~~~
 
 It is possible that a client from outside the intended pool has mounted
 the storage. When this occurs, the LVM is wiped and all data in the
 volume is lost
+
 
 Solution
 ~~~~~~~~
@@ -77,15 +80,17 @@ allowed access by specifying a subnet mask. For example:
 
 .. code:: bash
 
-    echo “/export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check)” > /etc/exports
+   echo “/export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check)” > /etc/exports
 
 Adjust the above command to suit your deployment needs.
+
 
 More Information
 ~~~~~~~~~~~~~~~~
 
 See the export procedure in the "Secondary Storage" section of the
 CloudStack Installation Guide
+
 
 Recovering a Lost Virtual Router
 --------------------------------
@@ -96,10 +101,12 @@ Symptom
 A virtual router is running, but the host is disconnected. A virtual
 router no longer functions as expected.
 
+
 Cause
 ~~~~~
 
 The Virtual router is lost or down.
+
 
 Solution
 ~~~~~~~~
@@ -109,20 +116,14 @@ functions as expected, destroy it. You must create one afresh while
 keeping the backup router up and running (it is assumed this is in a
 redundant router setup):
 
--  
-
-   Force stop the router. Use the stopRouter API with forced=true
+-  Force stop the router. Use the stopRouter API with forced=true
    parameter to do so.
 
--  
-
-   Before you continue with destroying this router, ensure that the
+-  Before you continue with destroying this router, ensure that the
    backup router is running. Otherwise the network connection will be
    lost.
 
--  
-
-   Destroy the router by using the destroyRouter API.
+-  Destroy the router by using the destroyRouter API.
 
 Recreate the missing router by using the restartNetwork API with
 cleanup=false parameter. For more information about redundant router
@@ -130,6 +131,7 @@ setup, see Creating a New Network Offering.
 
 For more information about the API syntax, see the API Reference at
 `http://cloudstack.apache.org/docs/api/ <http://cloudstack.apache.org/docs/api/>`_.
+
 
 Maintenance mode not working on vCenter
 ---------------------------------------
@@ -139,11 +141,13 @@ Symptom
 
 Host was placed in maintenance mode, but still appears live in vCenter.
 
+
 Cause
 ~~~~~~
 
 The CloudStack administrator UI was used to place the host in scheduled
 maintenance mode. This mode is separate from vCenter's maintenance mode.
+
 
 Solution
 ~~~~~~~~
@@ -159,6 +163,7 @@ Symptom
 
 When attempting to create a VM, the VM will not deploy.
 
+
 Cause
 ~~~~~
 
@@ -166,10 +171,12 @@ If the template was created by uploading an OVA file that was created
 using vSphere Client, it is possible the OVA contained an ISO image. If
 it does, the deployment of VMs from the template will fail.
 
+
 Solution
 ~~~~~~~~
 
 Remove the ISO and re-upload the template.
+
 
 Unable to power on virtual machine on VMware
 --------------------------------------------
@@ -179,17 +186,12 @@ Symptom
 
 Virtual machine does not power on. You might see errors like:
 
--  
+-  Unable to open Swap File
 
-   Unable to open Swap File
+-  Unable to access a file since it is locked
 
--  
+-  Unable to access Virtual machine configuration
 
-   Unable to access a file since it is locked
-
--  
-
-   Unable to access Virtual machine configuration
 
 Cause
 ~~~~~
@@ -200,13 +202,15 @@ Sometimes the files are not unlocked when the virtual machine is powered
 off. When a virtual machine attempts to power on, it can not access
 these critical files, and the virtual machine is unable to power on.
 
+
 Solution
 ~~~~~~~~
 
 See the following:
 
-`VMware Knowledge Base
-Article <http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=10051/>`_
+`VMware Knowledge Base Article 
+<http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=10051/>`_
+
 
 Load balancer rules fail after changing network offering
 --------------------------------------------------------
@@ -217,6 +221,7 @@ Symptom
 After changing the network offering on a network, load balancer rules
 stop working.
 
+
 Cause
 ~~~~~
 
@@ -225,17 +230,20 @@ that includes an external load balancer device such as NetScaler, and
 later the network service offering changed to one that uses the
 CloudStack virtual router.
 
+
 Solution
 ~~~~~~~~
 
 Create a firewall rule on the virtual router for each of your existing
 load balancing rules so that they continue to function.
 
+
 Troubleshooting Internet Traffic
 --------------------------------
 
 Below are a few troubleshooting steps to check whats going wrong with your
 network...
+
 
 Trouble Shooting Steps
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -248,17 +256,17 @@ Trouble Shooting Steps
 
    ::
 
-     kvm1 ~$ vconfig add eth0 64
-     kvm1 ~$ ifconfig eth0.64 1.2.3.4 netmask 255.255.255.0 up
-     kvm1 ~$ ping 1.2.3.5
+      kvm1 ~$ vconfig add eth0 64
+      kvm1 ~$ ifconfig eth0.64 1.2.3.4 netmask 255.255.255.0 up
+      kvm1 ~$ ping 1.2.3.5
 
    On *host2 (kvm2)*
 
    ::
 
-     kvm2 ~$ vconfig add eth0 64
-     kvm2 ~$ ifconfig eth0.64 1.2.3.5 netmask 255.255.255.0 up
-     kvm2 ~$ ping 1.2.3.4
+      kvm2 ~$ vconfig add eth0 64
+      kvm2 ~$ ifconfig eth0.64 1.2.3.5 netmask 255.255.255.0 up
+      kvm2 ~$ ping 1.2.3.4
 
    If the pings dont work, run *tcpdump(8)* all over the place to check
    who is gobbling up the packets. Ultimately, if the switches are not
@@ -282,33 +290,33 @@ Trouble Shooting Steps
 
    ::
 
-     acs-manager ~$ cloudmonkey list traffictypes physicalnetworkid=41cb7ff6-8eb2-4630-b577-1da25e0e1145
-     count = 4
-     traffictype:
-     id = cd0915fe-a660-4a82-9df7-34aebf90003e
-     kvmnetworklabel = cloudbr0
-     physicalnetworkid = 41cb7ff6-8eb2-4630-b577-1da25e0e1145
-     traffictype = Guest
-     xennetworklabel = MGMT
-     ========================================================
-     id = f5524b8f-6605-41e4-a982-81a356b2a196
-     kvmnetworklabel = cloudbr0
-     physicalnetworkid = 41cb7ff6-8eb2-4630-b577-1da25e0e1145
-     traffictype = Management
-     xennetworklabel = MGMT
-     ========================================================
-     id = 266bad0e-7b68-4242-b3ad-f59739346cfd
-     kvmnetworklabel = cloudbr0
-     physicalnetworkid = 41cb7ff6-8eb2-4630-b577-1da25e0e1145
-     traffictype = Public
-     xennetworklabel = MGMT
-     ========================================================
-     id = a2baad4f-7ce7-45a8-9caf-a0b9240adf04
-     kvmnetworklabel = cloudbr0
-     physicalnetworkid = 41cb7ff6-8eb2-4630-b577-1da25e0e1145
-     traffictype = Storage
-     xennetworklabel = MGMT
-     =========================================================
+      acs-manager ~$ cloudmonkey list traffictypes physicalnetworkid=41cb7ff6-8eb2-4630-b577-1da25e0e1145
+      count = 4
+      traffictype:
+      id = cd0915fe-a660-4a82-9df7-34aebf90003e
+      kvmnetworklabel = cloudbr0
+      physicalnetworkid = 41cb7ff6-8eb2-4630-b577-1da25e0e1145
+      traffictype = Guest
+      xennetworklabel = MGMT
+      ========================================================
+      id = f5524b8f-6605-41e4-a982-81a356b2a196
+      kvmnetworklabel = cloudbr0
+      physicalnetworkid = 41cb7ff6-8eb2-4630-b577-1da25e0e1145
+      traffictype = Management
+      xennetworklabel = MGMT
+      ========================================================
+      id = 266bad0e-7b68-4242-b3ad-f59739346cfd
+      kvmnetworklabel = cloudbr0
+      physicalnetworkid = 41cb7ff6-8eb2-4630-b577-1da25e0e1145
+      traffictype = Public
+      xennetworklabel = MGMT
+      ========================================================
+      id = a2baad4f-7ce7-45a8-9caf-a0b9240adf04
+      kvmnetworklabel = cloudbr0
+      physicalnetworkid = 41cb7ff6-8eb2-4630-b577-1da25e0e1145
+      traffictype = Storage
+      xennetworklabel = MGMT
+      =========================================================
   
 #. KVM traffic labels require to be named as *"cloudbr0"*, *"cloudbr2"*,
    *"cloudbrN"* etc and the corresponding bridge must exist on the KVM
@@ -319,15 +327,15 @@ Trouble Shooting Steps
 
    ::
 
-    kvm1 ~$ ifconfig cloudbr0
-    cloudbr0  Link encap:Ethernet  HWaddr 00:0C:29:EF:7D:78  
-          inet addr:192.168.44.22  Bcast:192.168.44.255  Mask:255.255.255.0
-          inet6 addr: fe80::20c:29ff:feef:7d78/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:92435 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:50596 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0 
-          RX bytes:94985932 (90.5 MiB)  TX bytes:61635793 (58.7 MiB)
+      kvm1 ~$ ifconfig cloudbr0
+      cloudbr0  Link encap:Ethernet  HWaddr 00:0C:29:EF:7D:78  
+         inet addr:192.168.44.22  Bcast:192.168.44.255  Mask:255.255.255.0
+         inet6 addr: fe80::20c:29ff:feef:7d78/64 Scope:Link
+         UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+         RX packets:92435 errors:0 dropped:0 overruns:0 frame:0
+         TX packets:50596 errors:0 dropped:0 overruns:0 carrier:0
+         collisions:0 txqueuelen:0 
+         RX bytes:94985932 (90.5 MiB)  TX bytes:61635793 (58.7 MiB)
 
 #. The Virtual Router, SSVM, CPVM *public* interface would be bridged to
    a physical interface on the host. In the example below, *cloudbr0* is
@@ -341,22 +349,22 @@ Trouble Shooting Steps
 
    ::
 
-     kvm-host1 ~$ brctl show
-     bridge name  bridge id           STP enabled interfaces
-     breth0-64    8000.000c29ef7d78   no          eth0.64
-                                                  vnet2
-     cloud0       8000.fe00a9fe0219   no          vnet0
-     cloudbr0     8000.000c29ef7d78   no          eth0
-                                                  vnet1
-                                                  vnet3
-     virbr0       8000.5254008e321a   yes         virbr0-nic
+      kvm-host1 ~$ brctl show
+      bridge name  bridge id           STP enabled interfaces
+      breth0-64    8000.000c29ef7d78   no          eth0.64
+                                                   vnet2
+      cloud0       8000.fe00a9fe0219   no          vnet0
+      cloudbr0     8000.000c29ef7d78   no          eth0
+                                                   vnet1
+                                                   vnet3
+      virbr0       8000.5254008e321a   yes         virbr0-nic
 
    ::
 
-     xenserver1 ~$ brctl show
-     bridge name  bridge id           STP enabled interfaces
-     xapi0    0000.e2b76d0a1149       no          vif1.0
-     xenbr0   0000.000c299b54dc       no          eth0
+      xenserver1 ~$ brctl show
+      bridge name  bridge id           STP enabled interfaces
+      xapi0    0000.e2b76d0a1149       no          vif1.0
+      xenbr0   0000.000c299b54dc       no          eth0
                                                   xapi1
                                                   vif1.1
                                                   vif1.2
@@ -367,11 +375,11 @@ Trouble Shooting Steps
 
    ::
 
-     xenserver1 ~$ xe network-list 
-     uuid ( RO)                : aaa-bbb-ccc-ddd
-               name-label ( RW): MGMT
-         name-description ( RW): 
-                   bridge ( RO): xenbr0
+      xenserver1 ~$ xe network-list 
+      uuid ( RO)                : aaa-bbb-ccc-ddd
+                name-label ( RW): MGMT
+          name-description ( RW): 
+                    bridge ( RO): xenbr0
 
 
 #. The Internet would be accessible from both the SSVM and CPVM
@@ -385,25 +393,25 @@ Trouble Shooting Steps
 
    ::
 
-     root@s-1-VM:~# ping -c 3 google.com
-     PING google.com (74.125.236.164): 56 data bytes
-     64 bytes from 74.125.236.164: icmp_seq=0 ttl=55 time=26.932 ms
-     64 bytes from 74.125.236.164: icmp_seq=1 ttl=55 time=29.156 ms
-     64 bytes from 74.125.236.164: icmp_seq=2 ttl=55 time=25.000 ms
-     --- google.com ping statistics ---
-     3 packets transmitted, 3 packets received, 0% packet loss
-     round-trip min/avg/max/stddev = 25.000/27.029/29.156/1.698 ms
+      root@s-1-VM:~# ping -c 3 google.com
+      PING google.com (74.125.236.164): 56 data bytes
+      64 bytes from 74.125.236.164: icmp_seq=0 ttl=55 time=26.932 ms
+      64 bytes from 74.125.236.164: icmp_seq=1 ttl=55 time=29.156 ms
+      64 bytes from 74.125.236.164: icmp_seq=2 ttl=55 time=25.000 ms
+      --- google.com ping statistics ---
+      3 packets transmitted, 3 packets received, 0% packet loss
+      round-trip min/avg/max/stddev = 25.000/27.029/29.156/1.698 ms
 
    ::
 
-     root@v-2-VM:~# ping -c 3 google.com
-     PING google.com (74.125.236.164): 56 data bytes
-     64 bytes from 74.125.236.164: icmp_seq=0 ttl=55 time=32.125 ms
-     64 bytes from 74.125.236.164: icmp_seq=1 ttl=55 time=26.324 ms
-     64 bytes from 74.125.236.164: icmp_seq=2 ttl=55 time=37.001 ms
-     --- google.com ping statistics ---
-     3 packets transmitted, 3 packets received, 0% packet loss
-     round-trip min/avg/max/stddev = 26.324/31.817/37.001/4.364 ms
+      root@v-2-VM:~# ping -c 3 google.com
+      PING google.com (74.125.236.164): 56 data bytes
+      64 bytes from 74.125.236.164: icmp_seq=0 ttl=55 time=32.125 ms
+      64 bytes from 74.125.236.164: icmp_seq=1 ttl=55 time=26.324 ms
+      64 bytes from 74.125.236.164: icmp_seq=2 ttl=55 time=37.001 ms
+      --- google.com ping statistics ---
+      3 packets transmitted, 3 packets received, 0% packet loss
+      round-trip min/avg/max/stddev = 26.324/31.817/37.001/4.364 ms
 
 
 #. The Virtual Router (VR) should also be able to reach the Internet
@@ -412,14 +420,14 @@ Trouble Shooting Steps
 
    ::
 
-     root@r-4-VM:~# ping -c 3 google.com
-     PING google.com (74.125.236.164): 56 data bytes
-     64 bytes from 74.125.236.164: icmp_seq=0 ttl=55 time=28.098 ms
-     64 bytes from 74.125.236.164: icmp_seq=1 ttl=55 time=34.785 ms
-     64 bytes from 74.125.236.164: icmp_seq=2 ttl=55 time=69.179 ms
-     --- google.com ping statistics ---
-     3 packets transmitted, 3 packets received, 0% packet loss
-     round-trip min/avg/max/stddev = 28.098/44.021/69.179/17.998 ms
+      root@r-4-VM:~# ping -c 3 google.com
+      PING google.com (74.125.236.164): 56 data bytes
+      64 bytes from 74.125.236.164: icmp_seq=0 ttl=55 time=28.098 ms
+      64 bytes from 74.125.236.164: icmp_seq=1 ttl=55 time=34.785 ms
+      64 bytes from 74.125.236.164: icmp_seq=2 ttl=55 time=69.179 ms
+      --- google.com ping statistics ---
+      3 packets transmitted, 3 packets received, 0% packet loss
+      round-trip min/avg/max/stddev = 28.098/44.021/69.179/17.998 ms
 
 #. However, the Virtual Router's (VR) Source NAT Public IP address
    **WONT** be reachable until appropriate Ingress rules are
@@ -443,5 +451,6 @@ Trouble Shooting Steps
 In a vast majority of the cases, the problem has turned out to be at the
 switching layer where the L3 switches were configured incorrectly.
 
-This section was contibuted by Shanker Balan and was originally published on `Shapeblue's blog <http://shankerbalan.net/blog/internet-not-working-on-cloudstack-vms/>`_
+This section was contibuted by Shanker Balan and was originally published on 
+`Shapeblue's blog <http://shankerbalan.net/blog/internet-not-working-on-cloudstack-vms/>`_
 

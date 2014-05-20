@@ -23,44 +23,32 @@ creates, starts, and stops them as needed based on scale and immediate
 needs. However, the administrator should be aware of them and their
 roles to assist in debugging issues.
 
+
 The System VM Template
 ----------------------
 
 The System VMs come from a single template. The System VM has the
 following characteristics:
 
--  
-
-   Debian 6.0 ("Squeeze"), 2.6.32 kernel with the latest security
+-  Debian 6.0 ("Squeeze"), 2.6.32 kernel with the latest security
    patches from the Debian security APT repository
 
--  
-
-   Has a minimal set of packages installed thereby reducing the attack
+-  Has a minimal set of packages installed thereby reducing the attack
    surface
 
--  
+-  32-bit for enhanced performance on Xen/VMWare
 
-   32-bit for enhanced performance on Xen/VMWare
-
--  
-
-   pvops kernel with Xen PV drivers, KVM virtio drivers, and VMware
+-  pvops kernel with Xen PV drivers, KVM virtio drivers, and VMware
    tools for optimum performance on all hypervisors
 
--  
+-  Xen tools inclusion allows performance monitoring
 
-   Xen tools inclusion allows performance monitoring
-
--  
-
-   Latest versions of HAProxy, iptables, IPsec, and Apache from debian
+-  Latest versions of HAProxy, iptables, IPsec, and Apache from debian
    repository ensures improved security and speed
 
--  
-
-   Latest version of JRE from Sun/Oracle ensures improved security and
+-  Latest version of JRE from Sun/Oracle ensures improved security and
    speed
+
 
 Changing the Default System VM Template
 ---------------------------------------
@@ -69,9 +57,7 @@ CloudStack allows you to change the default 32-bit System VM template to
 64-bit one. Using the 64-bit template, upgrade the virtual router to
 manage larger number of connection in your network.
 
-#. 
-
-   Based on the hypervisor you use, download the 64-bit template from
+#. Based on the hypervisor you use, download the 64-bit template from
    the following location:
 
    ==========  ================================================================================================
@@ -81,27 +67,17 @@ manage larger number of connection in your network.
    KVM         http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-kvm.qcow2.bz2
    ==========  ================================================================================================
 
-#. 
+#. As an administrator, log in to the CloudStack UI
 
-   As an administrator, log in to the CloudStack UI
-
-#. 
-
-   Register the 64 bit template.
+#. Register the 64 bit template.
 
    For example: KVM64bitTemplate
 
-#. 
+#. While registering the template, select Routing.
 
-   While registering the template, select Routing.
+#. Navigate to Infrastructure > Zone > Settings.
 
-#. 
-
-   Navigate to Infrastructure > Zone > Settings.
-
-#. 
-
-   Set the name of the 64-bit template, KVM64bitTemplate, in the
+#. Set the name of the 64-bit template, KVM64bitTemplate, in the
    *``router.template.kvm``* global parameter.
 
    If you are using a XenServer 64-bit template, set the name in the
@@ -110,9 +86,8 @@ manage larger number of connection in your network.
    Any new virtual router created in this Zone automatically picks up
    this template.
 
-#. 
+#. Restart the Management Server.
 
-   Restart the Management Server.
 
 Multiple System VM Support for VMware
 -------------------------------------
@@ -126,6 +101,7 @@ additional System VMs for VMware-specific tasks as the load increases.
 The management server monitors and weights all commands sent to these
 System VMs and performs dynamic load balancing and scaling-up of more
 System VMs.
+
 
 Console Proxy
 -------------
@@ -144,7 +120,8 @@ the connection to the VNC port for the requested VM on the Host hosting
 the guest.
 
 .. note:: 
-   The hypervisors will have many ports assigned to VNC usage so that multiple VNC sessions can occur simultaneously.
+   The hypervisors will have many ports assigned to VNC usage so that 
+   multiple VNC sessions can occur simultaneously.
 
 There is never any traffic to the guest virtual IP, and there is no need
 to enable VNC within the guest.
@@ -164,11 +141,15 @@ the capacity to handle new sessions is used.
 Console proxies can be restarted by administrators but this will
 interrupt existing console sessions for users.
 
+
 Using a SSL Certificate for the Console Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
-   In the past CloudStack used the ``realhostip.com`` dynamic  DNS resolution service. As this service will be shut down as of  June 30th, 2014, CloudStack has stopped using the service as of version 4.3.
+   In the past CloudStack used the ``realhostip.com`` dynamic  DNS 
+   resolution service. As this service will be shut down as of  
+   June 30th, 2014, CloudStack has stopped using the service as of 
+   version 4.3.
 
 By default, the console viewing functionality uses plaintext HTTP. In 
 any production environment, the console proxy connection should be
@@ -177,11 +158,9 @@ encrypted via SSL at the mininum.
 A CloudStack administrator has 2 ways to secure the console proxy
 communication with SSL:
 
--
-   Set up a SSL wild-card certificate and domain name resolution
+-  Set up a SSL wild-card certificate and domain name resolution
    
--
-   Set up SSL certificate for specific FQDN and configure load-balancer
+-  Set up SSL certificate for specific FQDN and configure load-balancer
 
 
 Changing the Console Proxy SSL Certificate and Domain
@@ -194,91 +173,72 @@ of the form aaa-bbb-ccc-ddd.your.domain to an IPv4 IP address in the
 form aaa.bbb.ccc.ddd, for example, 202.8.44.1. To change the console 
 proxy domain, SSL certificate, and private key:
 
-#. 
-
-   Set up dynamic name resolution or populate all possible DNS names in
+#. Set up dynamic name resolution or populate all possible DNS names in
    your public IP range into your existing DNS server with the format
    aaa-bbb-ccc-ddd.consoleproxy.company.com -> aaa.bbb.ccc.ddd.
 
    .. note::
-      In these steps you will notice *consoleproxy.company.com* -For security best practices, we recommend creating a wildcard SSL certificate on a separate subdomain so in the event that the certificate is compromised, a malicious user cannot impersonate a company.com domain.
+      In these steps you will notice *consoleproxy.company.com* -For 
+      security best practices, we recommend creating a wildcard SSL 
+      certificate on a separate subdomain so in the event that the 
+      certificate is compromised, a malicious user cannot impersonate 
+      a company.com domain.
 
-#. 
-
-   Generate the private key and certificate signing request (CSR). When
+#. Generate the private key and certificate signing request (CSR). When
    you are using openssl to generate private/public key pairs and CSRs,
    for the private key that you are going to paste into the CloudStack
    UI, be sure to convert it into PKCS#8 format.
 
-   #. 
-
-      Generate a new 2048-bit private key
+   #. Generate a new 2048-bit private key
 
       .. code:: bash
 
-          openssl genrsa -des3 -out yourprivate.key 2048
+         openssl genrsa -des3 -out yourprivate.key 2048
 
-   #. 
-
-      Generate a new certificate CSR. Ensure the creation of a wildcard 
+   #. Generate a new certificate CSR. Ensure the creation of a wildcard 
       certificate, eg ``*.consoleproxy.company.com``
 
       .. code:: bash
 
-          openssl req -new -key yourprivate.key -out yourcertificate.csr
+         openssl req -new -key yourprivate.key -out yourcertificate.csr
 
-   #. 
-
-      Head to the website of your favorite trusted Certificate
+   #. Head to the website of your favorite trusted Certificate
       Authority, purchase an SSL certificate, and submit the CSR. You
       should receive a valid certificate in return
 
-   #. 
-
-      Convert your private key format into PKCS#8 encrypted format.
+   #. Convert your private key format into PKCS#8 encrypted format.
 
       .. code:: bash
 
-          openssl pkcs8 -topk8 -in yourprivate.key -out yourprivate.pkcs8.encrypted.key
+         openssl pkcs8 -topk8 -in yourprivate.key -out yourprivate.pkcs8.encrypted.key
 
-   #. 
-
-      Convert your PKCS#8 encrypted private key into the PKCS#8 format
+   #. Convert your PKCS#8 encrypted private key into the PKCS#8 format
       that is compliant with CloudStack
 
       .. code:: bash
 
-          openssl pkcs8 -in yourprivate.pkcs8.encrypted.key -out yourprivate.pkcs8.key
+         openssl pkcs8 -in yourprivate.pkcs8.encrypted.key -out yourprivate.pkcs8.key
 
-#. 
-
-   In the Update SSL Certificate screen of the CloudStack UI, paste the
+#. In the Update SSL Certificate screen of the CloudStack UI, paste the
    following:
 
-   -  
+   -  The certificate you've just generated.
 
-      The certificate you've just generated.
+   -  The private key you've just generated.
 
-   -  
-
-      The private key you've just generated.
-
-   -  
-
-      The desired domain name, prefixed with ``*.``; for example, ``*.consoleproxy.company.com``
+   -  The desired domain name, prefixed with ``*.``; for example, ``*.consoleproxy.company.com``
 
      |update-ssl.png|
 
-#. 
-
-   This stops all currently running console proxy VMs, then restarts
+#. This stops all currently running console proxy VMs, then restarts
    them with the new certificate and key. Users might notice a brief
    interruption in console availability.
 
 The Management Server generates URLs of the form
-"aaa-bbb-ccc-ddd.consoleproxy.company.com" after this change is made. The new console
-requests will be served with the new DNS domain name, certificate, and
-key.
+"aaa-bbb-ccc-ddd.consoleproxy.company.com" after this change is made. 
+The new console requests will be served with the new DNS domain name, 
+certificate, and key.
+
 
 Load-balancing Console Proxies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -286,8 +246,9 @@ An alternative to using dynamic DNS or creating a range of DNS entries
 as described in the last section would be to create a SSL certificate
 for a specific domain name, configure CloudStack to use that particular
 FQDN, and then configure a load balancer to load balance the console
-proxy's IP address behind the FQDN. As the functionality for this is still
-new, please see https://cwiki.apache.org/confluence/display/CLOUDSTACK/Realhost+IP+changes
+proxy's IP address behind the FQDN. As the functionality for this is 
+still new, please see 
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/Realhost+IP+changes
 for more details.
 
 
@@ -308,34 +269,26 @@ basic test in debugging networking issues is to attempt to ping the
 virtual router from a guest VM. Some of the characteristics of the
 virtual router are determined by its associated system service offering.
 
+
 Configuring the Virtual Router
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set the following:
 
--  
+-  IP range
 
-   IP range
+-  Supported network services
 
--  
+-  Default domain name for the network serviced by the virtual router
 
-   Supported network services
+-  Gateway IP address
 
--  
-
-   Default domain name for the network serviced by the virtual router
-
--  
-
-   Gateway IP address
-
--  
-
-   How often CloudStack fetches network usage statistics from CloudStack
+-  How often CloudStack fetches network usage statistics from CloudStack
    virtual routers. If you want to collect traffic metering data from
    the virtual router, set the global configuration parameter
    router.stats.interval. If you are not using the virtual router to
    gather network usage statistics, set it to 0.
+
 
 Upgrading a Virtual Router with System Service Offerings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -347,94 +300,86 @@ virtual routers in a single guest network use the same system service
 offering. You can upgrade the capabilities of the virtual router by
 creating and applying a custom system service offering.
 
-#. 
+#. Define your custom system service offering. 
+   See `“Creating a New System Service Offering” 
+   <#creating-a-new-system-service-offering>`_. 
+   In System VM Type, choose Domain Router.
 
-   Define your custom system service offering. See `“Creating a New System Service
-   Offering” <#creating-a-new-system-service-offering>`_. In System VM Type,
-   choose Domain Router.
+#. Associate the system service offering with a network offering. See
+   `“Creating a New Network Offering” 
+   <networking.html#creating-a-new-network-offering>`_.
 
-#. 
-
-   Associate the system service offering with a network offering. See
-   `“Creating a New Network Offering” <networking.html#creating-a-new-network-offering>`_.
-
-#. 
-
-   Apply the network offering to the network where you want the virtual
+#. Apply the network offering to the network where you want the virtual
    routers to use the new system service offering. If this is a new
    network, follow the steps in Adding an Additional Guest Network on
    page 66. To change the service offering for existing virtual routers,
-   follow the steps in `“Changing the Network Offering
-   on a Guest Network” <networking2.html#changing-the-network-offering-on-a-guest-network>`_.
+   follow the steps in `“Changing the Network Offering on a Guest Network” 
+   <networking2.html#changing-the-network-offering-on-a-guest-network>`_.
+
 
 Best Practices for Virtual Routers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  
-
-   WARNING: Restarting a virtual router from a hypervisor console
+-  WARNING: Restarting a virtual router from a hypervisor console
    deletes all the iptables rules. To work around this issue, stop the
    virtual router and start it from the CloudStack UI.
 
--  
+-  .. warning:: 
+      Do not use the destroyRouter API when only one router is available 
+      in the network, because restartNetwork API with the cleanup=false 
+      parameter can't recreate it later. If you want to destroy and 
+      recreate the single router available in the network, use the 
+      restartNetwork API with the cleanup=true parameter.
 
-   .. warning:: 
-      Do not use the destroyRouter API when only one router is available in the network, because restartNetwork API with the cleanup=false parameter can't recreate it later. If you want to destroy and recreate the single router available in the network, use the restartNetwork API with the cleanup=true parameter.
 
 Service Monitoring Tool for Virtual Router
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Various services running on the CloudStack virtual routers can be monitored by using a Service Monitoring tool. The tool ensures that
-services are successfully running until CloudStack deliberately disables them. If a service goes down, the tool automatically restarts the service, and if that does not help bringing up the service, an alert as well as an event is generated indicating the failure. A new global parameter, ``network.router.enableservicemonitoring``, has been introduced to control this feature. The default value is false, implies, monitoring is disabled. When you enable, ensure that the Management Server and the router are restarted.
-
+Various services running on the CloudStack virtual routers can be 
+monitored by using a Service Monitoring tool. The tool ensures that
+services are successfully running until CloudStack deliberately disables 
+them. If a service goes down, the tool automatically restarts the 
+service, and if that does not help bringing up the service, an alert as 
+well as an event is generated indicating the failure. A new global 
+parameter, ``network.router.enableservicemonitoring``, has been 
+introduced to control this feature. The default value is false, implies, 
+monitoring is disabled. When you enable, ensure that the Management 
+Server and the router are restarted.
 
 Monitoring tool can help to start a VR service, which is crashed due to
 an unexpected reason. For example:
 
--  
+-  The services crashed due to defects in the source code.
 
-   The services crashed due to defects in the source code.
-
--  
-
-   The services that are terminated by the OS when memory or CPU is not
+-  The services that are terminated by the OS when memory or CPU is not
    sufficiently available for the service.
 
 .. note:: 
-   Only those services with daemons are monitored. The services that are failed due to errors in the service/daemon configuration file cannot be restarted by the Monitoring tool. VPC networks are not supported.
+   Only those services with daemons are monitored. The services that are 
+   failed due to errors in the service/daemon configuration file cannot 
+   be restarted by the Monitoring tool. VPC networks are not supported.
 
 The following services are monitored in a VR:
 
--  
+-  DNS
 
-   DNS
+-  HA Proxy
 
--  
+-  SSH
 
-   HA Proxy
-
--  
-
-   SSH
-
--  
-
-   Apache Web Server
+-  Apache Web Server
 
 The following networks are supported:
 
--  
+-  Isolated Networks
 
-   Isolated Networks
-
--  
-
-   Shared Networks in both Advanced and Basic zone
+-  Shared Networks in both Advanced and Basic zone
 
    .. note:: VPC networks are not supported
 
 This feature is supported on the following hypervisors: XenServer,
 VMware, and KVM.
+
 
 Enhanced Upgrade for Virtual Routers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -470,152 +415,93 @@ The following service will be available even if the VR is not upgraded.
 However, no changes for any of the services can be sent to the VR, until
 it is upgraded:
 
--  
+-  SecurityGroup
 
-   SecurityGroup
+-  UserData
 
--  
+-  DHCP
 
-   UserData
+-  DNS
 
--  
+-  LB
 
-   DHCP
+-  Port Forwarding
 
--  
+-  VPN
 
-   DNS
+-  Static NAT
 
--  
+-  Source NAT
 
-   LB
+-  Firewall
 
--  
+-  Gateway
 
-   Port Forwarding
+-  NetworkACL
 
--  
-
-   VPN
-
--  
-
-   Static NAT
-
--  
-
-   Source NAT
-
--  
-
-   Firewall
-
--  
-
-   Gateway
-
--  
-
-   NetworkACL
 
 Supported Virtual Routers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  
+-  VR
 
-   VR
+-  VPC VR
 
--  
+-  Redundant VR
 
-   VPC VR
-
--  
-
-   Redundant VR
 
 Upgrading Virtual Routers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. 
+#. Download the latest System VM template.
 
-   Download the latest System VM template.
+#. Download the latest System VM to all the primary storage pools.
 
-#. 
+#. Upgrade the Management Server.
 
-   Download the latest System VM to all the primary storage pools.
-
-#. 
-
-   Upgrade the Management Server.
-
-#. 
-
-   Upgrade CPVM and SSVM either from the UI or by using the following
+#. Upgrade CPVM and SSVM either from the UI or by using the following
    script:
 
    .. code:: bash
 
-       # cloudstack-sysvmadm -d <IP address> -u cloud -p -s
+      # cloudstack-sysvmadm -d <IP address> -u cloud -p -s
 
    Even when the VRs are still on older versions, existing services will
    continue to be available to the VMs. The Management Server cannot
    perform any operations on the VRs until they are upgraded.
 
-#. 
+#. Selectively upgrade the VRs:
 
-   Selectively upgrade the VRs:
+   #. Log in to the CloudStack UI as the root administrator.
 
-   #. 
+   #. In the left navigation, choose Infrastructure.
 
-      Log in to the CloudStack UI as the root administrator.
-
-   #. 
-
-      In the left navigation, choose Infrastructure.
-
-   #. 
-
-      On Virtual Routers, click View More.
+   #. On Virtual Routers, click View More.
 
       All the VRs are listed in the Virtual Routers page.
 
-   #. 
-
-      In Select View drop-down, select desired grouping based on your
+   #. In Select View drop-down, select desired grouping based on your
       requirement.
 
       You can use either of the following:
 
-      -  
+      -  Group by zone
 
-         Group by zone
+      -  Group by pod
 
-      -  
+      -  Group by cluster
 
-         Group by pod
+      -  Group by account
 
-      -  
-
-         Group by cluster
-
-      -  
-
-         Group by account
-
-   #. 
-
-      Click the group which has the VRs to be upgraded.
+   #. Click the group which has the VRs to be upgraded.
 
       For example, if you have selected Group by zone, select the name
       of the desired zone.
 
-   #. 
+   #. Click the Upgrade button to upgrade all the VRs. |vr-upgrade.png|
 
-      Click the Upgrade button to upgrade all the VRs. |vr-upgrade.png|
+   #. Click OK to confirm.
 
-   #. 
-
-      Click OK to confirm.
 
 Secondary Storage VM
 --------------------
@@ -632,6 +518,7 @@ variety of secondary storage activities: downloading a new template to a
 Zone, copying templates between Zones, and snapshot backups.
 
 The administrator can log in to the secondary storage VM if needed.
+
 
 .. |update-ssl.png| image:: _static/images/update-ssl.png
    :alt: Updating Console Proxy SSL Certificate

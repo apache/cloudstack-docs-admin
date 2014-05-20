@@ -31,6 +31,7 @@ The API has a REST-like query basis and returns results in XML or JSON.
 See `the Developer’s Guide <https://cwiki.apache.org/confluence/display/CLOUDSTACK/Development+101>`_
 and `the API Reference <http://cloudstack.apache.org/docs/api/>`_.
 
+
 Provisioning and Authentication API
 -----------------------------------
 
@@ -43,6 +44,7 @@ assumes it is provisioned with the user’s password, and as a result
 authentication is done locally. However, external authentication is
 possible as well. For example, see Using an LDAP Server for User
 Authentication.
+
 
 User Data and Meta Data
 -----------------------
@@ -59,47 +61,33 @@ the user data:
 
    .. code:: bash
 
-       # cat /var/lib/dhclient/dhclient-eth0.leases | grep dhcp-server-identifier | tail -1
+      # cat /var/lib/dhclient/dhclient-eth0.leases | grep dhcp-server-identifier | tail -1
 
 #. Access user data by running the following command using the result of
    the above command
 
    .. code:: bash
 
-       # curl http://10.1.1.1/latest/user-data
+      # curl http://10.1.1.1/latest/user-data
 
 Meta Data can be accessed similarly, using a URL of the form
 http://10.1.1.1/latest/meta-data/{metadata type}. (For backwards
 compatibility, the previous URL http://10.1.1.1/latest/{metadata type}
 is also supported.) For metadata type, use one of the following:
 
--  
+-  service-offering. A description of the VMs service offering
 
-   service-offering. A description of the VMs service offering
+-  availability-zone. The Zone name
 
--  
+-  local-ipv4. The guest IP of the VM
 
-   availability-zone. The Zone name
+-  local-hostname. The hostname of the VM
 
--  
-
-   local-ipv4. The guest IP of the VM
-
--  
-
-   local-hostname. The hostname of the VM
-
--  
-
-   public-ipv4. The first public IP for the router. (E.g. the first IP
+-  public-ipv4. The first public IP for the router. (E.g. the first IP
    of eth2)
 
--  
+-  public-hostname. This is the same as public-ipv4
 
-   public-hostname. This is the same as public-ipv4
-
--  
-
-   instance-id. The instance name of the VM
+-  instance-id. The instance name of the VM
 
 

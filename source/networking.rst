@@ -25,30 +25,21 @@ preferences when it comes to the networking services provided by the
 cloud. As a CloudStack administrator, you can do the following things to
 set up networking for your users:
 
--  
+-  Set up physical networks in zones
 
-   Set up physical networks in zones
-
--  
-
-   Set up several different providers for the same service on a single
+-  Set up several different providers for the same service on a single
    physical network (for example, both Cisco and Juniper firewalls)
 
--  
-
-   Bundle different types of network services into network offerings, so
+-  Bundle different types of network services into network offerings, so
    users can choose the desired network services for any given virtual
    machine
 
--  
-
-   Add new network offerings as time goes on so end users can upgrade to
+-  Add new network offerings as time goes on so end users can upgrade to
    a better class of service on their network
 
--  
-
-   Provide more ways for a network to be accessed by a user, such as
+-  Provide more ways for a network to be accessed by a user, such as
    through a project of which the user is a member
+
 
 About Virtual Networks
 ---------------------------
@@ -57,27 +48,24 @@ A virtual network is a logical construct that enables multi-tenancy on a
 single physical network. In CloudStack a virtual network can be shared
 or isolated.
 
+
 Isolated Networks
 ~~~~~~~~~~~~~~~~~
 
 An isolated network can be accessed only by virtual machines of a single
 account. Isolated networks have the following properties.
 
--  
-
-   Resources such as VLAN are allocated and garbage collected
+-  Resources such as VLAN are allocated and garbage collected
    dynamically
 
--  
+-  There is one network offering for the entire network
 
-   There is one network offering for the entire network
-
--  
-
-   The network offering can be upgraded or downgraded but it is for the
+-  The network offering can be upgraded or downgraded but it is for the
    entire network
 
-For more information, see `“Configure Guest Traffic in an Advanced Zone” <networking2.html#configure-guest-traffic-in-an-advanced-zone>`_.
+For more information, see `“Configure Guest Traffic in an Advanced Zone” 
+<networking2.html#configure-guest-traffic-in-an-advanced-zone>`_.
+
 
 Shared Networks
 ~~~~~~~~~~~~~~~
@@ -87,32 +75,21 @@ different accounts. Network Isolation on shared networks is accomplished
 by using techniques such as security groups, which is supported only in
 Basic zones in CloudStack 3.0.3 and later versions.
 
--  
+-  Shared Networks are created by the administrator
 
-   Shared Networks are created by the administrator
+-  Shared Networks can be designated to a certain domain
 
--  
-
-   Shared Networks can be designated to a certain domain
-
--  
-
-   Shared Network resources such as VLAN and physical network that it
+-  Shared Network resources such as VLAN and physical network that it
    maps to are designated by the administrator
 
--  
+-  Shared Networks can be isolated by security groups
 
-   Shared Networks can be isolated by security groups
+-  Public Network is a shared network that is not shown to the end users
 
--  
-
-   Public Network is a shared network that is not shown to the end users
-
--  
-
-   Source NAT per zone is not supported in Shared Network when the
+-  Source NAT per zone is not supported in Shared Network when the
    service provider is virtual router. However, Source NAT per account
-   is supported. For information, see `“Configuring a Shared Guest Network” <networking2.html#configuring-a-shared-guest-network>`_.
+   is supported. For information, see `“Configuring a Shared Guest 
+   Network” <networking2.html#configuring-a-shared-guest-network>`_.
 
 
 Runtime Allocation of Virtual Network Resources
@@ -125,11 +102,13 @@ When all virtual machines have left the virtual network, the network
 resources are garbage collected so they can be allocated again. This
 helps to conserve network resources.
 
+
 Network Service Providers
 -------------------------
 
 .. note:: 
-   For the most up-to-date list of supported network service providers, see the CloudStack UI or call `listNetworkServiceProviders`.
+   For the most up-to-date list of supported network service providers, 
+   see the CloudStack UI or call `listNetworkServiceProviders`.
 
 A service provider (also called a network element) is hardware or
 virtual appliance that makes a network service possible; for example, a
@@ -176,54 +155,36 @@ offering.
 | Port Forwarding      | Yes       | No         | Yes      | No          | No          |
 +----------------------+-----------+------------+----------+-------------+-------------+
 
+
 Network Offerings
 -----------------
 
 .. note:: 
-   For the most up-to-date list of supported network services, see the CloudStack UI or call listNetworkServices.
+   For the most up-to-date list of supported network services, see the 
+   CloudStack UI or call listNetworkServices.
 
 A network offering is a named set of network services, such as:
 
--  
+-  DHCP
 
-   DHCP
+-  DNS
 
--  
+-  Source NAT
 
-   DNS
+-  Static NAT
 
--  
+-  Port Forwarding
 
-   Source NAT
+-  Load Balancing
 
--  
+-  Firewall
 
-   Static NAT
+-  VPN
 
--  
-
-   Port Forwarding
-
--  
-
-   Load Balancing
-
--  
-
-   Firewall
-
--  
-
-   VPN
-
--  
-
-   (Optional) Name one of several available providers to use for a given
+-  (Optional) Name one of several available providers to use for a given
    service, such as Juniper for the firewall
 
--  
-
-   (Optional) Network tag to specify which physical network to use
+-  (Optional) Network tag to specify which physical network to use
 
 When creating a new VM, the user chooses one of the available network
 offerings, and that determines which network services the VM can use.
@@ -240,7 +201,12 @@ balancing solution, and alternate networks for accessing the database
 backend.
 
 .. note:: 
-   If you create load balancing rules while using a network service offering that includes an external load balancer device such as NetScaler, and later change the network service offering to one that uses the CloudStack virtual router, you must create a firewall rule on the virtual router for each of your existing load balancing rules so that they continue to function.
+   If you create load balancing rules while using a network service 
+   offering that includes an external load balancer device such as 
+   NetScaler, and later change the network service offering to one that 
+   uses the CloudStack virtual router, you must create a firewall rule 
+   on the virtual router for each of your existing load balancing rules 
+   so that they continue to function.
 
 When creating a new virtual network, the CloudStack administrator
 chooses which network offering to enable for that network. Each virtual
@@ -252,80 +218,55 @@ CloudStack also has internal network offerings for use by CloudStack
 system VMs. These network offerings are not visible to users but can be
 modified by administrators.
 
+
 Creating a New Network Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a network offering:
 
-#. 
+#. Log in with admin privileges to the CloudStack UI.
 
-   Log in with admin privileges to the CloudStack UI.
+#. In the left navigation bar, click Service Offerings.
 
-#. 
+#. In Select Offering, choose Network Offering.
 
-   In the left navigation bar, click Service Offerings.
+#. Click Add Network Offering.
 
-#. 
+#. In the dialog, make the following choices:
 
-   In Select Offering, choose Network Offering.
+   -  **Name**. Any desired name for the network offering.
 
-#. 
-
-   Click Add Network Offering.
-
-#. 
-
-   In the dialog, make the following choices:
-
-   -  
-
-      **Name**. Any desired name for the network offering.
-
-   -  
-
-      **Description**. A short description of the offering that can be
+   -  **Description**. A short description of the offering that can be
       displayed to users.
 
-   -  
+   -  **Network Rate**. Allowed data transfer rate in MB per second.
 
-      **Network Rate**. Allowed data transfer rate in MB per second.
-
-   -  
-
-      **Guest Type**. Choose whether the guest network is isolated or
+   -  **Guest Type**. Choose whether the guest network is isolated or
       shared.
 
       For a description of this term, see `“About Virtual
       Networks” <#about-virtual-networks>`_.
 
-   -  
-
-      **Persistent**. Indicate whether the guest network is persistent
+   -  **Persistent**. Indicate whether the guest network is persistent
       or not. The network that you can provision without having to
       deploy a VM on it is termed persistent network. For more
       information, see `“Persistent
       Networks” <networking2.html#persistent-networks>`_.
 
-   -  
-
-      **Specify VLAN**. (Isolated guest networks only) Indicate whether
+   -  **Specify VLAN**. (Isolated guest networks only) Indicate whether
       a VLAN could be specified when this offering is used. If you
       select this option and later use this network offering while
       creating a VPC tier or an isolated network, you will be able to
       specify a VLAN ID for the network you create.
 
-   -  
-
-      **VPC**. This option indicate whether the guest network is Virtual
+   -  **VPC**. This option indicate whether the guest network is Virtual
       Private Cloud-enabled. A Virtual Private Cloud (VPC) is a private,
       isolated part of CloudStack. A VPC can have its own virtual
       network topology that resembles a traditional physical network.
       For more information on VPCs, see `“About Virtual
       Private Clouds” <networking2.html#about-virtual-private-clouds>`_.
 
-   -  
-
-      **Supported Services**. Select one or more of the possible network
+   -  **Supported Services**. Select one or more of the possible network
       services. For some services, you must also choose the service
       provider; for example, if you select Load Balancer, you can choose
       the CloudStack virtual router or any other load balancers that
@@ -365,9 +306,7 @@ To create a network offering:
       =================== ============================================================================ ============= =============
 
 
-   -  
-
-      **System Offering**. If the service provider for any of the
+   -  **System Offering**. If the service provider for any of the
       services selected in Supported Services is a virtual router, the
       System Offering field appears. Choose the system service offering
       that you want virtual routers to use in this network. For example,
@@ -377,11 +316,10 @@ To create a network offering:
       system service offering and any custom system service offerings
       that have been defined by the CloudStack root administrator.
 
-      For more information, see `“System Service Offerings” <service_offerings.html#system-service-offerings>`_.
+      For more information, see `“System Service Offerings” 
+      <service_offerings.html#system-service-offerings>`_.
 
-   -  
-
-      **LB Isolation**: Specify what type of load balancer isolation you
+   -  **LB Isolation**: Specify what type of load balancer isolation you
       want for the network: Shared or Dedicated.
 
       **Dedicated**: If you select dedicated LB isolation, a dedicated
@@ -400,9 +338,7 @@ To create a network offering:
       its maximum capacity, the device will not be allocated to a new
       account.
 
-   -  
-
-      **Mode**: You can select either Inline mode or Side by Side mode:
+   -  **Mode**: You can select either Inline mode or Side by Side mode:
 
       **Inline mode**: Supported only for Juniper SRX firewall and BigF5
       load balancer devices. In inline mode, a firewall device is placed
@@ -417,29 +353,20 @@ To create a network offering:
       to the load balancer public IP is not routed through the firewall,
       and therefore, is exposed to the public network.
 
-   -  
-
-      **Associate Public IP**: Select this option if you want to assign
+   -  **Associate Public IP**: Select this option if you want to assign
       a public IP address to the VMs deployed in the guest network. This
       option is available only if
 
-      -  
+      -  Guest network is shared.
 
-         Guest network is shared.
+      -  StaticNAT is enabled.
 
-      -  
+      -  Elastic IP is enabled.
 
-         StaticNAT is enabled.
+      For information on Elastic IP, see `“About Elastic IP” 
+      <networking2.html#about-elastic-ip>`_.
 
-      -  
-
-         Elastic IP is enabled.
-
-      For information on Elastic IP, see `“About Elastic IP” <networking2.html#about-elastic-ip>`_.
-
-   -  
-
-      **Redundant router capability**: Available only when Virtual
+   -  **Redundant router capability**: Available only when Virtual
       Router is selected as the Source NAT provider. Select this option
       if you want to use two virtual routers in the network for
       uninterrupted connection: one operating as the master virtual
@@ -450,9 +377,7 @@ To create a network offering:
       CloudStack deploys the routers on different hosts to ensure
       reliability if one host is down.
 
-   -  
-
-      **Conserve mode**: Indicate whether to use conserve mode. In this
+   -  **Conserve mode**: Indicate whether to use conserve mode. In this
       mode, network resources are allocated only when the first virtual
       machine starts in the network. When conservative mode is off, the
       public IP can only be used for a single service. For example, a
@@ -462,15 +387,14 @@ To create a network offering:
       the same public IP.
 
       .. note:: 
-        If StaticNAT is enabled, irrespective of the status of the conserve mode, no port forwarding or load balancing rule can be created for the IP. However, you can add the firewall rules by using the createFirewallRule command.
+        If StaticNAT is enabled, irrespective of the status of the 
+        conserve mode, no port forwarding or load balancing rule can be 
+        created for the IP. However, you can add the firewall rules by 
+        using the createFirewallRule command.
 
-   -  
+   -  **Tags**: Network tag to specify which physical network to use.
 
-      **Tags**: Network tag to specify which physical network to use.
-
-   -  
-
-      **Default egress policy**: Configure the default policy for
+   -  **Default egress policy**: Configure the default policy for
       firewall egress rules. Options are Allow and Deny. Default is
       Allow if no egress policy is specified, which indicates that all
       the egress traffic is accepted when a guest network is created
@@ -480,7 +404,5 @@ To create a network offering:
       this case, when you configure an egress rules for an isolated
       guest network, rules are added to allow the specified traffic.
 
-#. 
-
-   Click Add.
+#. Click Add.
 
