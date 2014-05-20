@@ -32,6 +32,7 @@ When the Management Server is down, no new VMs can be created, and the
 end user and admin UI, API, dynamic load distribution, and HA will cease
 to work.
 
+
 Management Server Load Balancing
 --------------------------------
 
@@ -59,6 +60,7 @@ VIP for Port 8250 and one of your management servers crashes, the UI is
 still available but the system VMs will not be able to contact the
 management server.
 
+
 HA-Enabled Virtual Machines
 ---------------------------
 
@@ -74,6 +76,7 @@ Host in the same cluster.
 
 HA features work with iSCSI or NFS primary storage. HA with local
 storage is not supported.
+
 
 HA for Hosts
 ------------
@@ -91,6 +94,7 @@ Host in the same cluster.
 HA features work with iSCSI or NFS primary storage. HA with local
 storage is not supported.
 
+
 Dedicated HA Hosts
 ~~~~~~~~~~~~~~~~~~
 
@@ -99,17 +103,13 @@ are restarting due to a host failure. Setting up a pool of such
 dedicated HA hosts as the recovery destination for all HA-enabled VMs is
 useful to:
 
--  
-
-   Make it easier to determine which VMs have been restarted as part of
+-  Make it easier to determine which VMs have been restarted as part of
    the CloudStack high-availability function. If a VM is running on a
    dedicated HA host, then it must be an HA-enabled VM whose original
    host failed. (With one exception: It is possible for an administrator
    to manually migrate any VM to a dedicated HA host.).
 
--  
-
-   Keep HA-enabled VMs from restarting on hosts which may be reserved
+-  Keep HA-enabled VMs from restarting on hosts which may be reserved
    for other purposes.
 
 The dedicated HA option is set through a special host tag when the host
@@ -120,7 +120,11 @@ Server. Enter the value in the Host Tags field when adding the host(s)
 that you want to dedicate to HA-enabled VMs.
 
 .. note:: 
-   If you set ha.tag, be sure to actually use that tag on at least one host in your cloud. If the tag specified in ha.tag is not set for any host in the cloud, the HA-enabled VMs will fail to restart after a crash.
+   If you set ha.tag, be sure to actually use that tag on at least one 
+   host in your cloud. If the tag specified in ha.tag is not set for 
+   any host in the cloud, the HA-enabled VMs will fail to restart after 
+   a crash.
+
 
 Primary Storage Outage and Data Loss
 ------------------------------------
@@ -134,6 +138,7 @@ NFS hang will cause the guest VMs to be suspended until storage
 connectivity is restored.Primary storage is not designed to be backed
 up. Individual volumes in primary storage can be backed up using
 snapshots.
+
 
 Secondary Storage Outage and Data Loss
 --------------------------------------
@@ -150,6 +155,7 @@ including templates, snapshots, and ISO images. Secondary storage should
 be backed up periodically. Multiple secondary storage servers can be
 provisioned within each zone to increase the scalability of the system.
 
+
 Database High Availability
 --------------------------
 
@@ -158,6 +164,7 @@ internal data for CloudStack, you can set up database replication. This
 covers both the main CloudStack database and the Usage database.
 Replication is achieved using the MySQL connector parameters and two-way
 replication. Tested with MySQL 5.1 and 5.5.
+
 
 How to Set Up Database Replication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,13 +183,10 @@ the additional nodes.
 
 References:
 
--  
+-  `http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html <http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html>`_
 
-   `http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html <http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html>`_
+-  `https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server <https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server>`_
 
--  
-
-   `https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server <https://wikis.oracle.com/display/CommSuite/MySQL+High+Availability+and+Replication+Information+For+Calendar+Server>`_
 
 Configuring Database High Availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,25 +199,19 @@ configuration settings in the file
 
 Be sure you have set the following in db.properties:
 
--  
-
-   ``db.ha.enabled``: set to true if you want to use the replication
+-  ``db.ha.enabled``: set to true if you want to use the replication
    feature.
 
    Example: ``db.ha.enabled=true``
 
--  
-
-   ``db.cloud.slaves``: set to a comma-delimited set of slave hosts for the
+-  ``db.cloud.slaves``: set to a comma-delimited set of slave hosts for the
    cloud database. This is the list of nodes set up with replication.
    The master node is not in the list, since it is already mentioned
    elsewhere in the properties file.
 
    Example: ``db.cloud.slaves=node2,node3,node4``
 
--  
-
-   ``db.usage.slaves``: set to a comma-delimited set of slave hosts for the
+-  ``db.usage.slaves``: set to a comma-delimited set of slave hosts for the
    usage database. This is the list of nodes set up with replication.
    The master node is not in the list, since it is already mentioned
    elsewhere in the properties file.
@@ -226,30 +224,25 @@ The following settings must be present in db.properties, but you are not
 required to change the default values unless you wish to do so for
 tuning purposes:
 
--  
-
-   ``db.cloud.secondsBeforeRetryMaster``: The number of seconds the MySQL
+-  ``db.cloud.secondsBeforeRetryMaster``: The number of seconds the MySQL
    connector should wait before trying again to connect to the master
    after the master went down. Default is 1 hour. The retry might happen
    sooner if db.cloud.queriesBeforeRetryMaster is reached first.
 
    Example: ``db.cloud.secondsBeforeRetryMaster=3600``
 
--  
-
-   ``db.cloud.queriesBeforeRetryMaster``: The minimum number of queries to
+-  ``db.cloud.queriesBeforeRetryMaster``: The minimum number of queries to
    be sent to the database before trying again to connect to the master
    after the master went down. Default is 5000. The retry might happen
    sooner if db.cloud.secondsBeforeRetryMaster is reached first.
 
    Example: ``db.cloud.queriesBeforeRetryMaster=5000``
 
--  
-
-   ``db.cloud.initialTimeout``: Initial time the MySQL connector should wait
+-  ``db.cloud.initialTimeout``: Initial time the MySQL connector should wait
    before trying again to connect to the master. Default is 3600.
 
    Example: ``db.cloud.initialTimeout=3600``
+
 
 Limitations on Database High Availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -257,18 +250,12 @@ Limitations on Database High Availability
 The following limitations exist in the current implementation of this
 feature.
 
--  
-
-   Slave hosts can not be monitored through CloudStack. You will need to
+-  Slave hosts can not be monitored through CloudStack. You will need to
    have a separate means of monitoring.
 
--  
-
-   Events from the database side are not integrated with the CloudStack
+-  Events from the database side are not integrated with the CloudStack
    Management Server events system.
 
--  
-
-   You must periodically perform manual clean-up of bin log files
+-  You must periodically perform manual clean-up of bin log files
    generated by replication on database nodes. If you do not clean up
    the log files, the disk can become full.

@@ -14,7 +14,6 @@
    under the License.
 
 
-
 User Services
 =============
 
@@ -30,6 +29,7 @@ people to use your cloud – say, if the users are strictly internal to
 your organization, or just friends who are sharing your cloud – you can
 still keep track of what services they use and how much of them.
 
+
 Service Offerings, Disk Offerings, Network Offerings, and Templates
 -------------------------------------------------------------------
 
@@ -37,28 +37,20 @@ A user creating a new instance can make a variety of choices about its
 characteristics and capabilities. CloudStack provides several ways to
 present users with choices when creating a new instance:
 
--  
-
-   Service Offerings, defined by the CloudStack administrator, provide a
+-  Service Offerings, defined by the CloudStack administrator, provide a
    choice of CPU speed, number of CPUs, RAM size, tags on the root disk,
    and other choices. See Creating a New Compute Offering.
 
--  
-
-   Disk Offerings, defined by the CloudStack administrator, provide a
+-  Disk Offerings, defined by the CloudStack administrator, provide a
    choice of disk size and IOPS (Quality of Service) for primary data
    storage. See Creating a New Disk Offering.
 
--  
-
-   Network Offerings, defined by the CloudStack administrator, describe
+-  Network Offerings, defined by the CloudStack administrator, describe
    the feature set that is available to end users from the virtual
    router or external networking devices on a given guest network. See
    Network Offerings.
 
--  
-
-   Templates, defined by the CloudStack administrator or by any
+-  Templates, defined by the CloudStack administrator or by any
    CloudStack user, are the base OS images that the user can choose from
    when creating a new instance. For example, CloudStack includes CentOS
    as a template. See Working with Templates.

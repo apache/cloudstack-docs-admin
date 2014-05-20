@@ -68,6 +68,7 @@ project can use any service offering or disk offering available in its
 domain; however, you can not create private service and disk offerings
 at the project level..
 
+
 Configuring Projects
 --------------------
 
@@ -75,6 +76,7 @@ Before CloudStack users start using projects, the CloudStack
 administrator must set up various systems to support them, including
 membership invitations, limits on project resources, and controls on who
 can create projects.
+
 
 Setting Up Invitations
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -86,22 +88,14 @@ by email or through the user’s CloudStack account. If you want
 administrators to use invitations to add members to projects, turn on
 and set up the invitations feature in CloudStack.
 
-#. 
+#. Log in as administrator to the CloudStack UI.
 
-   Log in as administrator to the CloudStack UI.
+#. In the left navigation, click Global Settings.
 
-#. 
-
-   In the left navigation, click Global Settings.
-
-#. 
-
-   In the search box, type project and click the search button.
+#. In the search box, type project and click the search button.
    |Searches projects|
 
-#. 
-
-   In the search results, you can see a few other parameters you need to
+#. In the search results, you can see a few other parameters you need to
    set to control how invitations behave. The table below shows global
    configuration parameters related to project invitations. Click the
    edit button to set each parameter.
@@ -126,13 +120,11 @@ and set up the invitations feature in CloudStack.
    | project.smtp.username      | (Optional) User name required by the SMTP server for authentication. You must also set project.smtp.password and set project.smtp.useAuth to true..   |
    +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#. 
-
-   Restart the Management Server:
+#. Restart the Management Server:
 
    .. code:: bash
 
-       service cloudstack-management restart
+      service cloudstack-management restart
 
 Setting Resource Limits for Projects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,53 +155,32 @@ new maximum, the resources are not affected; however, the project can
 not add any new resources of that type until the total drops below the
 new limit.
 
-#. 
+#. Log in as administrator to the CloudStack UI.
 
-   Log in as administrator to the CloudStack UI.
+#. In the left navigation, click Projects.
 
-#. 
+#. In Select View, choose Projects.
 
-   In the left navigation, click Projects.
+#. Click the name of the project you want to work with.
 
-#. 
-
-   In Select View, choose Projects.
-
-#. 
-
-   Click the name of the project you want to work with.
-
-#. 
-
-   Click the Resources tab. This tab lists the current maximum amount
+#. Click the Resources tab. This tab lists the current maximum amount
    that the project is allowed to own for each type of resource.
 
-#. 
+#. Type new values for one or more resources.
 
-   Type new values for one or more resources.
+#. Click Apply.
 
-#. 
-
-   Click Apply.
 
 Setting the Global Project Resource Limits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. 
+#. Log in as administrator to the CloudStack UI.
 
-   Log in as administrator to the CloudStack UI.
+#. In the left navigation, click Global Settings.
 
-#. 
+#. In the search box, type max.projects and click the search button.
 
-   In the left navigation, click Global Settings.
-
-#. 
-
-   In the search box, type max.projects and click the search button.
-
-#. 
-
-   In the search results, you will see the parameters you can use to set
+#. In the search results, you will see the parameters you can use to set
    per-project maximum resource amounts that apply to all projects in
    the cloud. No project can have more resources, but an individual
    project can have lower limits. Click the edit button to set each
@@ -228,13 +199,11 @@ Setting the Global Project Resource Limits
    +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 
-#. 
-
-   Restart the Management Server.
+#. Restart the Management Server.
 
    .. code:: bash
 
-       # service cloudstack-management restart
+      # service cloudstack-management restart
 
 Setting Project Creator Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -242,21 +211,13 @@ Setting Project Creator Permissions
 You can configure CloudStack to allow any user to create a new project,
 or you can restrict that ability to just CloudStack administrators.
 
-#. 
+#. Log in as administrator to the CloudStack UI.
 
-   Log in as administrator to the CloudStack UI.
+#. In the left navigation, click Global Settings.
 
-#. 
+#. In the search box, type allow.user.create.projects.
 
-   In the left navigation, click Global Settings.
-
-#. 
-
-   In the search box, type allow.user.create.projects.
-
-#. 
-
-   Click the edit button to set the parameter. |Edits parameters|
+#. Click the edit button to set the parameter. |Edits parameters|
 
    ``allow.user.create.projects``
 
@@ -264,13 +225,12 @@ or you can restrict that ability to just CloudStack administrators.
    you want only the CloudStack root administrator and domain
    administrators to create projects.
 
-#. 
-
-   Restart the Management Server.
+#. Restart the Management Server.
 
    .. code:: bash
 
-       # service cloudstack-management restart
+      # service cloudstack-management restart
+
 
 Creating a New Project
 ----------------------
@@ -279,35 +239,22 @@ CloudStack administrators and domain administrators can create projects.
 If the global configuration parameter allow.user.create.projects is set
 to true, end users can also create projects.
 
-#. 
+#. Log in as administrator to the CloudStack UI.
 
-   Log in as administrator to the CloudStack UI.
+#. In the left navigation, click Projects.
 
-#. 
+#. In Select view, click Projects.
 
-   In the left navigation, click Projects.
+#. Click New Project.
 
-#. 
-
-   In Select view, click Projects.
-
-#. 
-
-   Click New Project.
-
-#. 
-
-   Give the project a name and description for display to users, then
+#. Give the project a name and description for display to users, then
    click Create Project.
 
-#. 
-
-   A screen appears where you can immediately add more members to the
+#. A screen appears where you can immediately add more members to the
    project. This is optional. Click Next when you are ready to move on.
 
-#. 
+#. Click Save.
 
-   Click Save.
 
 Adding Members to a Project
 ---------------------------
@@ -317,15 +264,12 @@ the domain administrator of the domain where the project resides or any
 parent domain, or the CloudStack root administrator. There are two ways
 to add members in CloudStack, but only one way is enabled at a time:
 
--  
-
-   If invitations have been enabled, you can send invitations to new
+-  If invitations have been enabled, you can send invitations to new
    members.
 
--  
-
-   If invitations are not enabled, you can add members directly through
+-  If invitations are not enabled, you can add members directly through
    the UI.
+
 
 Sending Project Membership Invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -335,58 +279,39 @@ feature is enabled in the cloud as described in `“Setting
 Up Invitations” <#setting-up-invitations>`_. If the invitations feature is
 not turned on, use the procedure in Adding Project Members From the UI.
 
-#. 
+#. Log in to the CloudStack UI.
 
-   Log in to the CloudStack UI.
+#. In the left navigation, click Projects.
 
-#. 
+#. In Select View, choose Projects.
 
-   In the left navigation, click Projects.
+#. Click the name of the project you want to work with.
 
-#. 
+#. Click the Invitations tab.
 
-   In Select View, choose Projects.
+#. In Add by, select one of the following:
 
-#. 
-
-   Click the name of the project you want to work with.
-
-#. 
-
-   Click the Invitations tab.
-
-#. 
-
-   In Add by, select one of the following:
-
-   #. 
-
-      Account – The invitation will appear in the user’s Invitations tab
+   #. Account – The invitation will appear in the user’s Invitations tab
       in the Project View. See Using the Project View.
 
-   #. 
-
-      Email – The invitation will be sent to the user’s email address.
+   #. Email – The invitation will be sent to the user’s email address.
       Each emailed invitation includes a unique code called a token
       which the recipient will provide back to CloudStack when accepting
       the invitation. Email invitations will work only if the global
       parameters related to the SMTP server have been set. See
       `“Setting Up Invitations” <#setting-up-invitations>`_.
 
-#. 
-
-   Type the user name or email address of the new member you want to
+#. Type the user name or email address of the new member you want to
    add, and click Invite. Type the CloudStack user name if you chose
    Account in the previous step. If you chose Email, type the email
    address. You can invite only people who have an account in this cloud
    within the same domain as the project. However, you can send the
    invitation to any email address.
 
-#. 
-
-   To view and manage the invitations you have sent, return to this tab.
+#. To view and manage the invitations you have sent, return to this tab.
    When an invitation is accepted, the new member will appear in the
    project’s Accounts tab.
+
 
 Adding Project Members From the UI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -398,32 +323,21 @@ Invitations” <#setting-up-invitations>`_, use the procedure in
 `“Sending Project Membership
 Invitations” <#sending-project-membership-invitations>`_.
 
-#. 
+#. Log in to the CloudStack UI.
 
-   Log in to the CloudStack UI.
+#. In the left navigation, click Projects.
 
-#. 
+#. In Select View, choose Projects.
 
-   In the left navigation, click Projects.
+#. Click the name of the project you want to work with.
 
-#. 
-
-   In Select View, choose Projects.
-
-#. 
-
-   Click the name of the project you want to work with.
-
-#. 
-
-   Click the Accounts tab. The current members of the project are
+#. Click the Accounts tab. The current members of the project are
    listed.
 
-#. 
-
-   Type the account name of the new member you want to add, and click
+#. Type the account name of the new member you want to add, and click
    Add Account. You can add only people who have an account in this
    cloud and within the same domain as the project.
+
 
 Accepting a Membership Invitation
 ---------------------------------
@@ -431,29 +345,20 @@ Accepting a Membership Invitation
 If you have received an invitation to join a CloudStack project, and you
 want to accept the invitation, follow these steps:
 
-#. 
+#. Log in to the CloudStack UI.
 
-   Log in to the CloudStack UI.
+#. In the left navigation, click Projects.
 
-#. 
+#. In Select View, choose Invitations.
 
-   In the left navigation, click Projects.
-
-#. 
-
-   In Select View, choose Invitations.
-
-#. 
-
-   If you see the invitation listed onscreen, click the Accept button.
+#. If you see the invitation listed onscreen, click the Accept button.
 
    Invitations listed on screen were sent to you using your CloudStack
    account name.
 
-#. 
-
-   If you received an email invitation, click the Enter Token button,
+#. If you received an email invitation, click the Enter Token button,
    and provide the project ID and unique ID code (token) from the email.
+
 
 Suspending or Deleting a Project
 --------------------------------
@@ -470,29 +375,20 @@ A project can be suspended or deleted by the project administrator, the
 domain administrator of the domain the project belongs to or of its
 parent domain, or the CloudStack root administrator.
 
-#. 
+#. Log in to the CloudStack UI.
 
-   Log in to the CloudStack UI.
+#. In the left navigation, click Projects.
 
-#. 
+#. In Select View, choose Projects.
 
-   In the left navigation, click Projects.
+#. Click the name of the project.
 
-#. 
-
-   In Select View, choose Projects.
-
-#. 
-
-   Click the name of the project.
-
-#. 
-
-   Click one of the buttons:
+#. Click one of the buttons:
 
    To delete, use |Removes a project|
 
    To suspend, use |Suspends a project|
+
 
 Using the Project View
 ----------------------
@@ -503,36 +399,27 @@ shows only information related to one project. It is a useful way to
 filter out other information so you can concentrate on a project status
 and resources.
 
-#. 
+#. Log in to the CloudStack UI.
 
-   Log in to the CloudStack UI.
+#. Click Project View.
 
-#. 
-
-   Click Project View.
-
-#. 
-
-   The project dashboard appears, showing the project’s VMs, volumes,
+#. The project dashboard appears, showing the project’s VMs, volumes,
    users, events, network settings, and more. From the dashboard, you
    can:
 
-   -  
-
-      Click the Accounts tab to view and manage project members. If you
+   -  Click the Accounts tab to view and manage project members. If you
       are the project administrator, you can add new members, remove
       members, or change the role of a member from user to admin. Only
       one member at a time can have the admin role, so if you set
       another user’s role to admin, your role will change to regular
       user.
 
-   -  
-
-      (If invitations are enabled) Click the Invitations tab to view and
+   -  (If invitations are enabled) Click the Invitations tab to view and
       manage invitations that have been sent to new project members but
       not yet accepted. Pending invitations will remain in this list
       until the new member accepts, the invitation timeout is reached,
       or you cancel the invitation.
+
 
 .. |Edits Parameters| image:: _static/images/edit-icon.png
 .. |Searches projects| image:: _static/images/search-button.png

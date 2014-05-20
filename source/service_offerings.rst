@@ -29,6 +29,7 @@ cloud – say, if the users are strictly internal to your organization, or
 just friends who are sharing your cloud – you can still keep track of
 what services they use and how much of them.
 
+
 Service Offerings, Disk Offerings, Network Offerings, and Templates
 -------------------------------------------------------------------
 
@@ -114,6 +115,7 @@ The disk offering specifies:
 
 -  Tags on the data disk
 
+
 Custom Compute Offering
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -150,45 +152,27 @@ Creating a New Compute Offering
 
 To create a new compute offering:
 
-#. 
+#. Log in with admin privileges to the CloudStack UI.
 
-   Log in with admin privileges to the CloudStack UI.
+#. In the left navigation bar, click Service Offerings.
 
-#. 
+#. In Select Offering, choose Compute Offering.
 
-   In the left navigation bar, click Service Offerings.
+#. Click Add Compute Offering.
 
-#. 
+#. In the dialog, make the following choices:
 
-   In Select Offering, choose Compute Offering.
+   -  **Name**: Any desired name for the service offering.
 
-#. 
-
-   Click Add Compute Offering.
-
-#. 
-
-   In the dialog, make the following choices:
-
-   -  
-
-      **Name**: Any desired name for the service offering.
-
-   -  
-
-      **Description**: A short description of the offering that can be
+   -  **Description**: A short description of the offering that can be
       displayed to users
 
-   -  
-
-      **Storage type**: The type of disk that should be allocated. Local
+   -  **Storage type**: The type of disk that should be allocated. Local
       allocates from storage attached directly to the host where the
       system VM is running. Shared allocates from storage accessible via
       NFS.
 
-   -  
-
-      **Custom**: Custom compute offerings can be used in following
+   -  **Custom**: Custom compute offerings can be used in following
       cases: deploying a VM, changing the compute offering of a stopped
       VM and running VMs, which is nothing but scaling up.
 
@@ -197,84 +181,54 @@ To create a new compute offering:
       using a custom compute offering. When you check this box, those
       three input fields are hidden in the dialog box.
 
-   -  
-
-      **# of CPU cores**: The number of cores which should be allocated
+   -  **# of CPU cores**: The number of cores which should be allocated
       to a system VM with this offering. If Custom is checked, this
       field does not appear.
 
-   -  
-
-      **CPU (in MHz)**: The CPU speed of the cores that the system VM is
+   -  **CPU (in MHz)**: The CPU speed of the cores that the system VM is
       allocated. For example, “2000” would provide for a 2 GHz clock. If
       Custom is checked, this field does not appear.
 
-   -  
-
-      **Memory (in MB)**: The amount of memory in megabytes that the
+   -  **Memory (in MB)**: The amount of memory in megabytes that the
       system VM should be allocated. For example, “2048” would provide
       for a 2 GB RAM allocation. If Custom is checked, this field does
       not appear.
 
-   -  
+   -  **Network Rate**: Allowed data transfer rate in MB per second.
 
-      **Network Rate**: Allowed data transfer rate in MB per second.
+   -  **Disk Read Rate**: Allowed disk read rate in bits per second.
 
-   -  
+   -  **Disk Write Rate**: Allowed disk write rate in bits per second.
 
-      **Disk Read Rate**: Allowed disk read rate in bits per second.
-
-   -  
-
-      **Disk Write Rate**: Allowed disk write rate in bits per second.
-
-   -  
-
-      **Disk Read Rate**: Allowed disk read rate in IOPS (input/output
+   -  **Disk Read Rate**: Allowed disk read rate in IOPS (input/output
       operations per second).
 
-   -  
-
-      **Disk Write Rate**: Allowed disk write rate in IOPS (input/output
+   -  **Disk Write Rate**: Allowed disk write rate in IOPS (input/output
       operations per second).
 
-   -  
-
-      **Offer HA**: If yes, the administrator can choose to have the
+   -  **Offer HA**: If yes, the administrator can choose to have the
       system VM be monitored and as highly available as possible.
 
-   -  
-
-      **Storage Tags**: The tags that should be associated with the
+   -  **Storage Tags**: The tags that should be associated with the
       primary storage used by the system VM.
 
-   -  
-
-      **Host Tags**: (Optional) Any tags that you use to organize your
+   -  **Host Tags**: (Optional) Any tags that you use to organize your
       hosts
 
-   -  
-
-      **CPU cap**: Whether to limit the level of CPU usage even if spare
+   -  **CPU cap**: Whether to limit the level of CPU usage even if spare
       capacity is available.
 
-   -  
-
-      **Public**: Indicate whether the service offering should be
+   -  **Public**: Indicate whether the service offering should be
       available all domains or only some domains. Choose Yes to make it
       available to all domains. Choose No to limit the scope to a
       subdomain; CloudStack will then prompt for the subdomain's name.
 
-   -  
-
-      **isVolatile**: If checked, VMs created from this service offering
+   -  **isVolatile**: If checked, VMs created from this service offering
       will have their root disks reset upon reboot. This is useful for
       secure environments that need a fresh start on every boot and for
       desktops that should not retain state.
 
-   -  
-
-      **Deployment Planner**: Choose the technique that you would like
+   -  **Deployment Planner**: Choose the technique that you would like
       CloudStack to use when deploying VMs based on this service
       offering.
 
@@ -290,15 +244,13 @@ To create a new compute offering:
       Implicit Dedication will deploy VMs on private infrastructure that
       is dedicated to a specific domain or account. If you choose this
       planner, then you must also pick a value for Planner Mode. See
-      `“Dedicating Resources to Accounts and
-      Domains” <accounts.html#dedicating-resources-to-accounts-and-domains>`_.
+      `“Dedicating Resources to Accounts and Domains” 
+      <accounts.html#dedicating-resources-to-accounts-and-domains>`_.
 
       Bare Metal is used with bare metal hosts. See Bare Metal
       Installation in the Installation Guide.
 
-   -  
-
-      **Planner Mode**: Used when ImplicitDedicationPlanner is selected
+   -  **Planner Mode**: Used when ImplicitDedicationPlanner is selected
       in the previous field. The planner mode determines how VMs will be
       deployed on private infrastructure that is dedicated to a single
       domain or account.
@@ -313,87 +265,58 @@ To create a new compute offering:
       possible. Otherwise, the VM can be deployed in shared
       infrastructure.
 
-#. 
+#. Click Add.
 
-   Click Add.
 
 Creating a New Disk Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a new disk offering:
 
-#. 
+#. Log in with admin privileges to the CloudStack UI.
 
-   Log in with admin privileges to the CloudStack UI.
+#. In the left navigation bar, click Service Offerings.
 
-#. 
+#. In Select Offering, choose Disk Offering.
 
-   In the left navigation bar, click Service Offerings.
+#. Click Add Disk Offering.
 
-#. 
+#. In the dialog, make the following choices:
 
-   In Select Offering, choose Disk Offering.
+   -  Name. Any desired name for the disk offering.
 
-#. 
-
-   Click Add Disk Offering.
-
-#. 
-
-   In the dialog, make the following choices:
-
-   -  
-
-      Name. Any desired name for the disk offering.
-
-   -  
-
-      Description. A short description of the offering that can be
+   -  Description. A short description of the offering that can be
       displayed to users
 
-   -  
-
-      Custom Disk Size. If checked, the user can set their own disk
+   -  Custom Disk Size. If checked, the user can set their own disk
       size. If not checked, the root administrator must define a value
       in Disk Size.
 
-   -  
-
-      Disk Size. Appears only if Custom Disk Size is not selected.
+   -  Disk Size. Appears only if Custom Disk Size is not selected.
       Define the volume size in GB.
 
-   -  
-
-      QoS Type. Three options: Empty (no Quality of Service), hypervisor
+   -  QoS Type. Three options: Empty (no Quality of Service), hypervisor
       (rate limiting enforced on the hypervisor side), and storage
       (guaranteed minimum and maximum IOPS enforced on the storage
       side). If leveraging QoS, make sure that the hypervisor or storage
       system supports this feature.
 
-   -  
-
-      Custom IOPS. If checked, the user can set their own IOPS. If not
+   -  Custom IOPS. If checked, the user can set their own IOPS. If not
       checked, the root administrator can define values. If the root
       admin does not set values when using storage QoS, default values
       are used (the defauls can be overridden if the proper parameters
       are passed into CloudStack when creating the primary storage in
       question).
 
-   -  
-
-      Min IOPS. Appears only if storage QoS is to be used. Set a
+   -  Min IOPS. Appears only if storage QoS is to be used. Set a
       guaranteed minimum number of IOPS to be enforced on the storage
       side.
 
-   -  
-
-      Max IOPS. Appears only if storage QoS is to be used. Set a maximum
+   -  Max IOPS. Appears only if storage QoS is to be used. Set a maximum
       number of IOPS to be enforced on the storage side (the system may
       go above this limit in certain circumstances for short intervals).
 
-   -  
-
-      (Optional)Storage Tags. The tags that should be associated with
+   -  (Optional)Storage Tags. The tags that should be associated with
       the primary storage for this disk. Tags are a comma separated list
       of attributes of the storage. For example "ssd,blue". Tags are
       also added on Primary Storage. CloudStack matches tags on a disk
@@ -402,16 +325,13 @@ To create a new disk offering:
       Storage for the volume to be provisioned. If no such primary
       storage exists, allocation from the disk offering will fail..
 
-   -  
-
-      Public. Indicate whether the service offering should be available
+   -  Public. Indicate whether the service offering should be available
       all domains or only some domains. Choose Yes to make it available
       to all domains. Choose No to limit the scope to a subdomain;
       CloudStack will then prompt for the subdomain's name.
 
-#. 
+#. Click Add.
 
-   Click Add.
 
 Modifying or Deleting a Service Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -425,6 +345,7 @@ use, it will remain in the database until all the virtual machines
 referencing it have been deleted. After deletion by the administrator, a
 service offering will not be available to end users that are creating
 new instances.
+
 
 System Service Offerings
 ------------------------
@@ -445,101 +366,65 @@ of the virtual router by applying a new network offering that contains a
 different system service offering. All virtual routers in that network
 will begin using the settings from the new service offering.
 
+
 Creating a New System Service Offering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a system service offering:
 
-#. 
+#. Log in with admin privileges to the CloudStack UI.
 
-   Log in with admin privileges to the CloudStack UI.
+#. In the left navigation bar, click Service Offerings.
 
-#. 
+#. In Select Offering, choose System Offering.
 
-   In the left navigation bar, click Service Offerings.
+#. Click Add System Service Offering.
 
-#. 
+#. In the dialog, make the following choices:
 
-   In Select Offering, choose System Offering.
+   -  Name. Any desired name for the system offering.
 
-#. 
-
-   Click Add System Service Offering.
-
-#. 
-
-   In the dialog, make the following choices:
-
-   -  
-
-      Name. Any desired name for the system offering.
-
-   -  
-
-      Description. A short description of the offering that can be
+   -  Description. A short description of the offering that can be
       displayed to users
 
-   -  
-
-      System VM Type. Select the type of system virtual machine that
+   -  System VM Type. Select the type of system virtual machine that
       this offering is intended to support.
 
-   -  
-
-      Storage type. The type of disk that should be allocated. Local
+   -  Storage type. The type of disk that should be allocated. Local
       allocates from storage attached directly to the host where the
       system VM is running. Shared allocates from storage accessible via
       NFS.
 
-   -  
-
-      # of CPU cores. The number of cores which should be allocated to a
+   -  # of CPU cores. The number of cores which should be allocated to a
       system VM with this offering
 
-   -  
-
-      CPU (in MHz). The CPU speed of the cores that the system VM is
+   -  CPU (in MHz). The CPU speed of the cores that the system VM is
       allocated. For example, "2000" would provide for a 2 GHz clock.
 
-   -  
-
-      Memory (in MB). The amount of memory in megabytes that the system
+   -  Memory (in MB). The amount of memory in megabytes that the system
       VM should be allocated. For example, "2048" would provide for a 2
       GB RAM allocation.
 
-   -  
+   -  Network Rate. Allowed data transfer rate in MB per second.
 
-      Network Rate. Allowed data transfer rate in MB per second.
-
-   -  
-
-      Offer HA. If yes, the administrator can choose to have the system
+   -  Offer HA. If yes, the administrator can choose to have the system
       VM be monitored and as highly available as possible.
 
-   -  
-
-      Storage Tags. The tags that should be associated with the primary
+   -  Storage Tags. The tags that should be associated with the primary
       storage used by the system VM.
 
-   -  
+   -  Host Tags. (Optional) Any tags that you use to organize your hosts
 
-      Host Tags. (Optional) Any tags that you use to organize your hosts
-
-   -  
-
-      CPU cap. Whether to limit the level of CPU usage even if spare
+   -  CPU cap. Whether to limit the level of CPU usage even if spare
       capacity is available.
 
-   -  
-
-      Public. Indicate whether the service offering should be available
+   -  Public. Indicate whether the service offering should be available
       all domains or only some domains. Choose Yes to make it available
       to all domains. Choose No to limit the scope to a subdomain;
       CloudStack will then prompt for the subdomain's name.
 
-#. 
+#. Click Add.
 
-   Click Add.
 
 Network Throttling
 ------------------
@@ -557,17 +442,11 @@ a certain limit for some accounts, or to control network congestion in a
 large cloud environment. The network rate for your cloud can be
 configured on the following:
 
--  
+-  Network Offering
 
-   Network Offering
+-  Service Offering
 
--  
-
-   Service Offering
-
--  
-
-   Global parameter
+-  Global parameter
 
 If network rate is set to NULL in service offering, the value provided
 in the vm.network.throttling.rate global parameter is applied. If the
@@ -599,7 +478,6 @@ Public network of Console Proxy VM              System Network Offering
 Default network of a guest VM                   Compute Offering
 Additional networks of a guest VM               Corresponding Network Offerings
 =============================================== ===============================
-
 
 A guest VM must have a default network, and can also have many
 additional networks. Depending on various parameters, such as the host
@@ -645,6 +523,7 @@ while egress traffic will be limited to 200 Mbps. In an isolated
 network, ingress traffic will be limited to 10 Mbps and egress to 200
 Mbps.
 
+
 Changing the Default System Offering for System VMs
 ---------------------------------------------------
 
@@ -652,57 +531,43 @@ You can manually change the system offering for a particular System VM.
 Additionally, as a CloudStack administrator, you can also change the
 default system offering used for System VMs.
 
-#. 
-
-   Create a new system offering.
+#. Create a new system offering.
 
    For more information, see Creating a New System Service Offering.
 
-#. 
-
-   Back up the database:
+#. Back up the database:
 
    .. code:: bash
 
-       mysqldump -u root -p cloud | bzip2 > cloud_backup.sql.bz2
+      mysqldump -u root -p cloud | bzip2 > cloud_backup.sql.bz2
 
-#. 
-
-   Open an MySQL prompt:
+#. Open an MySQL prompt:
 
    .. code:: bash
 
-       mysql -u cloud -p cloud
+      mysql -u cloud -p cloud
 
-#. 
+#. Run the following queries on the cloud database.
 
-   Run the following queries on the cloud database.
-
-   #. 
-
-      In the disk\_offering table, identify the original default
+   #. In the disk\_offering table, identify the original default
       offering and the new offering you want to use by default.
 
       Take a note of the ID of the new offering.
 
       .. code:: bash
 
-          select id,name,unique_name,type from disk_offering;
+         select id,name,unique_name,type from disk_offering;
 
-   #. 
-
-      For the original default offering, set the value of unique\_name
+   #. For the original default offering, set the value of unique\_name
       to NULL.
 
       .. code:: bash
 
-          # update disk_offering set unique_name = NULL where id = 10;
+         # update disk_offering set unique_name = NULL where id = 10;
 
       Ensure that you use the correct value for the ID.
 
-   #. 
-
-      For the new offering that you want to use by default, set the
+   #. For the new offering that you want to use by default, set the
       value of unique\_name as follows:
 
       For the default Console Proxy VM (CPVM) offering,set unique\_name
@@ -712,19 +577,15 @@ default system offering used for System VMs.
 
       .. code:: bash
 
-          update disk_offering set unique_name = 'Cloud.com-ConsoleProxy' where id = 16;
+         update disk_offering set unique_name = 'Cloud.com-ConsoleProxy' where id = 16;
 
-#. 
-
-   Restart CloudStack Management Server. Restarting is required because
+#. Restart CloudStack Management Server. Restarting is required because
    the default offerings are loaded into the memory at startup.
 
    .. code:: bash
 
-       service cloudstack-management restart
+      service cloudstack-management restart
 
-#. 
-
-   Destroy the existing CPVM or SSVM offerings and wait for them to be
+#. Destroy the existing CPVM or SSVM offerings and wait for them to be
    recreated. The new CPVM or SSVM are configured with the new offering.
 

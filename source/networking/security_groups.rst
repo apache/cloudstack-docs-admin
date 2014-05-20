@@ -30,7 +30,8 @@ guest network for all guest VMs. In advanced zones, security groups are
 supported only on the KVM hypervisor.
 
 .. note:: 
-   In a zone that uses advanced networking, you can instead define multiple guest networks to isolate traffic to VMs.
+   In a zone that uses advanced networking, you can instead define 
+   multiple guest networks to isolate traffic to VMs.
 
 Each CloudStack account comes with a default security group that denies
 all inbound traffic and allows all outbound traffic. The default
