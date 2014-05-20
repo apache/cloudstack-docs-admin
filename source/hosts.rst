@@ -24,6 +24,7 @@ Additional hosts can be added at any time to provide more capacity for
 guest VMs. For requirements and instructions, see 
 `“Adding a Host” <http://docs.cloudstack.apache.org/projects/cloudstack-installation/en/latest/configuration.html#adding-a-host>`_.
 
+
 Scheduled Maintenance and Maintenance Mode for Hosts
 ----------------------------------------------------
 
@@ -33,6 +34,7 @@ the guest VMs already running on the host are seamlessly migrated to
 another host not in maintenance mode. This migration uses live migration
 technology and does not interrupt the execution of the guest.
 
+
 vCenter and Maintenance Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -40,9 +42,7 @@ To enter maintenance mode on a vCenter host, both vCenter and CloudStack
 must be used in concert. CloudStack and vCenter have separate
 maintenance modes that work closely together.
 
-#. 
-
-   Place the host into CloudStack's "scheduled maintenance" mode. This
+#. Place the host into CloudStack's "scheduled maintenance" mode. This
    does not invoke the vCenter maintenance mode, but only causes VMs to
    be migrated off the host
 
@@ -54,34 +54,25 @@ maintenance modes that work closely together.
    disruption to the guests. After this migration is completed, the host
    will enter the Ready for Maintenance mode.
 
-#. 
+#. Wait for the "Ready for Maintenance" indicator to appear in the UI.
 
-   Wait for the "Ready for Maintenance" indicator to appear in the UI.
-
-#. 
-
-   Now use vCenter to perform whatever actions are necessary to maintain
+#. Now use vCenter to perform whatever actions are necessary to maintain
    the host. During this time, the host cannot be the target of new VM
    allocations.
 
-#. 
-
-   When the maintenance tasks are complete, take the host out of
+#. When the maintenance tasks are complete, take the host out of
    maintenance mode as follows:
 
-   #. 
-
-      First use vCenter to exit the vCenter maintenance mode.
+   #. First use vCenter to exit the vCenter maintenance mode.
 
       This makes the host ready for CloudStack to reactivate it.
 
-   #. 
-
-      Then use CloudStack's administrator UI to cancel the CloudStack
+   #. Then use CloudStack's administrator UI to cancel the CloudStack
       maintenance mode
 
       When the host comes back online, the VMs that were migrated off of
       it may be migrated back to it manually and new VMs can be added.
+
 
 XenServer and Maintenance Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,46 +86,31 @@ Mode, you cannot create or start any VMs on it.
 
 **To place a server in Maintenance Mode:**
 
-#. 
-
-   In the Resources pane, select the server, then do one of the
+#. In the Resources pane, select the server, then do one of the
    following:
 
-   -  
-
-      Right-click, then click Enter Maintenance Mode on the shortcut
+   -  Right-click, then click Enter Maintenance Mode on the shortcut
       menu.
 
-   -  
+   -  On the Server menu, click Enter Maintenance Mode.
 
-      On the Server menu, click Enter Maintenance Mode.
-
-#. 
-
-   Click Enter Maintenance Mode.
+#. Click Enter Maintenance Mode.
 
 The server's status in the Resources pane shows when all running VMs
 have been successfully migrated off the server.
 
 **To take a server out of Maintenance Mode:**
 
-#. 
-
-   In the Resources pane, select the server, then do one of the
+#. In the Resources pane, select the server, then do one of the
    following:
 
-   -  
-
-      Right-click, then click Exit Maintenance Mode on the shortcut
+   -  Right-click, then click Exit Maintenance Mode on the shortcut
       menu.
 
-   -  
+   -  On the Server menu, click Exit Maintenance Mode.
 
-      On the Server menu, click Exit Maintenance Mode.
+#. Click Exit Maintenance Mode.
 
-#. 
-
-   Click Exit Maintenance Mode.
 
 Disabling and Enabling Zones, Pods, and Clusters
 ------------------------------------------------
@@ -148,49 +124,33 @@ first added to the cloud, it is Disabled by default.
 
 To disable and enable a zone, pod, or cluster:
 
-#. 
+#. Log in to the CloudStack UI as administrator
 
-   Log in to the CloudStack UI as administrator
+#. In the left navigation bar, click Infrastructure.
 
-#. 
+#. In Zones, click View More.
 
-   In the left navigation bar, click Infrastructure.
-
-#. 
-
-   In Zones, click View More.
-
-#. 
-
-   If you are disabling or enabling a zone, find the name of the zone in
+#. If you are disabling or enabling a zone, find the name of the zone in
    the list, and click the Enable/Disable button. |enable-disable.png|
 
-#. 
-
-   If you are disabling or enabling a pod or cluster, click the name of
+#. If you are disabling or enabling a pod or cluster, click the name of
    the zone that contains the pod or cluster.
 
-#. 
+#. Click the Compute tab.
 
-   Click the Compute tab.
+#. In the Pods or Clusters node of the diagram, click View All.
 
-#. 
+#. Click the pod or cluster name in the list.
 
-   In the Pods or Clusters node of the diagram, click View All.
+#. Click the Enable/Disable button. |enable-disable.png|
 
-#. 
-
-   Click the pod or cluster name in the list.
-
-#. 
-
-   Click the Enable/Disable button. |enable-disable.png|
 
 Removing Hosts
 --------------
 
 Hosts can be removed from the cloud as needed. The procedure to remove a
 host depends on the hypervisor type.
+
 
 Removing XenServer and KVM Hosts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -199,23 +159,18 @@ A node cannot be removed from a cluster until it has been placed in
 maintenance mode. This will ensure that all of the VMs on it have been
 migrated to other Hosts. To remove a Host from the cloud:
 
-#. 
-
-   Place the node in maintenance mode.
+#. Place the node in maintenance mode.
 
    See `“Scheduled Maintenance and Maintenance Mode for
    Hosts” <#scheduled-maintenance-and-maintenance-mode-for-hosts>`_.
 
-#. 
+#. For KVM, stop the cloud-agent service.
 
-   For KVM, stop the cloud-agent service.
-
-#. 
-
-   Use the UI option to remove the node.
+#. Use the UI option to remove the node.
 
    Then you may power down the Host, re-use its IP address, re-install
    it, etc
+
 
 Removing vSphere Hosts
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -227,12 +182,14 @@ CloudStack to remove the host. CloudStack will not direct commands to a
 host that has been removed using CloudStack. However, the host may still
 exist in the vCenter cluster.
 
+
 Re-Installing Hosts
 -------------------
 
 You can re-install a host after placing it in maintenance mode and then
 removing it. If a host is down and cannot be placed in maintenance mode,
 it should still be removed before the re-install.
+
 
 Maintaining Hypervisors on Hosts
 --------------------------------
@@ -249,7 +206,10 @@ any system that is not up to date with patches.
 .. note:: 
    The lack of up-do-date hotfixes can lead to data corruption and lost VMs.
 
-(XenServer) For more information, see `Highly Recommended Hotfixes for XenServer in the CloudStack Knowledge Base <http://docs.cloudstack.org/Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_.
+(XenServer) For more information, see 
+`Highly Recommended Hotfixes for XenServer in the CloudStack Knowledge Base 
+<http://docs.cloudstack.org/Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_.
+
 
 Changing Host Password
 ----------------------
@@ -260,19 +220,13 @@ same password.
 
 To change a Node's password:
 
-#. 
+#. Identify all hosts in the cluster.
 
-   Identify all hosts in the cluster.
-
-#. 
-
-   Change the password on all hosts in the cluster. Now the password for
+#. Change the password on all hosts in the cluster. Now the password for
    the host and the password known to CloudStack will not match.
    Operations on the cluster will fail until the two passwords match.
 
-#. 
-
-   Get the list of host IDs for the host in the cluster where you are
+#. Get the list of host IDs for the host in the cluster where you are
    changing the password. You will need to access the database to
    determine these host IDs. For each hostname "h" (or vSphere cluster)
    that you are changing the password for, execute:
@@ -281,20 +235,17 @@ To change a Node's password:
 
        mysql> select id from cloud.host where name like '%h%';
 
-#. 
-
-   This should return a single ID. Record the set of such IDs for these
+#. This should return a single ID. Record the set of such IDs for these
    hosts.
 
-#. 
-
-   Update the passwords for the host in the database. In this example,
+#. Update the passwords for the host in the database. In this example,
    we change the passwords for hosts with IDs 5, 10, and 12 to
    "password".
 
    .. code:: bash
 
        mysql> update cloud.host set password='password' where id=5 or id=10 or id=12;
+
 
 Over-Provisioning and Service Offering Limits
 ---------------------------------------------
@@ -350,20 +301,18 @@ configured for that cluster. It is up to the administrator to be sure
 the host is actually suitable for the level of over-provisioning which
 has been set.
 
+
 Limitations on Over-Provisioning in XenServer and KVM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  
-
-   In XenServer, due to a constraint of this hypervisor, you can not use
+-  In XenServer, due to a constraint of this hypervisor, you can not use
    an over-provisioning factor greater than 4.
 
--  
-
-   The KVM hypervisor can not manage memory allocation to VMs
+-  The KVM hypervisor can not manage memory allocation to VMs
    dynamically. CloudStack sets the minimum and maximum amount of memory
    that a VM can use. The hypervisor adjusts the memory within the set
    limits based on the memory contention.
+
 
 Requirements for Over-Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -373,6 +322,7 @@ function properly. The feature is dependent on the OS type, hypervisor
 capabilities, and certain scripts. It is the administrator's
 responsibility to ensure that these requirements are met.
 
+
 Balloon Driver
 ^^^^^^^^^^^^^^
 
@@ -380,11 +330,13 @@ All VMs should have a balloon driver installed in them. The hypervisor
 communicates with the balloon driver to free up and make the memory
 available to a VM.
 
+
 XenServer
 '''''''''
 
 The balloon driver can be found as a part of xen pv or PVHVM drivers.
 The xen pvhvm drivers are included in upstream linux kernels 2.6.36+.
+
 
 VMware
 ''''''
@@ -392,6 +344,7 @@ VMware
 The balloon driver can be found as a part of the VMware tools. All the
 VMs that are deployed in a over-provisioned cluster should have the
 VMware tools installed.
+
 
 KVM
 '''
@@ -401,10 +354,12 @@ installed in all Linux kernel versions 2.6.25 and greater. The
 administrator must set CONFIG\_VIRTIO\_BALLOON=y in the virtio
 configuration.
 
+
 Hypervisor capabilities
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The hypervisor must be capable of using the memory ballooning.
+
 
 XenServer
 '''''''''
@@ -412,10 +367,12 @@ XenServer
 The DMC (Dynamic Memory Control) capability of the hypervisor should be
 enabled. Only XenServer Advanced and above versions have this feature.
 
+
 VMware, KVM
 '''''''''''
 
 Memory ballooning is supported by default.
+
 
 Setting Over-Provisioning Ratios
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -434,35 +391,31 @@ based on the new over-provisioning ratios, to ensure that CloudStack is
 correctly tracking the amount of free capacity.
 
 .. note:: 
-   It is safer not to deploy additional new VMs while the capacity recalculation is underway, in case the new values for available capacity are not high enough to accommodate the new VMs. Just wait for the new used/available values to become available, to be sure there is room for all the new VMs you want.
+   It is safer not to deploy additional new VMs while the capacity 
+   recalculation is underway, in case the new values for available 
+   capacity are not high enough to accommodate the new VMs. Just wait 
+   for the new used/available values to become available, to be sure 
+   there is room for all the new VMs you want.
 
 To change the over-provisioning ratios for an existing cluster:
 
-#. 
+#. Log in as administrator to the CloudStack UI.
 
-   Log in as administrator to the CloudStack UI.
+#. In the left navigation bar, click Infrastructure.
 
-#. 
+#. Under Clusters, click View All.
 
-   In the left navigation bar, click Infrastructure.
+#. Select the cluster you want to work with, and click the Edit button.
 
-#. 
-
-   Under Clusters, click View All.
-
-#. 
-
-   Select the cluster you want to work with, and click the Edit button.
-
-#. 
-
-   Fill in your desired over-provisioning multipliers in the fields CPU
+#. Fill in your desired over-provisioning multipliers in the fields CPU
    overcommit ratio and RAM overcommit ratio. The value which is
    intially shown in these fields is the default value inherited from
    the global configuration settings.
 
    .. note:: 
-      In XenServer, due to a constraint of this hypervisor, you can not use an over-provisioning factor greater than 4.
+      In XenServer, due to a constraint of this hypervisor, you can not 
+      use an over-provisioning factor greater than 4.
+
 
 Service Offering Limits and Over-Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -483,6 +436,7 @@ receive a CPU allocation that is proportionate to the GHz in the service
 offering. For example, a guest created from a 2 GHz service offering
 will receive twice the CPU allocation as a guest created from a 1 GHz
 service offering. CloudStack does not perform memory over-provisioning.
+
 
 VLAN Provisioning
 -----------------
@@ -513,6 +467,7 @@ if you run out of VLANs. Another advantage is that you can use the same
 set of IPs for different customers, each one with their own routers and
 the guest networks on different physical NICs.
 
+
 VLAN Allocation Example
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -530,6 +485,7 @@ less than 500       Management traffic.             Reserved for administrative 
 greater than 1000   Reserved for future use
 =================   =============================   ====================================================================================================
 
+
 Adding Non Contiguous VLAN Ranges
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -539,47 +495,30 @@ VLAN range or add multiple non contiguous VLAN ranges while creating a
 zone. You can also use the UpdatephysicalNetwork API to extend the VLAN
 range.
 
-#. 
+#. Log in to the CloudStack UI as an administrator or end user.
 
-   Log in to the CloudStack UI as an administrator or end user.
+#. Ensure that the VLAN range does not already exist.
 
-#. 
+#. In the left navigation, choose Infrastructure.
 
-   Ensure that the VLAN range does not already exist.
-
-#. 
-
-   In the left navigation, choose Infrastructure.
-
-#. 
-
-   On Zones, click View More, then click the zone to which you want to
+#. On Zones, click View More, then click the zone to which you want to
    work with.
 
-#. 
+#. Click Physical Network.
 
-   Click Physical Network.
+#. In the Guest node of the diagram, click Configure.
 
-#. 
-
-   In the Guest node of the diagram, click Configure.
-
-#. 
-
-   Click Edit |edit-icon.png|.
+#. Click Edit |edit-icon.png|.
 
    The VLAN Ranges field now is editable.
 
-#. 
-
-   Specify the start and end of the VLAN range in comma-separated list.
+#. Specify the start and end of the VLAN range in comma-separated list.
 
    Specify all the VLANs you want to use, VLANs not specified will be
    removed if you are adding new ranges to the existing list.
 
-#. 
+#. Click Apply.
 
-   Click Apply.
 
 Assigning VLANs to Isolated Networks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -602,36 +541,28 @@ view what VLAN is assigned to a network.
 
 To enable you to assign VLANs to Isolated networks,
 
-#. 
+#. Create a network offering by specifying the following:
 
-   Create a network offering by specifying the following:
+   -  **Guest Type**: Select Isolated.
 
-   -  
-
-      **Guest Type**: Select Isolated.
-
-   -  
-
-      **Specify VLAN**: Select the option.
+   -  **Specify VLAN**: Select the option.
 
    For more information, see the CloudStack Installation Guide.
 
-#. 
-
-   Using this network offering, create a network.
+#. Using this network offering, create a network.
 
    You can create a VPC tier or an Isolated network.
 
-#. 
-
-   Specify the VLAN when you create the network.
+#. Specify the VLAN when you create the network.
 
    When VLAN is specified, a CIDR and gateway are assigned to this
    network and the state is changed to Setup. In this state, the network
    will not be garbage collected.
 
 .. note:: 
-   You cannot change a VLAN once it's assigned to the network. The VLAN remains with the network for its entire life cycle.
+   You cannot change a VLAN once it's assigned to the network. The VLAN 
+   remains with the network for its entire life cycle.
+
 
 .. |enable-disable.png| image:: _static/images/enable-disable.png
    :alt: button to enable or disable zone, pod, or cluster.

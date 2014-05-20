@@ -18,8 +18,27 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
 Welcome to CloudStack Administration Documentation
 ==================================================
+
+.. figure:: /_static/images/acslogo.png
+   :align: center
+
+.. warning::
+   We are in the process of changing documentation format as well as hosting mechanism.
+   Please be patient with us as we migrate our entire documentation to this new setup.
+
+This guide is aimed at Administrators of a CloudStack based Cloud, 
+for Release Notes, Installation and General introduction to CloudStack 
+see the following guides:
+
+- `Documentation Start <http://docs.cloudstack.apache.org>`_
+
+- `Installation Guide <http://docs.cloudstack.apache.org/projects/cloudstack-installation>`_
+
+- `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
+
 
 User Interface
 --------------
@@ -29,6 +48,7 @@ User Interface
 
    ui
 
+
 Managing Accounts, Users and Domains
 ------------------------------------
 
@@ -37,12 +57,14 @@ Managing Accounts, Users and Domains
 
    accounts
 
+
 Using Projects to Organize User Resources
 ------------------------------------------
 .. toctree::
    :maxdepth: 2 
 
    projects
+
 
 Service Offerings
 -----------------
@@ -52,6 +74,7 @@ Service Offerings
 
    service_offerings
 
+
 Setting up Networking for Users
 -------------------------------
 
@@ -59,6 +82,7 @@ Setting up Networking for Users
    :maxdepth: 2
 
    networking
+
 
 Working with Virtual Machines
 -----------------------------
@@ -68,6 +92,7 @@ Working with Virtual Machines
 
    virtual_machines
 
+
 Working with Templates
 ----------------------
 
@@ -75,6 +100,7 @@ Working with Templates
    :maxdepth: 2
 
    templates
+
 
 Working with Hosts
 ------------------
@@ -84,6 +110,7 @@ Working with Hosts
 
    hosts
 
+
 Working with Storage
 --------------------
 
@@ -91,6 +118,7 @@ Working with Storage
    :maxdepth: 2
 
    storage
+
 
 Working with System Virtual Machines
 ------------------------------------
@@ -100,6 +128,7 @@ Working with System Virtual Machines
 
    systemvm
 
+
 Working with Usage
 ------------------
 
@@ -107,6 +136,7 @@ Working with Usage
    :maxdepth: 2
 
    usage
+
 
 Managing Networks and Traffic
 -----------------------------
@@ -116,6 +146,7 @@ Managing Networks and Traffic
 
    networking_and_traffic
 
+
 Managing the Cloud
 ------------------
 
@@ -123,6 +154,7 @@ Managing the Cloud
    :maxdepth: 2
 
    management
+
 
 System Reliability and Availability
 -----------------------------------
@@ -132,6 +164,7 @@ System Reliability and Availability
 
    reliability
 
+
 Tuning
 ------
 
@@ -139,6 +172,7 @@ Tuning
    :maxdepth: 2
 
    tuning
+
 
 Events and Troubleshooting
 --------------------------

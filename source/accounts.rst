@@ -27,6 +27,7 @@ An account typically represents a customer of the service provider or a
 department in a large organization. Multiple users can exist in an
 account.
 
+
 Domains
 ~~~~~~~
 
@@ -39,6 +40,7 @@ create a domain for each reseller.
 For each account created, the Cloud installation creates three different
 types of user accounts: root administrator, domain administrator, and
 user.
+
 
 Users
 ~~~~~
@@ -59,6 +61,7 @@ may be multiple administrators in the system. Administrators can create
 or delete other administrators, and change the password for any user in
 the system.
 
+
 Domain Administrators
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -66,12 +69,14 @@ Domain administrators can perform administrative operations for users
 who belong to that domain. Domain administrators do not have visibility
 into physical servers or other domains.
 
+
 Root Administrator
 ~~~~~~~~~~~~~~~~~~
 
 Root administrators have complete access to the system, including
 managing templates, service offerings, customer care administrators, and
 domains
+
 
 Resource Ownership
 ~~~~~~~~~~~~~~~~~~
@@ -86,6 +91,7 @@ account by using the assignVirtualMachine API. A domain or sub-domain
 administrator can do the same for VMs within the domain from one account
 to any other account in the domain or any of its sub-domains.
 
+
 Dedicating Resources to Accounts and Domains
 --------------------------------------------
 
@@ -99,25 +105,20 @@ that domain.
 
 There are several types of dedication available:
 
--
-
-   Explicit dedication. A zone, pod, cluster, or host is dedicated to an
+-  Explicit dedication. A zone, pod, cluster, or host is dedicated to an
    account or domain by the root administrator during initial deployment
    and configuration.
 
--
-
-   Strict implicit dedication. A host will not be shared across multiple
+-  Strict implicit dedication. A host will not be shared across multiple
    accounts. For example, strict implicit dedication is useful for
    deployment of certain types of applications, such as desktops, where
    no host can be shared between different accounts without violating
    the desktop software's terms of license.
 
--
-
-   Preferred implicit dedication. The VM will be deployed in dedicated
+-  Preferred implicit dedication. The VM will be deployed in dedicated
    infrastructure if possible. Otherwise, the VM can be deployed in
    shared infrastructure.
+
 
 How to Dedicate a Zone, Cluster, Pod, or Host to an Account or Domain
 ----------------------------------------------------------------------
@@ -138,6 +139,7 @@ permissible to allow some use of shared resources when dedicated
 resources are not available. Whenever a user creates a VM based on this
 service offering, it is allocated on one of the dedicated hosts.
 
+
 How to Use Dedicated Hosts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -147,6 +149,7 @@ For example, when creating a new VM, an
 end user can choose to place it on dedicated infrastructure. This
 operation will succeed only if some infrastructure has already been
 assigned as dedicated to the user's account or domain.
+
 
 Behavior of Dedicated Hosts, Clusters, Pods, and Zones
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -178,6 +181,7 @@ VMs of a specific account (the default system account). However, a host
 with system VMs or virtual routers can be used for preferred implicit
 dedication.
 
+
 Using an LDAP Server for User Authentication
 --------------------------------------------
 
@@ -195,22 +199,15 @@ given password is used to authenticate the user..
 To set up LDAP authentication in CloudStack, call the CloudStack API
 command ldapConfig and provide the following:
 
--  
+-  Hostname or IP address and listening port of the LDAP server
 
-   Hostname or IP address and listening port of the LDAP server
+-  Base directory and query filter
 
--  
-
-   Base directory and query filter
-
--  
-
-   Search user DN credentials, which give CloudStack permission to
+-  Search user DN credentials, which give CloudStack permission to
    search on the LDAP server
 
--  
+-  SSL keystore and password, if SSL is used
 
-   SSL keystore and password, if SSL is used
 
 Example LDAP Configuration Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -224,25 +221,25 @@ LDAP server
 
 .. code:: bash
 
-    http://127.0.0.1:8080/client/api?command=ldapConfig&hostname=127.0.0.1&searchbase=ou%3Dtesting%2Co%3Dproject&queryfilter=%28%26%28uid%3D%25u%29%29&binddn=cn%3DJohn+Singh%2Cou%3Dtesting%2Co%project&bindpass=secret&port=10389&ssl=true&truststore=C%3A%2Fcompany%2Finfo%2Ftrusted.ks&truststorepass=secret&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
+   http://127.0.0.1:8080/client/api?command=ldapConfig&hostname=127.0.0.1&searchbase=ou%3Dtesting%2Co%3Dproject&queryfilter=%28%26%28uid%3D%25u%29%29&binddn=cn%3DJohn+Singh%2Cou%3Dtesting%2Co%project&bindpass=secret&port=10389&ssl=true&truststore=C%3A%2Fcompany%2Finfo%2Ftrusted.ks&truststorepass=secret&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
 
 The command must be URL-encoded. Here is the same example without the
 URL encoding:
 
 .. code:: bash
-
-    http://127.0.0.1:8080/client/api?command=ldapConfig
-    &hostname=127.0.0.1
-    &searchbase=ou=testing,o=project
-    &queryfilter=(&(%uid=%u))
-    &binddn=cn=John+Singh,ou=testing,o=project
-    &bindpass=secret
-    &port=10389
-    &ssl=true
-    &truststore=C:/company/info/trusted.ks
-    &truststorepass=secret
-    &response=json
-    &apiKey=YourAPIKey&signature=YourSignatureHash
+   
+   http://127.0.0.1:8080/client/api?command=ldapConfig
+   &hostname=127.0.0.1
+   &searchbase=ou=testing,o=project
+   &queryfilter=(&(%uid=%u))
+   &binddn=cn=John+Singh,ou=testing,o=project
+   &bindpass=secret
+   &port=10389
+   &ssl=true
+   &truststore=C:/company/info/trusted.ks
+   &truststorepass=secret
+   &response=json
+   &apiKey=YourAPIKey&signature=YourSignatureHash
 
 The following shows a similar command for Active Directory. Here, the
 search base is the testing group within a company, and the users are
@@ -250,10 +247,11 @@ matched up based on email address.
 
 .. code:: bash
 
-    http://10.147.29.101:8080/client/api?command=ldapConfig&hostname=10.147.28.250&searchbase=OU%3Dtesting%2CDC%3Dcompany&queryfilter=%28%26%28mail%3D%25e%29%29 &binddn=CN%3DAdministrator%2COU%3Dtesting%2CDC%3Dcompany&bindpass=1111_aaaa&port=389&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
+   http://10.147.29.101:8080/client/api?command=ldapConfig&hostname=10.147.28.250&searchbase=OU%3Dtesting%2CDC%3Dcompany&queryfilter=%28%26%28mail%3D%25e%29%29 &binddn=CN%3DAdministrator%2COU%3Dtesting%2CDC%3Dcompany&bindpass=1111_aaaa&port=389&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
 
 The next few sections explain some of the concepts you will need to know
 when filling out the ldapConfig parameters.
+
 
 Search Base
 ~~~~~~~~~~~
@@ -274,6 +272,7 @@ LDAP Server       Example Search Base DN
 ApacheDS          OU=testing, O=project
 Active Directory  OU=testing, DC=company
 ================  =======================
+
 
 Query Filter
 ~~~~~~~~~~~~
@@ -300,19 +299,20 @@ If the CloudStack user name is the same as the LDAP user ID:
 
 .. code:: bash
 
-    (uid=%u)
+   (uid=%u)
 
 If the CloudStack user name is the LDAP display name:
 
 .. code:: bash
 
-    (displayName=%u)
+   (displayName=%u)
 
 To find a user by email address:
 
 .. code:: bash
 
-    (mail=%e)
+   (mail=%e)
+
 
 Search User Bind DN
 ~~~~~~~~~~~~~~~~~~~

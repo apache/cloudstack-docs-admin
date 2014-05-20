@@ -29,48 +29,35 @@ template storage space, consumed by guest instances.
 The Usage Server runs at least once per day. It can be configured to run
 multiple times per day.
 
+
 Configuring the Usage Server
 ----------------------------
 
 To configure the usage server:
 
-#. 
-
-   Be sure the Usage Server has been installed. This requires extra
+#. Be sure the Usage Server has been installed. This requires extra
    steps beyond just installing the CloudStack software. See Installing
    the Usage Server (Optional) in the Advanced Installation Guide.
 
-#. 
+#. Log in to the CloudStack UI as administrator.
 
-   Log in to the CloudStack UI as administrator.
+#. Click Global Settings.
 
-#. 
-
-   Click Global Settings.
-
-#. 
-
-   In Search, type usage. Find the configuration parameter that controls
+#. In Search, type usage. Find the configuration parameter that controls
    the behavior you want to set. See the table below for a description
    of the available parameters.
 
-#. 
+#. In Actions, click the Edit icon.
 
-   In Actions, click the Edit icon.
+#. Type the desired value and click the Save icon.
 
-#. 
-
-   Type the desired value and click the Save icon.
-
-#. 
-
-   Restart the Management Server (as usual with any global configuration
+#. Restart the Management Server (as usual with any global configuration
    change) and also the Usage Server:
 
    .. code:: bash
 
-       # service cloudstack-management restart
-       # service cloudstack-usage restart
+      # service cloudstack-management restart
+      # service cloudstack-usage restart
 
 The following table shows the global configuration settings that control
 the behavior of the Usage Server.
@@ -88,18 +75,20 @@ for the 24 hours from 00:00:00 GMT to 23:59:59 GMT:
 
 .. code:: bash
 
-    usage.stats.job.exec.time = 00:15   
-    usage.execution.timezone = PST
-    usage.aggregation.timezone = GMT
+   usage.stats.job.exec.time = 00:15   
+   usage.execution.timezone = PST
+   usage.aggregation.timezone = GMT
 
-Valid values for the time zone are specified in `Appendix A, *Time Zones* <http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones#time-zones>`_
+Valid values for the time zone are specified in `Appendix A, *Time Zones* 
+<http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones#time-zones>`_
 
 Default: GMT
 
 usage.execution.timezone
 
 The time zone of usage.stats.job.exec.time. Valid values for the time
-zone are specified in `Appendix A, *Time Zones* <http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones#time-zones>`_
+zone are specified in `Appendix A, *Time Zones* 
+<http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones#time-zones>`_
 
 Default: The time zone of the management server.
 
@@ -150,33 +139,26 @@ predominantly in the East Coast of the United States, and you would like
 to process usage records every night at 2 AM local (EST) time. Choose
 these settings:
 
--  
+-  enable.usage.server = true
 
-   enable.usage.server = true
+-  usage.execution.timezone = America/New\_York
 
--  
-
-   usage.execution.timezone = America/New\_York
-
--  
-
-   usage.stats.job.exec.time = 07:00. This will run the Usage job at
+-  usage.stats.job.exec.time = 07:00. This will run the Usage job at
    2:00 AM EST. Note that this will shift by an hour as the East Coast
    of the U.S. enters and exits Daylight Savings Time.
 
--  
-
-   usage.stats.job.aggregation.range = 1440
+-  usage.stats.job.aggregation.range = 1440
 
 With this configuration, the Usage job will run every night at 2 AM EST
 and will process records for the previous day’s midnight-midnight as
 defined by the EST (America/New\_York) time zone.
 
 .. note:: 
-    Because the special value 1440 has been used for
-    usage.stats.job.aggregation.range, the Usage Server will ignore the data
-    between midnight and 2 AM. That data will be included in the next day's
-    run.
+   Because the special value 1440 has been used for
+   usage.stats.job.aggregation.range, the Usage Server will ignore the data
+   between midnight and 2 AM. That data will be included in the next day's
+   run.
+
 
 Setting Usage Limits
 --------------------
@@ -185,6 +167,7 @@ CloudStack provides several administrator control points for capping
 resource usage by users. Some of these limits are global configuration
 parameters. Others are applied at the ROOT domain and may be overridden
 on a per-account basis.
+
 
 Globally Configured Limits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,21 +224,13 @@ classified as CPU, RAM, Primary storage, and Secondary storage. The root
 administrator is able to impose resource usage limit by the following
 resource types for Domain, Project, and Accounts.
 
--  
+-  CPUs
 
-   CPUs
+-  Memory (RAM)
 
--  
+-  Primary Storage (Volumes)
 
-   Memory (RAM)
-
--  
-
-   Primary Storage (Volumes)
-
--  
-
-   Secondary Storage (Snapshots, Templates, ISOs)
+-  Secondary Storage (Snapshots, Templates, ISOs)
 
 To control the behaviour of this feature, the following configuration
 parameters have been added:
@@ -281,6 +256,7 @@ max.project.secondary.storage (GB)  Maximum secondary storage space that can be 
                                     Default is 400.
 =================================== =================================================================
 
+
 User Permission
 ~~~~~~~~~~~~~~~
 
@@ -288,53 +264,38 @@ The root administrator, domain administrators and users are able to list
 resources. Ensure that proper logs are maintained in the ``vmops.log``
 and ``api.log`` files.
 
--  
-
-   The root admin will have the privilege to list and update resource
+-  The root admin will have the privilege to list and update resource
    limits.
 
--  
-
-   The domain administrators are allowed to list and change these
+-  The domain administrators are allowed to list and change these
    resource limits only for the sub-domains and accounts under their own
    domain or the sub-domains.
 
--  
-
-   The end users will the privilege to list resource limits. Use the
+-  The end users will the privilege to list resource limits. Use the
    listResourceLimits API.
+
 
 Limit Usage Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  
-
-   Primary or Secondary storage space refers to the stated size of the
+-  Primary or Secondary storage space refers to the stated size of the
    volume and not the physical size— the actual consumed size on disk in
    case of thin provisioning.
 
--  
-
-   If the admin reduces the resource limit for an account and set it to
+-  If the admin reduces the resource limit for an account and set it to
    less than the resources that are currently being consumed, the
    existing VMs/templates/volumes are not destroyed. Limits are imposed
    only if the user under that account tries to execute a new operation
    using any of these resources. For example, the existing behavior in
    the case of a VM are:
 
-   -  
-
-      migrateVirtualMachine: The users under that account will be able
+   -  migrateVirtualMachine: The users under that account will be able
       to migrate the running VM into any other host without facing any
       limit issue.
 
-   -  
+   -  recoverVirtualMachine: Destroyed VMs cannot be recovered.
 
-      recoverVirtualMachine: Destroyed VMs cannot be recovered.
-
--  
-
-   For any resource type, if a domain has limit X, sub-domains or
+-  For any resource type, if a domain has limit X, sub-domains or
    accounts under that domain can have there own limits. However, the
    sum of resource allocated to a sub-domain or accounts under the
    domain at any point of time should not exceed the value X.
@@ -344,14 +305,13 @@ Limit Usage Considerations
    time the resource allocated to D1 and A1 should not exceed the limit
    of 40.
 
--  
-
-   If any operation needs to pass through two of more resource limit
+-  If any operation needs to pass through two of more resource limit
    check, then the lower of 2 limits will be enforced, For example: if
    an account has the VM limit of 10 and CPU limit of 20, and a user
    under that account requests 5 VMs of 4 CPUs each. The user can deploy
    5 more VMs because VM limit is 10. However, the user cannot deploy
    any more instances because the CPU limit has been exhausted.
+
 
 Limiting Resource Usage in a Domain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -367,76 +327,65 @@ domain.
 
 To set a domain limit:
 
-#. 
+#. Log in to the CloudStack UI.
 
-   Log in to the CloudStack UI.
+#. In the left navigation tree, click Domains.
 
-#. 
-
-   In the left navigation tree, click Domains.
-
-#. 
-
-   Select the domain you want to modify. The current domain limits are
+#. Select the domain you want to modify. The current domain limits are
    displayed.
 
    A value of -1 shows that there is no limit in place.
 
-#. 
+#. Click the Edit button |editbutton.png|
 
-   Click the Edit button |editbutton.png|
+#. Edit the following as per your requirement:
 
-#. 
+   -  Parameter Name
 
-   Edit the following as per your requirement:
+   -  Description
 
-   Parameter Name
+   -  Instance Limits
 
-   Description
+      The number of instances that can be used in a domain.
 
-   Instance Limits
+   -  Public IP Limits
 
-   The number of instances that can be used in a domain.
+      The number of public IP addresses that can be used in a domain.
 
-   Public IP Limits
+   -  Volume Limits
 
-   The number of public IP addresses that can be used in a domain.
+      The number of disk volumes that can be created in a domain.
 
-   Volume Limits
+   -  Snapshot Limits
 
-   The number of disk volumes that can be created in a domain.
+      The number of snapshots that can be created in a domain.
 
-   Snapshot Limits
+   -  Template Limits
 
-   The number of snapshots that can be created in a domain.
+      The number of templates that can be registered in a domain.
 
-   Template Limits
+   -  VPC limits
 
-   The number of templates that can be registered in a domain.
+      The number of VPCs that can be created in a domain.
 
-   VPC limits
+   -  CPU limits
 
-   The number of VPCs that can be created in a domain.
+      The number of CPU cores that can be used for a domain.
 
-   CPU limits
+   -  Memory limits (MB)
 
-   The number of CPU cores that can be used for a domain.
+      The number of RAM that can be used for a domain.
 
-   Memory limits (MB)
+   -  Primary Storage limits (GB)
 
-   The number of RAM that can be used for a domain.
+      The primary storage space that can be used for a domain.
 
-   Primary Storage limits (GB)
+   -  Secondary Storage limits (GB)
 
-   The primary storage space that can be used for a domain.
+      The secondary storage space that can be used for a domain.
 
-   Secondary Storage limits (GB)
+#. Click Apply.
 
-   The secondary storage space that can be used for a domain.
-
-#. 
-
-   Click Apply.
 
 Default Account Resource Limits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -449,96 +398,84 @@ max.account, for example: max.account.snapshots.
 To override a default limit for a particular account, set a per-account
 resource limit.
 
-#. 
+#. Log in to the CloudStack UI.
 
-   Log in to the CloudStack UI.
+#. In the left navigation tree, click Accounts.
 
-#. 
-
-   In the left navigation tree, click Accounts.
-
-#. 
-
-   Select the account you want to modify. The current limits are
+#. Select the account you want to modify. The current limits are
    displayed.
 
    A value of -1 shows that there is no limit in place.
 
-#. 
+#. Click the Edit button. |editbutton.png|
 
-   Click the Edit button. |editbutton.png|
+#. Edit the following as per your requirement:
 
-#. 
+   -  Parameter Name
 
-   Edit the following as per your requirement:
+   -  Description
 
-   Parameter Name
+   -  Instance Limits
 
-   Description
+      The number of instances that can be used in an account.
 
-   Instance Limits
+      The default is 20.
 
-   The number of instances that can be used in an account.
+   -  Public IP Limits
 
-   The default is 20.
+      The number of public IP addresses that can be used in an account.
 
-   Public IP Limits
+      The default is 20.
 
-   The number of public IP addresses that can be used in an account.
+   -  Volume Limits
 
-   The default is 20.
+      The number of disk volumes that can be created in an account.
 
-   Volume Limits
+      The default is 20.
 
-   The number of disk volumes that can be created in an account.
+   -  Snapshot Limits
 
-   The default is 20.
+      The number of snapshots that can be created in an account.
 
-   Snapshot Limits
+      The default is 20.
 
-   The number of snapshots that can be created in an account.
+   -  Template Limits
 
-   The default is 20.
+      The number of templates that can be registered in an account.
 
-   Template Limits
+      The default is 20.
 
-   The number of templates that can be registered in an account.
+   -  VPC limits
 
-   The default is 20.
+      The number of VPCs that can be created in an account.
 
-   VPC limits
+      The default is 20.
 
-   The number of VPCs that can be created in an account.
+   -  CPU limits
 
-   The default is 20.
+      The number of CPU cores that can be used for an account.
 
-   CPU limits
+      The default is 40.
 
-   The number of CPU cores that can be used for an account.
+   -  Memory limits (MB)
 
-   The default is 40.
+      The number of RAM that can be used for an account.
 
-   Memory limits (MB)
+      The default is 40960.
 
-   The number of RAM that can be used for an account.
+   -  Primary Storage limits (GB)
 
-   The default is 40960.
+      The primary storage space that can be used for an account.
 
-   Primary Storage limits (GB)
+      The default is 200.
 
-   The primary storage space that can be used for an account.
+   -  Secondary Storage limits (GB)
 
-   The default is 200.
+      The secondary storage space that can be used for an account.
 
-   Secondary Storage limits (GB)
+      The default is 400.
 
-   The secondary storage space that can be used for an account.
-
-   The default is 400.
-
-#. 
-
-   Click Apply.
+#. Click Apply.
 
 
 Usage Record Format
@@ -550,69 +487,40 @@ Virtual Machine Usage Record Format
 For running and allocated virtual machine usage, the following fields
 exist in a usage record:
 
--  
+-  account – name of the account
 
-   account – name of the account
+-  accountid – ID of the account
 
--  
+-  domainid – ID of the domain in which this account resides
 
-   accountid – ID of the account
+-  zoneid – Zone where the usage occurred
 
--  
+-  description – A string describing what the usage record is tracking
 
-   domainid – ID of the domain in which this account resides
-
--  
-
-   zoneid – Zone where the usage occurred
-
--  
-
-   description – A string describing what the usage record is tracking
-
--  
-
-   usage – String representation of the usage, including the units of
+-  usage – String representation of the usage, including the units of
    usage (e.g. 'Hrs' for VM running time)
 
--  
+-  usagetype – A number representing the usage type (see Usage Types)
 
-   usagetype – A number representing the usage type (see Usage Types)
+-  rawusage – A number representing the actual usage in hours
 
--  
+-  virtualMachineId – The ID of the virtual machine
 
-   rawusage – A number representing the actual usage in hours
+-  name – The name of the virtual machine
 
--  
+-  offeringid – The ID of the service offering
 
-   virtualMachineId – The ID of the virtual machine
-
--  
-
-   name – The name of the virtual machine
-
--  
-
-   offeringid – The ID of the service offering
-
--  
-
-   templateid – The ID of the template or the ID of the parent template.
+-  templateid – The ID of the template or the ID of the parent template.
    The parent template value is present when the current template was
    created from a volume.
 
--  
+-  usageid – Virtual machine
 
-   usageid – Virtual machine
+-  type – Hypervisor
 
--  
-
-   type – Hypervisor
-
--  
-
-   startdate, enddate – The range of time for which the usage is
+-  startdate, enddate – The range of time for which the usage is
    aggregated; see Dates in the Usage Record
+
 
 Network Usage Record Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -620,380 +528,216 @@ Network Usage Record Format
 For network usage (bytes sent/received), the following fields exist in a
 usage record.
 
--  
+-  account – name of the account
 
-   account – name of the account
+-  accountid – ID of the account
 
--  
+-  domainid – ID of the domain in which this account resides
 
-   accountid – ID of the account
+-  zoneid – Zone where the usage occurred
 
--  
+-  description – A string describing what the usage record is tracking
 
-   domainid – ID of the domain in which this account resides
+-  usagetype – A number representing the usage type (see Usage Types)
 
--  
+-  rawusage – A number representing the actual usage in hours
 
-   zoneid – Zone where the usage occurred
+-  usageid – Device ID (virtual router ID or external device ID)
 
--  
+-  type – Device type (domain router, external load balancer, etc.)
 
-   description – A string describing what the usage record is tracking
-
--  
-
-   usagetype – A number representing the usage type (see Usage Types)
-
--  
-
-   rawusage – A number representing the actual usage in hours
-
--  
-
-   usageid – Device ID (virtual router ID or external device ID)
-
--  
-
-   type – Device type (domain router, external load balancer, etc.)
-
--  
-
-   startdate, enddate – The range of time for which the usage is
+-  startdate, enddate – The range of time for which the usage is
    aggregated; see Dates in the Usage Record
+
 
 IP Address Usage Record Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For IP address usage the following fields exist in a usage record.
 
--  
+-  account - name of the account
 
-   account - name of the account
+-  accountid - ID of the account
 
--  
+-  domainid - ID of the domain in which this account resides
 
-   accountid - ID of the account
+-  zoneid - Zone where the usage occurred
 
--  
+-  description - A string describing what the usage record is tracking
 
-   domainid - ID of the domain in which this account resides
-
--  
-
-   zoneid - Zone where the usage occurred
-
--  
-
-   description - A string describing what the usage record is tracking
-
--  
-
-   usage - String representation of the usage, including the units of
+-  usage - String representation of the usage, including the units of
    usage
 
--  
+-  usagetype - A number representing the usage type (see Usage Types)
 
-   usagetype - A number representing the usage type (see Usage Types)
+-  rawusage - A number representing the actual usage in hours
 
--  
+-  usageid - IP address ID
 
-   rawusage - A number representing the actual usage in hours
-
--  
-
-   usageid - IP address ID
-
--  
-
-   startdate, enddate - The range of time for which the usage is
+-  startdate, enddate - The range of time for which the usage is
    aggregated; see Dates in the Usage Record
 
--  
+-  issourcenat - Whether source NAT is enabled for the IP address
 
-   issourcenat - Whether source NAT is enabled for the IP address
+-  iselastic - True if the IP address is elastic.
 
--  
-
-   iselastic - True if the IP address is elastic.
 
 Disk Volume Usage Record Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For disk volumes, the following fields exist in a usage record.
 
--  
+-  account – name of the account
 
-   account – name of the account
+-  accountid – ID of the account
 
--  
+-  domainid – ID of the domain in which this account resides
 
-   accountid – ID of the account
+-  zoneid – Zone where the usage occurred
 
--  
+-  description – A string describing what the usage record is tracking
 
-   domainid – ID of the domain in which this account resides
-
--  
-
-   zoneid – Zone where the usage occurred
-
--  
-
-   description – A string describing what the usage record is tracking
-
--  
-
-   usage – String representation of the usage, including the units of
+-  usage – String representation of the usage, including the units of
    usage (e.g. 'Hrs' for hours)
 
--  
+-  usagetype – A number representing the usage type (see Usage Types)
 
-   usagetype – A number representing the usage type (see Usage Types)
+-  rawusage – A number representing the actual usage in hours
 
--  
+-  usageid – The volume ID
 
-   rawusage – A number representing the actual usage in hours
+-  offeringid – The ID of the disk offering
 
--  
+-  type – Hypervisor
 
-   usageid – The volume ID
+-  templateid – ROOT template ID
 
--  
+-  size – The amount of storage allocated
 
-   offeringid – The ID of the disk offering
-
--  
-
-   type – Hypervisor
-
--  
-
-   templateid – ROOT template ID
-
--  
-
-   size – The amount of storage allocated
-
--  
-
-   startdate, enddate – The range of time for which the usage is
+-  startdate, enddate – The range of time for which the usage is
    aggregated; see Dates in the Usage Record
+
 
 Template, ISO, and Snapshot Usage Record Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  
+-  account – name of the account
 
-   account – name of the account
+-  accountid – ID of the account
 
--  
+-  domainid – ID of the domain in which this account resides
 
-   accountid – ID of the account
+-  zoneid – Zone where the usage occurred
 
--  
+-  description – A string describing what the usage record is tracking
 
-   domainid – ID of the domain in which this account resides
-
--  
-
-   zoneid – Zone where the usage occurred
-
--  
-
-   description – A string describing what the usage record is tracking
-
--  
-
-   usage – String representation of the usage, including the units of
+-  usage – String representation of the usage, including the units of
    usage (e.g. 'Hrs' for hours)
 
--  
+-  usagetype – A number representing the usage type (see Usage Types)
 
-   usagetype – A number representing the usage type (see Usage Types)
+-  rawusage – A number representing the actual usage in hours
 
--  
+-  usageid – The ID of the the template, ISO, or snapshot
 
-   rawusage – A number representing the actual usage in hours
+-  offeringid – The ID of the disk offering
 
--  
-
-   usageid – The ID of the the template, ISO, or snapshot
-
--  
-
-   offeringid – The ID of the disk offering
-
--  
-
-   templateid – – Included only for templates (usage type 7). Source
+-  templateid – – Included only for templates (usage type 7). Source
    template ID.
 
--  
+-  size – Size of the template, ISO, or snapshot
 
-   size – Size of the template, ISO, or snapshot
-
--  
-
-   startdate, enddate – The range of time for which the usage is
+-  startdate, enddate – The range of time for which the usage is
    aggregated; see Dates in the Usage Record
+
 
 Load Balancer Policy or Port Forwarding Rule Usage Record Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  
+-  account - name of the account
 
-   account - name of the account
+-  accountid - ID of the account
 
--  
+-  domainid - ID of the domain in which this account resides
 
-   accountid - ID of the account
+-  zoneid - Zone where the usage occurred
 
--  
+-  description - A string describing what the usage record is tracking
 
-   domainid - ID of the domain in which this account resides
-
--  
-
-   zoneid - Zone where the usage occurred
-
--  
-
-   description - A string describing what the usage record is tracking
-
--  
-
-   usage - String representation of the usage, including the units of
+-  usage - String representation of the usage, including the units of
    usage (e.g. 'Hrs' for hours)
 
--  
+-  usagetype - A number representing the usage type (see Usage Types)
 
-   usagetype - A number representing the usage type (see Usage Types)
+-  rawusage - A number representing the actual usage in hours
 
--  
+-  usageid - ID of the load balancer policy or port forwarding rule
 
-   rawusage - A number representing the actual usage in hours
+-  usagetype - A number representing the usage type (see Usage Types)
 
--  
-
-   usageid - ID of the load balancer policy or port forwarding rule
-
--  
-
-   usagetype - A number representing the usage type (see Usage Types)
-
--  
-
-   startdate, enddate - The range of time for which the usage is
+-  startdate, enddate - The range of time for which the usage is
    aggregated; see Dates in the Usage Record
+
 
 Network Offering Usage Record Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  
+-  account – name of the account
 
-   account – name of the account
+-  accountid – ID of the account
 
--  
+-  domainid – ID of the domain in which this account resides
 
-   accountid – ID of the account
+-  zoneid – Zone where the usage occurred
 
--  
+-  description – A string describing what the usage record is tracking
 
-   domainid – ID of the domain in which this account resides
-
--  
-
-   zoneid – Zone where the usage occurred
-
--  
-
-   description – A string describing what the usage record is tracking
-
--  
-
-   usage – String representation of the usage, including the units of
+-  usage – String representation of the usage, including the units of
    usage (e.g. 'Hrs' for hours)
 
--  
+-  usagetype – A number representing the usage type (see Usage Types)
 
-   usagetype – A number representing the usage type (see Usage Types)
+-  rawusage – A number representing the actual usage in hours
 
--  
+-  usageid – ID of the network offering
 
-   rawusage – A number representing the actual usage in hours
+-  usagetype – A number representing the usage type (see Usage Types)
 
--  
+-  offeringid – Network offering ID
 
-   usageid – ID of the network offering
+-  virtualMachineId – The ID of the virtual machine
 
--  
+-  virtualMachineId – The ID of the virtual machine
 
-   usagetype – A number representing the usage type (see Usage Types)
-
--  
-
-   offeringid – Network offering ID
-
--  
-
-   virtualMachineId – The ID of the virtual machine
-
--  
-
-   virtualMachineId – The ID of the virtual machine
-
--  
-
-   startdate, enddate – The range of time for which the usage is
+-  startdate, enddate – The range of time for which the usage is
    aggregated; see Dates in the Usage Record
+
 
 VPN User Usage Record Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  
+-  account – name of the account
 
-   account – name of the account
+-  accountid – ID of the account
 
--  
+-  domainid – ID of the domain in which this account resides
 
-   accountid – ID of the account
+-  zoneid – Zone where the usage occurred
 
--  
+-  description – A string describing what the usage record is tracking
 
-   domainid – ID of the domain in which this account resides
-
--  
-
-   zoneid – Zone where the usage occurred
-
--  
-
-   description – A string describing what the usage record is tracking
-
--  
-
-   usage – String representation of the usage, including the units of
+-  usage – String representation of the usage, including the units of
    usage (e.g. 'Hrs' for hours)
 
--  
+-  usagetype – A number representing the usage type (see Usage Types)
 
-   usagetype – A number representing the usage type (see Usage Types)
+-  rawusage – A number representing the actual usage in hours
 
--  
+-  usageid – VPN user ID
 
-   rawusage – A number representing the actual usage in hours
+-  usagetype – A number representing the usage type (see Usage Types)
 
--  
-
-   usageid – VPN user ID
-
--  
-
-   usagetype – A number representing the usage type (see Usage Types)
-
--  
-
-   startdate, enddate – The range of time for which the usage is
+-  startdate, enddate – The range of time for which the usage is
    aggregated; see Dates in the Usage Record
 
 
@@ -1115,29 +859,30 @@ the following whether in HTTP or HTTPS:
 
 ::
 
-                <listusagerecordsresponse>
-                      <count>1816</count>
-                     <usagerecord>
-                        <account>user5</account>
-                        <accountid>10004</accountid>
-                        <domainid>1</domainid>
-                        <zoneid>1</zoneid>
-                            <description>i-3-4-WC running time (ServiceOffering: 1) (Template: 3)</description>
-                        <usage>2.95288 Hrs</usage>
-                           <usagetype>1</usagetype>
-                        <rawusage>2.95288</rawusage>
-                           <virtualmachineid>4</virtualmachineid>
-                        <name>i-3-4-WC</name>
-                           <offeringid>1</offeringid>
-                        <templateid>3</templateid>
-                        <usageid>245554</usageid>
-                        <type>XenServer</type>
-                        <startdate>2009-09-15T00:00:00-0700</startdate>
-                        <enddate>2009-09-18T16:14:26-0700</enddate>
-                      </usagerecord>
+   <listusagerecordsresponse>
+      <count>1816</count>
+      <usagerecord>
+         <account>user5</account>
+         <accountid>10004</accountid>
+         <domainid>1</domainid>
+         <zoneid>1</zoneid>
+         <description>i-3-4-WC running time (ServiceOffering: 1) (Template: 3)</description>
+         <usage>2.95288 Hrs</usage>
+         <usagetype>1</usagetype>
+         <rawusage>2.95288</rawusage>
+         <virtualmachineid>4</virtualmachineid>
+         <name>i-3-4-WC</name>
+         <offeringid>1</offeringid>
+         <templateid>3</templateid>
+         <usageid>245554</usageid>
+         <type>XenServer</type>
+         <startdate>2009-09-15T00:00:00-0700</startdate>
+         <enddate>2009-09-18T16:14:26-0700</enddate>
+      </usagerecord>
 
-                   … (1,815 more usage records)
-                </listusagerecordsresponse>
+      … (1,815 more usage records)
+   </listusagerecordsresponse>
+
 
 Dates in the Usage Record
 -------------------------
@@ -1173,6 +918,7 @@ aggregation period. The start date in the usage record will show the
 date and time of the earliest event. For other types of usage, such as
 IP addresses and VMs, the old unprocessed data is not included in daily
 aggregation.
+
 
 .. |editbutton.png| image:: _static/images/edit-icon.png
    :alt: edits the settings.

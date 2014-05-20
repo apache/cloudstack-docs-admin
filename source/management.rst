@@ -45,74 +45,44 @@ find all the volumes having tag region=canada OR tag city=Toronto:
 
 .. code:: bash
 
-    command=listVolumes
-                    &listAll=true
-                    &tags[0].key=region
-                    &tags[0].value=canada
-                    &tags[1].key=city
-                    &tags[1].value=Toronto
+   command=listVolumes
+      &listAll=true
+      &tags[0].key=region
+      &tags[0].value=canada
+      &tags[1].key=city
+      &tags[1].value=Toronto
 
 The following API commands have the "tags" input parameter:
 
--  
+-  listVirtualMachines
 
-   listVirtualMachines
+-  listVolumes
 
--  
+-  listSnapshots
 
-   listVolumes
+-  listNetworks
 
--  
+-  listTemplates
 
-   listSnapshots
+-  listIsos
 
--  
+-  listFirewallRules
 
-   listNetworks
+-  listPortForwardingRules
 
--  
+-  listPublicIpAddresses
 
-   listTemplates
+-  listSecurityGroups
 
--  
+-  listLoadBalancerRules
 
-   listIsos
+-  listProjects
 
--  
+-  listVPCs
 
-   listFirewallRules
+-  listNetworkACLs
 
--  
-
-   listPortForwardingRules
-
--  
-
-   listPublicIpAddresses
-
--  
-
-   listSecurityGroups
-
--  
-
-   listLoadBalancerRules
-
--  
-
-   listProjects
-
--  
-
-   listVPCs
-
--  
-
-   listNetworkACLs
-
--  
-
-   listStaticRoutes
+-  listStaticRoutes
 
 
 Reporting CPU Sockets
@@ -153,9 +123,7 @@ CloudStack. If so, you'll need to change the password in MySQL, and then
 add the encrypted password to
 ``/etc/cloudstack/management/db.properties``.
 
-#. 
-
-   Before changing the password, you'll need to stop CloudStack's
+#. Before changing the password, you'll need to stop CloudStack's
    management server and the usage engine if you've deployed that
    component.
 
@@ -164,9 +132,7 @@ add the encrypted password to
        # service cloudstack-management stop
        # service cloudstack-usage stop
 
-#. 
-
-   Next, you'll update the password for the CloudStack user on the MySQL
+#. Next, you'll update the password for the CloudStack user on the MySQL
    server.
 
    .. code:: bash
@@ -181,15 +147,14 @@ add the encrypted password to
        flush privileges;
        quit;
 
-#. 
-
-   The next step is to encrypt the password and copy the encrypted
+#. The next step is to encrypt the password and copy the encrypted
    password to CloudStack's database configuration
    (``/etc/cloudstack/management/db.properties``).
 
    .. code:: bash
 
            # java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar \ org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh \ input="newpassword123" password="`cat /etc/cloudstack/management/key`" \ verbose=false 
+
 
 File encryption type
 --------------------
@@ -198,9 +163,7 @@ File encryption type
    web encryption type then you'll use
    password="management\_server\_secret\_key"
 
-#. 
-
-   Now, you'll update ``/etc/cloudstack/management/db.properties`` with
+#. Now, you'll update ``/etc/cloudstack/management/db.properties`` with
    the new ciphertext. Open ``/etc/cloudstack/management/db.properties``
    in a text editor, and update these parameters:
 
@@ -209,15 +172,14 @@ File encryption type
        db.cloud.password=ENC(encrypted_password_from_above) 
        db.usage.password=ENC(encrypted_password_from_above)
 
-#. 
-
-   After copying the new password over, you can now start CloudStack
+#. After copying the new password over, you can now start CloudStack
    (and the usage engine, if necessary).
 
    .. code:: bash
 
                # service cloudstack-management start
                # service cloud-usage start
+
 
 Administrator Alerts
 --------------------
@@ -233,19 +195,14 @@ stored in the Management Server’s database.
 
 Emails will be sent to administrators under the following circumstances:
 
--  
-
-   The Management Server cluster runs low on CPU, memory, or storage
+-  The Management Server cluster runs low on CPU, memory, or storage
    resources
 
--  
-
-   The Management Server loses heartbeat from a Host for more than 3
+-  The Management Server loses heartbeat from a Host for more than 3
    minutes
 
--  
+-  The Host cluster runs low on CPU, memory, or storage resources
 
-   The Host cluster runs low on CPU, memory, or storage resources
 
 Sending Alerts to External SNMP and Syslog Managers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -261,116 +218,117 @@ The alerts which can be sent are:
 The following is the list of alert type numbers. The current alerts can
 be found by calling listAlerts.
 
-::
+:: 
+   
+   MEMORY = 0 // Available Memory below configured threshold
 
-    MEMORY = 0 // Available Memory below configured threshold
+:: 
+   
+   CPU = 1 // Unallocated CPU below configured threshold
 
-::
+:: 
+   
+   STORAGE =2 // Available Storage below configured threshold
 
-    CPU = 1 // Unallocated CPU below configured threshold
+:: 
+   
+   STORAGE_ALLOCATED = 3 // Remaining unallocated Storage is below configured threshold
 
-::
+:: 
+   
+   PUBLIC_IP = 4 // Number of unallocated virtual network public IPs is below configured threshold
 
-    STORAGE =2 // Available Storage below configured threshold
+:: 
+   
+   PRIVATE_IP = 5 // Number of unallocated private IPs is below configured threshold
 
-::
+:: 
+   
+   SECONDARY_STORAGE = 6 //  Available Secondary Storage in availability zone is below configured threshold
 
-    STORAGE_ALLOCATED = 3 // Remaining unallocated Storage is below configured threshold
+:: 
+   
+   HOST = 7 // Host related alerts like host disconnected
 
-::
+:: 
+   
+   USERVM = 8 // User VM stopped unexpectedly
 
-    PUBLIC_IP = 4 // Number of unallocated virtual network public IPs is below configured threshold
+:: 
+   
+   DOMAIN_ROUTER = 9 // Domain Router VM stopped unexpectedly
 
-::
+:: 
+   
+   CONSOLE_PROXY = 10 // Console Proxy VM stopped unexpectedly
 
-    PRIVATE_IP = 5 // Number of unallocated private IPs is below configured threshold
+:: 
+   
+   ROUTING = 11 // Lost connection to default route (to the gateway)
 
-::
+:: 
+   
+   STORAGE_MISC = 12 // Storage issue in system VMs
 
-    SECONDARY_STORAGE = 6 //  Available Secondary Storage in availability zone is below configured threshold
+:: 
+   
+   USAGE_SERVER = 13 // No usage server process running
 
-::
+:: 
+   
+   MANAGMENT_NODE = 14 // Management network CIDR is not configured originally
 
-    HOST = 7 // Host related alerts like host disconnected
+:: 
+   
+   DOMAIN_ROUTER_MIGRATE = 15 // Domain Router VM Migration was unsuccessful
 
-::
+:: 
+   
+   CONSOLE_PROXY_MIGRATE = 16 // Console Proxy VM Migration was unsuccessful
 
-    USERVM = 8 // User VM stopped unexpectedly
+:: 
+   
+   USERVM_MIGRATE = 17 // User VM Migration was unsuccessful
 
-::
+:: 
+   
+   VLAN = 18 // Number of unallocated VLANs is below configured threshold in availability zone
 
-    DOMAIN_ROUTER = 9 // Domain Router VM stopped unexpectedly
+:: 
+   
+   SSVM = 19 // SSVM stopped unexpectedly
 
-::
+:: 
+   
+   USAGE_SERVER_RESULT = 20 // Usage job failed
 
-    CONSOLE_PROXY = 10 // Console Proxy VM stopped unexpectedly
+:: 
+   
+   STORAGE_DELETE = 21 // Failed to delete storage pool
 
-::
+:: 
+   
+   UPDATE_RESOURCE_COUNT = 22 // Failed to update the resource count
 
-    ROUTING = 11 // Lost connection to default route (to the gateway)
+:: 
+   
+   USAGE_SANITY_RESULT = 23 // Usage Sanity Check failed
 
-::
+:: 
+   
+   DIRECT_ATTACHED_PUBLIC_IP = 24 // Number of unallocated shared network IPs is low in availability zone
 
-    STORAGE_MISC = 12 // Storage issue in system VMs
+:: 
+   
+   LOCAL_STORAGE = 25 // Remaining unallocated Local Storage is below configured threshold
 
-::
-
-    USAGE_SERVER = 13 // No usage server process running
-
-::
-
-    MANAGMENT_NODE = 14 // Management network CIDR is not configured originally
-
-::
-
-    DOMAIN_ROUTER_MIGRATE = 15 // Domain Router VM Migration was unsuccessful
-
-::
-
-    CONSOLE_PROXY_MIGRATE = 16 // Console Proxy VM Migration was unsuccessful
-
-::
-
-    USERVM_MIGRATE = 17 // User VM Migration was unsuccessful
-
-::
-
-    VLAN = 18 // Number of unallocated VLANs is below configured threshold in availability zone
-
-::
-
-    SSVM = 19 // SSVM stopped unexpectedly
-
-::
-
-    USAGE_SERVER_RESULT = 20 // Usage job failed
-
-::
-
-    STORAGE_DELETE = 21 // Failed to delete storage pool
-
-::
-
-    UPDATE_RESOURCE_COUNT = 22 // Failed to update the resource count
-
-::
-
-    USAGE_SANITY_RESULT = 23 // Usage Sanity Check failed
-
-::
-
-    DIRECT_ATTACHED_PUBLIC_IP = 24 // Number of unallocated shared network IPs is low in availability zone
-
-::
-
-    LOCAL_STORAGE = 25 // Remaining unallocated Local Storage is below configured threshold
-
-::
-
-    RESOURCE_LIMIT_EXCEEDED = 26 //Generated when the resource limit exceeds the limit. Currently used for recurring snapshots only
+:: 
+   
+   RESOURCE_LIMIT_EXCEEDED = 26 //Generated when the resource limit exceeds the limit. Currently used for recurring snapshots only
 
 
 You can also display the most up to date list by calling the API command ``listAlerts``.
+
 
 SNMP Alert Details
 ^^^^^^^^^^^^^^^^^^
@@ -379,6 +337,7 @@ The supported protocol is SNMP version 2.
 
 Each SNMP trap contains the following information: message, podId,
 dataCenterId, clusterId, and generationTime.
+
 
 Syslog Alert Details
 ^^^^^^^^^^^^^^^^^^^^
@@ -390,13 +349,13 @@ value, it will not be included.
 
 .. code:: bash
 
-    Date severity_level Management_Server_IP_Address/Name  alertType:: value dataCenterId:: value  podId:: value  clusterId:: value  message:: value
+   Date severity_level Management_Server_IP_Address/Name  alertType:: value dataCenterId:: value  podId:: value  clusterId:: value  message:: value
 
 For example:
 
 .. code:: bash
 
-    Mar  4 10:13:47    WARN    localhost    alertType:: managementNode message:: Management server node 127.0.0.1 is up
+   Mar  4 10:13:47    WARN    localhost    alertType:: managementNode message:: Management server node 127.0.0.1 is up
 
 Configuring SNMP and Syslog Managers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -404,30 +363,26 @@ Configuring SNMP and Syslog Managers
 To configure one or more SNMP managers or Syslog managers to receive
 alerts from CloudStack:
 
-#. 
-
-   For an SNMP manager, install the CloudStack MIB file on your SNMP
+#. For an SNMP manager, install the CloudStack MIB file on your SNMP
    manager system. This maps the SNMP OIDs to trap types that can be
    more easily read by users. The file must be publicly available. For
    more information on how to install this file, consult the
    documentation provided with the SNMP manager.
 
-#. 
-
-   Edit the file /etc/cloudstack/management/log4j-cloud.xml.
+#. Edit the file /etc/cloudstack/management/log4j-cloud.xml.
 
    .. code:: bash
 
-       # vi /etc/cloudstack/management/log4j-cloud.xml
+      # vi /etc/cloudstack/management/log4j-cloud.xml
 
-#. 
-
-   Add an entry using the syntax shown below. Follow the appropriate
+#. Add an entry using the syntax shown below. Follow the appropriate
    example depending on whether you are adding an SNMP manager or a
    Syslog manager. To specify multiple external managers, separate the
    IP addresses and other configuration values with commas (,).
 
-   .. note:: The recommended maximum number of SNMP or Syslog managers is 20 for each.
+   .. note:: 
+      The recommended maximum number of SNMP or Syslog managers is 20 
+      for each.
 
    The following example shows how to configure two SNMP managers at IP
    addresses 10.1.1.1 and 10.1.1.2. Substitute your own IP addresses,
@@ -436,16 +391,16 @@ alerts from CloudStack:
 
    .. code:: bash
 
-       <appender name="SNMP" class="org.apache.cloudstack.alert.snmp.SnmpTrapAppender">
-         <param name="Threshold" value="WARN"/>  <!-- Do not edit. The alert feature assumes WARN. -->
-         <param name="SnmpManagerIpAddresses" value="10.1.1.1,10.1.1.2"/>
-         <param name="SnmpManagerPorts" value="162,162"/>
-         <param name="SnmpManagerCommunities" value="public,public"/>
-         <layout class="org.apache.cloudstack.alert.snmp.SnmpEnhancedPatternLayout"> <!-- Do not edit -->
-           <param name="PairDelimeter" value="//"/>
-           <param name="KeyValueDelimeter" value="::"/>
-         </layout>
-       </appender>
+      <appender name="SNMP" class="org.apache.cloudstack.alert.snmp.SnmpTrapAppender">
+        <param name="Threshold" value="WARN"/>  <!-- Do not edit. The alert feature assumes WARN. -->
+        <param name="SnmpManagerIpAddresses" value="10.1.1.1,10.1.1.2"/>
+        <param name="SnmpManagerPorts" value="162,162"/>
+        <param name="SnmpManagerCommunities" value="public,public"/>
+        <layout class="org.apache.cloudstack.alert.snmp.SnmpEnhancedPatternLayout"> <!-- Do not edit -->
+          <param name="PairDelimeter" value="//"/>
+          <param name="KeyValueDelimeter" value="::"/>
+        </layout>
+      </appender>
 
    The following example shows how to configure two Syslog managers at
    IP addresses 10.1.1.1 and 10.1.1.2. Substitute your own IP addresses.
@@ -454,23 +409,19 @@ alerts from CloudStack:
 
    .. code:: bash
 
-       <appender name="ALERTSYSLOG">
-         <param name="Threshold" value="WARN"/>
-         <param name="SyslogHosts" value="10.1.1.1,10.1.1.2"/>
-         <param name="Facility" value="LOCAL6"/>   
-         <layout>
-           <param name="ConversionPattern" value=""/>
-         </layout>
-       </appender>
+      <appender name="ALERTSYSLOG">
+        <param name="Threshold" value="WARN"/>
+        <param name="SyslogHosts" value="10.1.1.1,10.1.1.2"/>
+        <param name="Facility" value="LOCAL6"/>   
+        <layout>
+          <param name="ConversionPattern" value=""/>
+        </layout>
+      </appender>
 
-#. 
-
-   If your cloud has multiple Management Server nodes, repeat these
+#. If your cloud has multiple Management Server nodes, repeat these
    steps to edit log4j-cloud.xml on every instance.
 
-#. 
-
-   If you have made these changes while the Management Server is
+#. If you have made these changes while the Management Server is
    running, wait a few minutes for the change to take effect.
 
 **Troubleshooting:** If no alerts appear at the configured SNMP or
@@ -479,12 +430,14 @@ there is an error in the syntax of the <appender> entry in
 log4j-cloud.xml. Check to be sure that the format and settings are
 correct.
 
+
 Deleting an SNMP or Syslog Manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To remove an external SNMP manager or Syslog manager so that it no
 longer receives alerts from CloudStack, remove the corresponding entry
 from the file ``/etc/cloudstack/management/log4j-cloud.xml``.
+
 
 Customizing the Network Domain Name
 -----------------------------------
@@ -495,62 +448,46 @@ installation, and a domain administrator can do so within their own
 domain. To specify a custom domain name and put it into effect, follow
 these steps.
 
-#. 
+#. Set the DNS suffix at the desired scope
 
-   Set the DNS suffix at the desired scope
-
-   -  
-
-      At the network level, the DNS suffix can be assigned through the
+   -  At the network level, the DNS suffix can be assigned through the
       UI when creating a new network, as described in 
-      `“Adding an Additional Guest Network” <networking2#adding-an-additional-guest-network>`_ or with the
+      `“Adding an Additional Guest Network” 
+      <networking2#adding-an-additional-guest-network>`_ or with the
       updateNetwork command in the CloudStack API.
 
-   -  
-
-      At the account, domain, or zone level, the DNS suffix can be
+   -  At the account, domain, or zone level, the DNS suffix can be
       assigned with the appropriate CloudStack API commands:
       createAccount, editAccount, createDomain, editDomain, createZone,
       or editZone.
 
-   -  
-
-      At the global level, use the configuration parameter
+   -  At the global level, use the configuration parameter
       guest.domain.suffix. You can also use the CloudStack API command
       updateConfiguration. After modifying this global configuration,
       restart the Management Server to put the new setting into effect.
 
-#. 
-
-   To make the new DNS suffix take effect for an existing network, call
+#. To make the new DNS suffix take effect for an existing network, call
    the CloudStack API command updateNetwork. This step is not necessary
    when the DNS suffix was specified while creating a new network.
 
 The source of the network domain that is used depends on the following
 rules.
 
--  
-
-   For all networks, if a network domain is specified as part of a
+-  For all networks, if a network domain is specified as part of a
    network's own configuration, that value is used.
 
--  
-
-   For an account-specific network, the network domain specified for the
+-  For an account-specific network, the network domain specified for the
    account is used. If none is specified, the system looks for a value
    in the domain, zone, and global configuration, in that order.
 
--  
-
-   For a domain-specific network, the network domain specified for the
+-  For a domain-specific network, the network domain specified for the
    domain is used. If none is specified, the system looks for a value in
    the zone and global configuration, in that order.
 
--  
-
-   For a zone-specific network, the network domain specified for the
+-  For a zone-specific network, the network domain specified for the
    zone is used. If none is specified, the system looks for a value in
    the global configuration.
+
 
 Stopping and Restarting the Management Server
 ---------------------------------------------------
@@ -568,11 +505,11 @@ operating system prompt on the Management Server node:
 
 .. code:: bash
 
-    # service cloudstack-management stop
+   # service cloudstack-management stop
 
 To start the Management Server:
 
 .. code:: bash
 
-    # service cloudstack-management start
+   # service cloudstack-management start
 

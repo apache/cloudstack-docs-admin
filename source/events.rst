@@ -25,6 +25,7 @@ and make the right business decision. In CloudStack an event could be a
 state change of virtual or physical resources, an action performed by an
 user (action events), or policy based events (alerts).
 
+
 Event Logs
 ----------
 
@@ -38,6 +39,7 @@ running synchronous and asynchronous event logs can be used to gain more
 information on the status of a pending job or can be used to identify a
 job that is hanging or has not started. The following sections provide
 more information on these events..
+
 
 Notification
 ------------
@@ -64,31 +66,27 @@ machine on the event bus. All the CloudStack events (alerts, action
 events, usage events) and the additional category of resource state
 change events, are published on to the events bus.
 
+
 Use Cases
 ~~~~~~~~~
 
 The following are some of the use cases:
 
--  
-
-   Usage or Billing Engines: A third-party cloud usage solution can
+-  Usage or Billing Engines: A third-party cloud usage solution can
    implement a plug-in that can connects to CloudStack to subscribe to
    CloudStack events and generate usage data. The usage data is consumed
    by their usage software.
 
--  
-
-   AMQP plug-in can place all the events on the a message queue, then a
+-  AMQP plug-in can place all the events on the a message queue, then a
    AMQP message broker can provide topic-based notification to the
    subscribers.
 
--  
-
-   Publish and Subscribe notification service can be implemented as a
+-  Publish and Subscribe notification service can be implemented as a
    pluggable service in CloudStack that can provide rich set of APIs for
    event notification, such as topics-based subscription and
    notification. Additionally, the pluggable service can deal with
    multi-tenancy, authentication, and authorization issues.
+
 
 Configuration
 ~~~~~~~~~~~~~
@@ -97,126 +95,87 @@ As a CloudStack administrator, perform the following one-time
 configuration to enable event notification framework. At run time no
 changes can control the behaviour.
 
-#. 
+#. Open ``'componentContext.xml``.
 
-   Open ``'componentContext.xml``.
+#. Define a bean named ``eventNotificationBus`` as follows:
 
-#. 
+   -  name : Specify a name for the bean.
 
-   Define a bean named ``eventNotificationBus`` as follows:
+   -  server : The name or the IP address of the RabbitMQ AMQP server.
 
-   -  
+   -  port : The port on which RabbitMQ server is running.
 
-      name : Specify a name for the bean.
-
-   -  
-
-      server : The name or the IP address of the RabbitMQ AMQP server.
-
-   -  
-
-      port : The port on which RabbitMQ server is running.
-
-   -  
-
-      username : The username associated with the account to access the
+   -  username : The username associated with the account to access the
       RabbitMQ server.
 
-   -  
-
-      password : The password associated with the username of the
+   -  password : The password associated with the username of the
       account to access the RabbitMQ server.
 
-   -  
-
-      exchange : The exchange name on the RabbitMQ server where
+   -  exchange : The exchange name on the RabbitMQ server where
       CloudStack events are published.
 
       A sample bean is given below:
 
       .. code:: bash
 
-          <bean id="eventNotificationBus" class="org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus">
-              <property name="name" value="eventNotificationBus"/>
-              <property name="server" value="127.0.0.1"/>
-              <property name="port" value="5672"/>
-              <property name="username" value="guest"/>
-              <property name="password" value="guest"/>
-             <property name="exchange" value="cloudstack-events"/>
-             </bean>
+         <bean id="eventNotificationBus" class="org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus">
+           <property name="name" value="eventNotificationBus"/>
+           <property name="server" value="127.0.0.1"/>
+           <property name="port" value="5672"/>
+           <property name="username" value="guest"/>
+           <property name="password" value="guest"/>
+           <property name="exchange" value="cloudstack-events"/>
+         </bean>
 
       The ``eventNotificationBus`` bean represents the
       ``org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus`` class.
 
-#. 
+#. Restart the Management Server.
 
-   Restart the Management Server.
 
 Standard Events
 ---------------
 
 The events log records three types of standard events.
 
--  
-
-   INFO. This event is generated when an operation has been successfully
+-  INFO. This event is generated when an operation has been successfully
    performed.
 
--  
+-  WARN. This event is generated in the following circumstances.
 
-   WARN. This event is generated in the following circumstances.
-
-   -  
-
-      When a network is disconnected while monitoring a template
+   -  When a network is disconnected while monitoring a template
       download.
 
-   -  
+   -  When a template download is abandoned.
 
-      When a template download is abandoned.
-
-   -  
-
-      When an issue on the storage server causes the volumes to fail
+   -  When an issue on the storage server causes the volumes to fail
       over to the mirror storage server.
 
--  
-
-   ERROR. This event is generated when an operation has not been
+-  ERROR. This event is generated when an operation has not been
    successfully performed
+
 
 Long Running Job Events
 -----------------------
 
 The events log records three types of standard events.
 
--  
-
-   INFO. This event is generated when an operation has been successfully
+-  INFO. This event is generated when an operation has been successfully
    performed.
 
--  
+-  WARN. This event is generated in the following circumstances.
 
-   WARN. This event is generated in the following circumstances.
-
-   -  
-
-      When a network is disconnected while monitoring a template
+   -  When a network is disconnected while monitoring a template
       download.
 
-   -  
+   -  When a template download is abandoned.
 
-      When a template download is abandoned.
-
-   -  
-
-      When an issue on the storage server causes the volumes to fail
+   -  When an issue on the storage server causes the volumes to fail
       over to the mirror storage server.
 
--  
-
-   ERROR. This event is generated when an operation has not been
+-  ERROR. This event is generated when an operation has not been
    successfully performed
+
 
 Event Log Queries
 -----------------
@@ -224,30 +183,19 @@ Event Log Queries
 Database logs can be queried from the user interface. The list of events
 captured by the system includes:
 
--  
-
-   Virtual machine creation, deletion, and on-going management
+-  Virtual machine creation, deletion, and on-going management
    operations
 
--  
+-  Virtual router creation, deletion, and on-going management operations
 
-   Virtual router creation, deletion, and on-going management operations
+-  Template creation and deletion
 
--  
+-  Network/load balancer rules creation and deletion
 
-   Template creation and deletion
+-  Storage volume creation and deletion
 
--  
+-  User login and logout
 
-   Network/load balancer rules creation and deletion
-
--  
-
-   Storage volume creation and deletion
-
--  
-
-   User login and logout
 
 Deleting and Archiving Events and Alerts
 ----------------------------------------
@@ -269,61 +217,44 @@ deleted.
 In order to support the delete or archive alerts, the following global
 parameters have been added:
 
--  
-
-   **alert.purge.delay**: The alerts older than specified number of days
+-  **alert.purge.delay**: The alerts older than specified number of days
    are purged. Set the value to 0 to never purge alerts automatically.
 
--  
-
-   **alert.purge.interval**: The interval in seconds to wait before
+-  **alert.purge.interval**: The interval in seconds to wait before
    running the alert purge thread. The default is 86400 seconds (one
    day).
 
-.. note:: Archived alerts or events cannot be viewed in the UI or by using the
-      API. They are maintained in the database for auditing or compliance
-      purposes.
+.. note:: 
+   Archived alerts or events cannot be viewed in the UI or by using the
+   API. They are maintained in the database for auditing or compliance
+   purposes.
+
 
 Permissions
 ~~~~~~~~~~~
 
 Consider the following:
 
--  
-
-   The root admin can delete or archive one or multiple alerts or
+-  The root admin can delete or archive one or multiple alerts or
    events.
 
--  
-
-   The domain admin or end user can delete or archive one or multiple
+-  The domain admin or end user can delete or archive one or multiple
    events.
+
 
 Procedure
 ~~~~~~~~~
 
-#. 
+#. Log in as administrator to the CloudStack UI.
 
-   Log in as administrator to the CloudStack UI.
+#. In the left navigation, click Events.
 
-#. 
+#. Perform either of the following:
 
-   In the left navigation, click Events.
-
-#. 
-
-   Perform either of the following:
-
-   -  
-
-      To archive events, click Archive Events, and specify event type
+   -  To archive events, click Archive Events, and specify event type
       and date.
 
-   -  
-
-      To archive events, click Delete Events, and specify event type and
+   -  To archive events, click Delete Events, and specify event type and
       date.
 
-#. 
-
-   Click OK.
+#. Click OK.
