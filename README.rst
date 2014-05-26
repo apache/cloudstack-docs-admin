@@ -85,7 +85,7 @@ On your computer, follow these steps to setup a local repository for working on 
 
    $ git clone https://github.com/YOUR_ACCOUNT/cloudstack-docs-admin.git
    $ cd cloudstack-docs-admin
-   $ git remote add upstream https://github.com/apache/cloudstack-docs-admin
+   $ git remote add upstream https://github.com/apache/cloudstack-docs-admin.git
    $ git checkout master
    $ git fetch upstream
    $ git merge upstream/master
@@ -149,7 +149,7 @@ Now that the `dev` branch has been pushed to your GitHub repository, you can ini
 
 To initiate the pull request, do the following:
 
-#. Navigate your browser to your forked repository: https://github.com/YOUR_ACCOUNT/cloudstack-docs-admin.git
+#. Navigate your browser to your forked repository: https://github.com/YOUR_ACCOUNT/cloudstack-docs-admin
 
 #. Click the new button called 'Compare & pull request' that showed up just above the main area in your forked repository
 
