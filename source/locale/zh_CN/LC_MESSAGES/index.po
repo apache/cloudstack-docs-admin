@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
+# 
+# Translators:
+# darrentang <darrentang.dt@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-31 14:08-0400\n"
+"PO-Revision-Date: 2014-04-29 05:15+0000\n"
+"Last-Translator: darrentang <darrentang.dt@gmail.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/apache-cloudstack-administration-rtd/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# d7684c4811fb465d8e5523136e60776b
+#: ../../index.rst:22
+msgid "Welcome to CloudStack Administration Documentation"
+msgstr "欢迎阅读CloudStack管理文档"
+
+# 89ba74160fc34ab384dce20831bba66f
+#: ../../index.rst:25
+msgid "User Interface"
+msgstr "用户界面"
+
+# 0b869c712c0549f794b04850fc92bbf0
+#: ../../index.rst:33
+msgid "Managing Accounts, Users and Domains"
+msgstr "管理账户，用户和域"
+
+# ade0aa6c65934d08b9439c9b55d76991
+#: ../../index.rst:41
+msgid "Using Projects to Organize User Resources"
+msgstr "使用项目来组织用户资源"
+
+# a4efa62c4fe0431e97cf1e8a8afa3c4c
+#: ../../index.rst:48
+msgid "Service Offerings"
+msgstr "服务方案"
+
+# 784d8d28e28c49e588607297adc80f3b
+#: ../../index.rst:56
+msgid "Setting up Networking for Users"
+msgstr "用户网络设置"
+
+# 99a275b31677470fb19d20cc2cfb3a66
+#: ../../index.rst:64
+msgid "Working with Virtual Machines"
+msgstr "使用虚拟机"
+
+# 8f3d1a01a82d4daca2072ce17e85191b
+#: ../../index.rst:72
+msgid "Working with Templates"
+msgstr "使用模板"
+
+# b618e01117be4bc8917aab2189ec3be4
+#: ../../index.rst:80
+msgid "Working with Hosts"
+msgstr "使用主机"
+
+# 1d07b6cc6bd74b689edf5f3f6305e11f
+#: ../../index.rst:88
+msgid "Working with Storage"
+msgstr "使用存储"
+
+# 538bdb71f1c34206a75745c0c45b8669
+#: ../../index.rst:96
+msgid "Working with System Virtual Machines"
+msgstr "使用系统虚拟机"
+
+# da80feddb6be416fb7a724951d7f6049
+#: ../../index.rst:104
+msgid "Working with Usage"
+msgstr "使用服务"
+
+# 89016757f86c44379eb90b8ea75b6d40
+#: ../../index.rst:112
+msgid "Managing Networks and Traffic"
+msgstr "网络和流量管理"
+
+# 4c1cbbb4d99f4c8bace30f6c0edbdd98
+#: ../../index.rst:120
+msgid "Managing the Cloud"
+msgstr "管理云"
+
+# 769cb32397e246beb100d0a77e9bf7ab
+#: ../../index.rst:128
+msgid "System Reliability and Availability"
+msgstr "系统可靠性和可用性"
+
+# 2256c3b81c7b49e18235f85ab474184f
+#: ../../index.rst:136
+msgid "Tuning"
+msgstr "调优"
+
+# 1577c7120b3648449625d8806030fe2b
+#: ../../index.rst:144
+msgid "Events and Troubleshooting"
+msgstr "事件和故障排查"

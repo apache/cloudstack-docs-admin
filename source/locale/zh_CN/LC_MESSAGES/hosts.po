@@ -1,0 +1,1059 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
+# 
+# Translators:
+# renoshen <shenkuan-ghq@sinosig.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-31 14:08-0400\n"
+"PO-Revision-Date: 2014-05-10 06:42+0000\n"
+"Last-Translator: renoshen <shenkuan-ghq@sinosig.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/apache-cloudstack-administration-rtd/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 592d97db5d074967b8037886828bbbf7
+#: ../../hosts.rst:18
+msgid "Working with Hosts"
+msgstr "使用主机"
+
+# eb6157eff5a24266a1934dce1cc5c38e
+#: ../../hosts.rst:21
+msgid "Adding Hosts"
+msgstr "添加主机"
+
+# 8278623233e349e2bbe063bea7e23268
+#: ../../hosts.rst:23
+msgid ""
+"Additional hosts can be added at any time to provide more capacity for guest"
+" VMs. For requirements and instructions, see `“Adding a Host” "
+"<http://docs.cloudstack.apache.org/projects/cloudstack-"
+"installation/en/latest/configuration.html#adding-a-host>`_."
+msgstr "添加主机能为来宾VMs提供更多的性能。更多需求与说明请参阅 `“添加主机” <http://docs.cloudstack.apache.org/projects/cloudstack-installation/en/latest/configuration.html#adding-a-host>`_。"
+
+# d13936e89f4e4d9ea480d52a5c693cab
+#: ../../hosts.rst:28
+msgid "Scheduled Maintenance and Maintenance Mode for Hosts"
+msgstr "主机的维护计划与维护模式"
+
+# c80faa4e959d4bf6a547b8898e582f71
+#: ../../hosts.rst:30
+msgid ""
+"You can place a host into maintenance mode. When maintenance mode is "
+"activated, the host becomes unavailable to receive new guest VMs, and the "
+"guest VMs already running on the host are seamlessly migrated to another "
+"host not in maintenance mode. This migration uses live migration technology "
+"and does not interrupt the execution of the guest."
+msgstr "你可以使一台主机进入维护模式。当激活维护模式时，这台主机将不会接纳新的来宾VMs，同时上面的VMs会无缝地迁移到其他非维护模式的主机上。这个迁移使用在线迁移技术并且不会中断用户的操作。"
+
+# 050155d6fe2d4fe9bfb03ae737991f51
+#: ../../hosts.rst:37
+msgid "vCenter and Maintenance Mode"
+msgstr "vCenter与维护模式"
+
+# 6e6dd514ac534a609dbba7282dd7d14e
+#: ../../hosts.rst:39
+msgid ""
+"To enter maintenance mode on a vCenter host, both vCenter and CloudStack "
+"must be used in concert. CloudStack and vCenter have separate maintenance "
+"modes that work closely together."
+msgstr "要使vCenter主机进入维护模式，vCenter和CloudStack上都必须进行此操作。CloudStack和vCenter有各自的维护模式，他们需要紧密合作。"
+
+# 1e1a327f506545d588b5c2dac6a6be66
+#: ../../hosts.rst:45
+msgid ""
+"Place the host into CloudStack's \"scheduled maintenance\" mode. This does "
+"not invoke the vCenter maintenance mode, but only causes VMs to be migrated "
+"off the host"
+msgstr "在CloudStack中，将主机进入\"维护计划\"模式。这个操作不会调用vCenter的维护模式，但是会将VMs迁离该主机。"
+
+# 10b6ab6a7f494f5e8df3db13ccfd3af8
+#: ../../hosts.rst:49
+msgid ""
+"When the CloudStack maintenance mode is requested, the host first moves into"
+" the Prepare for Maintenance state. In this state it cannot be the target of"
+" new guest VM starts. Then all VMs will be migrated off the server. Live "
+"migration will be used to move VMs off the host. This allows the guests to "
+"be migrated to other hosts with no disruption to the guests. After this "
+"migration is completed, the host will enter the Ready for Maintenance mode."
+msgstr "当CloudStack维护模式启用后，主机首先会进入准备维护状态。在这个阶段它不能运行新的来宾VMs。然后所有的VMs将会被迁离该主机。主机使用在线迁移来迁移VMs。这种方式能够使来宾VMs在迁移到其他主机的过程中不会中断用户的操作。"
+
+# 1628c924f80a4f4e9f5becf74ad3f0ee
+#: ../../hosts.rst:59
+msgid "Wait for the \"Ready for Maintenance\" indicator to appear in the UI."
+msgstr "等\"准备好维护\"指示灯出现在UI中。"
+
+# 4adef7c4df77454e8bd00237cd21e93c
+#: ../../hosts.rst:63
+msgid ""
+"Now use vCenter to perform whatever actions are necessary to maintain the "
+"host. During this time, the host cannot be the target of new VM allocations."
+msgstr "现在使用vCenter通过必要的步骤将主机进入维护模式。在此期间，主机不会运行新的VM。"
+
+# 7d67902696d54dba85c98361d7218cc4
+#: ../../hosts.rst:69
+msgid ""
+"When the maintenance tasks are complete, take the host out of maintenance "
+"mode as follows:"
+msgstr "当维护任务完成之后，按以下操作将主机退出维护模式："
+
+# a3f38b02fdc24e5e9b3c51227bb08fd7
+#: ../../hosts.rst:74
+msgid "First use vCenter to exit the vCenter maintenance mode."
+msgstr "首先通过vCenter退出vCenter维护模式。"
+
+# d4f34ccb4d9b4a1bb09958fa5cf4de5e
+#: ../../hosts.rst:76
+msgid "This makes the host ready for CloudStack to reactivate it."
+msgstr "这么做是为了主机能够准备好以便CloudStack恢复它。"
+
+# fc22d153282549d19896184eb37b2090
+#: ../../hosts.rst:80
+msgid ""
+"Then use CloudStack's administrator UI to cancel the CloudStack maintenance "
+"mode"
+msgstr "然后通过CloudStack的管理员UI来取消CloudStack维护模式"
+
+# ce24285fd2e84a2d8e071223d9f7aa23
+#: ../../hosts.rst:83
+msgid ""
+"When the host comes back online, the VMs that were migrated off of it may be"
+" migrated back to it manually and new VMs can be added."
+msgstr "当主机恢复正常，被迁移走的VMs可能需要手工迁移回来并且也能在主机上添加新的VMs了。"
+
+# 1be609d82bc7437ab1f435f587dee885
+#: ../../hosts.rst:87
+msgid "XenServer and Maintenance Mode"
+msgstr "XenServer和维护模式"
+
+# 4801359e1b504036a523926cb3083fcf
+#: ../../hosts.rst:89
+msgid ""
+"For XenServer, you can take a server offline temporarily by using the "
+"Maintenance Mode feature in XenCenter. When you place a server into "
+"Maintenance Mode, all running VMs are automatically migrated from it to "
+"another host in the same pool. If the server is the pool master, a new "
+"master will also be selected for the pool. While a server is Maintenance "
+"Mode, you cannot create or start any VMs on it."
+msgstr "对于XenServer，你能够通过使用XenCenter中的维护模式功能将一台服务器临时的离线。当你使一台服务器进入维护模式，所有运行的VMs都会自动的迁移到同一个池中的其他主机上。如果此服务器是池master主机，那么此池会选举一个新的master主机。当一台服务器在维护模式下时，你不能在上面创建或启动任何VMs。"
+
+# 4a08aa70600a434a8cf5feeb551dd509
+#: ../../hosts.rst:96
+msgid "**To place a server in Maintenance Mode:**"
+msgstr "**使一台服务器进入维护模式：**"
+
+# f29fecea7fd547a4ac456396de215514
+# e5801557c9ac4721b34dd0390e57621f
+#: ../../hosts.rst:100 ../../hosts.rst:123
+msgid ""
+"In the Resources pane, select the server, then do one of the following:"
+msgstr "在资源面板，选择服务器，然后按下列步骤进行操作："
+
+# 1c753ac55dcb457ca6a65e85506faea1
+#: ../../hosts.rst:105
+msgid "Right-click, then click Enter Maintenance Mode on the shortcut menu."
+msgstr "右击，然后在弹出的快捷菜单中点击进入维护模式。"
+
+# 457c53ac36f14ed5a1f83bc59f41713a
+#: ../../hosts.rst:110
+msgid "On the Server menu, click Enter Maintenance Mode."
+msgstr "在服务器菜单，点击进入维护模式。"
+
+# 8870ed34b2dc4486ac8f411a890d72c4
+#: ../../hosts.rst:114
+msgid "Click Enter Maintenance Mode."
+msgstr "点击进入维护模式。"
+
+# 2433c930578741a1909765bc2bade385
+#: ../../hosts.rst:116
+msgid ""
+"The server's status in the Resources pane shows when all running VMs have "
+"been successfully migrated off the server."
+msgstr "当所有运行当中的VMs成功的迁离该主机后，在资源面板中会显示服务器的状态。"
+
+# 42be08f037604e5a9f47001de252d369
+#: ../../hosts.rst:119
+msgid "**To take a server out of Maintenance Mode:**"
+msgstr "**使服务器退出维护模式：**"
+
+# f57ec4b8d883455d81686a1fd40f6160
+#: ../../hosts.rst:128
+msgid "Right-click, then click Exit Maintenance Mode on the shortcut menu."
+msgstr "右击，然后在弹出的快捷菜单中点击退出维护模式。"
+
+# 7d8e71c7ffbc4d71a75266dfba6b84df
+#: ../../hosts.rst:133
+msgid "On the Server menu, click Exit Maintenance Mode."
+msgstr "在服务器菜单，点击提出维护模式。"
+
+# 8d0f538994db4767b7f9417b1cb41871
+#: ../../hosts.rst:137
+msgid "Click Exit Maintenance Mode."
+msgstr "点击退出维护模式。"
+
+# bd837a82be2c48858847657c7b3cfdaa
+#: ../../hosts.rst:140
+msgid "Disabling and Enabling Zones, Pods, and Clusters"
+msgstr "禁用和启用Zones，Pods和Clusters"
+
+# 3aea5f5c94fc4404a3d7c5f194da767d
+#: ../../hosts.rst:142
+msgid ""
+"You can enable or disable a zone, pod, or cluster without permanently "
+"removing it from the cloud. This is useful for maintenance or when there are"
+" problems that make a portion of the cloud infrastructure unreliable. No new"
+" allocations will be made to a disabled zone, pod, or cluster until its "
+"state is returned to Enabled. When a zone, pod, or cluster is first added to"
+" the cloud, it is Disabled by default."
+msgstr "你可以启用或禁用一个zone，pod或者cluster而不用永久的从云中移除他们。这对于维护或者当云中一部分架构的可靠性有问题的时候很有用。禁用状态下的zone，pod或cluster不会接受新的分配，除非其状态变为启用。当一个zone，pod或cluster是初次添加到云中的，默认的情况下它是禁用的。"
+
+# a9c8925bb2d04ecc9962de6fd0fbc1fd
+#: ../../hosts.rst:149
+msgid "To disable and enable a zone, pod, or cluster:"
+msgstr "要禁用和启用一个zone，pod或者cluster："
+
+# 32c0489f474c4fecb77b83336097e9db
+#: ../../hosts.rst:153
+msgid "Log in to the CloudStack UI as administrator"
+msgstr "使用管理员权限的账号登录到CloudStack"
+
+# 6b89d161130140ffbf2ccaee055008a3
+# 2f4cd598e62c47168a2ed22c6bec7674
+#: ../../hosts.rst:157 ../../hosts.rst:447
+msgid "In the left navigation bar, click Infrastructure."
+msgstr "在左侧导航栏中，点击基础架构"
+
+# 5ce0a640f1954756b46305873f389ad9
+#: ../../hosts.rst:161
+msgid "In Zones, click View More."
+msgstr "点击区域中的查看更多。"
+
+# 3d333ceeab284ce5ad02f60c1fa67471
+#: ../../hosts.rst:165
+msgid ""
+"If you are disabling or enabling a zone, find the name of the zone in the "
+"list, and click the Enable/Disable button. |enable-disable.png|"
+msgstr "如果你要禁用或启用一个zone，请在列表里找到zone的名称，然后点击启用/禁用按钮。|enable-disable.png|"
+
+# 0a4cfd78743b4e2c83066e46ce8464f8
+#: ../../hosts.rst:170
+msgid ""
+"If you are disabling or enabling a pod or cluster, click the name of the "
+"zone that contains the pod or cluster."
+msgstr "如果你要禁用或启用一个pod或者cluster，点击包含该pod或cluster的zone名称。"
+
+# 0dc7b10cd00b48c1a2c77859a0cd940a
+#: ../../hosts.rst:175
+msgid "Click the Compute tab."
+msgstr "点击计算这个标签。"
+
+# c7daddfdce6e4da6bb743f31b20c08df
+#: ../../hosts.rst:179
+msgid "In the Pods or Clusters node of the diagram, click View All."
+msgstr "在示意图中的Pods或者Clusters节点，点击查看所有。"
+
+# 35005e277f71455ca42dd6d65bf92a77
+#: ../../hosts.rst:183
+msgid "Click the pod or cluster name in the list."
+msgstr "点击列表中的pod或者cluster名称。"
+
+# e96437e7b142420f990a2c0717d1e472
+#: ../../hosts.rst:187
+msgid "Click the Enable/Disable button. |enable-disable.png|"
+msgstr "点击启用/禁用按钮。|enable-disable.png|"
+
+# 5ab36fe8716644fa8a74b1315198f7d3
+#: ../../hosts.rst:190
+msgid "Removing Hosts"
+msgstr "移除主机"
+
+# 2915247620714f17b21f9124f39d894e
+#: ../../hosts.rst:192
+msgid ""
+"Hosts can be removed from the cloud as needed. The procedure to remove a "
+"host depends on the hypervisor type."
+msgstr "主机在需要的时候可以被移除。这个过程取决于主机所使用的hypervisor类型。"
+
+# 04254d2838064c639d5331ae3ffc4753
+#: ../../hosts.rst:196
+msgid "Removing XenServer and KVM Hosts"
+msgstr "移除XenServer和KVM主机"
+
+# eccc01ddbac946f9800dccea47e31ba9
+#: ../../hosts.rst:198
+msgid ""
+"A node cannot be removed from a cluster until it has been placed in "
+"maintenance mode. This will ensure that all of the VMs on it have been "
+"migrated to other Hosts. To remove a Host from the cloud:"
+msgstr "cluster中的主机只有进入维护模式才能被移除。这么做是为了确保其上所有的VMs被迁移至其他主机。要从云中移除一个主机："
+
+# 82565e09d51041738069677fb128372d
+#: ../../hosts.rst:204
+msgid "Place the node in maintenance mode."
+msgstr "将主机进入维护模式。"
+
+# dd04ef23348a42fc815ff0a376123868
+#: ../../hosts.rst:206
+msgid ""
+"See `“Scheduled Maintenance and Maintenance Mode for Hosts” <#scheduled-"
+"maintenance-and-maintenance-mode-for-hosts>`_."
+msgstr "请参考`“主机的维护计划与维护模式” <#scheduled-maintenance-and-maintenance-mode-for-hosts>`_."
+
+# fed544dd8c474c2581684a87c9dae984
+#: ../../hosts.rst:211
+msgid "For KVM, stop the cloud-agent service."
+msgstr "对于KVM，停止cloud-agent服务。"
+
+# 1f7547325d9a4881a6768dd009061aae
+#: ../../hosts.rst:215
+msgid "Use the UI option to remove the node."
+msgstr "使用UI选项来移除主机。"
+
+# f00eeb5fdaae4a9cbd1e36d610e270ac
+#: ../../hosts.rst:217
+msgid ""
+"Then you may power down the Host, re-use its IP address, re-install it, etc"
+msgstr "然后你可以关掉主机，重用它的IP地址，重新安装系统，等等。"
+
+# ae67d2137019437192ee7fbe0d451012
+#: ../../hosts.rst:221
+msgid "Removing vSphere Hosts"
+msgstr "移除vSphere主机"
+
+# b5b44fe095f645ed89753427c54c129e
+#: ../../hosts.rst:223
+msgid ""
+"To remove this type of host, first place it in maintenance mode, as "
+"described in `“Scheduled Maintenance and Maintenance Mode for Hosts” "
+"<#scheduled-maintenance-and-maintenance-mode-for-hosts>`_. Then use "
+"CloudStack to remove the host. CloudStack will not direct commands to a host"
+" that has been removed using CloudStack. However, the host may still exist "
+"in the vCenter cluster."
+msgstr "要移除此类型的主机，首先按照 `“主机的维护计划与维护模式” <#scheduled-maintenance-and-maintenance-mode-for-hosts>`_中的描述将其进入维护模式。然后使用CloudStack来移除主机。使用CloudStack移除主机时，CloudStack不会直接操作主机。但是，主机可能仍然存留在vCenter群集中。"
+
+# 2634c1aab86c49d6847a1cb6b9ca885d
+#: ../../hosts.rst:231
+msgid "Re-Installing Hosts"
+msgstr "重新安装主机"
+
+# 4a42ccaecda646bca2ac6ac89016ca33
+#: ../../hosts.rst:233
+msgid ""
+"You can re-install a host after placing it in maintenance mode and then "
+"removing it. If a host is down and cannot be placed in maintenance mode, it "
+"should still be removed before the re-install."
+msgstr "你可以在将主机进入维护模式并移除它之后重新安装系统。如果主机是宕机状态而不能进入维护模式，在重装它之前仍然能被移除。"
+
+# 65deb360368a4ef6aeac7a84cfe5c1ab
+#: ../../hosts.rst:238
+msgid "Maintaining Hypervisors on Hosts"
+msgstr "在主机上维护Hypervisors"
+
+# b927785c512c4eb79d94c141907bf453
+#: ../../hosts.rst:240
+msgid ""
+"When running hypervisor software on hosts, be sure all the hotfixes provided"
+" by the hypervisor vendor are applied. Track the release of hypervisor "
+"patches through your hypervisor vendor’s support channel, and apply patches "
+"as soon as possible after they are released. CloudStack will not track or "
+"notify you of required hypervisor patches. It is essential that your hosts "
+"are completely up to date with the provided hypervisor patches. The "
+"hypervisor vendor is likely to refuse to support any system that is not up "
+"to date with patches."
+msgstr "当主机上运行了hypervisor软件，请确保安装了供应商提供的所有修补程序。请通过供应商跟踪虚拟化平台的补丁发布情况，一旦发布，请尽快打上补丁。CloudStack不会跟踪或通知您所需要的虚拟化平台补丁。您的主机及时打上最新虚拟化平台补丁是非常重要的。虚拟化平台厂商很可能会拒绝支持未打最新补丁的系统。"
+
+# 6e001d3995a4461a98eb2c84399f8040
+#: ../../hosts.rst:250
+msgid ""
+"The lack of up-do-date hotfixes can lead to data corruption and lost VMs."
+msgstr "没有最新的修补程序可能会导致数据出错或虚拟机丢失。"
+
+# 24e34948fedb4eebaaa0b332c6b3ea55
+#: ../../hosts.rst:252
+msgid ""
+"(XenServer) For more information, see `Highly Recommended Hotfixes for "
+"XenServer in the CloudStack Knowledge Base "
+"<http://docs.cloudstack.org/Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_."
+msgstr "（XenServer）更多信息，请参考`CloudStack知识库中高度推荐的XenServer修补程序 <http://docs.cloudstack.org/Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_."
+
+# e291026e0bcb4fc19c5f5ec67fb27962
+#: ../../hosts.rst:255
+msgid "Changing Host Password"
+msgstr "更改主机密码"
+
+# a2ecdc3bf4ea4777a754dbf829ae95cf
+#: ../../hosts.rst:257
+msgid ""
+"The password for a XenServer Node, KVM Node, or vSphere Node may be changed "
+"in the database. Note that all Nodes in a Cluster must have the same "
+"password."
+msgstr "数据库中的XenServer主机，KVM主机或者vShpere主机密码可能会被变更。注意群集中的所有节点密码必须一致。"
+
+# 932a8d5023a3408bb325bb9976e78c9f
+#: ../../hosts.rst:261
+msgid "To change a Node's password:"
+msgstr "用户名和密码要更改一台主机的密码："
+
+# 02c81a7d530c40cfa1a6acfbdd7d7db5
+#: ../../hosts.rst:265
+msgid "Identify all hosts in the cluster."
+msgstr "让群集中所有的主机状态保持一致。"
+
+# 5493aaf270c04495a774d707812f6b71
+#: ../../hosts.rst:269
+msgid ""
+"Change the password on all hosts in the cluster. Now the password for the "
+"host and the password known to CloudStack will not match. Operations on the "
+"cluster will fail until the two passwords match."
+msgstr "更改群集中所有主机的密码。此刻主机上的密码与CloudStack已知的密码不一致。两个密码不一致的话会导致群集上的操作失败。"
+
+# 5a61d0b0dad244d5943f0f9a28393c34
+#: ../../hosts.rst:275
+msgid ""
+"Get the list of host IDs for the host in the cluster where you are changing "
+"the password. You will need to access the database to determine these host "
+"IDs. For each hostname \"h\" (or vSphere cluster) that you are changing the "
+"password for, execute:"
+msgstr "获取群集中你更改了密码的主机ID列表。你必须访问数据库来获取这些ID。为每个你要更改密码的主机名（或者vSphere群集） \"h\"，执行："
+
+# 6581ccaebb344383ac2fc40ddd20df3a
+#: ../../hosts.rst:286
+msgid ""
+"This should return a single ID. Record the set of such IDs for these hosts."
+msgstr "这条命令将会返回一个ID。记录这些主机的ID。"
+
+# 081546910b424a93a45df2dee1cc04ca
+#: ../../hosts.rst:291
+msgid ""
+"Update the passwords for the host in the database. In this example, we "
+"change the passwords for hosts with IDs 5, 10, and 12 to \"password\"."
+msgstr "在数据库中为这些主机更新密码。在这个例子中，我们将主机ID为5,10和12的密码更改为\"password\"。"
+
+# 08354d3af75c417c8f3bb81415fabd09
+#: ../../hosts.rst:300
+msgid "Over-Provisioning and Service Offering Limits"
+msgstr "超配和服务方案限制"
+
+# a3bafa57323548dd9a6431f678eee017
+#: ../../hosts.rst:302
+msgid "(Supported for XenServer, KVM, and VMware)"
+msgstr "（支持XenServer、KVM和VMware）"
+
+# 0b69ea7e552248b1be401f196dfbb5d3
+#: ../../hosts.rst:304
+msgid ""
+"CPU and memory (RAM) over-provisioning factors can be set for each cluster "
+"to change the number of VMs that can run on each host in the cluster. This "
+"helps optimize the use of resources. By increasing the over-provisioning "
+"ratio, more resource capacity will be used. If the ratio is set to 1, no "
+"over-provisioning is done."
+msgstr "CPU和内存（RAM）超配直接影响每个群集中主机上可以运行的VMs数量。这样可以帮助优化资源的使用。依靠增加超配比率，能使使资源更充分的被利用。如果比率设为1，那么表示没有使用超配。"
+
+# e80bfc39f5a24aec99fa634cef445579
+#: ../../hosts.rst:310
+msgid ""
+"The administrator can also set global default over-provisioning ratios in "
+"the cpu.overprovisioning.factor and mem.overprovisioning.factor global "
+"configuration variables. The default value of these variables is 1: over-"
+"provisioning is turned off by default."
+msgstr "管理员也可以在cpu.overprovisioning.factor和mem.overprovisioning.factor这两个全局配置变量中设置全局默认超配比率。默认的值是1：默认情况下超配是关闭的。"
+
+# 22e46dfef84e43f088ea1c9ba56b012b
+#: ../../hosts.rst:315
+msgid ""
+"Over-provisioning ratios are dynamically substituted in CloudStack's "
+"capacity calculations. For example:"
+msgstr "超配比率是由CloudStack的容量计算器动态调整的。比如："
+
+# aeb35836bd204db3878f47e711625690
+#: ../../hosts.rst:318
+msgid ""
+"Capacity = 2 GB Over-provisioning factor = 2 Capacity after over-"
+"provisioning = 4 GB"
+msgstr "容量=2GB 超配系数=2 超配后容量=4GB"
+
+# fb3b9278bc9d46c7a2c77e1f574c1151
+#: ../../hosts.rst:322
+msgid "With this configuration, suppose you deploy 3 VMs of 1 GB each:"
+msgstr "按照这个配置，假设你部署了3个VMs，每个VM 1GB："
+
+# 9feabccde7a04110b98c75d65bdfb257
+#: ../../hosts.rst:324
+msgid "Used = 3 GB Free = 1 GB"
+msgstr "已使用=3GB  空闲=1GB"
+
+# 5fb90dd3e25942db89cf99b12028bc9f
+#: ../../hosts.rst:327
+msgid ""
+"The administrator can specify a memory over-provisioning ratio, and can "
+"specify both CPU and memory over-provisioning ratios on a per-cluster basis."
+msgstr "管理员可以在每个群集中指定一个内存超配比率，也可以同时指定CPU和内存超配比率。"
+
+# 116d6bee32f044cbbd7e4da1d643e5b7
+#: ../../hosts.rst:331
+msgid ""
+"In any given cloud, the optimum number of VMs for each host is affected by "
+"such things as the hypervisor, storage, and hardware configuration. These "
+"may be different for each cluster in the same cloud. A single global over-"
+"provisioning setting can not provide the best utilization for all the "
+"different clusters in the cloud. It has to be set for the lowest common "
+"denominator. The per-cluster setting provides a finer granularity for better"
+" utilization of resources, no matter where the CloudStack placement "
+"algorithm decides to place a VM."
+msgstr "在任何已有的云中，hypervisor、存储和硬件配置影响每个主机上VMs最佳数量。同一个云中的每个群集的这些配置可能都不同。单一的全局超配设置不能为云中所有的群集提供最佳效果。它只能作为一个基线。无论CloudStack使用哪种算法来放置一个VM，每个群集都提供了细颗粒度的设置以提供更好的资源效果。"
+
+# 52d81b5edf1e4675934e117fe3f7e39b
+#: ../../hosts.rst:340
+msgid ""
+"The overprovisioning settings can be used along with dedicated resources "
+"(assigning a specific cluster to an account) to effectively offer different "
+"levels of service to different accounts. For example, an account paying for "
+"a more expensive level of service could be assigned to a dedicated cluster "
+"with an over-provisioning ratio of 1, and a lower-paying account to a "
+"cluster with a ratio of 2."
+msgstr "超配设置和专用资源（对一个账号分配一个特定的群集）一起使用时能对不同用户有效的提供的不同服务级别。比如，一个账号购买了比较高级别的服务，那么分配给他一个超配比率为1的专用群集，购买低级别服务的账号分配一个比率为2的群集。"
+
+# c36163afa88548cfba86a4569c955329
+#: ../../hosts.rst:347
+msgid ""
+"When a new host is added to a cluster, CloudStack will assume the host has "
+"the capability to perform the CPU and RAM over-provisioning which is "
+"configured for that cluster. It is up to the administrator to be sure the "
+"host is actually suitable for the level of over-provisioning which has been "
+"set."
+msgstr "当一个新主机被添加到群集中，CloudStack假设配置了超配的群集中的主机能够提供CPU和RAM的超配能力。这个要靠管理员来决定主机是否真的能够提供设置的超配级别。"
+
+# edc95af891bf48bf9348b06cd982309c
+#: ../../hosts.rst:354
+msgid "Limitations on Over-Provisioning in XenServer and KVM"
+msgstr "XenServer和KVM中超配的局限性"
+
+# cc00f5f645f64e0697ca6ebdd96d0def
+# fa75f18b499847fd8e2399cb4259df55
+#: ../../hosts.rst:358 ../../hosts.rst:465
+msgid ""
+"In XenServer, due to a constraint of this hypervisor, you can not use an "
+"over-provisioning factor greater than 4."
+msgstr "在XenServer中，由于这个hypervisor的限制，超配系数不能超过4。"
+
+# 0a8e4b3712eb41eb98132d75c64a88a7
+#: ../../hosts.rst:363
+msgid ""
+"The KVM hypervisor can not manage memory allocation to VMs dynamically. "
+"CloudStack sets the minimum and maximum amount of memory that a VM can use. "
+"The hypervisor adjusts the memory within the set limits based on the memory "
+"contention."
+msgstr "KVM hypervisor不能动态的管理分配给VMs的内存。CloudStack设置VM能够使用的内存最小和最大量。Hypervisor基于存储器争用技术在设定范围内调整内存。"
+
+# f2fe7c9bf6004d17af2fc11f9e60bcb5
+#: ../../hosts.rst:369
+msgid "Requirements for Over-Provisioning"
+msgstr "存储超配的要求"
+
+# bee683fe8af6414ba2ce5829f1cce894
+#: ../../hosts.rst:371
+msgid ""
+"Several prerequisites are required in order for over-provisioning to "
+"function properly. The feature is dependent on the OS type, hypervisor "
+"capabilities, and certain scripts. It is the administrator's responsibility "
+"to ensure that these requirements are met."
+msgstr "为了让超配能够正常工作需要几个前提条件。此特性取决于OS类型，hypervisor功能和特定的脚本。管理员负责确认这些条件都符合。"
+
+# ac320e5915bc4d5e92bae95824019630
+#: ../../hosts.rst:377
+msgid "Balloon Driver"
+msgstr "Balloon驱动"
+
+# 90096ecdf9dd4377bedd8eacc44a5805
+#: ../../hosts.rst:379
+msgid ""
+"All VMs should have a balloon driver installed in them. The hypervisor "
+"communicates with the balloon driver to free up and make the memory "
+"available to a VM."
+msgstr "所有VMs中都安装了balloon驱动。Hypervisor靠balloon驱动与VM通讯以释放内存和让内存变得可用。"
+
+# 3a85924afec74d44a1d3d84552e06e8f
+# 8cce762b3d4c48b5aaa49bca9049a7b8
+#: ../../hosts.rst:384 ../../hosts.rst:410
+msgid "XenServer"
+msgstr "XenServer"
+
+# 2bce40c454304c82b26a1b0275e7d257
+#: ../../hosts.rst:386
+msgid ""
+"The balloon driver can be found as a part of xen pv or PVHVM drivers. The "
+"xen pvhvm drivers are included in upstream linux kernels 2.6.36+."
+msgstr "Balloon驱动是Xen pv或者PVHVM驱动的一部分。Linux kernels 2.6.36和以上版本中包含了Xen pvhvm驱动。"
+
+# 9514bde1f9244064beacff1f13d21855
+#: ../../hosts.rst:390
+msgid "VMware"
+msgstr "VMware"
+
+# 1721067bf51441578864874e46fb712f
+#: ../../hosts.rst:392
+msgid ""
+"The balloon driver can be found as a part of the VMware tools. All the VMs "
+"that are deployed in a over-provisioned cluster should have the VMware tools"
+" installed."
+msgstr "Balloon驱动是VMware tools的一部分。在一台超配群集中部署的所有的VMs都应该安装VMware tools。"
+
+# fdfc3291197e40cbb6918abad409e86f
+#: ../../hosts.rst:397
+msgid "KVM"
+msgstr "KVM"
+
+# 393102255c6a4f449aa9100faef98786
+#: ../../hosts.rst:399
+msgid ""
+"All VMs are required to support the virtio drivers. These drivers are "
+"installed in all Linux kernel versions 2.6.25 and greater. The administrator"
+" must set CONFIG\\_VIRTIO\\_BALLOON=y in the virtio configuration."
+msgstr "所有VMs都需要支持virtio驱动。Linux kernel versions 2.6.25和更高版本中已经安装了这些驱动。管理员必须在virtio的配置文件中配置CONFIG\\_VIRTIO\\_BALLOON=y。"
+
+# 02e47b485a7e4c9792ff13a65325ff98
+#: ../../hosts.rst:405
+msgid "Hypervisor capabilities"
+msgstr "Hypervisor功能"
+
+# 24056966cd1e43f4b55061b3d1952313
+#: ../../hosts.rst:407
+msgid "The hypervisor must be capable of using the memory ballooning."
+msgstr "Hypervisor必须能够使用内存ballooning。"
+
+# cbb4ca754be34de8ac7f1de22df461b5
+#: ../../hosts.rst:412
+msgid ""
+"The DMC (Dynamic Memory Control) capability of the hypervisor should be "
+"enabled. Only XenServer Advanced and above versions have this feature."
+msgstr "Hypervisor必须启用了DMC（动态内存控制）功能。只有XenServer高级版以及更高版本拥有这个功能。"
+
+# 134f00ef1ff74950a8dff3d90e185df3
+#: ../../hosts.rst:416
+msgid "VMware, KVM"
+msgstr "VMware、KVM"
+
+# cbf853d94adb42db8f9447bcc6c094b4
+#: ../../hosts.rst:418
+msgid "Memory ballooning is supported by default."
+msgstr "默认支持内存ballooning。"
+
+# fe751eb8be7f47c4ac053e41b99a0c3f
+#: ../../hosts.rst:421
+msgid "Setting Over-Provisioning Ratios"
+msgstr "设置存储超配系数"
+
+# 362d1a967cde49bd8c050e25ce11a418
+#: ../../hosts.rst:423
+msgid ""
+"There are two ways the root admin can set CPU and RAM over-provisioning "
+"ratios. First, the global configuration settings cpu.overprovisioning.factor"
+" and mem.overprovisioning.factor will be applied when a new cluster is "
+"created. Later, the ratios can be modified for an existing cluster."
+msgstr "管理员有两种方法来设置CPU和RAM超配系数。第一，当新的群集被创建完成的时候全局配置中的cpu.overprovisioning.factor和mem.overprovisioning.factor将生效。第二，对于已存在的群集可以直接修改系数。  "
+
+# 1f116a42dfc04347bf2fbc30976a7fe1
+#: ../../hosts.rst:429
+msgid ""
+"Only VMs deployed after the change are affected by the new setting. If you "
+"want VMs deployed before the change to adopt the new over-provisioning "
+"ratio, you must stop and restart the VMs. When this is done, CloudStack "
+"recalculates or scales the used and reserved capacities based on the new "
+"over-provisioning ratios, to ensure that CloudStack is correctly tracking "
+"the amount of free capacity."
+msgstr "只有在变更之后部署VMs，设置才会生效。如果想让变更之前部署的VMs也能继承新的超配比率，你必须重启VMs。当此操作完成之后，CloudStack会重新计算或者调整已使用的资源，并且基于新的超配比率预留出容量，以保证CloudStack正确的掌握了剩余容量的情况。"
+
+# 93a9d4a11ea3467bab17fb3f4cd0dad6
+#: ../../hosts.rst:437
+msgid ""
+"It is safer not to deploy additional new VMs while the capacity "
+"recalculation is underway, in case the new values for available capacity are"
+" not high enough to accommodate the new VMs. Just wait for the new "
+"used/available values to become available, to be sure there is room for all "
+"the new VMs you want."
+msgstr "如果新的可用容量不足以满足新的VMs需求，那么当重新计算容量的过程中不去部署新的VMs是比较安全的。等新的已用/可用容量完全可用时，确认这空间对于你想创建的VMs足够用。"
+
+# e0366b1e2fa54380bcd721e1a380fc53
+#: ../../hosts.rst:439
+msgid "To change the over-provisioning ratios for an existing cluster:"
+msgstr "在已存在的群集中更改超配系数："
+
+# 7ffed21dabe7462b8e09848f5725cc96
+#: ../../hosts.rst:443
+msgid "Log in as administrator to the CloudStack UI."
+msgstr "使用管理员登录到CloudStack管理界面。"
+
+# 4d7c773d04964e5b9f50c9425f2787da
+#: ../../hosts.rst:451
+msgid "Under Clusters, click View All."
+msgstr "在群集页面，点击查看所有。"
+
+# 84bddff125d543f283dd83cce8892998
+#: ../../hosts.rst:455
+msgid "Select the cluster you want to work with, and click the Edit button."
+msgstr "选择你要操作的群集，点击编辑按钮。"
+
+# 519a8079ef6b4d2eb83eb8537dfed6e8
+#: ../../hosts.rst:459
+msgid ""
+"Fill in your desired over-provisioning multipliers in the fields CPU "
+"overcommit ratio and RAM overcommit ratio. The value which is intially shown"
+" in these fields is the default value inherited from the global "
+"configuration settings."
+msgstr "在CPU overcommit ratio和RAM overcommit ratio区域里填入你希望的超配系数。这里的初始值是从全局配置设置里继承而来的。"
+
+# 8e7465fb587642f5aac407e899b0ad64
+#: ../../hosts.rst:468
+msgid "Service Offering Limits and Over-Provisioning"
+msgstr "服务方案限制和超配"
+
+# 0d6a4122110b4dee8cff81972c293a1f
+#: ../../hosts.rst:470
+msgid ""
+"Service offering limits (e.g. 1 GHz, 1 core) are strictly enforced for core "
+"count. For example, a guest with a service offering of one core will have "
+"only one core available to it regardless of other activity on the Host."
+msgstr "服务方案限制（比如1GHz，1 core）是受到core数严格限制的。比如，一个使用1 core服务方案的用户只能用 1core，无论这个主机多空闲。"
+
+# 480c139ad92a490a8cf4bf6004be1bf8
+#: ../../hosts.rst:475
+msgid ""
+"Service offering limits for gigahertz are enforced only in the presence of "
+"contention for CPU resources. For example, suppose that a guest was created "
+"with a service offering of 1 GHz on a Host that has 2 GHz cores, and that "
+"guest is the only guest running on the Host. The guest will have the full 2 "
+"GHz available to it. When multiple guests are attempting to use the CPU a "
+"weighting factor is used to schedule CPU resources. The weight is based on "
+"the clock speed in the service offering. Guests receive a CPU allocation "
+"that is proportionate to the GHz in the service offering. For example, a "
+"guest created from a 2 GHz service offering will receive twice the CPU "
+"allocation as a guest created from a 1 GHz service offering. CloudStack does"
+" not perform memory over-provisioning."
+msgstr "GHz的服务方案限制只存在于CPU资源的争用中。比如，假设用户在一个有2GHz core的主机上创建了一个1 GHz的服务方案，并且该用户是这个主机上唯一一个用户。那么该用户有2 GHz可用性能。当多个用户尝试使用CPU，则由权重系数来调度CPU资源。这个权重基于服务方案中的时钟速度。用户分配到的CPU GHz与服务方案中一致。比如，用户从一个2GHz服务方案中创建的VM分配到的CPU是从1 GHz方案中分配到的2倍。CloudStack不能提供内存的超配。"
+
+# 6973ca6704974a47964898e5e0e218dc
+#: ../../hosts.rst:488
+msgid "VLAN Provisioning"
+msgstr "VLAN供应"
+
+# 5b73126100d24f48a0f831790b6172db
+#: ../../hosts.rst:490
+msgid ""
+"CloudStack automatically creates and destroys interfaces bridged to VLANs on"
+" the hosts. In general the administrator does not need to manage this "
+"process."
+msgstr "CloudStack能在主机上自动创建和销毁桥接至VLAN的网络接口。一般来说，管理员不需要介入此处理过程。"
+
+# 4e2359bef8e1410d98f92288a2f72a96
+#: ../../hosts.rst:494
+msgid ""
+"CloudStack manages VLANs differently based on hypervisor type. For XenServer"
+" or KVM, the VLANs are created on only the hosts where they will be used and"
+" then they are destroyed when all guests that require them have been "
+"terminated or moved to another host."
+msgstr "CloudStack根据hypervisor类型的不同，管理VLANs的方式也不同。对于XenServer或者KVM来说，只在使用VLANs的主机上创建VLANs，并且当所有使用VLANs的来宾虚机被销毁或者移动至其他主机的时候，这些VLANs就会被销毁。"
+
+# cfd189a826f9412e8b54976947f52b54
+#: ../../hosts.rst:499
+msgid ""
+"For vSphere the VLANs are provisioned on all hosts in the cluster even if "
+"there is no guest running on a particular Host that requires the VLAN. This "
+"allows the administrator to perform live migration and other functions in "
+"vCenter without having to create the VLAN on the destination Host. "
+"Additionally, the VLANs are not removed from the Hosts when they are no "
+"longer needed."
+msgstr "vSphere上的VLANs是在群集中的所有主机上配置的，不管主机上有没有使用VLAN的来宾虚机在运行。这样允许管理员在vCenter中不需在目标主机上创建VLAN就可以执行在线迁移和其他功能。此外，当主机不再需要的时候VLANs也不会被移除。"
+
+# fc44fd764b804474b12d380d2b22dc04
+#: ../../hosts.rst:506
+msgid ""
+"You can use the same VLANs on different physical networks provided that each"
+" physical network has its own underlying layer-2 infrastructure, such as "
+"switches. For example, you can specify VLAN range 500 to 1000 while "
+"deploying physical networks A and B in an Advanced zone setup. This "
+"capability allows you to set up an additional layer-2 physical "
+"infrastructure on a different physical NIC and use the same set of VLANs if "
+"you run out of VLANs. Another advantage is that you can use the same set of "
+"IPs for different customers, each one with their own routers and the guest "
+"networks on different physical NICs."
+msgstr "你能够使用由不同的拥有二层网络结构的物理网络提供同样的VLANs，比如交换机。比如，在对高级zone中部署物理网络A和B的时候，你可以指定VLAN范围为500-1000。如果你的VLANs用尽了，这个功能允许你在不同的物理网卡上设置追加一个二层物理网络并且使用同样的VLANs设置。另一个优点是你可以在不同的物理网卡上为不同的客户使用同样的IPs设置，每个都有自己的路由器和来宾网络。"
+
+# 06f9c538941f4e3ca83477adfe036a8b
+#: ../../hosts.rst:517
+msgid "VLAN Allocation Example"
+msgstr "VLAN分配示例"
+
+# 7a8e238fd6a447e9803e0fcd39957760
+#: ../../hosts.rst:519
+msgid ""
+"VLANs are required for public and guest traffic. The following is an example"
+" of a VLAN allocation scheme:"
+msgstr "公共和来并流量需要VLAN，下面是一个VLAN分配的示例："
+
+# 97aaca38941d42f183baf9eb2c560eec
+#: ../../hosts.rst:523
+msgid "VLAN IDs"
+msgstr "VLAN IDs"
+
+# d6cbed5a64fc49fda68543d1a54823ec
+#: ../../hosts.rst:523
+msgid "Traffic type"
+msgstr "流量类型"
+
+# c6a593644e2848398fdf1b4c86458434
+#: ../../hosts.rst:523
+msgid "Scope"
+msgstr "范围"
+
+# df3262b199df4244a2cb492f3134ee68
+#: ../../hosts.rst:525
+msgid "less than 500"
+msgstr "小于500"
+
+# 5fc5eed1fae7464bb9bd0cd832cb9901
+#: ../../hosts.rst:525
+msgid "Management traffic."
+msgstr "管理流量。"
+
+# d7ca9d9a93904c57808e9baf286d1374
+#: ../../hosts.rst:525
+msgid ""
+"Reserved for administrative purposes.  CloudStack software can access this, "
+"hypervisors, system VMs."
+msgstr "出于管理目的而预留的。CloudStack，hypervisors和系统虚机能访问它。"
+
+# 816d6141016845e68cc5cfbb70a5ca4a
+#: ../../hosts.rst:526
+msgid "500-599"
+msgstr "500-599"
+
+# 4c6772a236b949c6a827887e55f468dc
+#: ../../hosts.rst:526
+msgid "VLAN carrying public traffic."
+msgstr "承载公共流量。"
+
+# 9788f1148534421f8b3e69b0a2291d4c
+#: ../../hosts.rst:526
+msgid "CloudStack accounts."
+msgstr "CloudStack账户。"
+
+# faa736af78474fec844134eb7ee8f8e8
+#: ../../hosts.rst:527
+msgid "600-799"
+msgstr "600-799"
+
+# 00cdf19f243d48eda62692e050cca578
+# 968535793b2646eda10843e74d06390c
+#: ../../hosts.rst:527 ../../hosts.rst:528
+msgid "VLANs carrying guest traffic."
+msgstr "承载来宾流量"
+
+# 4c9c92a88e4240c8a3eb4021856220ab
+#: ../../hosts.rst:527
+msgid "CloudStack accounts. Account-specific VLAN is chosen from this pool."
+msgstr "CloudStack accounts. Account-specific VLAN is chosen from this pool."
+
+# 821a9f34a9dd4ccbbcb7099bc2e120ff
+#: ../../hosts.rst:528
+msgid "800-899"
+msgstr "800-899"
+
+# a0b968ec993843e7b61e267dcffdc110
+#: ../../hosts.rst:528
+msgid ""
+"CloudStack accounts. Account-specific VLAN chosen by CloudStack admin to "
+"assign to that account."
+msgstr "CloudStack 账户。CloudStack管理员为账户指定特定的VLAN。"
+
+# eebf870170034248bf44689d980f22fd
+#: ../../hosts.rst:529
+msgid "900-999"
+msgstr "900-999"
+
+# fcaefad65c864f0aa12decdbc8ea1a9f
+#: ../../hosts.rst:529
+msgid "VLAN carrying guest traffic"
+msgstr "承载来宾流量"
+
+# dbc8efd08bdb47939963f1e1ade787c4
+#: ../../hosts.rst:529
+msgid ""
+"CloudStack accounts. Can be scoped by project, domain, or all accounts."
+msgstr "CloudStack 账户。可作为项目、域或所有账户的作用域。"
+
+# b91c7c3931aa46dbaddfffb5b3497d75
+#: ../../hosts.rst:530
+msgid "greater than 1000"
+msgstr "大于1000"
+
+# 11b667ae6cb04cc68d5a10a133cee37b
+#: ../../hosts.rst:530
+msgid "Reserved for future use"
+msgstr "保留为将来使用"
+
+# 10b73559efa5445caf021d488a10c300
+#: ../../hosts.rst:534
+msgid "Adding Non Contiguous VLAN Ranges"
+msgstr "添加不连续的VLAN范围"
+
+# 632b0960356d40aabb5f7262a942d317
+#: ../../hosts.rst:536
+msgid ""
+"CloudStack provides you with the flexibility to add non contiguous VLAN "
+"ranges to your network. The administrator can either update an existing VLAN"
+" range or add multiple non contiguous VLAN ranges while creating a zone. You"
+" can also use the UpdatephysicalNetwork API to extend the VLAN range."
+msgstr "CloudStack能让你灵活的给你的网络添加不连续的VLAN范围。在创建一个zone的时候，管理员要么更新一个已存在的VLAN范围，要么添加多个不连续的VLAN范围。你同样可以使用UpdatephysicalNetwork API来扩展VLAN范围。"
+
+# 22166092fd8e4f749f83b22e91ed0a19
+#: ../../hosts.rst:544
+msgid "Log in to the CloudStack UI as an administrator or end user."
+msgstr "使用管理员或者终端用户账号登录CloudStack UI。"
+
+# c3cc468f1166400fbf2d5bbccec17632
+#: ../../hosts.rst:548
+msgid "Ensure that the VLAN range does not already exist."
+msgstr "确保VLAN范围没有被使用。"
+
+# 0cca254c9b6c4adab9fca2d53a8d2a99
+#: ../../hosts.rst:552
+msgid "In the left navigation, choose Infrastructure."
+msgstr "在左边的导航，选择基础架构。"
+
+# 501e52d3dc124b9b81b1a94a93af9f28
+#: ../../hosts.rst:556
+msgid ""
+"On Zones, click View More, then click the zone to which you want to work "
+"with."
+msgstr "在Zones上，点击查看更多，然后点击你要进行操作的zone。"
+
+# 6a6640c67ea34b0b9a0ca859696174c0
+#: ../../hosts.rst:561
+msgid "Click Physical Network."
+msgstr "点击物理网络。"
+
+# 9df7f0d650ab4fa8868898684c3025ba
+#: ../../hosts.rst:565
+msgid "In the Guest node of the diagram, click Configure."
+msgstr "在图中的来宾节点上，点击配置"
+
+# 81b5cc6e8b5e4cffada11d5628cf542b
+#: ../../hosts.rst:569
+msgid "Click Edit |edit-icon.png|."
+msgstr "点击编辑|edit-icon.png|。"
+
+# 128ddb2b1a0b403eaa01728b573229e2
+#: ../../hosts.rst:571
+msgid "The VLAN Ranges field now is editable."
+msgstr "现在VLAN范围区域是可编辑的了。"
+
+# ecf3f3c2e0a24b78aed1b4ed3eb44f3c
+#: ../../hosts.rst:575
+msgid "Specify the start and end of the VLAN range in comma-separated list."
+msgstr "指定VLAN范围的起始和结束用逗号隔开。"
+
+# 16e7961826d14270960e64272b17457a
+#: ../../hosts.rst:577
+msgid ""
+"Specify all the VLANs you want to use, VLANs not specified will be removed "
+"if you are adding new ranges to the existing list."
+msgstr "指定所有你想使用的VLANs，如果你添加新的范围到已有列表里，那么没有指定的VLANs将被移除。"
+
+# d6cbf61222844716888f5f8f862bfd82
+#: ../../hosts.rst:582
+msgid "Click Apply."
+msgstr "点击应用"
+
+# 87d75c37a1ca4312b9d73ae90c39dacf
+#: ../../hosts.rst:585
+msgid "Assigning VLANs to Isolated Networks"
+msgstr "给隔离的网络指定VLAN。"
+
+# 329c29ef5c0640298b62d8621919a04e
+#: ../../hosts.rst:587
+msgid ""
+"CloudStack provides you the ability to control VLAN assignment to Isolated "
+"networks. As a Root admin, you can assign a VLAN ID when a network is "
+"created, just the way it's done for Shared networks."
+msgstr "CloudStack能够让你控制VLAN分配至隔离网络。作为一个Root管理员，当一个网络被创建后，你能为其分配一个VLAN ID，这个网络只能是共享网络。"
+
+# d463cc2b2e6b45efbc688fae2f8c844e
+#: ../../hosts.rst:591
+msgid ""
+"The former behaviour also is supported — VLAN is randomly allocated to a "
+"network from the VNET range of the physical network when the network turns "
+"to Implemented state. The VLAN is released back to the VNET pool when the "
+"network shuts down as a part of the Network Garbage Collection. The VLAN can"
+" be re-used either by the same network when it is implemented again, or by "
+"any other network. On each subsequent implementation of a network, a new "
+"VLAN can be assigned."
+msgstr "同样被支持—当网络转换为运行状态是，VLAN是随机地通过物理网络的VNET范围分配给网络。当网络作为网络垃圾回收过程的一部分而关闭时，VLAN会被回收到VNET池。当网络再次启用的时候VLAN还能被其重用，或者其他网络使用。在每个新启用的网络中，都有一个新的VLAN被分配。"
+
+# 67f26f616c1d468f9f43fbad3a96d653
+#: ../../hosts.rst:599
+msgid ""
+"Only the Root admin can assign VLANs because the regular users or domain "
+"admin are not aware of the physical network topology. They cannot even view "
+"what VLAN is assigned to a network."
+msgstr "只有Root管理员能够分配VLANs，因为常规的用户和域管理员并不清楚物理网络拓扑。他们也不能查看哪个VLAN被分配给网络。"
+
+# 8cb6b5c237b24db2a036745c714fd0c1
+#: ../../hosts.rst:603
+msgid "To enable you to assign VLANs to Isolated networks,"
+msgstr "要把VLANs分配给隔离的网络，"
+
+# aa68c2b731f44e8ca5e7b12992e491e4
+#: ../../hosts.rst:607
+msgid "Create a network offering by specifying the following:"
+msgstr "使用下列指定的步骤创建一个网络方案："
+
+# 6ac8335147a0424ea30c996690f508f6
+#: ../../hosts.rst:611
+msgid "**Guest Type**: Select Isolated."
+msgstr "**来宾网络类型**：选择隔离的。"
+
+# a4d3756da9654670af81f81ef51f5bea
+#: ../../hosts.rst:615
+msgid "**Specify VLAN**: Select the option."
+msgstr "**指定VLAN**：选择一个选项。"
+
+# 418a868357c54463be949ae219831e3f
+#: ../../hosts.rst:617
+msgid "For more information, see the CloudStack Installation Guide."
+msgstr "更多信息，请参考CloudStack安装指导。"
+
+# c7ae08cd2c954f069c402e2f29bd6498
+#: ../../hosts.rst:621
+msgid "Using this network offering, create a network."
+msgstr "使用这个网络方案，创建一个网络。"
+
+# b76ebd2ac4ec4be88b31ead41a0ffa76
+#: ../../hosts.rst:623
+msgid "You can create a VPC tier or an Isolated network."
+msgstr "你可以创建一个VPC层或者一个隔离网络。"
+
+# c827ff2cdfaa40c0a2f5dcefd4637b6f
+#: ../../hosts.rst:627
+msgid "Specify the VLAN when you create the network."
+msgstr "当你创建网络的时候指定VLAN。"
+
+# 8e3918b569284ecc9204e3c58114c951
+#: ../../hosts.rst:629
+msgid ""
+"When VLAN is specified, a CIDR and gateway are assigned to this network and "
+"the state is changed to Setup. In this state, the network will not be "
+"garbage collected."
+msgstr "当VLAN被指定后，CIDR和网关就被分配给这个网络了，并且它的状态也变成Setup了。在这个状态下，网络不会被回收。"
+
+# 710699c1ce8949f781a434db64439614
+#: ../../hosts.rst:634
+msgid ""
+"You cannot change a VLAN once it's assigned to the network. The VLAN remains"
+" with the network for its entire life cycle."
+msgstr "一旦VLAN被分配给一个网络的话，你就不能更改它。VLAN将伴随着网络的整个生命周期。"

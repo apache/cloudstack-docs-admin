@@ -1,0 +1,457 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
+# 
+# Translators:
+# darrentang <darrentang.dt@gmail.com>, 2014
+# renoshen <shenkuan-ghq@sinosig.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-31 14:08-0400\n"
+"PO-Revision-Date: 2014-05-26 04:42+0000\n"
+"Last-Translator: renoshen <shenkuan-ghq@sinosig.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/apache-cloudstack-administration-rtd/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 824f2fb7a40e400c817793505bf85705
+#: ../../ui.rst:17
+msgid "User Interface"
+msgstr "用户界面"
+
+# 9930e90c431f4e6b83a5464220c2f363
+#: ../../ui.rst:20
+msgid "Log In to the UI"
+msgstr "登陆到用户界面"
+
+# 66dab55143a94a97bf69d0a14b01ee02
+#: ../../ui.rst:22
+msgid ""
+"CloudStack provides a web-based UI that can be used by both administrators "
+"and end users. The appropriate version of the UI is displayed depending on "
+"the credentials used to log in. The UI is available in popular browsers "
+"including IE7, IE8, IE9, Firefox 3.5+, Firefox 4, Safari 4, and Safari 5. "
+"The URL is: (substitute your own management server IP address)"
+msgstr "CloudStack提供一个基于web的UI，管理员和终端用户能够使用这个界面。用户界面版本依赖于登陆时使用的凭证不同而不同。用户界面是适用于大多数流行的浏览器包括IE7,IE8,IE9,Firefox3.5+,Firefox4,Safari4,和Safari5。URL是:(用你自己的管理控制服务器IP地址代替)"
+
+# 1f150301d3b24a0c9ef17e3907c6f7bd
+#: ../../ui.rst:33
+msgid ""
+"On a fresh Management Server installation, a guided tour splash screen "
+"appears. On later visits, you’ll see a login screen where you specify the "
+"following to proceed to your Dashboard:"
+msgstr "如果管理服务器是全新的安装,。那么会出现一个安装向导。在稍后的访问中,，你将看到一个登录界面,，你需要通过用户名和密码登入来查看你的仪表盘."
+
+# 75ef5c6d747743f6b305a6985cc9317c
+#: ../../ui.rst:37
+msgid ""
+"Username -> The user ID of your account. The default username is admin."
+msgstr "用户名 -> 你账号的用户ID。默认用户名是admin。"
+
+# d50078a4174245929b7bed1d18dee41b
+#: ../../ui.rst:39
+msgid ""
+"Password -> The password associated with the user ID. The password for the "
+"default username is password."
+msgstr "密码 -> 用户ID对应的密码。默认用户名的密码是password。"
+
+# ed8d4b1b0749488a8eddc7c967b431a0
+#: ../../ui.rst:42
+msgid "Domain -> If you are a root user, leave this field blank."
+msgstr "域 -> 如果你是root用户，此处留空即可。"
+
+# 7f94ded7b94e493191cad1f8aa619d8c
+#: ../../ui.rst:44
+msgid ""
+"If you are a user in the sub-domains, enter the full path to the domain, "
+"excluding the root domain."
+msgstr "如果你是一个子域用户，在域中输入完全路径，不包括根域。"
+
+# 2fe701c5f506417b9ab5d9eb89b7282e
+#: ../../ui.rst:47
+msgid ""
+"For example, suppose multiple levels are created under the root domain, such"
+" as Comp1/hr. The users in the Comp1 domain should enter Comp1 in the Domain"
+" field, whereas the users in the Comp1/sales domain should enter "
+"Comp1/sales."
+msgstr "例如，假设在根域下建立了多个层级，像Comp1/hr，在Comp1域的用户在域字段处应该输入Comp1，在Comp1/sales域的用户应该输入Comp1/sales。"
+
+# b6a9dbd7c01b41f29187e7bbca753c06
+#: ../../ui.rst:52
+msgid ""
+"For more guidance about the choices that appear when you log in to this UI, "
+"see Logging In as the Root Administrator."
+msgstr "更多关于当你登录这个界面时选项的指导，参照作为根管理员登录。"
+
+# 48d00dd7bd68418190cd46bb293473d6
+#: ../../ui.rst:56
+msgid "End User's UI Overview"
+msgstr "最终用户界面概览"
+
+# 7ff28690d249411096a5af0c0ddfa6a9
+#: ../../ui.rst:58
+msgid ""
+"The CloudStack UI helps users of cloud infrastructure to view and use their "
+"cloud resources, including virtual machines, templates and ISOs, data "
+"volumes and snapshots, guest networks, and IP addresses. If the user is a "
+"member or administrator of one or more CloudStack projects, the UI can "
+"provide a project-oriented view."
+msgstr "CloudStack用户界面帮助云基础设施的用户查看和使用他们的云资源，包括虚拟机、模板和ISO、数据卷和快照、宾客网络，以及IP 地址。如果用户是一个或多个CloudStack项目的成员或管理员，用户界面能提供一个面向项目的视图。"
+
+# b9f32da1cc284a77a0170d30360c2295
+#: ../../ui.rst:65
+msgid "Root Administrator's UI Overview"
+msgstr "根管理员界面的概述"
+
+# de7c88e845554ec786a629a84f587490
+#: ../../ui.rst:67
+msgid ""
+"The CloudStack UI helps the CloudStack administrator provision, view, and "
+"manage the cloud infrastructure, domains, user accounts, projects, and "
+"configuration settings. The first time you start the UI after a fresh "
+"Management Server installation, you can choose to follow a guided tour to "
+"provision your cloud infrastructure. On subsequent logins, the dashboard of "
+"the logged-in user appears. The various links in this screen and the "
+"navigation bar on the left provide access to a variety of administrative "
+"functions. The root administrator can also use the UI to perform all the "
+"same tasks that are present in the end-user’s UI."
+msgstr "CloudStack界面帮助CloudStack管理员配置、查看和管理云的基础设施、用户域、账号、项目和配置。当一个全新的管理服务器安装完成后，在第一次启动界面的时候，可以选择根随引导步骤配置云的基础设施。当再次登录时，会显示当前登录用户的仪表板。在这个页面有很多的连接，可以通过左边的导航栏访问各种管理功能。根管理员也可以使用界面像最终用户一样来执行所有的功能。 "
+
+# cec8e56a3f3c4003b9b5cb32786f06c1
+#: ../../ui.rst:78
+msgid "Logging In as the Root Administrator"
+msgstr "作为根管理员登录"
+
+# bba4bc7659854a22a7f9755411002452
+#: ../../ui.rst:80
+msgid ""
+"After the Management Server software is installed and running, you can run "
+"the CloudStack user interface. This UI is there to help you provision, view,"
+" and manage your cloud infrastructure."
+msgstr "在管理服务器软件安装并且运行后, 你就可以运行CloudStack的用户界面.了。在这里通过UI，可以供给、查看并管理你的云基础架构。"
+
+# 9da61f92327340a882b5300469950b1d
+# dfefb71a2c3a4f5ba43d40560f9b829f
+#: ../../ui.rst:86 ../../ui.rst:155
+msgid ""
+"Open your favorite Web browser and go to this URL. Substitute the IP address"
+" of your own Management Server:"
+msgstr "打开你自己喜欢的浏览器并访问这个URL。请把IP地址替换成你自己的管理服务器的IP。"
+
+# c848c16d0204458d89b15421d959a14c
+#: ../../ui.rst:93
+msgid ""
+"After logging into a fresh Management Server installation, a guided tour "
+"splash screen appears. On later visits, you’ll be taken directly into the "
+"Dashboard."
+msgstr "初次登录管理服务器时，会出现一个向导启动画面。后续访问时，您会直接进入控制面板。"
+
+# 9dc9abbeec84440ab29d157ce21b2021
+#: ../../ui.rst:99
+msgid "If you see the first-time splash screen, choose one of the following."
+msgstr "如果你看到第一次的向导屏幕, 可以选择下面步骤之一进行。"
+
+# 4c0c71f3a1684669a2f9d69e77f2b70c
+#: ../../ui.rst:103
+msgid ""
+"**Continue with basic setup.** Choose this if you're just trying CloudStack,"
+" and you want a guided walkthrough of the simplest possible configuration so"
+" that you can get started right away. We'll help you set up a cloud with the"
+" following features: a single machine that runs CloudStack software and uses"
+" NFS to provide storage; a single machine running VMs under the XenServer or"
+" KVM hypervisor; and a shared public network."
+msgstr "**继续执行基本安装。**如果你仅仅是想体验CloudStack，请选择这个，并且这样你可以马上开始跟着向导进行简单的配置。我们将帮助你建立一个有以下功能的云：一个运行CloudStack软件的机器和使用NFS协议的存储；一个运行VMs的XenServer或KVM hypervisor的服务器；一个共享的公有网络。"
+
+# 0e0058e02be4491a9d8b2b762a2bce2c
+#: ../../ui.rst:111
+msgid ""
+"The prompts in this guided tour should give you all the information you "
+"need, but if you want just a bit more detail, you can follow along in the "
+"Trial Installation Guide."
+msgstr "安装向导的提示会给你需要的所有信息。但如果你需要更多的详细信息，你可以按照试用安装向导进行。"
+
+# 531d687fea424084bf40162d887f1157
+#: ../../ui.rst:117
+msgid ""
+"**I have used CloudStack before.** Choose this if you have already gone "
+"through a design phase and planned a more sophisticated deployment, or you "
+"are ready to start scaling up a trial cloud that you set up earlier with the"
+" basic setup screens. In the Administrator UI, you can start using the more "
+"powerful features of CloudStack, such as advanced VLAN networking, high "
+"availability, additional network elements such as load balancers and "
+"firewalls, and support for multiple hypervisors including Citrix XenServer, "
+"KVM, and VMware vSphere."
+msgstr "**我之前用过CloudStack。** 如果您已经完成设计阶段，计划部署一个复杂CloudStack云，或是准备对用基础安装向导搭建的试验云进行扩展，请选择此项。在管理员UI中，您可以使用CloudStack中更强大的功能，例如高级VLAN网络、高可用、负载均衡器和防火墙等额外网络设备，以及支持Citrix XenServer、KVM、VMware vSphere等多种虚拟化平台。"
+
+# a9ade2077b0b4da09c1f74ee47fbf1df
+#: ../../ui.rst:127
+msgid "The root administrator Dashboard appears."
+msgstr "根管理员的仪表盘显示出来。"
+
+# 6d272187a4224eee883e147c2bd70841
+#: ../../ui.rst:131
+msgid ""
+"You should set a new root administrator password. If you chose basic setup, "
+"you’ll be prompted to create a new password right away. If you chose "
+"experienced user, use the steps in :ref:`changing-root-password`."
+msgstr "你应该为根管理员设置一个新的密码。如果你选择基础设置。将会提示你立即创建一个新的密码。如果你选择有经验的用户，请选择:ref:`changing-root-password`里的步骤。"
+
+# ce25a9e2a2e5427ba0b0979423dee209
+#: ../../ui.rst:137
+msgid ""
+"You are logging in as the root administrator. This account manages the "
+"CloudStack deployment, including physical infrastructure. The root "
+"administrator can modify configuration settings to change basic "
+"functionality, create or delete user accounts, and take many actions that "
+"should be performed only by an authorized person. Please change the default "
+"password to a new, unique password."
+msgstr "使用根管理员登录。这个账号管理CloudStack的部署，包括物理架构。根管理员可以通过更改配置来变更基本的功能，创建或删除用户账号，以及其它许多只有被授权的用户执行的操作。请更改默认的密码，确保其唯一性和安全性。"
+
+# 245d29fc03c0406eb25debd7beae06df
+#: ../../ui.rst:142
+msgid "Changing the Root Password"
+msgstr "更改Root密码"
+
+# e7c7d3abe5564cc1a37b80c78666c4f0
+#: ../../ui.rst:144
+msgid ""
+"During installation and ongoing cloud administration, you will need to log "
+"in to the UI as the root administrator. The root administrator account "
+"manages the CloudStack deployment, including physical infrastructure. The "
+"root administrator can modify configuration settings to change basic "
+"functionality, create or delete user accounts, and take many actions that "
+"should be performed only by an authorized person. When first installing "
+"CloudStack, be sure to change the default password to a new, unique value."
+msgstr "在云的安装及后续管理过程中，您需要用根管理员登录UI。根管理员账号管理着CloudStack的部署以及物理设施。根管理员可以修改系统配置，改变基本功能，创建和删除用户账号，以及其他仅限于已授权人员执行的操作。在初始安CloudStack时，请务必修改默认密码为新的较独特的密码。"
+
+# 6043d1e39c2a48e4b854e3578f22ec8c
+#: ../../ui.rst:164
+msgid ""
+"Log in to the UI using the current root user ID and password. The default is"
+" admin, password."
+msgstr "使用当前root用户的ID和口令登录UI。缺省为admin，pawword。"
+
+# cd0b86751e6349b0b87a2b0b90f2aa0f
+#: ../../ui.rst:169
+msgid "Click Accounts."
+msgstr "点击帐户。"
+
+# 026a6a1bd5f249e5ba1083e8c008bff0
+#: ../../ui.rst:173
+msgid "Click the admin account name."
+msgstr "点击管理员帐号名。"
+
+# d409c268bfec40fdaafc542ed7e5f9a8
+#: ../../ui.rst:177
+msgid "Click View Users."
+msgstr "点击查看用户。"
+
+# aaa72f38d16f48b483ed186fa00197c1
+#: ../../ui.rst:181
+msgid "Click the admin user name."
+msgstr "点击管理员用户名。"
+
+# 028079ae04324fb6b57f66f799f63c62
+#: ../../ui.rst:185
+msgid "Click the Change Password button. |change-password.png|"
+msgstr "点击更改密码按钮。 |change-password.png|"
+
+# ac75f53f86c345ff8363e0493a554c7e
+#: ../../ui.rst:189
+msgid "Type the new password, and click OK."
+msgstr "输入新密码，然后点击确认。"
+
+# 247f04e8fcf944c4b5dae33d5904fc7e
+#: ../../ui.rst:192
+msgid "Using SSH Keys for Authentication"
+msgstr "未验证使用SSH秘钥"
+
+# 17729e6e0703435c8d7cdae57ea0158e
+#: ../../ui.rst:194
+msgid ""
+"In addition to the username and password authentication, CloudStack supports"
+" using SSH keys to log in to the cloud infrastructure for additional "
+"security. You can use the createSSHKeyPair API to generate the SSH keys."
+msgstr "除了用户名和密码验证之外，出于额外的安全性考虑，CloudStack还支持使用SSH秘钥来登录到云架构。你可以使用createSSHKeyPair API来生成SSH秘钥。"
+
+# 60474970e0924ca8881ca58a0f2aaf1c
+#: ../../ui.rst:199
+msgid ""
+"Because each cloud user has their own SSH key, one cloud user cannot log in "
+"to another cloud user's instances unless they share their SSH key files. "
+"Using a single SSH key pair, you can manage multiple instances."
+msgstr "因为每个云用户都有他们自己的SSH秘钥，一个云用户不能登录到另一个云用户的实例中，除非他们共享了他们的SSH key文件。使用一个SSH秘钥对，你可以管理多个实例。"
+
+# d04ab78757e648db9a36b21757d95eb2
+#: ../../ui.rst:204
+msgid "Creating an Instance Template that Supports SSH Keys"
+msgstr "创建一个支持SSH秘钥的实例模板"
+
+# 7c8b494ef99a4f8b91c6a2ae002c4924
+#: ../../ui.rst:206
+msgid "Create an instance template that supports SSH Keys."
+msgstr "创建一个支持SSH秘钥的实例模板。"
+
+# 4912a213c00d429780087b2cfe97da53
+#: ../../ui.rst:210
+msgid "Create a new instance by using the template provided by cloudstack."
+msgstr "使用CloudStack提供的模板创建一个新的实例。"
+
+# a6a64feeebfc45e093188be0b11f249c
+#: ../../ui.rst:212
+msgid "For more information on creating a new instance, see"
+msgstr "关于创建新实例的更多信息，请参阅"
+
+# d9301346ec2b4466bbcb41b41e4fca67
+#: ../../ui.rst:216
+msgid ""
+"Download the cloudstack script from `The SSH Key Gen Script "
+"<http://sourceforge.net/projects/cloudstack/files/SSH%20Key%20Gen%20Script/>`_"
+" to the instance you have created."
+msgstr "从 `The SSH Key Gen Script <http://sourceforge.net/projects/cloudstack/files/SSH%20Key%20Gen%20Script/>`_ 下载CloudStack脚本到你已经创建的实例中。"
+
+# 35616f7818954a1f944b86f8c1647662
+#: ../../ui.rst:224
+msgid "Copy the file to /etc/init.d."
+msgstr "复制这个脚本到 /etc/init.d。"
+
+# 9cd32ae2ba0048f7b0defa4c05704fe4
+#: ../../ui.rst:232
+msgid "Give the necessary permissions on the script:"
+msgstr "给这个脚本必要的权限："
+
+# a3cdb8470165420e9cf800130e0c9558
+#: ../../ui.rst:240
+msgid "Run the script while starting up the operating system:"
+msgstr "当系统启动的时候运行脚本："
+
+# d72d733121264975825dda05eb82afa6
+#: ../../ui.rst:248
+msgid "Stop the instance."
+msgstr "停止实例。"
+
+# a4e2c66c696d4a828deb3db3bb32b233
+#: ../../ui.rst:251
+msgid "Creating the SSH Keypair"
+msgstr "创建SSH秘钥对"
+
+# eda0dab882fb4b638b95e4b9037d81d5
+#: ../../ui.rst:253
+msgid ""
+"You must make a call to the createSSHKeyPair api method. You can either use "
+"the CloudStack Python API library or the curl commands to make the call to "
+"the cloudstack api."
+msgstr "你必须给createSSHKeyPair api方法做一个调用。你可以使用CloudStack  Python API 库或curl 命令给CloudStack API做调用。"
+
+# e7eb58ee1cc84b6c840951ef582865f5
+#: ../../ui.rst:257
+msgid ""
+"For example, make a call from the cloudstack server to create a SSH keypair "
+"called \"keypair-doc\" for the admin account in the root domain:"
+msgstr "比如，从CloudStack服务器为根域中的管理员帐户做调用来创建一个SSH秘钥对 ，名称为 \"keypair-doc\" ："
+
+# 20b8836d5e81433da0a0f2282cce73ec
+#: ../../ui.rst:261
+msgid ""
+"Ensure that you adjust these values to meet your needs. If you are making "
+"the API call from a different server, your URL/PORT will be different, and "
+"you will need to use the API keys."
+msgstr "确认你调整这些值是你所需要的。如果你从不同的服务器上做API调用，你的 URL/PORT 也是不同的，并且你必须使用API 秘钥。"
+
+# dd16dc8df12049cc8028328a49770426
+#: ../../ui.rst:265
+msgid "Run the following curl command:"
+msgstr "运行如下curl命令："
+
+# 798b044a5a404bd2941a9401c694f194
+#: ../../ui.rst:271
+msgid "The output is something similar to what is given below:"
+msgstr "输出的内容与下面所示的类似："
+
+# a17314d9ae5f4ea784ffd1b69cd6cd2a
+#: ../../ui.rst:291
+msgid "Copy the key data into a file. The file looks like this:"
+msgstr "复制秘钥的数据到一个文件。这个文件类似于："
+
+# f0d5785a5fad443a97a2b93c0f250eb4
+#: ../../ui.rst:310
+msgid "Save the file."
+msgstr "保存文件。"
+
+# 3c61b221b8a44556a48855acb7af4081
+#: ../../ui.rst:313
+msgid "Creating an Instance"
+msgstr "创建实例"
+
+# 845a398aabe44a5e897e410247bd5050
+#: ../../ui.rst:315
+msgid ""
+"After you save the SSH keypair file, you must create an instance by using "
+"the template that you created at `Section 5.2.1, “ Creating an Instance "
+"Template that Supports SSH Keys” <#create-ssh-template>`__. Ensure that you "
+"use the same SSH key name that you created at `Section 5.2.2, “Creating the "
+"SSH Keypair” <#create-ssh-keypair>`__."
+msgstr "在你保存了SSH秘钥对文件之后，你必须使用你在`章节 5.2.1, “ 创建支持SSH秘钥的实例模板” <#create-ssh-template>`__中创建的模来板创建一个实例。确保你使用与你在`章节 5.2.2, “创建秘钥对” <#create-ssh-keypair>`__中创建的同样的SSH秘钥名称。"
+
+# ca39f1c10c0b4ec5a8e4eb9fd95332a8
+#: ../../ui.rst:323
+msgid ""
+"You cannot create the instance by using the GUI at this time and associate "
+"the instance with the newly created SSH keypair."
+msgstr "这时候你不能通过使用 GUI来创建实例，要使用新创建的SSH秘钥对来关联实例。"
+
+# 1ba0532c6e384ad6946a13e520f2d0cb
+#: ../../ui.rst:325
+msgid "A sample curl command to create a new instance is:"
+msgstr "使用简单的curl命令创建新的实例："
+
+# aeece32098de4a77970e86a23ee7503c
+#: ../../ui.rst:331
+msgid ""
+"Substitute the template, service offering and security group IDs (if you are"
+" using the security group feature) that are in your cloud environment."
+msgstr "在你的云环境中，服务方案和安全组IDs(如果你使用安全组功能)可以替代模板。"
+
+# 5acfe9f470754268bf12beafb1da8590
+#: ../../ui.rst:336
+msgid "Logging In Using the SSH Keypair"
+msgstr "使用SSH秘钥对登录"
+
+# ecbc54c997a6494591311348d6c7cf10
+#: ../../ui.rst:338
+msgid ""
+"To test your SSH key generation is successful, check whether you can log in "
+"to the cloud setup."
+msgstr "测试你的SSH秘钥的生成是否成功，需要检查是否能够登录到云中。"
+
+# f728e066bd8042eb9f636f25a36855df
+#: ../../ui.rst:341
+msgid "For example, from a Linux OS, run:"
+msgstr "举个例子，在LinuxOS中，运行："
+
+# ada257a069dc4790a47c1f4742f1e348
+#: ../../ui.rst:347
+msgid ""
+"The -i parameter tells the ssh client to use a ssh key found at ~/.ssh"
+"/keypair-doc."
+msgstr "参数-i是通知ssh客户端使用一个在~/.ssh/keypair-doc中找到的ssh秘钥。"
+
+# b5c198f3ab0344df9eaf41527b550991
+#: ../../ui.rst:351
+msgid "Resetting SSH Keys"
+msgstr "重置SSH密钥"
+
+# 459aabf9f16142f2a857a89ccd498c4a
+#: ../../ui.rst:353
+msgid ""
+"With the API command resetSSHKeyForVirtualMachine, a user can set or reset "
+"the SSH keypair assigned to a virtual machine. A lost or compromised SSH "
+"keypair can be changed, and the user can access the VM by using the new "
+"keypair. Just create or register a new keypair, then call "
+"resetSSHKeyForVirtualMachine."
+msgstr "通过API命令resetSSHKeyForVirtualMachine，用户可以设置或者重设分配给虚拟机的SSH秘钥对。可以更改丢失或被盗用的SSH密钥对，并且用户可以使用新的秘钥对来访问VM。只要创建或注册新的密钥对然后调用resetSSHKeyForVirtualMachine。"
