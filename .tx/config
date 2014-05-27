@@ -102,3 +102,8 @@ file_filter = source/locale/<lang>/LC_MESSAGES/virtual_machines.po
 source_file = source/locale/pot/virtual_machines.pot
 source_lang = en
 
+[apache-cloudstack-administration-rtd.networking_and_traffic]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking_and_traffic.po
+source_file = source/locale/pot/networking_and_traffic.pot
+source_lang = en
+
