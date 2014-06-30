@@ -107,3 +107,148 @@ file_filter = source/locale/<lang>/LC_MESSAGES/networking_and_traffic.po
 source_file = source/locale/pot/networking_and_traffic.pot
 source_lang = en
 
+[apache-cloudstack-administration-rtd.networking--acquiring_an_ip_address]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/acquiring_an_ip_address.po
+source_file = source/locale/pot/networking/acquiring_an_ip_address.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--advanced_zone_config]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/advanced_zone_config.po
+source_file = source/locale/pot/networking/advanced_zone_config.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--basic_zone_config]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/basic_zone_config.po
+source_file = source/locale/pot/networking/basic_zone_config.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--dns_and_dhcp]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/dns_and_dhcp.po
+source_file = source/locale/pot/networking/dns_and_dhcp.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--elastic_ips]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/elastic_ips.po
+source_file = source/locale/pot/networking/elastic_ips.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--external_firewalls_and_load_balancers]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/external_firewalls_and_load_balancers.po
+source_file = source/locale/pot/networking/external_firewalls_and_load_balancers.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--global_server_load_balancing]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/global_server_load_balancing.po
+source_file = source/locale/pot/networking/global_server_load_balancing.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--guest_ip_ranges]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/guest_ip_ranges.po
+source_file = source/locale/pot/networking/guest_ip_ranges.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--guest_traffic]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/guest_traffic.po
+source_file = source/locale/pot/networking/guest_traffic.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--inter_vlan_routing]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/inter_vlan_routing.po
+source_file = source/locale/pot/networking/inter_vlan_routing.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--ip_forwarding_and_firewalling]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/ip_forwarding_and_firewalling.po
+source_file = source/locale/pot/networking/ip_forwarding_and_firewalling.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--ip_load_balancing]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/ip_load_balancing.po
+source_file = source/locale/pot/networking/ip_load_balancing.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--ip_reservation_in_guest_networks]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/ip_reservation_in_guest_networks.po
+source_file = source/locale/pot/networking/ip_reservation_in_guest_networks.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--isolation_in_advanced_zone_with_vlan]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/isolation_in_advanced_zone_with_vlan.po
+source_file = source/locale/pot/networking/isolation_in_advanced_zone_with_vlan.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--multiple_guest_networks]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/multiple_guest_networks.po
+source_file = source/locale/pot/networking/multiple_guest_networks.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--multiple_ip_ranges]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/multiple_ip_ranges.po
+source_file = source/locale/pot/networking/multiple_ip_ranges.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--multiple_ips_on_single_nic]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/multiple_ips_on_single_nic.po
+source_file = source/locale/pot/networking/multiple_ips_on_single_nic.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--multiple_subnets_in_shared_network]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/multiple_subnets_in_shared_network.po
+source_file = source/locale/pot/networking/multiple_subnets_in_shared_network.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--networking_in_pod]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/networking_in_pod.po
+source_file = source/locale/pot/networking/networking_in_pod.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--networking_in_zone]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/networking_in_zone.po
+source_file = source/locale/pot/networking/networking_in_zone.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--palo_alto_config]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/palo_alto_config.po
+source_file = source/locale/pot/networking/palo_alto_config.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--persistent_networks]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/persistent_networks.po
+source_file = source/locale/pot/networking/persistent_networks.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--portable_ips]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/portable_ips.po
+source_file = source/locale/pot/networking/portable_ips.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--public_ips_and_vlans_for_accounts]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/public_ips_and_vlans_for_accounts.po
+source_file = source/locale/pot/networking/public_ips_and_vlans_for_accounts.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--releasing_an_ip_address]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/releasing_an_ip_address.po
+source_file = source/locale/pot/networking/releasing_an_ip_address.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--remote_access_vpn]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/remote_access_vpn.po
+source_file = source/locale/pot/networking/remote_access_vpn.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--security_groups]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/security_groups.po
+source_file = source/locale/pot/networking/security_groups.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--static_nat]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/static_nat.po
+source_file = source/locale/pot/networking/static_nat.pot
+source_lang = en
+
+[apache-cloudstack-administration-rtd.networking--virtual_private_cloud_config]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking/virtual_private_cloud_config.po
+source_file = source/locale/pot/networking/virtual_private_cloud_config.pot
+source_lang = en
+
