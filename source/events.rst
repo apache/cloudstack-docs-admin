@@ -141,6 +141,59 @@ changes can control the behaviour.
 
       The ``eventNotificationBus`` bean represents the
       ``org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus`` class.
+      
+      If you want to use encrypted values for the username and password, you have to include a bean to pass those
+      as variables from a credentials file.
+      
+      A sample is given below
+      
+      .. code:: bash
+      
+         <beans xmlns="http://www.springframework.org/schema/beans"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:context="http://www.springframework.org/schema/context"
+                xmlns:aop="http://www.springframework.org/schema/aop"
+                xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                 http://www.springframework.org/schema/context
+                 http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+         >
+
+            <bean id="eventNotificationBus" class="org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus">
+               <property name="name" value="eventNotificationBus"/>
+               <property name="server" value="127.0.0.1"/>
+               <property name="port" value="5672"/>
+               <property name="username" value="${username}"/>
+               <property name="password" value="${password}"/>
+               <property name="exchange" value="cloudstack-events"/>
+            </bean>
+
+            <bean id="environmentVariablesConfiguration" class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+               <property name="algorithm" value="PBEWithMD5AndDES" />
+               <property name="passwordEnvName" value="APP_ENCRYPTION_PASSWORD" />
+            </bean>
+
+            <bean id="configurationEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+               <property name="config" ref="environmentVariablesConfiguration" />
+            </bean>
+
+            <bean id="propertyConfigurer" class="org.jasypt.spring3.properties.EncryptablePropertyPlaceholderConfigurer">
+               <constructor-arg ref="configurationEncryptor" />
+               <property name="location" value="classpath:/cred.properties" />
+            </bean>
+         </beans>
+
+
+      Create a new file in the same folder called ``cred.properties`` and the specify the values for username and password as jascrypt encrypted strings
+
+      Sample, with ``guest`` as values for both fields:
+         
+      .. code:: bash
+         
+         username=nh2XrM7jWHMG4VQK18iiBQ==
+         password=nh2XrM7jWHMG4VQK18iiBQ==
+         
 
 #. Restart the Management Server.
 
