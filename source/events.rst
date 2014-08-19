@@ -95,7 +95,9 @@ As a CloudStack administrator, perform the following one-time
 configuration to enable event notification framework. At run time no
 changes can control the behaviour.
 
-#. Open ``'componentContext.xml``.
+#. Create the folder ``/etc/cloudstack/management/META-INF/cloudstack/core``
+
+#. Inside that folder, open ``spring-event-bus-context.xml``.
 
 #. Define a bean named ``eventNotificationBus`` as follows:
 
@@ -118,14 +120,24 @@ changes can control the behaviour.
 
       .. code:: bash
 
-         <bean id="eventNotificationBus" class="org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus">
-           <property name="name" value="eventNotificationBus"/>
-           <property name="server" value="127.0.0.1"/>
-           <property name="port" value="5672"/>
-           <property name="username" value="guest"/>
-           <property name="password" value="guest"/>
-           <property name="exchange" value="cloudstack-events"/>
-         </bean>
+         <beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:context="http://www.springframework.org/schema/context"
+         xmlns:aop="http://www.springframework.org/schema/aop"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+            <bean id="eventNotificationBus" class="org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus">
+               <property name="name" value="eventNotificationBus"/>
+               <property name="server" value="127.0.0.1"/>
+               <property name="port" value="5672"/>
+               <property name="username" value="guest"/>
+               <property name="password" value="guest"/>
+               <property name="exchange" value="cloudstack-events"/>
+            </bean>
+         </beans>
 
       The ``eventNotificationBus`` bean represents the
       ``org.apache.cloudstack.mom.rabbitmq.RabbitMQEventBus`` class.
