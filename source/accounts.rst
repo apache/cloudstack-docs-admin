@@ -186,160 +186,54 @@ Using an LDAP Server for User Authentication
 --------------------------------------------
 
 You can use an external LDAP server such as Microsoft Active Directory
-or ApacheDS to authenticate CloudStack end-users. Just map CloudStack
-accounts to the corresponding LDAP accounts using a query filter. The
-query filter is written using the query syntax of the particular LDAP
-server, and can include special wildcard characters provided by
-CloudStack for matching common values such as the user’s email address
-and name. CloudStack will search the external LDAP directory tree
-starting at a specified base directory and return the distinguished name
-(DN) and password of the matching user. This information along with the
-given password is used to authenticate the user..
+or ApacheDS to authenticate CloudStack end-users. 
+CloudStack will search the external LDAP directory tree
+starting at a specified base directory and gets user info such as first name, last name, email and username. 
+
+To authenticate, username and password entered by the user are used.
+Cloudstack does a search for a user with the given username. If it exists, it does a bind request with DN and password
 
 To set up LDAP authentication in CloudStack, call the CloudStack API
-command ldapConfig and provide the following:
-
--  Hostname or IP address and listening port of the LDAP server
-
--  Base directory and query filter
-
--  Search user DN credentials, which give CloudStack permission to
-   search on the LDAP server
-
--  SSL keystore and password, if SSL is used
+command addLdapConfiguration and provide Hostname or IP address and listening port of the LDAP server.
+You could configure multiple servers as well. These are expected to be replicas. If one fails, the next one is used.
 
 
-Example LDAP Configuration Commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To understand the examples in this section, you need to know the basic
-concepts behind calling the CloudStack API, which are explained in the
-Developer’s Guide.
-
-The following shows an example invocation of ldapConfig with an ApacheDS
-LDAP server
-
-.. code:: bash
-
-   http://127.0.0.1:8080/client/api?command=ldapConfig&hostname=127.0.0.1&searchbase=ou%3Dtesting%2Co%3Dproject&queryfilter=%28%26%28uid%3D%25u%29%29&binddn=cn%3DJohn+Singh%2Cou%3Dtesting%2Co%project&bindpass=secret&port=10389&ssl=true&truststore=C%3A%2Fcompany%2Finfo%2Ftrusted.ks&truststorepass=secret&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
-
-The command must be URL-encoded. Here is the same example without the
-URL encoding:
-
-.. code:: bash
-   
-   http://127.0.0.1:8080/client/api?command=ldapConfig
-   &hostname=127.0.0.1
-   &searchbase=ou=testing,o=project
-   &queryfilter=(&(%uid=%u))
-   &binddn=cn=John+Singh,ou=testing,o=project
-   &bindpass=secret
-   &port=10389
-   &ssl=true
-   &truststore=C:/company/info/trusted.ks
-   &truststorepass=secret
-   &response=json
-   &apiKey=YourAPIKey&signature=YourSignatureHash
-
-The following shows a similar command for Active Directory. Here, the
-search base is the testing group within a company, and the users are
-matched up based on email address.
-
-.. code:: bash
-
-   http://10.147.29.101:8080/client/api?command=ldapConfig&hostname=10.147.28.250&searchbase=OU%3Dtesting%2CDC%3Dcompany&queryfilter=%28%26%28mail%3D%25e%29%29 &binddn=CN%3DAdministrator%2COU%3Dtesting%2CDC%3Dcompany&bindpass=1111_aaaa&port=389&response=json&apiKey=YourAPIKey&signature=YourSignatureHash
-
-The next few sections explain some of the concepts you will need to know
-when filling out the ldapConfig parameters.
+The following global configurations should also be configured (the default values are for openldap)
 
 
-Search Base
-~~~~~~~~~~~
+- ldap.basedn:	Sets the basedn for LDAP. Ex: OU=APAC,DC=company,DC=com
+- ldap.bind.principal,ldap.bind.password: DN and password for a user who can list all the users in the above basedn. Ex: CN=Administrator, OU=APAC, DC=company, DC=com
+- ldap.user.object: object type of users within LDAP. Defaults value is user for AD and interorgperson for openldap.
+- ldap.email.attribute: email attribute within ldap for a user. Default value for AD and openldap is mail.
+- ldap.firstname.attribute: firstname attribute within ldap for a user. Default value for AD and openldap is givenname.
+- ldap.username.attribute: username attribute for a user within LDAP. Default value is SAMAccountNAme	for AD and uid for openldap.
 
-An LDAP query is relative to a given node of the LDAP directory tree,
-called the search base. The search base is the distinguished name (DN)
-of a level of the directory tree below which all users can be found. The
-users can be in the immediate base directory or in some subdirectory.
-The search base may be equivalent to the organization, group, or domain
-name. The syntax for writing a DN varies depending on which LDAP server
-you are using. A full discussion of distinguished names is outside the
-scope of our documentation. The following table shows some examples of
-search bases to find users in the testing department..
+Restricting LDAP users to a group:
+~~~~~~~~~~~~~
+- ldap.search.group.principle: this is optional and if set only users from this group are listed.		
 
-================  =======================
-LDAP Server       Example Search Base DN
-================  =======================
-ApacheDS          OU=testing, O=project
-Active Directory  OU=testing, DC=company
-================  =======================
+LDAP SSL:
+~~~~~~~~~~~~~
+- ldap.lastname.attribute: lsatname attribute within ldap for a user. Default value for AD and openldap is sn.
+- ldap.truststore, ldap.truststore.password:	truststore,password to use for LDAP SSL.	
+ 
+LDAP groups:  
+~~~~~~~~~~~~~
+- ldap.group.object: object type of groups within LDAP. Default value is group for AD and groupOfUniqueNames for openldap.	
+- ldap.group.user.uniquemember: attribute for uniquemembers within a group. Default value is member for AD and uniquemember for openldap.
+ 
 
+Once configured, on Add Account page, you will see an "Add LDAP Account" button which opens a dialog and the selected users can be imported.
 
-Query Filter
-~~~~~~~~~~~~
-
-The query filter is used to find a mapped user in the external LDAP
-server. The query filter should uniquely map the CloudStack user to LDAP
-user for a meaningful authentication. For more information about query
-filter syntax, consult the documentation for your LDAP server.
-
-The CloudStack query filter wildcards are:
-
-=====================  ====================
-Query Filter Wildcard  Description
-=====================  ====================
-%u                     User name
-%e                     Email address
-%n                     First and last name
-=====================  ====================
-
-The following examples assume you are using Active Directory, and refer
-to user attributes from the Active Directory schema.
-
-If the CloudStack user name is the same as the LDAP user ID:
-
-.. code:: bash
-
-   (uid=%u)
-
-If the CloudStack user name is the LDAP display name:
-
-.. code:: bash
-
-   (displayName=%u)
-
-To find a user by email address:
-
-.. code:: bash
-
-   (mail=%e)
+.. figure:: _static/images/CloudStack-ldap-screen1.png
+   :align:   center
 
 
-Search User Bind DN
-~~~~~~~~~~~~~~~~~~~
 
-The bind DN is the user on the external LDAP server permitted to search
-the LDAP directory within the defined search base. When the DN is
-returned, the DN and passed password are used to authenticate the
-CloudStack user with an LDAP bind. A full discussion of bind DNs is
-outside the scope of our documentation. The following table shows some
-examples of bind DNs.
+You could also use api commands: listLdapUsers, ldapCreateAccount and importLdapUsers.
 
-================  =================================================
-LDAP Server       Example Bind DN
-================  =================================================
-ApacheDS          CN=Administrator,DC=testing,OU=project,OU=org
-Active Directory  CN=Administrator, OU=testing, DC=company, DC=com
-================  =================================================
+Once LDAP is enabled, the users will not be allowed to changed password directly in cloudstack.
 
-
-SSL Keystore Path and Password
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If the LDAP server requires SSL, you need to enable it in the ldapConfig
-command by setting the parameters ssl, truststore, and truststorepass.
-Before enabling SSL for ldapConfig, you need to get the certificate
-which the LDAP server is using and add it to a trusted keystore. You
-will need to know the path to the keystore and the password.
 
 
 .. |button to dedicate a zone, pod,cluster, or host| image:: _static/images/dedicate-resource-button.png
