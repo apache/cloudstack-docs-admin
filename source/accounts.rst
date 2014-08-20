@@ -186,53 +186,80 @@ Using an LDAP Server for User Authentication
 --------------------------------------------
 
 You can use an external LDAP server such as Microsoft Active Directory
-or ApacheDS to authenticate CloudStack end-users. 
-CloudStack will search the external LDAP directory tree
-starting at a specified base directory and gets user info such as first name, last name, email and username. 
+or ApacheDS to authenticate CloudStack end-users. CloudStack will search
+the external LDAP directory tree starting at a specified base directory
+and gets user info such as first name, last name, email and username.
 
 To authenticate, username and password entered by the user are used.
-Cloudstack does a search for a user with the given username. If it exists, it does a bind request with DN and password
+Cloudstack does a search for a user with the given username. If it
+exists, it does a bind request with DN and password.
 
 To set up LDAP authentication in CloudStack, call the CloudStack API
-command addLdapConfiguration and provide Hostname or IP address and listening port of the LDAP server.
-You could configure multiple servers as well. These are expected to be replicas. If one fails, the next one is used.
+command ``addLdapConfiguration`` and provide Hostname or IP address
+and listening port of the LDAP server. You could configure multiple
+servers as well. These are expected to be replicas. If one fails,
+the next one is used.
 
+The following global configurations should also be configured (the
+default values are for openldap)
 
-The following global configurations should also be configured (the default values are for openldap)
+-  ``ldap.basedn``:	Sets the basedn for LDAP. Ex: **OU=APAC,DC=company,DC=com**
 
+-  ``ldap.bind.principal``, ``ldap.bind.password``: DN and password for a user
+   who can list all the users in the above basedn. Ex:
+   **CN=Administrator, OU=APAC, DC=company, DC=com**
 
-- ldap.basedn:	Sets the basedn for LDAP. Ex: OU=APAC,DC=company,DC=com
-- ldap.bind.principal,ldap.bind.password: DN and password for a user who can list all the users in the above basedn. Ex: CN=Administrator, OU=APAC, DC=company, DC=com
-- ldap.user.object: object type of users within LDAP. Defaults value is user for AD and interorgperson for openldap.
-- ldap.email.attribute: email attribute within ldap for a user. Default value for AD and openldap is mail.
-- ldap.firstname.attribute: firstname attribute within ldap for a user. Default value for AD and openldap is givenname.
-- ldap.username.attribute: username attribute for a user within LDAP. Default value is SAMAccountNAme	for AD and uid for openldap.
+-  ``ldap.user.object``: object type of users within LDAP. Defaults value is
+   **user** for AD and **interorgperson** for openldap.
+
+-  ``ldap.email.attribute``: email attribute within ldap for a user. Default
+   value for AD and openldap is **mail**.
+
+-  ``ldap.firstname.attribute``: firstname attribute within ldap for a user.
+   Default value for AD and openldap is **givenname**.
+
+-  ``ldap.username.attribute``: username attribute for a user within LDAP.
+  Default value is **SAMAccountName** for AD and **uid** for openldap.
+
 
 Restricting LDAP users to a group:
-~~~~~~~~~~~~~
-- ldap.search.group.principle: this is optional and if set only users from this group are listed.		
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  ``ldap.search.group.principle``: this is optional and if set only users from
+   this group are listed.
+
 
 LDAP SSL:
-~~~~~~~~~~~~~
-- ldap.lastname.attribute: lsatname attribute within ldap for a user. Default value for AD and openldap is sn.
-- ldap.truststore, ldap.truststore.password:	truststore,password to use for LDAP SSL.	
- 
-LDAP groups:  
-~~~~~~~~~~~~~
-- ldap.group.object: object type of groups within LDAP. Default value is group for AD and groupOfUniqueNames for openldap.	
-- ldap.group.user.uniquemember: attribute for uniquemembers within a group. Default value is member for AD and uniquemember for openldap.
+~~~~~~~~~
+
+-  ``ldap.lastname.attribute``: lastname attribute within ldap for a user.
+   Default value for AD and openldap is **sn**.
+
+-  ``ldap.truststore``, ``ldap.truststore.password``:	truststore, password
+   to use for LDAP SSL.
  
 
-Once configured, on Add Account page, you will see an "Add LDAP Account" button which opens a dialog and the selected users can be imported.
+LDAP groups:
+~~~~~~~~~~~~
+
+-  ``ldap.group.object``: object type of groups within LDAP. Default value is
+   group for AD and **groupOfUniqueNames** for openldap.	
+
+-  ``ldap.group.user.uniquemember``: attribute for uniquemembers within a group.
+   Default value is **member** for AD and **uniquemember** for openldap.
+
+Once configured, on Add Account page, you will see an "Add LDAP Account" button
+which opens a dialog and the selected users can be imported.
 
 .. figure:: _static/images/CloudStack-ldap-screen1.png
    :align:   center
 
 
+You could also use api commands: ``listLdapUsers``, ``ldapCreateAccount`` and
+``importLdapUsers``.
 
-You could also use api commands: listLdapUsers, ldapCreateAccount and importLdapUsers.
-
-Once LDAP is enabled, the users will not be allowed to changed password directly in cloudstack.
+Once LDAP is enabled, the users will not be allowed to changed password
+directly in cloudstack.
 
 
 
