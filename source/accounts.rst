@@ -219,7 +219,7 @@ default values are for openldap)
    Default value for AD and openldap is **givenname**.
 
 -  ``ldap.username.attribute``: username attribute for a user within LDAP.
-  Default value is **SAMAccountName** for AD and **uid** for openldap.
+   Default value is **SAMAccountName** for AD and **uid** for openldap.
 
 
 Restricting LDAP users to a group:
