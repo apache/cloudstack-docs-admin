@@ -144,11 +144,11 @@ changes can control the behaviour.
       
       If you want to use encrypted values for the username and password, you have to include a bean to pass those
       as variables from a credentials file.
-      
+
       A sample is given below
-      
+
       .. code:: bash
-      
+
          <beans xmlns="http://www.springframework.org/schema/beans"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns:context="http://www.springframework.org/schema/context"
@@ -188,12 +188,12 @@ changes can control the behaviour.
       Create a new file in the same folder called ``cred.properties`` and the specify the values for username and password as jascrypt encrypted strings
 
       Sample, with ``guest`` as values for both fields:
-         
+
       .. code:: bash
-         
+
          username=nh2XrM7jWHMG4VQK18iiBQ==
          password=nh2XrM7jWHMG4VQK18iiBQ==
-         
+
 
 #. Restart the Management Server.
 
