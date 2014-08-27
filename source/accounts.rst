@@ -218,6 +218,9 @@ default values are for openldap)
 -  ``ldap.firstname.attribute``: firstname attribute within ldap for a user.
    Default value for AD and openldap is **givenname**.
 
+-  ``ldap.lastname.attribute``: lastname attribute within ldap for a user.
+   Default value for AD and openldap is **sn**.
+
 -  ``ldap.username.attribute``: username attribute for a user within LDAP.
    Default value is **SAMAccountName** for AD and **uid** for openldap.
 
@@ -231,9 +234,6 @@ Restricting LDAP users to a group:
 
 LDAP SSL:
 ~~~~~~~~~
-
--  ``ldap.lastname.attribute``: lastname attribute within ldap for a user.
-   Default value for AD and openldap is **sn**.
 
 -  ``ldap.truststore``, ``ldap.truststore.password``:	truststore, password
    to use for LDAP SSL.
