@@ -416,12 +416,14 @@ templating.
              echo "cloudstack-hostname: Hostname _localhost_ detected. Changing hostname and adding hosts."
              echo " Hostname: $hostname \n FQDN: $fqdn \n IP: $ip"
              # Update /etc/hosts
-             awk -v i="$ip" -v f="$fqdn" -v h="$hostname" "/^127/{x=1} !/^127/ && x { x=0; print i,f,h; } { print $0; }" /etc/  hosts > /etc/hosts.dhcp.tmp
+             awk -v i="$ip" -v f="$fqdn" -v h="$hostname" "/^127/{x=1} !/^127/ && x { x=0; print i,f,h; } { print $0; }" /etc/hosts > /etc/hosts.dhcp.tmp
              mv /etc/hosts /etc/hosts.dhcp.bak
              mv /etc/hosts.dhcp.tmp /etc/hosts
              # Rename Host
              echo $hostname > /etc/hostname
              hostname $hostname
+             /etc/init.d/hostname.sh start
+             echo $hostname > /proc/sys/kernel/hostname
              # Recreate SSH2
              export DEBIAN_FRONTEND=noninteractive
              dpkg-reconfigure openssh-server
