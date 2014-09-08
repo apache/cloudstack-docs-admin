@@ -264,3 +264,44 @@ directly in cloudstack.
 
 
 .. |button to dedicate a zone, pod,cluster, or host| image:: _static/images/dedicate-resource-button.png
+
+Using a SAML 2.0 Identity Provider for User Authentication
+----------------------------------------------------------
+
+You can use a SAML 2.0 Identity Provider with CloudStack for user
+authentication. This will require enabling the SAML 2.0 service provider plugin
+in CloudStack. On successful authentication, CloudStack will use the persistent
+or emailAddress NameID from the SAML token to find an existing user or create
+a new user with this NameID and let the user log in to the CloudStack UI.
+
+First, enable the SAML plugin by setting ``saml2.enabled`` to ``true`` and
+restart management server. To start a SAML 2.0 Single Sign-On authentication,
+the user should call the ``samlsso`` API command which will redirect the user to
+IdP login page. Upon successful authentication, the IdP will redirect the user
+to CloudStack. To start a SAML 2.0 Single Log-Out, the user calls the
+``samlslo`` API command which globally logs out the user and return back to
+CloudStack UI login page. The CloudStack service provider metadata is accessible
+from the ``getSPMetadata`` API command.
+
+The following global configuration should be configured:
+
+-  ``saml2.enabled``: Set this to **true** to enable the SAML Plugin. Default is **false**.
+
+-  ``saml2.default.accountname``: Account name for creating new users. Default is **admin**.
+
+-  ``saml2.default.domainid``: Domain (UUID string) to use for creating new users. Default is **1** (root domain).
+
+-  ``saml2.redirect.url``: The CloudStack UI url the SSO should redirected to when successful. Default is **http://localhost:8080/client**.
+
+-  ``saml2.sp.id``: CloudStack service provider entity ID. Default is **org.apache.cloudstack**.
+
+-  ``saml2.sp.sso.url``: CloudStack service provider Single Sign-On URL. Default is **http://localhost:8080/client/api?command=samlsso**.
+
+-  ``saml2.sp.slo.url``: CloudStack service provider entity ID. Default is **http://localhost:8080/client/api?command=samlslo**.
+
+-  ``saml2.idp.id``: The Identity Provider entity ID string. Default is **https://openidp.feide.no**.
+
+-  ``saml2.idp.metadata.url``: Identity Provider Metadata XML Url. Default is **https://openidp.feide.no/simplesaml/saml2/idp/metadata.php**.
+
+-  ``saml2.timeout``: Timeout used for downloading and parsing IdP metadata in milliseconds. Default is **30000**.
+
