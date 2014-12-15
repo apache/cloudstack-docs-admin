@@ -293,6 +293,15 @@ To create a new compute offering:
       Preferred: The VM will be deployed in dedicated infrastructure if
       possible. Otherwise, the VM can be deployed in shared
       infrastructure.
+      
+   - **GPU**: Specify the card you want to use.
+  
+     The options given are NVIDIA GRID K1 and NVIDIA GRID K2. These are vGPU capable cards that allow multiple vGPUs on a single physical GPU. If you want to use a card other than these, make the createServiceOffering API call.
+     
+   - **vGPU Type** : Represents the type of virtual GPU to be assigned to a guest VM. In this case, only a portion of a physical GPU card (vGPU) is assigned to the guest VM. The available options includes GRID K100, K140Q, K200 and so on.
+     
+     Additionally, passthrough vGPU type is defined to represet a physical GPU device. A passthrough vGPU can directly be assigned to a single guest VM. In this case, a physical GPU device is exclusively allotted to a single guest VM.
+
 
 #. Click Add.
 
