@@ -287,11 +287,30 @@ to CloudStack. To start a SAML 2.0 Single Log-Out, the user calls the
 CloudStack UI login page. The CloudStack service provider metadata is accessible
 from the ``getSPMetadata`` API command.
 
+After a user is authenticated, the IdP sends a SAML response to CloudStack using
+HTTP-Redirect scheme. Upon checking the response, CloudStack create a user account
+if required or gets the user account and sets cookie and redirects to the /client
+page. Note if the domain name used in the assertion consumer service URL is not
+same as the redirect URL (saml2.redirect.url) user won't be able to login because
+cookies are not set on the redirected URL's domain.
+
+Limitations:
+
+- Admins cannot specifiy supported attributes, currently supported attributes are
+  `uid`, `email`, `givenName` and `sn`.
+
+- Once authenticated for the first time, a user account with a user is created
+  using a persistent NameID or unique attributes such as uid or email. All user
+  accounts are under one domain.
+
+- The SAML authentication plugin with only SAML 2.0 IdPs which support HTTP-Redirect
+  and authentication works with only one IdP server
+
+- Tested only with OneLogin, Feide OpenIDP, PingIdentity
+
 The following global configuration should be configured:
 
 -  ``saml2.enabled``: Set this to **true** to enable the SAML Plugin. Default is **false**.
-
--  ``saml2.default.accountname``: Account name for creating new users. Default is **admin**.
 
 -  ``saml2.default.domainid``: Domain (UUID string) to use for creating new users. Default is **1** (root domain).
 
@@ -308,4 +327,3 @@ The following global configuration should be configured:
 -  ``saml2.idp.metadata.url``: Identity Provider Metadata XML Url. Default is **https://openidp.feide.no/simplesaml/saml2/idp/metadata.php**.
 
 -  ``saml2.timeout``: Timeout used for downloading and parsing IdP metadata in milliseconds. Default is **30000**.
-
