@@ -396,7 +396,7 @@ templating.
       values to set the hostname and append the `/etc/hosts` file for
       local hostname resolution. Once this script, or a user has changed
       the hostname from localhost, it will no longer adjust system files
-      regardless of it's new hostname. The script also recreates
+      regardless of its new hostname. The script also recreates
       openssh-server keys, which should have been deleted before
       templating (shown below). Save the following script to
       `/etc/dhcp/dhclient-exit-hooks.d/sethostname`, and adjust the
