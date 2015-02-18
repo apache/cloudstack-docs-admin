@@ -414,7 +414,7 @@ templating.
              fqdn="$hostname.$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /domain-name/ { domain = $3 }  END { printf     domain } ' | sed 's/[";]//g')"
              ip=$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /fixed-address/ { lease = $2 }  END { printf lease } ' | sed     's/[";]//g')
              echo "cloudstack-hostname: Hostname _localhost_ detected. Changing hostname and adding hosts."
-             echo " Hostname: $hostname \n FQDN: $fqdn \n IP: $ip"
+             printf " Hostname: $hostname\n FQDN: $fqdn\n IP: $ip"
              # Update /etc/hosts
              awk -v i="$ip" -v f="$fqdn" -v h="$hostname" "/^127/{x=1} !/^127/ && x { x=0; print i,f,h; } { print $0; }" /etc/hosts > /etc/hosts.dhcp.tmp
              mv /etc/hosts /etc/hosts.dhcp.bak
