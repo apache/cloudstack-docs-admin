@@ -421,8 +421,7 @@ templating.
              mv /etc/hosts.dhcp.tmp /etc/hosts
              # Rename Host
              echo $hostname > /etc/hostname
-             hostname $hostname
-             /etc/init.d/hostname.sh start
+             hostname -b -F /etc/hostname
              echo $hostname > /proc/sys/kernel/hostname
              # Recreate SSH2
              export DEBIAN_FRONTEND=noninteractive
