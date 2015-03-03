@@ -214,9 +214,11 @@ template creation. Volumes are hypervisor-specific: a volume from one
 hypervisor type may not be used on a guest of another hypervisor type.
 
 .. note:: 
-   CloudStack supports attaching up to 13 data disks to a VM on 
-   XenServer hypervisor versions 6.0 and above. For the VMs on other 
-   hypervisor types, the data disk limit is 6.
+   CloudStack supports attaching up to
+   - 13 data disks on XenServer hypervisor versions 6.0 and above,
+     And all versions of VMware.
+   - 64 data disks on Hyper-V.
+   - 6 data disks on other hypervisor types.
 
 
 Creating a New Volume
