@@ -322,7 +322,7 @@ To create a new disk offering:
       in Disk Size.
 
    -  **Disk Size**: Appears only if Custom Disk Size is not selected.
-      Define the volume size in GB.
+      Define the volume size in GB (2^30 1GB = 1,073,741,824 Bytes).
 
    -  **QoS Type**: Three options: Empty (no Quality of Service), hypervisor
       (rate limiting enforced on the hypervisor side), and storage
