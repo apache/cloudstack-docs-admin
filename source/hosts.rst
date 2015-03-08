@@ -233,18 +233,22 @@ To change a Node's password:
 
    .. code:: bash
 
-       mysql> select id from cloud.host where name like '%h%';
+      mysql> SELECT id FROM cloud.host WHERE name like '%h%';
 
 #. This should return a single ID. Record the set of such IDs for these
-   hosts.
+   hosts. Now retrieve the host_details row id for the host
+
+   .. code:: bash
+
+      mysql> SELECT * FROM cloud.host_details WHERE name='password' AND host_id={previous step ID}; 
 
 #. Update the passwords for the host in the database. In this example,
-   we change the passwords for hosts with IDs 5, 10, and 12 to
+   we change the passwords for hosts with host IDs 5 and 12 and host_details IDs 8 and 22 to
    "password".
 
    .. code:: bash
 
-       mysql> update cloud.host set password='password' where id=5 or id=10 or id=12;
+      mysql> UPDATE cloud.host_details SET value='password' WHERE id=8 OR id=22;
 
 
 Over-Provisioning and Service Offering Limits
