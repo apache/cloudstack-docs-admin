@@ -1049,7 +1049,7 @@ Use the following steps to begin the Linux OS installation:
 
    .. code:: bash
 
-      chmod +x /etc/init.d/cloud-set-guest-password
+      chmod +x /etc/init.d/cloud-set-guest-password.in
 
 #. Depending on the Linux distribution, continue with the appropriate
    step.
@@ -1058,7 +1058,7 @@ Use the following steps to begin the Linux OS installation:
 
    .. code:: bash
 
-      chkconfig --add cloud-set-guest-password
+      chkconfig --add cloud-set-guest-password.in
 
 
 Windows OS Installation
