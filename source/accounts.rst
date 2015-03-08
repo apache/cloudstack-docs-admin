@@ -235,7 +235,7 @@ Restricting LDAP users to a group:
 LDAP SSL:
 ~~~~~~~~~
 
-| If the LDAP server requires SSL, you need to enable the below configurations.
+If the LDAP server requires SSL, you need to enable the below configurations.
 Before enabling SSL for LDAP, you need to get the certificate which the LDAP server is using and add it to a trusted keystore.
 You will need to know the path to the keystore and the password.
 
