@@ -226,6 +226,17 @@ To change a Node's password:
    the host and the password known to CloudStack will not match.
    Operations on the cluster will fail until the two passwords match.
 
+#. if the password in the database is encrypted, it is (likely) necessary to
+   encrypt the new password using the database key before adding it to the database.
+
+   .. code:: bash
+
+      java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar \
+      org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI \
+      encrypt.sh input="newrootpassword" \
+      password="databasekey" \
+      verbose=false
+
 #. Get the list of host IDs for the host in the cluster where you are
    changing the password. You will need to access the database to
    determine these host IDs. For each hostname "h" (or vSphere cluster)
