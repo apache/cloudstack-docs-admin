@@ -396,7 +396,7 @@ templating.
       values to set the hostname and append the `/etc/hosts` file for
       local hostname resolution. Once this script, or a user has changed
       the hostname from localhost, it will no longer adjust system files
-      regardless of it's new hostname. The script also recreates
+      regardless of its new hostname. The script also recreates
       openssh-server keys, which should have been deleted before
       templating (shown below). Save the following script to
       `/etc/dhcp/dhclient-exit-hooks.d/sethostname`, and adjust the
@@ -414,15 +414,14 @@ templating.
              fqdn="$hostname.$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /domain-name/ { domain = $3 }  END { printf     domain } ' | sed 's/[";]//g')"
              ip=$(cat /var/lib/dhcp/dhclient.eth0.leases  |  awk ' /fixed-address/ { lease = $2 }  END { printf lease } ' | sed     's/[";]//g')
              echo "cloudstack-hostname: Hostname _localhost_ detected. Changing hostname and adding hosts."
-             echo " Hostname: $hostname \n FQDN: $fqdn \n IP: $ip"
+             printf " Hostname: $hostname\n FQDN: $fqdn\n IP: $ip"
              # Update /etc/hosts
              awk -v i="$ip" -v f="$fqdn" -v h="$hostname" "/^127/{x=1} !/^127/ && x { x=0; print i,f,h; } { print $0; }" /etc/hosts > /etc/hosts.dhcp.tmp
              mv /etc/hosts /etc/hosts.dhcp.bak
              mv /etc/hosts.dhcp.tmp /etc/hosts
              # Rename Host
              echo $hostname > /etc/hostname
-             hostname $hostname
-             /etc/init.d/hostname.sh start
+             hostname -b -F /etc/hostname
              echo $hostname > /proc/sys/kernel/hostname
              # Recreate SSH2
              export DEBIAN_FRONTEND=noninteractive
