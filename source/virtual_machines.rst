@@ -1167,6 +1167,8 @@ compromised SSH keypair can be changed, and the user can access the VM
 by using the new keypair. Just create or register a new keypair, then
 call resetSSHKeyForVirtualMachine.
 
+.. include:: virtual_machines/user-data.rst
+
 
 .. |basic-deployment.png| image:: _static/images/basic-deployment.png
    :alt: Basic two-machine CloudStack deployment
