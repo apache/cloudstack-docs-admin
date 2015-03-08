@@ -145,6 +145,7 @@ Managing Networks and Traffic
    :maxdepth: 2
 
    networking_and_traffic
+   networking/using_remote_access
 
 
 Managing the Cloud

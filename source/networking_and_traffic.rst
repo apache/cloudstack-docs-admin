@@ -72,6 +72,8 @@ providing networking features for guest traffic.
 
 .. include:: networking/remote_access_vpn.rst
 
+.. include:: networking/site_to_site_vpn.rst
+
 .. include:: networking/inter_vlan_routing.rst
 
 .. include:: networking/virtual_private_cloud_config.rst
