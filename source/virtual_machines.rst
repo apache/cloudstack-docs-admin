@@ -1170,54 +1170,40 @@ call resetSSHKeyForVirtualMachine.
 .. include:: virtual_machines/user-data.rst
 
 
-.. |basic-deployment.png| image:: _static/images/basic-deployment.png
-   :alt: Basic two-machine CloudStack deployment
-.. |VMSnapshotButton.png| image:: _static/images/VMSnapshotButton.png
-   :alt: button to restart a VPC
-.. |delete-button.png| image:: _static/images/delete-button.png
-.. |EditButton.png| image:: _static/images/edit-icon.png
-   :alt: button to edit the properties of a VM
-.. |change-affinity-button.png| image:: _static/images/change-affinity-button.png
-   :alt: button to assign an affinity group to a virtual machine.
-.. |ChangeServiceButton.png| image:: _static/images/change-service-icon.png
-   :alt: button to change the service of a VM
-.. |Migrateinstance.png| image:: _static/images/migrate-instance.png
-   :alt: button to migrate an instance
-.. |Destroyinstance.png| image:: _static/images/destroy-instance.png
-   :alt: button to destroy an instance
-.. |iso.png| image:: _static/images/iso-icon.png
-   :alt: depicts adding an iso image
-.. |console-icon.png| image:: _static/images/console-icon.png
-   :alt: depicts adding an iso image
-.. |revert-vm.png| image:: _static/images/revert-vm.png
-   :alt: depicts adding an iso image
-.. |StopButton.png| image:: _static/images/stop-instance-icon.png
-   :alt: depicts adding an iso image
-
-
 Assigning GPU/vGPU to Guest VMs
----------------------------------
+-------------------------------
 
-CloudStack can deploy guest VMs with Graphics Processing Unit (GPU) or Virtual Graphics
-Processing Unit (vGPU) capabilities on XenServer hosts. At the time of VM deployment or at a later
-stage, you can assign a physical GPU ( known as GPU-passthrough) or a portion of a physical GPU card (vGPU) to a guest VM by changing the Service Offering. With this capability, the VMs running on CloudStack meet the intensive graphical processing requirement by means of the high computation power of GPU/vGPU, and CloudStack users can run multimedia rich applications, such as Auto-CAD, that they otherwise enjoy at their desk on a virtualized environment.
-CloudStack leverages the XenServer support for NVIDIA GRID Kepler 1 and 2 series to run GPU/
-vGPU enabled VMs. NVIDIA GRID cards allows sharing a single GPU cards among multiple VMs
-by creating vGPUs for each VM. With vGPU technology, the graphics commands from each VM are
-passed directly to the underlying dedicated GPU, without the intervention of the hypervisor. This
-allows the GPU hardware to be time-sliced and shared across multiple VMs. XenServer hosts use the GPU cards in following ways:
+CloudStack can deploy guest VMs with Graphics Processing Unit (GPU) or Virtual
+Graphics Processing Unit (vGPU) capabilities on XenServer hosts. At the time of
+VM deployment or at a later stage, you can assign a physical GPU ( known as
+GPU-passthrough) or a portion of a physical GPU card (vGPU) to a guest VM by
+changing the Service Offering. With this capability, the VMs running on
+CloudStack meet the intensive graphical processing requirement by means of the
+high computation power of GPU/vGPU, and CloudStack users can run multimedia
+rich applications, such as Auto-CAD, that they otherwise enjoy at their desk on
+a virtualized environment.
+CloudStack leverages the XenServer support for NVIDIA GRID Kepler 1 and 2 series
+to run GPU/vGPU enabled VMs. NVIDIA GRID cards allows sharing a single GPU cards
+among multiple VMs by creating vGPUs for each VM. With vGPU technology, the
+graphics commands from each VM are passed directly to the underlying dedicated
+GPU, without the intervention of the hypervisor. This allows the GPU hardware
+to be time-sliced and shared across multiple VMs. XenServer hosts use the GPU
+cards in following ways:
 
-**GPU passthrough**: GPU passthrough represents a physical GPU which can be directly assigned to a VM. GPU
-passthrough can be used on a hypervisor alongside GRID vGPU, with some restrictions: A GRID
-physical GPU can either host GRID vGPUs or be used as passthrough, but not both at the same time.
+**GPU passthrough**: GPU passthrough represents a physical GPU which can be
+directly assigned to a VM. GPU passthrough can be used on a hypervisor alongside
+GRID vGPU, with some restrictions: A GRID physical GPU can either host GRID
+vGPUs or be used as passthrough, but not both at the same time.
 
-**GRID vGPU**: GRID vGPU enables multiple VMs to share a single physical GPU. The VMs run an NVIDIA driver
-stack and get direct access to the GPU. GRID physical GPUs are capable of supporting multiple
-virtual GPU devices (vGPUs) that can be assigned directly to guest VMs. Guest VMs use GRID virtual
-GPUs in the same manner as a physical GPU that has been passed through by the hypervisor: an
-NVIDIA driver loaded in the guest VM provides direct access to the GPU for performance-critical
-fast paths, and a paravirtualized interface to the GRID Virtual GPU Manager, which is used for nonperformant
-management operations. NVIDIA GRID Virtual GPU Manager for XenServer runs in dom0.
+**GRID vGPU**: GRID vGPU enables multiple VMs to share a single physical GPU.
+The VMs run an NVIDIA driver stack and get direct access to the GPU. GRID
+physical GPUs are capable of supporting multiple virtual GPU devices (vGPUs)
+that can be assigned directly to guest VMs. Guest VMs use GRID virtual GPUs in
+the same manner as a physical GPU that has been passed through by the
+hypervisor: an NVIDIA driver loaded in the guest VM provides direct access to
+the GPU for performance-critical fast paths, and a paravirtualized interface to
+the GRID Virtual GPU Manager, which is used for nonperformant management
+operations. NVIDIA GRID Virtual GPU Manager for XenServer runs in dom0.
 CloudStack provides you with the following capabilities:
 
 - Adding XenServer hosts with GPU/vGPU capability provisioned by the administrator.
@@ -1228,16 +1214,18 @@ CloudStack provides you with the following capabilities:
 
 - Destroying a VM with GPU/vGPU capability.
 
-- Allowing an user to add GPU/vGPU support to a VM without GPU/vGPU support by changing the Service Offering and vice-versa.
+- Allowing an user to add GPU/vGPU support to a VM without GPU/vGPU support by
+  changing the Service Offering and vice-versa.
 
 - Migrating VMs (cold migration) with GPU/vGPU capability.
 
 - Managing GPU cards capacity.
 
-- Querying hosts to obtain information about the GPU cards, supported vGPU types in case of GRID cards, and capacity of the cards.
+- Querying hosts to obtain information about the GPU cards, supported vGPU types
+  in case of GRID cards, and capacity of the cards.
 
 Prerequisites and System Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before proceeding, ensure that you have these prerequisites:
 
@@ -1245,7 +1233,7 @@ Before proceeding, ensure that you have these prerequisites:
   For more information, see `Citrix 3D Graphics Pack <https://www.citrix.com/go/private/vgpu.html>`_.
   
 - GPU/vPGU functionality is supported for following HVM guest operating systems:
-   For more information, see `Citrix 3D Graphics Pack <https://www.citrix.com/go/private/vgpu.html>`_.
+  For more information, see `Citrix 3D Graphics Pack <https://www.citrix.com/go/private/vgpu.html>`_.
    
 - Windows 7 (x86 and x64)
 
@@ -1320,22 +1308,45 @@ CloudStack follows the below sequence of operations to provide GPU/vGPU support 
 
 #. Continue with any of the following operations:
   
-  - Deploy a VM.
+   -  Deploy a VM.
   
-    Deploy a VM with GPU/vGPU support by selecting appropriate Service Offering. CloudStack decide which host to choose for VM deployment based on following criteria:
+      Deploy a VM with GPU/vGPU support by selecting appropriate Service Offering. CloudStack decide which host to choose for VM deployment based on following criteria:
     
-    - Host has GPU cards in it. In case of vGPU, CloudStack checks if cards have the required vGPU type support and enough capacity available. Having no appropriate hosts results in an InsufficientServerCapacity exception.
+      - Host has GPU cards in it. In case of vGPU, CloudStack checks if cards have the required vGPU type support and enough capacity available. Having no appropriate hosts results in an InsufficientServerCapacity exception.
     
-    - Alternately, you can choose to deploy a VM without GPU support, and at a later point, you can change the system offering. You can achieve this by offline upgrade: stop the VM, upgrade the Service Offering to the one with vGPU, then start the VM. 
+      - Alternately, you can choose to deploy a VM without GPU support, and at a later point, you can change the system offering. You can achieve this by offline upgrade: stop the VM, upgrade the Service Offering to the one with vGPU, then start the VM. 
       In this case, CloudStack gets a list of hosts which have enough capacity to host the VM. If there is a GPU-enabled host, CloudStack reorders this host list and place the GPU-enabled hosts at the bottom of the list.
       
-- Migrate a VM.
-
-  CloudStack searches for hosts available for VM migration, which satisfies GPU requirement. If the host is available, stop the VM in the current host and perform the VM migration task. If the VM migration is successful, the remaining GPU capacity is updated for both the hosts accordingly.
-  
-- Destroy a VM.
-
-  GPU resources are released automatically when you stop a VM. Once the destroy VM is successful, CloudStack will make a resource call to the host to get the remaining GPU capacity in the card and update the database accordingly.
+   -  Migrate a VM.
+    
+      CloudStack searches for hosts available for VM migration, which satisfies GPU requirement. If the host is available, stop the     VM in the current host and perform the VM migration task. If the VM migration is successful, the remaining GPU capacity is     updated for both the hosts accordingly.
+      
+   -  Destroy a VM.
+    
+      GPU resources are released automatically when you stop a VM. Once the destroy VM is successful, CloudStack will make a resource call to the host to get the remaining GPU capacity in the card and update the database accordingly.
 
    
    
+.. |basic-deployment.png| image:: _static/images/basic-deployment.png
+   :alt: Basic two-machine CloudStack deployment
+.. |VMSnapshotButton.png| image:: _static/images/VMSnapshotButton.png
+   :alt: button to restart a VPC
+.. |delete-button.png| image:: _static/images/delete-button.png
+.. |EditButton.png| image:: _static/images/edit-icon.png
+   :alt: button to edit the properties of a VM
+.. |change-affinity-button.png| image:: _static/images/change-affinity-button.png
+   :alt: button to assign an affinity group to a virtual machine.
+.. |ChangeServiceButton.png| image:: _static/images/change-service-icon.png
+   :alt: button to change the service of a VM
+.. |Migrateinstance.png| image:: _static/images/migrate-instance.png
+   :alt: button to migrate an instance
+.. |Destroyinstance.png| image:: _static/images/destroy-instance.png
+   :alt: button to destroy an instance
+.. |iso.png| image:: _static/images/iso-icon.png
+   :alt: depicts adding an iso image
+.. |console-icon.png| image:: _static/images/console-icon.png
+   :alt: depicts adding an iso image
+.. |revert-vm.png| image:: _static/images/revert-vm.png
+   :alt: depicts adding an iso image
+.. |StopButton.png| image:: _static/images/stop-instance-icon.png
+   :alt: depicts adding an iso image
