@@ -153,6 +153,8 @@ as the prototype for other VMs.
 #. Wait for the VM to stop. When the status shows Stopped, go to the
    next step.
 
+#. Go into "View Volumes" and select the Volume having the type "ROOT".
+
 #. Click Create Template and provide the following:
 
    -  **Name and Display Text**. These will be shown in the UI, so
