@@ -1041,6 +1041,12 @@ Use the following steps to begin the Linux OS installation:
    -  `http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in 
       <http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in>`_
 
+#. Rename the file:
+
+   .. code:: bash
+
+      mv cloud-set-guest-password.in cloud-set-guest-password
+      
 #. Copy this file to /etc/init.d.
 
    On some Linux distributions, copy the file to ``/etc/rc.d/init.d``.
@@ -1049,7 +1055,7 @@ Use the following steps to begin the Linux OS installation:
 
    .. code:: bash
 
-      chmod +x /etc/init.d/cloud-set-guest-password.in
+      chmod +x /etc/init.d/cloud-set-guest-password
 
 #. Depending on the Linux distribution, continue with the appropriate
    step.
@@ -1058,7 +1064,7 @@ Use the following steps to begin the Linux OS installation:
 
    .. code:: bash
 
-      chkconfig --add cloud-set-guest-password.in
+      chkconfig --add cloud-set-guest-password
 
 
 Windows OS Installation
