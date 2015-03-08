@@ -499,22 +499,22 @@ defaulted to the global parameter value.
 The following table gives you an overview of how network rate is applied
 on different types of networks in CloudStack.
 
-=============================================== ===============================
-Networks                                        Network Rate Is Taken from
-=============================================== ===============================
-Guest network of Virtual Router                 Guest Network Offering
-Public network of Virtual Router                Guest Network Offering
-Storage network of Secondary Storage VM         System Network Offering
-Management network of Secondary Storage VM      System Network Offering
-Storage network of Console Proxy VM             System Network Offering
-Management network of Console Proxy VM          System Network Offering
-Storage network of Virtual Router               System Network Offering
-Management network of Virtual Router            System Network Offering
-Public network of Secondary Storage VM          System Network Offering
-Public network of Console Proxy VM              System Network Offering
-Default network of a guest VM                   Compute Offering
-Additional networks of a guest VM               Corresponding Network Offerings
-=============================================== ===============================
+=========================================== ===============================
+Networks                                    Network Rate Is Taken from
+=========================================== ===============================
+Guest network of Virtual Router             Guest Network Offering
+Public network of Virtual Router            Guest Network Offering
+Storage network of Secondary Storage VM     System Network Offering
+Management network of Secondary Storage VM  System Network Offering
+Storage network of Console Proxy VM         System Network Offering
+Management network of Console Proxy VM      System Network Offering
+Storage network of Virtual Router           System Network Offering
+Management network of Virtual Router        System Network Offering
+Public network of Secondary Storage VM      System Network Offering
+Public network of Console Proxy VM          System Network Offering
+Default network of a guest VM               Compute Offering
+Additional networks of a guest VM           Corresponding Network Offerings
+=========================================== ===============================
 
 A guest VM must have a default network, and can also have many
 additional networks. Depending on various parameters, such as the host
