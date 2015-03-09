@@ -56,7 +56,7 @@ Use the following steps to begin the Linux OS installation:
    .. code:: bash
 
       mv cloud-set-guest-password.in cloud-set-guest-password
-      
+
 #. Copy this file to /etc/init.d.
 
    On some Linux distributions, copy the file to ``/etc/rc.d/init.d``.
