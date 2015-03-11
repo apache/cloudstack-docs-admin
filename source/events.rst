@@ -47,14 +47,7 @@ Notification
 Event notification framework provides a means for the Management Server
 components to publish and subscribe to CloudStack events. Event
 notification is achieved by implementing the concept of event bus
-abstraction in the Management Server. An event bus is introduced in the
-Management Server that allows the CloudStack components and extension
-plug-ins to subscribe to the events by using the Advanced Message
-Queuing Protocol (AMQP) client. In CloudStack, a default implementation
-of event bus is provided as a plug-in that uses the RabbitMQ AMQP
-client. The AMQP client pushes the published events to a compatible AMQP
-server. Therefore all the CloudStack events are published to an exchange
-in the AMQP server.
+abstraction in the Management Server.
 
 A new event for state change, resource state change, is introduced as
 part of Event notification framework. Every resource, such as user VM,
@@ -66,6 +59,19 @@ machine on the event bus. All the CloudStack events (alerts, action
 events, usage events) and the additional category of resource state
 change events, are published on to the events bus.
 
+Implementations
+~~~~~~~~~~~~~~~
+An event bus is introduced in the
+Management Server that allows the CloudStack components and extension
+plug-ins to subscribe to the events by using the Advanced Message
+Queuing Protocol (AMQP) client. In CloudStack, a default implementation
+of event bus is provided as a plug-in that uses the RabbitMQ AMQP
+client. The AMQP client pushes the published events to a compatible AMQP
+server. Therefore all the CloudStack events are published to an exchange
+in the AMQP server.
+
+Additionally, both an in-memory implementation and an Apache Kafka
+implementation are also available.
 
 Use Cases
 ~~~~~~~~~
@@ -88,8 +94,8 @@ The following are some of the use cases:
    multi-tenancy, authentication, and authorization issues.
 
 
-Configuration
-~~~~~~~~~~~~~
+AMQP Configuration
+~~~~~~~~~~~~~~~~~~~
 
 As a CloudStack administrator, perform the following one-time
 configuration to enable event notification framework. At run time no
@@ -194,6 +200,43 @@ changes can control the behaviour.
          username=nh2XrM7jWHMG4VQK18iiBQ==
          password=nh2XrM7jWHMG4VQK18iiBQ==
 
+
+#. Restart the Management Server.
+
+Kafka Configuration
+~~~~~~~~~~~~~~~~~~~
+
+As a CloudStack administrator, perform the following one-time
+configuration to enable event notification framework. At run time no
+changes can control the behaviour.
+
+#. Create an appropriate configuration file in ``/etc/cloudstack/management/kafka.producer.properties``
+   which contains valid kafka configuration properties as documented in http://kafka.apache.org/documentation.html#newproducerconfigs
+   The properties may contain an additional ``topic`` property which if not provided will default to ``cloudstack``.
+   While ``key.serializer`` and ``value.serializer`` are usually required for a producer to correctly start, they may be omitted and
+   will default to ``org.apache.kafka.common.serialization.StringSerializer``.
+
+#. Create the folder ``/etc/cloudstack/management/META-INF/cloudstack/core``
+
+#. Inside that folder, open ``spring-event-bus-context.xml``.
+
+#. Define a bean named ``eventNotificationBus`` with a single ``name`` attribute, A sample bean is given below:
+
+   .. code:: xml
+
+       <beans xmlns="http://www.springframework.org/schema/beans"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:context="http://www.springframework.org/schema/context"
+              xmlns:aop="http://www.springframework.org/schema/aop"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                                  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                                  http://www.springframework.org/schema/context
+                                  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+          <bean id="eventNotificationBus" class="org.apache.cloudstack.mom.kafka.KafkaEventBus">
+            <property name="name" value="eventNotificationBus"/>
+          </bean>
+        </beans>
 
 #. Restart the Management Server.
 
