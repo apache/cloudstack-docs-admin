@@ -97,6 +97,8 @@ Hypervisor Support for Primary Storage
 The following table shows storage options and parameters for different
 hypervisors.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 ============================================== ================ ==================== =========================== ============================
 Storage media \\ hypervisor                    VMware vSphere   Citrix XenServer     KVM                         Hyper-V
 ============================================== ================ ==================== =========================== ============================
@@ -328,6 +330,8 @@ To upload a volume:
 
    -  Format. Choose one of the following to indicate the disk image
       format of the volume.
+
+      .. cssclass:: table-striped table-bordered table-hover
 
       ==========  =================
       Hypervisor  Disk Image Format
@@ -709,6 +713,7 @@ primary storage.
 CloudStack does incremental backups for some hypervisors. When
 incremental backups are supported, every N backup is a full backup.
 
+.. cssclass:: table-striped table-bordered table-hover
 
 +------------------------------+------------------+------------------+-----+
 |                              | VMware vSphere   | Citrix XenServer | KVM |

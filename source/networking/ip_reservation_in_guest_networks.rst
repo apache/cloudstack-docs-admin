@@ -66,6 +66,8 @@ machines:
    For example, the following table describes three scenarios of guest
    network creation:
 
+   .. cssclass:: table-striped table-bordered table-hover
+   
    ===== ============= ============== ======================================== ========================================================
    Case  CIDR          Network CIDR   Reserved IP Range for Non-CloudStack VMs Description
    ===== ============= ============== ======================================== ========================================================

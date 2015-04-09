@@ -516,6 +516,8 @@ defaulted to the global parameter value.
 The following table gives you an overview of how network rate is applied
 on different types of networks in CloudStack.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 =========================================== ===============================
 Networks                                    Network Rate Is Taken from
 =========================================== ===============================

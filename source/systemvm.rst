@@ -60,6 +60,8 @@ manage larger number of connection in your network.
 #. Based on the hypervisor you use, download the 64-bit template from
    the following location:
 
+   .. cssclass:: table-striped table-bordered table-hover
+   
    ==========  ================================================================================================
    Hypervisor  Download Location
    ==========  ================================================================================================

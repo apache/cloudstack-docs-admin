@@ -180,6 +180,8 @@ addresses.
 
 The following table lists limits set in the Global Configuration:
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter Name            | Definition                                                                                                                                                                                                                                                                                       |
 +===========================+==================================================================================================================================================================================================================================================================================================+
@@ -234,6 +236,8 @@ resource types for Domain, Project, and Accounts.
 
 To control the behaviour of this feature, the following configuration
 parameters have been added:
+
+.. cssclass:: table-striped table-bordered table-hover
 
 =================================== =================================================================
 Parameter Name                      Description
@@ -745,6 +749,8 @@ Usage Types
 -----------
 
 The following table shows all usage types.
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +------------------+-----------------------------------+-----------------------+
 | Type ID          | Type Name                         | Description           |

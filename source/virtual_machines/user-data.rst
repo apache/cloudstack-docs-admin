@@ -64,7 +64,7 @@ is also supported.) For metadata type, use one of the following:
 
 
 Using Cloud-Init
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 `Cloud-Init <https://cloudinit.readthedocs.org/en/latest>`_ can be use to access
 an interpret user-data from virtual machines. Cloud-Init be installed into 

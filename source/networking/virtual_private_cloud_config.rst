@@ -317,6 +317,8 @@ behavior is all the incoming traffic is blocked and outgoing traffic is
 allowed from the tiers. Default network ACL cannot be removed or
 modified. Contents of the default Network ACL is:
 
+.. cssclass:: table-striped table-bordered table-hover
+
 ===== ======== ============ ====== =========
 Rule  Protocol Traffic type Action CIDR
 ===== ======== ============ ====== =========

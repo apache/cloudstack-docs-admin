@@ -489,6 +489,8 @@ VLAN Allocation Example
 VLANs are required for public and guest traffic. The following is an
 example of a VLAN allocation scheme:
 
+.. cssclass:: table-striped table-bordered table-hover
+
 =================   =============================   ====================================================================================================
 VLAN IDs            Traffic type                    Scope
 =================   =============================   ====================================================================================================

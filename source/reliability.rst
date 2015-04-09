@@ -45,6 +45,8 @@ persistence is required.
 
 Even if persistence is not required, enabling it is permitted.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 ============== ======================== ================ =====================
 Source Port    Destination Port         Protocol         Persistence Required?
 ============== ======================== ================ =====================

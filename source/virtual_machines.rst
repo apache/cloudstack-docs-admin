@@ -599,6 +599,8 @@ names easier in large data center deployments.
 The following table explains how a VM name is displayed in different
 scenarios.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 ============================= ======================= ==================== ===================================== ==========================
 User-Provided Display Name    vm.instancename.flag    Hostname on the VM   Name on vCenter                       Internal Name
 ============================= ======================= ==================== ===================================== ==========================
@@ -1275,6 +1277,8 @@ Before continuing with configuration, consider the following:
 
 Supported GPU Devices
 ~~~~~~~~~~~~~~~~~~~~~
+
+.. cssclass:: table-striped table-bordered table-hover
 
 =========== ========================
 Device       Type

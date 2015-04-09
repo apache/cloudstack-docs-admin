@@ -132,6 +132,8 @@ CloudStack ships with an internal list of the supported service
 providers, and you can choose from this list when creating a network
 offering.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +----------------------+-----------+------------+----------+-------------+-------------+
 |                      | Virtual   | Citrix     | Juniper  | F5 BigIP    | Host based  |
 |                      | Router    | NetScaler  | SRX      |             | (KVM/Xen)   |
@@ -277,6 +279,8 @@ To create a network offering:
       Based on the guest network type selected, you can see the
       following supported services:
 
+      .. cssclass:: table-striped table-bordered table-hover
+      
       =================== ============================================================================ ============= =============
       Supported Services  Description                                                                  Isolated      Shared   
       =================== ============================================================================ ============= =============

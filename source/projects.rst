@@ -100,6 +100,8 @@ and set up the invitations feature in CloudStack.
    configuration parameters related to project invitations. Click the
    edit button to set each parameter.
 
+   .. cssclass:: table-striped table-bordered table-hover
+
    +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Configuration Parameters   | Description                                                                                                                                           |
    +============================+=======================================================================================================================================================+
@@ -186,6 +188,8 @@ Setting the Global Project Resource Limits
    project can have lower limits. Click the edit button to set each
    parameter. |Edits parameters|
 
+   .. cssclass:: table-striped table-bordered table-hover
+   
    +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
    | max.project.public.ips   | Maximum number of public IP addresses that can be owned by any project in the cloud. See About Public IP Addresses.          |
    +--------------------------+------------------------------------------------------------------------------------------------------------------------------+
