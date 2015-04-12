@@ -30,13 +30,13 @@ The System VM Template
 The System VMs come from a single template. The System VM has the
 following characteristics:
 
--  Debian 6.0 ("Squeeze"), 2.6.32 kernel with the latest security
+-  Debian 7.8 ("wheezy"), 3.2.0 kernel with the latest security
    patches from the Debian security APT repository
 
 -  Has a minimal set of packages installed thereby reducing the attack
    surface
 
--  32-bit for enhanced performance on Xen/VMWare
+-  64-bit for enhanced performance on Xen/VMWare
 
 -  pvops kernel with Xen PV drivers, KVM virtio drivers, and VMware
    tools for optimum performance on all hypervisors
@@ -53,9 +53,8 @@ following characteristics:
 Changing the Default System VM Template
 ---------------------------------------
 
-CloudStack allows you to change the default 32-bit System VM template to
-64-bit one. Using the 64-bit template, upgrade the virtual router to
-manage larger number of connection in your network.
+Using the 64-bit template should be use with a System Offering of at least 512MB
+of memory.
 
 #. Based on the hypervisor you use, download the 64-bit template from
    the following location:
@@ -65,8 +64,10 @@ manage larger number of connection in your network.
    ==========  ================================================================================================
    Hypervisor  Download Location
    ==========  ================================================================================================
-   XenServer   http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-xen.vhd.bz2
-   KVM         http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15-master-kvm.qcow2.bz2
+   XenServer   |sysvm64-url-xen|
+   KVM         |sysvm64-url-kvm|
+   VMware      |sysvm64-url-vmware|
+   Hyper-V     |sysvm64-url-hyperv|
    ==========  ================================================================================================
 
 #. As an administrator, log in to the CloudStack UI
