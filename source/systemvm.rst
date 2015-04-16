@@ -236,6 +236,40 @@ The Management Server generates URLs of the form
 The new console requests will be served with the new DNS domain name, 
 certificate, and key.
 
+Uploading ROOT CA and Intermediate CA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you need to upload custom certificate with ROOT CA and intermediate CA, you can find more details here:
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/Procedure+to+Replace+realhostip.com+with+Your+Own+Domain+Name
+
+IMPORTANT NOTES:
+
+In order to avoid errors and problems while uploading custom certificates, please check following:
+
+1. While doing URL encoding of ROOT CA and any Intermediate CA, be sure that the plus signs ("+") inside certificates
+are not replaced by space (" "), because some URL/string encoding tools tend to do that.
+
+2. If you are renewing certificates it might happen you need to upload new ROOT CA and Intermediate CA, together with new Server Certificate and key.
+In this case please be sure to use same names for certificates during API upload of certificate, example:
+
+http://123.123.123.123:8080/client/api?command=uploadCustomCertificate&...&name=root1...
+http://123.123.123.123:8080/client/api?command=uploadCustomCertificate&...&name=intermed1...
+
+Here names are "root1" and "intermed1".
+If you used other names previously, please check the cloud.keystore table to obtain used names.
+
+If you still have problems and folowing errors in management.log while destroying CPVM:
+
+- Unable to build keystore for CPVMCertificate due to CertificateException
+- Cold not find and construct a valid SSL certificate
+
+that means that still some of the Root/intermediate/server certificates or the key is not in a good format, or incorrectly encoded or multiply Root CA/Intemediate CA present in database by mistake.
+
+Other way to renew Certificates (Root,Intermediates,Server certificates and key) - although not recommended
+unless you fill comfortable - is to directly edit the database,
+while still respect the main requirement that the private key is PKCS8 encoded, while Root CA, Intemediate and Server certificates
+are still in default PEM format (no URL encoding needed here).
+After editing the database, please restart management server, and destroy SSVM and CPVM after that,
+so the new SSVM and CPVM with new certificates are created.
 
 Load-balancing Console Proxies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
