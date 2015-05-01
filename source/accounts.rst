@@ -272,6 +272,10 @@ directly in cloudstack.
 Using a SAML 2.0 Identity Provider for User Authentication
 ----------------------------------------------------------
 
+NOTE: The SAML2 auth plugin introduced in Apache CloudStack 4.5,
+should be considered experimental and has not been tested in production, therefore
+may change in future breaking implementation and semantics compatibility.
+
 You can use a SAML 2.0 Identity Provider with CloudStack for user
 authentication. This will require enabling the SAML 2.0 service provider plugin
 in CloudStack. On successful authentication, CloudStack will use the persistent
