@@ -274,29 +274,37 @@ Using a SAML 2.0 Identity Provider for User Authentication
 
 You can use a SAML 2.0 Identity Provider with CloudStack for user
 authentication. This will require enabling the SAML 2.0 service provider plugin
-in CloudStack. On successful authentication, CloudStack will use the persistent
-or emailAddress NameID from the SAML token to find an existing user or create
-a new user with this NameID and let the user log in to the CloudStack UI.
-
-First, enable the SAML plugin by setting ``saml2.enabled`` to ``true`` and
-restart management server. To start a SAML 2.0 Single Sign-On authentication,
-the user should call the ``samlsso`` API command which will redirect the user to
-IdP login page. Upon successful authentication, the IdP will redirect the user
-to CloudStack. To start a SAML 2.0 Single Log-Out, the user calls the
-``samlslo`` API command which globally logs out the user and return back to
-CloudStack UI login page. The CloudStack service provider metadata is accessible
-from the ``getSPMetadata`` API command.
+in CloudStack. To do that first, enable the SAML plugin by setting
+``saml2.enabled`` to ``true`` and restart management server.
 
 Starting 4.5.2, the SAML plugin uses an authorization workflow where users should
 be authorized by an admin using ``authorizeSamlSso`` API before those users can
-use Single Sign On against a specific IDP. In case there are multiple user accounts
-with the same username (across domains) for the same authorized IDP, users would
-need to specify domainpath when logging-in by selecting the IDP from the dropdown
-list. By default, users don't need to specify any domain path. After a user is
-authenticated by a IDP, the SAML authentication plugin finds users whose username
-match the user attribute value returned by the SAML authentication response and fail
-only when it finds that there are multiple user accounts with the same user name for
-the specific IDP.
+use Single Sign On against a specific IDP. This can be done by ticking the enable
+SAML Single Sign On checkbox and selecting a IDP when adding or importing users.
+For existing users, admin can go to the user's page and click on configure
+SAML SSO option to enable/disable SSO for a user and select a Identity Provider.
+A user can be authorized to authenticate against only one IDP.
+
+The CloudStack service provider metadata is accessible using the
+``getSPMetadata`` API command, or from the URL
+http://acs-server:8080/client/api?command=getSPMetadata where acs-server is the
+domain name or IP address of the management server. The IDP administrator can
+get the SP metadata from CloudStack and add it to their IDP server.
+
+To start a SAML 2.0 Single Sign-On authentication, on the login page users need to
+select the Identity Provider or Institution/Department they can authenticate with
+and click on Login button. This action call the ``samlsso`` API command which
+will redirect the user to the Identity Provider's login page. Upon successful
+authentication, the IdP will redirect the user to CloudStack. In case a user has
+multiple user accounts with the same username (across domains) for the same
+authorized IDP, that user would need to specify domainpath after selecting their
+IDP server from the dropdown list. By default, users don't need to specify any
+domain path. After a user is successfully authenticated by an IDP server, the SAML
+authentication plugin finds user accounts whose username match the username
+attribute value returned by the SAML authentication response; it fails
+only when it finds that there are multiple user accounts with the same user name
+for the specific IDP otherwise the unique useraccount is allowed to proceed and
+the user is logged into their account.
 
 Limitations:
 
