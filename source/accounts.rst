@@ -265,16 +265,11 @@ You could also use api commands: ``listLdapUsers``, ``ldapCreateAccount`` and
 Once LDAP is enabled, the users will not be allowed to changed password
 directly in cloudstack.
 
-
-
 .. |button to dedicate a zone, pod,cluster, or host| image:: _static/images/dedicate-resource-button.png
+
 
 Using a SAML 2.0 Identity Provider for User Authentication
 ----------------------------------------------------------
-
-NOTE: The SAML2 auth plugin introduced in Apache CloudStack 4.5,
-should be considered experimental and has not been tested in production, therefore
-may change in future breaking implementation and semantics compatibility.
 
 You can use a SAML 2.0 Identity Provider with CloudStack for user
 authentication. This will require enabling the SAML 2.0 service provider plugin
@@ -291,43 +286,54 @@ to CloudStack. To start a SAML 2.0 Single Log-Out, the user calls the
 CloudStack UI login page. The CloudStack service provider metadata is accessible
 from the ``getSPMetadata`` API command.
 
-After a user is authenticated, the IdP sends a SAML response to CloudStack using
-HTTP-Redirect scheme. Upon checking the response, CloudStack create a user account
-if required or gets the user account and sets cookie and redirects to the /client
-page. Note if the domain name used in the assertion consumer service URL is not
-same as the redirect URL (saml2.redirect.url) user won't be able to login because
-cookies are not set on the redirected URL's domain.
+Starting 4.5.2, the SAML plugin uses an authorization workflow where users should
+be authorized by an admin using ``authorizeSamlSso`` API before those users can
+use Single Sign On against a specific IDP. In case there are multiple user accounts
+with the same username (across domains) for the same authorized IDP, users would
+need to specify domainpath when logging-in by selecting the IDP from the dropdown
+list. By default, users don't need to specify any domain path. After a user is
+authenticated by a IDP, the SAML authentication plugin finds users whose username
+match the user attribute value returned by the SAML authentication response and fail
+only when it finds that there are multiple user accounts with the same user name for
+the specific IDP.
 
 Limitations:
 
-- Admins cannot specifiy supported attributes, currently supported attributes are
-  `uid`, `email`, `givenName` and `sn`.
+- The plugin uses a user attribute returned by the IDP server in the SAML response
+  to find and map the authorized user in CloudStack. The default attribute is `uid`.
 
-- Once authenticated for the first time, a user account with a user is created
-  using a persistent NameID or unique attributes such as uid or email. All user
-  accounts are under one domain.
+- The SAML authentication plugin supports HTTP-Redirect and HTTP-Post bindings.
 
-- The SAML authentication plugin with only SAML 2.0 IdPs which support HTTP-Redirect
-  and authentication works with only one IdP server
-
-- Tested only with OneLogin, Feide OpenIDP, PingIdentity
+- Tested with Shibboleth 2.4, SSOCircle, Microsoft ADFS, OneLogin, Feide OpenIDP,
+  PingIdentity.
 
 The following global configuration should be configured:
 
--  ``saml2.enabled``: Set this to **true** to enable the SAML Plugin. Default is **false**.
+- ``saml2.enabled``: Indicates whether SAML SSO plugin is enabled or not true. Default is **false**
 
--  ``saml2.default.domainid``: Domain (UUID string) to use for creating new users. Default is **1** (root domain).
+- ``saml2.sp.id``: SAML2 Service Provider Identifier string
 
--  ``saml2.redirect.url``: The CloudStack UI url the SSO should redirected to when successful. Default is **http://localhost:8080/client**.
+- ``saml2.idp.metadata.url``: SAML2 Identity Provider Metadata XML Url or Filename. If a URL is not provided, it will look for a file in the config directory /etc/cloudstack/management
 
--  ``saml2.sp.id``: CloudStack service provider entity ID. Default is **org.apache.cloudstack**.
+- ``saml2.default.idpid``: The default IdP entity ID to use only in case of multiple IdPs
 
--  ``saml2.sp.sso.url``: CloudStack service provider Single Sign-On URL. Default is **http://localhost:8080/client/api?command=samlsso**.
+- ``saml2.sigalg``: The algorithm to use to when signing a SAML request. Default is SHA1, allowed algorithms: SHA1, SHA256, SHA384, SHA512.
 
--  ``saml2.sp.slo.url``: CloudStack service provider entity ID. Default is **http://localhost:8080/client/api?command=samlslo**.
+- ``saml2.redirect.url``: The CloudStack UI url the SSO should redirected to when successful. Default is **http://localhost:8080/client**
 
--  ``saml2.idp.id``: The Identity Provider entity ID string. Default is **https://openidp.feide.no**.
+- ``saml2.sp.org.name``: SAML2 Service Provider Organization Name
 
--  ``saml2.idp.metadata.url``: Identity Provider Metadata XML Url. Default is **https://openidp.feide.no/simplesaml/saml2/idp/metadata.php**.
+- ``saml2.sp.org.url``: SAML2 Service Provider Organization URL
 
--  ``saml2.timeout``: Timeout used for downloading and parsing IdP metadata in milliseconds. Default is **30000**.
+- ``saml2.sp.contact.email``: SAML2 Service Provider Contact Email Address
+
+- ``saml2.sp.contact.person``: SAML2 Service Provider Contact Person Name
+
+- ``saml2.sp.slo.url``: SAML2 CloudStack Service Provider Single Log Out URL
+
+- ``saml2.sp.sso.url``: SAML2 CloudStack Service Provider Single Sign On URL
+
+- ``saml2.user.attribute``: Attribute name to be looked for in SAML response that will contain the username. Default is **uid**
+
+- ``saml2.timeout``: SAML2 IDP Metadata refresh interval in seconds, minimum value is set to 300. Default is 1800
+
