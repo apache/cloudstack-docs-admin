@@ -15,7 +15,7 @@ Quota Plugin
 
 Quota service, while allowing for scalability, will make sure that the cloud is
 not exploited by attacks, careless use and program errors. To address this
-problem, we propose to employ a quota-enforcement service that allows resource
+problem, employ the quota-enforcement service that allows resource
 usage within certain bounds as defined by policies and available quotas for
 various entities. Quota service extends the functionality of usage server to
 provide a measurement for the resources used by the accounts and domains using a
@@ -23,10 +23,12 @@ common unit referred to as cloud currency in this document. It can be configured
 to ensure that your usage won’t exceed the budget allocated to accounts/domain
 in cloud currency. It will let user know how much of the cloud resources he is
 using. It will help the cloud admins, if they want, to ensure that a user does
-not go beyond his allocated quota. Per usage cycle if a account is found to be
+not go beyond his allocated quota. Per usage cycle if an account is found to be
 exceeding its quota then it is locked. Locking an account means that it will not
 be able to initiate a new resource allocation request, whether it is more
-storage or an additional ip. Needless to say quota service as well as any action
+storage or an additional ip. To unlock an account you need to add more credit to it.
+In case you want the locking to be disabled on global or on account scope those 
+provisions are also provided. Needless to say quota service as well as any action
 on the account is configurable.
 
 Enabling the Quota Service 
@@ -52,8 +54,8 @@ configuration to true:
 
 The other configurations that are there for quota service are as:
 
-#. quota.currency.symbol : The symbal that is used before any currency 
-figure in various quota forms and reports. 
+#. quota.currency.symbol : The symbol that is used before any currency 
+	figure in various quota forms and reports. 
 #. quota.usage.smtp.host: Quota SMTP host for sending quota alerts. 
 #. quota.usage.smtp.port: Quota SMTP port. 
 #. quota.usage.smtp.user: Quota SMTP user. 
@@ -64,15 +66,15 @@ figure in various quota forms and reports.
 #. quota.usage.smtp.connection.timeout: Quota SMTP server connection
 	timeout duration.
 
-There are several configuration variables that are inherited from usage server.
-These are listed below:
+There are several configuration variables that are inherited from usage server, 
+these are listed below:
 
 #. usage.aggregation.timezone 
 
 All these are described in details in Usage Server documentation.
 
-Restart the Management Server (as usual with any global configuration change)
-and also the Usage Server:
+Restart the Management Server and  the Usage Server to enable the set configuration 
+values.
 
    .. code:: bash
 
@@ -143,7 +145,7 @@ The following table shows all quota types for which you can specify tariff.
 
 The quota tariff can be listed using listQuotaTariff API.
 
-quotaTariff: ListLists all quota tariff plans
+quotaTariff: Lists all quota tariff plans
 
 The tariff for each of the above can be set by using the updateQuotaTariff API.
 
