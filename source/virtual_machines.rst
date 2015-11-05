@@ -964,7 +964,7 @@ part of a template.
 
 
 Attaching an ISO to a VM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. In the left navigation, click Instances.
 
@@ -1319,8 +1319,8 @@ CloudStack follows the below sequence of operations to provide GPU/vGPU support 
       - Host has GPU cards in it. In case of vGPU, CloudStack checks if cards have the required vGPU type support and enough capacity available. Having no appropriate hosts results in an InsufficientServerCapacity exception.
     
       - Alternately, you can choose to deploy a VM without GPU support, and at a later point, you can change the system offering. You can achieve this by offline upgrade: stop the VM, upgrade the Service Offering to the one with vGPU, then start the VM. 
-      In this case, CloudStack gets a list of hosts which have enough capacity to host the VM. If there is a GPU-enabled host, CloudStack reorders this host list and place the GPU-enabled hosts at the bottom of the list.
-      
+        In this case, CloudStack gets a list of hosts which have enough capacity to host the VM. If there is a GPU-enabled host, CloudStack reorders this host list and place the GPU-enabled hosts at the bottom of the list.
+  
    -  Migrate a VM.
     
       CloudStack searches for hosts available for VM migration, which satisfies GPU requirement. If the host is available, stop the     VM in the current host and perform the VM migration task. If the VM migration is successful, the remaining GPU capacity is     updated for both the hosts accordingly.
