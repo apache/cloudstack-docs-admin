@@ -162,15 +162,6 @@ System Reliability and Availability
    reliability
 
 
-Plugins
--------
-
-.. toctree::
-   :maxdepth: 2
-
-   plugins/quota
-
-
 Tuning
 ------
 
