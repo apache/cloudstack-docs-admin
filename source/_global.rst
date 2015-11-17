@@ -22,7 +22,7 @@
 .. _CloudStack Apidocs: http://cloudstack.apache.org/docs/api/
 
 .. Latest version systemvm template URL
-.. |sysvm64-url-xen|    replace:: http://cloudstack.apt-get.eu/systemvm/4.5/systemvm64template-4.5-xen.vhd.bz2
-.. |sysvm64-url-kvm|    replace:: http://cloudstack.apt-get.eu/systemvm/4.5/systemvm64template-4.5-kvm.qcow2.bz2
-.. |sysvm64-url-vmware| replace:: http://cloudstack.apt-get.eu/systemvm/4.5/systemvm64template-4.5-vmware.ova
-.. |sysvm64-url-hyperv| replace:: http://cloudstack.apt-get.eu/systemvm/4.5/systemvm64template-4.5-hyperv.vhd.zip
+.. |sysvm64-url-xen|    replace:: http://cloudstack.apt-get.eu/systemvm/4.6/systemvm64template-4.6.0-xen.vhd.bz2
+.. |sysvm64-url-kvm|    replace:: http://cloudstack.apt-get.eu/systemvm/4.6/systemvm64template-4.6.0-kvm.qcow2.bz2
+.. |sysvm64-url-vmware| replace:: http://cloudstack.apt-get.eu/systemvm/4.6/systemvm64template-4.6.0-vmware.ova
+.. |sysvm64-url-hyperv| replace:: http://cloudstack.apt-get.eu/systemvm/4.6/systemvm64template-4.6.0-hyperv.vhd.zip
