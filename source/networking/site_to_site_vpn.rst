@@ -77,7 +77,7 @@ To add a VPN Customer Gateway:
    -  **IPsec Preshared Key**: Preshared keying is a method where the
       endpoints of the VPN share a secret key. This key value is used to
       authenticate the customer gateway and the VPC VPN gateway to each
-      other.
+      other. The sequence cannot contain a newline or double-quote.
 
       .. note:: 
          The IKE peers (VPN end points) authenticate each other by
