@@ -1442,42 +1442,42 @@ Editing, Restarting, and Removing a Virtual Private Cloud
 Dynamic Routing between VPCs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Currently the inter VPC traffic has to go thru the public gateway. This means the traffic has to be nat-ed across public internet via core-routers, which is inefficient in itself. A more efficient approach will be to route the traffic within cloudstack and even better if no nating is involved. 
+  Currently the inter VPC traffic has to go thru the public gateway. This means the traffic has to be NAT-ed across public internet via core-routers, which is inefficient in itself. A more efficient approach will be to route the traffic within cloudstack and even better if no NAT'ing is involved. 
 
 |
 
-  OSPF provides a way to connect two VPCs using the optimal route between them without needing nat-ing. OSPF achieves this by maintaining and advertising the most efficient routes between various OSPF enabled routers. When a new VPC is added its OSPF enabled router advertises the routes to other routers, thereby each of them learn to route traffic properly between them.  
+  OSPF provides a way to connect two VPCs using the optimal route between them without needing NAT-ing. OSPF achieves this by maintaining and advertising the most efficient routes between various OSPF enabled routers. When a new VPC is added its OSPF enabled router advertises the routes to other routers, thereby each of them learn to route traffic properly between them.  
 
 |
 
-Quagga implements OSPF (v2, v3) and is found suitable to run on debian based VPC virtual router to provide dynamic routing. Quagga is an advanced software routing package that provides a suite of TCP/IP-based routing protocols and provides implementations of OSPFv2, OSPFv3, RIP v1 and v2, RIPng and BGP-4 for Unix-like platforms, particularly FreeBSD, Linux, Solaris and NetBSD.
+Quagga implements OSPF (v2, v3) and is found suitable to run on Debian based VPC virtual router to provide dynamic routing. Quagga is an advanced software routing package that provides a suite of TCP/IP-based routing protocols and provides implementations of OSPFv2, OSPFv3, RIP v1 and v2, RIPng and BGP-4 for Unix-like platforms, particularly FreeBSD, Linux, Solaris and NetBSD.
 
 |
 
 Configuring dynamic VPCs
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- **Enable OSPF in the zone:** Login as admin and then goto: Infrastructure-Zones, select the zone in which you want to enable ospf and click the tab 'Dynamically Routed'. Following are the options:
+- **Enable OSPF in the zone:** Login as admin and then goto: Infrastructure-Zones, select the zone in which you want to enable OSPF and click the tab 'Dynamically Routed'. Following are the options:
 
 
   #.   *Dynamic Routing Enabled:* true will enable the zone for dynamic routing .
-  #.   *Dynamic Routing Protocol:* At this point only Ospf is supported. The other valid value is Bgp. 
-  #.   OSPF Area Id: The ospf area id, will be set in quagga config. Default is ‘0’. 
+  #.   *Dynamic Routing Protocol:* At this point only OSPF is supported. The other valid value is BGP. 
+  #.   OSPF Area Id: The OSPF area id, will be set in quagga config. Default is ‘0’. 
   #.   *Hello Interval:* Set number of seconds for HelloInterval timer value. Setting this value, Hello packet will be sent every timer value seconds on the specified interface. The default value is 10 seconds.  
   #.   *Dead Interval:* Set number of seconds for RouterDeadInterval timer value used for Wait Timer and Inactivity Timer. This value must be the same for all routers attached to a common network. The default value is 40 seconds.
-  #.  *Retransmit Interval:* Set number of seconds for RxmtInterval timer value. This value is used when retransmitting Database Description and Link State Request packets. The default value is 5 seconds.
-  #.  *Transit Delay:* Set number of seconds for InfTransDelay value. LSAs’ age should be incremented by this value when transmitting. The default value is 1 seconds.
+  #.   *Retransmit Interval:* Set number of seconds for RxmtInterval timer value. This value is used when retransmitting Database Description and Link State Request packets. The default value is 5 seconds.
+  #.   *Transit Delay:* Set number of seconds for InfTransDelay value. LSAs’ age should be incremented by this value when transmitting. The default value is 1 seconds.
   #.   *Authentication:* Dropdown with 2 options: MD5 or Text Plain
   #.   *Password:* The password for OSPF Area 
   #.   *Zone Super CIDR:* For using dynamic routing a zone level super-cidr is required. This will be carved into network sub levels and into the created routed tiers. Default value is set to 200.100.0.0/16
 
 |
 
-- **Create Dynamic VPC Service Offering:** Goto Service Offerings and then select VPC Offering. From here you can add VPC Offering. One of the supported services should be “VPCDynamicRouting” in order for the VPC to be dynamically routing enabled. A example set of enabled services on VPC are:  Dhcp, Dns, SourceNat, PortForwarding, Lb, UserData, StaticNat, VPCDynamicRouting
+- **Create Dynamic VPC Service Offering:** Goto Service Offerings and then select VPC Offering. From here you can add VPC Offering. One of the supported services should be “VPCDynamicRouting” in order for the VPC to be dynamically routing enabled. An example set of enabled services on VPC are:  DHCP, DNS, SourceNat, PortForwarding, Lb, UserData, StaticNat, VPCDynamicRouting
 
 |
 
-- **Create Dynamic VPC Network tier offering:** Goto Service Offerings and then select Network Offering. From here you can add Network Offering. Select “VPC” and add “VPCDynamicRouting” as one of the supported services. A example set of enabled services on VPC network are: Dhcp, Dns, SourceNat, PortForwarding, Lb, UserData, StaticNat, NetworkACL, VPCDynamicRouting
+- **Create Dynamic VPC Network tier offering:** Goto Service Offerings and then select Network Offering. From here you can add Network Offering. Select “VPC” and add “VPCDynamicRouting” as one of the supported services. An example set of enabled services on VPC network are: DHCP, DNS, SourceNat, PortForwarding, Lb, UserData, StaticNat, NetworkACL, VPCDynamicRouting
 
 |
 
