@@ -585,3 +585,55 @@ To enable you to assign VLANs to Isolated networks,
    :alt: button to enable or disable zone, pod, or cluster.
 .. |edit-icon.png| image:: _static/images/edit-icon.png
    :alt: button to edit the VLAN range.
+
+
+Out-of-band Management
+~~~~~~~~~~~~~~~~~~~~~~
+
+CloudStack provides Root admins the ability to configure and use supported
+out-of-band management interface (e.g. IPMI, iLO, DRAC, etc.) on a physical
+host to manage host power operations such as on, off, reset etc. By default,
+IPMI 2.0 baseboard controller are supported out of the box with `IPMITOOL`
+out-of-band management driver in CloudStack that uses `ipmitool` for performing
+IPMI 2.0 management operations.
+
+Following are some global settings that control various aspects of this feature.
+
+.. cssclass:: table-striped table-bordered table-hover
+
+=======================================   =============================   ====================================================================================================
+Global setting                            Default values                  Description
+=======================================   =============================   ====================================================================================================
+outofbandmanagement.action.timeout        60                              The out of band management action timeout in seconds, configurable per cluster
+outofbandmanagement.ipmitool.interface    lanplus                         The out of band management IpmiTool driver interface to use. Valid values are: lan, lanplus etc
+outofbandmanagement.ipmitool.path         /usr/bin/ipmitool               The out of band management ipmitool path used by the IpmiTool driver
+outofbandmanagement.ipmitool.retries      1                               The out of band management IpmiTool driver retries option -R
+outofbandmanagement.sync.interval         300                             The out of band management background sync thread interval in seconds
+outofbandmanagement.sync.poolsize         50                              The out of band management background sync thread pool size 50
+=======================================   =============================   ====================================================================================================
+
+A change in `outofbandmanagement.sync.interval` or `outofbandmanagement.sync.poolsize`
+settings requires restarting of management server(s) as the thread pool and a
+background (power state) sync thread are configured during load time when
+CloudStack management server starts. Rest of the global settings can be changed
+without requiring restarting of management server(s).
+
+The `outofbandmanagement.sync.poolsize` is the maximum number of ipmitool
+background power state scanners that can run at a time. Based on the maximum
+number of hosts you've, you can increase/decrease the value depending on how much
+stress your management server host can endure. It will take atmost number of
+total out-of-band-management enabled hosts in a round *
+`outofbandmanagement.action.timeout` / `outofbandmanagement.sync.poolsize` seconds
+to complete a background power-state sync scan in a single round.
+
+In order to use this feature, the Root admin needs to first configure
+out-of-band management for a host using either the UI or the
+`configureOutOfBandManagement` API. Next, the Root admin needs to enable it.
+The feature can be enabled or disabled across a zone or a cluster or a host,
+
+Once out-of-band management is configured and enabled for a host (and provided
+not disabled at zone or cluster level), Root admins would be able to issue
+power management actions such as on, off, reset, cycle, soft and status.
+
+If a host is in maintenance mode, Root admins are still allowed to perform
+power management actions but in the UI a warning is displayed.
