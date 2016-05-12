@@ -14,11 +14,20 @@
    under the License.
    
 
-Managing Accounts, Users and Domains
-====================================
+Managing Roles, Accounts, Users and Domains
+===========================================
 
-Accounts, Users, and Domains
-----------------------------
+Roles, Accounts, Users, and Domains
+-----------------------------------
+
+Roles
+~~~~~
+
+A role represents a set of allowed functions. All CloudStack accounts have a
+role attached to them that enforce access rules on them to be allowed or
+disallowed to make an API request. Typically there are four default roles:
+root admin, resource admin, domain admin and user.
+
 
 Accounts
 ~~~~~~~~
@@ -90,6 +99,77 @@ the ownership of any virtual machine from one account to any other
 account by using the assignVirtualMachine API. A domain or sub-domain
 administrator can do the same for VMs within the domain from one account
 to any other account in the domain or any of its sub-domains.
+
+
+Using Dynamic Roles
+-------------------
+
+In addition to the four default roles, the dynamic role-based API checker feature
+allows CloudStack root admins to create new roles with customized permissions.
+The allow/deny rules can be configured dynamically during runtime without
+restarting the management server(s).
+
+For backward compatiblity, all roles resolve to one of the four role types:
+admin, resource admin, domain admin and user. A new role can be created using
+the roles tab in the UI and specifying a name, a role type and optionally a
+description.
+
+Role specific rules can be configured through the rules tab on role specific
+details page. A rule is either an API name or a wildcard string that are one of
+allow or deny permission and optionally a description.
+
+When a user makes an API request, the backend checks the requested API against
+configured rules (in the order the rules were configured) for the caller
+user-account's role. It will iterate through the rules and would allow the
+API request if the API matches an allow rule, else if it matches a deny rule
+it would deny the request. Next, if the request API fails to match any of
+the configured rules it would allow if the requested API's default authorized
+annotaions allow that user role type and finally deny the user API request
+if it fails to be explicitly allowed/denied by the role permission rules or the
+default API authorize annotations. Note: to avoid root admin being locked
+out of the system, all root admin accounts are allowed all APIs.
+
+The dynamic-roles feature is enabled by default only for all new CloudStack
+installations since version `4.9.x <https://cwiki.apache.org/confluence/display/CLOUDSTACK/Dynamic+Role+Based+API+Access+Checker+for+CloudStack>`_.
+
+After an upgrade, existing deployments can be migrated to use this feature by
+running a migration tool by the CloudStack admin. The migration tool is located
+at ``/usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py``.
+
+During migration, this tool enables an internal flag in the database,
+copies existing static role-based rules from provided commands.properties file
+(typically at ``/etc/cloudstack/management/commands.properties``) to the database
+and renames the commands.properties file (typically to
+/etc/cloudstack/management/commands.properties.deprecated). The migration
+process does not require restarting the management server(s).
+
+Usage: ``migrate-dynamicroles.py`` [options] [-h for help]
+
+Options:
+
+-b DB
+    The name of the database, default: cloud
+-u USER
+    User name a MySQL user with privileges on cloud database, default: cloud
+-p PASSWORD
+    Password of a MySQL user with privileges on cloud database
+-H HOST
+    Host or IP of the MySQL server
+-P PORT
+    Host or IP of the MySQL server, default: 3306
+-f FILE
+    The commands.properties file, default: /etc/cloudstack/management/commands.properties
+-d
+    Dry run and debug operations this tool will perform
+
+
+Example:
+
+sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -h localhost -p 3006 -f /etc/cloudstack/management/commands.properties
+
+If you've multiple management servers, remove or rename the commands.properties
+file on all management servers typically in /etc/cloudstack/management path,
+after running the migration tool for the first management server
 
 
 Dedicating Resources to Accounts and Domains
