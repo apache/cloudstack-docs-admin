@@ -290,7 +290,7 @@ default values are for openldap)
    **CN=Administrator, OU=APAC, DC=company, DC=com**
 
 -  ``ldap.user.object``: object type of users within LDAP. Defaults value is
-   **user** for AD and **interorgperson** for openldap.
+   **user** for AD and **inetorgperson** for openldap.
 
 -  ``ldap.email.attribute``: email attribute within ldap for a user. Default
    value for AD and openldap is **mail**.
