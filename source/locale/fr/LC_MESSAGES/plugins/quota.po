@@ -1,0 +1,480 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration Documentation 4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../plugins/quota.rst:2
+msgid ""
+"contributor license agreements.  See the NOTICE file distributed with "
+"this work for additional information# regarding copyright ownership. The "
+"ASF licenses this file to you under the Apache License, Version 2.0 (the "
+"\"License\"); you may not use this file except in compliance with the "
+"License.  You may obtain a copy of the License at "
+"http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable "
+"law or agreed to in writing, software distributed under the License is "
+"distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF "
+"ANY KIND, either express or implied.  See the License for the specific "
+"language governing permissions and limitations under the License."
+msgstr ""
+
+#: ../../plugins/quota.rst:14
+msgid "Quota Plugin"
+msgstr ""
+
+#: ../../plugins/quota.rst:16
+msgid ""
+"Quota service, while allowing for scalability, will make sure that the "
+"cloud is not exploited by attacks, careless use and program errors. To "
+"address this problem, employ the quota-enforcement service that allows "
+"resource usage within certain bounds as defined by policies and available"
+" quotas for various entities. Quota service extends the functionality of "
+"usage server to provide a measurement for the resources used by the "
+"accounts and domains using a common unit referred to as cloud currency in"
+" this document. It can be configured to ensure that your usage won’t "
+"exceed the budget allocated to accounts/domain in cloud currency. It will"
+" let user know how much of the cloud resources he is using. It will help "
+"the cloud admins, if they want, to ensure that a user does not go beyond "
+"his allocated quota. Per usage cycle if an account is found to be "
+"exceeding its quota then it is locked. Locking an account means that it "
+"will not be able to initiate a new resource allocation request, whether "
+"it is more storage or an additional ip. To unlock an account you need to "
+"add more credit to it. In case you want the locking to be disabled on "
+"global or on account scope those provisions are also provided. Needless "
+"to say quota service as well as any action on the account is "
+"configurable."
+msgstr ""
+
+#: ../../plugins/quota.rst:35
+msgid "Enabling the Quota Service"
+msgstr ""
+
+#: ../../plugins/quota.rst:37
+msgid ""
+"Before installing and configuring the quota service you need to make sure"
+" that the Usage Server has been installed. This requires extra steps "
+"beyond just installing the CloudStack software. See Installing the Usage "
+"Server (Optional) in the Advanced Installation Guide."
+msgstr ""
+
+#: ../../plugins/quota.rst:42
+msgid "enable.usage.server: Set to true to enable usage server."
+msgstr ""
+
+#: ../../plugins/quota.rst:44
+msgid ""
+"The quota plugin is disabled by default. To enable it goto Global "
+"Settings and set the following global configuration to true:"
+msgstr ""
+
+#: ../../plugins/quota.rst:47
+msgid "quota.enable.service"
+msgstr ""
+
+#: ../../plugins/quota.rst:49
+msgid ""
+"By default Quota service does not lock the accounts that have exceeded "
+"the quota usage. To enable quota service to lock accounts set the "
+"following global configuration to true:"
+msgstr ""
+
+#: ../../plugins/quota.rst:53
+msgid "quota.enable.enforcement"
+msgstr ""
+
+#: ../../plugins/quota.rst:55
+msgid "The other configurations that are there for quota service are as:"
+msgstr ""
+
+#: ../../plugins/quota.rst:57
+msgid ""
+"quota.currency.symbol : The symbol that is used before any currency "
+"figure in various quota forms and reports."
+msgstr ""
+
+#: ../../plugins/quota.rst:59
+msgid "quota.usage.smtp.host: Quota SMTP host for sending quota alerts."
+msgstr ""
+
+#: ../../plugins/quota.rst:60
+msgid "quota.usage.smtp.port: Quota SMTP port."
+msgstr ""
+
+#: ../../plugins/quota.rst:61
+msgid "quota.usage.smtp.user: Quota SMTP user."
+msgstr ""
+
+#: ../../plugins/quota.rst:62
+msgid "quota.usage.smtp.password: Quota SMTP password."
+msgstr ""
+
+#: ../../plugins/quota.rst:63
+msgid "quota.usage.smtp.sender: Quota SMTP alert sender email address."
+msgstr ""
+
+#: ../../plugins/quota.rst:64
+msgid ""
+"quota.usage.smtp.useAuth: If true, use secure SMTP authentication when "
+"sending emails."
+msgstr ""
+
+#: ../../plugins/quota.rst:65
+msgid ""
+"quota.usage.smtp.connection.timeout: Quota SMTP server connection timeout"
+" duration."
+msgstr ""
+
+#: ../../plugins/quota.rst:67
+msgid ""
+"There are several configuration variables that are inherited from usage "
+"server, these are listed below:"
+msgstr ""
+
+#: ../../plugins/quota.rst:70
+msgid "usage.aggregation.timezone"
+msgstr ""
+
+#: ../../plugins/quota.rst:72
+msgid "All these are described in details in Usage Server documentation."
+msgstr ""
+
+#: ../../plugins/quota.rst:74
+msgid ""
+"Restart the Management Server and  the Usage Server to enable the set "
+"configuration values."
+msgstr ""
+
+#: ../../plugins/quota.rst:82
+msgid ""
+"Once the quota service is running it will calculate the quota balance for"
+" each account. The quota usage is calculated as per the quota tariff "
+"provided by the site administrator."
+msgstr ""
+
+#: ../../plugins/quota.rst:87
+msgid "Quota Tariff"
+msgstr ""
+
+#: ../../plugins/quota.rst:89
+msgid ""
+"The following table shows all quota types for which you can specify "
+"tariff."
+msgstr ""
+
+#: ../../plugins/quota.rst:94
+msgid "Type ID"
+msgstr ""
+
+#: ../../plugins/quota.rst:94
+msgid "Type Name"
+msgstr ""
+
+#: ../../plugins/quota.rst:94
+msgid "Tariff Description"
+msgstr ""
+
+#: ../../plugins/quota.rst:97
+msgid "1"
+msgstr ""
+
+#: ../../plugins/quota.rst:97
+msgid "RUNNING\\_VM"
+msgstr ""
+
+#: ../../plugins/quota.rst:97
+msgid "One month of running Compute-Month"
+msgstr ""
+
+#: ../../plugins/quota.rst:100
+msgid "2"
+msgstr ""
+
+#: ../../plugins/quota.rst:100
+msgid "ALLOCATED\\_VM"
+msgstr ""
+
+#: ../../plugins/quota.rst:100
+msgid "One month of allocated VM"
+msgstr ""
+
+#: ../../plugins/quota.rst:103
+msgid "3"
+msgstr ""
+
+#: ../../plugins/quota.rst:103
+msgid "IP\\_ADDRESS"
+msgstr ""
+
+#: ../../plugins/quota.rst:103
+msgid "Quota for a month of allocated IP"
+msgstr ""
+
+#: ../../plugins/quota.rst:106
+msgid "4"
+msgstr ""
+
+#: ../../plugins/quota.rst:106
+msgid "NETWORK\\_BYTES\\_SENT"
+msgstr ""
+
+#: ../../plugins/quota.rst:106 ../../plugins/quota.rst:108
+msgid "Quota for 1GB bytes sent"
+msgstr ""
+
+#: ../../plugins/quota.rst:108
+msgid "5"
+msgstr ""
+
+#: ../../plugins/quota.rst:108
+msgid "NETWORK\\_BYTES\\_RECEIVED"
+msgstr ""
+
+#: ../../plugins/quota.rst:110
+msgid "6"
+msgstr ""
+
+#: ../../plugins/quota.rst:110
+msgid "VOLUME"
+msgstr ""
+
+#: ../../plugins/quota.rst:110
+msgid "Quota for 1 GB of Volume use for a month"
+msgstr ""
+
+#: ../../plugins/quota.rst:113
+msgid "7"
+msgstr ""
+
+#: ../../plugins/quota.rst:113
+msgid "TEMPLATE"
+msgstr ""
+
+#: ../../plugins/quota.rst:113 ../../plugins/quota.rst:119
+msgid "Quota for 1 GB of"
+msgstr ""
+
+#: ../../plugins/quota.rst:114
+msgid "Template use for a month"
+msgstr ""
+
+#: ../../plugins/quota.rst:116
+msgid "8"
+msgstr ""
+
+#: ../../plugins/quota.rst:116
+msgid "ISO"
+msgstr ""
+
+#: ../../plugins/quota.rst:116
+msgid "Quota for 1 GB of ISO use for a month"
+msgstr ""
+
+#: ../../plugins/quota.rst:119
+msgid "9"
+msgstr ""
+
+#: ../../plugins/quota.rst:119
+msgid "SNAPSHOT"
+msgstr ""
+
+#: ../../plugins/quota.rst:120
+msgid "SNAPSHOT use for a month"
+msgstr ""
+
+#: ../../plugins/quota.rst:122
+msgid "11"
+msgstr ""
+
+#: ../../plugins/quota.rst:122
+msgid "LOAD\\_BALANCER\\_POLICY"
+msgstr ""
+
+#: ../../plugins/quota.rst:122
+msgid "Quota for load balancer policy month"
+msgstr ""
+
+#: ../../plugins/quota.rst:125
+msgid "12"
+msgstr ""
+
+#: ../../plugins/quota.rst:125
+msgid "PORT\\_FORWARDING\\_RULE"
+msgstr ""
+
+#: ../../plugins/quota.rst:125
+msgid "Quota for port forwarding"
+msgstr ""
+
+#: ../../plugins/quota.rst:126
+msgid "policy month"
+msgstr ""
+
+#: ../../plugins/quota.rst:128
+msgid "13"
+msgstr ""
+
+#: ../../plugins/quota.rst:128
+msgid "NETWORK\\_OFFERING"
+msgstr ""
+
+#: ../../plugins/quota.rst:128
+msgid "Quota for network Offering for a month"
+msgstr ""
+
+#: ../../plugins/quota.rst:131
+msgid "14"
+msgstr ""
+
+#: ../../plugins/quota.rst:131
+msgid "VPN\\_USERS"
+msgstr ""
+
+#: ../../plugins/quota.rst:131
+msgid "Quota for VPN usage"
+msgstr ""
+
+#: ../../plugins/quota.rst:132
+msgid "for a month"
+msgstr ""
+
+#: ../../plugins/quota.rst:134
+msgid "15"
+msgstr ""
+
+#: ../../plugins/quota.rst:134
+msgid "CPU\\_CLOCK\\_RATE"
+msgstr ""
+
+#: ../../plugins/quota.rst:134
+msgid "The tariff for using 1 CPU i100 MHz clock"
+msgstr ""
+
+#: ../../plugins/quota.rst:137
+msgid "16"
+msgstr ""
+
+#: ../../plugins/quota.rst:137
+msgid "CPU\\_NUMBER"
+msgstr ""
+
+#: ../../plugins/quota.rst:137
+msgid "The quota tariff for using 1 virtual CPU."
+msgstr ""
+
+#: ../../plugins/quota.rst:140
+msgid "17"
+msgstr ""
+
+#: ../../plugins/quota.rst:140
+msgid "MEMORY"
+msgstr ""
+
+#: ../../plugins/quota.rst:140
+msgid "The quota tariff for using 1MB RAM size."
+msgstr ""
+
+#: ../../plugins/quota.rst:144
+msgid "The quota tariff can be listed using listQuotaTariff API."
+msgstr ""
+
+#: ../../plugins/quota.rst:146
+msgid "quotaTariff: Lists all quota tariff plans"
+msgstr ""
+
+#: ../../plugins/quota.rst:148
+msgid ""
+"The tariff for each of the above can be set by using the "
+"updateQuotaTariff API."
+msgstr ""
+
+#: ../../plugins/quota.rst:151
+msgid "Quota Credits"
+msgstr ""
+
+#: ../../plugins/quota.rst:153
+msgid ""
+"The quota credit (quotaCredit) API lets you add or remove quota currency "
+"credits to an account. With this API you can also control the quota "
+"enforcement policy at account level. This will enable you to have some "
+"accounts where the quota policy is not enforced. The overall quota "
+"enforcement is controlled by the quota.enable.enforcement global setting."
+msgstr ""
+
+#: ../../plugins/quota.rst:159
+#, python-format
+msgid ""
+"In addition to above the quota API lets you can fine tune the alert "
+"generation by specifying the quota threshold for each account. If not "
+"explictly stated, the threshold is taken as 80% of the last deposit."
+msgstr ""
+
+#: ../../plugins/quota.rst:164
+msgid "Quota Balance"
+msgstr ""
+
+#: ../../plugins/quota.rst:166
+msgid ""
+"Quota balance API states the start balance and end balance(optional) from"
+" a start date to end date (optional)."
+msgstr ""
+
+#: ../../plugins/quota.rst:170
+msgid "Quota Statement"
+msgstr ""
+
+#: ../../plugins/quota.rst:172
+msgid ""
+"Quota statement for a period consist of the quota usage under various "
+"quota types for the given period from a start date to an end date."
+msgstr ""
+
+#: ../../plugins/quota.rst:176
+msgid "Quota Monthly Statement"
+msgstr ""
+
+#: ../../plugins/quota.rst:178
+msgid ""
+"Quota service emails the monthly quota statement for the last month at "
+"the beginning of each month. For this service to work properly you need "
+"to ensure that the usage server is running."
+msgstr ""
+
+#: ../../plugins/quota.rst:183
+msgid "Quota Alert Management"
+msgstr ""
+
+#: ../../plugins/quota.rst:185
+msgid ""
+"Quota module also provides APIs to customize various email templates that"
+" are used to alert account owners about quota going down below threshold "
+"and quota getting over."
+msgstr ""
+
+#: ../../plugins/quota.rst:189
+msgid "All the above functionality is also available via quota UI plugin."
+msgstr ""
+

@@ -1,0 +1,99 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-10-17 23:19+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.9\n"
+
+# 3d0c16ad63444261b9694623c2402727
+#: ../../networking/networking_in_pod.rst:18
+msgid "Networking in a Pod"
+msgstr "Réseau dans un Pod"
+
+# 6f94486d31ee45b8a15da0d2a1c080ca
+#: ../../networking/networking_in_pod.rst:20
+msgid ""
+"The figure below illustrates network setup within a single pod. The hosts "
+"are connected to a pod-level switch. At a minimum, the hosts should have "
+"one physical uplink to each switch. Bonded NICs are supported as well. The "
+"pod-level switch is a pair of redundant gigabit switches with 10 G uplinks."
+msgstr ""
+"L'image suivante illustre la configuration du réseau au sein d'un seul pod. "
+"Les hôtes sont connectés à un commutateur au niveau du pod. Au minimum, les "
+"hôtes devraient avoir un lien montant vers chaque commutateur. Les agrégats "
+"d'interfaces réseaux sont également supportés. Le commutateur du pod est un "
+"ensemble redondants de commutateurs gigabits avec des liens à 10G."
+
+# d14ee305eeed479b95127d50242ce7f9
+#: ../../networking/networking_in_pod.rst:26
+msgid "|networksinglepod.png|"
+msgstr "|networksinglepod.png|"
+
+# 6c63d1a963fe4751bb6a3efcc28ec07b
+#: ../../networking/networking_in_pod.rst:28
+msgid "Servers are connected as follows:"
+msgstr "Les serveurs sont connectés comme ceci :"
+
+# cab4d0a9b3874148b142ec81b8916ab3
+#: ../../networking/networking_in_pod.rst:30
+msgid ""
+"Storage devices are connected to only the network that carries management "
+"traffic."
+msgstr ""
+"Les périphériques de stockages ne sont connectés qu'au réseau qui "
+"transporte le trafic de gestion."
+
+# a01f83aa00be44768e404b928746539d
+#: ../../networking/networking_in_pod.rst:33
+msgid ""
+"Hosts are connected to networks for both management traffic and public "
+"traffic."
+msgstr ""
+"Les hôtes sont connectés aux réseaux pour à la fois le trafic de gestion et "
+"le trafic publique."
+
+# 7cc32b192f154001a6b37b93bf141c79
+#: ../../networking/networking_in_pod.rst:36
+msgid ""
+"Hosts are also connected to one or more networks carrying guest traffic."
+msgstr ""
+"Les hôtes sont aussi connectés à un ou plusieurs réseaux qui transportent "
+"le trafic invité."
+
+# afe45e02d11f436b92bc4752de309aa2
+#: ../../networking/networking_in_pod.rst:39
+msgid ""
+"We recommend the use of multiple physical Ethernet cards to implement each "
+"network interface as well as redundant switch fabric in order to maximize "
+"throughput and improve reliability."
+msgstr ""
+"Nous recommandons l'utilisation de plusieurs cartes physiques Ethernet qui "
+"implémente chacune interface réseau comme une fabrique de commutateurs "
+"redondants dans le but d'optimiser le débit et améliorer la fiabilité."

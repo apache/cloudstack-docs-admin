@@ -1,0 +1,206 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-09-05 23:36+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.8\n"
+
+# 7499b008b97e41b59d4cdc3835758f36
+#: ../../api.rst:18
+msgid "CloudStack API"
+msgstr "L'API CloudStack"
+
+# 7a40beffc6484f108ad5202cb2a4e7c3
+#: ../../api.rst:20
+msgid ""
+"The CloudStack API is a low level API that has been used to implement the "
+"CloudStack web UIs. It is also a good basis for implementing other popular "
+"APIs such as EC2/S3 and emerging DMTF standards."
+msgstr ""
+"L'API CloudStack est une API de bas niveau qui a été utilisé pour "
+"implémenter les interfaces web CloudStack. C'est également une bonne base "
+"pour implémenter d'autre APIs populaires comme EC2/S3 et les standards DMTF "
+"émergeant."
+
+# 0e4247f81b8a4a83afa84f323d2697b9
+#: ../../api.rst:24
+msgid ""
+"Many CloudStack API calls are asynchronous. These will return a Job ID "
+"immediately when called. This Job ID can be used to query the status of the "
+"job later. Also, status calls on impacted resources will provide some "
+"indication of their state."
+msgstr ""
+"De nombreux appels aux APIs CloudStack sont asynchrones. Ces dernières vont "
+"retourner un ID de travail lorsqu'elles sont appelées. Cet ID de travail "
+"peut être utilisé pour interroger le status du travail plus tard. Aussi, "
+"les appels aux statuts sur les ressources impactées vont fournir des "
+"indications sur leur état."
+
+# dc0b3fef72b74085a24d7e0c15cb227d
+#: ../../api.rst:29
+msgid ""
+"The API has a REST-like query basis and returns results in XML or JSON."
+msgstr ""
+"L'API a une base de requête type REST et retourne les résultats en XML ou "
+"JSON."
+
+# 1f57015e966c480795b141ba3f87b86a
+#: ../../api.rst:31
+msgid ""
+"See `the Developer’s Guide <https://cwiki.apache.org/confluence/display/"
+"CLOUDSTACK/Development+101>`_ and `the API Reference <http://cloudstack."
+"apache.org/docs/api/>`_."
+msgstr ""
+"Voir `Le guide du Développeur <https://cwiki.apache.org/confluence/display/"
+"CLOUDSTACK/Development+101>`_ et `La référence API <http://cloudstack."
+"apache.org/docs/api/>`_."
+
+# de3d35bb699f45f495251ceb69a2c238
+#: ../../api.rst:36
+msgid "Provisioning and Authentication API"
+msgstr "API de Provisionnement et d'Authentification"
+
+# c8eb593d2c654d8db8d5ce7791bedd07
+#: ../../api.rst:38
+msgid ""
+"CloudStack expects that a customer will have their own user provisioning "
+"infrastructure. It provides APIs to integrate with these existing systems "
+"where the systems call out to CloudStack to add/remove users.."
+msgstr ""
+"CloudStack s'attend à ce qu'un utilisateur ait sa propre infrastructure de "
+"provisionnement. Il fourni les APIs pour intégrer avec ces systèmes "
+"existants où les systèmes font appel à CloudStackpour ajouter/supprimer les "
+"utilisateurs.."
+
+# f37cbbabb4af4c76977b51277f5cefa3
+#: ../../api.rst:42
+msgid ""
+"CloudStack supports pluggable authenticators. By default, CloudStack "
+"assumes it is provisioned with the user’s password, and as a result "
+"authentication is done locally. However, external authentication is "
+"possible as well. For example, see Using an LDAP Server for User "
+"Authentication."
+msgstr ""
+"CloudStack supporte les authentificateurs tiers. Par défaut, CloudStack "
+"assume qu'il soit provisionné avec le mot de passe utilisateur, et a un "
+"résultat d'authentification fait localement. Toutefois, une "
+"authentification externe est tout aussi possible. Par exemple, voir "
+"Utiliser un serveur LDAP pour l'authentification utilisateur."
+
+# a1cd31f63e9a4fe6869e80cdd8f2274f
+#: ../../api.rst:50
+msgid "User Data and Meta Data"
+msgstr "Donnée utilisateur et méta-données"
+
+# 8adea5c3508040cfb6f8475bc1f2f96c
+#: ../../api.rst:52
+msgid ""
+"CloudStack provides API access to attach up to 32KB of user data to a "
+"deployed VM. Deployed VMs also have access to instance metadata via the "
+"virtual router."
+msgstr ""
+"CloudStack fourni un accès à l'API pour attacher jusqu'à 32KB de données "
+"utilisateur à une VM déployée. Les VMs déployées ont aussi un accès aux "
+"méta-données de l'instance via le routeur virtuel."
+
+# 11a9a59d3f23401d8c639b7767af0a94
+#: ../../api.rst:56
+msgid ""
+"User data can be accessed once the IP address of the virtual router is "
+"known. Once the IP address is known, use the following steps to access the "
+"user data:"
+msgstr ""
+"Les données utilisateurs peuvent être accédée une fois que l'adresse IP du "
+"routeur virtuel est connue. Une fois cette adresse connue, utiliser les "
+"étapes suivantes pour accéder aux données de l'utilisateur :"
+
+# 0b14bfd2cf6c41a98f39a406fdb83868
+#: ../../api.rst:60
+msgid "Run the following command to find the virtual router."
+msgstr "Lancer la commande suivante pour trouver le routeur virtuel."
+
+# e0144a29051543d1aba1d5b18d18e033
+#: ../../api.rst:66
+msgid ""
+"Access user data by running the following command using the result of the "
+"above command"
+msgstr ""
+"Accéder aux données utilisateur en lancer la commande suivante utilisant le "
+"résultat de la commande précédente."
+
+# 8ebc1946ef8840c4b4c99d6194576997
+#: ../../api.rst:73
+msgid ""
+"Meta Data can be accessed similarly, using a URL of the form "
+"http://10.1.1.1/latest/meta-data/{metadata type}. (For backwards "
+"compatibility, the previous URL http://10.1.1.1/latest/{metadata type} is "
+"also supported.) For metadata type, use one of the following:"
+msgstr ""
+"Les méta-données peuvent être accédées de la même manière, en utilisant une "
+"URL au format http://10.1.1.1/latest/meta-data/{metadata type}. (pour la "
+"compatibilité ascendante, l'URL précédente http://10.1.1.1/latest/{metadata "
+"type} est aussi supportée). Pour le type de méta-données, utiliser :"
+
+# bed0120874a643b1b9d59bd6a4e9e404
+#: ../../api.rst:78
+msgid "service-offering. A description of the VMs service offering"
+msgstr "service-offering. Une description de l'offre de service des VM."
+
+# 71b8d766955140c3b512c2a9318fa115
+#: ../../api.rst:80
+msgid "availability-zone. The Zone name"
+msgstr "availability-zone. Le nom de la Zone"
+
+# 2a80730691bb49e0b69de28d14feea03
+#: ../../api.rst:82
+msgid "local-ipv4. The guest IP of the VM"
+msgstr "local-ipv4. L'IP invitée de la VM"
+
+# 6f5c73e35f714f0f83b7c799a46c499f
+#: ../../api.rst:84
+msgid "local-hostname. The hostname of the VM"
+msgstr "local-hostname. Le nom d'hôte de la VM"
+
+# ad4c5b53b2844aa9b7518ea0165e3c5a
+#: ../../api.rst:86
+msgid ""
+"public-ipv4. The first public IP for the router. (E.g. the first IP of eth2)"
+msgstr ""
+"public-ipv4. La première IP publique pour le routeur. (E.G. la première IP "
+"de eth2)"
+
+# 53db659838e1499c86e3674db658bbdb
+#: ../../api.rst:89
+msgid "public-hostname. This is the same as public-ipv4"
+msgstr "public-hostname. Ceci est la même chose que public-ipv4"
+
+# 760946f739514ea5be9f4c114716b1ba
+#: ../../api.rst:91
+msgid "instance-id. The instance name of the VM"
+msgstr "instance-id. Le nom de l'instance de la VM"

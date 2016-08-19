@@ -1,0 +1,448 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration Documentation 4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-12-22 16:07+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: ../../templates/_create_windows.rst:18
+msgid "Creating a Windows Template"
+msgstr "Créer un modèle Windows"
+
+#: ../../templates/_create_windows.rst:20
+msgid ""
+"Windows templates must be prepared with Sysprep before they can be provisioned "
+"on multiple machines. Sysprep allows you to create a generic Windows template "
+"and avoid any possible SID conflicts."
+msgstr ""
+"Les modèles Windows doivent être préparéds avec Sysprep avant de pouvoir être "
+"provisionnés sur plusieurs machines. Sysprep vous permet de créer un modèle "
+"générique Windows et supprime toute possibilité de conflits de SID."
+
+#: ../../templates/_create_windows.rst:25
+msgid ""
+"(XenServer) Windows VMs running on XenServer require PV drivers, which may be "
+"provided in the template or added after the VM is created. The PV drivers are "
+"necessary for essential management functions such as mounting additional "
+"volumes and ISO images, live migration, and graceful shutdown."
+msgstr ""
+"(XenServer) Les VMs Windows fonctionnant sous XenServer nécessitent des "
+"drivers PV, qui peuvent être fourni dans le modèle ou ajouter après que la VM "
+"soit créée. Les drivers PV sont nécessaires pour les fonctions essentielles de "
+"gestion comme monter des volumes additionnels et des images ISO, la migration "
+"à chaud, et l'arrêt correcte."
+
+#: ../../templates/_create_windows.rst:31
+msgid "An overview of the procedure is as follows:"
+msgstr "Une vue d'ensemble de la procédure est :"
+
+#: ../../templates/_create_windows.rst:33
+msgid "Upload your Windows ISO."
+msgstr "Télécharger votre ISO Windows."
+
+#: ../../templates/_create_windows.rst:35
+msgid ""
+"For more information, see `“Adding an ISO” <virtual_machines.html#adding-an-"
+"iso>`_."
+msgstr ""
+"Pour plus d'informations, voir `“Ajouter une ISO” <virtual_machines."
+"html#adding-an-iso>`_."
+
+#: ../../templates/_create_windows.rst:38
+msgid "Create a VM Instance with this ISO."
+msgstr "Créer une instance de VM avec cet ISO."
+
+#: ../../templates/_create_windows.rst:40
+msgid ""
+"For more information, see `“Creating VMs” <virtual_machines.html#creating-"
+"vms>`_."
+msgstr ""
+"Pour plus d'informations, voir `“Créer des VMs” <virtual_machines."
+"html#creating-vms>`_."
+
+#: ../../templates/_create_windows.rst:43
+msgid ""
+"Follow the steps in Sysprep for Windows Server 2008 R2 (below) or Sysprep for "
+"Windows Server 2003 R2, depending on your version of Windows Server"
+msgstr ""
+"Suivre les étapes dans Sysprep pour Windows Server 2008 R2 (ci-dessous) ou "
+"Sysprep pour Windows Server 2003 R2, en fonction de votre version de Windows "
+"Server."
+
+#: ../../templates/_create_windows.rst:47
+msgid ""
+"The preparation steps are complete. Now you can actually create the template "
+"as described in Creating the Windows Template."
+msgstr ""
+"Les étapes de préparations sont terminées. Vous pouvez maintenant créer un "
+"modèle comme décrit dans Créer un modèle Windows."
+
+#: ../../templates/_create_windows.rst:52
+msgid "System Preparation for Windows Server 2008 R2"
+msgstr "Préparation du système pour Windows Server 2008 R2"
+
+#: ../../templates/_create_windows.rst:54
+msgid ""
+"For Windows 2008 R2, you run Windows System Image Manager to create a custom "
+"sysprep response XML file. Windows System Image Manager is installed as part "
+"of the Windows Automated Installation Kit (AIK). Windows AIK can be downloaded "
+"from `Microsoft Download Center <http://www.microsoft.com/en-us/download/"
+"details.aspx?id=9085>`_."
+msgstr ""
+"Pour Windows 2008 R2, vous lancez Windows System Image Manager pour créer un "
+"fichier XML de réponse sysprep personnalisé. Windows System Image Manager est "
+"installé comme partie du Windows Automated Installation Kit (AIK). Windows AIK "
+"peut être téléchargé depuis `Microsoft Download Center <http://www.microsoft."
+"com/en-us/download/details.aspx?id=9085>`_."
+
+#: ../../templates/_create_windows.rst:60
+msgid "Use the following steps to run sysprep for Windows 2008 R2:"
+msgstr "Utiliser les étapes suivantes pour lancer sysprep pour Windows 2008 R2 :"
+
+#: ../../templates/_create_windows.rst:63
+msgid ""
+"The steps outlined here are derived from the excellent guide by Charity "
+"Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. "
+"<http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-"
+"process-during-windows-server-2008-sysprep-mini-setup.aspx>`_"
+msgstr ""
+"Les étapes décrites ici proviennent de l'excellent guide de Charity "
+"Shelbourne, publié à l'origine à `Windows Server 2008 Sysprep Mini-Setup. "
+"<http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-"
+"process-during-windows-server-2008-sysprep-mini-setup.aspx>`_"
+
+#: ../../templates/_create_windows.rst:68
+msgid "Download and install the Windows AIK"
+msgstr "Télécharger et installer Windows AIK"
+
+#: ../../templates/_create_windows.rst:71
+msgid ""
+"Windows AIK should not be installed on the Windows 2008 R2 VM you just "
+"created. Windows AIK should not be part of the template you create. It is only "
+"used to create the sysprep answer file."
+msgstr ""
+"Windows AIK ne devrait pas être installé sur la VM Windows 2008 R2 que vous "
+"venez de créer. Windows AIK ne devrait pas faire partie d'un modèle que vous "
+"créez. Il est juste utilisé pour créer le fichier de réponse sysprep."
+
+#: ../../templates/_create_windows.rst:75
+msgid ""
+"Copy the install.wim file in the \\\\sources directory of the Windows 2008 R2 "
+"installation DVD to the hard disk. This is a very large file and may take a "
+"long time to copy. Windows AIK requires the WIM file to be writable."
+msgstr ""
+"Copier le fichier install.wim du répertoire \\\\sources du DVD d'installation "
+"Windows 2008 R2 sur le disque dur. C'est un très gros fichier et peut mettre "
+"du temps à se copier. Windows AIK nécessite que le fichier WIM soit en "
+"écriture."
+
+#: ../../templates/_create_windows.rst:80
+msgid "Start the Windows System Image Manager, which is part of the Windows AIK."
+msgstr ""
+"Démarrer le Windows System Image Manager, qui est une partie du Windows AIK."
+
+#: ../../templates/_create_windows.rst:83
+msgid ""
+"In the Windows Image pane, right click the Select a Windows image or catalog "
+"file option to load the install.wim file you just copied."
+msgstr ""
+"Dans le panneau Image Windows, clic-droit sur Sélectionner une image Windows "
+"ou sur option Fichier catalogue pour charger le fichier install.wim que vous "
+"venez de copier."
+
+#: ../../templates/_create_windows.rst:86
+msgid "Select the Windows 2008 R2 Edition."
+msgstr "Sélectionner Windows 2008 R2 Edition."
+
+#: ../../templates/_create_windows.rst:88
+msgid ""
+"You may be prompted with a warning that the catalog file cannot be opened. "
+"Click Yes to create a new catalog file."
+msgstr ""
+"Vous pouvez être avertit par une alerte que le fichier catalogue ne peut pas "
+"être ouvert. Cliquer sur Oui pour créer un nouveau fichier catalogue."
+
+#: ../../templates/_create_windows.rst:91
+msgid "In the Answer File pane, right click to create a new answer file."
+msgstr ""
+"Dans le panneau Fichier Réponse, cliquer droit pour créer un nouveau fichier "
+"de réponse."
+
+#: ../../templates/_create_windows.rst:93
+msgid ""
+"Generate the answer file from the Windows System Image Manager using the "
+"following steps:"
+msgstr ""
+"Générer un fichier de réponse depuis Windows System Image Manager en utilisant "
+"les étapes suivantes :"
+
+#: ../../templates/_create_windows.rst:96
+msgid ""
+"The first page you need to automate is the Language and Country or Region "
+"Selection page. To automate this, expand Components in your Windows Image "
+"pane, right-click and add the Microsoft-Windows-International-Core setting to "
+"Pass 7 oobeSystem. In your Answer File pane, configure the InputLocale, "
+"SystemLocale, UILanguage, and UserLocale with the appropriate settings for "
+"your language and country or region. Should you have a question about any of "
+"these settings, you can right-click on the specific setting and select Help. "
+"This will open the appropriate CHM help file with more information, including "
+"examples on the setting you are attempting to configure."
+msgstr ""
+"La première page que vous devez automatiser est la page de Selection de "
+"Langage et de Pays ou de Région. Pour automatiser cela, développer les "
+"composants dans votre panneau Image Windows, clic-droit et ajouter le "
+"paramètre Microsoft-Windows-International-Core pour passer 7 oobeSystem. Dans "
+"votre panneau Fichier de réponse, configurer le InputLocale, SystemLocale, "
+"UILanguage et UserLocale avec les paramètres appropriés pour votre langue et "
+"pays ou région. Si vous avez une question à propos de n'importe quel "
+"paramètre, vous pouvez faire un clic-droit sur le paramètre spécifique et "
+"sélectionner Aide. Cela va ouvrir le fichier d'aide CHM approprié avec plus "
+"d'informations, incluant des exemples sur le paramètre que vous êtes en train "
+"d'essayer de configurer."
+
+#: ../../templates/_create_windows.rst:108
+msgid "|sysmanager.png|"
+msgstr "|sysmanager.png|"
+
+#: ../../templates/_create_windows.rst:110
+msgid ""
+"You need to automate the Software License Terms Selection page, otherwise "
+"known as the End-User License Agreement (EULA). To do this, expand the "
+"Microsoft-Windows-Shell-Setup component. High-light the OOBE setting, and add "
+"the setting to the Pass 7 oobeSystem. In Settings, set HideEULAPage true."
+msgstr ""
+"Vous devez automatiser la page de Sélection des Termes de Licence Logiciel, "
+"aussi connue comme End-User Licence Agreement (EULA). Pour cela, étendre le "
+"composant Microsoft-Windows-Shell-Setup. Surligner le paramètre OOBE et "
+"ajouter le paramètre à la Pass 7 oobeSystem. Dans paramètres, fixer "
+"HideEULAPage à vrai."
+
+#: ../../templates/_create_windows.rst:116
+msgid "|software-license.png|"
+msgstr "|software-license.png|"
+
+#: ../../templates/_create_windows.rst:118
+msgid ""
+"Make sure the license key is properly set. If you use MAK key, you can just "
+"enter the MAK key on the Windows 2008 R2 VM. You need not input the MAK into "
+"the Windows System Image Manager. If you use KMS host for activation you need "
+"not enter the Product Key. Details of Windows Volume Activation can be found "
+"at `http://technet.microsoft.com/en-us/library/bb892849.aspx <http://technet."
+"microsoft.com/en-us/library/bb892849.aspx>`_"
+msgstr ""
+"Assurez vous que la clé de licence est correctement configurée. Si vous "
+"utilisez une clé MAK, vous pouvez juste saisir la clé MAK sur la VM Windows "
+"2008 R2. Vous ne devez pas introduire la MAK dans le Windows System Image "
+"Manager. Si vous utilisez un hôte KMS pour l'activation vous ne devez pas "
+"saisir de clé de produit. Des détails sur l'activation en volume de Windows "
+"peuvent être trouvés ici `http://technet.microsoft.com/en-us/library/bb892849."
+"aspx <http://technet.microsoft.com/en-us/library/bb892849.aspx>`_"
+
+#: ../../templates/_create_windows.rst:126
+msgid ""
+"You need to automate is the Change Administrator Password page. Expand the "
+"Microsoft-Windows-Shell-Setup component (if it is not still expanded), expand "
+"UserAccounts, right-click on AdministratorPassword, and add the setting to the "
+"Pass 7 oobeSystem configuration pass of your answer file. Under Settings, "
+"specify a password next to Value."
+msgstr ""
+"Vous devez automatiser la page Modifier le mot de passe administrateur. "
+"Développez le composant Microsoft-Windows-Shell-Setup (s'il n'est pas encore "
+"développé), développez UserAccounts, cliquez avec le bouton droit sur "
+"AdministratorPassword et ajoutez le paramètre de configuration Pass 7 "
+"oobeSystem de votre fichier de réponses. Sous Paramètres, spécifiez un mot de "
+"passe après Valeur."
+
+#: ../../templates/_create_windows.rst:133
+msgid "|change-admin-password.png|"
+msgstr "|change-admin-password.png|"
+
+#: ../../templates/_create_windows.rst:135
+msgid ""
+"You may read the AIK documentation and set many more options that suit your "
+"deployment. The steps above are the minimum needed to make Windows unattended "
+"setup work."
+msgstr ""
+"Vous devriez lire la documentation AIK et configurer beaucoup plus d'options "
+"pour pour convenir à votre déploiement Les étapes ci-dessus sont le minimum "
+"requis pour rendre fonctionnel la configuration sans assistance de Windows."
+
+#: ../../templates/_create_windows.rst:139
+msgid ""
+"Save the answer file as unattend.xml. You can ignore the warning messages that "
+"appear in the validation window."
+msgstr ""
+"Sauvegarder le fichier de réponse sous unattend.xml. Vous pouvez ignorer les "
+"messages d'alertes qui apparaissent dans la fenêtre de validation."
+
+#: ../../templates/_create_windows.rst:142
+msgid ""
+"Copy the unattend.xml file into the c:\\\\windows\\\\system32\\\\sysprep "
+"directory of the Windows 2008 R2 Virtual Machine"
+msgstr ""
+"Copier le fichier unattend.xml sous le dossier c:\\\\windows\\\\system32\\"
+"\\sysprep de la machine virtuelle Windows 2008 R2."
+
+#: ../../templates/_create_windows.rst:145
+msgid ""
+"Once you place the unattend.xml file in c:\\\\windows\\\\system32\\\\sysprep "
+"directory, you run the sysprep tool as follows:"
+msgstr ""
+"Une fois que vous avez placé le fichier unattend.xml dans le dossier c:\\"
+"\\windows\\\\system32\\\\sysprep, vous lancer l'outil sysprep comme ci-"
+"dessous :"
+
+#: ../../templates/_create_windows.rst:154
+msgid ""
+"The Windows 2008 R2 VM will automatically shut down after sysprep is complete."
+msgstr ""
+"La VM Windows 2008 R2 va s'éteindre automatiquement après que le sysprep soit "
+"terminé."
+
+#: ../../templates/_create_windows.rst:159
+msgid "System Preparation for Windows Server 2003 R2"
+msgstr "Préparation du système pour Windows Server 2003 R2"
+
+#: ../../templates/_create_windows.rst:161
+msgid ""
+"Earlier versions of Windows have a different sysprep tool. Follow these steps "
+"for Windows Server 2003 R2."
+msgstr ""
+"Les versions précédentes de Windows ont un outil sysprep différent. Suivre ces "
+"étapes pour Windows Server 2003 R2."
+
+#: ../../templates/_create_windows.rst:164
+msgid ""
+"Extract the content of \\\\support\\\\tools\\\\deploy.cab on the Windows "
+"installation CD into a directory called c:\\\\sysprep on the Windows 2003 R2 "
+"VM."
+msgstr ""
+"Extrayez le contenu de \\\\support\\\\tools\\\\deploy.cab du CD d'installation "
+"de Windows dans le répertoire appelé c:\\\\sysprep dans la VM Windows 2003 R2."
+
+#: ../../templates/_create_windows.rst:168
+msgid "Run c:\\\\sysprep\\\\setupmgr.exe to create the sysprep.inf file."
+msgstr "Lancer c:\\\\sysprep\\\\setupmgr.exe pour créer le fichier sysprep.inf."
+
+#: ../../templates/_create_windows.rst:170
+msgid "Select Create New to create a new Answer File."
+msgstr "Sélectionner Créer un nouveau pour créer un nouveau fichier de réponses."
+
+#: ../../templates/_create_windows.rst:172
+msgid "Enter “Sysprep setup” for the Type of Setup."
+msgstr "Entrer \"Sysprep setup\" pour le type de Setup."
+
+#: ../../templates/_create_windows.rst:174
+msgid "Select the appropriate OS version and edition."
+msgstr "Sélectionner la version et l'édition appropriée d'OS."
+
+#: ../../templates/_create_windows.rst:176
+msgid ""
+"On the License Agreement screen, select “Yes fully automate the installation”."
+msgstr ""
+"Dans l'écran Agrément Licence, sélectionner \"Oui automatisation complète de "
+"l'installation\"."
+
+#: ../../templates/_create_windows.rst:179
+msgid "Provide your name and organization."
+msgstr "Fournir le nom et l'organisation."
+
+#: ../../templates/_create_windows.rst:181
+msgid "Leave display settings at default."
+msgstr "Laisser les paramètres d'affichage par défaut."
+
+#: ../../templates/_create_windows.rst:183
+msgid "Set the appropriate time zone."
+msgstr "Sélectionner la zone horaire appropriée."
+
+#: ../../templates/_create_windows.rst:185
+msgid "Provide your product key."
+msgstr "Fournir votre clef de produit."
+
+#: ../../templates/_create_windows.rst:187
+msgid "Select an appropriate license mode for your deployment"
+msgstr "Sélectionner un mode de licence approprié pour votre déploiement"
+
+#: ../../templates/_create_windows.rst:189
+msgid "Select “Automatically generate computer name”."
+msgstr "Sélectionner \"Générer automatiquement un nom d'ordinateur\"."
+
+#: ../../templates/_create_windows.rst:191
+msgid ""
+"Type a default administrator password. If you enable the password reset "
+"feature, the users will not actually use this password. This password will be "
+"reset by the instance manager after the guest boots up."
+msgstr ""
+"Saisissez un mot de passe par défaut pour l'administrateur. Si vous activez la "
+"fonctionnalité de réinitialisation de mot de passe, les utilisateurs "
+"n'utiliseront pas ce mot de passe. Ce mot de passe sera réinitialisé par le "
+"gestionnaire d'instance après les démarrage des invités."
+
+#: ../../templates/_create_windows.rst:196
+msgid "Leave Network Components at “Typical Settings”."
+msgstr "Laisser les Composants Réseaux à \"Paramètres par défaut\"."
+
+#: ../../templates/_create_windows.rst:198
+msgid "Select the “WORKGROUP” option."
+msgstr "Sélectionner l'option \"WORKGROUP\"."
+
+#: ../../templates/_create_windows.rst:200
+msgid "Leave Telephony options at default."
+msgstr "Laisser les options Téléphonie par défaut."
+
+#: ../../templates/_create_windows.rst:202
+msgid "Select appropriate Regional Settings."
+msgstr "Sélectionner les paramètres Régionaux appropriés."
+
+#: ../../templates/_create_windows.rst:204
+msgid "Select appropriate language settings."
+msgstr "Sélectionner les paramètres de langage approprié."
+
+#: ../../templates/_create_windows.rst:206
+msgid "Do not install printers."
+msgstr "Ne pas installer d'imprimantes."
+
+#: ../../templates/_create_windows.rst:208
+msgid "Do not specify “Run Once commands”."
+msgstr "Ne pas spécifier \"Lancer une fois les commandes\"."
+
+#: ../../templates/_create_windows.rst:210
+msgid "You need not specify an identification string."
+msgstr "Vous ne devez pas spécifier une chaîne d'identification."
+
+#: ../../templates/_create_windows.rst:212
+msgid "Save the Answer File as c:\\\\sysprep\\\\sysprep.inf."
+msgstr "Sauvegarde le fichier de réponse sous c:\\\\sysprep\\\\sysprep.inf."
+
+#: ../../templates/_create_windows.rst:214
+msgid "Run the following command to sysprep the image:"
+msgstr "Lancer la commande suivante pour syspreper l'image :"
+
+#: ../../templates/_create_windows.rst:220
+msgid "After this step the machine will automatically shut down"
+msgstr "Après cette étape la machine va automatiquement s'arrêter"

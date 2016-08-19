@@ -1,0 +1,243 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-12-19 17:26+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
+
+# 68f25b7a2e514065b563d7ccdd72f355
+#: ../../networking/elastic_ips.rst:18
+msgid "About Elastic IPs"
+msgstr "A propos d'Elastic IP"
+
+# bf34049aef4a4cddb2aa0169d49b5281
+#: ../../networking/elastic_ips.rst:20
+msgid ""
+"Elastic IP (EIP) addresses are the IP addresses that are associated with an "
+"account, and act as static IP addresses. The account owner has the complete "
+"control over the Elastic IP addresses that belong to the account. As an "
+"account owner, you can allocate an Elastic IP to a VM of your choice from "
+"the EIP pool of your account. Later if required you can reassign the IP "
+"address to a different VM. This feature is extremely helpful during VM "
+"failure. Instead of replacing the VM which is down, the IP address can be "
+"reassigned to a new VM in your account."
+msgstr ""
+"Les adresses Elastic IP (EIP) sont les adresses IP associées à un compte et "
+"qui agissent comme des adresses IP statiques. Le propriétaire du compte a "
+"le contrôle complet sur les adresses IP Elastic qui appartiennent au "
+"compte. En tant que propriétaire d'un compte, vous pouvez allouer une IP "
+"élastique à une machine virtuelle de votre choix depuis la réserve d'EIP de "
+"votre compte. Plus tard, si nécessaire, vous pouvez réaffecter l'adresse IP "
+"à une machine virtuelle différente. Cette fonctionnalité est extrêmement "
+"utile lors de la défaillance d'une VM. Au lieu de remplacer la machine "
+"virtuelle qui est en panne, l'adresse IP peut être réaffectée à une "
+"nouvelle VM de votre compte."
+
+# 8b249afbc2664b01a564524559d5c5fd
+#: ../../networking/elastic_ips.rst:29
+msgid ""
+"Similar to the public IP address, Elastic IP addresses are mapped to their "
+"associated private IP addresses by using StaticNAT. The EIP service is "
+"equipped with StaticNAT (1:1) service in an EIP-enabled basic zone. The "
+"default network offering, DefaultSharedNetscalerEIPandELBNetworkOffering, "
+"provides your network with EIP and ELB network services if a NetScaler "
+"device is deployed in your zone. Consider the following illustration for "
+"more details."
+msgstr ""
+"De manière similaire à une adresse IP publique, les adresses Elastic IP "
+"sont mappées à leurs adresses IP privées associées en utilisant du "
+"StaticNAT. Le service EIP est équipé du service StaticNAT (1:1) dans une "
+"zone basique avec EIP activé. L'offre réseau par défaut, "
+"DefaultSharedNetscalerEIPandELBNetworkOffering, fournit à votre réseau des "
+"services réseau EIP et ELB si un périphérique NetScaler est déployé dans "
+"votre zone. Considérez l'illustration suivante pour plus de détails."
+
+# deef19d6b1414dbb967743f1b7cef2df
+#: ../../networking/elastic_ips.rst:37
+msgid "|eip-ns-basiczone.png|"
+msgstr "|eip-ns-basiczone.png|"
+
+# a1f02d4922ed4bbb8941ccc048f0b0b4
+#: ../../networking/elastic_ips.rst:39
+msgid ""
+"In the illustration, a NetScaler appliance is the default entry or exit "
+"point for the CloudStack instances, and firewall is the default entry or "
+"exit point for the rest of the data center. Netscaler provides LB services "
+"and staticNAT service to the guest networks. The guest traffic in the pods "
+"and the Management Server are on different subnets / VLANs. The policy-"
+"based routing in the data center core switch sends the public traffic "
+"through the NetScaler, whereas the rest of the data center goes through the "
+"firewall."
+msgstr ""
+"Dans l'illustration, une appliance NetScaler est le point d'entrée ou de "
+"sortie par défaut pour les instances CloudStack et le pare-feu est l'entrée "
+"ou le point de sortie par défaut pour le reste du centre de données. Le "
+"Netscaler fournit des services de LB et un service staticNAT aux réseaux "
+"invités. Le trafic invité dans les pods et le serveur d'administration se "
+"trouvent sur différents sous-réseaux / VLAN. Le routage basé sur les "
+"stratégies dans le coeur de réseau du centre de données envoie le trafic "
+"public via le NetScaler, tandis que le reste du centre de données passe par "
+"le pare-feu."
+
+# 28c78bf967714b33884e97cfa4ca307b
+#: ../../networking/elastic_ips.rst:48
+msgid "The EIP work flow is as follows:"
+msgstr "Le workflow de l'EIP est le suivant :"
+
+# 773cd4ac9b6d4973832aafd2d0cf2f9e
+#: ../../networking/elastic_ips.rst:50
+msgid ""
+"When a user VM is deployed, a public IP is automatically acquired from the "
+"pool of public IPs configured in the zone. This IP is owned by the VM's "
+"account."
+msgstr ""
+"Lorsqu'une VM utilisateur est déployée, une IP publique est automatiquement "
+"acquise depuis la réserve d'IPs publiques configurée dans la zone. Cette IP "
+"appartient au compte de la VM."
+
+# 23a70289953d415c81e8dd6ebc86423c
+#: ../../networking/elastic_ips.rst:54
+msgid ""
+"Each VM will have its own private IP. When the user VM starts, Static NAT "
+"is provisioned on the NetScaler device by using the Inbound Network Address "
+"Translation (INAT) and Reverse NAT (RNAT) rules between the public IP and "
+"the private IP."
+msgstr ""
+"Chaque VM va avoir sa propre IP privée. Lorsque la VM de l'utilisateur "
+"démarre, le Static Nat est provisionné sur le périphérique NetScaler en "
+"utilisant des règles d'Inbound Network Address Translation (INAT) et de "
+"Reverse NAT (RNAT) entre l'IP publique et l'IP privée"
+
+# bfa50768ea9b496599aa1804e3437f25
+#: ../../networking/elastic_ips.rst:60
+msgid ""
+"Inbound NAT (INAT) is a type of NAT supported by NetScaler, in which the "
+"destination IP address is replaced in the packets from the public network, "
+"such as the Internet, with the private IP address of a VM in the private "
+"network. Reverse NAT (RNAT) is a type of NAT supported by NetScaler, in "
+"which the source IP address is replaced in the packets generated by a VM in "
+"the private network with the public IP address."
+msgstr ""
+"L'Inbound NAT (INAT - NAT entrant) est un type de NAT pris en charge par "
+"les NetScaler, dans lequel l'adresse IP de destination est remplacée dans "
+"les paquets provenant du réseau public, comme Internet, par l'adresse IP "
+"privée d'une machine virtuelle dans le réseau privé. Le Reverse NAT (RNAT) "
+"est un type de NAT pris en charge par les NetScaler, dans lequel l'adresse "
+"IP source dans les paquets générés par une machine virtuelle dans le réseau "
+"privé  est remplacée par l'adresse IP publique."
+
+# cef50f723bd34b298098fab0ed2c2328
+#: ../../networking/elastic_ips.rst:67
+msgid "This default public IP will be released in two cases:"
+msgstr "Cette adresse IP publique par défaut sera libérée dans deux cas :"
+
+# 954fad75b2bd41d1b16f50f819a7e300
+#: ../../networking/elastic_ips.rst:69
+msgid ""
+"When the VM is stopped. When the VM starts, it again receives a new public "
+"IP, not necessarily the same one allocated initially, from the pool of "
+"Public IPs."
+msgstr ""
+"Lorsque la VM est stoppée. Lorsque la VM redémarre, elle reçoit à nouveau "
+"une nouvelle IP publique, qui n'est pas nécessairement la même qui avait "
+"été initialement attribuée, depuis la réserve d'IP publiques."
+
+# a5713ccdbc7f41dea9e1fb5bd2a81337
+#: ../../networking/elastic_ips.rst:73
+msgid ""
+"The user acquires a public IP (Elastic IP). This public IP is associated "
+"with the account, but will not be mapped to any private IP. However, the "
+"user can enable Static NAT to associate this IP to the private IP of a VM "
+"in the account. The Static NAT rule for the public IP can be disabled at "
+"any time. When Static NAT is disabled, a new public IP is allocated from "
+"the pool, which is not necessarily be the same one allocated initially."
+msgstr ""
+"L'utilisateur acquiert une IP public (Elastic IP). Cette IP publique est "
+"associée au compte, mais ne sera pas mappée à une IP privée. Toutefois, "
+"l'utilisateur peut activer le NAT statique pour associer cette adresse IP à "
+"l'adresse IP privée d'une machine virtuelle de son compte. La règle de NAT "
+"statique pour l'IP publique peut être désactivée à tout moment. Lorsque le "
+"NAT statique est désactivé, une nouvelle IP publique est allouée à partir "
+"de la réserve, qui n'est pas nécessairement la même ayant été allouée "
+"initialement."
+
+# a8f5524c22bd4ddf82fd8d2d6240b94f
+#: ../../networking/elastic_ips.rst:81
+msgid ""
+"For the deployments where public IPs are limited resources, you have the "
+"flexibility to choose not to allocate a public IP by default. You can use "
+"the Associate Public IP option to turn on or off the automatic public IP "
+"assignment in the EIP-enabled Basic zones. If you turn off the automatic "
+"public IP assignment while creating a network offering, only a private IP "
+"is assigned to a VM when the VM is deployed with that network offering. "
+"Later, the user can acquire an IP for the VM and enable static NAT."
+msgstr ""
+"Pour les déploiements où les IP publiques sont des ressources limitées, "
+"vous avez la possibilité de choisir de ne pas allouer une IP publique par "
+"défaut. Vous pouvez utiliser l'option Associer une IP publique pour activer "
+"ou désactiver l'affectation d'IP publique automatique dans les zones "
+"basiques ayant l'EIP activé. Si vous désactivez l'affectation d'IP publique "
+"automatique lors de la création d'une offre réseau, seule une adresse IP "
+"privée est affectée à une machine virtuelle lorsque la machine virtuelle "
+"est déployée avec cette offre réseau. Plus tard, l'utilisateur peut "
+"acquérir une adresse IP pour la VM et activer le NAT statique."
+
+# 89cea0807df84e08bd3c61dbf7579d80
+#: ../../networking/elastic_ips.rst:90
+msgid ""
+"For more information on the Associate Public IP option, see `\"Creating a "
+"New Network Offering\" <networking.html#creating-a-new-network-offering>`_."
+msgstr ""
+"Pour plus d'informations sur l'option d'association d'IP publique, "
+"consulter `\"Créer une nouvelle offre de réseau\" <networking.html#creating-"
+"a-new-network-offering>`_."
+
+# e8e0a7038ebb4ea181ba58c3f4cdc0ed
+#: ../../networking/elastic_ips.rst:94
+msgid ""
+"The Associate Public IP feature is designed only for use with user VMs. The "
+"System VMs continue to get both public IP and private by default, "
+"irrespective of the network offering configuration."
+msgstr ""
+"La fonctionnalité d'association d'IP publique est conçue uniquement pour "
+"les VM utilisateur. Les VM systèmes continuent d'obtenir à la fois une "
+"adresse IP publique et une privée par défaut, sans tenir compte de la "
+"configuration de l'offre réseau."
+
+# 116e2d3d7abc4e4b89e08770c938b985
+#: ../../networking/elastic_ips.rst:98
+msgid ""
+"New deployments which use the default shared network offering with EIP and "
+"ELB services to create a shared network in the Basic zone will continue "
+"allocating public IPs to each user VM."
+msgstr ""
+"Les nouveaux déploiements qui utilisent l'offre de réseau partagé par "
+"défaut avec services EIP et ELB pour créer un réseau partagé dans une zone "
+"basique vont continuer d'allouer des IP publiques à chaque VM utilisateur."

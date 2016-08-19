@@ -1,0 +1,1379 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-11-30 23:16+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: ../../hosts.rst:18
+msgid "Working with Hosts"
+msgstr "Travailler avec les hôtes"
+
+#: ../../hosts.rst:21
+msgid "Adding Hosts"
+msgstr "Ajouter des hôtes"
+
+#: ../../hosts.rst:23
+msgid ""
+"Additional hosts can be added at any time to provide more capacity for guest "
+"VMs. For requirements and instructions, see `“Adding a Host” <http://docs."
+"cloudstack.apache.org/projects/cloudstack-installation/en/latest/configuration."
+"html#adding-a-host>`_."
+msgstr ""
+"Des hôtes complémentaires peuvent être ajoutés à tout moment pour fournir plus "
+"de capacité pour des VMs invités. Pour les pré-requis et les instructions, "
+"voir `“Ajouter un hôte” <http://docs.cloudstack.apache.org/projects/cloudstack-"
+"installation/en/latest/configuration.html#adding-a-host>`_."
+
+#: ../../hosts.rst:29
+msgid "Scheduled Maintenance and Maintenance Mode for Hosts"
+msgstr "Maintenance Planifiée et Mode Maintenance pour les hôtes"
+
+#: ../../hosts.rst:31
+msgid ""
+"You can place a host into maintenance mode. When maintenance mode is "
+"activated, the host becomes unavailable to receive new guest VMs, and the "
+"guest VMs already running on the host are seamlessly migrated to another host "
+"not in maintenance mode. This migration uses live migration technology and "
+"does not interrupt the execution of the guest."
+msgstr ""
+"Vous pouvez faire entrer un hôte en mode maintenance. Quand le mode "
+"maintenance est activé, l'hôte devient indisponible pour recevoir de nouvelles "
+"VMs, et les VMs invitées déjà en fonctionnement sur l'hôte sont migrées de "
+"façon transparente vers un autre hôte qui n'est pas en mode maintenance. Cette "
+"migration utilise la technologie de migration à chaud et n'interrompt pas "
+"l'exécution de l'invité. "
+
+#: ../../hosts.rst:39
+msgid "vCenter and Maintenance Mode"
+msgstr "Le vCenter et le Mode de Maintenance"
+
+#: ../../hosts.rst:41
+msgid ""
+"To enter maintenance mode on a vCenter host, both vCenter and CloudStack must "
+"be used in concert. CloudStack and vCenter have separate maintenance modes "
+"that work closely together."
+msgstr ""
+"Pour entrer en mode maintenance sur un hôte du vCenter, à la fois le vCenter "
+"et CloudStack doivent être utilisés de concert. CloudStack et vCenter ont des "
+"modes de maintenance séparés qui fonctionnent en étroite collaboration."
+
+#: ../../hosts.rst:45
+msgid ""
+"Place the host into CloudStack's \"scheduled maintenance\" mode. This does not "
+"invoke the vCenter maintenance mode, but only causes VMs to be migrated off "
+"the host"
+msgstr ""
+"Placer l'hôte dans le mode de \"maintenance planifiée\" de CloudStack. Cela "
+"n'invoque pas le mode de maintenance du vCenter, mais cause la migration des "
+"VMs hors de l'hôte."
+
+#: ../../hosts.rst:49
+msgid ""
+"When the CloudStack maintenance mode is requested, the host first moves into "
+"the Prepare for Maintenance state. In this state it cannot be the target of "
+"new guest VM starts. Then all VMs will be migrated off the server. Live "
+"migration will be used to move VMs off the host. This allows the guests to be "
+"migrated to other hosts with no disruption to the guests. After this migration "
+"is completed, the host will enter the Ready for Maintenance mode."
+msgstr ""
+"Quand le mode de maintenance de CloudStack est demandée, l'hôte se met d'abord "
+"dans l'état Préparation pour Maintenance. Dans cet état, il ne peut pas être "
+"la cible du démarrage d'une nouvelle VM. Alors toutes les VMs vont être migrée "
+"hors du serveur. La migration à chaud sera utilisée pour bouger les VMs hors "
+"de l'hôte. Cela permet de migrer les invités de l'hôte sans causer de "
+"perturbation pour les invités. Après que la migration soit finie, l'hôte va "
+"entrer dans le mode Prêt pour Maintenance."
+
+#: ../../hosts.rst:57
+msgid "Wait for the \"Ready for Maintenance\" indicator to appear in the UI."
+msgstr ""
+"Attendre l'apparition de l'indicateur \"Prêt pour la Maintenance\" dans "
+"l'interface."
+
+#: ../../hosts.rst:59
+msgid ""
+"Now use vCenter to perform whatever actions are necessary to maintain the "
+"host. During this time, the host cannot be the target of new VM allocations."
+msgstr ""
+"Maintenant utiliser le vCenter pour accomplir toutes les actions nécessaires "
+"pour entretenir l'hôte. Durant ce temps, l'hôte ne peut pas être la cible de "
+"l'allocation d'une nouvelle VM."
+
+#: ../../hosts.rst:63
+msgid ""
+"When the maintenance tasks are complete, take the host out of maintenance mode "
+"as follows:"
+msgstr ""
+"Lorsque les tâches de maintenance sont terminées, sortir l'hôte du mode "
+"maintenance comme ceci :"
+
+#: ../../hosts.rst:66
+msgid "First use vCenter to exit the vCenter maintenance mode."
+msgstr "Utiliser d'abord le vCenter pour sortir du mode maintenance du vCenter."
+
+#: ../../hosts.rst:68
+msgid "This makes the host ready for CloudStack to reactivate it."
+msgstr "Cela rend le hôte prêt pour que CloudStack puisse le réactiver."
+
+#: ../../hosts.rst:70
+msgid ""
+"Then use CloudStack's administrator UI to cancel the CloudStack maintenance "
+"mode"
+msgstr ""
+"Utiliser alors l'interface d'administration de CloudStack pour annuler le mode "
+"de maintenance de CloudStack"
+
+#: ../../hosts.rst:73
+msgid ""
+"When the host comes back online, the VMs that were migrated off of it may be "
+"migrated back to it manually and new VMs can be added."
+msgstr ""
+"Quand l'hôte reviens en ligne, les VMs qui ont étés migrées peuvent être re-"
+"migrées manuellement et de nouvelles VMs peuvent être ajoutées."
+
+#: ../../hosts.rst:78
+msgid "XenServer and Maintenance Mode"
+msgstr "Le XenServer et le Mode Maintenance"
+
+#: ../../hosts.rst:80
+msgid ""
+"For XenServer, you can take a server offline temporarily by using the "
+"Maintenance Mode feature in XenCenter. When you place a server into "
+"Maintenance Mode, all running VMs are automatically migrated from it to "
+"another host in the same pool. If the server is the pool master, a new master "
+"will also be selected for the pool. While a server is Maintenance Mode, you "
+"cannot create or start any VMs on it."
+msgstr ""
+"Pour le XenServer, vous pouvez mettre un serveur hors ligne temporairement en "
+"utilisant la fonctionnalité de Mode Maintenance dans XenCenter. Quand vous "
+"placer un serveur dans le mode maintenance, toutes les VMs sont "
+"automatiquement migrées vers un autre hôte du même groupe. Si le serveur est "
+"le maître du groupe, un nouveau maître sera aussi sélectionné pour le groupe. "
+"Pendant qu'un serveur est en Mode Maintenance, vous ne pouvez pas créer ou "
+"démarrer de VMs sur lui."
+
+#: ../../hosts.rst:87
+msgid "**To place a server in Maintenance Mode:**"
+msgstr "**Pour basculer un serveur en Mode Maintenance :**"
+
+#: ../../hosts.rst:89 ../../hosts.rst:104
+msgid "In the Resources pane, select the server, then do one of the following:"
+msgstr ""
+"Dans le panneau Ressources, sélectionner le serveur, puis effectuer l'une des "
+"actions suivantes :"
+
+#: ../../hosts.rst:92
+msgid "Right-click, then click Enter Maintenance Mode on the shortcut menu."
+msgstr "Clic-droit, puis Entrer en Mode Maintenance dans le menu de raccourcis."
+
+#: ../../hosts.rst:95
+msgid "On the Server menu, click Enter Maintenance Mode."
+msgstr "Dans le menu Serveur, cliquer Entrer en Mode Maintenance."
+
+#: ../../hosts.rst:97
+msgid "Click Enter Maintenance Mode."
+msgstr "Cliquer sur Entrer en Mode Maintenance."
+
+#: ../../hosts.rst:99
+msgid ""
+"The server's status in the Resources pane shows when all running VMs have been "
+"successfully migrated off the server."
+msgstr ""
+"Le statut du serveur dans le panneau Ressources affichera lorsque toutes les "
+"VMs fonctionnant auront étés migrées avec succès du serveur."
+
+#: ../../hosts.rst:102
+msgid "**To take a server out of Maintenance Mode:**"
+msgstr "**Pour sortir un serveur du Mode Maintenance :**"
+
+#: ../../hosts.rst:107
+msgid "Right-click, then click Exit Maintenance Mode on the shortcut menu."
+msgstr "Clic-droit, puis Sortir dun Mode Maintenance dans le menu de raccourcis."
+
+#: ../../hosts.rst:110
+msgid "On the Server menu, click Exit Maintenance Mode."
+msgstr "Dans le menu Serveur, cliquer Sortir du Mode Maintenance."
+
+#: ../../hosts.rst:112
+msgid "Click Exit Maintenance Mode."
+msgstr "Cliquer sur Sortir du Mode Maintenance"
+
+#: ../../hosts.rst:116
+msgid "Disabling and Enabling Zones, Pods, and Clusters"
+msgstr "Désactiver et activer des Zones, Pods et Clusters"
+
+#: ../../hosts.rst:118
+msgid ""
+"You can enable or disable a zone, pod, or cluster without permanently removing "
+"it from the cloud. This is useful for maintenance or when there are problems "
+"that make a portion of the cloud infrastructure unreliable. No new allocations "
+"will be made to a disabled zone, pod, or cluster until its state is returned "
+"to Enabled. When a zone, pod, or cluster is first added to the cloud, it is "
+"Disabled by default."
+msgstr ""
+"Vous pouvez activer ou désactiver une zone, un pod ou cluster sans le "
+"supprimer définitivement du cloud. C'est utile pour la maintenance ou "
+"lorsqu'il y a des problèmes qui rendent une partie de l'infrastructure du "
+"Cloud non fiable. Aucune nouvelle allocation ne sera faîte à une zone, pod ou "
+"cluster désactivé tant que son état n'est pas de nouveau Activé. Quand une "
+"zone, pod ou cluster est ajouté au cloud, il est désactivé par défaut."
+
+#: ../../hosts.rst:125
+msgid "To disable and enable a zone, pod, or cluster:"
+msgstr "Pour déactiver et activer une zone, un pod ou un cluster :"
+
+#: ../../hosts.rst:127
+msgid "Log in to the CloudStack UI as administrator"
+msgstr "Se connecter à l'interface de CloudStack comme administrateur"
+
+#: ../../hosts.rst:129 ../../hosts.rst:419
+msgid "In the left navigation bar, click Infrastructure."
+msgstr "Dans la barre de navigation de gauche, cliquer sur Infrastructure."
+
+#: ../../hosts.rst:131
+msgid "In Zones, click View More."
+msgstr "Dans Zones, cliquer sur Voir plus."
+
+#: ../../hosts.rst:133
+msgid ""
+"If you are disabling or enabling a zone, find the name of the zone in the "
+"list, and click the Enable/Disable button. |enable-disable.png|"
+msgstr ""
+"Si vous êtes en train de désactiver ou d'activer une zone, trouver le nom de "
+"la zone dans la liste, et cliquer sur le bouton Activer/Désactiver. |enable-"
+"disable.png|"
+
+#: ../../hosts.rst:136
+msgid ""
+"If you are disabling or enabling a pod or cluster, click the name of the zone "
+"that contains the pod or cluster."
+msgstr ""
+"Si vous êtes en train de désactiver ou d'activer un pod ou un cluster, cliquer "
+"sur le nom de la zone qui contient le pod ou le cluster."
+
+#: ../../hosts.rst:139
+msgid "Click the Compute tab."
+msgstr "Cliquer sur l'onglet Offre de calcul."
+
+#: ../../hosts.rst:141
+msgid "In the Pods or Clusters node of the diagram, click View All."
+msgstr ""
+"Dans les noeuds Pods ou les Clusters du diagramme, cliquer sur Totu voir."
+
+#: ../../hosts.rst:143
+msgid "Click the pod or cluster name in the list."
+msgstr "Cliquer sur le nom du pod ou du cluster dans la liste."
+
+#: ../../hosts.rst:145
+msgid "Click the Enable/Disable button. |enable-disable.png|"
+msgstr "Cliquer sur le bouton Activer/Désactiver. |enable-disable.png|"
+
+#: ../../hosts.rst:149
+msgid "Removing Hosts"
+msgstr "Retirer des hôtes"
+
+#: ../../hosts.rst:151
+msgid ""
+"Hosts can be removed from the cloud as needed. The procedure to remove a host "
+"depends on the hypervisor type."
+msgstr ""
+"Les hôtes peuvent être supprimés du cloud si besoin. La procédure pour "
+"supprimer un hôte dépend du type de l'hyperviseur."
+
+#: ../../hosts.rst:156
+msgid "Removing XenServer and KVM Hosts"
+msgstr "Retirer des hôtes XenServer et KVM"
+
+#: ../../hosts.rst:158
+msgid ""
+"A node cannot be removed from a cluster until it has been placed in "
+"maintenance mode. This will ensure that all of the VMs on it have been "
+"migrated to other Hosts. To remove a Host from the cloud:"
+msgstr ""
+"Un noeud ne peut pas être supprimé d'un cluster jusqu'à ce qu'il ait été placé "
+"en mode maintenance. Cela va assurer que toutes les VM ont été migrées vers "
+"d'autres hôtes. Pour retirer un hôte du cloud :"
+
+#: ../../hosts.rst:162
+msgid "Place the node in maintenance mode."
+msgstr "Placer le noeud en mode maintenance."
+
+#: ../../hosts.rst:164
+msgid ""
+"See `“Scheduled Maintenance and Maintenance Mode for Hosts” <#scheduled-"
+"maintenance-and-maintenance-mode-for-hosts>`_."
+msgstr ""
+"Voir `“Maintenance programmée et mode de maintenance pour les hôtes” "
+"<#scheduled-maintenance-and-maintenance-mode-for-hosts>`_."
+
+#: ../../hosts.rst:167
+msgid "For KVM, stop the cloud-agent service."
+msgstr "Pour KVM, stopper le service cloud-agent."
+
+#: ../../hosts.rst:169
+msgid "Use the UI option to remove the node."
+msgstr "Utiliser l'option de l'interface pour supprimer le noeud."
+
+#: ../../hosts.rst:171
+msgid ""
+"Then you may power down the Host, re-use its IP address, re-install it, etc"
+msgstr ""
+"Alors vous pouvez éteindre l'hôte, réutiliser son adresse IP, le réinstaller, "
+"etc."
+
+#: ../../hosts.rst:176
+msgid "Removing vSphere Hosts"
+msgstr "Retirer des hôtes vSphere"
+
+#: ../../hosts.rst:178
+msgid ""
+"To remove this type of host, first place it in maintenance mode, as described "
+"in `“Scheduled Maintenance and Maintenance Mode for Hosts” <#scheduled-"
+"maintenance-and-maintenance-mode-for-hosts>`_. Then use CloudStack to remove "
+"the host. CloudStack will not direct commands to a host that has been removed "
+"using CloudStack. However, the host may still exist in the vCenter cluster."
+msgstr ""
+"Pour retirer ce type d'hôte, dans un premier temps, le placer en mode "
+"maintenance, comme décrit dans `“Maintenance programmée et mode de maintenance "
+"pour les hôtes” <#scheduled-maintenance-and-maintenance-mode-for-hosts>`_. "
+"Utiliser ensuite CloudStack pour supprimer l'hôte. CloudStack ne va pas "
+"diriger de commandes à un hôte qui a été supprimé en utilisant CloudStack. "
+"Toutefois l'hôte peut toujours exister dans le cluster dans le vCenter."
+
+#: ../../hosts.rst:187
+msgid "Re-Installing Hosts"
+msgstr "Ré-installer des hôtes"
+
+#: ../../hosts.rst:189
+msgid ""
+"You can re-install a host after placing it in maintenance mode and then "
+"removing it. If a host is down and cannot be placed in maintenance mode, it "
+"should still be removed before the re-install."
+msgstr ""
+"Vous pouvez réinstaller un hôte après l'avoir placé dans le mode maintenance "
+"et l'avoir supprimé. Si un hôte est arrêté et ne peut pas être placé en mode "
+"maintenance, il pourra toujours être supprimé après l'avoir ré-installé."
+
+#: ../../hosts.rst:195
+msgid "Maintaining Hypervisors on Hosts"
+msgstr "Entretenir les hyperviseurs sur les hôtes"
+
+#: ../../hosts.rst:197
+msgid ""
+"When running hypervisor software on hosts, be sure all the hotfixes provided "
+"by the hypervisor vendor are applied. Track the release of hypervisor patches "
+"through your hypervisor vendor’s support channel, and apply patches as soon as "
+"possible after they are released. CloudStack will not track or notify you of "
+"required hypervisor patches. It is essential that your hosts are completely up "
+"to date with the provided hypervisor patches. The hypervisor vendor is likely "
+"to refuse to support any system that is not up to date with patches."
+msgstr ""
+"Lorsque vous utilisez des logiciels hyperviseur sur des hôtes, assurez-vous "
+"que toutes les mises à jour fournies par le vendeur de l'hyperviseur soit "
+"appliquées. Suivez les sorties des correctifs de l'hyperviseur via les moyens "
+"du support du vendeur de l'hyperviseur, et appliquez les correctifs aussitôt "
+"que possible après leurs sorties. CloudStack ne va pas suivre ni vous notifier "
+"des correctifs requis pour l'hyperviseur. Il est essentiel que vos hôtes "
+"soient totalement à jour de leurs correctifs. Le vendeur de l'hyperviseur "
+"refusera probablement de supporter un système qui n'est pas à jour de "
+"correctifs."
+
+#: ../../hosts.rst:207
+msgid "The lack of up-do-date hotfixes can lead to data corruption and lost VMs."
+msgstr ""
+"L'absence des dernières mise à jour peut mener à la corruption de données et "
+"la perte de VM."
+
+#: ../../hosts.rst:209
+msgid ""
+"(XenServer) For more information, see `Highly Recommended Hotfixes for "
+"XenServer in the CloudStack Knowledge Base <http://docs.cloudstack.org/"
+"Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/"
+"Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_."
+msgstr ""
+"(XenServer) Pour plus d'informations, voir `Mises à jour hautement "
+"recommandées pour XenServer dans la base de connaissance CloudStack<http://"
+"docs.cloudstack.org/Knowledge_Base/"
+"Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/"
+"Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_."
+
+#: ../../hosts.rst:215
+msgid "Changing Host Password"
+msgstr "Changer le mot de passe de l'Hôte"
+
+#: ../../hosts.rst:217
+msgid ""
+"The password for a XenServer Node, KVM Node, or vSphere Node may be changed in "
+"the database. Note that all Nodes in a Cluster must have the same password."
+msgstr ""
+"Le mot de passe pour un noeud XenServer, un noeud KVM ou un noeud vSphere peut "
+"être changé dans la base de données. Notez que tous les noeuds d'un cluster "
+"doivent avoir le même mot de passe."
+
+#: ../../hosts.rst:221
+msgid "To change a Node's password:"
+msgstr "Pour changer un mot de passe sur un noeud :"
+
+#: ../../hosts.rst:223
+msgid "Identify all hosts in the cluster."
+msgstr "Identifier tous les hôtes dans le cluster."
+
+#: ../../hosts.rst:225
+msgid ""
+"Change the password on all hosts in the cluster. Now the password for the host "
+"and the password known to CloudStack will not match. Operations on the cluster "
+"will fail until the two passwords match."
+msgstr ""
+"Changer le mot de passe sur tous les hôtes du cluster. Maintenant le mot de "
+"passe pour l'hôte et le mot de passe connu par CloudStack ne correspondent "
+"plus. Les opérations dans le cluster vont échouer jusqu'à ce que les 2 mots de "
+"passe correspondent."
+
+#: ../../hosts.rst:229
+msgid ""
+"if the password in the database is encrypted, it is (likely) necessary to "
+"encrypt the new password using the database key before adding it to the "
+"database."
+msgstr ""
+"Si le mot de passe dans la base de données est crypté, il est (probablement) "
+"nécessaire de crypter le nouveau mot de passe en utilisant la clef de la base "
+"de données avant de l'ajouter dans la base de données."
+
+#: ../../hosts.rst:240
+msgid ""
+"Get the list of host IDs for the host in the cluster where you are changing "
+"the password. You will need to access the database to determine these host "
+"IDs. For each hostname \"h\" (or vSphere cluster) that you are changing the "
+"password for, execute:"
+msgstr ""
+"Obtenir la liste des ID d'hôte pour les hôtes du même cluster pour lequel vous "
+"être en train de changer le mot de passe. Vous allez avoir besoin d'accéder à "
+"la base de données pour déterminer ces ID d'hôtes. Pour chaque nom d'hôte \"h"
+"\" (ou cluster vSphere) pour lequel vous voulez changer le mot de passe, "
+"exécuter :"
+
+#: ../../hosts.rst:249
+msgid ""
+"This should return a single ID. Record the set of such IDs for these hosts. "
+"Now retrieve the host_details row id for the host"
+msgstr ""
+"Cela devrait retourner un seul ID. L'enregistrer l'ensemble de ces ID pour ces "
+"hôtes.  Maintenant récupérer le numéro de la ligne host_details pour cet hôte."
+
+#: ../../hosts.rst:256
+msgid ""
+"Update the passwords for the host in the database. In this example, we change "
+"the passwords for hosts with host IDs 5 and 12 and host_details IDs 8 and 22 "
+"to \"password\"."
+msgstr ""
+"Mettre à jour les mots de passe pour l'hôte dans la base de données. Dans cet "
+"exemple, nous changeons les mots de passe pour les hôtes avec les ID d'hôte 5 "
+"et 12 et les ID host_details 8 et 22 avec le mot de passe \"password\"."
+
+#: ../../hosts.rst:266
+msgid "Over-Provisioning and Service Offering Limits"
+msgstr "Sur-allocation et Limites d'Offre de Service."
+
+#: ../../hosts.rst:268
+msgid "(Supported for XenServer, KVM, and VMware)"
+msgstr "(Supporté par XenServer, KVM et VMware)"
+
+#: ../../hosts.rst:270
+msgid ""
+"CPU and memory (RAM) over-provisioning factors can be set for each cluster to "
+"change the number of VMs that can run on each host in the cluster. This helps "
+"optimize the use of resources. By increasing the over-provisioning ratio, more "
+"resource capacity will be used. If the ratio is set to 1, no over-provisioning "
+"is done."
+msgstr ""
+"Les facteurs de sur-allocation de CPU et de mémoire (RAM) peuvent être "
+"paramétrés pour chaque cluster pour changer le nombre de VM qui peuvent "
+"fonctionner sur chaque hôte du cluster. Cela aide à optimiser l'utilisation "
+"des ressources. En augmentant le ration de sur-allocation, une plus grosse "
+"capacité de la ressource va être utilisée. Si le ration est fixé à 1, aucune "
+"sur-allocation n'est effectuée."
+
+#: ../../hosts.rst:276
+msgid ""
+"The administrator can also set global default over-provisioning ratios in the "
+"cpu.overprovisioning.factor and mem.overprovisioning.factor global "
+"configuration variables. The default value of these variables is 1: over-"
+"provisioning is turned off by default."
+msgstr ""
+"L'administrateur peut aussi paramétrer les facteurs globaux par défaut de sur-"
+"allocation dans les variables de la configuration globale cpu.overprovisioning."
+"factor et mem.overprovisioning.factor. La valeur par défaut de ces variables "
+"est de 1 : la sur-allocation est désactivée par défaut."
+
+#: ../../hosts.rst:281
+msgid ""
+"Over-provisioning ratios are dynamically substituted in CloudStack's capacity "
+"calculations. For example:"
+msgstr ""
+"Les facteurs d'Over-provisionning sont dynamiquement substitué dans les "
+"calculs de capacités de CloudStack. Par exemple :"
+
+#: ../../hosts.rst:284
+msgid ""
+"Capacity = 2 GB Over-provisioning factor = 2 Capacity after over-provisioning "
+"= 4 GB"
+msgstr ""
+"Capacité = 2 GB facteur d'Over-provisionning = 2 Capacité après over-"
+"provisionning = 4 GB"
+
+#: ../../hosts.rst:288
+msgid "With this configuration, suppose you deploy 3 VMs of 1 GB each:"
+msgstr ""
+"Avec cette configuration, en supposant que vous déployez 3 VM de 1 GB chacune :"
+
+#: ../../hosts.rst:290
+msgid "Used = 3 GB Free = 1 GB"
+msgstr "Utilisé = 3 GB Libre = 1 GB"
+
+#: ../../hosts.rst:293
+msgid ""
+"The administrator can specify a memory over-provisioning ratio, and can "
+"specify both CPU and memory over-provisioning ratios on a per-cluster basis."
+msgstr ""
+"L'administrateur peut spécifier un facteur de sur-allocation de mémoire, et "
+"peut spécifier à la fois les facteurs de sur-allocation de CPU et de mémoire "
+"par cluster."
+
+#: ../../hosts.rst:297
+msgid ""
+"In any given cloud, the optimum number of VMs for each host is affected by "
+"such things as the hypervisor, storage, and hardware configuration. These may "
+"be different for each cluster in the same cloud. A single global over-"
+"provisioning setting can not provide the best utilization for all the "
+"different clusters in the cloud. It has to be set for the lowest common "
+"denominator. The per-cluster setting provides a finer granularity for better "
+"utilization of resources, no matter where the CloudStack placement algorithm "
+"decides to place a VM."
+msgstr ""
+"Dans n'importe quel cloud, le nombre optimal de VM par hôte est affecté par "
+"des variables comme l'hyperviseur, le stockage et la configuration matérielle. "
+"Ils peuvent être différent pour chaque cluster dans le même cloud. Un simple "
+"paramètre global de sur-allocation ne peut pas représenter le meilleur moyen "
+"pour tous les différents cluster du cloud. Il doit être défini au niveau du "
+"plus petit dénominateur commun. La configuration par cluster fournie une "
+"granularité plus fine pour une meilleur utilisation des ressources, sans "
+"relation avec l'endroit où l'algorithme de placement de CloudStack décide de "
+"placer une VM."
+
+#: ../../hosts.rst:306
+msgid ""
+"The overprovisioning settings can be used along with dedicated resources "
+"(assigning a specific cluster to an account) to effectively offer different "
+"levels of service to different accounts. For example, an account paying for a "
+"more expensive level of service could be assigned to a dedicated cluster with "
+"an over-provisioning ratio of 1, and a lower-paying account to a cluster with "
+"a ratio of 2."
+msgstr ""
+"Les paramètres de sur-allocation peuvent être utilisés avec les ressources "
+"dédiées (assigner un cluster spécifique à un compte) pour effectivement offrir "
+"des niveaux de services différents à différents comptes. Par exemple, un "
+"compte payant pour un niveau de service plus cher peut être assigné à un "
+"cluster dédié avec un rapport de sur-allocation de 1, et un compte moins "
+"onéreux à un cluster avec un rapport de 2."
+
+#: ../../hosts.rst:313
+msgid ""
+"When a new host is added to a cluster, CloudStack will assume the host has the "
+"capability to perform the CPU and RAM over-provisioning which is configured "
+"for that cluster. It is up to the administrator to be sure the host is "
+"actually suitable for the level of over-provisioning which has been set."
+msgstr ""
+"Lorsqu'un nouvel hôte est ajouté à un cluster, CloudStack supposera que l'hôte "
+"à la capacité d'exécuter la sur-allocation en CPU et en RAM configurée pour ce "
+"cluster. Il appartient à l'administrateur d'être sur que l'hôte est "
+"actuellement approprié au niveau de sur-allocation paramétré."
+
+#: ../../hosts.rst:321
+msgid "Limitations on Over-Provisioning in XenServer and KVM"
+msgstr "Limitations de la sur-allocation pour XenServer et KVM"
+
+#: ../../hosts.rst:323 ../../hosts.rst:431
+msgid ""
+"In XenServer, due to a constraint of this hypervisor, you can not use an over-"
+"provisioning factor greater than 4."
+msgstr ""
+"Dans XenServer, à cause d'une limitation de cet hyperviseur, vous ne pouvez "
+"pas utiliser un facteur plus grand que 4."
+
+#: ../../hosts.rst:326
+msgid ""
+"The KVM hypervisor can not manage memory allocation to VMs dynamically. "
+"CloudStack sets the minimum and maximum amount of memory that a VM can use. "
+"The hypervisor adjusts the memory within the set limits based on the memory "
+"contention."
+msgstr ""
+"L'hyperviseur KVM ne peut pas gérer l'allocation de mémoire dynamique aux VM. "
+"CloudStack défini le minimum et le maximum de quantité de mémoire qu'une VM "
+"peut utiliser. L'hyperviseur ajuste la mémoire dans les limites définies en "
+"fonction de la contention de la mémoire."
+
+#: ../../hosts.rst:333
+msgid "Requirements for Over-Provisioning"
+msgstr "Pré-requis pour la sur-allocation"
+
+#: ../../hosts.rst:335
+msgid ""
+"Several prerequisites are required in order for over-provisioning to function "
+"properly. The feature is dependent on the OS type, hypervisor capabilities, "
+"and certain scripts. It is the administrator's responsibility to ensure that "
+"these requirements are met."
+msgstr ""
+"Plusieurs conditions préalables sont requises pour que la sur-allocation "
+"fonctionne correctement. Cette fonctionnalité est dépendante du type d'OS, des "
+"capacités de l'hyperviseur et de certains scripts. Il est de la responsabilité "
+"de l'administrateur de s'assurer que ces exigences soient réunies."
+
+#: ../../hosts.rst:342
+msgid "Balloon Driver"
+msgstr "Driver pour le ballooning"
+
+#: ../../hosts.rst:344
+msgid ""
+"All VMs should have a balloon driver installed in them. The hypervisor "
+"communicates with the balloon driver to free up and make the memory available "
+"to a VM."
+msgstr ""
+"Toutes les machines virtuelles devraient avoir un driver de ballooning "
+"installé. L'hyperviseur communique avec le driver du ballooning pour libérer "
+"ou rendre la mémoire disponible à une machine virtuelle."
+
+#: ../../hosts.rst:350 ../../hosts.rst:380
+msgid "XenServer"
+msgstr "XenServer"
+
+#: ../../hosts.rst:352
+msgid ""
+"The balloon driver can be found as a part of xen pv or PVHVM drivers. The xen "
+"pvhvm drivers are included in upstream linux kernels 2.6.36+."
+msgstr ""
+"Le driver de ballooning sont fournis par les xen pv ou les drivers PVHVM. Les "
+"drivers pvhvm xen sont inclus dans les kernels linux supérieurs à 2.6.36+."
+
+#: ../../hosts.rst:357
+msgid "VMware"
+msgstr "VMware"
+
+#: ../../hosts.rst:359
+msgid ""
+"The balloon driver can be found as a part of the VMware tools. All the VMs "
+"that are deployed in a over-provisioned cluster should have the VMware tools "
+"installed."
+msgstr ""
+"Les drivers de ballooning sont fournis par les VMware tools. Toutes les VM qui "
+"sont déployées dans un cluster avec sur-allocation devraient avoir les VMware "
+"tools d'installés."
+
+#: ../../hosts.rst:365
+msgid "KVM"
+msgstr "KVM"
+
+#: ../../hosts.rst:367
+msgid ""
+"All VMs are required to support the virtio drivers. These drivers are "
+"installed in all Linux kernel versions 2.6.25 and greater. The administrator "
+"must set CONFIG\\_VIRTIO\\_BALLOON=y in the virtio configuration."
+msgstr ""
+"Toutes les VM doivent supporter les drivers virtio. Ces drivers sont installés "
+"dans toutes les versions du kernel Linux 2.6.25 et supérieur. L'administrateur "
+"doit paramètrer CONFIG\\_VIRTIO\\_BALLOON=y dans la configuration virtio."
+
+#: ../../hosts.rst:374
+msgid "Hypervisor capabilities"
+msgstr "Capacités de l'hyperviseur"
+
+#: ../../hosts.rst:376
+msgid "The hypervisor must be capable of using the memory ballooning."
+msgstr "L'hyperviseur doit être capable d'utiliser le memory-balloning."
+
+#: ../../hosts.rst:382
+msgid ""
+"The DMC (Dynamic Memory Control) capability of the hypervisor should be "
+"enabled. Only XenServer Advanced and above versions have this feature."
+msgstr ""
+"La capacité DMC (Dynamic Memory Control) de l'hyperviseur devrait être "
+"activée. Seul XenServer Advanced et versions supérieures disposent de cette "
+"fonctionnalité."
+
+#: ../../hosts.rst:387
+msgid "VMware, KVM"
+msgstr "VMware, KVM"
+
+#: ../../hosts.rst:389
+msgid "Memory ballooning is supported by default."
+msgstr "Le memory ballooning est supporté par défaut."
+
+#: ../../hosts.rst:393
+msgid "Setting Over-Provisioning Ratios"
+msgstr "Fixer les ratios de sur-allocation"
+
+#: ../../hosts.rst:395
+msgid ""
+"There are two ways the root admin can set CPU and RAM over-provisioning "
+"ratios. First, the global configuration settings cpu.overprovisioning.factor "
+"and mem.overprovisioning.factor will be applied when a new cluster is created. "
+"Later, the ratios can be modified for an existing cluster."
+msgstr ""
+"Il existe deux façons pour l'administrateur racine de définir des rapport de "
+"sur-allocation du CPU et de la RAM. Tout d'abord, les paramètres de "
+"configuration globaux cpu.overprovisioning.factor et mem.overprovisioning."
+"factor seront appliqués lors de la création d'un nouveau cluster. Puis les "
+"facteurs pourront être modifiés pour un cluster existant."
+
+#: ../../hosts.rst:401
+msgid ""
+"Only VMs deployed after the change are affected by the new setting. If you "
+"want VMs deployed before the change to adopt the new over-provisioning ratio, "
+"you must stop and restart the VMs. When this is done, CloudStack recalculates "
+"or scales the used and reserved capacities based on the new over-provisioning "
+"ratios, to ensure that CloudStack is correctly tracking the amount of free "
+"capacity."
+msgstr ""
+"Seules les machines virtuelles déployées après la modification sont affectées "
+"par le nouveau paramètre. Si vous voulez que les machines virtuelles déployées "
+"avant la modification adoptent le nouveau facteur de sur-allocation, vous "
+"devrez arrêter et redémarrer les machines virtuelles. Lorsque cela est fait, "
+"CloudStack recalculera ou évaluera les capacités utilisées et réservées en "
+"fonction des nouveaux facteurs de sur-allocation pour s'assurer que CloudStack "
+"calcule correctement la quantité de capacité disponible."
+
+#: ../../hosts.rst:409
+msgid ""
+"It is safer not to deploy additional new VMs while the capacity recalculation "
+"is underway, in case the new values for available capacity are not high enough "
+"to accommodate the new VMs. Just wait for the new used/available values to "
+"become available, to be sure there is room for all the new VMs you want."
+msgstr ""
+"Il est plus prudent de ne pas déployer de nouvelles machines virtuelles "
+"supplémentaires pendant que le re-calcul des capacités est en cours, au cas où "
+"les nouvelles valeurs de la capacité disponible ne seraient pas suffisamment "
+"élevées pour accueillir les nouvelles machines virtuelles. Il suffit "
+"d'attendre que les nouvelles valeurs utilisées / disponibles deviennent "
+"disponibles, pour être sûr qu'il y ait de la place pour toutes les nouvelles "
+"machines virtuelles que vous désirez."
+
+#: ../../hosts.rst:415
+msgid "To change the over-provisioning ratios for an existing cluster:"
+msgstr "Pour changer les facteurs de sur-allocation pour un cluster existant :"
+
+#: ../../hosts.rst:417
+msgid "Log in as administrator to the CloudStack UI."
+msgstr "Se connecter en tant qu'administrateur dans l'interface de CloudStack."
+
+#: ../../hosts.rst:421
+msgid "Under Clusters, click View All."
+msgstr "Sous Clusters, cliquer sur Voir tout."
+
+#: ../../hosts.rst:423
+msgid "Select the cluster you want to work with, and click the Edit button."
+msgstr ""
+"Sélectionner le cluster sur lequel vous voulez travailler, et cliquer sur le "
+"bouton Editer."
+
+#: ../../hosts.rst:425
+msgid ""
+"Fill in your desired over-provisioning multipliers in the fields CPU "
+"overcommit ratio and RAM overcommit ratio. The value which is intially shown "
+"in these fields is the default value inherited from the global configuration "
+"settings."
+msgstr ""
+"Saisissez vos multiplicateurs de sur-allocation désirés dans les champs CPU "
+"overcommit ratio et RAM overcommit ratio. La valeur indiquée initialement dans "
+"ces champs est la valeur par défaut héritée des paramètres de configuration "
+"globaux."
+
+#: ../../hosts.rst:436
+msgid "Service Offering Limits and Over-Provisioning"
+msgstr "Limites d'offre de service et sur-allocation"
+
+#: ../../hosts.rst:438
+msgid ""
+"Service offering limits (e.g. 1 GHz, 1 core) are strictly enforced for core "
+"count. For example, a guest with a service offering of one core will have only "
+"one core available to it regardless of other activity on the Host."
+msgstr ""
+"Les limites d'offre de service (par exemple 1 GHz, 1 coeur) sont strictement "
+"appliquées pour le nombre de noyaux. Par exemple, un invité disposant d'une "
+"offre de service d'un coeur n'aura qu'un seul coeur disponible, indépendamment "
+"de toute autre activité sur l'hôte."
+
+#: ../../hosts.rst:443
+msgid ""
+"Service offering limits for gigahertz are enforced only in the presence of "
+"contention for CPU resources. For example, suppose that a guest was created "
+"with a service offering of 1 GHz on a Host that has 2 GHz cores, and that "
+"guest is the only guest running on the Host. The guest will have the full 2 "
+"GHz available to it. When multiple guests are attempting to use the CPU a "
+"weighting factor is used to schedule CPU resources. The weight is based on the "
+"clock speed in the service offering. Guests receive a CPU allocation that is "
+"proportionate to the GHz in the service offering. For example, a guest created "
+"from a 2 GHz service offering will receive twice the CPU allocation as a guest "
+"created from a 1 GHz service offering. CloudStack does not perform memory over-"
+"provisioning."
+msgstr ""
+"Les limites de service offertes en gigahertz sont appliquées uniquement "
+"lorsqu'il y a contention des ressources CPU. Par exemple, supposons qu'un "
+"invité ait été créé avec une offre de service de 1 GHz sur un hôte disposant "
+"de coeurs à 2 GHz et que cet invité est le seul client en cours d'exécution "
+"sur l'hôte. L'invité aura à sa disposition la totalité des 2 GHz. Lorsque "
+"plusieurs invités tentent d'utiliser le CPU, un facteur de pondération est "
+"utilisé pour planifier les ressources CPU. Le poids est basé sur la vitesse "
+"d'horloge de l'offre de service. Les clients reçoivent une allocation CPU "
+"proportionnelle au GHz de leur offre de service. Par exemple, un invité créé à "
+"partir d'une offre de service à 2 GHz recevra l'équivalent de deux fois "
+"l'allocation CPU d'un invité créé à partir d'une offre de service à 1 GHz. "
+"CloudStack n'effectue pas de sur-allocation de la mémoire."
+
+#: ../../hosts.rst:457
+msgid "VLAN Provisioning"
+msgstr "Approvisionnement de VLAN"
+
+#: ../../hosts.rst:459
+msgid ""
+"CloudStack automatically creates and destroys interfaces bridged to VLANs on "
+"the hosts. In general the administrator does not need to manage this process."
+msgstr ""
+"CloudStack crée et détruit automatiquement les interfaces reliées aux VLAN sur "
+"les hôtes. En général, l'administrateur n'a pas besoin de gérer ce processus."
+
+#: ../../hosts.rst:463
+msgid ""
+"CloudStack manages VLANs differently based on hypervisor type. For XenServer "
+"or KVM, the VLANs are created on only the hosts where they will be used and "
+"then they are destroyed when all guests that require them have been terminated "
+"or moved to another host."
+msgstr ""
+"CloudStack gère les VLAN différemment en fonction du type d'hyperviseur. Pour "
+"XenServer ou KVM, les VLAN sont créés uniquement sur les hôtes où ils seront "
+"utilisés, puis ils sont détruits lorsque tous les invités qui en ont besoin "
+"ont été supprimés ou déplacés vers un autre hôte."
+
+#: ../../hosts.rst:468
+msgid ""
+"For vSphere the VLANs are provisioned on all hosts in the cluster even if "
+"there is no guest running on a particular Host that requires the VLAN. This "
+"allows the administrator to perform live migration and other functions in "
+"vCenter without having to create the VLAN on the destination Host. "
+"Additionally, the VLANs are not removed from the Hosts when they are no longer "
+"needed."
+msgstr ""
+"Pour vSphere, les VLAN sont provisionnés sur tous les hôtes du cluster, même "
+"s'il n'y a pas d'invité nécessitant le VLAN en cours d'exécution sur un hôte "
+"particulier. Cela permet à l'administrateur d'effectuer une migration à chaud "
+"et autres fonctions du vCenter sans avoir à créer le VLAN sur l'hôte de "
+"destination. De plus, les VLAN ne sont pas supprimés des hôtes lorsqu'ils ne "
+"sont plus nécessaires."
+
+#: ../../hosts.rst:475
+msgid ""
+"You can use the same VLANs on different physical networks provided that each "
+"physical network has its own underlying layer-2 infrastructure, such as "
+"switches. For example, you can specify VLAN range 500 to 1000 while deploying "
+"physical networks A and B in an Advanced zone setup. This capability allows "
+"you to set up an additional layer-2 physical infrastructure on a different "
+"physical NIC and use the same set of VLANs if you run out of VLANs. Another "
+"advantage is that you can use the same set of IPs for different customers, "
+"each one with their own routers and the guest networks on different physical "
+"NICs."
+msgstr ""
+"Vous pouvez utiliser les mêmes VLAN sur différents réseaux physiques à "
+"condition que chaque réseau physique possède sa propre infrastructure de "
+"niveau 2, comme des commutateurs. Par exemple, vous pouvez spécifier une plage "
+"de VLAN de 500 à 1000 lors du déploiement des réseaux physiques A et B dans "
+"une configuration de type zone avancée. Cette fonctionnalité vous permet de "
+"configurer une infrastructure physique de niveau 2 supplémentaire sur une "
+"carte réseau physique différente et d'utiliser le même ensemble de VLAN si "
+"vous veniez à être à court de VLAN. Un autre avantage est que vous pouvez "
+"utiliser le même ensemble d'IP pour différents clients, chacun avec leurs "
+"propres routeurs et réseaux invités sur différentes interfaces physiques."
+
+#: ../../hosts.rst:487
+msgid "VLAN Allocation Example"
+msgstr "Exemple d'allocation de VLAN"
+
+#: ../../hosts.rst:489
+msgid ""
+"VLANs are required for public and guest traffic. The following is an example "
+"of a VLAN allocation scheme:"
+msgstr ""
+"Les VLAN sont requis pour le trafic public et privé. Voici un exemple de "
+"schéma d'allocation VLAN:"
+
+#: ../../hosts.rst:495
+msgid "VLAN IDs"
+msgstr "ID VLAN"
+
+#: ../../hosts.rst:495
+msgid "Traffic type"
+msgstr "Type de trafic"
+
+#: ../../hosts.rst:495
+msgid "Scope"
+msgstr "Portée"
+
+#: ../../hosts.rst:497
+msgid "less than 500"
+msgstr "Moins de 500"
+
+#: ../../hosts.rst:497
+msgid "Management traffic."
+msgstr "Trafic de gestion."
+
+#: ../../hosts.rst:497
+msgid ""
+"Reserved for administrative purposes.  CloudStack software can access this, "
+"hypervisors, system VMs."
+msgstr ""
+"Réservé pour des besoins administratifs. Le logiciel CloudStack, les "
+"hyperviseurs et les VMs système peuvent y accéder."
+
+#: ../../hosts.rst:498
+msgid "500-599"
+msgstr "500-599"
+
+#: ../../hosts.rst:498
+msgid "VLAN carrying public traffic."
+msgstr "VLAN transportant le trafic public."
+
+#: ../../hosts.rst:498
+msgid "CloudStack accounts."
+msgstr "Comptes CloudStack."
+
+#: ../../hosts.rst:499
+msgid "600-799"
+msgstr "600-799"
+
+#: ../../hosts.rst:499 ../../hosts.rst:500
+msgid "VLANs carrying guest traffic."
+msgstr "VLAN transportant le trafic invité."
+
+#: ../../hosts.rst:499
+msgid "CloudStack accounts. Account-specific VLAN is chosen from this pool."
+msgstr ""
+"Comptes CloudStack. Le VLAN spécifique au compte est choisi depuis cette "
+"réserve."
+
+#: ../../hosts.rst:500
+msgid "800-899"
+msgstr "800-899"
+
+#: ../../hosts.rst:500
+msgid ""
+"CloudStack accounts. Account-specific VLAN chosen by CloudStack admin to "
+"assign to that account."
+msgstr ""
+"Comptes CloudStack. Le VLAN spécifique au compte choisi par l'administrateur "
+"CloudStack pour être assigneé à ce compte."
+
+#: ../../hosts.rst:501
+msgid "900-999"
+msgstr "900-999"
+
+#: ../../hosts.rst:501
+msgid "VLAN carrying guest traffic"
+msgstr "VLAN transportant le trafic public."
+
+#: ../../hosts.rst:501
+msgid "CloudStack accounts. Can be scoped by project, domain, or all accounts."
+msgstr ""
+"Comptes CloudStack. Peut être limité à un projet, à un domaine ou pour tous "
+"les comptes."
+
+#: ../../hosts.rst:502
+msgid "greater than 1000"
+msgstr "Supérieur à 1000"
+
+#: ../../hosts.rst:502
+msgid "Reserved for future use"
+msgstr "Réservé pour un usage futur."
+
+#: ../../hosts.rst:507
+msgid "Adding Non Contiguous VLAN Ranges"
+msgstr "Ajouter des intervalles de VLAN non contiguës."
+
+#: ../../hosts.rst:509
+msgid ""
+"CloudStack provides you with the flexibility to add non contiguous VLAN ranges "
+"to your network. The administrator can either update an existing VLAN range or "
+"add multiple non contiguous VLAN ranges while creating a zone. You can also "
+"use the UpdatephysicalNetwork API to extend the VLAN range."
+msgstr ""
+"CloudStack vous offre la flexibilité d'ajouter des plages de VLAN non "
+"contiguës à votre réseau. L'administrateur peut mettre à jour une plage de "
+"VLAN existante ou ajouter plusieurs plages de VLAN non contiguës lors de la "
+"création d'une zone. Vous pouvez également utiliser l'API "
+"UpdatephysicalNetwork pour étendre la plage de VLAN."
+
+#: ../../hosts.rst:515
+msgid "Log in to the CloudStack UI as an administrator or end user."
+msgstr ""
+"Se connecter à l'interface de CloudStack comme administrateur ou utilisateur "
+"final."
+
+#: ../../hosts.rst:517
+msgid "Ensure that the VLAN range does not already exist."
+msgstr "S'assurer que l'intervalle VLAN n'existe pas déjà."
+
+#: ../../hosts.rst:519
+msgid "In the left navigation, choose Infrastructure."
+msgstr "Choisissez Infrastructure dans le panneau de navigation à gauche."
+
+#: ../../hosts.rst:521
+msgid ""
+"On Zones, click View More, then click the zone to which you want to work with."
+msgstr ""
+"Sur Zones, cliquer sur Voir plus, puis cliquer sur la zone avec laquelle vous "
+"voulez travailler."
+
+#: ../../hosts.rst:524
+msgid "Click Physical Network."
+msgstr "Cliquer sur le réseau physique."
+
+#: ../../hosts.rst:526
+msgid "In the Guest node of the diagram, click Configure."
+msgstr "Dans le noeud Invité du diagramme, cliquer sur Configurer."
+
+#: ../../hosts.rst:528
+msgid "Click Edit |edit-icon.png|."
+msgstr "Cliquer sur Editer |edit-icon.png|."
+
+#: ../../hosts.rst:530
+msgid "The VLAN Ranges field now is editable."
+msgstr "Le champ intervalle VLAN est maintenant éditable."
+
+#: ../../hosts.rst:532
+msgid "Specify the start and end of the VLAN range in comma-separated list."
+msgstr ""
+"Spécifier le début et la fin de l'intervalle VLAN dans une liste séparée par "
+"une virgule."
+
+#: ../../hosts.rst:534
+msgid ""
+"Specify all the VLANs you want to use, VLANs not specified will be removed if "
+"you are adding new ranges to the existing list."
+msgstr ""
+"Spécifier tous les VLAN que vous voulez utiliser, les VLAN non spécifiés "
+"seront supprimés si vous ajoutez une nouvelle plage à la liste existante."
+
+#: ../../hosts.rst:537
+msgid "Click Apply."
+msgstr "Cliquer sur Appliquer."
+
+#: ../../hosts.rst:541
+msgid "Assigning VLANs to Isolated Networks"
+msgstr "Assigner les VLAN à des réseaux isolés."
+
+#: ../../hosts.rst:543
+msgid ""
+"CloudStack provides you the ability to control VLAN assignment to Isolated "
+"networks. As a Root admin, you can assign a VLAN ID when a network is created, "
+"just the way it's done for Shared networks."
+msgstr ""
+"CloudStack vous offre la possibilité de contrôler l'assignation de VLAN aux "
+"réseaux isolés. En tant qu'administrateur racine, vous pouvez attribuer un ID "
+"de VLAN lorsqu'un réseau est créé, comme c'est le cas pour les réseaux "
+"partagés."
+
+#: ../../hosts.rst:547
+msgid ""
+"The former behaviour also is supported — VLAN is randomly allocated to a "
+"network from the VNET range of the physical network when the network turns to "
+"Implemented state. The VLAN is released back to the VNET pool when the network "
+"shuts down as a part of the Network Garbage Collection. The VLAN can be re-"
+"used either by the same network when it is implemented again, or by any other "
+"network. On each subsequent implementation of a network, a new VLAN can be "
+"assigned."
+msgstr ""
+"Le comportement précédent est également pris en charge - un VLAN est alloué de "
+"façon aléatoire à un réseau à partir de la plage VNET du réseau physique "
+"lorsque le réseau passe à l'état Implémenté. Le VLAN est libéré dans le pool "
+"VNET lorsque le réseau s'arrête par le Network Garbage Collection. Le VLAN "
+"peut être réutilisé soit par le même réseau lors de sa remise en œuvre, soit "
+"par n'importe quel autre réseau. Sur chaque implémentation ultérieure d'un "
+"réseau, un nouveau VLAN peut être assigné."
+
+#: ../../hosts.rst:555
+msgid ""
+"Only the Root admin can assign VLANs because the regular users or domain admin "
+"are not aware of the physical network topology. They cannot even view what "
+"VLAN is assigned to a network."
+msgstr ""
+"Seul l'administrateur racine peut attribuer des VLAN car les utilisateurs "
+"réguliers ou l'administrateur de domaine ne connaissent pas la topologie du "
+"réseau physique. Ils ne peuvent même pas voir quel VLAN est affecté à un "
+"réseau."
+
+#: ../../hosts.rst:559
+msgid "To enable you to assign VLANs to Isolated networks,"
+msgstr "Pour vous permettre d'assigner des VLAN à des réseaux isolés,"
+
+#: ../../hosts.rst:561
+msgid "Create a network offering by specifying the following:"
+msgstr "Créer une offre de réseau en spécifiant ce qui suit :"
+
+#: ../../hosts.rst:563
+msgid "**Guest Type**: Select Isolated."
+msgstr "**Type d'invité** : Sélectionner Isolé."
+
+#: ../../hosts.rst:565
+msgid "**Specify VLAN**: Select the option."
+msgstr "**Spécifier le VLAN** : Sélectionner l'option."
+
+#: ../../hosts.rst:567
+msgid "For more information, see the CloudStack Installation Guide."
+msgstr "Pour plus d'informations, voir le Guide d'Installation de CloudStack."
+
+#: ../../hosts.rst:569
+msgid "Using this network offering, create a network."
+msgstr "Utiliser l'offre de réseau, créer un réseau."
+
+#: ../../hosts.rst:571
+msgid "You can create a VPC tier or an Isolated network."
+msgstr "Vous pouvez créer un tier VPC ou un réseau isolé."
+
+#: ../../hosts.rst:573
+msgid "Specify the VLAN when you create the network."
+msgstr "Spécifier le VLAN lorsque vous créez le réseau."
+
+#: ../../hosts.rst:575
+msgid ""
+"When VLAN is specified, a CIDR and gateway are assigned to this network and "
+"the state is changed to Setup. In this state, the network will not be garbage "
+"collected."
+msgstr ""
+"Lorsqu'un VLAN est spécifié, un CIDR et une passerelle sont affectés à ce "
+"réseau et l'état est changé à Setup. Dans cet état, le réseau ne sera pas "
+"récupérés."
+
+#: ../../hosts.rst:580
+msgid ""
+"You cannot change a VLAN once it's assigned to the network. The VLAN remains "
+"with the network for its entire life cycle."
+msgstr ""
+"Vous ne pouvez pas changer un VLAN une fois qu'il est affecté à un réseau. Le "
+"VLAN reste avec le réseau pendant tout son cycle de vie."
+
+#: ../../hosts.rst:591
+msgid "Out-of-band Management"
+msgstr "Gestion des Out-of-band"
+
+#: ../../hosts.rst:593
+msgid ""
+"CloudStack provides Root admins the ability to configure and use supported out-"
+"of-band management interface (e.g. IPMI, iLO, DRAC, etc.) on a physical host "
+"to manage host power operations such as on, off, reset etc. By default, IPMI "
+"2.0 baseboard controller are supported out of the box with `IPMITOOL` out-of-"
+"band management driver in CloudStack that uses `ipmitool` for performing IPMI "
+"2.0 management operations."
+msgstr ""
+"CloudStack fournit aux administrateurs racine la possibilité de configurer et "
+"d'utiliser les interfaces out-of-band supportées (par exemple, IPMI, iLO, "
+"DRAC, etc.) sur un hôte physique pour gérer les opérations d'alimentation de "
+"l'hôte telles que marche, arrêt, reset, etc. Par défaut, les controlleurs IPMI "
+"2.0 sont pris en charge nativement par le pilote de gestion `IPMITOOL` out-of-"
+"band dans CloudStack qui utilise `ipmitool` pour effectuer des opérations de "
+"gestion IPMI 2.0."
+
+#: ../../hosts.rst:600
+msgid ""
+"Following are some global settings that control various aspects of this "
+"feature."
+msgstr ""
+"Voici quelques paramètres globaux qui contrôlent différents aspects de cette "
+"fonctionnalité."
+
+#: ../../hosts.rst:605
+msgid "Global setting"
+msgstr "Configuration globale"
+
+#: ../../hosts.rst:605
+msgid "Default values"
+msgstr "Valeurs par défaut"
+
+#: ../../hosts.rst:605
+msgid "Description"
+msgstr "Description"
+
+#: ../../hosts.rst:607
+msgid "outofbandmanagement.action.timeout"
+msgstr "outofbandmanagement.action.timeout"
+
+#: ../../hosts.rst:607
+msgid "60"
+msgstr "60"
+
+#: ../../hosts.rst:607
+msgid ""
+"The out of band management action timeout in seconds, configurable per cluster"
+msgstr ""
+"Le délai d'attente de l'action du out of band management en secondes, "
+"configurable par cluster"
+
+#: ../../hosts.rst:608
+msgid "outofbandmanagement.ipmitool.interface"
+msgstr "outofbandmanagement.ipmitool.interface"
+
+#: ../../hosts.rst:608
+msgid "lanplus"
+msgstr "lanplus"
+
+#: ../../hosts.rst:608
+msgid ""
+"The out of band management IpmiTool driver interface to use. Valid values are: "
+"lan, lanplus etc"
+msgstr ""
+"L'interface du pilote IpmiTool pour le out of band management à utiliser. Les "
+"valeurs valides sont: lan, lanplus, etc."
+
+#: ../../hosts.rst:609
+msgid "outofbandmanagement.ipmitool.path"
+msgstr "outofbandmanagement.ipmitool.path"
+
+#: ../../hosts.rst:609
+msgid "/usr/bin/ipmitool"
+msgstr "/usr/bin/ipmitool"
+
+#: ../../hosts.rst:609
+msgid "The out of band management ipmitool path used by the IpmiTool driver"
+msgstr ""
+"Le chemin de l'ipmitool du out of band management utilisé par le pilote de "
+"l'IpmiTool"
+
+#: ../../hosts.rst:610
+msgid "outofbandmanagement.ipmitool.retries"
+msgstr "outofbandmanagement.ipmitool.retries"
+
+#: ../../hosts.rst:610
+msgid "1"
+msgstr "1"
+
+#: ../../hosts.rst:610
+msgid "The out of band management IpmiTool driver retries option -R"
+msgstr ""
+"L'option de nouvelle essais -R du pilote IpmiTool du out of band management"
+
+#: ../../hosts.rst:611
+msgid "outofbandmanagement.sync.interval"
+msgstr "outofbandmanagement.sync.interval"
+
+#: ../../hosts.rst:611
+msgid "300"
+msgstr "300"
+
+#: ../../hosts.rst:611
+msgid "The out of band management background sync thread interval in seconds"
+msgstr ""
+"L'intervalle en secondes du thread de synchronisation en arrière-plan du "
+"gestionnaire out of band."
+
+#: ../../hosts.rst:612
+msgid "outofbandmanagement.sync.poolsize"
+msgstr "outofbandmanagement.sync.poolsize"
+
+#: ../../hosts.rst:612
+msgid "50"
+msgstr "50"
+
+#: ../../hosts.rst:612
+msgid "The out of band management background sync thread pool size 50"
+msgstr ""
+
+#: ../../hosts.rst:615
+msgid ""
+"A change in `outofbandmanagement.sync.interval` or `outofbandmanagement.sync."
+"poolsize` settings requires restarting of management server(s) as the thread "
+"pool and a background (power state) sync thread are configured during load "
+"time when CloudStack management server starts. Rest of the global settings can "
+"be changed without requiring restarting of management server(s)."
+msgstr ""
+"Une modification des paramètres `outofbandmanagement.sync.interval` ou` "
+"outofbandmanagement.sync.poolsize` requiert le redémarrage des serveurs de "
+"gestion puisque le pool de threads et un thread de synchronisation en arrière-"
+"plan (état d'alimentation) sont configurés pendant le chargement lorsque le "
+"serveur de gestion CloudStack démarre. Le reste des paramètres globaux peut "
+"être modifié sans nécessiter le redémarrage du ou des serveurs de gestion."
+
+#: ../../hosts.rst:621
+msgid ""
+"The `outofbandmanagement.sync.poolsize` is the maximum number of ipmitool "
+"background power state scanners that can run at a time. Based on the maximum "
+"number of hosts you've, you can increase/decrease the value depending on how "
+"much stress your management server host can endure. It will take atmost number "
+"of total out-of-band-management enabled hosts in a round * "
+"`outofbandmanagement.action.timeout` / `outofbandmanagement.sync.poolsize` "
+"seconds to complete a background power-state sync scan in a single round."
+msgstr ""
+"Le `Outofbandmanagement.sync.poolsize` est le nombre maximal de scanners "
+"ipmitool en arrière plan d'état d'alimentation pouvant être exécutés à la "
+"fois. En fonction du nombre maximal d'hôtes que vous avez, vous pouvez "
+"augmenter / diminuer la valeur en fonction de la quantité de stress que votre "
+"serveur hôte de gestion peut supporter. Il faudra calculer le plus grand "
+"nombre d'hôtes out-of-band activés par la formule  * `outofbandmanagement."
+"action.timeout` / `outofbandmanagement.sync.poolsize` secondes pour compléter "
+"une analyse de synchronisation de l'état d'alimentation en arrière-plan en un "
+"seul tour."
+
+#: ../../hosts.rst:629
+msgid ""
+"In order to use this feature, the Root admin needs to first configure out-of-"
+"band management for a host using either the UI or the "
+"`configureOutOfBandManagement` API. Next, the Root admin needs to enable it. "
+"The feature can be enabled or disabled across a zone or a cluster or a host,"
+msgstr ""
+"Pour utiliser cette fonctionnalité, l'administrateur racine doit d'abord "
+"configurer la gestion out-of-band pour un hôte à l'aide de l'interface "
+"utilisateur ou de l'API `configureOutOfBandManagement`. Ensuite, "
+"l'administrateur racine doit l'activer. La fonction peut être activée ou "
+"désactivée dans une zone, un cluster ou un hôte,"
+
+#: ../../hosts.rst:634
+msgid ""
+"Once out-of-band management is configured and enabled for a host (and provided "
+"not disabled at zone or cluster level), Root admins would be able to issue "
+"power management actions such as on, off, reset, cycle, soft and status."
+msgstr ""
+"Une fois que le management out-of-band est configuré et activé pour un hôte "
+"(et pourvu qu'il ne soit pas désactivée au niveau de la zone ou du cluster), "
+"les administrateurs racines sont en mesure d'exécuter des actions de gestion "
+"de l'alimentation telles que marche, arrêt, réinitialisation, cycle, logiciel "
+"et statut."
+
+#: ../../hosts.rst:638
+msgid ""
+"If a host is in maintenance mode, Root admins are still allowed to perform "
+"power management actions but in the UI a warning is displayed."
+msgstr ""
+"Si un hôte est en mode maintenance, les administrateurs Root sont toujours "
+"autorisés à effectuer des actions de gestion d'allumage ou d'extinction mais "
+"dans l'interface une alerte est affichée."

@@ -1,0 +1,1119 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2014-06-30 12:06+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../networking/remote_access_vpn.rst:20
+msgid "Remote Access VPN"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:22
+msgid ""
+"CloudStack account owners can create virtual private networks (VPN) to "
+"access their virtual machines. If the guest network is instantiated from "
+"a network offering that offers the Remote Access VPN service, the virtual"
+" router (based on the System VM) is used to provide the service. "
+"CloudStack provides a L2TP-over-IPsec-based remote access VPN service to "
+"guest virtual networks. Since each network gets its own virtual router, "
+"VPNs are not shared across the networks. VPN clients native to `Windows, "
+"Mac OS X <networking/using_remote_access.html>`_ and iOS can be used to "
+"connect to the guest networks. The account owner can create and manage "
+"users for their VPN. CloudStack does not use its account database for "
+"this purpose but uses a separate table. The VPN user database is shared "
+"across all the VPNs created by the account owner. All VPN users get "
+"access to all VPNs created by the account owner."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:37
+msgid ""
+"Make sure that not all traffic goes through the VPN. That is, the route "
+"installed by the VPN should be only for the guest network and not for all"
+" traffic."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:41
+msgid ""
+"**Road Warrior / Remote Access**. Users want to be able to connect "
+"securely from a home or office to a private network in the cloud. "
+"Typically, the IP address of the connecting client is dynamic and cannot "
+"be preconfigured on the VPN server."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:46
+msgid ""
+"**Site to Site**. In this scenario, two private subnets are connected "
+"over the public Internet with a secure VPN tunnel. The cloud user's "
+"subnet (for example, an office network) is connected through a gateway to"
+" the network in the cloud. The address of the user's gateway must be "
+"preconfigured on the VPN server in the cloud. Note that although L2TP-"
+"over-IPsec can be used to set up Site-to-Site VPNs, this is not the "
+"primary intent of this feature. For more information, see \":ref"
+":`setting-s2s-vpn-conn`\"."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:57
+msgid "Configuring Remote Access VPN"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:59
+msgid "To set up VPN for the cloud:"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:61
+msgid "Log in to the CloudStack UI as an administrator or end user."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:63
+msgid "In the left navigation, click Global Settings."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:65
+msgid "Set the following global configuration parameters."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:67
+msgid ""
+"remote.access.vpn.client.ip.range - The range of IP addresses to be "
+"allocated to remote access VPN clients. The first IP in the range is used"
+" by the VPN server."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:71
+msgid "remote.access.vpn.psk.length - Length of the IPSec key."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:73
+msgid "remote.access.vpn.user.limit - Maximum number of VPN users per account."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:76
+msgid "To enable VPN for a particular network:"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:78
+#: ../../networking/remote_access_vpn.rst:103
+msgid "Log in as a user or administrator to the CloudStack UI."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:80
+#: ../../networking/remote_access_vpn.rst:105
+msgid "In the left navigation, click Network."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:82
+msgid "Click the name of the network you want to work with."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:84
+msgid "Click View IP Addresses."
+msgstr "Cliquez sur Voir les adresses IP."
+
+#: ../../networking/remote_access_vpn.rst:86
+msgid "Click one of the displayed IP address names."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:88
+#: ../../networking/remote_access_vpn.rst:142
+msgid "Click the Enable VPN button. |vpn-icon.png|"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:90
+msgid "The IPsec key is displayed in a popup window."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:94
+msgid "Configuring Remote Access VPN in VPC"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:96
+msgid ""
+"On enabling Remote Access VPN on a VPC, any VPN client present outside "
+"the VPC can access VMs present in the VPC by using the Remote VPN "
+"connection. The VPN client can be present anywhere except inside the VPC "
+"on which the user enabled the Remote Access VPN service."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:101
+msgid "To enable VPN for a VPC:"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:107
+msgid "In the Select view, select VPC."
+msgstr "Dans la vue de Sélection, choisissez VPC."
+
+#: ../../networking/remote_access_vpn.rst:109
+msgid "All the VPCs that you have created for the account is listed in the page."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:112
+msgid "Click the Configure button of the VPC."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:114
+msgid "For each tier, the following options are displayed:"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:116
+msgid "Internal LB"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:118
+msgid "Public LB IP"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:120
+msgid "Static NAT"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:122
+msgid "Virtual Machines"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:124
+msgid "CIDR"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:126
+msgid "The following router information is displayed:"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:128
+msgid "Private Gateways"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:130
+msgid "Public IP Addresses"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:132
+msgid "Site-to-Site VPNs"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:134
+msgid "Network ACL Lists"
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:136
+msgid "In the Router node, select Public IP Addresses."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:138
+msgid "The IP Addresses page is displayed."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:140
+msgid "Click Source NAT IP address."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:144
+msgid "Click OK to confirm. The IPsec key is displayed in a pop-up window."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:146
+msgid "Now, you need to add the VPN users."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:148
+msgid "Click the Source NAT IP."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:150
+msgid "Select the VPN tab."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:152
+msgid ""
+"Add the username and the corresponding password of the user you wanted to"
+" add."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:155
+msgid "Click Add."
+msgstr ""
+
+#: ../../networking/remote_access_vpn.rst:157
+msgid "Repeat the same steps to add the VPN users."
+msgstr ""
+
+# 8202b8f150584992995c6c6f69a2c907
+#~ msgid ""
+#~ "CloudStack account owners can create "
+#~ "virtual private networks (VPN) to access"
+#~ " their virtual machines. If the guest"
+#~ " network is instantiated from a "
+#~ "network offering that offers the Remote"
+#~ " Access VPN service, the virtual "
+#~ "router (based on the System VM) is"
+#~ " used to provide the service. "
+#~ "CloudStack provides a L2TP-over-"
+#~ "IPsec-based remote access VPN service "
+#~ "to guest virtual networks. Since each"
+#~ " network gets its own virtual router,"
+#~ " VPNs are not shared across the "
+#~ "networks. VPN clients native to Windows,"
+#~ " Mac OS X and iOS can be "
+#~ "used to connect to the guest "
+#~ "networks. The account owner can create"
+#~ " and manage users for their VPN. "
+#~ "CloudStack does not use its account "
+#~ "database for this purpose but uses "
+#~ "a separate table. The VPN user "
+#~ "database is shared across all the "
+#~ "VPNs created by the account owner. "
+#~ "All VPN users get access to all"
+#~ " VPNs created by the account owner."
+#~ msgstr ""
+
+# d3c8df533b2c4e659158e77c8669a813
+#~ msgid "Using Remote Access VPN with Windows"
+#~ msgstr ""
+
+# d03485e36a8744758782e81ab88041d1
+#~ msgid ""
+#~ "The procedure to use VPN varies by"
+#~ " Windows version. Generally, the user "
+#~ "must edit the VPN properties and "
+#~ "make sure that the default route "
+#~ "is not the VPN. The following "
+#~ "steps are for Windows L2TP clients "
+#~ "on Windows Vista. The commands should"
+#~ " be similar for other Windows "
+#~ "versions."
+#~ msgstr ""
+
+# 98196e5429de407da75adf5f3ce7cf8d
+#~ msgid ""
+#~ "Log in to the CloudStack UI and"
+#~ " click on the source NAT IP for"
+#~ " the account. The VPN tab should "
+#~ "display the IPsec preshared key. Make"
+#~ " a note of this and the source"
+#~ " NAT IP. The UI also lists one"
+#~ " or more users and their passwords."
+#~ " Choose one of these users, or, "
+#~ "if none exists, add a user and "
+#~ "password."
+#~ msgstr ""
+
+# 6a896fa8431d479195d161efebf56672
+#~ msgid ""
+#~ "On the Windows box, go to Control"
+#~ " Panel, then select Network and "
+#~ "Sharing center. Click Setup a connection"
+#~ " or network."
+#~ msgstr ""
+
+# 8e983aa928b444228e689749e8fc0801
+#~ msgid "In the next dialog, select No, create a new connection."
+#~ msgstr ""
+
+# 98f484c7652c45d2ae57690d719610ed
+#~ msgid "In the next dialog, select Use my Internet Connection (VPN)."
+#~ msgstr ""
+
+# 784c5c041ba94caea475a667add0adcd
+#~ msgid ""
+#~ "In the next dialog, enter the "
+#~ "source NAT IP from step #1 and "
+#~ "give the connection a name. Check "
+#~ "Don't connect now."
+#~ msgstr ""
+
+# 41d1540c0a7d401a9c549bd5304f18ce
+#~ msgid ""
+#~ "In the next dialog, enter the user"
+#~ " name and password selected in step"
+#~ " #1."
+#~ msgstr ""
+
+# 3cbbd674fd8d412c90bfbbeb8f607ea0
+#~ msgid "Click Create."
+#~ msgstr "Cliquez sur Créer"
+
+# 85a9ef6f201e47f584255229980b3d87
+#~ msgid ""
+#~ "Go back to the Control Panel and"
+#~ " click Network Connections to see the"
+#~ " new connection. The connection is "
+#~ "not active yet."
+#~ msgstr ""
+
+# 1d169d66dd744654bd8ea7dd62a677a6
+#~ msgid ""
+#~ "Right-click the new connection and "
+#~ "select Properties. In the Properties "
+#~ "dialog, select the Networking tab."
+#~ msgstr ""
+
+# a191730de1684f06a3d729e5cde2e487
+#~ msgid ""
+#~ "In Type of VPN, choose L2TP IPsec"
+#~ " VPN, then click IPsec settings. "
+#~ "Select Use preshared key. Enter the "
+#~ "preshared key from step #1."
+#~ msgstr ""
+
+# 343858b6c3e5498fad0bd34b503e792d
+#~ msgid ""
+#~ "The connection is ready for activation."
+#~ " Go back to Control Panel -> "
+#~ "Network Connections and double-click the"
+#~ " created connection."
+#~ msgstr ""
+
+# e60c05ee4aef40d38a3a0b01aade9b5e
+#~ msgid "Enter the user name and password from step #1."
+#~ msgstr ""
+
+# d1cfefca174a4554a0c4170ec0c49f9b
+#~ msgid "Using Remote Access VPN with Mac OS X"
+#~ msgstr ""
+
+# 728cc61e43c440459c1ad6252a2f6b97
+#~ msgid ""
+#~ "First, be sure you've configured the "
+#~ "VPN settings in your CloudStack install."
+#~ " This section is only concerned with"
+#~ " connecting via Mac OS X to "
+#~ "your VPN."
+#~ msgstr ""
+
+# b3185af9f4534991ad3e3e5b66f47da2
+#~ msgid ""
+#~ "Note, these instructions were written on"
+#~ " Mac OS X 10.7.5. They may "
+#~ "differ slightly in older or newer "
+#~ "releases of Mac OS X."
+#~ msgstr ""
+
+# 6f2aaf1e33d6421db0f521c5820d02c8
+#~ msgid "On your Mac, open System Preferences and click Network."
+#~ msgstr ""
+
+# 26e7088ea9494f94922f1a8f5e0ad753
+#~ msgid "Make sure Send all traffic over VPN connection is not checked."
+#~ msgstr ""
+
+# 8e0600ca2c9546a2b3905659b64a835b
+#~ msgid ""
+#~ "If your preferences are locked, you'll"
+#~ " need to click the lock in the"
+#~ " bottom left-hand corner to make "
+#~ "any changes and provide your "
+#~ "administrator credentials."
+#~ msgstr ""
+
+# da1ba33a066b4415a728d14ab936780c
+#~ msgid ""
+#~ "You will need to create a new "
+#~ "network entry. Click the plus icon "
+#~ "on the bottom left-hand side and"
+#~ " you'll see a dialog that says "
+#~ "\"Select the interface and enter a "
+#~ "name for the new service.\" Select "
+#~ "VPN from the Interface drop-down "
+#~ "menu, and \"L2TP over IPSec\" for "
+#~ "the VPN Type. Enter whatever you "
+#~ "like within the \"Service Name\" field."
+#~ msgstr ""
+
+# b96bb5f3c9534d3384752b6c652405b5
+#~ msgid ""
+#~ "You'll now have a new network "
+#~ "interface with the name of whatever "
+#~ "you put in the \"Service Name\" "
+#~ "field. For the purposes of this "
+#~ "example, we'll assume you've named it"
+#~ " \"CloudStack.\" Click on that interface"
+#~ " and provide the IP address of "
+#~ "the interface for your VPN under "
+#~ "the Server Address field, and the "
+#~ "user name for your VPN under "
+#~ "Account Name."
+#~ msgstr ""
+
+# db5b3b2b72e449368be600488d32a212
+#~ msgid ""
+#~ "Click Authentication Settings, and add "
+#~ "the user's password under User "
+#~ "Authentication and enter the pre-shared"
+#~ " IPSec key in the Shared Secret "
+#~ "field under Machine Authentication. Click "
+#~ "OK."
+#~ msgstr ""
+
+# 79ff11baad9844c9a7bb84f19aac4703
+#~ msgid ""
+#~ "You may also want to click the "
+#~ "\"Show VPN status in menu bar\" "
+#~ "but that's entirely optional."
+#~ msgstr ""
+
+# 74b926642e7d49ca925804a4d6d99abc
+#~ msgid "Now click \"Connect\" and you will be connected to the CloudStack VPN."
+#~ msgstr ""
+
+# fb0aef197790435d95971b0006f98a9d
+#~ msgid "Setting Up a Site-to-Site VPN Connection"
+#~ msgstr ""
+
+# b113a5a8546b4ce8b1a7507f2b860ad7
+#~ msgid ""
+#~ "A Site-to-Site VPN connection "
+#~ "helps you establish a secure connection"
+#~ " from an enterprise datacenter to the"
+#~ " cloud infrastructure. This allows users"
+#~ " to access the guest VMs by "
+#~ "establishing a VPN connection to the "
+#~ "virtual router of the account from "
+#~ "a device in the datacenter of the"
+#~ " enterprise. You can also establish a"
+#~ " secure connection between two VPC "
+#~ "setups or high availability zones in "
+#~ "your environment. Having this facility "
+#~ "eliminates the need to establish VPN "
+#~ "connections to individual VMs."
+#~ msgstr ""
+
+# ec0ce935716740158c031ebf544b7294
+#~ msgid ""
+#~ "The difference from Remote VPN is "
+#~ "that Site-to-site VPNs connects "
+#~ "entire networks to each other, for "
+#~ "example, connecting a branch office "
+#~ "network to a company headquarters "
+#~ "network. In a site-to-site VPN,"
+#~ " hosts do not have VPN client "
+#~ "software; they send and receive normal"
+#~ " TCP/IP traffic through a VPN "
+#~ "gateway."
+#~ msgstr ""
+
+# 79120b77963b4f77afa51573e6ad1ca7
+#~ msgid "The supported endpoints on the remote datacenters are:"
+#~ msgstr ""
+
+# 34aba4dd56884ad3871e85272aab2acf
+#~ msgid "Cisco ISR with IOS 12.4 or later"
+#~ msgstr ""
+
+# 95978dcfdbf34c2886952ee16cb6e16d
+#~ msgid "Juniper J-Series routers with JunOS 9.5 or later"
+#~ msgstr ""
+
+# 272a2a827c494e90a6b2d52dc96b7f0b
+#~ msgid "CloudStack virtual routers"
+#~ msgstr ""
+
+# 8c16297c0eab4c72b6a2a29b0f4866d1
+#~ msgid ""
+#~ "In addition to the specific Cisco "
+#~ "and Juniper devices listed above, the"
+#~ " expectation is that any Cisco or "
+#~ "Juniper device running on the supported"
+#~ " operating systems are able to "
+#~ "establish VPN connections."
+#~ msgstr ""
+
+# eb701cb20d40405b9ca1d79ce15b681f
+#~ msgid "To set up a Site-to-Site VPN connection, perform the following:"
+#~ msgstr ""
+
+# b5f397a7a64b47168a74fb1618810e5c
+#~ msgid "Create a Virtual Private Cloud (VPC)."
+#~ msgstr ""
+
+# 1d44be641cf042b99841b146bb055956
+#~ msgid "See \":ref:`configuring-vpc`\"."
+#~ msgstr ""
+
+# f1ff67e23d7d4eaeb81c1b5686399942
+#~ msgid "Create a VPN Customer Gateway."
+#~ msgstr ""
+
+# e3425171b9504f5b958d0802ca1a55ce
+#~ msgid "Create a VPN gateway for the VPC that you created."
+#~ msgstr ""
+
+# 6d0964544a6944f39ec8eafdaf587428
+#~ msgid ""
+#~ "Create VPN connection from the VPC "
+#~ "VPN gateway to the customer VPN "
+#~ "gateway."
+#~ msgstr ""
+
+# 3d85874020904fbdb261885b5e2f05ce
+#~ msgid "Creating and Updating a VPN Customer Gateway"
+#~ msgstr ""
+
+# 9b0857af13544aaebee5984422c93195
+#~ msgid ""
+#~ "A VPN customer gateway can be "
+#~ "connected to only one VPN gateway "
+#~ "at a time."
+#~ msgstr ""
+
+# 1a951a0ee8d54164b9b99ff9cd080e58
+#~ msgid "To add a VPN Customer Gateway:"
+#~ msgstr ""
+
+# 6a26e636eb224d1eb75c9782de7c830d
+# affc98b5cd4b401086e5e00f9e69ac90
+# 23c81aa674f64826830390c49839730c
+# 98dc2f6f69d341b0b1867f35102e20ff
+# d4efd83e728b439eaa8408bd783d0c11
+#~ msgid "In the left navigation, choose Network."
+#~ msgstr "Dans la navigation à gauche, choisissez Réseau."
+
+# b0e99af0f0014e1aa156dd7f2644f23a
+# cf4e8a6aa8be4c3e9c92bd5f84e9b571
+#~ msgid "In the Select view, select VPN Customer Gateway."
+#~ msgstr ""
+
+# 51d8e12e75dd47e4b2d4a9c52da89be9
+#~ msgid "Click Add VPN Customer Gateway."
+#~ msgstr ""
+
+# e72b7822c85649f99f01e845e1418844
+#~ msgid "|addvpncustomergateway.png|"
+#~ msgstr ""
+
+# 0810d2cb133043b4858badbc2e4ac704
+#~ msgid "Provide the following information:"
+#~ msgstr ""
+
+# 372ec8983a514ad3b0927d01bc30fae6
+#~ msgid "**Name**: A unique name for the VPN customer gateway you create."
+#~ msgstr ""
+
+# 0cd283ba65a241cf97d90b2c5f04c36f
+#~ msgid "**Gateway**: The IP address for the remote gateway."
+#~ msgstr ""
+
+# 0e3f2efe75f7454e9f2ac706604f832d
+#~ msgid ""
+#~ "**CIDR list**: The guest CIDR list "
+#~ "of the remote subnets. Enter a "
+#~ "CIDR or a comma-separated list of"
+#~ " CIDRs. Ensure that a guest CIDR "
+#~ "list is not overlapped with the "
+#~ "VPC's CIDR, or another guest CIDR. "
+#~ "The CIDR must be RFC1918-compliant."
+#~ msgstr ""
+
+# 929c5f444fae4aee88faa98a926d0f52
+#~ msgid ""
+#~ "**IPsec Preshared Key**: Preshared keying "
+#~ "is a method where the endpoints of"
+#~ " the VPN share a secret key. "
+#~ "This key value is used to "
+#~ "authenticate the customer gateway and "
+#~ "the VPC VPN gateway to each other."
+#~ msgstr ""
+
+# 171abb6f27ef471eae87fd0718d714af
+#~ msgid ""
+#~ "The IKE peers (VPN end points) "
+#~ "authenticate each other by computing and"
+#~ " sending a keyed hash of data "
+#~ "that includes the Preshared key. If "
+#~ "the receiving peer is able to "
+#~ "create the same hash independently by"
+#~ " using its Preshared key, it knows"
+#~ " that both peers must share the "
+#~ "same secret, thus authenticating the "
+#~ "customer gateway."
+#~ msgstr ""
+
+# a4553b53ccb04b358a278545e87eb9bd
+#~ msgid ""
+#~ "**IKE Encryption**: The Internet Key "
+#~ "Exchange (IKE) policy for phase-1. The"
+#~ " supported encryption algorithms are "
+#~ "AES128, AES192, AES256, and 3DES. "
+#~ "Authentication is accomplished through the "
+#~ "Preshared Keys."
+#~ msgstr ""
+
+# 3bb40218a4db49e0aa09d5983d57a8fa
+#~ msgid ""
+#~ "The phase-1 is the first phase in"
+#~ " the IKE process. In this initial "
+#~ "negotiation phase, the two VPN endpoints"
+#~ " agree on the methods to be "
+#~ "used to provide security for the "
+#~ "underlying IP traffic. The phase-1 "
+#~ "authenticates the two VPN gateways to"
+#~ " each other, by confirming that the"
+#~ " remote gateway has a matching "
+#~ "Preshared Key."
+#~ msgstr ""
+
+# a5e3619f28fb487987386ff3359d079b
+#~ msgid ""
+#~ "**IKE Hash**: The IKE hash for "
+#~ "phase-1. The supported hash algorithms "
+#~ "are SHA1 and MD5."
+#~ msgstr ""
+
+# 998f798e068147c69b96d5332181acdd
+#~ msgid ""
+#~ "**IKE DH**: A public-key cryptography"
+#~ " protocol which allows two parties to"
+#~ " establish a shared secret over an"
+#~ " insecure communications channel. The "
+#~ "1536-bit Diffie-Hellman group is used"
+#~ " within IKE to establish session "
+#~ "keys. The supported options are None,"
+#~ " Group-5 (1536-bit) and Group-2 (1024-bit)."
+#~ msgstr ""
+
+# 34c98169c2dd4375a23dff45d764590d
+#~ msgid ""
+#~ "**ESP Encryption**: Encapsulating Security "
+#~ "Payload (ESP) algorithm within phase-2. "
+#~ "The supported encryption algorithms are "
+#~ "AES128, AES192, AES256, and 3DES."
+#~ msgstr ""
+
+# c61b40cf82de4f9fb6c45b8e0172b4b4
+#~ msgid ""
+#~ "The phase-2 is the second phase in"
+#~ " the IKE process. The purpose of "
+#~ "IKE phase-2 is to negotiate IPSec "
+#~ "security associations (SA) to set up "
+#~ "the IPSec tunnel. In phase-2, new "
+#~ "keying material is extracted from the"
+#~ " Diffie-Hellman key exchange in "
+#~ "phase-1, to provide session keys to "
+#~ "use in protecting the VPN data "
+#~ "flow."
+#~ msgstr ""
+
+# 71d47a66a42f4a04b2540e69eba4cdd9
+#~ msgid ""
+#~ "**ESP Hash**: Encapsulating Security Payload"
+#~ " (ESP) hash for phase-2. Supported "
+#~ "hash algorithms are SHA1 and MD5."
+#~ msgstr ""
+
+# 2378eab3a19b42cda0e954ae2c70bb38
+#~ msgid ""
+#~ "**Perfect Forward Secrecy**: Perfect Forward"
+#~ " Secrecy (or PFS) is the property "
+#~ "that ensures that a session key "
+#~ "derived from a set of long-term"
+#~ " public and private keys will not "
+#~ "be compromised. This property enforces a"
+#~ " new Diffie-Hellman key exchange. It"
+#~ " provides the keying material that "
+#~ "has greater key material life and "
+#~ "thereby greater resistance to cryptographic"
+#~ " attacks. The available options are "
+#~ "None, Group-5 (1536-bit) and Group-2 "
+#~ "(1024-bit). The security of the key "
+#~ "exchanges increase as the DH groups "
+#~ "grow larger, as does the time of"
+#~ " the exchanges."
+#~ msgstr ""
+
+# de12259eb62f48c294bc324395468d43
+#~ msgid ""
+#~ "When PFS is turned on, for every"
+#~ " negotiation of a new phase-2 SA "
+#~ "the two gateways must generate a "
+#~ "new set of phase-1 keys. This adds"
+#~ " an extra layer of protection that"
+#~ " PFS adds, which ensures if the "
+#~ "phase-2 SA's have expired, the keys "
+#~ "used for new phase-2 SA's have not"
+#~ " been generated from the current "
+#~ "phase-1 keying material."
+#~ msgstr ""
+
+# c29472e88000476ea8eb3f3165f58da4
+#~ msgid ""
+#~ "**IKE Lifetime (seconds)**: The phase-1 "
+#~ "lifetime of the security association in"
+#~ " seconds. Default is 86400 seconds (1"
+#~ " day). Whenever the time expires, a"
+#~ " new phase-1 exchange is performed."
+#~ msgstr ""
+
+# c05a91d5e2b44d7a9ea842e762a6f4a0
+#~ msgid ""
+#~ "**ESP Lifetime (seconds)**: The phase-2 "
+#~ "lifetime of the security association in"
+#~ " seconds. Default is 3600 seconds (1"
+#~ " hour). Whenever the value is "
+#~ "exceeded, a re-key is initiated to"
+#~ " provide a new IPsec encryption and"
+#~ " authentication session keys."
+#~ msgstr ""
+
+# 9afba73f17a3471faa8cff978bb64495
+#~ msgid ""
+#~ "**Dead Peer Detection**: A method to "
+#~ "detect an unavailable Internet Key "
+#~ "Exchange (IKE) peer. Select this option"
+#~ " if you want the virtual router "
+#~ "to query the liveliness of its IKE"
+#~ " peer at regular intervals. It's "
+#~ "recommended to have the same "
+#~ "configuration of DPD on both side "
+#~ "of VPN connection."
+#~ msgstr ""
+
+# 4d12f59b777c48e98fb18ab2bace355d
+# a65f0ba427b04b6da2bdc39a05acba02
+#~ msgid "Click OK."
+#~ msgstr "Cliquez sur OK."
+
+# 460983ec4dd64370b650944e21d45b75
+#~ msgid "Updating and Removing a VPN Customer Gateway"
+#~ msgstr ""
+
+# 47640086ca6e4122a862027f6e528af6
+#~ msgid ""
+#~ "You can update a customer gateway "
+#~ "either with no VPN connection, or "
+#~ "related VPN connection is in error "
+#~ "state."
+#~ msgstr ""
+
+# eee4a55897da4f06b44795327c878110
+#~ msgid "Select the VPN customer gateway you want to work with."
+#~ msgstr ""
+
+# 9dc617447a9c48df92819b996a8e3b39
+#~ msgid ""
+#~ "To modify the required parameters, click"
+#~ " the Edit VPN Customer Gateway button"
+#~ " |vpn-edit-icon.png|"
+#~ msgstr ""
+
+# 0c3c4beedfb2453cb03958649454d3d2
+#~ msgid ""
+#~ "To remove the VPN customer gateway, "
+#~ "click the Delete VPN Customer Gateway"
+#~ " button |delete.png|"
+#~ msgstr ""
+
+# ae45fd8564384b9a8682a662011196da
+#~ msgid "Creating a VPN gateway for the VPC"
+#~ msgstr ""
+
+# addf23d2b2b14d9c80370bc70f64ec94
+# 8ab2d3e53e83433ab4cf699e916d89d9
+# 5ece94a59df34ecdb036ac45fc49bd06
+#~ msgid ""
+#~ "Click the Configure button of the "
+#~ "VPC to which you want to deploy"
+#~ " the VMs."
+#~ msgstr ""
+
+# af1a9268a6da4a45922589c847776234
+# 1ccf3bf911414951aeb77508e82aa992
+# 433faedb39a3413c8ce1f220f5e22560
+#~ msgid ""
+#~ "The VPC page is displayed where "
+#~ "all the tiers you created are "
+#~ "listed in a diagram."
+#~ msgstr ""
+
+# 3152bcd237704f96b4a1b897b801f81b
+# 5a72231d602e4625acd0cbd4b0af4f7e
+# 243047505a8c40e1aadfa9dfbc091f0c
+#~ msgid "Select Site-to-Site VPN."
+#~ msgstr ""
+
+# 626b08a7444c4baeb387b316fcf8921d
+#~ msgid ""
+#~ "If you are creating the VPN "
+#~ "gateway for the first time, selecting"
+#~ " Site-to-Site VPN prompts you "
+#~ "to create a VPN gateway."
+#~ msgstr ""
+
+# c46b3f642ec240738664d6765c1d736f
+#~ msgid "In the confirmation dialog, click Yes to confirm."
+#~ msgstr ""
+
+# 6dbf5c6dc5984bc896785e8d81f1fa0d
+#~ msgid ""
+#~ "Within a few moments, the VPN "
+#~ "gateway is created. You will be "
+#~ "prompted to view the details of "
+#~ "the VPN gateway you have created. "
+#~ "Click Yes to confirm."
+#~ msgstr ""
+
+# 62c9ff637a9c46beb4a187d9d333e711
+#~ msgid "The following details are displayed in the VPN Gateway page:"
+#~ msgstr ""
+
+# 202a6b9a51f3470d89bb84bb2c9579a8
+# 47435eb81ccf40eab149e9b0abb9213e
+#~ msgid "IP Address"
+#~ msgstr ""
+
+# 46f2ea07f3744ac381add8029488f5d3
+#~ msgid "Account"
+#~ msgstr ""
+
+# bad02846a1ee4160a278abb51303de1f
+#~ msgid "Domain"
+#~ msgstr ""
+
+# b0b08d6daddb48409f581811786b76cf
+#~ msgid "Creating a VPN Connection"
+#~ msgstr ""
+
+# 596c1d39f0fe47fa8b05ff9b321ae507
+#~ msgid "CloudStack supports creating up to 8 VPN connections."
+#~ msgstr ""
+
+# a61e029b8b514adfa93c97620ffff95f
+#~ msgid "All the VPCs that you create for the account are listed in the page."
+#~ msgstr ""
+
+# 690702b545754083adec40f20d69acb4
+# 614430ff17c8485fae7ddb094273ef06
+#~ msgid "Click the Settings icon."
+#~ msgstr ""
+
+# 86dbf74b2c6e4f0aab3f252fafd89f2c
+# fab72af09a284fd2800ff51645f071bf
+#~ msgid "The Site-to-Site VPN page is displayed."
+#~ msgstr ""
+
+# db4dc2719dd6405eb250f62908eef010
+# 207bfc2acd9e434887770513a245873b
+#~ msgid "From the Select View drop-down, ensure that VPN Connection is selected."
+#~ msgstr ""
+
+# 950eac49657f4a29a9fba1b973577867
+#~ msgid "Click Create VPN Connection."
+#~ msgstr ""
+
+# 916fc10dd39346ada9828e3a2a80ffda
+#~ msgid "The Create VPN Connection dialog is displayed:"
+#~ msgstr ""
+
+# 87888fff4a5f4664be5c4c03fc2ecf6a
+#~ msgid "|createvpnconnection.png|"
+#~ msgstr ""
+
+# 4b6cc407b8bc4a728fb3328f0ce53f3f
+#~ msgid "Select the desired customer gateway."
+#~ msgstr ""
+
+# 6776ab8d9fad4c2d8956d78ff11ab998
+#~ msgid ""
+#~ "Select Passive if you want to "
+#~ "establish a connection between two VPC"
+#~ " virtual routers."
+#~ msgstr ""
+
+# 513eee2d7f8745a4b338c8ea142fae05
+#~ msgid ""
+#~ "If you want to establish a "
+#~ "connection between two VPC virtual "
+#~ "routers, select Passive only on one "
+#~ "of the VPC virtual routers, which "
+#~ "waits for the other VPC virtual "
+#~ "router to initiate the connection. Do"
+#~ " not select Passive on the VPC "
+#~ "virtual router that initiates the "
+#~ "connection."
+#~ msgstr ""
+
+# dd03407d4f064ec99ea68bb066d2289e
+#~ msgid "Click OK to confirm."
+#~ msgstr ""
+
+# d4c274e9cecb44bcad1ba67ed65069e4
+#~ msgid "Within a few moments, the VPN Connection is displayed."
+#~ msgstr ""
+
+# 42dd7918225d458f980e458924b262f3
+#~ msgid "The following information on the VPN connection is displayed:"
+#~ msgstr ""
+
+# 64fdbdcdfac148dea0883db2615bf0ed
+#~ msgid "Gateway"
+#~ msgstr ""
+
+# 8ac547f2f1574131adc8c69d4e3c30ef
+#~ msgid "State"
+#~ msgstr ""
+
+# d2a5bd51a6e347e89857750706114fc9
+#~ msgid "IPSec Preshared Key"
+#~ msgstr ""
+
+# ccfea0cb9ae34777990aa348b7a9c23f
+#~ msgid "IKE Policy"
+#~ msgstr ""
+
+# bc29ecfda06848f78a8cc694b3f6d47b
+#~ msgid "ESP Policy"
+#~ msgstr ""
+
+# 57cee5dc2eed4f6a9164c4838ebdc9d6
+#~ msgid "Site-to-Site VPN Connection Between VPC Networks"
+#~ msgstr ""
+
+# d8f9f929fafd40e6895122549b022754
+#~ msgid ""
+#~ "CloudStack provides you with the ability"
+#~ " to establish a site-to-site "
+#~ "VPN connection between CloudStack virtual "
+#~ "routers. To achieve that, add a "
+#~ "passive mode Site-to-Site VPN. "
+#~ "With this functionality, users can "
+#~ "deploy applications in multiple Availability"
+#~ " Zones or VPCs, which can communicate"
+#~ " with each other by using a "
+#~ "secure Site-to-Site VPN Tunnel."
+#~ msgstr ""
+
+# 2fb087843cd04fafa3beba95a3ae2af1
+#~ msgid "This feature is supported on all the hypervisors."
+#~ msgstr ""
+
+# 217a4da322cc4f8caa7e04c029779c8b
+#~ msgid "Create two VPCs. For example, VPC A and VPC B."
+#~ msgstr ""
+
+# a78d89e3621346c8a11277927e8dc502
+#~ msgid "For more information, see \":ref:`configuring-vpc`\"."
+#~ msgstr ""
+
+# 09b752dc4d4e4cd29912fcbe352309fa
+#~ msgid "Create VPN gateways on both the VPCs you created."
+#~ msgstr ""
+
+# b9af87b346ef40889104b5a1f40c7702
+#~ msgid ""
+#~ "For more information, see `\"Creating a"
+#~ " VPN gateway for the VPC\" "
+#~ "<#creating-a-vpn-gateway-for-the-vpc>`_."
+#~ msgstr ""
+
+# 29d8db01114c458e8d855996c22e0664
+#~ msgid "Create VPN customer gateway for both the VPCs."
+#~ msgstr ""
+
+# 1a50b7ef681f4cb48c15d30e08dfd1e7
+#~ msgid ""
+#~ "For more information, see `\"Creating "
+#~ "and Updating a VPN Customer Gateway\""
+#~ " <#creating-and-updating-a-vpn-customer-"
+#~ "gateway>`_."
+#~ msgstr ""
+
+# c9013d4ec4c74444a40bf745ae0a5544
+#~ msgid "Enable a VPN connection on VPC A in passive mode."
+#~ msgstr ""
+
+# 8fb700491eeb4156a1c7549d81a78346
+#~ msgid ""
+#~ "For more information, see `\"Creating a"
+#~ " VPN Connection\" <#creating-a-vpn-connection>`_."
+#~ msgstr ""
+
+# e8dd1dd51dd34f57ac10161220734be4
+#~ msgid ""
+#~ "Ensure that the customer gateway is "
+#~ "pointed to VPC B. The VPN "
+#~ "connection is shown in the Disconnected"
+#~ " state."
+#~ msgstr ""
+
+# eca76af9d9304b17982a0bb977a12547
+#~ msgid "Enable a VPN connection on VPC B."
+#~ msgstr ""
+
+# 79e9417cc7294b70bd95236d9c2c80ac
+#~ msgid ""
+#~ "Ensure that the customer gateway is "
+#~ "pointed to VPC A. Because virtual "
+#~ "router of VPC A, in this case, "
+#~ "is in passive mode and is waiting"
+#~ " for the virtual router of VPC "
+#~ "B to initiate the connection, VPC "
+#~ "B virtual router should not be in"
+#~ " passive mode."
+#~ msgstr ""
+
+# cf0657024acb43ea8028262bf74a9848
+#~ msgid "The VPN connection is shown in the Disconnected state."
+#~ msgstr ""
+
+# 4c18218889914f65b2fe355d4568b407
+#~ msgid ""
+#~ "Creating VPN connection on both the "
+#~ "VPCs initiates a VPN connection. Wait"
+#~ " for few seconds. The default is "
+#~ "30 seconds for both the VPN "
+#~ "connections to show the Connected state."
+#~ msgstr ""
+
+# 84118e99c0b14f49b14160c3975dad17
+#~ msgid "Restarting and Removing a VPN Connection"
+#~ msgstr ""
+
+# 090940869ab44e80b8e9c4ea04fa48ec
+#~ msgid "All the VPN connections you created are displayed."
+#~ msgstr ""
+
+# b921e72e9ca74e75b9c515a87f105b9a
+#~ msgid "Select the VPN connection you want to work with."
+#~ msgstr ""
+
+# 2387d86e243f469f84a0cee989324610
+#~ msgid "The Details tab is displayed."
+#~ msgstr ""
+
+# 345c5bfe23d84fd09f56e0e34de09e29
+#~ msgid ""
+#~ "To remove a VPN connection, click "
+#~ "the Delete VPN connection button "
+#~ "|remove-vpn.png|"
+#~ msgstr ""
+
+# 8d1a3cf378554f51a5702b0710c331f2
+#~ msgid ""
+#~ "To restart a VPN connection, click "
+#~ "the Reset VPN connection button present"
+#~ " in the Details tab. |reset-vpn.png|"
+#~ msgstr ""
+

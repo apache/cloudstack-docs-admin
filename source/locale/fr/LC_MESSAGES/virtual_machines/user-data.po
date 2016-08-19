@@ -1,0 +1,192 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration Documentation 4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-10-09 11:10+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.9\n"
+
+#: ../../virtual_machines/user-data.rst:18
+msgid "User-Data and Meta-Data"
+msgstr "Données utilisateur et méta-données"
+
+#: ../../virtual_machines/user-data.rst:20
+msgid ""
+"CloudStack provides API access to attach up to 2KB of data after base64 "
+"encoding to a deployed VM. Using HTTP POST(via POST body), you can send "
+"up to 32K of data after base64 encoding. Deployed VMs also have access "
+"to instance metadata via the virtual router."
+msgstr ""
+"CloudStack fournit un accès à une API pour attacher plus de 2KB de "
+"données après encodage en base64 à une VM déployée. En utilisant une "
+"requête POST HTTP (via POST body), vous pouvez envoyer jusqu'à 32K de "
+"données après encodage en base64. Les VM déployées ont ainsi accès aux "
+"méta-données d'instance via le routeur virtuel."
+
+#: ../../virtual_machines/user-data.rst:25
+msgid ""
+"Create virtual machine thru the API: `deployVirtualMachine <http://"
+"cloudstack.apache.org/docs/api/apidocs-4.5/user/deployVirtualMachine."
+"html>`_ using the parameter ``userdata=`` to include user-data formated "
+"in `base64 <https://www.base64encode.org/>`_."
+msgstr ""
+"Créer une machine virtuelle via l'API : `deployVirtualMachine <http://"
+"cloudstack.apache.org/docs/api/apidocs-4.5/user/deployVirtualMachine."
+"html>`_ en utilisant le paramètre ``userdata=`` pour inclure les données "
+"utilisateurs formatées en `base64 <https://www.base64encode.org/>`_."
+
+#: ../../virtual_machines/user-data.rst:29
+msgid ""
+"Accessed user-data from VM. Once the IP address of the virtual router is "
+"known, use the following steps to retrieve user-data:"
+msgstr ""
+"Accéder aux données utilisateur depuis la VM. Une ois que l'adresse IP "
+"du routeur virtuel est connue, utiliser les étapes suivantes pour "
+"récupérer les méta-données :"
+
+#: ../../virtual_machines/user-data.rst:32
+msgid "Run the following command to find the virtual router."
+msgstr "Lancer la commande suivante pour trouver le routeur virtuel."
+
+#: ../../virtual_machines/user-data.rst:38
+msgid ""
+"Access user-data by running the following command using the result of "
+"the above command"
+msgstr ""
+"Accéder aux données utilisateurs en lancer la commande suivante "
+"utilisant le résultat de la commande précédente"
+
+#: ../../virtual_machines/user-data.rst:45
+msgid ""
+"Meta Data can be accessed similarly, using a URL of the form "
+"``http://10.1.1.1/latest/meta-data/{metadata type}``. (For backwards "
+"compatibility, the previous URL ``http://10.1.1.1/latest/{metadata type}"
+"`` is also supported.) For metadata type, use one of the following:"
+msgstr ""
+"Les méta-données peuvent être accédées de manière similaire, utilisant "
+"une URL de la forme ``http://10.1.1.1/latest/meta-data/{metadata type}"
+"``. (Pour des raisons de compatibilités ascendantes, les anciennes URL "
+"``http://10.1.1.1/latest/{metadata type}`` sont aussi supportées.) Pour "
+"le type de méta-données, utiliser au choix :"
+
+#: ../../virtual_machines/user-data.rst:50
+msgid "``service-offering``. A description of the VMs service offering"
+msgstr ""
+"``service-offering``. Une description de l'offre de service des VM."
+
+#: ../../virtual_machines/user-data.rst:52
+msgid "``availability-zone``. The Zone name"
+msgstr "``availability-zone``. Le nom de la Zone"
+
+#: ../../virtual_machines/user-data.rst:54
+msgid "``local-ipv4``. The guest IP of the VM"
+msgstr "``local-ipv4``. L'adresse IP invitée de la VM"
+
+#: ../../virtual_machines/user-data.rst:56
+msgid "``local-hostname``. The hostname of the VM"
+msgstr "``local-hostname``. Le nom d'hôte de la VM"
+
+#: ../../virtual_machines/user-data.rst:58
+msgid ""
+"``public-ipv4``. The first public IP for the router. (E.g. the first IP "
+"of eth2)"
+msgstr ""
+"``public-ipv4``. La première IP publique pour le routeur. (E.g. la "
+"première IP d'eth2)"
+
+#: ../../virtual_machines/user-data.rst:61
+msgid "``public-hostname``. This is the same as public-ipv4"
+msgstr "``public-hostname``. Identique à public-ipv4"
+
+#: ../../virtual_machines/user-data.rst:63
+msgid "``instance-id``. The instance name of the VM"
+msgstr "``instance-id``. Le nom d'instance de la VM"
+
+#: ../../virtual_machines/user-data.rst:67
+msgid "Using Cloud-Init"
+msgstr "Utiliser Cloud-Init"
+
+#: ../../virtual_machines/user-data.rst:69
+msgid ""
+"`Cloud-Init <https://cloudinit.readthedocs.org/en/latest>`_ can be use "
+"to access an interpret user-data from virtual machines. Cloud-Init be "
+"installed into templates and also require CloudStack password and sshkey "
+"scripts (:ref:`adding-password-management-to-templates` and `using ssh "
+"keys <virtual_machines.html#using-ssh-keys-for-authentication>`_). User "
+"password management and ``resetSSHKeyForVirtualMachine`` API are not yet "
+"supported by cloud-init."
+msgstr ""
+"`Cloud-Init <https://cloudinit.readthedocs.org/en/latest>`_ peut être "
+"utiliser pour accéder aux données utilisateurs depuis les machines "
+"virtuelles. Cloud-init peut être installé dans les modèles et néssite "
+"aussi les scripts CloudStack password et sshkey (:ref:`adding-password-"
+"management-to-templates` et `utiliser les clefs ssh <virtual_machines."
+"html#using-ssh-keys-for-authentication>`_). La gestion du mot de passe "
+"utilisateur et l'API ``resetSSHKeyForVirtualMachine`` ne sont pas encore "
+"supportés par cloud-init."
+
+#: ../../virtual_machines/user-data.rst:74
+msgid "Install cloud-init package into a template:"
+msgstr "Installer le paquet cloud-init dans le modèle :"
+
+#: ../../virtual_machines/user-data.rst:82
+msgid ""
+"Create datasource configuration file: ``/etc/cloud/cloud.cfg."
+"d/99_cloudstack.cfg``"
+msgstr ""
+"Créer un fichier de configuration de source de données : ``/etc/cloud/"
+"cloud.cfg.d/99_cloudstack.cfg``"
+
+#: ../../virtual_machines/user-data.rst:94
+msgid "user-data example"
+msgstr "Exemple de donnée utilisateur"
+
+#: ../../virtual_machines/user-data.rst:96
+msgid ""
+"This example use cloud-init to Upgrade Operating-System of the newly "
+"created VM:"
+msgstr ""
+"Cet exemple utilise cloud-init pour mettre à jour le système "
+"d'exploitation d'une VM nouvellement crée :"
+
+#: ../../virtual_machines/user-data.rst:110
+msgid "base64 formated:"
+msgstr "formatée en base64 :"
+
+#: ../../virtual_machines/user-data.rst:116
+msgid ""
+"Refer to `Cloud-Init CloudStack datasource <http://cloudinit.readthedocs."
+"org/en/latest/topics/datasources.html#cloudstack>`_ documentation for "
+"latest capabilities. Cloud-Init and Cloud-Init CloudStack datasource are "
+"not supported by Apache CloudStack community."
+msgstr ""
+"Se référer à la documentation `Cloud-Init CloudStack datasource <http://"
+"cloudinit.readthedocs.org/en/latest/topics/datasources."
+"html#cloudstack>`_ pour les dernières possibilitées. Cloud-Init et "
+"source de données Cloud-Init CloudStack ne sont pas supportées par la "
+"communauté Apache CloudStack."

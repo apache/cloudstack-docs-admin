@@ -1,0 +1,1174 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-11-20 18:33+0100\n"
+"Last-Translator: \n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: ../../accounts.rst:18
+msgid "Managing Roles, Accounts, Users and Domains"
+msgstr "Gérer les rôles, les comptes, les utilisateurs et les domaines"
+
+#: ../../accounts.rst:21
+msgid "Roles, Accounts, Users, and Domains"
+msgstr "Rôles, Comptes, Utilisateurs et Domaines"
+
+#: ../../accounts.rst:24
+msgid "Roles"
+msgstr "Rôles"
+
+#: ../../accounts.rst:26
+msgid ""
+"A role represents a set of allowed functions. All CloudStack accounts have a "
+"role attached to them that enforce access rules on them to be allowed or "
+"disallowed to make an API request. Typically there are four default roles: root "
+"admin, resource admin, domain admin and user."
+msgstr ""
+"Un rôle représente un ensemble de fonctions autorisées. Tous les comptes "
+"CloudStack ont un rôle qui leur est attaché et qui applique des règles qui lui "
+"autorisent ou qui lui refusent une requête d'API. Typiquement, il existe 4 "
+"rôles par défaut : admin root, admin de ressources, admin de domaine et "
+"utilisateur."
+
+#: ../../accounts.rst:33
+msgid "Accounts"
+msgstr "Comptes"
+
+#: ../../accounts.rst:35
+msgid ""
+"An account typically represents a customer of the service provider or a "
+"department in a large organization. Multiple users can exist in an account."
+msgstr ""
+"Un compte représente généralement un client du fournisseur de service ou un "
+"département dans une grande organisation. Plusieurs utilisateurs peuvent "
+"exister dans un compte."
+
+#: ../../accounts.rst:41
+msgid "Domains"
+msgstr "Domaines"
+
+#: ../../accounts.rst:43
+msgid ""
+"Accounts are grouped by domains. Domains usually contain multiple accounts that "
+"have some logical relationship to each other and a set of delegated "
+"administrators with some authority over the domain and its subdomains. For "
+"example, a service provider with several resellers could create a domain for "
+"each reseller."
+msgstr ""
+"Les comptes sont regroupés par domaines. Les domaines contiennent généralement "
+"plusieurs comptes qui ont une certaine relation logique entre eux et un "
+"ensemble d'administrateurs délégués avec une certaine autorité sur le domaine "
+"et ses sous-domaines. Par exemple, un fournisseur de services avec plusieurs "
+"revendeurs pourrait créer un domaine pour chaque revendeur."
+
+#: ../../accounts.rst:49
+msgid ""
+"For each account created, the Cloud installation creates three different types "
+"of user accounts: root administrator, domain administrator, and user."
+msgstr ""
+"Pour chaque compte créé, le Cloud crée trois types de comptes différents: "
+"administrateur root, administrateur de domaine et utilisateur."
+
+#: ../../accounts.rst:55
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: ../../accounts.rst:57
+msgid ""
+"Users are like aliases in the account. Users in the same account are not "
+"isolated from each other, but they are isolated from users in other accounts. "
+"Most installations need not surface the notion of users; they just have one "
+"user per account. The same user cannot belong to multiple accounts."
+msgstr ""
+"Les utilisateurs sont comme des alias dans le compte. Les utilisateurs qui sont "
+"dans le même compte ne sont pas isolés les uns des autres mais sont isolés des "
+"utilisateurs des autres comptes. La plupart des installations n'ont aucune "
+"notion des utilisateurs; elles ont seulement un utilisateur par compte. Un même "
+"utilisateur ne peut pas appartenir à plusieurs comptes."
+
+#: ../../accounts.rst:63
+msgid ""
+"Username is unique in a domain across accounts in that domain. The same "
+"username can exist in other domains, including sub-domains. Domain name can "
+"repeat only if the full pathname from root is unique. For example, you can "
+"create root/d1, as well as root/foo/d1, and root/sales/d1."
+msgstr ""
+"Le nom d'utilisateur est unique dans un domaine. Le même nom d'utilisateur peut "
+"exister dans d'autres domaines ou sous-domaines. Un nom de domaine peut être "
+"réutilisé seulement si le chemin complet est unique. Par exemple, vous pouvez "
+"créer root/d1, ainsi que root/exemple/d1 et root/ventes/d1."
+
+#: ../../accounts.rst:68
+msgid ""
+"Administrators are accounts with special privileges in the system. There may be "
+"multiple administrators in the system. Administrators can create or delete "
+"other administrators, and change the password for any user in the system."
+msgstr ""
+"Les administrateurs sont des comptes disposants de droits spéciaux dans le "
+"système. Il peut y avoir plusieurs administrateurs dans le système. Les "
+"administrateurs peuvent créer ou supprimer d'autres administrateurs et changer "
+"le mot de passe de n'importe quel utilisateur du système."
+
+#: ../../accounts.rst:75
+msgid "Domain Administrators"
+msgstr "Administrateurs de domaine"
+
+#: ../../accounts.rst:77
+msgid ""
+"Domain administrators can perform administrative operations for users who "
+"belong to that domain. Domain administrators do not have visibility into "
+"physical servers or other domains."
+msgstr ""
+"Les administrateurs de domaine peuvent exécuter des opérations administratives "
+"pour les utilisateurs appartenant à leur domaine. Les administrateurs de "
+"domaine n'ont pas de visibilité sur les serveurs physiques ou sur les autres "
+"domaines."
+
+#: ../../accounts.rst:83
+msgid "Root Administrator"
+msgstr "Administrateur root"
+
+#: ../../accounts.rst:85
+msgid ""
+"Root administrators have complete access to the system, including managing "
+"templates, service offerings, customer care administrators, and domains"
+msgstr ""
+"Les administrateurs racines ont un accès complet au système, incluant la "
+"gestion des modèles, les offres de service, les administrateurs de clientèles "
+"et les domaines."
+
+#: ../../accounts.rst:91
+msgid "Resource Ownership"
+msgstr "Propriétaire d'une ressource"
+
+#: ../../accounts.rst:93
+msgid ""
+"Resources belong to the account, not individual users in that account. For "
+"example, billing, resource limits, and so on are maintained by the account, not "
+"the users. A user can operate on any resource in the account provided the user "
+"has privileges for that operation. The privileges are determined by the role. A "
+"root administrator can change the ownership of any virtual machine from one "
+"account to any other account by using the assignVirtualMachine API. A domain or "
+"sub-domain administrator can do the same for VMs within the domain from one "
+"account to any other account in the domain or any of its sub-domains."
+msgstr ""
+"Les ressources appartiennent à un compte, elles n'appartiennent pas à un "
+"utilisateur individuel de ce compte. Par exemple, la facturation, les limites "
+"de ressources, etc. sont calculées pour un compte, elles ne le sont pas par "
+"utilisateurs. Un utilisateur peut opérer sur n'importe quelle ressource de son "
+"compte pour peu que le compte fournissant l'utilisateur dispose des privilèges "
+"pour cette opération. Les privilèges sont déterminés par le rôle. Un "
+"administrateur peut changer le propriétaire de n'importe quelle machine "
+"virtuelle d'un compte vers un autre compte en utilisant l'API "
+"assignVirtualMachine. Un administrateur de domaine ou de sous-domaine peut "
+"faire de même pour les machines virtuelles de son domaine d'un compte à un "
+"autre compte de son domaine ou de n'importe lequel de ses sous-domaines."
+
+#: ../../accounts.rst:105
+msgid "Using Dynamic Roles"
+msgstr "Utiliser les rôles dynamiques"
+
+#: ../../accounts.rst:107
+msgid ""
+"In addition to the four default roles, the dynamic role-based API checker "
+"feature allows CloudStack root admins to create new roles with customized "
+"permissions. The allow/deny rules can be configured dynamically during runtime "
+"without restarting the management server(s)."
+msgstr ""
+"En complément des quatre rôles par défaut, la fonctionnalité de vérification "
+"d'API basée sur les rôles dynamiques autorise les administrateurs à créer de "
+"nouveaux rôles avec des permissions personnalisées. Les règles d'autorisations/"
+"refus peuvent être configurées dynamiquement durant le fonctionnement sans "
+"devoir redémarrer le(s) serveur(s) de gestion. "
+
+#: ../../accounts.rst:112
+msgid ""
+"For backward compatiblity, all roles resolve to one of the four role types: "
+"admin, resource admin, domain admin and user. A new role can be created using "
+"the roles tab in the UI and specifying a name, a role type and optionally a "
+"description."
+msgstr ""
+"Pour une compatibilité ascendante, tous les rôles sont rattachés à un des "
+"quatre types de rôle : admin, admin de ressource, admin de domaine, et "
+"utilisateur. Un nouveau rôle peut être créé en utilisant les onglets rôles dans "
+"l'interface en spécifiant un nom, un type de rôle et optionnellement une "
+"description."
+
+#: ../../accounts.rst:117
+msgid ""
+"Role specific rules can be configured through the rules tab on role specific "
+"details page. A rule is either an API name or a wildcard string that are one of "
+"allow or deny permission and optionally a description."
+msgstr ""
+"Les règles spécifiques d'un rôle peuvent être configurés par l'onglet règles "
+"dans la page de détails d'un rôle spécifique. Une règle est soit un nom d'API "
+"ou un chaîne de caractères jockers qui sont une autorisation ou un refus et "
+"optionnellement une description. "
+
+#: ../../accounts.rst:121
+msgid ""
+"When a user makes an API request, the backend checks the requested API against "
+"configured rules (in the order the rules were configured) for the caller user-"
+"account's role. It will iterate through the rules and would allow the API "
+"request if the API matches an allow rule, else if it matches a deny rule it "
+"would deny the request. Next, if the request API fails to match any of the "
+"configured rules it would allow if the requested API's default authorized "
+"annotaions allow that user role type and finally deny the user API request if "
+"it fails to be explicitly allowed/denied by the role permission rules or the "
+"default API authorize annotations. Note: to avoid root admin being locked out "
+"of the system, all root admin accounts are allowed all APIs."
+msgstr ""
+"Quand un utilisateur effectue une requête d'API, le backend vérifie si l'API "
+"demandée apparaît dans les règles configurées (dans l'ordre dont les règles ont "
+"été configurées) pour le rôle du compte utilisateur appelant. Il va parcourir "
+"toutes les règles et autorisera la requête d'API si l'API correspond à une "
+"règle d'autorisation, ou la refusera si elle correspond à une règle de refus. "
+"Ensuite, si la requête d'API échoue dans la correspondance avec une règle "
+"configurée, il l'autorisera si l'API par défaut autorise ce type de rôle "
+"utilisateur et finalement refusera la requête d'API s'il échoue à l'autoriser/"
+"refuser explicitement par les règles de permissions des rôles ou par "
+"l'autorisation par défaut de l'API. Note : pour éviter à l'administrateur "
+"d'être verrouillé par le système, tous les comptes d'administrateur racine sont "
+"autorisés pour toutes les APIs."
+
+#: ../../accounts.rst:132
+msgid ""
+"The dynamic-roles feature is enabled by default only for all new CloudStack "
+"installations since version `4.9.x <https://cwiki.apache.org/confluence/display/"
+"CLOUDSTACK/Dynamic+Role+Based+API+Access+Checker+for+CloudStack>`_."
+msgstr ""
+"La fonctionnalité de rôles dynamiques est activée par défaut seulement pour les "
+"nouvelles installations de CloudStack depuis la version `4.9.x <https://cwiki."
+"apache.org/confluence/display/CLOUDSTACK/Dynamic+Role+Based+API+Access+Checker"
+"+for+CloudStack>`_."
+
+#: ../../accounts.rst:135
+msgid ""
+"After an upgrade, existing deployments can be migrated to use this feature by "
+"running a migration tool by the CloudStack admin. The migration tool is located "
+"at ``/usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py``."
+msgstr ""
+"Après une montée de version, les déploiements déjà existant peuvent être migrés "
+"pour mettre en oeuvre cette fonctionnalité en lançant l'outil de migration en "
+"tant qu'administrateur CloudStack. L'outil de migration se situe sous ``/usr/"
+"share/cloudstack-common/scripts/util/migrate-dynamicroles.py``."
+
+#: ../../accounts.rst:139
+msgid ""
+"During migration, this tool enables an internal flag in the database, copies "
+"existing static role-based rules from provided commands.properties file "
+"(typically at ``/etc/cloudstack/management/commands.properties``) to the "
+"database and renames the commands.properties file (typically to /etc/cloudstack/"
+"management/commands.properties.deprecated). The migration process does not "
+"require restarting the management server(s)."
+msgstr ""
+"Durant la migration, cet outil active un drapeau interne dans la base de "
+"données, copie les règles statiques basées sur les rôles depuis le fichier "
+"commands.properties fournit (typiquement sous ``/etc/cloudstack/management/"
+"commands.properties``) vers la base de données et renomme le fichier commands."
+"properties (typiquement sous /etc/cloudstack/management/commands.properties."
+"deprecated). Le processus de migration ne nécessite pas un redémarrage du ou "
+"des serveurs de gestion."
+
+#: ../../accounts.rst:146
+msgid "Usage: ``migrate-dynamicroles.py`` [options] [-h for help]"
+msgstr "Utilisation : ``migrate-dynamicroles.py`` [options] [-h pour l'aide]"
+
+#: ../../accounts.rst:148
+msgid "Options:"
+msgstr "Options :"
+
+#: ../../accounts.rst:151
+msgid "The name of the database, default: cloud"
+msgstr "Le nom de la base de données, par défaut : cloud"
+
+#: ../../accounts.rst:153
+msgid "User name a MySQL user with privileges on cloud database, default: cloud"
+msgstr ""
+"Nom d'utilisateur : un utilisateur MySQL avec les privilèges sur la base de "
+"données cloud, par défaut : cloud"
+
+#: ../../accounts.rst:155
+msgid "Password of a MySQL user with privileges on cloud database"
+msgstr ""
+"Mot du passe de l'utilisateur MySQL disposant des privilèges sur la base de "
+"données cloud"
+
+#: ../../accounts.rst:157
+msgid "Host or IP of the MySQL server"
+msgstr "Nom d'hôte ou adresse IP du serveur Mysql"
+
+#: ../../accounts.rst:159
+msgid "Host or IP of the MySQL server, default: 3306"
+msgstr "Port du serveur Mysql, par défaut : 3306"
+
+#: ../../accounts.rst:161
+msgid ""
+"The commands.properties file, default: /etc/cloudstack/management/commands."
+"properties"
+msgstr ""
+"Le fichier commands.properties, par défaut : /etc/cloudstack/management/"
+"commands.properties"
+
+#: ../../accounts.rst:163
+msgid "Dry run and debug operations this tool will perform"
+msgstr "Cet outil va effectuer des tests et des opérations de debuggage."
+
+#: ../../accounts.rst:166
+msgid "Example:"
+msgstr "Exemple :"
+
+#: ../../accounts.rst:168
+msgid ""
+"sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -"
+"u cloud -p cloud -h localhost -p 3006 -f /etc/cloudstack/management/commands."
+"properties"
+msgstr ""
+"sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -"
+"u cloud -p cloud -h localhost -p 3006 -f /etc/cloudstack/management/commands."
+"properties"
+
+#: ../../accounts.rst:170
+msgid ""
+"If you've multiple management servers, remove or rename the commands.properties "
+"file on all management servers typically in /etc/cloudstack/management path, "
+"after running the migration tool for the first management server"
+msgstr ""
+"Si vous avez plusieurs serveurs de gestion, supprimer ou renommer le fichier "
+"commands.properties sur tous les serveurs de gestion, typiquement sous /etc/"
+"cloudstack/management, après avoir lancé l'outil de migration sur le premier "
+"serveur de gestion."
+
+#: ../../accounts.rst:176
+msgid "Dedicating Resources to Accounts and Domains"
+msgstr "Dédier des ressources à des comptes et des domaines"
+
+#: ../../accounts.rst:178
+msgid ""
+"The root administrator can dedicate resources to a specific domain or account "
+"that needs private infrastructure for additional security or performance "
+"guarantees. A zone, pod, cluster, or host can be reserved by the root "
+"administrator for a specific domain or account. Only users in that domain or "
+"its subdomain may use the infrastructure. For example, only users in a given "
+"domain can create guests in a zone dedicated to that domain."
+msgstr ""
+"L'administrateur root peut dédier des ressources à un domaine spécifique ou à "
+"un compte qui nécessite une infrastructure privée pour plus de sécurité ou des "
+"garanties de performances. Une zone, un pod, un cluster ou un hôte peut être "
+"réservé par l'administrateur root pour un domaine ou un compte spécifique. "
+"Seuls les utilisateurs dans ce domaine ou ses sous-domaines peut utiliser cette "
+"infrastructure. Par exemple, seuls les utilisateurs dans un domaine donné peut "
+"créer des invités dans la zone dédiées à ce domaine. "
+
+#: ../../accounts.rst:186
+msgid "There are several types of dedication available:"
+msgstr "Ils existes de nombreux types d'attribution possibles :"
+
+#: ../../accounts.rst:188
+msgid ""
+"Explicit dedication. A zone, pod, cluster, or host is dedicated to an account "
+"or domain by the root administrator during initial deployment and configuration."
+msgstr ""
+"Attribution explicite. Une zone, un pod, un cluster ou un hôte sont dédiés à un "
+"compte ou un domaine par l'administrateur racine durant le déploiement initial "
+"et la configuration."
+
+#: ../../accounts.rst:192
+msgid ""
+"Strict implicit dedication. A host will not be shared across multiple accounts. "
+"For example, strict implicit dedication is useful for deployment of certain "
+"types of applications, such as desktops, where no host can be shared between "
+"different accounts without violating the desktop software's terms of license."
+msgstr ""
+"Attribution stricte implicite. Un hôte ne sera pas partagé pour différents "
+"comptes. Par exemple, une attribution stricte implicite est utile pour le "
+"déploiement de certains types d'applications, comme les applications de "
+"bureaux, où aucun hôte ne peut être partagé entre des comptes différents sans "
+"violer les termes de licences du logiciel de bureau."
+
+#: ../../accounts.rst:198
+msgid ""
+"Preferred implicit dedication. The VM will be deployed in dedicated "
+"infrastructure if possible. Otherwise, the VM can be deployed in shared "
+"infrastructure."
+msgstr ""
+"Attribution implicite préférée. La VM sera déployée si possible dans "
+"l'infrastructure dédiée. Sinon, la VM peut être déployée dans l'infrastructure "
+"partagée."
+
+#: ../../accounts.rst:204
+msgid "How to Dedicate a Zone, Cluster, Pod, or Host to an Account or Domain"
+msgstr ""
+"Comment dédier une zone, un cluster, un pod ou un hôte à un compte ou à un "
+"domaine"
+
+#: ../../accounts.rst:206
+msgid ""
+"For explicit dedication: When deploying a new zone, pod, cluster, or host, the "
+"root administrator can click the Dedicated checkbox, then choose a domain or "
+"account to own the resource."
+msgstr ""
+"Pour l'attribution explicite : lors du déploiement d'une nouvelle zone, d'un "
+"pod, d'un cluster ou d'un hôte, l'administrateur root peut cliquer sur la case "
+"à cocher Dedié, et choisir alors un domaine ou un compte propriétaire de la "
+"ressource."
+
+#: ../../accounts.rst:210
+msgid ""
+"To explicitly dedicate an existing zone, pod, cluster, or host: log in as the "
+"root admin, find the resource in the UI, and click the Dedicate button. |button "
+"to dedicate a zone, pod,cluster, or host|"
+msgstr ""
+"Pour explicitement dédié une zone, un pod, un cluster ou un hôte déjà "
+"existant :  se connecter en tant qu'administrateur root, trouver la ressource "
+"dans l'interface et cliquer sur le bouton Dédier. |button to dedicate a zone, "
+"pod,cluster, or host|"
+
+#: ../../accounts.rst:214
+msgid ""
+"For implicit dedication: The administrator creates a compute service offering "
+"and in the Deployment Planner field, chooses ImplicitDedicationPlanner. Then in "
+"Planner Mode, the administrator specifies either Strict or Preferred, depending "
+"on whether it is permissible to allow some use of shared resources when "
+"dedicated resources are not available. Whenever a user creates a VM based on "
+"this service offering, it is allocated on one of the dedicated hosts."
+msgstr ""
+"Pour l'attribution implicite : L'administrateur créer une offre de service !"
+"compute! et dans le champ Planification de déploiement, choisit "
+"ImplicitDedicationPlanner. Alors, ans le mode Plannification, l'administraeur "
+"spécifie soit Strict, soit Préféré, en fonction de s'il est possible "
+"d'autoriser l'utilisation de ressources partagées lorsque les ressources "
+"dédiées ne sont pas disponibles. Même si un utilisateur créé une VM basée sur "
+"cette offre de service, elle est allouée sur un de ses hôtes dédiés."
+
+#: ../../accounts.rst:224
+msgid "How to Use Dedicated Hosts"
+msgstr "Comment utiliser les Hôtes Dédiés"
+
+#: ../../accounts.rst:226
+msgid ""
+"To use an explicitly dedicated host, use the explicit-dedicated type of "
+"affinity group (see `“Affinity Groups” <virtual_machines.html#affinity-"
+"groups>`_). For example, when creating a new VM, an end user can choose to "
+"place it on dedicated infrastructure. This operation will succeed only if some "
+"infrastructure has already been assigned as dedicated to the user's account or "
+"domain."
+msgstr ""
+"Pour utiliser un hôte dédié explicitement, utiliser le type de groupe "
+"d'affinité Explicitement-dédié (voir `“Groupes d'affinité” <virtual_machines."
+"html#affinity-groups>`_). Par exemple, lorsque une nouvelle VM est créée, un "
+"utilisateur final peut choisir de la placer dans son infrastructure dédiée. "
+"Cette opération fonctionnera seulement si une partie de son infrastructure a "
+"déjà été assignée comme dédiée au compte de l'utilisateur ou au domaine."
+
+#: ../../accounts.rst:235
+msgid "Behavior of Dedicated Hosts, Clusters, Pods, and Zones"
+msgstr "Comportement des hôtes, clusters, pods et zones dédiés"
+
+#: ../../accounts.rst:237
+msgid ""
+"The administrator can live migrate VMs away from dedicated hosts if desired, "
+"whether the destination is a host reserved for a different account/domain or a "
+"host that is shared (not dedicated to any particular account or domain). "
+"CloudStack will generate an alert, but the operation is allowed."
+msgstr ""
+"L'administrateur peut migrer à chaud des machines virtuelles depuis ses hôtes "
+"dédiés, s'il le désire, même si la destination est un hôte réservé pour un "
+"compte/domaine différent ou si un hôte est partagé (non dédié à un compte ou un "
+"domaine particulier). CloudStack va générer une alerte, mais l'opération sera "
+"permise."
+
+#: ../../accounts.rst:243
+msgid ""
+"Dedicated hosts can be used in conjunction with host tags. If both a host tag "
+"and dedication are requested, the VM will be placed only on a host that meets "
+"both requirements. If there is no dedicated resource available to that user "
+"that also has the host tag requested by the user, then the VM will not deploy."
+msgstr ""
+"Les hôtes dédiés peuvent être utilisés en conjonction avec les tags d'hôtes. Si "
+"à la fois un tag d'hôtes et une réservation sont demandées, la machine "
+"virtuelle sera placée seulement sur un hôte qui réponds aux deux requêtes. S'il "
+"n'y a pas de ressources dédiées disponible pour cet utilisateur qui n'aurait "
+"également le tag d'hôte demandé par l'utilisateur, alors la machine ne sera pas "
+"déployée."
+
+#: ../../accounts.rst:249
+msgid ""
+"If you delete an account or domain, any hosts, clusters, pods, and zones that "
+"were dedicated to it are freed up. They will now be available to be shared by "
+"any account or domain, or the administrator may choose to re-dedicate them to a "
+"different account or domain."
+msgstr ""
+"Si vous supprimez un compte ou un domaine, tous les hôtes, les clusters, les "
+"pods, et les zones qui lui ont été dédiées sont libérées. Ils seront dorénavant "
+"disponibles pour être partagés par n'importe quel compte ou domaine, ou "
+"l'administrateur peut choisir de les dédier à nouveau à un autre compte ou un "
+"autre domaine."
+
+#: ../../accounts.rst:254
+msgid ""
+"System VMs and virtual routers affect the behavior of host dedication. System "
+"VMs and virtual routers are owned by the CloudStack system account, and they "
+"can be deployed on any host. They do not adhere to explicit dedication. The "
+"presence of system vms and virtual routers on a host makes it unsuitable for "
+"strict implicit dedication. The host can not be used for strict implicit "
+"dedication, because the host already has VMs of a specific account (the default "
+"system account). However, a host with system VMs or virtual routers can be used "
+"for preferred implicit dedication."
+msgstr ""
+"Les machines virtuelles systèmes et les routeurs virtuels affecte le "
+"comportement de la réservation d'hôte. Les machines virtuelles et les routeurs "
+"virtuels appartiennent au compte système CloudStack et peuvent être déployé sur "
+"n'importe quel hôte. Ils ne respecte pas les réservations explicites. La "
+"présence de VM systèmes et de routeurs virtuels sur un hôte rendent la "
+"réservation explicite stricte inappropriée. L'hôte ne peut pas servir pour la "
+"réservation implicite puisque l'hôte a déjà des VMs d'un compte spécifique (le "
+"compte système par défaut). Toutefois, un hôte avec des VMs systèmes ou des "
+"routeurs virtuels peut être utilisé pour la réservation implicite préférée."
+
+#: ../../accounts.rst:266
+msgid "Using an LDAP Server for User Authentication"
+msgstr "Utiliser un serveur LDAP pour l'authentification des utilisateurs"
+
+#: ../../accounts.rst:268
+msgid ""
+"You can use an external LDAP server such as Microsoft Active Directory or "
+"ApacheDS to authenticate CloudStack end-users. CloudStack will search the "
+"external LDAP directory tree starting at a specified base directory and gets "
+"user info such as first name, last name, email and username."
+msgstr ""
+"Vous pouvez utiliser un serveur LDAP externe comme Microsoft Active Directory "
+"ou ApacheDS pour authentifier les utilisateurs CloudStack. CloudStack cherchera "
+"dans l'arbre de l'annuaire LDAP externe  depuis un répertoire de base spécifié "
+"et obtiendra les informations de l'utilisateur comme son nom, son prénom, son "
+"email et son nom d'utilisateur."
+
+#: ../../accounts.rst:273
+msgid ""
+"To authenticate, username and password entered by the user are used. Cloudstack "
+"does a search for a user with the given username. If it exists, it does a bind "
+"request with DN and password."
+msgstr ""
+"Pour l'authentification, le nom d'utilisateur et le mot de passe saisis par "
+"l'utilisateur sont utilisés. CloudStack effectue une recherche pour un "
+"utilisateur avec le nom fourni. S'il existe, il effectue une requête "
+"d'authentification avec le DN et le mot de passe."
+
+#: ../../accounts.rst:277
+msgid ""
+"To set up LDAP authentication in CloudStack, call the CloudStack API command "
+"``addLdapConfiguration`` and provide Hostname or IP address and listening port "
+"of the LDAP server. You could configure multiple servers as well. These are "
+"expected to be replicas. If one fails, the next one is used."
+msgstr ""
+"Pour paramétrer l'authentification LDAP dans CloudStack, appeler la commande "
+"d'API CloudStack ``addLdapConfiguration``et fournir un nom de machine ou une "
+"adresse IP et le port d'écoute du serveur LDAP. Vous pouvez bien entendu "
+"configurer plusieurs serveurs. Ces derniers sont considérés comme des "
+"réplicats. Si un serveur tombe en panne, le suivant sera utilisé."
+
+#: ../../accounts.rst:283
+msgid ""
+"The following global configurations should also be configured (the default "
+"values are for openldap)"
+msgstr ""
+"Les options de configuration globale suivantes devraient également être "
+"configurée (les valeurs par défaut s'applique à openldap)"
+
+#: ../../accounts.rst:286
+msgid ""
+"``ldap.basedn``:     Sets the basedn for LDAP. Ex: **OU=APAC,DC=company,DC=com**"
+msgstr ""
+"``ldap.basedn``:     Positionne le basedn pour LDAP. Ex: **OU=APAC,DC=company,"
+"DC=com**"
+
+#: ../../accounts.rst:288
+msgid ""
+"``ldap.bind.principal``, ``ldap.bind.password``: DN and password for a user who "
+"can list all the users in the above basedn. Ex: **CN=Administrator, OU=APAC, "
+"DC=company, DC=com**"
+msgstr ""
+"``ldap.bind.principal``, ``ldap.bind.password``: DN et mot de passe pour "
+"l'utilisateur qui dispose des droits pour lister tous les utilisateurs dans la "
+"basedn fournie ci-dessus. Ex: **CN=Administrator, OU=APAC, DC=company, DC=com**"
+
+#: ../../accounts.rst:292
+msgid ""
+"``ldap.user.object``: object type of users within LDAP. Defaults value is "
+"**user** for AD and **inetorgperson** for openldap."
+msgstr ""
+"``ldap.user.object``: type d'objet définissant les utilisateurs au sein de "
+"LDAP. La valeur par défaut est **user** pour AD et **inetorgperson** pour "
+"openldap."
+
+#: ../../accounts.rst:295
+msgid ""
+"``ldap.email.attribute``: email attribute within ldap for a user. Default value "
+"for AD and openldap is **mail**."
+msgstr ""
+"``ldap.email.attribute``: attributs email au sein de LDAP pour un utilisateur. "
+"La valeur par défaut pour AD et pour openldap est **mail**."
+
+#: ../../accounts.rst:298
+msgid ""
+"``ldap.firstname.attribute``: firstname attribute within ldap for a user. "
+"Default value for AD and openldap is **givenname**."
+msgstr ""
+"``ldap.firstname.attribute``: attribut prénom au sein de LDAP pour un "
+"utilisateur. La valeur par défaut pour AD et openldap est **givenname**."
+
+#: ../../accounts.rst:301
+msgid ""
+"``ldap.lastname.attribute``: lastname attribute within ldap for a user. Default "
+"value for AD and openldap is **sn**."
+msgstr ""
+"``ldap.lastname.attribute``: attribut nom de famille au sein de LDAP pour un "
+"utilisateur. La valeur par défaut pour AD et openldap est **sn**."
+
+#: ../../accounts.rst:304
+msgid ""
+"``ldap.username.attribute``: username attribute for a user within LDAP. Default "
+"value is **SAMAccountName** for AD and **uid** for openldap."
+msgstr ""
+"``ldap.username.attribute``: attribut nom d'utilisateur pour un utilisateur au "
+"sein de LDAP. La valeur par défaut est  **SAMAccountName** pour AD et **uid** "
+"pour openldap."
+
+#: ../../accounts.rst:309
+msgid "Restricting LDAP users to a group:"
+msgstr "Restreindre les utilisateurs LDAP à un groupe :"
+
+#: ../../accounts.rst:311
+msgid ""
+"``ldap.search.group.principle``: this is optional and if set only users from "
+"this group are listed."
+msgstr ""
+"``ldap.search.group.principle``: ceci est optionnel et si positionné seuls les "
+"utilisateurs de ce groupe sont listés."
+
+#: ../../accounts.rst:316
+msgid "LDAP SSL:"
+msgstr "LDAP SSL :"
+
+#: ../../accounts.rst:318
+msgid ""
+"If the LDAP server requires SSL, you need to enable the below configurations. "
+"Before enabling SSL for LDAP, you need to get the certificate which the LDAP "
+"server is using and add it to a trusted keystore. You will need to know the "
+"path to the keystore and the password."
+msgstr ""
+"Si le serveur LDAP nécessite SSL, vous devez activer les configurations ci-"
+"dessous. Avant d'activer SSL pour LDAP, vous devez obtenir le certificat "
+"utilisé par le serveur LDAP et l'ajouter à votre magasin de confiance. Vous "
+"devez connaître le chemin d'accès au magasin et le mot de passe."
+
+#: ../../accounts.rst:322
+msgid "``ldap.truststore`` : truststore path"
+msgstr "``ldap.truststore`` : chemin d'accès au magasin de clefs"
+
+#: ../../accounts.rst:323
+msgid "``ldap.truststore.password`` : truststore password"
+msgstr "``ldap.truststore.password`` : mot de passe du magasin de clefs"
+
+#: ../../accounts.rst:327
+msgid "LDAP groups:"
+msgstr "Groupes LDAP :"
+
+#: ../../accounts.rst:329
+msgid ""
+"``ldap.group.object``: object type of groups within LDAP. Default value is "
+"group for AD and **groupOfUniqueNames** for openldap."
+msgstr ""
+"``ldap.group.object``: type d'objet pour un groupe au sein de LDAP. La valeur "
+"par défaut pour AD est **group** pour AD et **groupOfUniqueNames** pour "
+"openldap."
+
+#: ../../accounts.rst:332
+msgid ""
+"``ldap.group.user.uniquemember``: attribute for uniquemembers within a group. "
+"Default value is **member** for AD and **uniquemember** for openldap."
+msgstr ""
+"``ldap.group.user.uniquemember``: attributs pour les membres d'un groupe. La "
+"valeur par défaut est **member** pour AD et **uniquemember** pour openldap."
+
+#: ../../accounts.rst:335
+msgid ""
+"Once configured, on Add Account page, you will see an \"Add LDAP Account\" "
+"button which opens a dialog and the selected users can be imported."
+msgstr ""
+"Une fois configuré, sur la page Ajout de compte, vous verrez un bouton "
+"\"Ajouter un compte LDAP\" qui ouvre une boîte de dialogue et les utilisateurs "
+"sélectionnés peuvent être importés."
+
+#: ../../accounts.rst:342
+msgid ""
+"You could also use api commands: ``listLdapUsers``, ``ldapCreateAccount`` and "
+"``importLdapUsers``."
+msgstr ""
+"Vous pouvez également utiliser les commandes d'API : ``listLdapUsers``, "
+"``ldapCreateAccount`` et ``importLdapUsers``."
+
+#: ../../accounts.rst:345
+msgid ""
+"Once LDAP is enabled, the users will not be allowed to changed password "
+"directly in cloudstack."
+msgstr ""
+"Une fois que LDAP est activé, les utilisateurs ne seront plus autorisés à "
+"changer leurs mots de passe directement depuis depuis CloudStack."
+
+#: ../../accounts.rst:353
+msgid "Using a SAML 2.0 Identity Provider for User Authentication"
+msgstr ""
+"Utiliser un fournisseur d'identité SAML 2.0 pour l'authentification des "
+"utilisateurs"
+
+#: ../../accounts.rst:355
+msgid ""
+"You can use a SAML 2.0 Identity Provider with CloudStack for user "
+"authentication. This will require enabling the SAML 2.0 service provider plugin "
+"in CloudStack. To do that first, enable the SAML plugin by setting ``saml2."
+"enabled`` to ``true`` and restart management server."
+msgstr ""
+"Vous pouvez utiliser un fournisseur d'identité SAML 2.0 avec CloudStack pour "
+"l'authentification utilisateur. Cela nécessitera d'activer le plugin du "
+"fournisseur de service SAML 2.0. Pour cela, activer le plugin SAML en "
+"configuration ``saml2.enabled`` à ``true`` et redémarrer le serveur de gestion."
+
+#: ../../accounts.rst:360
+msgid ""
+"Starting 4.5.2, the SAML plugin uses an authorization workflow where users "
+"should be authorized by an admin using ``authorizeSamlSso`` API before those "
+"users can use Single Sign On against a specific IDP. This can be done by "
+"ticking the enable SAML Single Sign On checkbox and selecting a IDP when adding "
+"or importing users. For existing users, admin can go to the user's page and "
+"click on configure SAML SSO option to enable/disable SSO for a user and select "
+"a Identity Provider. A user can be authorized to authenticate against only one "
+"IDP."
+msgstr ""
+"Depuis la version 4.5.2, le plugin SAML utilise un workflow d'autorisation dans "
+"lequel les utilisateurs devrait être autorisés par un administrateur à utiliser "
+"l'API ``authorizeSamlSso``. Auparavant, ces utilisateurs pouvaient utiliser le "
+"Single Sign On via un IdP spécifique. Ceci peut être fait en cochant la case "
+"d'activation SAML Single Sign On et en sélectionnant un IdP lors de l'ajout ou "
+"de l'importation d'utilisateurs. Pour un utilisateur existant, les "
+"administrateurs peuvent aller à la page de l'utilisateur et cliquer sur "
+"l'option activation/désactivation de l'option SAML SSO pour un utilisateur et "
+"sélectionner un fournisseur d'identité. Un utilisateur peut être autorisé pour "
+"s'autentifier via un seul IdP."
+
+#: ../../accounts.rst:368
+msgid ""
+"The CloudStack service provider metadata is accessible using the "
+"``getSPMetadata`` API command, or from the URL http://acs-server:8080/client/"
+"api?command=getSPMetadata where acs-server is the domain name or IP address of "
+"the management server. The IDP administrator can get the SP metadata from "
+"CloudStack and add it to their IDP server."
+msgstr ""
+"La méta-donnée de CloudStack du fournisseur de service est accessible en "
+"utilisant la commande d'API ``getSPMetadata`` ou depuis l'URL http://acs-"
+"server:8080/client/api?command=getSPMetadata où acs est le nom de domaine ou "
+"l'adresse IP du serveur de gestion. L'administrateur de l'IdP peut obtenir la "
+"métadonnée du SP depuis CloudStack et l'ajouter à son serveur IdP."
+
+#: ../../accounts.rst:374
+msgid ""
+"To start a SAML 2.0 Single Sign-On authentication, on the login page users need "
+"to select the Identity Provider or Institution/Department they can authenticate "
+"with and click on Login button. This action call the ``samlsso`` API command "
+"which will redirect the user to the Identity Provider's login page. Upon "
+"successful authentication, the IdP will redirect the user to CloudStack. In "
+"case a user has multiple user accounts with the same username (across domains) "
+"for the same authorized IDP, that user would need to specify domainpath after "
+"selecting their IDP server from the dropdown list. By default, users don't need "
+"to specify any domain path. After a user is successfully authenticated by an "
+"IDP server, the SAML authentication plugin finds user accounts whose username "
+"match the username attribute value returned by the SAML authentication "
+"response; it fails only when it finds that there are multiple user accounts "
+"with the same user name for the specific IDP otherwise the unique useraccount "
+"is allowed to proceed and the user is logged into their account."
+msgstr ""
+"Pour commencer une authentification Single Sign-On SAML 2.0, les utilisateurs, "
+"depuis la page de connexion, doivent sélectionner le fournisseur d'identité ou "
+"l'institution/département avec lequel ils peuvent s'authentifier et cliquer sur "
+"le bouton Connexion. Cette action appelle la commande d'API ``samlsso`` qui va "
+"rediriger l'utiliser à la page de connexion du fournisseur d'identité. Après "
+"une authentification réussie, l'IdP va rediriger l'utilisateur vers CloudStack. "
+"Dans le cas ou un utilisateur dispose de plusieurs comptes avec le même nom "
+"d'utilisateur (sur plusieurs domaines) pour le même IdP autorisé, cet "
+"utilisateur devra spécifier le chemin du domaine après avoir sélectionner son "
+"serveur IdP depuis la liste de choix. Par défaut, les utilisateurs n'ont pas "
+"besoin de spécifier un chemin de domaine. Après qu'un utilisateur soit "
+"authentifié avec succès par un serveur IdP, le plugin d'authentification SAML "
+"trouve les comptes utilisateurs dont le nom d'utilisateur correspond à "
+"l'attribut nom d'utilisateur retourné par la réponse d'authentification SAML ; "
+"ceci échoue seulement lorsqu'il trouve qu'il existe plusieurs comptes "
+"utilisateurs avec le même nom d'utilisateur pour cet IdP spécifiquement et dans "
+"les autres cas le compte utilisateur unique est autorisé, et l'utilisateur est "
+"connecté à son compte."
+
+#: ../../accounts.rst:389
+msgid "Limitations:"
+msgstr "Limitations :"
+
+#: ../../accounts.rst:391
+msgid ""
+"The plugin uses a user attribute returned by the IDP server in the SAML "
+"response to find and map the authorized user in CloudStack. The default "
+"attribute is `uid`."
+msgstr ""
+"Le plugin utilise l'attribut utilisateur retourné par le serveur IDP dans la "
+"réponse SAML pour trouver et associer l'utilisateur autorisé dans CloudStack. "
+"L'attribut par défaut est `uid`."
+
+#: ../../accounts.rst:394
+msgid ""
+"The SAML authentication plugin supports HTTP-Redirect and HTTP-Post bindings."
+msgstr ""
+"Le plugin d'authentification SAML support les authentifications HTTP-Redirect "
+"et HTTP-Post."
+
+#: ../../accounts.rst:396
+msgid ""
+"Tested with Shibboleth 2.4, SSOCircle, Microsoft ADFS, OneLogin, Feide OpenIDP, "
+"PingIdentity."
+msgstr ""
+"Testé avec Shibboleth 2.4, SSOCircle, Microsoft ADFS, OneLogin, Feide OpenIDP, "
+"PingIdentity."
+
+#: ../../accounts.rst:399
+msgid "The following global configuration should be configured:"
+msgstr "La configuration globale suivante doit être effectuée :"
+
+#: ../../accounts.rst:401
+msgid ""
+"``saml2.enabled``: Indicates whether SAML SSO plugin is enabled or not true. "
+"Default is **false**"
+msgstr ""
+"``saml2.enabled``: Indique si le plugin SAML SSO est activé ou non. La valeur "
+"par défaut est **false**"
+
+#: ../../accounts.rst:403
+msgid "``saml2.sp.id``: SAML2 Service Provider Identifier string"
+msgstr "``saml2.sp.id``: chaîne de l'identifiant du fournisseur de service SAML2"
+
+#: ../../accounts.rst:405
+msgid ""
+"``saml2.idp.metadata.url``: SAML2 Identity Provider Metadata XML Url or "
+"Filename. If a URL is not provided, it will look for a file in the config "
+"directory /etc/cloudstack/management"
+msgstr ""
+"``saml2.idp.metadata.url``: URL du fichier de méta-données du fournisseur "
+"d'identité SAML2 ou nom de fichier . Si une URL est fournie, il cherchera un "
+"fichier dans le répertoire de configuration /etc/cloudstack/management"
+
+#: ../../accounts.rst:407
+msgid ""
+"``saml2.default.idpid``: The default IdP entity ID to use only in case of "
+"multiple IdPs"
+msgstr ""
+"``saml2.default.idpid``: L'ID par défaut du fournisseur d'identité (IdP) à "
+"utiliser seulement dans le cas de multiples fournisseurs d'identités."
+
+#: ../../accounts.rst:409
+msgid ""
+"``saml2.sigalg``: The algorithm to use to when signing a SAML request. Default "
+"is SHA1, allowed algorithms: SHA1, SHA256, SHA384, SHA512."
+msgstr ""
+"``saml2.sigalg``: L'algorithme à utiliser lors de la signature de requêtes "
+"SAML. Par défault l'algorithme est SHA1, les algorithmes autorisés sont : SHA1, "
+"SHA256, SHA384, SHA512."
+
+#: ../../accounts.rst:411
+msgid ""
+"``saml2.redirect.url``: The CloudStack UI url the SSO should redirected to when "
+"successful. Default is **http://localhost:8080/client**"
+msgstr ""
+"``saml2.redirect.url``: L'URL de l'interface CloudStack vers lequel le SSO doit "
+"rediriger après un succès. L'URL par défaut est **http://localhost:8080/client**"
+
+#: ../../accounts.rst:413
+msgid "``saml2.sp.org.name``: SAML2 Service Provider Organization Name"
+msgstr "``saml2.sp.org.name``: Nom de l'organisme du fournisseur de service SAML2"
+
+#: ../../accounts.rst:415
+msgid "``saml2.sp.org.url``: SAML2 Service Provider Organization URL"
+msgstr "``saml2.sp.org.url``: URL de l'organisme du fournisseur de service SAML2"
+
+#: ../../accounts.rst:417
+msgid "``saml2.sp.contact.email``: SAML2 Service Provider Contact Email Address"
+msgstr ""
+"``saml2.sp.contact.email``: Adresse email de contact du fournisseur de service "
+"SAML2"
+
+#: ../../accounts.rst:419
+msgid "``saml2.sp.contact.person``: SAML2 Service Provider Contact Person Name"
+msgstr ""
+"``saml2.sp.contact.person``: Nom du contact du fournisseur de service SAML2"
+
+#: ../../accounts.rst:421
+msgid "``saml2.sp.slo.url``: SAML2 CloudStack Service Provider Single Log Out URL"
+msgstr "``saml2.sp.slo.url``: URL de déconnexion du fournisseur de service SAML2"
+
+#: ../../accounts.rst:423
+msgid "``saml2.sp.sso.url``: SAML2 CloudStack Service Provider Single Sign On URL"
+msgstr ""
+"``saml2.sp.sso.url``: URL Single Sign On du fournisseur de service SAML2 "
+"CloudStack"
+
+#: ../../accounts.rst:425
+msgid ""
+"``saml2.user.attribute``: Attribute name to be looked for in SAML response that "
+"will contain the username. Default is **uid**"
+msgstr ""
+"``saml2.user.attribute``: Nom de l'attribut à rechercher dans la réponse SAML "
+"qui contient le nom d'utilisateur. La valeur par défaut est **uid**"
+
+#: ../../accounts.rst:427
+msgid ""
+"``saml2.timeout``: SAML2 IDP Metadata refresh interval in seconds, minimum "
+"value is set to 300. Default is 1800"
+msgstr ""
+"``saml2.timeout``: Interval de temps de rafraîchissement en secondes des méta-"
+"données du fournisseur d'identité SAML2, la valeur minimale est fixée à 300. La "
+"valeur par défaut est 1800."
+
+# 4c358cdbd0ef4ea8bae9aa240f1b4e4a
+#~ msgid ""
+#~ "You can use an external LDAP server such as Microsoft Active Directory or "
+#~ "ApacheDS to authenticate CloudStack end-users. Just map CloudStack accounts "
+#~ "to the corresponding LDAP accounts using a query filter. The query filter is "
+#~ "written using the query syntax of the particular LDAP server, and can "
+#~ "include special wildcard characters provided by CloudStack for matching "
+#~ "common values such as the user’s email address and name. CloudStack will "
+#~ "search the external LDAP directory tree starting at a specified base "
+#~ "directory and return the distinguished name (DN) and password of the "
+#~ "matching user. This information along with the given password is used to "
+#~ "authenticate the user.."
+#~ msgstr ""
+#~ "Vous pouvez utiliser un serveur LDAP externe comme Microsoft Active "
+#~ "Directory ou ApacheDS pour autentifier les utilisateurs finaux CloudStack. "
+#~ "Il suffit de faire correspondre les comptes CloudStack aux comptes LDAP "
+#~ "correspondant en utilisant un filtre de requête. Le filtre de requête est "
+#~ "écrite avec la syntaxe de requête du serveur LDAP et peut inclure des "
+#~ "caractères spéciaux fournis par CloudStack pour faire correspondre des "
+#~ "valeurs communes comme l'adresse email de l'utilisateur et son nom. "
+#~ "CloudStack cherchera dans l'arbre de l'annuaire LDAP externe en commençant "
+#~ "par le répertoire de base spécifié et retournera le distinguished name (DN) "
+#~ "et le mot de passe de l'utilisateur correspondant. Cette information along "
+#~ "with le mot de passe fourni est utilisé pour autentifier l'utilisateur. "
+
+# 14c749c7da61408588c8e8cdaa11796c
+#~ msgid ""
+#~ "To set up LDAP authentication in CloudStack, call the CloudStack API command "
+#~ "ldapConfig and provide the following:"
+#~ msgstr ""
+#~ "Pour configurer l'autentification LDAP dans CloudStack, utiliser la commande "
+#~ "ldapConfig de l'API CloudStack et fournir les informations suivantes :"
+
+# c4708aa56b75423080f17f84ec2a37a4
+#~ msgid "Hostname or IP address and listening port of the LDAP server"
+#~ msgstr "Nom de machine ou adresse IP et port d'écoute du serveur LDAP"
+
+# ff4d11fcc40f4d5c86ce032c3d6e6a76
+#~ msgid "Base directory and query filter"
+#~ msgstr "Répertoire de recherche et filtre de recherche"
+
+# 0b5fce75930e49b19cf1d00062c78539
+#~ msgid ""
+#~ "Search user DN credentials, which give CloudStack permission to search on "
+#~ "the LDAP server"
+#~ msgstr ""
+#~ "DN de l'utilisateur utilisé pour la recherche, qui donne à CloudStack les "
+#~ "permissions de recherche sur le serveur LDAP"
+
+# c3d66516470141c3af861a4b24f45150
+#~ msgid "SSL keystore and password, if SSL is used"
+#~ msgstr "Le magasin SSL et son mot de passe, si le protocole SSL est utilisé"
+
+# 6e565fd7b02d4a97b86b380e839f129f
+#~ msgid "Example LDAP Configuration Commands"
+#~ msgstr "Exemple de commande de configuration LDAP"
+
+# ee72e29a6b33456684ebcbfd012c075a
+#~ msgid ""
+#~ "To understand the examples in this section, you need to know the basic "
+#~ "concepts behind calling the CloudStack API, which are explained in the "
+#~ "Developer’s Guide."
+#~ msgstr ""
+#~ "Pour comprendre les exemples de cette section, vous aurez besoin de "
+#~ "connaître les concepts de base d'un appel d'API CloudStack, qui sont "
+#~ "expliqués dans le Guide du Développeur."
+
+# 065e58a0d0f74c8d84670251cf00c487
+#~ msgid ""
+#~ "The following shows an example invocation of ldapConfig with an ApacheDS "
+#~ "LDAP server"
+#~ msgstr ""
+#~ "L'exemple suivant monte un appel de ldapConfig avec un serveur LDAP ApacheDS"
+
+# 31d88144f8004adf8efd11cf7f9db7bd
+#~ msgid ""
+#~ "The command must be URL-encoded. Here is the same example without the URL "
+#~ "encoding:"
+#~ msgstr ""
+#~ "La commande doit avoir son URL encodée. Ci-dessous le même exemple sans "
+#~ "l'encodage de l'URL :"
+
+# 884cde7f5dbd499ba1c28ff09380c692
+#~ msgid ""
+#~ "The following shows a similar command for Active Directory. Here, the search "
+#~ "base is the testing group within a company, and the users are matched up "
+#~ "based on email address."
+#~ msgstr ""
+#~ "L'exemple suivant est une commande similaire pour l'Active Directory. Ici, "
+#~ "la base de recherche est un groupe de test au sein d'une compagnie et les "
+#~ "utilisateurs sont reliés par rapport à leurs adressses mails."
+
+# d2675a267aa34f4ea3fe2bba2300b61c
+#~ msgid ""
+#~ "The next few sections explain some of the concepts you will need to know "
+#~ "when filling out the ldapConfig parameters."
+#~ msgstr ""
+#~ "Les quelques sections suivantes expliquent certains des concepts que vous "
+#~ "aurez besoin de connaître lorsque vous remplirer les paramètres de ldapConfig"
+
+# befdce0cfd624549844139c917a82bb4
+#~ msgid "Search Base"
+#~ msgstr "Base de recherche"
+
+# 3649e87915d24059beec30463e0abd10
+# eb0f32160dd24b21991c2f454df60742
+#~ msgid "LDAP Server"
+#~ msgstr "Serveur LDAP"
+
+# d8fb5f498afb4ee1aa6669b39f1e34be
+#~ msgid "Example Search Base DN"
+#~ msgstr "Exemple de recherche basée sur le DN"
+
+# 2e421fc0d49d4a819b31999dc3cae2e0
+# a0327a00878d45dab6dc0bc777814674
+#~ msgid "ApacheDS"
+#~ msgstr "ApacheDS"
+
+# 6c854d5e6cdd4e3aadda7dd9be769a53
+#~ msgid "OU=testing, O=project"
+#~ msgstr "OU=testing, O=project"
+
+# a1fbaf989c584a248386911c51fd2fba
+# c776e850eb3e4d64b262a32a9d302bfb
+#~ msgid "Active Directory"
+#~ msgstr "Active Directory"
+
+# 5d0095ff2d7044e7b60bc1754210dd3c
+#~ msgid "OU=testing, DC=company"
+#~ msgstr "OU=testing, DC=company"
+
+# 8309dae488944f0aae3e84a8e1a97ac3
+#~ msgid "Query Filter"
+#~ msgstr "Filtre de recherche"
+
+# f4f9c13ceefa4163962bd3cfab257852
+#~ msgid "The CloudStack query filter wildcards are:"
+#~ msgstr ""
+#~ "Les caractères spéciaux de CloudStack pour les filtres de recherche sont :"
+
+# bab683973b9045339c8df3488bc5dd1c
+#~ msgid "Query Filter Wildcard"
+#~ msgstr "Caractères spéciaux de filtre de recherche :"
+
+# a94af335cc864d9a962f1fb9b7b5f72c
+#~ msgid "Description"
+#~ msgstr "Description"
+
+# 334393ba6786415e91a2ed1a22d26adb
+#~ msgid "%u"
+#~ msgstr "%u"
+
+# 151cd28e952d4ff98ff9d1544698ccb8
+#~ msgid "User name"
+#~ msgstr "Nom d'utilisateur"
+
+# f1f86cbcf39e412fb298da7653a123d3
+#~ msgid "%e"
+#~ msgstr "%e"
+
+# fdf52531788c41fabb814f45f07b178a
+#~ msgid "Email address"
+#~ msgstr "Adresse email"
+
+# 6e5b529e3da248ee85f1e20f81bd8e1c
+#~ msgid "%n"
+#~ msgstr "%n"
+
+# 4704eb3b3e494ad3bc2105d98a3c84a9
+#~ msgid "First and last name"
+#~ msgstr "Prénom et nom"
+
+# 51612c6475e246f7b7d8a156605a2323
+#~ msgid ""
+#~ "The following examples assume you are using Active Directory, and refer to "
+#~ "user attributes from the Active Directory schema."
+#~ msgstr ""
+#~ "Les exemples suivant nécessitent que vous utilisiez Active Directory et fait "
+#~ "référence aux attributs utilisateurs du schéma Active Directory."
+
+# d853815e3f894dcdbb92be883305dc5b
+#~ msgid "If the CloudStack user name is the same as the LDAP user ID:"
+#~ msgstr ""
+#~ "Si le nom d'utilisateur CloudStack est identique à l'ID utilisateur LDAP :"
+
+# d0bb623240d0410eb8d70ed22ba5a2f8
+#~ msgid "If the CloudStack user name is the LDAP display name:"
+#~ msgstr ""
+#~ "Si le nom d'utilisateur CloudStack est le nom d'affichage LDAP (display "
+#~ "name) :"
+
+# 0a96c3c2516946c1b4260fd4d4d6ffb7
+#~ msgid "To find a user by email address:"
+#~ msgstr "Pour trouver un utilisateur par son adresse email :"
+
+# 5b63c901fb5a4d208df8e362234d1cba
+#~ msgid "Search User Bind DN"
+#~ msgstr "DN d'utilisateur de rattachement pour la recherche"
+
+# 7fcc45a0be9241b09a01d2287541d652
+#~ msgid "Example Bind DN"
+#~ msgstr "Exemple de DN de rattachement "
+
+# b4c0b2f84be54e32820cac392b6c9c75
+#~ msgid "CN=Administrator,DC=testing,OU=project,OU=org"
+#~ msgstr "CN=Administrator,DC=testing,OU=project,OU=org"
+
+# 46e145ddbc9f47e08b21fa2631ed9fa7
+#~ msgid "CN=Administrator, OU=testing, DC=company, DC=com"
+#~ msgstr "CN=Administrator, OU=testing, DC=company, DC=com"
+
+# cbaaf7054abf480eb88b336ba62a097b
+#~ msgid "SSL Keystore Path and Password"
+#~ msgstr "Chemin d'accès au coffre fort SSL et son mot de passe"

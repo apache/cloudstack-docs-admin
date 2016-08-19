@@ -1,0 +1,233 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-09-30 00:10+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.9\n"
+
+# 0c7c82c60c1c4ce4b2ec9838cc883b84
+#: ../../tuning.rst:18
+msgid "Tuning"
+msgstr "Optimisation"
+
+# 9a2a025467014e929276cfa1e9e73e71
+#: ../../tuning.rst:20
+msgid ""
+"This section provides tips on how to improve the performance of your cloud."
+msgstr ""
+"Cette section fournie des astuces sur comment optimiser la performance de "
+"votre cloud."
+
+# 9b00143dbb7b4b4b97baab2aa95815aa
+#: ../../tuning.rst:25
+msgid "Performance Monitoring"
+msgstr "Surveiller la performance"
+
+# 43c6615bb7084bc58dbf0561984e39f3
+#: ../../tuning.rst:27
+msgid ""
+"Host and guest performance monitoring is available to end users and "
+"administrators. This allows the user to monitor their utilization of "
+"resources and determine when it is appropriate to choose a more powerful "
+"service offering or larger disk."
+msgstr ""
+"La surveillance de la performance des hôtes et des invités est disponible "
+"aux utilisateurs finaux et aux administrateurs. Ceci autorise les "
+"utilisateurs à surveiller leur utilisation des ressources et déterminer "
+"quand il est approprié de choisir une offre de service plus puissante ou un "
+"disque plus grand."
+
+# 470932b76e664973b7568b285a10a77d
+#: ../../tuning.rst:34
+msgid "Increase Management Server Maximum Memory"
+msgstr "Augmenter la mémoire maximale du serveur de gestion"
+
+# 82b1560c6fbf421b952de1c8424aa4a2
+#: ../../tuning.rst:36
+msgid ""
+"If the Management Server is subject to high demand, the default maximum JVM "
+"memory allocation can be insufficient. To increase the memory:"
+msgstr ""
+"Si un serveur de gestion est le sujet d'une forte charge, l'allocation par "
+"défaut du maximum de mémoire de la JVM peut devenir insuffisante. Pour "
+"augmenter la mémoire :"
+
+# 1b69cb03d370442f913397dde140c37c
+#: ../../tuning.rst:39
+msgid "Edit the Tomcat configuration file:"
+msgstr "Editer le fichier de configuration de Tomcat :"
+
+# d9a022a48b8a4076872b335db29f658c
+#: ../../tuning.rst:45
+msgid "Change the command-line parameter -XmxNNNm to a higher value of N."
+msgstr ""
+"Changer le paramètre de ligne de commande -XmxNNNm pour une valeur "
+"supérieure de N."
+
+# bf5935dc78264c1baf8cd4984a631b98
+#: ../../tuning.rst:47
+msgid ""
+"For example, if the current value is -Xmx128m, change it to -Xmx1024m or "
+"higher."
+msgstr ""
+"Pour exemple, si la valeur en cours est -Xmx128m, la changer pour -Xmx1024m "
+"ou plus."
+
+# e4dda8bcace04b10a404493586f871a1
+#: ../../tuning.rst:50
+msgid "To put the new setting into effect, restart the Management Server."
+msgstr ""
+"Pour rendre les nouveaux paramètres actifs, redémarrer le serveur de "
+"gestion."
+
+# 4b11c5fd61d0469480f110a7ebe528d0
+#: ../../tuning.rst:56
+msgid ""
+"For more information about memory issues, see \"FAQ: Memory\" at `Tomcat "
+"Wiki. <http://wiki.apache.org/tomcat/FAQ/Memory>`_"
+msgstr ""
+"Pour plus d'information à propos des problèmes de mémoire, voir \"FAQ: "
+"Mémoire\" sur le `Wiki Tomcat. <http://wiki.apache.org/tomcat/FAQ/Memory>`_"
+
+# 588f5981eb3843ac91a1041e9f3bb832
+#: ../../tuning.rst:61
+msgid "Set Database Buffer Pool Size"
+msgstr "Fixer la taille du Tampon du Pool Database"
+
+# 2a1e327a1aa04838bfefce6674d9ec3e
+#: ../../tuning.rst:63
+msgid ""
+"It is important to provide enough memory space for the MySQL database to "
+"cache data and indexes:"
+msgstr ""
+"Il est important de fournir suffisamment d'espace mémoire à la base de "
+"données MySQL pour cacher les données et les index :"
+
+# 55bafed06cb5401fba6713f86660fe74
+#: ../../tuning.rst:66
+msgid "Edit the MySQL configuration file:"
+msgstr "Editer le fichier de configuration de MySQL :"
+
+# a2719920b1ad4f2388c10ed8f19e5437
+#: ../../tuning.rst:72
+msgid ""
+"Insert the following line in the [mysqld] section, below the datadir line. "
+"Use a value that is appropriate for your situation. We recommend setting "
+"the buffer pool at 40% of RAM if MySQL is on the same server as the "
+"management server or 70% of RAM if MySQL has a dedicated server. The "
+"following example assumes a dedicated server with 1024M of RAM."
+msgstr ""
+"Insérer la ligne suivante dans la section [mysqld], sous la ligne datadir. "
+"Utiliser une valeur qui est approprié pour votre situation. Nous "
+"recommandons de configurer le pool de mémoires tampons à 40% de la RAM si "
+"MySQL est sur le même serveur que le serveur de gestion ou 70% de la RAM si "
+"MySQL est sur un serveur dédié. L'exemple suivant assume un serveur dédié "
+"avec 1024 de RAM."
+
+# 30d79aae5ff745b789f7e402c61d4164
+#: ../../tuning.rst:83
+msgid "Restart the MySQL service."
+msgstr "Redémarrer le service MySQL."
+
+# b12c7032e74b411d9d9c7bc32a92a3ab
+#: ../../tuning.rst:89
+msgid ""
+"For more information about the buffer pool, see \"The InnoDB Buffer Pool\" "
+"at `MySQL Reference Manual <http://dev.mysql.com/doc/refman/5.5/en/innodb-"
+"buffer-pool.html>`_."
+msgstr ""
+"Pour plus d'information à propos du tampon du pool, voir \"The InnoDB "
+"Buffer Pool\" dans le `Manuel de Référence de MySQL <http://dev.mysql.com/"
+"doc/refman/5.5/en/innodb-buffer-pool.html>`_."
+
+# 1cbfe60313d445848eb5e90f708b55a1
+#: ../../tuning.rst:95
+msgid "Set and Monitor Total VM Limits per Host"
+msgstr "Fixer et surveiller les limites totales de VM par hôte."
+
+# 36520c7bbf2b4888813341615ca176fa
+#: ../../tuning.rst:97
+msgid ""
+"The CloudStack administrator should monitor the total number of VM "
+"instances in each cluster, and disable allocation to the cluster if the "
+"total is approaching the maximum that the hypervisor can handle. Be sure to "
+"leave a safety margin to allow for the possibility of one or more hosts "
+"failing, which would increase the VM load on the other hosts as the VMs are "
+"automatically redeployed. Consult the documentation for your chosen "
+"hypervisor to find the maximum permitted number of VMs per host, then use "
+"CloudStack global configuration settings to set this as the default limit. "
+"Monitor the VM activity in each cluster at all times. Keep the total number "
+"of VMs below a safe level that allows for the occasional host failure. For "
+"example, if there are N hosts in the cluster, and you want to allow for one "
+"host in the cluster to be down at any given time, the total number of VM "
+"instances you can permit in the cluster is at most (N-1) \\* (per-host-"
+"limit). Once a cluster reaches this number of VMs, use the CloudStack UI to "
+"disable allocation of more VMs to the cluster."
+msgstr ""
+"L'administrateur CloudStack devrait surveiller le nombre total d'instances "
+"de VM dans chaque cluster, et désactiver l'allocation à un cluster si le "
+"total s'approche du maximum que l'hyperviseur peut supporter. Soyez sur de "
+"laisser une marge de sécurité pour autoriser dans le cas où un ou plusieurs "
+"hôtes tomberaient en panne, ce qui augmenterait la charge en VM sur les "
+"autres hôtes comme leur VMs seraient automatiquement redéployées. Consulter "
+"la documentation de votre hyperviseur pour trouver le nombre maximum de VM "
+"par hôte, puis utiliser les paramètres de configuration globale de "
+"CloudStack pour le fixer comme limite par défaut. Surveiller l'activité des "
+"VM sur chaque cluster à tout moment. Conserver le nombre total de VMs sous "
+"un niveau de sécurité qui permet les pannes occasionnelles d'un hôte. Par "
+"exemple, si il y a N hôtes dans un cluster et que vous voulez permettre à "
+"un hôte dans le cluster d'être éteint à la fois, le nombre total "
+"d'instances de VM que vous pouvez permettre dans le cluster est au plus "
+"(N-1) \\* (limite-par-hôte). Une fois que le cluster a atteins le nombre de "
+"VMs, utiliser l'interface de CloudStack pour désactiver l'allocation de "
+"plus de VMs dans le cluster."
+
+# 87fad0d347f845e4b589cf1b70bfaad0
+#: ../../tuning.rst:116
+msgid "Configure XenServer dom0 Memory"
+msgstr "Configurer la mémoire du dom0 XenServer"
+
+# e6d8fead31da4d2880407fe308a0c13a
+#: ../../tuning.rst:118
+msgid ""
+"Configure the XenServer dom0 settings to allocate more memory to dom0. This "
+"can enable XenServer to handle larger numbers of virtual machines. We "
+"recommend 2940 MB of RAM for XenServer dom0. For instructions on how to do "
+"this, see `Citrix Knowledgebase Article <http://support.citrix.com/article/"
+"CTX126531>`_.The article refers to XenServer 5.6, but the same information "
+"applies to XenServer 6"
+msgstr ""
+"Configurer les paramètres dom0 du XenServer pour allouer plus de mémoire à "
+"dom0. Cela peut activer XenServer pour traiter un plus grand nombre de "
+"machines virtuelles. Nous recommandons 2940 MB de RAM pour le dom0 "
+"XenServer. Pour les instructions sur comment faire ceci, voir l'`Article de "
+"la base de connaissance Citrix <http://support.citrix.com/article/"
+"CTX126531>`_.L'article se réfère à XenServer 5.6, mais les mêmes "
+"informations s'appliquent à XenServer 6."

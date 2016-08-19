@@ -1,0 +1,104 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-09-05 23:40+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.8\n"
+
+# aec0c098f53f452cb8665fc7b69cd182
+#: ../../networking/acquiring_an_ip_address.rst:18
+msgid "Acquiring a New IP Address"
+msgstr "Acquérir une nouvelle adresse IP"
+
+# 6113064b39bc4682869acf44286131ad
+#: ../../networking/acquiring_an_ip_address.rst:20
+msgid "Log in to the CloudStack UI as an administrator or end user."
+msgstr ""
+"Se connecter à l'interface de CloudStack comme administrateur ou "
+"utilisateur final."
+
+# ccc7a493b9b940c2b706c15e852b3e93
+#: ../../networking/acquiring_an_ip_address.rst:22
+msgid "In the left navigation, choose Network."
+msgstr "Dans le panneau de navigation de gauche, choisissez Réseau."
+
+# 9a6973f9449e4414a4643a6da352263e
+#: ../../networking/acquiring_an_ip_address.rst:24
+msgid "Click the name of the network where you want to work with."
+msgstr "Cliquez sur le nom du réseau avec lequel vous souhaitez travailler."
+
+# beaa083fcce64bb48e44a47c9b4ab745
+#: ../../networking/acquiring_an_ip_address.rst:26
+msgid "Click View IP Addresses."
+msgstr "Cliquez sur Voir les adresses IP."
+
+# 76867ce630364509a651c09137cab94e
+#: ../../networking/acquiring_an_ip_address.rst:28
+msgid "Click Acquire New IP."
+msgstr "Cliquer sur Acquérir une nouvelle IP."
+
+# 35698ea68aa24ff79ce9dc09c1d12caf
+#: ../../networking/acquiring_an_ip_address.rst:30
+msgid "The Acquire New IP window is displayed."
+msgstr "La fenêtre Acquérir une nouvelle IP est affichée."
+
+# 4819ef07622d41fd818aef83d9752ac2
+#: ../../networking/acquiring_an_ip_address.rst:32
+msgid "Specify whether you want cross-zone IP or not."
+msgstr "Spécifier si vous voulez une IP transverse à la zone ou non."
+
+# 342295d34e8e4252b2850d040aca7909
+#: ../../networking/acquiring_an_ip_address.rst:34
+msgid ""
+"If you want Portable IP click Yes in the confirmation dialog. If you want a "
+"normal Public IP click No."
+msgstr ""
+"Si vous voulez une IP portable, cliquer Oui dans la boîte de dialogue de "
+"confirmation. Si vous voulez une IP public normale, cliquer Non."
+
+# 9a4837aaa4c940b78c8aa311245b748a
+#: ../../networking/acquiring_an_ip_address.rst:37
+msgid ""
+"For more information on Portable IP, see `\"Portable IPs\" <#portable-"
+"ips>`_."
+msgstr ""
+"Pour plus d'information sur une IP Portable, voir `\"IPs Portables\" "
+"<#portable-ips>`_."
+
+# 2ee8ad57fe20463893a86f3fe6eb669f
+#: ../../networking/acquiring_an_ip_address.rst:40
+msgid ""
+"Within a few moments, the new IP address should appear with the state "
+"Allocated. You can now use the IP address in port forwarding or static NAT "
+"rules."
+msgstr ""
+"Après quelques instants, la nouvelle adresse IP devrait apparaître avec "
+"l'état Allouée. Vous pouvez utiliser l'adresse IP dans la redirection de "
+"port ou les règles de NATage statiques."

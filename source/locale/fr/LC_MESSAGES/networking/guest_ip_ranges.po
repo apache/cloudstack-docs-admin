@@ -1,0 +1,65 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-08-27 12:02+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.8\n"
+
+# c4f6e8eb1ed7428a8132309d84e4b1bf
+#: ../../networking/guest_ip_ranges.rst:18
+msgid "Guest IP Ranges"
+msgstr "Plages IP invités"
+
+# ef6d3891253c4ed58a8a51c2f86b51dc
+#: ../../networking/guest_ip_ranges.rst:20
+msgid ""
+"The IP ranges for guest network traffic are set on a per-account basis by "
+"the user. This allows the users to configure their network in a fashion "
+"that will enable VPN linking between their guest network and their clients."
+msgstr ""
+"Les plages d'IP pour le trafic réseau invité est configuré par compte par "
+"l'utilisateur. Cela permet aux utilisateurs de configurer leur réseau de "
+"façon qui va activer le lien VPN entre son réseau invité et ses clients."
+
+# 943864c06f494d7ca4f4310246ba996a
+#: ../../networking/guest_ip_ranges.rst:25
+msgid ""
+"In shared networks in Basic zone and Security Group-enabled Advanced "
+"networks, you will have the flexibility to add multiple guest IP ranges "
+"from different subnets. You can add or remove one IP range at a time. For "
+"more information, see `\"About Multiple IP Ranges\" <#about-multiple-ip-"
+"ranges>`_."
+msgstr ""
+"Sur des réseaux partagés dans une zone basique avec des réseaux avancés "
+"basés sur des groupes de sécurité, vous aurez la souplesse d'ajouter de "
+"nombreuses plages d'adresses IP invité depuis différents sous-réseaux. Vous "
+"pouvez ajouter ou supprimer une plage IP en une fois. Pour plus "
+"d'informations, voir `\"A propos des multiples plages IP\" <#about-multiple-"
+"ip-ranges>`_."

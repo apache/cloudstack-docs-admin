@@ -1,0 +1,336 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration Documentation 4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-09-02 00:31+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: ../../templates/_create_linux.rst:18
+msgid "Creating a Linux Template"
+msgstr "Créer un modèle Linux"
+
+#: ../../templates/_create_linux.rst:20
+msgid ""
+"Linux templates should be prepared using this documentation in order to "
+"prepare your linux VMs for template deployment. For ease of documentation, "
+"the VM which you are configuring the template on will be referred to as "
+"\"Template Master\". This guide currently covers legacy setups which do not "
+"take advantage of UserData and cloud-init and assumes openssh-server is "
+"installed during installation."
+msgstr ""
+"Les modèles Linux devraient être préparé en utilisant cette documentation "
+"dans le but de préparer vos VMs linux pour le déploiement de modèle. Pour "
+"les besoins de la documentation, la VM que vous être en train de configurer "
+"pour faire office de modèle sera référencer comme \"Template Master\". Ce "
+"guide pour le moment ne couvre que les configurations n'utilisant pas les "
+"UserData et cloud-init et présume qu'un serveur openssh est installé durant "
+"l'installation."
+
+#: ../../templates/_create_linux.rst:27
+msgid "An overview of the procedure is as follow:"
+msgstr "Une vue d'ensemble de la procédure est :"
+
+#: ../../templates/_create_linux.rst:29
+msgid "Upload your Linux ISO."
+msgstr "Télécharger votre ISO Linux"
+
+#: ../../templates/_create_linux.rst:31
+msgid ""
+"For more information, see `“Adding an ISO” <virtual_machines.html#adding-an-"
+"iso>`_."
+msgstr ""
+"Pour plus d'informations, voir `“Ajouter une ISO” <virtual_machines."
+"html#adding-an-iso>`_."
+
+#: ../../templates/_create_linux.rst:34
+msgid "Create a VM Instance with this ISO."
+msgstr "Créer une instance de VM avec cet ISO."
+
+#: ../../templates/_create_linux.rst:36
+msgid ""
+"For more information, see `“Creating VMs” <virtual_machines.html#creating-"
+"vms>`_."
+msgstr ""
+"Pour plus d'informations, voir `“Créer des VMs” <virtual_machines."
+"html#creating-vms>`_."
+
+#: ../../templates/_create_linux.rst:39
+msgid "Prepare the Linux VM"
+msgstr "Préparer la VM Linux"
+
+#: ../../templates/_create_linux.rst:41
+msgid "Create a template from the VM."
+msgstr "Créer un modèle depuis la VM."
+
+#: ../../templates/_create_linux.rst:43
+msgid ""
+"For more information, see `“Creating a Template from an Existing Virtual "
+"Machine” <#creating-a-template-from-an-existing-virtual-machine>`_."
+msgstr ""
+"Pour plus d'informations, voir `“Créer un modèle depuis une machine "
+"virtuelle existante” <#creating-a-template-from-an-existing-virtual-"
+"machine>`_."
+
+#: ../../templates/_create_linux.rst:48
+msgid "System preparation for Linux"
+msgstr "Préparation du système pour Linux"
+
+#: ../../templates/_create_linux.rst:50
+msgid ""
+"The following steps will prepare a basic Linux installation for templating."
+msgstr ""
+"Les étapes suivantes vont préparer une installation Linux basique pour "
+"devenir un modèle."
+
+#: ../../templates/_create_linux.rst:53
+msgid "**Installation**"
+msgstr "**Installation**"
+
+#: ../../templates/_create_linux.rst:55
+msgid ""
+"It is good practice to name your VM something generic during installation, "
+"this will ensure components such as LVM do not appear unique to a machine. "
+"It is recommended that the name of \"localhost\" is used for installation."
+msgstr ""
+"C'est une bonne pratique de nommer votre VM avec quelque chose de générique "
+"durant l'installation, ce qui va assurer que des composants comme LVM "
+"n'apparaisse pas unique à une machine. Il est recommandé que le nom "
+"\"localhost\" soit utilisé pour l'installation."
+
+#: ../../templates/_create_linux.rst:61
+msgid ""
+"For CentOS, it is necessary to take unique identification out of the "
+"interface configuration file, for this edit /etc/sysconfig/network-scripts/"
+"ifcfg-eth0 and change the content to the following."
+msgstr ""
+"Pour CentOS, il est nécessaire de supprimer l'identifiant unique du fichier "
+"de configuration, pour cela éditer le fichier /etc/sysconfig/network-"
+"scripts/ifcfg-eth0 et changer le contenu pour celui-ci."
+
+#: ../../templates/_create_linux.rst:73
+msgid "The next steps updates the packages on the Template Master."
+msgstr "Les étapes suivantes mettent à jour les paquets sur le modèle maître."
+
+#: ../../templates/_create_linux.rst:75 ../../templates/_create_linux.rst:122
+#: ../../templates/_create_linux.rst:179
+msgid "Ubuntu"
+msgstr "Ubuntu"
+
+#: ../../templates/_create_linux.rst:85 ../../templates/_create_linux.rst:186
+msgid "CentOS"
+msgstr "CentOS"
+
+#: ../../templates/_create_linux.rst:93
+msgid "**Password management**"
+msgstr "**Gestion du mot de passe**"
+
+#: ../../templates/_create_linux.rst:96
+msgid ""
+"If preferred, custom users (such as ones created during the Ubuntu "
+"installation) should be removed. First ensure the root user account is "
+"enabled by giving it a password and then login as root to continue."
+msgstr ""
+"Si vous préférez, les utilisateurs personnalisés (comme comme ceux créés "
+"durant l'installation d'Ubuntu) doivent être retirés. D'abord s'assurer que "
+"compte de l'utilisateur root est activé en lui donnant un mot de passe et "
+"ensuite se connecter en root pour continuer."
+
+#: ../../templates/_create_linux.rst:105
+msgid ""
+"As root, remove any custom user accounts created during the installation "
+"process."
+msgstr ""
+"Comme root, supprimer tous les comptes utilisateurs personnalisés créés "
+"durant le processus d'installation."
+
+#: ../../templates/_create_linux.rst:112
+msgid ""
+"See :ref:`adding-password-management-to-templates` for instructions to "
+"setup the password management script, this will allow CloudStack to change "
+"your root password from the web interface."
+msgstr ""
+"Voir :ref:`adding-password-management-to-templates` pour les instructions "
+"pour configurer le script de gestion du mot de passe, qui permettra à "
+"CloudStack de changer le mot de passe root depuis l'interface web."
+
+#: ../../templates/_create_linux.rst:116
+msgid "**Hostname Management**"
+msgstr "**Gestion du nom de machine**"
+
+#: ../../templates/_create_linux.rst:118
+msgid ""
+"CentOS configures the hostname by default on boot. Unfortunately Ubuntu "
+"does not have this functionality, for Ubuntu installations use the "
+"following steps."
+msgstr ""
+"CentOS configure le nom d'hôte par défaut au démarrage. Malheureusement, "
+"Ubuntu n'a pas cette fonctionnalité, pour les installations d'Ubuntu "
+"utiliser les étapes suivantes :"
+
+#: ../../templates/_create_linux.rst:124
+msgid ""
+"The hostname of a Templated VM is set by a custom script in `/etc/dhcp/"
+"dhclient-exit-hooks.d`, this script first checks if the current hostname is "
+"localhost, if true, it will get the host-name, domain-name and fixed-ip "
+"from the DHCP lease file and use those values to set the hostname and "
+"append the `/etc/hosts` file for local hostname resolution. Once this "
+"script, or a user has changed the hostname from localhost, it will no "
+"longer adjust system files regardless of its new hostname. The script also "
+"recreates openssh-server keys, which should have been deleted before "
+"templating (shown below). Save the following script to `/etc/dhcp/dhclient-"
+"exit-hooks.d/sethostname`, and adjust the permissions."
+msgstr ""
+"Le nom d'hôte d'une VM déployée depuis un modèle est fixé par un script "
+"personnalisé dans `/etc/dhcp/dhclient-exit-hooks.d`, ce script vérifie "
+"d'abord si la valeur courante est localhost, si c'est le cas, il va obtenir "
+"le nom d'hôte, le nom de domaine et l'adresse IP fixe depuis le fichier de "
+"bail DHCP et utiliser ces valeurs pour fixer le nom d'hôte et l'ajouter le "
+"fichier `/etc/hosts` pour la résolution locale du nom d'hôte. Une fois que "
+"ce script, ou un utilisateur, a changé le nom d'hôte, il ne va plus ajuster "
+"les fichiers systèmes en relation avec son nouveau nom d'hôte. Le script "
+"recrée les clefs du serveur SSH, qui ont été supprimé juste avant la "
+"transformation en modèle (voir ci-dessous). Sauvegarder le script suivant "
+"sous `/etc/dhcp/dhclient-exit-hooks.d/sethostname`, et ajuste les "
+"permissions."
+
+#: ../../templates/_create_linux.rst:167
+msgid ""
+"The following steps should be run when you are ready to template your "
+"Template Master. If the Template Master is rebooted during these steps you "
+"will have to run all the steps again. At the end of this process the "
+"Template Master should be shutdown and the template created in order to "
+"create and deploy the final template."
+msgstr ""
+"Les étapes suivantes doivent être lancées quand vous être prêts pour "
+"transformer votre VM modèle en modèle. Si la VM modèle est redémarrée "
+"durant ces étapes, vous allez devoir relancer ces étapes à nouveau. A la "
+"fin de ce processus, la VM modèle doit être arrêté et le modèle créé afin "
+"de créer et de déployer le modèle final."
+
+#: ../../templates/_create_linux.rst:173
+msgid "**Remove the udev persistent device rules**"
+msgstr "**Retirer les règles persistentes des périphériques udev**"
+
+#: ../../templates/_create_linux.rst:175
+msgid ""
+"This step removes information unique to your Template Master such as "
+"network MAC addresses, lease files and CD block devices, the files are "
+"automatically generated on next boot."
+msgstr ""
+"Cet étape retire les information unique de votre VM modèle comme l'adresse "
+"MAC réseau, les fichiers de baux et les périphériques de type CD, les "
+"fichiers sont automatiquement généré au démarrage suivant."
+
+#: ../../templates/_create_linux.rst:193
+msgid "**Remove SSH Keys**"
+msgstr "**Supprimer les clefs SSH**"
+
+#: ../../templates/_create_linux.rst:195
+msgid ""
+"This step is to ensure all your Templated VMs do not have the same SSH "
+"keys, which would decrease the security of the machines dramatically."
+msgstr ""
+"Cette étape est pour assurer que tous vos VMs Modèles n'ont pas les mêmes "
+"clefs SSH, ce qui diminuerait dramatiquement la sécurité des machines."
+
+#: ../../templates/_create_linux.rst:203
+msgid "**Cleaning log files**"
+msgstr "**Nettoyer les fichiers de log**"
+
+#: ../../templates/_create_linux.rst:205
+msgid "It is good practice to remove old logs from the Template Master."
+msgstr ""
+"C'est une bonne pratique de supprimer les anciens logs depuis la VM modèle."
+
+#: ../../templates/_create_linux.rst:214
+msgid "**Setting hostname**"
+msgstr "**Configurer le nom de machine**"
+
+#: ../../templates/_create_linux.rst:216
+msgid ""
+"In order for the Ubuntu DHCP script to function and the CentOS dhclient to "
+"set the VM hostname they both require the Template Master's hostname to be "
+"\"localhost\", run the following commands to change the hostname."
+msgstr ""
+"Pour que le script DHCP d'Ubuntu fonctionne et que le dhclient de CentOS "
+"puisse fixer le nom d'hôte de la VM, ils ont tous les deux besoins que le "
+"nom d'hôte soit \"localhost\", lancer les commandes suivantes pour changer "
+"le nom d'hôte."
+
+#: ../../templates/_create_linux.rst:226
+msgid "**Set user password to expire**"
+msgstr "**Imposer l'expiration du mot de passe**"
+
+#: ../../templates/_create_linux.rst:228
+msgid ""
+"This step forces the user to change the password of the VM after the "
+"template has been deployed."
+msgstr ""
+"Cette étape force les utilisateurs à changer le mot de passe de la VM après "
+"le déploiement du modèle."
+
+#: ../../templates/_create_linux.rst:235
+msgid "**Clearing User History**"
+msgstr "**Nettoyer l'historique utilisateur**"
+
+#: ../../templates/_create_linux.rst:237
+msgid "The next step clears the bash commands you have just run."
+msgstr ""
+"L'étape suivante nettoie les commandes bash que vous venez juste de lancer."
+
+#: ../../templates/_create_linux.rst:244
+msgid "**Shutdown the VM**"
+msgstr "**Arrêter la VM**"
+
+#: ../../templates/_create_linux.rst:246
+msgid "Your now ready to shutdown your Template Master and create a template!"
+msgstr ""
+"Vous être maintenant prêt pour arrêter la VM modèle et créer le modèle !"
+
+#: ../../templates/_create_linux.rst:253
+msgid "**Create the template!**"
+msgstr "**Créer le modèle !**"
+
+#: ../../templates/_create_linux.rst:255
+msgid ""
+"You are now ready to create the template, for more information see "
+"`“Creating a Template from an Existing Virtual Machine” <#creating-a-"
+"template-from-an-existing-virtual-machine>`_."
+msgstr ""
+"Vous êtes maintenant prêts à créer le modèle, pour plus d'informations voir "
+"`“Créer un modèle depuis une machine virtuelle existante” <#creating-a-"
+"template-from-an-existing-virtual-machine>`_."
+
+#: ../../templates/_create_linux.rst:260
+msgid ""
+"Templated VMs for both Ubuntu and CentOS may require a reboot after "
+"provisioning in order to pickup the hostname."
+msgstr ""
+"Les VMs provenant d'un modèle sous Ubuntu ou CentOS peuvent nécessiter un "
+"redémarrage après le provisionnement afin de changer le nom d'hôte."

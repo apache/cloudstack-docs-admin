@@ -1,0 +1,1631 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-12-22 16:08+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: ../../templates.rst:18
+msgid "Working with Templates"
+msgstr "Travailler avec des modèles"
+
+#: ../../templates.rst:20
+msgid ""
+"A template is a reusable configuration for virtual machines. When users launch "
+"VMs, they can choose from a list of templates in CloudStack."
+msgstr ""
+"Un modèle est une configuration réutilisable pour les machines virtuelles. "
+"Quand les utilisateurs lancent des VMs, ils peuvent choisir un modèle depuis "
+"une liste dans CloudStack."
+
+#: ../../templates.rst:23
+msgid ""
+"Specifically, a template is a virtual disk image that includes one of a variety "
+"of operating systems, optional additional software such as office applications, "
+"and settings such as access control to determine who can use the template. Each "
+"template is associated with a particular type of hypervisor, which is specified "
+"when the template is added to CloudStack."
+msgstr ""
+"Plus spécifiquement, un modèle est une image d'un disque virtuel qui inclue un "
+"des nombreux systèmes d'exploitations, des logiciels additionnels optionnels "
+"comme des applications de bureautique, et des configurations comme les "
+"contrôles d'accès pour déterminer qui peut utiliser le modèle. Chaque modèle "
+"est associé à un type d'hyperviseur particulier, qui est spécifié lorsque le "
+"modèle est ajouté à CloudStack."
+
+#: ../../templates.rst:30
+msgid ""
+"CloudStack ships with a default template. In order to present more choices to "
+"users, CloudStack administrators and users can create templates and add them to "
+"CloudStack."
+msgstr ""
+"CloudStack est livré avec un modèle par défaut. Dans le but de fournir plus de "
+"choix aux utilisateurs, les administrateurs CloudStack et les utilisateurs "
+"peuvent créer des modèles et les ajouter à CloudStack."
+
+#: ../../templates.rst:36
+msgid "Creating Templates: Overview"
+msgstr "Créer des modèles : vue d'ensemble"
+
+#: ../../templates.rst:38
+msgid ""
+"CloudStack ships with a default template for the CentOS operating system. There "
+"are a variety of ways to add more templates. Administrators and end users can "
+"add templates. The typical sequence of events is:"
+msgstr ""
+"CloudStack est livré avec un modèle par défaut pour le système d'exploitation "
+"CentOS. Il y a de nombreuses façon d'ajouter plus de modèles. Les "
+"administrateurs et les utilisateurs finaux peuvent ajouter des modèles. La "
+"suite typique des évènements est :"
+
+#: ../../templates.rst:43
+msgid ""
+"Launch a VM instance that has the operating system you want. Make any other "
+"desired configuration changes to the VM."
+msgstr ""
+"Lancer une instance de VM du système d'exploitation que vous voulez. Faire tout "
+"changement de configuration désiré à la VM."
+
+#: ../../templates.rst:46
+msgid "Stop the VM."
+msgstr "Arrêter la VM."
+
+#: ../../templates.rst:48
+msgid "Convert the volume into a template."
+msgstr "Convertir le volume en modèle."
+
+#: ../../templates.rst:50
+msgid ""
+"There are other ways to add templates to CloudStack. For example, you can take "
+"a snapshot of the VM's volume and create a template from the snapshot, or "
+"import a VHD from another system into CloudStack."
+msgstr ""
+"Il y a d'autres façons d'ajouter des modèles à CloudStack. Par exemple, vous "
+"pouvez prendre un instantané du volume de la VM et créer un modèle depuis "
+"l'instantané, ou importer un VHD depuis un autre système dans CloudStack."
+
+#: ../../templates.rst:54
+msgid ""
+"The various techniques for creating templates are described in the next few "
+"sections."
+msgstr ""
+"Les techniques variées pour créer des modèles sont décries dans les quelques "
+"sections suivantes."
+
+#: ../../templates.rst:59
+msgid "Requirements for Templates"
+msgstr "Conditions requises pour les modèles"
+
+#: ../../templates.rst:61
+msgid ""
+"For XenServer, install PV drivers / Xen tools on each template that you create. "
+"This will enable live migration and clean guest shutdown."
+msgstr ""
+"Pour XenServer, installer les drivers PV / outils Xen sur chaque modèle que "
+"vous créez. Ceci va activer la migration à chaud et l'arrêt propre des invités."
+
+#: ../../templates.rst:64
+msgid ""
+"For vSphere, install VMware Tools on each template that you create. This will "
+"enable console view to work properly."
+msgstr ""
+"Pour vSphere, installer les outils VMware sur chaque modèle que vous créez. "
+"Cela va permettre à la vue Console de fonctionner correctement."
+
+#: ../../templates.rst:69
+msgid "Best Practices for Templates"
+msgstr "Meilleurs pratiques pour les modèles"
+
+#: ../../templates.rst:71
+msgid ""
+"If you plan to use large templates (100 GB or larger), be sure you have a 10-"
+"gigabit network to support the large templates. A slower network can lead to "
+"timeouts and other errors when large templates are used."
+msgstr ""
+"Si vous planifiez d'utiliser des modèles conséquents (100 GB ou plus), assurez "
+"vous d'avoir un réseau 10Gbts pour supporter des modèles conséquents. Un réseau "
+"plus lent peut entraîner des dépassements de délais et autres erreurs lorsque "
+"des modèles plus gros sont utilisés."
+
+#: ../../templates.rst:77
+msgid "The Default Template"
+msgstr "Le modèle par défaut"
+
+#: ../../templates.rst:79
+msgid ""
+"CloudStack includes a CentOS template. This template is downloaded by the "
+"Secondary Storage VM after the primary and secondary storage are configured. "
+"You can use this template in your production deployment or you can delete it "
+"and use custom templates."
+msgstr ""
+"CloudStack inclue un modèle CentOS. Le modèle est téléchargé par la VM de "
+"Stockage Secondaire après que le stockage primaire et secondaire aient étés "
+"configurés. Vous pouvez utiliser ce modèle dans votre déploiement de production "
+"ou vous pouvez le supprimer et utiliser des modèles personnalisés."
+
+#: ../../templates.rst:84
+msgid "The root password for the default template is \"password\"."
+msgstr "Le mot de passe root du modèle par défaut est \"password\"."
+
+#: ../../templates.rst:86
+msgid ""
+"A default template is provided for each of XenServer, KVM, and vSphere. The "
+"templates that are downloaded depend on the hypervisor type that is available "
+"in your cloud. Each template is approximately 2.5 GB physical size."
+msgstr ""
+"Un modèle par défaut est fourni pour XenServer, KVM et vSphere. Les modèles qui "
+"sont téléchargés dépendent du type d'hyperviseur qui est disponible dans votre "
+"cloud. Chaque modèle fait une taille d'approximativement 2.5 GB."
+
+#: ../../templates.rst:91
+msgid ""
+"The default template includes the standard iptables rules, which will block "
+"most access to the template excluding ssh."
+msgstr ""
+"Le modèle par défaut inclue les règles standard iptables lesquelles vont "
+"bloquer la plupart des accès au modèle en excluant ssh."
+
+#: ../../templates.rst:123
+msgid "Private and Public Templates"
+msgstr "Modèles privés et publics"
+
+#: ../../templates.rst:125
+msgid "When a user creates a template, it can be designated private or public."
+msgstr ""
+"Lorsqu'un utilisateur crée un modèle, il peut être désigné comme privé ou "
+"public."
+
+#: ../../templates.rst:127
+msgid ""
+"Private templates are only available to the user who created them. By default, "
+"an uploaded template is private."
+msgstr ""
+"Les modèles privés ne sont disponibles qu'à l'utilisateur qui l'a créé. Par "
+"défaut, un modèle téléchargé est privé."
+
+#: ../../templates.rst:130
+msgid ""
+"When a user marks a template as “public,” the template becomes available to all "
+"users in all accounts in the user's domain, as well as users in any other "
+"domains that have access to the Zone where the template is stored. This depends "
+"on whether the Zone, in turn, was defined as private or public. A private Zone "
+"is assigned to a single domain, and a public Zone is accessible to any domain. "
+"If a public template is created in a private Zone, it is available only to "
+"users in the domain assigned to that Zone. If a public template is created in a "
+"public Zone, it is available to all users in all domains."
+msgstr ""
+"Quand un utilisateur marque un modèle comme \"public\", le modèle devient "
+"disponible aussi bien pour tous les utilisateurs de tous les comptes du domaine "
+"de l'utilisateur que pour les utilisateurs de tous les autres domaines qui ont "
+"accès à la Zone dans laquelle le modèle est stocké. Tout dépend si la Zone, à "
+"son tour, a été définie comme privée ou public. Une Zone privée est assignée à "
+"un seul domaine et une Zone publique est accessible par n'importe quel domaine. "
+"Si un modèle public est créé dans une Zone privée, il n'est disponible qu'aux "
+"seuls utilisateurs du domaine assigné à cette Zone. Si un modèle public est "
+"créé dans une Zone publique, il est disponible à tous les utilisateurs de tous "
+"les domaines."
+
+#: ../../templates.rst:142
+msgid "Creating a Template from an Existing Virtual Machine"
+msgstr "Créer un modèle depuis une machine virtuelle existante"
+
+#: ../../templates.rst:144
+msgid ""
+"Once you have at least one VM set up in the way you want, you can use it as the "
+"prototype for other VMs."
+msgstr ""
+"Une fois que vous avez au moins une VM de configurée de la façon que vous "
+"voulez, vous pouvez l'utiliser comme prototype pour les autres VMs."
+
+#: ../../templates.rst:147
+msgid ""
+"Create and start a virtual machine using any of the techniques given in "
+"`“Creating VMs” <virtual_machines.html#creating-vms>`_."
+msgstr ""
+"Créer et démarrer une machine virtuelle en utilisant n'importe quelle technique "
+"donnée dans `“Créer des VMs” <virtual_machines.html#creating-vms>`_."
+
+#: ../../templates.rst:150
+msgid "Make any desired configuration changes on the running VM, then click Stop."
+msgstr ""
+"Faire toutes les changements de configuration désirés sur la VM en cours de "
+"fonctionnement, puis cliquer sur Stop."
+
+#: ../../templates.rst:153
+msgid ""
+"Wait for the VM to stop. When the status shows Stopped, go to the next step."
+msgstr ""
+"Attendre l'arrêt de la VM. Quand le statut affiche Stoppée, aller à l'étape "
+"suivante."
+
+#: ../../templates.rst:156
+msgid "Go into \"View Volumes\" and select the Volume having the type \"ROOT\"."
+msgstr ""
+"Aller dans \"Voir volumes\" et sélectionner le Volume ayant le type \"ROOT\"."
+
+#: ../../templates.rst:158
+msgid "Click Create Template and provide the following:"
+msgstr "Cliquer sur Créer un modèle et fournir les informations suivantes :"
+
+#: ../../templates.rst:160
+msgid ""
+"**Name and Display Text**. These will be shown in the UI, so choose something "
+"descriptive."
+msgstr ""
+"** Nom et texte affiché**. Ceux-ci seront affichés dans l'interface, alors "
+"choisir quelque chose de descriptif."
+
+#: ../../templates.rst:163
+msgid ""
+"**OS Type**. This helps CloudStack and the hypervisor perform certain "
+"operations and make assumptions that improve the performance of the guest. "
+"Select one of the following."
+msgstr ""
+"**Type d'OS**. Ceci aide CloudStack et l'hyperviseur à effectuer certaines "
+"opérations et à faire des choix qui améliorent les performances de l'invité. "
+"Sélectionner une des options."
+
+#: ../../templates.rst:167 ../../templates.rst:244
+msgid "If the operating system of the stopped VM is listed, choose it."
+msgstr "Si le système d'exploitation de la VM arrêtée est listé, le choisir."
+
+#: ../../templates.rst:169 ../../templates.rst:246
+msgid "If the OS type of the stopped VM is not listed, choose Other."
+msgstr "Si le type d'OS de la VM stoppée n'est pas listé, choisir Autres."
+
+#: ../../templates.rst:171
+msgid ""
+"If you want to boot from this template in PV mode, choose Other PV (32-bit) or "
+"Other PV (64-bit). This choice is available only for XenServere:"
+msgstr ""
+"Si vous voulez démarrer depuis ce modèle dans le mode PV, choisir Autre PV (32-"
+"bit) ou Autre PV (64-bit). Ce choix n'est disponible que pour XenServer :"
+
+#: ../../templates.rst:176
+msgid ""
+"Generally you should not choose an older version of the OS than the version in "
+"the image. For example, choosing CentOS 5.4 to support a CentOS 6.2 image will "
+"in general not work. In those cases you should choose Other."
+msgstr ""
+"Généralement vous ne devriez pas choisir une version plus ancienne de l'OS que "
+"la version de l'image. Par exemple, choisir Cent0S 5.4 pour supporter une image "
+"CentOS 6.2 ne va pas en général fonctionner. Dans ces cas vous devriez choisir "
+"Autres."
+
+#: ../../templates.rst:181 ../../templates.rst:268
+msgid ""
+"**Public**. Choose Yes to make this template accessible to all users of this "
+"CloudStack installation. The template will appear in the Community Templates "
+"list. See `“Private and Public Templates” <#private-and-public-templates>`_."
+msgstr ""
+"**Public**. Choisir Oui pour rendre le modèle accessible à tous les "
+"utilisateurs de cette installation de CloudStack. Le modèle va apparaître dans "
+"la liste Modèles Communautaires. Voir `“Modèles privés et publics” <#private-"
+"and-public-templates>`_."
+
+#: ../../templates.rst:186 ../../templates.rst:260
+msgid ""
+"**Password Enabled**. Choose Yes if your template has the CloudStack password "
+"change script installed. See :ref:`adding-password-management-to-templates`."
+msgstr ""
+"**Mot de passe activé**. Choisir Oui si votre modèle a le script CloudStack de "
+"changement de mot de passe d'installé. Voir :ref:`adding-password-management-to-"
+"templates`."
+
+#: ../../templates.rst:190
+msgid "Click Add."
+msgstr "Cliquer sur Ajouter."
+
+#: ../../templates.rst:192
+msgid ""
+"The new template will be visible in the Templates section when the template "
+"creation process has been completed. The template is then available when "
+"creating a new VM."
+msgstr ""
+"Le nouveau modèle sera visible dans la section Modèles lorsque le processus de "
+"création du modèle sera terminé. Le modèle est alors disponible lorss de la "
+"création d'une nouvelle VM."
+
+#: ../../templates.rst:198
+msgid "Creating a Template from a Snapshot"
+msgstr "Créer un modèle depuis un instantanné"
+
+#: ../../templates.rst:200
+msgid ""
+"If you do not want to stop the VM in order to use the Create Template menu item "
+"(as described in `“Creating a Template from an Existing Virtual Machine” "
+"<#creating-a-template-from-an-existing-virtual-machine>`_), you can create a "
+"template directly from any snapshot through the CloudStack UI."
+msgstr ""
+"Si vous ne voulez pas stopper la VM pour créer l'entrée de menu Créer un modèle "
+"(comme décris dans `“Créer un modèle depuis une machine virtuelle existante” "
+"<#creating-a-template-from-an-existing-virtual-machine>`_), vous pouvez créer "
+"un modèle directement depuis n'importe quel instantané depuis l'interface "
+"CloudStack."
+
+#: ../../templates.rst:208
+msgid "Uploading Templates"
+msgstr "Télécharger des modèles"
+
+#: ../../templates.rst:212
+msgid "vSphere Templates and ISOs"
+msgstr "Modèles vSphere et ISOs"
+
+#: ../../templates.rst:214
+msgid ""
+"If you are uploading a template that was created using vSphere Client, be sure "
+"the OVA file does not contain an ISO. If it does, the deployment of VMs from "
+"the template will fail."
+msgstr ""
+"Si vous téléchargez un modèle qui a été créé en utilisant un client vSphere, "
+"assurez vous que le fichier OVA ne contienne pas d'ISO. Si c'est le cas, le "
+"déploiement de VMs depuis le modèle ne fonctionnera pas."
+
+#: ../../templates.rst:218
+msgid ""
+"Templates are uploaded based on a URL. HTTP is the supported access protocol. "
+"Templates are frequently large files. You can optionally gzip them to decrease "
+"upload times."
+msgstr ""
+"Les modèles sont téléchargés par une URL. HTTP est le protocole d'accès "
+"supporté. Les modèles sont souvent de gros fichiers. Vous pouvez "
+"optionnellement les gzipper pour réduire les temps de téléchargement."
+
+#: ../../templates.rst:222
+msgid "To upload a template:"
+msgstr "Pour télécharger un modèle :"
+
+#: ../../templates.rst:224
+msgid "In the left navigation bar, click Templates."
+msgstr "Dans la barre de navigation de gauche, cliquer sur Modèles."
+
+#: ../../templates.rst:226
+msgid "Click Register Template."
+msgstr "Cliquer sur Enregistrer un modèle."
+
+#: ../../templates.rst:228
+msgid "Provide the following:"
+msgstr "Fournir les informations suivantes :"
+
+#: ../../templates.rst:230
+msgid ""
+"**Name and Description**. These will be shown in the UI, so choose something "
+"descriptive."
+msgstr ""
+"**Nom et Description**. Ceux-ci seront affichés dans l'interface, alors choisir "
+"quelque chose de descriptif."
+
+#: ../../templates.rst:233
+msgid ""
+"**URL**. The Management Server will download the file from the specified URL, "
+"such as ``http://my.web.server/filename.vhd.gz``."
+msgstr ""
+"**URL**. Le serveur de gestion va télécharger le fichier depuis l'URL "
+"spécifiée, comme par exemple : ``http://my.web.server/filename.vhd.gz``."
+
+#: ../../templates.rst:236
+msgid ""
+"**Zone**. Choose the zone where you want the template to be available, or All "
+"Zones to make it available throughout CloudStack."
+msgstr ""
+"**Zone**. Choisir la zone dans laquelle vous aller rendre le modèle disponible, "
+"ou Toutes les Zones pour le rendre disponible dans tout CloudStack."
+
+#: ../../templates.rst:240
+msgid ""
+"**OS Type**: This helps CloudStack and the hypervisor perform certain "
+"operations and make assumptions that improve the performance of the guest. "
+"Select one of the following:"
+msgstr ""
+"**Type d'OS**. Ceci aide CloudStack et l'hyperviseur à effectuer certaines "
+"opérations et à faire des choix qui améliorent les performances de l'invité. "
+"Sélectionner une des options :"
+
+#: ../../templates.rst:249
+msgid ""
+"You should not choose an older version of the OS than the version in the image. "
+"For example, choosing CentOS 5.4 to support a CentOS 6.2 image will in general "
+"not work. In those cases you should choose Other."
+msgstr ""
+"Vous ne devriez pas choisir une version plus ancienne de l'OS que la version de "
+"l'image. Par exemple, choisir Cent0S 5.4 pour supporter une image CentOS 6.2 ne "
+"va pas en général fonctionner. Dans ces cas vous devriez choisir Autres."
+
+#: ../../templates.rst:254
+msgid ""
+"**Hypervisor**: The supported hypervisors are listed. Select the desired one."
+msgstr ""
+"**Hypervisor** :  Les hyperviseurs supportés sont listés. Choisir celui désiré."
+
+#: ../../templates.rst:257
+msgid "**Format**. The format of the template upload file, such as VHD or OVA."
+msgstr ""
+"**Format**. Le format du fichier du modèle téléchargé, comme par exemple VHD ou "
+"OVA."
+
+#: ../../templates.rst:264
+msgid ""
+"**Extractable**. Choose Yes if the template is available for extraction. If "
+"this option is selected, end users can download a full image of a template."
+msgstr ""
+"**Extractible**. Choisir Oui si le modèle est disponible pour l'extraction. Si "
+"cette option est sélectionnée, les utilisateurs finaux peuvent télécharger une "
+"image complète du modèle."
+
+#: ../../templates.rst:273
+msgid ""
+"**Featured**. Choose Yes if you would like this template to be more prominent "
+"for users to select. The template will appear in the Featured Templates list. "
+"Only an administrator can make a template Featured."
+msgstr ""
+"**Subventionné**.Choisir Oui si vous voulez que votre modèle soit mis plus en "
+"évidence lors de la sélection par l'utilisateur. Le modèle va apparaître dans "
+"la liste des modèles subventionnés. Seul un administrateur peut faire un modèle "
+"subventionné."
+
+#: ../../templates.rst:280
+msgid "Exporting Templates"
+msgstr "Exporter des modèles"
+
+#: ../../templates.rst:282
+msgid ""
+"End users and Administrators may export templates from the CloudStack. Navigate "
+"to the template in the UI and choose the Download function from the Actions "
+"menu."
+msgstr ""
+"Les utilisateurs finaux et les administrateurs peuvent exporter des modèles "
+"depuis CloudStack. Naviguer jusqu'au modèle dans l'interface et choisir la "
+"fonction Télécharger depuis le menu Actions."
+
+#: ../../templates/_create_linux.rst:18
+msgid "Creating a Linux Template"
+msgstr "Créer un modèle Linux"
+
+#: ../../templates/_create_linux.rst:20
+msgid ""
+"Linux templates should be prepared using this documentation in order to prepare "
+"your linux VMs for template deployment. For ease of documentation, the VM which "
+"you are configuring the template on will be referred to as \"Template Master\". "
+"This guide currently covers legacy setups which do not take advantage of "
+"UserData and cloud-init and assumes openssh-server is installed during "
+"installation."
+msgstr ""
+"Les modèles Linux devraient être préparé en utilisant cette documentation dans "
+"le but de préparer vos VMs linux pour le déploiement de modèle. Pour les "
+"besoins de la documentation, la VM que vous être en train de configurer pour "
+"faire office de modèle sera référencer comme \"Template Master\". Ce guide pour "
+"le moment ne couvre que les configurations n'utilisant pas les UserData et "
+"cloud-init et présume qu'un serveur openssh est installé durant l'installation."
+
+#: ../../templates/_create_linux.rst:27
+msgid "An overview of the procedure is as follow:"
+msgstr "Une vue d'ensemble de la procédure est :"
+
+#: ../../templates/_create_linux.rst:29
+msgid "Upload your Linux ISO."
+msgstr "Télécharger votre ISO Linux"
+
+#: ../../templates/_create_linux.rst:31 ../../templates/_create_windows.rst:35
+msgid ""
+"For more information, see `“Adding an ISO” <virtual_machines.html#adding-an-"
+"iso>`_."
+msgstr ""
+"Pour plus d'informations, voir `“Ajouter une ISO” <virtual_machines.html#adding-"
+"an-iso>`_."
+
+#: ../../templates/_create_linux.rst:34 ../../templates/_create_windows.rst:38
+msgid "Create a VM Instance with this ISO."
+msgstr "Créer une instance de VM avec cet ISO."
+
+#: ../../templates/_create_linux.rst:36 ../../templates/_create_windows.rst:40
+msgid ""
+"For more information, see `“Creating VMs” <virtual_machines.html#creating-"
+"vms>`_."
+msgstr ""
+"Pour plus d'informations, voir `“Créer des VMs” <virtual_machines.html#creating-"
+"vms>`_."
+
+#: ../../templates/_create_linux.rst:39
+msgid "Prepare the Linux VM"
+msgstr "Préparer la VM Linux"
+
+#: ../../templates/_create_linux.rst:41
+msgid "Create a template from the VM."
+msgstr "Créer un modèle depuis la VM."
+
+#: ../../templates/_create_linux.rst:43
+msgid ""
+"For more information, see `“Creating a Template from an Existing Virtual "
+"Machine” <#creating-a-template-from-an-existing-virtual-machine>`_."
+msgstr ""
+"Pour plus d'informations, voir `“Créer un modèle depuis une machine virtuelle "
+"existante” <#creating-a-template-from-an-existing-virtual-machine>`_."
+
+#: ../../templates/_create_linux.rst:48
+msgid "System preparation for Linux"
+msgstr "Préparation du système pour Linux"
+
+#: ../../templates/_create_linux.rst:50
+msgid ""
+"The following steps will prepare a basic Linux installation for templating."
+msgstr ""
+"Les étapes suivantes vont préparer une installation Linux basique pour devenir "
+"un modèle."
+
+#: ../../templates/_create_linux.rst:53
+msgid "**Installation**"
+msgstr "**Installation**"
+
+#: ../../templates/_create_linux.rst:55
+msgid ""
+"It is good practice to name your VM something generic during installation, this "
+"will ensure components such as LVM do not appear unique to a machine. It is "
+"recommended that the name of \"localhost\" is used for installation."
+msgstr ""
+"C'est une bonne pratique de nommer votre VM avec quelque chose de générique "
+"durant l'installation, ce qui va assurer que des composants comme LVM "
+"n'apparaisse pas unique à une machine. Il est recommandé que le nom \"localhost"
+"\" soit utilisé pour l'installation."
+
+#: ../../templates/_create_linux.rst:61
+msgid ""
+"For CentOS, it is necessary to take unique identification out of the interface "
+"configuration file, for this edit /etc/sysconfig/network-scripts/ifcfg-eth0 and "
+"change the content to the following."
+msgstr ""
+"Pour CentOS, il est nécessaire de supprimer l'identifiant unique du fichier de "
+"configuration, pour cela éditer le fichier /etc/sysconfig/network-scripts/ifcfg-"
+"eth0 et changer le contenu pour celui-ci."
+
+#: ../../templates/_create_linux.rst:73
+msgid "The next steps updates the packages on the Template Master."
+msgstr "Les étapes suivantes mettent à jour les paquets sur le modèle maître."
+
+#: ../../templates/_create_linux.rst:75 ../../templates/_create_linux.rst:122
+#: ../../templates/_create_linux.rst:179
+msgid "Ubuntu"
+msgstr "Ubuntu"
+
+#: ../../templates/_create_linux.rst:85 ../../templates/_create_linux.rst:186
+msgid "CentOS"
+msgstr "CentOS"
+
+#: ../../templates/_create_linux.rst:93
+msgid "**Password management**"
+msgstr "**Gestion du mot de passe**"
+
+#: ../../templates/_create_linux.rst:96
+msgid ""
+"If preferred, custom users (such as ones created during the Ubuntu "
+"installation) should be removed. First ensure the root user account is enabled "
+"by giving it a password and then login as root to continue."
+msgstr ""
+"De préférence, les utilisateurs personnalisés (comme comme ceux créés durant "
+"l'installation d'Ubuntu) doivent être retirés. D'abord s'assurer que compte de "
+"l'utilisateur root est activé en lui donnant un mot de passe et ensuite se "
+"connecter en root pour continuer."
+
+#: ../../templates/_create_linux.rst:105
+msgid ""
+"As root, remove any custom user accounts created during the installation "
+"process."
+msgstr ""
+"En tant que root, supprimer tous les comptes utilisateurs personnalisés créés "
+"durant le processus d'installation."
+
+#: ../../templates/_create_linux.rst:112
+msgid ""
+"See :ref:`adding-password-management-to-templates` for instructions to setup "
+"the password management script, this will allow CloudStack to change your root "
+"password from the web interface."
+msgstr ""
+"Voir :ref:`adding-password-management-to-templates` pour les instructions pour "
+"configurer le script de gestion du mot de passe, qui permettra à CloudStack de "
+"changer le mot de passe root depuis l'interface web."
+
+#: ../../templates/_create_linux.rst:116
+msgid "**Hostname Management**"
+msgstr "**Gestion du nom de machine**"
+
+#: ../../templates/_create_linux.rst:118
+msgid ""
+"CentOS configures the hostname by default on boot. Unfortunately Ubuntu does "
+"not have this functionality, for Ubuntu installations use the following steps."
+msgstr ""
+"CentOS configure le nom d'hôte par défaut au démarrage. Malheureusement, Ubuntu "
+"n'a pas cette fonctionnalité, pour les installations d'Ubuntu utiliser les "
+"étapes suivantes :"
+
+#: ../../templates/_create_linux.rst:124
+msgid ""
+"The hostname of a Templated VM is set by a custom script in `/etc/dhcp/dhclient-"
+"exit-hooks.d`, this script first checks if the current hostname is localhost, "
+"if true, it will get the host-name, domain-name and fixed-ip from the DHCP "
+"lease file and use those values to set the hostname and append the `/etc/hosts` "
+"file for local hostname resolution. Once this script, or a user has changed the "
+"hostname from localhost, it will no longer adjust system files regardless of "
+"its new hostname. The script also recreates openssh-server keys, which should "
+"have been deleted before templating (shown below). Save the following script to "
+"`/etc/dhcp/dhclient-exit-hooks.d/sethostname`, and adjust the permissions."
+msgstr ""
+"Le nom d'hôte d'une VM déployée depuis un modèle est fixé par un script "
+"personnalisé dans `/etc/dhcp/dhclient-exit-hooks.d`, ce script vérifie d'abord "
+"si la valeur courante est localhost, si c'est le cas, il va obtenir le nom "
+"d'hôte, le nom de domaine et l'adresse IP fixe depuis le fichier de bail DHCP "
+"et utiliser ces valeurs pour fixer le nom d'hôte et l'ajouter le fichier `/etc/"
+"hosts` pour la résolution locale du nom d'hôte. Une fois que ce script, ou un "
+"utilisateur, a changé le nom d'hôte, il ne va plus ajuster les fichiers "
+"systèmes en relation avec son nouveau nom d'hôte. Le script recrée également "
+"les clefs du serveur SSH, qui ont été supprimées juste avant la transformation "
+"en modèle (voir ci-dessous). Sauvegarder le script suivant sous `/etc/dhcp/"
+"dhclient-exit-hooks.d/sethostname`, et ajuster les permissions."
+
+#: ../../templates/_create_linux.rst:167
+msgid ""
+"The following steps should be run when you are ready to template your Template "
+"Master. If the Template Master is rebooted during these steps you will have to "
+"run all the steps again. At the end of this process the Template Master should "
+"be shutdown and the template created in order to create and deploy the final "
+"template."
+msgstr ""
+"Les étapes suivantes devraient être lancée lorsque vous être prêt à transformer "
+"votre Modèle Maître en modèle. Si le Modèle Maître est redémarré durant ces "
+"étapes vous devrez relancer toutes les étapes à nouveau. A la fin de ce "
+"processus, le Modèle Maître devrait être arrêté et le modèle créé pour créer et "
+"déployer le modèle final."
+
+#: ../../templates/_create_linux.rst:173
+msgid "**Remove the udev persistent device rules**"
+msgstr "**Supprimer les règles udev des périphériques persistants**"
+
+#: ../../templates/_create_linux.rst:175
+msgid ""
+"This step removes information unique to your Template Master such as network "
+"MAC addresses, lease files and CD block devices, the files are automatically "
+"generated on next boot."
+msgstr ""
+"Cet étape retire les informations unique de votre Modèle Maître comme les "
+"adresses réseaux MAC, les fichiers de baux et les périphériques de type bloc "
+"comme les CD. Les fichiers sont générés automatiquement au démarrage suivant;"
+
+#: ../../templates/_create_linux.rst:193
+msgid "**Remove SSH Keys**"
+msgstr "**Supprimer les clefs SSH**"
+
+#: ../../templates/_create_linux.rst:195
+msgid ""
+"This step is to ensure all your Templated VMs do not have the same SSH keys, "
+"which would decrease the security of the machines dramatically."
+msgstr ""
+"Cet étape s'assure que toutes vos VMs issuent de modèles n'aient pas les mêmes "
+"clefs SSH, ce qui réduirait la sécurité de vos machines dramatiquement."
+
+#: ../../templates/_create_linux.rst:203
+msgid "**Cleaning log files**"
+msgstr "**Nettoyer les fichiers de logs**"
+
+#: ../../templates/_create_linux.rst:205
+msgid "It is good practice to remove old logs from the Template Master."
+msgstr ""
+"C'est une bonne habitude de supprimer les vieux fichiers de logs du Modèle "
+"Maître."
+
+#: ../../templates/_create_linux.rst:214
+msgid "**Setting hostname**"
+msgstr "**Configurer le nom d'hôte**"
+
+#: ../../templates/_create_linux.rst:216
+msgid ""
+"In order for the Ubuntu DHCP script to function and the CentOS dhclient to set "
+"the VM hostname they both require the Template Master's hostname to be "
+"\"localhost\", run the following commands to change the hostname."
+msgstr ""
+"Pour que le script DHCP pour Ubuntu fonctionne et que le client dhclient de "
+"CentOS puisse fixer le nom d'hôte ils nécessitent tous les deux que le nom "
+"d'hôte du Modèle Maître soit \"localhost\". Lancer les commandes suivantes pour "
+"changer le nom d'hôte."
+
+#: ../../templates/_create_linux.rst:226
+msgid "**Set user password to expire**"
+msgstr "**Forcer l'expiration du mot de passe utilisateur**"
+
+#: ../../templates/_create_linux.rst:228
+msgid ""
+"This step forces the user to change the password of the VM after the template "
+"has been deployed."
+msgstr ""
+"Cet étape force l'utilisateur à changer le mot de passe de la VM après que le "
+"modèle ait été déployé."
+
+#: ../../templates/_create_linux.rst:235
+msgid "**Clearing User History**"
+msgstr "**Nettoyer l'historique utilisateur**"
+
+#: ../../templates/_create_linux.rst:237
+msgid "The next step clears the bash commands you have just run."
+msgstr "L'étape suivante retire les commandes bash que vous venez de lancer."
+
+#: ../../templates/_create_linux.rst:244
+msgid "**Shutdown the VM**"
+msgstr "**Éteindre la VM**"
+
+#: ../../templates/_create_linux.rst:246
+msgid "Your now ready to shutdown your Template Master and create a template!"
+msgstr ""
+"Vous êtes maintenant prêt pour éteindre votre Modèle Maître et créer un modèle !"
+
+#: ../../templates/_create_linux.rst:253
+msgid "**Create the template!**"
+msgstr "**Créer le modèle !**"
+
+#: ../../templates/_create_linux.rst:255
+msgid ""
+"You are now ready to create the template, for more information see `“Creating a "
+"Template from an Existing Virtual Machine” <#creating-a-template-from-an-"
+"existing-virtual-machine>`_."
+msgstr ""
+"Vous êtes maintenant prêts à créer le modèle, pour plus d'informations voir "
+"`“Créer un modèle depuis une machine virtuelle existante” <#creating-a-template-"
+"from-an-existing-virtual-machine>`_."
+
+#: ../../templates/_create_linux.rst:260
+msgid ""
+"Templated VMs for both Ubuntu and CentOS may require a reboot after "
+"provisioning in order to pickup the hostname."
+msgstr ""
+"Les VMs provenant d'un modèle sous Ubuntu ou CentOS peuvent nécessiter un "
+"redémarrage après le provisionnement afin de changer le nom d'hôte."
+
+#: ../../templates/_create_windows.rst:18
+msgid "Creating a Windows Template"
+msgstr "Créer un modèle Windows"
+
+#: ../../templates/_create_windows.rst:20
+msgid ""
+"Windows templates must be prepared with Sysprep before they can be provisioned "
+"on multiple machines. Sysprep allows you to create a generic Windows template "
+"and avoid any possible SID conflicts."
+msgstr ""
+"Les modèles Windows doivent être préparées avec Sysprep avant de pouvoir être "
+"provisionnés sur plusieurs machines. Sysprep vous permet de créer un modèle "
+"générique Windows et supprime toute possibilité de conflits de SID."
+
+#: ../../templates/_create_windows.rst:25
+msgid ""
+"(XenServer) Windows VMs running on XenServer require PV drivers, which may be "
+"provided in the template or added after the VM is created. The PV drivers are "
+"necessary for essential management functions such as mounting additional "
+"volumes and ISO images, live migration, and graceful shutdown."
+msgstr ""
+"(XenServer) Les VMs Windows fonctionnant sous XenServer nécessitent des drivers "
+"PV, qui peuvent être fourni dans le modèle ou ajouter après que la VM soit "
+"créée. Les drivers PV sont nécessaires pour les fonctions essentielles de "
+"gesion comme monter des volumes additionels et des images ISO, la migration à "
+"chaud, et l'arrêt correcte."
+
+#: ../../templates/_create_windows.rst:31
+msgid "An overview of the procedure is as follows:"
+msgstr "Une vue d'ensemble de la procédure est :"
+
+#: ../../templates/_create_windows.rst:33
+msgid "Upload your Windows ISO."
+msgstr "Télécharger votre ISO Windows."
+
+#: ../../templates/_create_windows.rst:43
+msgid ""
+"Follow the steps in Sysprep for Windows Server 2008 R2 (below) or Sysprep for "
+"Windows Server 2003 R2, depending on your version of Windows Server"
+msgstr ""
+"Suivre les étapes dans Sysprep pour Windows Server 2008 R2 (ci-dessous) ou "
+"Sysprep pour Windows Server 2003 R2, en fonction de votre version de Windows "
+"Server."
+
+#: ../../templates/_create_windows.rst:47
+msgid ""
+"The preparation steps are complete. Now you can actually create the template as "
+"described in Creating the Windows Template."
+msgstr ""
+"Les étapes de préparations sont terminées. Vous pouvez maintenant créer un "
+"modèle comme décrit dans Créer un modèle Windows."
+
+#: ../../templates/_create_windows.rst:52
+msgid "System Preparation for Windows Server 2008 R2"
+msgstr "Préparation du système pour Windows Server 2008 R2"
+
+#: ../../templates/_create_windows.rst:54
+msgid ""
+"For Windows 2008 R2, you run Windows System Image Manager to create a custom "
+"sysprep response XML file. Windows System Image Manager is installed as part of "
+"the Windows Automated Installation Kit (AIK). Windows AIK can be downloaded "
+"from `Microsoft Download Center <http://www.microsoft.com/en-us/download/"
+"details.aspx?id=9085>`_."
+msgstr ""
+"Pour Windows 2008 R2, vous lancer Windows System Image Manager pour créer un "
+"fichier XML de réponse sysprep personnalisé. Windows System Image Manager est "
+"installé comme partie du Windows Automated Installation Kit (AIK). Windows AIK "
+"peut être téléchargé depuis `Microsoft Download Center <http://www.microsoft."
+"com/en-us/download/details.aspx?id=9085>`_."
+
+#: ../../templates/_create_windows.rst:60
+msgid "Use the following steps to run sysprep for Windows 2008 R2:"
+msgstr "Utiliser les étapes suivantes pour lancer sysprep pour Windows 2008 R2 :"
+
+#: ../../templates/_create_windows.rst:63
+msgid ""
+"The steps outlined here are derived from the excellent guide by Charity "
+"Shelbourne, originally published at `Windows Server 2008 Sysprep Mini-Setup. "
+"<http://blogs.technet.com/askcore/archive/2008/10/31/automating-the-oobe-"
+"process-during-windows-server-2008-sysprep-mini-setup.aspx>`_"
+msgstr ""
+"Les étapes décrites ici proviennent de l'excellent guide de Charity Shelbourne, "
+"publié à l'origine à `Windows Server 2008 Sysprep Mini-Setup. <http://blogs."
+"technet.com/askcore/archive/2008/10/31/automating-the-oobe-process-during-"
+"windows-server-2008-sysprep-mini-setup.aspx>`_"
+
+#: ../../templates/_create_windows.rst:68
+msgid "Download and install the Windows AIK"
+msgstr "Télécharger et installer Windows AIK"
+
+#: ../../templates/_create_windows.rst:71
+msgid ""
+"Windows AIK should not be installed on the Windows 2008 R2 VM you just created. "
+"Windows AIK should not be part of the template you create. It is only used to "
+"create the sysprep answer file."
+msgstr ""
+"Windows AIK ne devrait pas être installé sur la VM Windows 2008 R2 que vous "
+"venez de créer. Windows AIK ne devrait pas faire partie d'un modèle que vous "
+"créez. Il est juste utilisé pour créer le fichier de réponse sysprep."
+
+#: ../../templates/_create_windows.rst:75
+msgid ""
+"Copy the install.wim file in the \\\\sources directory of the Windows 2008 R2 "
+"installation DVD to the hard disk. This is a very large file and may take a "
+"long time to copy. Windows AIK requires the WIM file to be writable."
+msgstr ""
+"Copier le fichier install.wim du répertoire \\\\sources du DVD d'installation "
+"Windows 2008 R2 sur le disque dur. C'est un très gros fichier et peut mettre du "
+"temps à se copier. Windows AIK nécessite que le fichier WIM soit en écriture."
+
+#: ../../templates/_create_windows.rst:80
+msgid "Start the Windows System Image Manager, which is part of the Windows AIK."
+msgstr ""
+"Démarrer le Windows System Image Manager, qui est une partie du Windows AIK."
+
+#: ../../templates/_create_windows.rst:83
+msgid ""
+"In the Windows Image pane, right click the Select a Windows image or catalog "
+"file option to load the install.wim file you just copied."
+msgstr ""
+"Dans le paneau Image Windows, clic-droit sur Sélectionner une image Windows ou "
+"sur option Fichier catalogue pour charger le fichier install.wim que vous venez "
+"de copier."
+
+#: ../../templates/_create_windows.rst:86
+msgid "Select the Windows 2008 R2 Edition."
+msgstr "Sélectionner Windows 2008 R2 Edition."
+
+#: ../../templates/_create_windows.rst:88
+msgid ""
+"You may be prompted with a warning that the catalog file cannot be opened. "
+"Click Yes to create a new catalog file."
+msgstr ""
+"Vous pouvez être avertit par une alerte que le fichier catalogue ne peut pas "
+"être ouvert. Cliquer sur Oui pour créer un nouveau fichier catalogue."
+
+#: ../../templates/_create_windows.rst:91
+msgid "In the Answer File pane, right click to create a new answer file."
+msgstr ""
+"Dans le paneau Fichier Réponse, cliquer droit pour créer un nouveau fichier de "
+"réponse."
+
+#: ../../templates/_create_windows.rst:93
+msgid ""
+"Generate the answer file from the Windows System Image Manager using the "
+"following steps:"
+msgstr ""
+"Générer un fichier de réponse depuis Windows System Image Manager en utilisant "
+"les étapes suivantes :"
+
+#: ../../templates/_create_windows.rst:96
+msgid ""
+"The first page you need to automate is the Language and Country or Region "
+"Selection page. To automate this, expand Components in your Windows Image pane, "
+"right-click and add the Microsoft-Windows-International-Core setting to Pass 7 "
+"oobeSystem. In your Answer File pane, configure the InputLocale, SystemLocale, "
+"UILanguage, and UserLocale with the appropriate settings for your language and "
+"country or region. Should you have a question about any of these settings, you "
+"can right-click on the specific setting and select Help. This will open the "
+"appropriate CHM help file with more information, including examples on the "
+"setting you are attempting to configure."
+msgstr ""
+"La première page que vous devez automatiser est la page de Selection de Langage "
+"et de Pays ou de Région. Pour automatiser cela, développer les composants dans "
+"votre panneau Image Windows, clic-droit et ajouter le paramètre Microsoft-"
+"Windows-International-Core pour passer 7 oobeSystem. Dans votre panneau Fichier "
+"de réponse, configurer le InputLocale, SystemLocale, UILanguage et UserLocale "
+"avec les paramètres appropriés pour votre langue et pays ou région. Si vous "
+"avez une question à propos de n'importe quel paramètre, vous pouver faire un "
+"clic-droit sur le paramètre spécifique et sélectionner Aide. Cela va ouvrir le "
+"fichier d'aide CHM approprié avec plus d'informations, incluant des examples "
+"sur le paramètre que vous êtes en train d'essayer de configurer."
+
+#: ../../templates/_create_windows.rst:108
+msgid "|sysmanager.png|"
+msgstr "|sysmanager.png|"
+
+#: ../../templates/_create_windows.rst:110
+msgid ""
+"You need to automate the Software License Terms Selection page, otherwise known "
+"as the End-User License Agreement (EULA). To do this, expand the Microsoft-"
+"Windows-Shell-Setup component. High-light the OOBE setting, and add the setting "
+"to the Pass 7 oobeSystem. In Settings, set HideEULAPage true."
+msgstr ""
+"Vous devez automatiser la page de Sélection des Termes de Licence Logiciel, "
+"aussi connue comme End-User Licence Agreement (EULA). Pour cela, étendre le "
+"composant Microsoft-Windows-Shell-Setup. Surligner le paramètre OOBE et ajouter "
+"le paramètre à la Pass 7 oobeSystem. Dans paramètres, fixer HideEULAPage à vrai."
+
+#: ../../templates/_create_windows.rst:116
+msgid "|software-license.png|"
+msgstr "|software-license.png|"
+
+#: ../../templates/_create_windows.rst:118
+msgid ""
+"Make sure the license key is properly set. If you use MAK key, you can just "
+"enter the MAK key on the Windows 2008 R2 VM. You need not input the MAK into "
+"the Windows System Image Manager. If you use KMS host for activation you need "
+"not enter the Product Key. Details of Windows Volume Activation can be found at "
+"`http://technet.microsoft.com/en-us/library/bb892849.aspx <http://technet."
+"microsoft.com/en-us/library/bb892849.aspx>`_"
+msgstr ""
+"Assurez vous que la clé de licence est correctement configurée. Si vous "
+"utilisez une clé MAK, vous pouvez juste saisir la clé MAK sur la VM Windows "
+"2008 R2. Vous ne devez pas introduire la MAK dans le Windows System Image "
+"Manager. Si vous utilisez un hôte KMS pour l'activation vous ne devez pas "
+"saisir de clé de produit. Des détails sur l'activation en volume de Windows "
+"peuvent être trouvés ici `http://technet.microsoft.com/en-us/library/bb892849."
+"aspx <http://technet.microsoft.com/en-us/library/bb892849.aspx>`_"
+
+#: ../../templates/_create_windows.rst:126
+msgid ""
+"You need to automate is the Change Administrator Password page. Expand the "
+"Microsoft-Windows-Shell-Setup component (if it is not still expanded), expand "
+"UserAccounts, right-click on AdministratorPassword, and add the setting to the "
+"Pass 7 oobeSystem configuration pass of your answer file. Under Settings, "
+"specify a password next to Value."
+msgstr ""
+"Vous devez automatiser la page Modifier le mot de passe administrateur. "
+"Développez le composant Microsoft-Windows-Shell-Setup (s'il n'est pas encore "
+"développé), développez UserAccounts, cliquez avec le bouton droit sur "
+"AdministratorPassword et ajoutez le paramètre de configuration Pass 7 "
+"oobeSystem de votre fichier de réponses. Sous Paramètres, spécifiez un mot de "
+"passe après Valeur."
+
+#: ../../templates/_create_windows.rst:133
+msgid "|change-admin-password.png|"
+msgstr "|change-admin-password.png|"
+
+#: ../../templates/_create_windows.rst:135
+msgid ""
+"You may read the AIK documentation and set many more options that suit your "
+"deployment. The steps above are the minimum needed to make Windows unattended "
+"setup work."
+msgstr ""
+"Vous devriez lire la documentation AIK et configurer beaucoup plus d'options "
+"pour pour convenir à votre déploiement Les étapes ci-dessus sont le minimum "
+"requis pour rendre fonctionnel la configuration sans assistance de Windows."
+
+#: ../../templates/_create_windows.rst:139
+msgid ""
+"Save the answer file as unattend.xml. You can ignore the warning messages that "
+"appear in the validation window."
+msgstr ""
+"Sauvegarder le fichier de réponse sous unattend.xml. Vous pouvez ignorer les "
+"messages d'alertes qui apparaissent dans la fenêtre de validation."
+
+#: ../../templates/_create_windows.rst:142
+msgid ""
+"Copy the unattend.xml file into the c:\\\\windows\\\\system32\\\\sysprep "
+"directory of the Windows 2008 R2 Virtual Machine"
+msgstr ""
+"Copier le fichier unattend.xml sous le dossier c:\\\\windows\\\\system32\\"
+"\\sysprep de la machine virtuelle Windows 2008 R2."
+
+#: ../../templates/_create_windows.rst:145
+msgid ""
+"Once you place the unattend.xml file in c:\\\\windows\\\\system32\\\\sysprep "
+"directory, you run the sysprep tool as follows:"
+msgstr ""
+"Une fois que vous avez placé le fichier unattend.xml dans le dossier c:\\"
+"\\windows\\\\system32\\\\sysprep, vous lancer l'outil sysprep comme ci-dessous :"
+
+#: ../../templates/_create_windows.rst:154
+msgid ""
+"The Windows 2008 R2 VM will automatically shut down after sysprep is complete."
+msgstr ""
+"La VM Windows 2008 R2 va s'éteindre automatiquement après que le sysprep soit "
+"terminé."
+
+#: ../../templates/_create_windows.rst:159
+msgid "System Preparation for Windows Server 2003 R2"
+msgstr "Préparation du système pour Windows Server 2003 R2"
+
+#: ../../templates/_create_windows.rst:161
+msgid ""
+"Earlier versions of Windows have a different sysprep tool. Follow these steps "
+"for Windows Server 2003 R2."
+msgstr ""
+"Les versions précédentes de Windows ont un outil sysprep différent. Suivre ces "
+"étapes pour Windows Server 2003 R2."
+
+#: ../../templates/_create_windows.rst:164
+msgid ""
+"Extract the content of \\\\support\\\\tools\\\\deploy.cab on the Windows "
+"installation CD into a directory called c:\\\\sysprep on the Windows 2003 R2 VM."
+msgstr ""
+"Extrayez le contenu de \\\\support\\\\tools\\\\deploy.cab du CD d'installation "
+"de Windows dans le répertoire appelé c:\\\\sysprep dans la VM Windows 2003 R2."
+
+#: ../../templates/_create_windows.rst:168
+msgid "Run c:\\\\sysprep\\\\setupmgr.exe to create the sysprep.inf file."
+msgstr "Lancer c:\\\\sysprep\\\\setupmgr.exe pour créer le fichier sysprep.inf."
+
+#: ../../templates/_create_windows.rst:170
+msgid "Select Create New to create a new Answer File."
+msgstr "Sélectionner Créer un nouveau pour créer un nouveau fichier de réponses."
+
+#: ../../templates/_create_windows.rst:172
+msgid "Enter “Sysprep setup” for the Type of Setup."
+msgstr "Entrer \"Sysprep setup\" pour le type de Setup."
+
+#: ../../templates/_create_windows.rst:174
+msgid "Select the appropriate OS version and edition."
+msgstr "Sélectionner la version et l'édition appropriée d'OS."
+
+#: ../../templates/_create_windows.rst:176
+msgid ""
+"On the License Agreement screen, select “Yes fully automate the installation”."
+msgstr ""
+"Dans l'écran Agrément Licence, sélectionner \"Oui automatisation complète de "
+"l'installation\"."
+
+#: ../../templates/_create_windows.rst:179
+msgid "Provide your name and organization."
+msgstr "Fournir le nom et l'organisation."
+
+#: ../../templates/_create_windows.rst:181
+msgid "Leave display settings at default."
+msgstr "Laisser les paramètres d'affichage par défaut."
+
+#: ../../templates/_create_windows.rst:183
+msgid "Set the appropriate time zone."
+msgstr "Sélectionner la zone horaire appropriée."
+
+#: ../../templates/_create_windows.rst:185
+msgid "Provide your product key."
+msgstr "Fournir votre clef de produit."
+
+#: ../../templates/_create_windows.rst:187
+msgid "Select an appropriate license mode for your deployment"
+msgstr "Sélectionner un mode de licence approprié pour votre déploiement"
+
+#: ../../templates/_create_windows.rst:189
+msgid "Select “Automatically generate computer name”."
+msgstr "Sélectionner \"Générer automatiquement un nom d'ordinateur\"."
+
+#: ../../templates/_create_windows.rst:191
+msgid ""
+"Type a default administrator password. If you enable the password reset "
+"feature, the users will not actually use this password. This password will be "
+"reset by the instance manager after the guest boots up."
+msgstr ""
+"Saisissez un mot de passe par défaut pour l'administrateur. Si vous activez la "
+"fonctionnalité de réinitialisation de mot de passe, les utilisateurs "
+"n'utiliseront pas ce mot de passe. Ce mot de passe sera réinitialisé par le "
+"gestionnaire d'instance après les démarrage des invités."
+
+#: ../../templates/_create_windows.rst:196
+msgid "Leave Network Components at “Typical Settings”."
+msgstr "Laisser les Composants Réseaux à \"Paramètres par défaut\"."
+
+#: ../../templates/_create_windows.rst:198
+msgid "Select the “WORKGROUP” option."
+msgstr "Sélectionner l'option \"WORKGROUP\"."
+
+#: ../../templates/_create_windows.rst:200
+msgid "Leave Telephony options at default."
+msgstr "Laisser les options Téléphonie par défaut."
+
+#: ../../templates/_create_windows.rst:202
+msgid "Select appropriate Regional Settings."
+msgstr "Sélectionner les paramètres Régionaux appropriés."
+
+#: ../../templates/_create_windows.rst:204
+msgid "Select appropriate language settings."
+msgstr "Sélectionner les paramètres de langage approprié."
+
+#: ../../templates/_create_windows.rst:206
+msgid "Do not install printers."
+msgstr "Ne pas installer d'imprimantes."
+
+#: ../../templates/_create_windows.rst:208
+msgid "Do not specify “Run Once commands”."
+msgstr "Ne pas spécifier \"Lancer une fois les commandes\"."
+
+#: ../../templates/_create_windows.rst:210
+msgid "You need not specify an identification string."
+msgstr "Vous ne devez pas spécifier une chaîne d'identification."
+
+#: ../../templates/_create_windows.rst:212
+msgid "Save the Answer File as c:\\\\sysprep\\\\sysprep.inf."
+msgstr "Sauvegarde le fichier de réponse sous c:\\\\sysprep\\\\sysprep.inf."
+
+#: ../../templates/_create_windows.rst:214
+msgid "Run the following command to sysprep the image:"
+msgstr "Lancer la commande suivante pour syspreper l'image :"
+
+#: ../../templates/_create_windows.rst:220
+msgid "After this step the machine will automatically shut down"
+msgstr "Après cette étape la machine va automatiquement s'arrêter"
+
+#: ../../templates/_import_ami.rst:18
+msgid "Importing Amazon Machine Images"
+msgstr "Importer des images de Machines Amazon"
+
+#: ../../templates/_import_ami.rst:20
+msgid ""
+"The following procedures describe how to import an Amazon Machine Image (AMI) "
+"into CloudStack when using the XenServer hypervisor."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:23
+msgid ""
+"Assume you have an AMI file and this file is called CentOS\\_6.2\\_x64. Assume "
+"further that you are working on a CentOS host. If the AMI is a Fedora image, "
+"you need to be working on a Fedora host initially."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:27
+msgid ""
+"You need to have a XenServer host with a file-based storage repository (either "
+"a local ext3 SR or an NFS SR) to convert to a VHD once the image file has been "
+"customized on the Centos/Fedora host."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:32
+msgid ""
+"When copying and pasting a command, be sure the command has pasted as a single "
+"line before executing. Some document viewers may introduce unwanted line breaks "
+"in copied text."
+msgstr ""
+"Lors du copier/coller d'une commande, soyez certain que la commande est collée "
+"sur une seule ligne avant de l'exécuter. Certains lecteur de document peuvent "
+"introduire un saut de ligne indésirable dans le texte copié."
+
+#: ../../templates/_import_ami.rst:36
+msgid "To import an AMI:"
+msgstr "Pour importer un AMI"
+
+#: ../../templates/_import_ami.rst:38
+msgid "Set up loopback on image file:"
+msgstr "Configurer la boucle interne sur le fichier image :"
+
+#: ../../templates/_import_ami.rst:45
+msgid ""
+"Install the kernel-xen package into the image. This downloads the PV kernel and "
+"ramdisk to the image."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:52
+msgid "Create a grub entry in /boot/grub/grub.conf."
+msgstr "Créer une entrée grub dans /boot/grub/grub.conf."
+
+#: ../../templates/_import_ami.rst:60
+msgid ""
+"Determine the name of the PV kernel that has been installed into the image."
+msgstr "Déterminer le nom du kernel PV qui a été installé dans l'image."
+
+#: ../../templates/_import_ami.rst:73
+msgid ""
+"Xen kernels/ramdisk always end with \"xen\". For the kernel version you choose, "
+"there has to be an entry for that version under lib/modules, there has to be an "
+"initrd and vmlinuz corresponding to that. Above, the only kernel that satisfies "
+"this condition is 2.6.18-164.15.1.el5xen."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:79
+msgid ""
+"Based on your findings, create an entry in the grub.conf file. Below is an "
+"example entry."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:92
+msgid "Edit etc/fstab, changing “sda1” to “xvda” and changing “sdb” to “xvdb”."
+msgstr ""
+"Editer le fichier /etc/fstab, changer \"sda1\" par \"svda\" et changer \"sdb\" "
+"par \"svdb\""
+
+#: ../../templates/_import_ami.rst:104
+msgid ""
+"Enable login via the console. The default console device in a XenServer system "
+"is xvc0. Ensure that etc/inittab and etc/securetty have the following lines "
+"respectively:"
+msgstr ""
+
+#: ../../templates/_import_ami.rst:115
+msgid ""
+"Ensure the ramdisk supports PV disk and PV network. Customize this for the "
+"kernel version you have determined above."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:125
+msgid "Change the password."
+msgstr "Changer le mot de passe."
+
+#: ../../templates/_import_ami.rst:135
+msgid "Exit out of chroot."
+msgstr "Sortir du chroot."
+
+#: ../../templates/_import_ami.rst:141
+msgid "Check `etc/ssh/sshd_config` for lines allowing ssh login using a password."
+msgstr ""
+"Vérifier que `/etc/ssh/sshd_config` contienne les lignes autorisant la "
+"connexion SSH par mot de passe."
+
+#: ../../templates/_import_ami.rst:150
+msgid ""
+"If you need the template to be enabled to reset passwords from the CloudStack "
+"UI or API, install the password change script into the image at this point. "
+"See :ref:`adding-password-management-to-templates`."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:154
+msgid "Unmount and delete loopback mount."
+msgstr "Démonter et supprimer le montage en boucle interne."
+
+#: ../../templates/_import_ami.rst:161
+msgid ""
+"Copy the image file to your XenServer host's file-based storage repository. In "
+"the example below, the Xenserver is \"xenhost\". This XenServer has an NFS "
+"repository whose uuid is a9c5b8c8-536b-a193-a6dc-51af3e5ff799."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:170
+msgid "Log in to the Xenserver and create a VDI the same size as the image."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:180
+msgid "Import the image file into the VDI. This may take 10–20 minutes."
+msgstr "Importer le fichier image dans le VDI. Cela peut prendre 10-20 minutes."
+
+#: ../../templates/_import_ami.rst:186
+msgid ""
+"Locate a the VHD file. This is the file with the VDI’s UUID as its name. "
+"Compress it and upload it to your web server."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:2
+msgid "Converting a Hyper-V VM to a Template"
+msgstr "Convertir une VM Hyper-V en modèle"
+
+#: ../../templates/_convert_hyperv.rst:4
+msgid ""
+"To convert a Hyper-V VM to a XenServer-compatible CloudStack template, you will "
+"need a standalone XenServer host with an attached NFS VHD SR. Use whatever "
+"XenServer version you are using with CloudStack, but use XenCenter 5.6 FP1 or "
+"SP2 (it is backwards compatible to 5.6). Additionally, it may help to have an "
+"attached NFS ISO SR."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:10
+msgid ""
+"For Linux VMs, you may need to do some preparation in Hyper-V before trying to "
+"get the VM to work in XenServer. Clone the VM and work on the clone if you "
+"still want to use the VM in Hyper-V. Uninstall Hyper-V Integration Components "
+"and check for any references to device names in /etc/fstab:"
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:16
+msgid ""
+"From the linux\\_ic/drivers/dist directory, run make uninstall (where \"linux"
+"\\_ic\" is the path to the copied Hyper-V Integration Components files)."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:20
+msgid ""
+"Restore the original initrd from backup in /boot/ (the backup is named \\*."
+"backup0)."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:23
+msgid "Remove the \"hdX=noprobe\" entries from /boot/grub/menu.lst."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:25
+msgid ""
+"Check /etc/fstab for any partitions mounted by device name. Change those "
+"entries (if any) to mount by LABEL or UUID. You can get that information with "
+"the blkid command."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:29
+msgid ""
+"The next step is make sure the VM is not running in Hyper-V, then get the VHD "
+"into XenServer. There are two options for doing this."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:32
+msgid "Option one:"
+msgstr "Option une :"
+
+#: ../../templates/_convert_hyperv.rst:34
+msgid ""
+"Import the VHD using XenCenter. In XenCenter, go to Tools>Virtual Appliance "
+"Tools>Disk Image Import."
+msgstr ""
+"Importer le VHD en utilisant XenCenter. Dans XenCenter, aller à Outils>Outils "
+"d'Appliance Virtuelle>Importation d'image disque."
+
+#: ../../templates/_convert_hyperv.rst:37 ../../templates/_convert_hyperv.rst:49
+msgid "Choose the VHD, then click Next."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:39
+msgid ""
+"Name the VM, choose the NFS VHD SR under Storage, enable \"Run Operating System "
+"Fixups\" and choose the NFS ISO SR."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:42
+msgid "Click Next, then Finish. A VM should be created."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:44
+msgid "Option two:"
+msgstr "Option deux :"
+
+#: ../../templates/_convert_hyperv.rst:46
+msgid ""
+"Run XenConvert, under From choose VHD, under To choose XenServer. Click Next."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:51
+msgid "Input the XenServer host info, then click Next."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:53
+msgid "Name the VM, then click Next, then Convert. A VM should be created."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:55
+msgid ""
+"Once you have a VM created from the Hyper-V VHD, prepare it using the following "
+"steps:"
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:58
+msgid "Boot the VM, uninstall Hyper-V Integration Services, and reboot."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:60
+msgid "Install XenServer Tools, then reboot."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:62
+msgid ""
+"Prepare the VM as desired. For example, run sysprep on Windows VMs. See "
+"`“Creating a Windows Template” <#creating-a-windows-template>`_."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:66
+msgid ""
+"Either option above will create a VM in HVM mode. This is fine for Windows VMs, "
+"but Linux VMs may not perform optimally. Converting a Linux VM to PV mode will "
+"require additional steps and will vary by distribution."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:71
+msgid ""
+"Shut down the VM and copy the VHD from the NFS storage to a web server; for "
+"example, mount the NFS share on the web server and copy it, or from the "
+"XenServer host use sftp or scp to upload it to the web server."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:76
+msgid "In CloudStack, create a new template using the following values:"
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:78
+msgid "URL. Give the URL for the VHD"
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:80
+msgid ""
+"OS Type. Use the appropriate OS. For PV mode on CentOS, choose Other PV (32-"
+"bit) or Other PV (64-bit). This choice is available only for XenServer."
+msgstr ""
+
+#: ../../templates/_convert_hyperv.rst:84
+msgid "Hypervisor. XenServer"
+msgstr "Hyperviseur. XenServer"
+
+#: ../../templates/_convert_hyperv.rst:86
+msgid "Format. VHD"
+msgstr "Format. VHD"
+
+#: ../../templates/_convert_hyperv.rst:88
+msgid "The template will be created, and you can create instances from it."
+msgstr ""
+
+#: ../../templates/_password.rst:20
+msgid "Adding Password Management to Your Templates"
+msgstr "Ajouter un mot de passe de gestion à votre modèle"
+
+#: ../../templates/_password.rst:22
+msgid ""
+"CloudStack provides an optional password reset feature that allows users to set "
+"a temporary admin or root password as well as reset the existing admin or root "
+"password from the CloudStack UI."
+msgstr ""
+"CloudStack fourni une fonctionnalité optionnelle de réinitialisation de mot de "
+"passe qui permet aux utilisateurs de fournir un mot de passe root ou admin "
+"temporaire ou de réinitialiser un mot de passe root ou admin existant depuis "
+"l'interface CloudStack."
+
+#: ../../templates/_password.rst:26
+msgid ""
+"To enable the Reset Password feature, you will need to download an additional "
+"script to patch your template. When you later upload the template into "
+"CloudStack, you can specify whether reset admin/root password feature should be "
+"enabled for this template."
+msgstr ""
+"Pour activer la fonctionnalité de Réinitialisation de Mot de passe, vous aurez "
+"besoin de télécharger un script additionnel pour patcher votre modèle. Lorsque "
+"plus tard vous téléchargerez votre modèle dans CloudStack, vous pourrez "
+"spécifier si la fonctionnalité de réinitailisation de mot de passe admin/root "
+"doit être activée pour ce modèle."
+
+#: ../../templates/_password.rst:31
+msgid ""
+"The password management feature works always resets the account password on "
+"instance boot. The script does an HTTP call to the virtual router to retrieve "
+"the account password that should be set. As long as the virtual router is "
+"accessible the guest will have access to the account password that should be "
+"used. When the user requests a password reset the management server generates "
+"and sends a new password to the virtual router for the account. Thus an "
+"instance reboot is necessary to effect any password changes."
+msgstr ""
+"La fonctionnalité de mot de passe de gestion fonctionne toujours par "
+"réinitialisation du mot de passe du compte lors du démarrage de l'instance. Le "
+"script effectue un appel HTTP au routeur virtuel pour recupérer le mot de passe "
+"du compte qui doit être changé. Aussi longtemps que le routeur virtuel est "
+"accessible l'invité aura accès au mot de passe du compte qui doit être utilisé. "
+"Quand l'utilisateur demande une réinitialisation du mot de passe, le serveur de "
+"gestion génère et envoie un nouveau mot de passe au routeur virtuel pour ce "
+"compte. Ainsi un redémarrage de l'instance est nécessaire pour effectuer un "
+"changement de mot de passe."
+
+#: ../../templates/_password.rst:40
+msgid ""
+"If the script is unable to contact the virtual router during instance boot it "
+"will not set the password but boot will continue normally."
+msgstr ""
+"Si le script n'est pas capable de contacter le routeur virtuel durant le "
+"démarrage de l'instance le mot de passe ne sera pas réinitialisé mais le "
+"démarrage va continuer normalement."
+
+#: ../../templates/_password.rst:45
+msgid "Linux OS Installation"
+msgstr "Installation d'un OS Linux"
+
+#: ../../templates/_password.rst:47
+msgid "Use the following steps to begin the Linux OS installation:"
+msgstr ""
+"Utiliser les étapes suivantes pour commencer l'installation d'un OS Linux :"
+
+#: ../../templates/_password.rst:49
+msgid "Download the script file cloud-set-guest-password:"
+msgstr "Télécharger le fichier du script cloud-set-guest-password :"
+
+#: ../../templates/_password.rst:51
+msgid ""
+"`http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in "
+"<http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in>`_"
+msgstr ""
+"`http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in "
+"<http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in>`_"
+
+#: ../../templates/_password.rst:54
+msgid "Rename the file:"
+msgstr "Renommer le fichier :"
+
+#: ../../templates/_password.rst:60
+msgid "Copy this file to /etc/init.d."
+msgstr "Copier ce fichier sous /etc/init.d."
+
+#: ../../templates/_password.rst:62
+msgid "On some Linux distributions, copy the file to ``/etc/rc.d/init.d``."
+msgstr ""
+"Sur certaines distributions Linux, copier le fichier sous ``/etc/rc.d/init.d``."
+
+#: ../../templates/_password.rst:64
+msgid "Run the following command to make the script executable:"
+msgstr "Lancer la commande suivante pour rendre le script exécutable :"
+
+#: ../../templates/_password.rst:70
+msgid "Depending on the Linux distribution, continue with the appropriate step."
+msgstr "En fonction de la distribution Linux, continuer avec l'étape appropriée."
+
+#: ../../templates/_password.rst:73
+msgid "On Fedora, CentOS/RHEL, and Debian, run:"
+msgstr "Sous Fedora, CentOS/RHEL et Debian, lancer :"
+
+#: ../../templates/_password.rst:81
+msgid "Windows OS Installation"
+msgstr "Installation d'un OS Windows"
+
+#: ../../templates/_password.rst:83
+msgid ""
+"Download the installer, CloudInstanceManager.msi, from the `Download page "
+"<http://sourceforge.net/projects/cloudstack/files/Password%20Management"
+"%20Scripts/CloudInstanceManager.msi/download>`_ and run the installer in the "
+"newly created Windows VM."
+msgstr ""
+"Télécharger l'installateur, CloudInstanceManager.msi depuis la `page de "
+"Téléchargement <http://sourceforge.net/projects/cloudstack/files/Password"
+"%20Management%20Scripts/CloudInstanceManager.msi/download>`_ et lancer "
+"l'installateur dans la VM windows nouvellement créée."
+
+#: ../../templates.rst:298
+msgid "Deleting Templates"
+msgstr "Supprimer des modèles"
+
+#: ../../templates.rst:300
+msgid ""
+"Templates may be deleted. In general, when a template spans multiple Zones, "
+"only the copy that is selected for deletion will be deleted; the same template "
+"in other Zones will not be deleted. The provided CentOS template is an "
+"exception to this. If the provided CentOS template is deleted, it will be "
+"deleted from all Zones."
+msgstr ""
+"Des modèles peuvent être supprimés. En général, lorsqu'un modèle concerne "
+"plusieurs zones, seule la copie qui est selectionnée pour la suppression sera "
+"supprimée ; le même modèle dans les autres zones ne seront pas supprimés. Le "
+"modèle CentOS fourni est une exception à cela. Si le modèle CentOS fourni est "
+"supprimé, il sera supprimé de toutes les zones."
+
+#: ../../templates.rst:306
+msgid ""
+"When templates are deleted, the VMs instantiated from them will continue to "
+"run. However, new VMs cannot be created based on the deleted template."
+msgstr ""
+"Quand un modèle est supprimé, les VMs instanciées depuis celui-ci continueront "
+"de fonctionner. Toutefois, les nouvelles VMs ne pourront plus être créées en se "
+"basant sur le modèle supprimé."

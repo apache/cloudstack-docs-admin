@@ -1,0 +1,1319 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-10-02 13:55+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.9\n"
+
+#: ../../service_offerings.rst:18
+msgid "Service Offerings"
+msgstr "Offres de service"
+
+#: ../../service_offerings.rst:20
+msgid ""
+"In addition to the physical and logical infrastructure of your cloud and the "
+"CloudStack software and servers, you also need a layer of user services so that "
+"people can actually make use of the cloud. This means not just a user UI, but a "
+"set of options and resources that users can choose from, such as templates for "
+"creating virtual machines, disk storage, and more. If you are running a "
+"commercial service, you will be keeping track of what services and resources "
+"users are consuming and charging them for that usage. Even if you do not charge "
+"anything for people to use your cloud – say, if the users are strictly internal "
+"to your organization, or just friends who are sharing your cloud – you can "
+"still keep track of what services they use and how much of them."
+msgstr ""
+"En complément à l'infrastructure physique et logique de votre cloud et des "
+"serveurs et logiciels CloudStack, vous avez également besoin d'une couche de "
+"services utilisateurs pour que les utilisateurs puissent faire un usage du "
+"cloud. Cela ne signifie pas seulement une interface utilisateur, mais un "
+"ensemble d'options et de ressources parmi lesquels les utilisateurs peuvent se "
+"servir, comme les modèles pour créer des machines virtuelles, des disques de "
+"stockage, etc. Si vous gérer un service commercial, vous conserverez un suivi "
+"de quels services et quelles ressources les utilisateurs ont fait l'usage et "
+"leur facturerez. Même si vous ne facturez rien aux personnes qui utilisent "
+"votre cloud, en d'autres mots si les utilisateurs sont strictement internes à "
+"votre organisation, ou juste des amis qui partagent votre cloud, vous pouvez "
+"continuer à suivre quels services ils utilisent et combien le font."
+
+#: ../../service_offerings.rst:34
+msgid "Service Offerings, Disk Offerings, Network Offerings, and Templates"
+msgstr "Offres de service, offres de disque, offres de réseau et modèles"
+
+#: ../../service_offerings.rst:36
+msgid ""
+"A user creating a new instance can make a variety of choices about its "
+"characteristics and capabilities. CloudStack provides several ways to present "
+"users with choices when creating a new instance:"
+msgstr ""
+"Un utilisateur qui créé une nouvelle instance peut faire de nombreux choix à "
+"propos de ses caractéristiques et ses capacités. CloudStack fournit plusieurs "
+"façons de présenter aux utilisateurs les choix lorsqu'ils créent une nouvelle "
+"instance :"
+
+#: ../../service_offerings.rst:40
+msgid ""
+"Service Offerings, defined by the CloudStack administrator, provide a choice of "
+"CPU speed, number of CPUs, RAM size, tags on the root disk, and other choices. "
+"See Creating a New Compute Offering."
+msgstr ""
+"Les offres de services, définies par l'administrateur CloudStack, fournissent "
+"un choix de vitesse CPU, de nombre de CPUs, de taille de RAM, d'étiquettes sur "
+"les disques racines, et d'autres choix. Voir Créer une nouvelle offre de calcul."
+
+#: ../../service_offerings.rst:44
+msgid ""
+"Disk Offerings, defined by the CloudStack administrator, provide a choice of "
+"disk size and IOPS (Quality of Service) for primary data storage. See Creating "
+"a New Disk Offering."
+msgstr ""
+"Les offres de services, définies par l'administrateur CloudStack, fourni un "
+"choix de taille de disque et de IOPS (qualité de service) pour le stockage "
+"primaire des données. Voir créer une nouvelle offre de disque."
+
+#: ../../service_offerings.rst:48
+msgid ""
+"Network Offerings, defined by the CloudStack administrator, describe the "
+"feature set that is available to end users from the virtual router or external "
+"networking devices on a given guest network. See Network Offerings."
+msgstr ""
+"Les offres de réseaux, définies par l'administrateur CloudStack, décrivent les "
+"fonctionnalitées qui sont disponibles aux utilisateurs finaux depuis le routeur "
+"virtuel ou un élément de réseau externe sur un réseau d'invité défini. Voir "
+"offres de réseaux."
+
+#: ../../service_offerings.rst:53
+msgid ""
+"Templates, defined by the CloudStack administrator or by any CloudStack user, "
+"are the base OS images that the user can choose from when creating a new "
+"instance. For example, CloudStack includes CentOS as a template. See Working "
+"with Templates."
+msgstr ""
+"Les modèles, définis par l'administrateur CloudStack ou par n'importe quel "
+"utilisateur, sont des images d'OS de base que les utilisateurs peuvent choisir "
+"lorsqu'ils créent une nouvelle instance. Par exemple, CloudStack inclue CentOS "
+"comme modèle. Voir Travailler avec les modèles."
+
+#: ../../service_offerings.rst:58
+msgid ""
+"In addition to these choices that are provided for users, there is another type "
+"of service offering which is available only to the CloudStack root "
+"administrator, and is used for configuring virtual infrastructure resources. "
+"For more information, see Upgrading a Virtual Router with System Service "
+"Offerings."
+msgstr ""
+"En plus de ces choix qui sont proposés aux utilisateurs, il y a un autre type "
+"d'offre de service qui n'est disponible qu'à l'administrateur racine de "
+"CloudStack et qui est utilisé pour configurer les ressources d'infrastructures "
+"virtuelles. Pour plus d'information, voir Mettre à jour un Routeur Virtuel avec "
+"les Offres de service système."
+
+#: ../../service_offerings.rst:66
+msgid "Compute and Disk Service Offerings"
+msgstr "Offres de service de disque et de calcul"
+
+#: ../../service_offerings.rst:68
+msgid ""
+"A service offering is a set of virtual hardware features such as CPU core count "
+"and speed, memory, and disk size. The CloudStack administrator can set up "
+"various offerings, and then end users choose from the available offerings when "
+"they create a new VM. Based on the user’s selected offering, CloudStack emits "
+"usage records that can be integrated with billing systems."
+msgstr ""
+"Une offre de service est un ensemble de fonctionnalités matérielles virtuelles "
+"comme un nombre de coeur CPU et de vitesse, de mémoire et de taille disque. "
+"L'administrateur CloudStack peut configurer différentes offres que les "
+"utilisateurs finaux peuvent choisir depuis les offres disponibles lorsqu'ils "
+"créent leur nouvelle VM. Selon l'offre choisie par l'utilisateur, CloudStack "
+"émet un enregistrement d'utilisation qui peut être intégré avec le système de "
+"paiement."
+
+#: ../../service_offerings.rst:75
+msgid ""
+"Some characteristics of service offerings must be defined by the CloudStack "
+"administrator, and others can be left undefined so that the end-user can enter "
+"their own desired values. This is useful to reduce the number of offerings the "
+"CloudStack administrator has to define. Instead of defining a compute offering "
+"for every imaginable combination of values that a user might want, the "
+"administrator can define offerings that provide some flexibility to the users "
+"and can serve as the basis for several different VM configurations."
+msgstr ""
+"Certaines caractéristiques d'offres de service doivent être définies par "
+"l'administrateur CloudStack et les autres peuvent être laissées indéfinies de "
+"façon à ce que les utilisateurs finaux puissent saisir les valeurs qu'ils "
+"souhaitent. C'est utile pour réduire le nombre d'offres que l'administrateur "
+"doit définir. Au lieu de définir une offre de calcul pour chaque combinaison "
+"imaginable de valeurs que l'utilisateur peut désirer, l'administrateur peut "
+"définir les offres qui fournissent un peu de flexibilité aux utilisateurs et "
+"peuvent servir de base pour de nombres configurations différentes de VM. "
+
+#: ../../service_offerings.rst:84
+msgid "A service offering includes the following elements:"
+msgstr "Une offre de service inclue les éléments suivants :"
+
+#: ../../service_offerings.rst:86
+msgid "CPU, memory, and network resource guarantees"
+msgstr "Les ressources CPU, mémoire et réseau garanties"
+
+#: ../../service_offerings.rst:88
+msgid "How resources are metered"
+msgstr "Comment les ressources sont mesurées"
+
+#: ../../service_offerings.rst:90
+msgid "How the resource usage is charged"
+msgstr "Comment l'utilisation de la ressources est chargé"
+
+#: ../../service_offerings.rst:92
+msgid "How often the charges are generated"
+msgstr "Combien de fois les frais sont générés"
+
+#: ../../service_offerings.rst:94
+msgid ""
+"For example, one service offering might allow users to create a virtual machine "
+"instance that is equivalent to a 1 GHz Intel® Core™ 2 CPU, with 1 GB memory at "
+"$0.20/hour, with network traffic metered at $0.10/GB."
+msgstr ""
+"Par exemple, une offre de service peut autoriser les utilisateurs à créer une "
+"instance de machine virtuelle qui est équivalente à 1 CPU Intel® Core™ 2 à 1 "
+"GHz, avec 1 Go de mémoire à 0.20€ de l'heure, avec un trafic réseau mesurée à "
+"0.10€ par Go."
+
+#: ../../service_offerings.rst:98
+msgid ""
+"CloudStack separates service offerings into compute offerings and disk "
+"offerings. The compute service offering specifies:"
+msgstr ""
+"CloudStack sépare les offres de service en offres de calcul et offres de "
+"disque. L'offre de service de calcul spécifie :"
+
+#: ../../service_offerings.rst:101
+msgid ""
+"Guest CPU (optional). If not defined by the CloudStack administrator, users can "
+"pick the CPU attributes."
+msgstr ""
+"Le CPU de l'invité (optionnel). Si non défini par l'administrateur CloudStack, "
+"les utilisateurs peuvent choisir les attributs du CPU."
+
+#: ../../service_offerings.rst:104
+msgid ""
+"Guest RAM (optional). If not defined by the CloudStack administrator, users can "
+"pick the RAM."
+msgstr ""
+"La RAM de l'invité (optionnel). Si non défini par l'administrateur CloudStack, "
+"les utilisateurs peuvent choisir la RAM. "
+
+#: ../../service_offerings.rst:107
+msgid "Guest Networking type (virtual or direct)"
+msgstr "Le type de réseau invités (virtuel ou direct)"
+
+#: ../../service_offerings.rst:109
+msgid "Tags on the root disk"
+msgstr "Les étiquettes sur le disque racine"
+
+#: ../../service_offerings.rst:111
+msgid "The disk offering specifies:"
+msgstr "L'offre de disque spécifie :"
+
+#: ../../service_offerings.rst:113
+msgid ""
+"Disk size (optional). If not defined by the CloudStack administrator, users can "
+"pick the disk size."
+msgstr ""
+"La taille du disque (optionnel). Si non défini par l'administrateur CloudStack, "
+"les utilisateurs peuvent choisir la taille du disque."
+
+#: ../../service_offerings.rst:116
+msgid "Tags on the data disk"
+msgstr "Les étiquettes sur le disque de données"
+
+#: ../../service_offerings.rst:120
+msgid "Custom Compute Offering"
+msgstr "Offre de calcul personnalisé"
+
+#: ../../service_offerings.rst:122
+msgid ""
+"CloudStack provides you the flexibility to specify the desired values for the "
+"number of CPU, CPU speed, and memory while deploying a VM. As an admin, you "
+"create a Compute Offering by marking it as custom, and the users will be able "
+"to customize this dynamic Compute Offering by specifying the memory, and CPU at "
+"the time of VM creation or upgrade. Custom Compute Offering is same as the "
+"normal Compute Offering except that the values of the dynamic parameters will "
+"be set to zeros in the given set of templates. Use this offering to deploy VM "
+"by specifying custom values for the dynamic parameters. Memory, CPU and number "
+"of CPUs are considered as dynamic parameters."
+msgstr ""
+"CloudStack vous fournis la flexibilité de spécifier les valeurs désirées pour "
+"le nombre de CPU, la vitesse CPU, la mémoire lorsque vous déployez une VM. En "
+"tant qu'administrateur, vous créez une offre de calcul en la marquant comme "
+"personnalisée et les utilisateurs pourront personnaliser dynamiquement les "
+"offres de calcule en spécifiant la mémoire, le CPU au moment de la création ou "
+"de la mise à jour de VM. Une offre de calcul personnalisée est la même chose "
+"qu'une offre de calcul normale à l'exception que les valeurs des paramètres "
+"dynamiques seront fixées à zéro dans les ensembles de modèles donnés. Utiliser "
+"cette offre pour déployer une VM en spécifiant des valeurs personnalisées pour "
+"les paramètres dynamiques. La mémoire, CPU et nombres de CPU sont considérés "
+"comme des paramètres dynamiques."
+
+#: ../../service_offerings.rst:133
+msgid ""
+"Dynamic Compute Offerings can be used in following cases: deploying a VM, "
+"changing the compute offering of a stopped VM and running VMs, which is nothing "
+"but scaling up. To support this feature a new field, Custom, has been added to "
+"the Create Compute Offering page. If the Custom field is checked, the user will "
+"be able to create a custom Compute Offering by filling in the desired values "
+"for number of CPU, CPU speed, and memory. See ? for more information on this."
+msgstr ""
+"Les offres de calcul dynamiques peuvent être utilisées dans les cas suivants : "
+"déployer une VM, changer l'offre de calcul d'une VM stoppée et augmenter "
+"l'offre de VMs en cours de fonctionnement. Pour supporter cette fonctionnalité, "
+"un nouveau champs, Personnalisé, a été ajouté à la page Créer une offre de "
+"calcul. Si le champs personnalisé est coché, l'utilisateur sera capable de "
+"créer une offre de calcul personnalisé en remplissant les valeurs désirées du "
+"nombre de CPU, de vitesse CPU et de mémoire. Voir ? pour plus d'informations."
+
+#: ../../service_offerings.rst:141
+msgid "*Recording Usage Events for Dynamically Assigned Resources*."
+msgstr ""
+"*Enregistrer les évènements d'utilisation pour les ressources assignées "
+"dynamiquement*."
+
+#: ../../service_offerings.rst:143
+msgid ""
+"To support this feature, usage events has been enhanced to register events for "
+"dynamically assigned resources. Usage events are registered when a VM is "
+"created from a custom compute offering, and upon changing the compute offering "
+"of a stopped or running VM. The values of the parameters, such as CPU, speed, "
+"RAM are recorded."
+msgstr ""
+"Pour supporter cette fonctionnalité, les évènements d'utilisation ont été "
+"améliorées pour enregistrer les évènements des ressources assignée "
+"dynamiquement. Les évènements d'utilisation sont enregistrés lorsque la VM est "
+"créée depuis une offre de calcul personnalisée et lors des changements d'offre "
+"de calcul d'une VM stoppée ou en fonctionnement. Les valeurs de ces paramètres, "
+"comme le CPU, la vitesse, la RAM sont enregistrés."
+
+#: ../../service_offerings.rst:151
+msgid "Creating a New Compute Offering"
+msgstr "Créer une nouvelle offre de calcul"
+
+#: ../../service_offerings.rst:153
+msgid "To create a new compute offering:"
+msgstr "Pour créer une nouvelle offre de calcul :"
+
+#: ../../service_offerings.rst:155 ../../service_offerings.rst:325
+#: ../../service_offerings.rst:432
+msgid "Log in with admin privileges to the CloudStack UI."
+msgstr ""
+"Se connecter avec les privilèges administrateur dans l'interface de CloudStack."
+
+#: ../../service_offerings.rst:157 ../../service_offerings.rst:327
+#: ../../service_offerings.rst:434
+msgid "In the left navigation bar, click Service Offerings."
+msgstr "Dans la barre de navigation de gauche, cliquer sur Offres de service."
+
+#: ../../service_offerings.rst:159
+msgid "In Select Offering, choose Compute Offering."
+msgstr "Dans Choisir une offre, choisir Offre de calcul."
+
+#: ../../service_offerings.rst:161
+msgid "Click Add Compute Offering."
+msgstr "Cliquer sur Ajouter une offre de calcul."
+
+#: ../../service_offerings.rst:163 ../../service_offerings.rst:333
+#: ../../service_offerings.rst:440
+msgid "In the dialog, make the following choices:"
+msgstr "Dans la boîte de dialogue, faire les choix suivants :"
+
+#: ../../service_offerings.rst:165
+msgid "**Name**: Any desired name for the service offering."
+msgstr "**Nom** : N'importe quel nom souhaité pour l'offre de service."
+
+#: ../../service_offerings.rst:167 ../../service_offerings.rst:337
+msgid ""
+"**Description**: A short description of the offering that can be displayed to "
+"users"
+msgstr ""
+"**Description** : Une description courte pour l'offre qui peut être affichée "
+"aux utilisateurs"
+
+#: ../../service_offerings.rst:170
+msgid ""
+"**Storage type**: The type of disk that should be allocated. Local allocates "
+"from storage attached directly to the host where the system VM is running. "
+"Shared allocates from storage accessible via NFS."
+msgstr ""
+"**Type de stockage** : Le type de disque qui doit être alloué. Les allocations "
+"locales depuis les stockages directement attachés à l'hôte sur lequel la VM est "
+"en fonctionnement. Les allocations partagées depuis un stockage accessible via "
+"NFS."
+
+#: ../../service_offerings.rst:175
+msgid ""
+"**Custom**: Custom compute offerings can be used in following cases: deploying "
+"a VM, changing the compute offering of a stopped VM and running VMs, which is "
+"nothing but scaling up."
+msgstr ""
+"**Personnalisée** : Offres de calcul personnalisée peuvent être utilisée dans "
+"les cas suivants : déployer une VM, changer l'offre de calcul pour des VM "
+"stoppées ou en fonctionnement."
+
+#: ../../service_offerings.rst:179
+msgid ""
+"If the Custom field is checked, the end-user must fill in the desired values "
+"for number of CPU, CPU speed, and RAM Memory when using a custom compute "
+"offering. When you check this box, those three input fields are hidden in the "
+"dialog box."
+msgstr ""
+"Si le champ Personnalisé est validée, l'utilisateur final doit remplir les "
+"valeurs désirées pour le nombre de CPU, la vitesse CPU et la mémoire RAM lors "
+"du choix d'une offre de calcul personnalisée. Lorsque vous cochez la case, ces "
+"trois champs de saisie sont masquées dans la boîte de dialogue."
+
+#: ../../service_offerings.rst:184
+msgid ""
+"**# of CPU cores**: The number of cores which should be allocated to a system "
+"VM with this offering. If Custom is checked, this field does not appear."
+msgstr ""
+"**# de coeurs CPU** : le nombre de coeurs qui devraient être allouée à une VM "
+"système avec cette offre. Si Personnalisé est coché, ce champ n'apparaît pas."
+
+#: ../../service_offerings.rst:188
+msgid ""
+"**CPU (in MHz)**: The CPU speed of the cores that the system VM is allocated. "
+"For example, “2000” would provide for a 2 GHz clock. If Custom is checked, this "
+"field does not appear."
+msgstr ""
+"**CPU (en MHz)** : La vitesse CPU des coeurs qui sont alloués à cette VM "
+"système. Par exemple, \"2000\" fournira une fréquence d'horloge de 2GHz. Si "
+"Personnalisé est coché, ce champ n'apparaît pas."
+
+#: ../../service_offerings.rst:192
+msgid ""
+"**Memory (in MB)**: The amount of memory in megabytes that the system VM should "
+"be allocated. For example, “2048” would provide for a 2 GB RAM allocation. If "
+"Custom is checked, this field does not appear."
+msgstr ""
+"**Mémoire (en MB)** : La quantité de mémoire en mégabytes que la VM système "
+"aura d'alloué. Par exemple, “2048” devrait fournir une allocation de 2GB de "
+"RAM. Si Personnalisé est validé, ce champ n'apparaît pas."
+
+#: ../../service_offerings.rst:197
+msgid "**Network Rate**: Allowed data transfer rate in MB per second."
+msgstr ""
+"**Vitesse Réseau** : vitesse de transfert de données autorisée par seconde."
+
+#: ../../service_offerings.rst:199
+msgid "**Disk Read Rate**: Allowed disk read rate in bits per second."
+msgstr ""
+"**Taux de lecture disque** : taux de lecture disque autorisé en bits par "
+"seconde."
+
+#: ../../service_offerings.rst:201
+msgid "**Disk Write Rate**: Allowed disk write rate in bits per second."
+msgstr ""
+"**Taux d'écriture disque** : taux d'écriture disque autorisé en bits par "
+"seconde."
+
+#: ../../service_offerings.rst:203
+msgid ""
+"**Disk Read Rate**: Allowed disk read rate in IOPS (input/output operations per "
+"second)."
+msgstr ""
+"**Taux de lecture disque** : taux de lecture disque autorisé en IOPS (opération "
+"d'entrées/sorties par seconde)."
+
+#: ../../service_offerings.rst:206
+msgid ""
+"**Disk Write Rate**: Allowed disk write rate in IOPS (input/output operations "
+"per second)."
+msgstr ""
+"**Taux d'écriture disque** : taux d'écriture disque autorisé en IOPS "
+"(opérations d'entrées/sorties par seconde)."
+
+#: ../../service_offerings.rst:209
+msgid ""
+"**Offer HA**: If yes, the administrator can choose to have the system VM be "
+"monitored and as highly available as possible."
+msgstr ""
+"**Offre HA** : Si oui, l'administrateur peut choisir d'avoir la VM système de "
+"monitorée et d'être aussi hautement disponible que possible."
+
+#: ../../service_offerings.rst:212 ../../service_offerings.rst:347
+msgid ""
+"**QoS Type**: Three options: Empty (no Quality of Service), hypervisor (rate "
+"limiting enforced on the hypervisor side), and storage (guaranteed minimum and "
+"maximum IOPS enforced on the storage side). If leveraging QoS, make sure that "
+"the hypervisor or storage system supports this feature."
+msgstr ""
+"**Type de QoS** : Trois options : Vide (pas de qualité de service), hyperviseur "
+"(taux de limitation forcé du côté hyperviseur) et stockage (IOPS minimum et "
+"maximum garantis forcé du côté stockage). Si vous tirez parti de la QoS, soyez "
+"sur que le système de l'hyperviseur ou du stockage supporte cette "
+"fonctionnalité."
+
+#: ../../service_offerings.rst:218 ../../service_offerings.rst:353
+msgid ""
+"**Custom IOPS**: If checked, the user can set their own IOPS. If not checked, "
+"the root administrator can define values. If the root admin does not set values "
+"when using storage QoS, default values are used (the defauls can be overridden "
+"if the proper parameters are passed into CloudStack when creating the primary "
+"storage in question)."
+msgstr ""
+"**IOPS personnalisé** : si coché, l'utilisateur peut fixer ses propres IOPS. Si "
+"non coché, l'administrateur racine peut définir les valeurs. Si l'admin racine "
+"ne fixe pas les valeurs lors de l'utilisation de la QoS du stockage, les "
+"valeurs par défaut sont utilisés (les valeurs par défaut peuvent être changée "
+"si les paramètres par défaut sont passés à CloudStack lors de la création du "
+"stockage primaire en question)."
+
+#: ../../service_offerings.rst:225 ../../service_offerings.rst:360
+msgid ""
+"**Min IOPS**: Appears only if storage QoS is to be used. Set a guaranteed "
+"minimum number of IOPS to be enforced on the storage side."
+msgstr ""
+"**IOPS min** : apparaît seulement si la QoS du stockage doit être utilisée. "
+"Fixer un nombre de IOPS garanties forcé du côté du stockage."
+
+#: ../../service_offerings.rst:229 ../../service_offerings.rst:364
+msgid ""
+"**Max IOPS**: Appears only if storage QoS is to be used. Set a maximum number "
+"of IOPS to be enforced on the storage side (the system may go above this limit "
+"in certain circumstances for short intervals)."
+msgstr ""
+"**IOPS Max** : Apparaît seulement si la QoS doit être utilisée. Fixer un nombre "
+"de IOPS maximum a forcer du côté stockage (le système peut aller au delà de ces "
+"limites dans certaines circonstances pour des intervalles courts)."
+
+#: ../../service_offerings.rst:233
+msgid ""
+"**Hypervisor Snapshot Reserve**: For managed storage only. This is a value that "
+"is a percentage of the size of the root disk. For example: if the root disk is "
+"20 GB and Hypervisor Snapshot Reserve is 200%, the storage volume that backs "
+"the storage repository (XenServer) or datastore (VMware) in question is sized "
+"at 60 GB (20 GB + (20 GB * 2)). This enables space for hypervisor snapshots in "
+"addition to the virtual disk that represents the root disk. This does not apply "
+"for KVM."
+msgstr ""
+"**Réserve d'instantanés sur l'Hyperviseur** : Pour les stockages gérés "
+"seulement. C'est une valeur qui est un pourcentage de la taille du disque "
+"racine. Si le disque racine est de 20GB et que la réserve d'instantanée sur "
+"l'hyperviseur est de 200%, le volume de stockage qui est réservé sur le dépôt "
+"de stockage (XenServer) ou sur le datastore (VMware) en question est taillée à "
+"60GB (20 GB + (20 GB * 2)). Ceci valide de l'espace pour les instantanés en "
+"complément du disque virtuel qui représente le disque racine. Ceci ne "
+"s'applique pas à KVM."
+
+#: ../../service_offerings.rst:241
+msgid ""
+"**Storage Tags**: The tags that should be associated with the primary storage "
+"used by the system VM."
+msgstr ""
+"**Étiquettes de stockage** : Les étiquettes qui devraient être associées avec "
+"le stockage primaire utilisé par la VM système."
+
+#: ../../service_offerings.rst:244
+msgid "**Host Tags**: (Optional) Any tags that you use to organize your hosts"
+msgstr ""
+"**Étiquettes d'hôte** : (Optionnel) Toutes étiquettes que vous utilisez pour "
+"organiser vos hôtes"
+
+#: ../../service_offerings.rst:247
+msgid ""
+"**CPU cap**: Whether to limit the level of CPU usage even if spare capacity is "
+"available."
+msgstr ""
+"**CPU cap** : Pour limiter le taux d'utilisation du CPU ou si les réserves de "
+"capacités sont disponibles."
+
+#: ../../service_offerings.rst:250 ../../service_offerings.rst:385
+msgid ""
+"**Public**: Indicate whether the service offering should be available all "
+"domains or only some domains. Choose Yes to make it available to all domains. "
+"Choose No to limit the scope to a subdomain; CloudStack will then prompt for "
+"the subdomain's name."
+msgstr ""
+"**Public** : Indique si l'offre de service doit être disponible pour tous les "
+"domaines ou seulement pour certains domaines. Choisir Oui pour rendre "
+"disponible à tous les domaines. Choisir No pour limiter la portée à un sous-"
+"domaine ; CloudStack va alors demander le nom du sous-domaine."
+
+#: ../../service_offerings.rst:255
+msgid ""
+"**isVolatile**: If checked, VMs created from this service offering will have "
+"their root disks reset upon reboot. This is useful for secure environments that "
+"need a fresh start on every boot and for desktops that should not retain state."
+msgstr ""
+"**Est volatile** : Si coché, la VM crée depuis cette offre de service aura ces "
+"disques racines réinitialisés à chaque redémarrage. C'est utilise pour "
+"sécuriser des environnements qui ont besoin d'un démarrage neuf à chaque "
+"démarrage et pour les bureaux qui ne doivent pas retenir les états."
+
+#: ../../service_offerings.rst:260
+msgid ""
+"**Deployment Planner**: Choose the technique that you would like CloudStack to "
+"use when deploying VMs based on this service offering."
+msgstr ""
+"**Planning de déploiement** : Choisir la technique que vous voulez que "
+"Cloudstack utilise lorsqu'il déploie la VM basée sur cette offre de service."
+
+#: ../../service_offerings.rst:264
+msgid ""
+"First Fit places new VMs on the first host that is found having sufficient "
+"capacity to support the VM's requirements."
+msgstr ""
+"First Fit place les nouvelles VMs sur le premier hôte qu'il trouve disposant de "
+"suffisamment de capacité pour supporter les besoins de la VM."
+
+#: ../../service_offerings.rst:267
+msgid ""
+"User Dispersing makes the best effort to evenly distribute VMs belonging to the "
+"same account on different clusters or pods."
+msgstr ""
+"User Dispersing fait le maximum d'efforts pour distribuer équitablement les VMs "
+"appartenant au même compte sur des clusters ou des pods différents."
+
+#: ../../service_offerings.rst:270
+msgid ""
+"User Concentrated prefers to deploy VMs belonging to the same account within a "
+"single pod."
+msgstr ""
+"User Concentrated préfère déployer les VMs appartenant au même compte sur un "
+"pod unique."
+
+#: ../../service_offerings.rst:273
+msgid ""
+"Implicit Dedication will deploy VMs on private infrastructure that is dedicated "
+"to a specific domain or account. If you choose this planner, then you must also "
+"pick a value for Planner Mode. See `“Dedicating Resources to Accounts and "
+"Domains” <accounts.html#dedicating-resources-to-accounts-and-domains>`_."
+msgstr ""
+"L'attribution implicite va déployer les VMs sur une infrastructure privée qui "
+"est dédiée à un domaine spécifique ou un compte. Si vous choisissez cette "
+"planification, alors vous devez aussi choisir une valeur pour le Mode de "
+"planification. Voir `“Dédier des ressources à des comptes et des domaines” "
+"<accounts.html#dedicating-resources-to-accounts-and-domains>`_."
+
+#: ../../service_offerings.rst:279
+msgid ""
+"Bare Metal is used with bare metal hosts. See Bare Metal Installation in the "
+"Installation Guide."
+msgstr ""
+"Bare Metal est utilisé avec les hôtes bare metal. Voir Installation Bare Metal "
+"dans le guide d'installation."
+
+#: ../../service_offerings.rst:282
+msgid ""
+"**Planner Mode**: Used when ImplicitDedicationPlanner is selected in the "
+"previous field. The planner mode determines how VMs will be deployed on private "
+"infrastructure that is dedicated to a single domain or account."
+msgstr ""
+"**Mode de planification** : Utilisé quand ImplicitDedicationPlanner est "
+"sélectionné dans le champ précédent. Le mode de planification détermine comment "
+"les VMs vont être déployée sur une infrastructure privée qui est dédiée à un "
+"seul domaine ou à un compte."
+
+#: ../../service_offerings.rst:287
+msgid ""
+"Strict: A host will not be shared across multiple accounts. For example, strict "
+"implicit dedication is useful for deployment of certain types of applications, "
+"such as desktops, where no host can be shared between different accounts "
+"without violating the desktop software's terms of license."
+msgstr ""
+"Strict : Un hôte ne sera pas partagé par plusieurs comptes. Par exemple, la "
+"attribution implicite stricte est utile pour le déploiement de certains types "
+"d'applications, comme les Bureaux, où aucune hôte ne peut être partagé entre "
+"différents comptes sans violer les termes de licence du logiciel de bureau."
+
+#: ../../service_offerings.rst:293
+msgid ""
+"Preferred: The VM will be deployed in dedicated infrastructure if possible. "
+"Otherwise, the VM can be deployed in shared infrastructure."
+msgstr ""
+"Préférée : La VM sera déployée dans une infrastructure dédiée si possible. "
+"Sinon, la VM peut être déployée dans une infrastructure partagée."
+
+#: ../../service_offerings.rst:299
+msgid ""
+"**GPU**: Assign a physical GPU(GPU-passthrough) or a portion of a physicalGPU"
+msgstr ""
+"**GPU** Assigne un GPU physique (GPU-passthrough) ou un portion d'un GPU "
+"physique"
+
+#: ../../service_offerings.rst:298
+msgid ""
+"GPU card(vGPU) to the guest VM. It allows graphical applications to run on the "
+"VM. Select the card from the supported list of cards."
+msgstr ""
+"Carte GPU (vGPU) à la VM invitée. Cela permet à des applications graphique de "
+"fonctionner sur la VM. Sélectionner la carte depuis la liste des cartes "
+"supportées."
+
+#: ../../service_offerings.rst:301
+msgid ""
+"The options given are NVIDIA GRID K1 and NVIDIA GRID K2. These are vGPU capable "
+"cards that allow multiple vGPUs on a single physical GPU. If you want to use a "
+"card other than these, follow the instructions in the **\"GPU and vGPU support "
+"for CloudStack Guest VMs\"** page in the Cloudstack Version 4.4 Design Docs "
+"found in the Cloudstack Wiki."
+msgstr ""
+"Les options proposées sont NVIDIA GRID K1 et NVIDIA GRID K2. Ces cartes vGPU "
+"sont capables d'autoriser plusieurs vGPUs sur un seul GPU physique. Si vous "
+"voulez utiliser une carte plutôt que celles-ci, suivre les instructions dans la "
+"page **\"Support GPU et vGPU pour les VMs invitées CloudStack\"** dans le "
+"document de conception CloudStack Version 4.4 que vous trouverez dans le wiki "
+"CloudStack."
+
+#: ../../service_offerings.rst:307
+msgid ""
+"**vGPU Type**: Represents the type of virtual GPU to be assigned to a guest VM. "
+"In this case, only a portion of a physical GPU card (vGPU) is assigned to the "
+"guest VM."
+msgstr ""
+"**Type vGPU** : Représente le type de GPU virtuel à assigner à la VM invitée. "
+"Dans ce cas, seulement une partie de la carte physique GPU (vGPU) est attribuée "
+"à la VM invitée."
+
+#: ../../service_offerings.rst:311
+msgid ""
+"Additionally, the **passthrough vGPU** type is defined to represent a physical "
+"GPU device. A **passthrough vGPU** can directly be assigned to a single guest "
+"VM. In this case, a physical GPU device is exclusively allotted to a single "
+"guest VM."
+msgstr ""
+"En complément, le type **passthrough vGPU** est défini pour représenter un "
+"périphérique GPU physique. Un **passthrough vGPU** peu être directement assigné "
+"à une seule VM invitée. Dans ce cas, un périphérique physique GPU est "
+"exclusivement alloué à une seule VM invitée."
+
+#: ../../service_offerings.rst:317 ../../service_offerings.rst:390
+#: ../../service_offerings.rst:483
+msgid "Click Add."
+msgstr "Cliquer sur Ajouter."
+
+#: ../../service_offerings.rst:321
+msgid "Creating a New Disk Offering"
+msgstr "Créer une Nouvelle offre de disque."
+
+#: ../../service_offerings.rst:323
+msgid "To create a new disk offering:"
+msgstr "Pour créer une nouvelle offre de disque :"
+
+#: ../../service_offerings.rst:329
+msgid "In Select Offering, choose Disk Offering."
+msgstr "Dans Sélectionner une offre, choisir Offre de disque."
+
+#: ../../service_offerings.rst:331
+msgid "Click Add Disk Offering."
+msgstr "Cliquer sur Ajouter une offre de disque."
+
+#: ../../service_offerings.rst:335
+msgid "**Name**: Any desired name for the disk offering."
+msgstr "**Nom** : N'importe quel nom souhaité pour l'offre de disque."
+
+#: ../../service_offerings.rst:340
+msgid ""
+"**Custom Disk Size**: If checked, the user can set their own disk size. If not "
+"checked, the root administrator must define a value in Disk Size."
+msgstr ""
+"**Taille de disque personnalisée** : Si cochée, l'utilisateur peut fixer sa "
+"propre taille de disque. Si non cochée, l'administrateur racine doit définir "
+"une taille de disque."
+
+#: ../../service_offerings.rst:344
+msgid ""
+"**Disk Size**: Appears only if Custom Disk Size is not selected. Define the "
+"volume size in GB (2^30 1GB = 1,073,741,824 Bytes)."
+msgstr ""
+"**Taille de disque** : Apparaît seulement si la taille de disque personnalisée "
+"n'est pas sélectionnée. Définir une taille de volume en GB (2^30 1GB = "
+"1,073,741,824 Bytes)."
+
+#: ../../service_offerings.rst:368
+msgid ""
+"**Hypervisor Snapshot Reserve**: For managed storage only. This is a value that "
+"is a percentage of the size of the data disk. For example: if the data disk is "
+"20 GB and Hypervisor Snapshot Reserve is 200%, the storage volume that backs "
+"the storage repository (XenServer) or datastore (VMware) in question is sized "
+"at 60 GB (20 GB + (20 GB * 2)). This enables space for hypervisor snapshots in "
+"addition to the virtual disk that represents the data disk. This does not apply "
+"for KVM."
+msgstr ""
+"**Rétention d'instantanés de l'hyperviseur** : pour le stockage de gestion "
+"seulement. C'est une valeur qui est un pourcentage de la taille du disque de "
+"données. Par exemple, si le disque de données fait 20GB et que la rétention "
+"d'instantanés de l'hyperviseur est de 200%, alors le stockage de volume qui "
+"soutient le stockage de données (XenServer) ou le datastore (VMware) en "
+"question est taillé à 60 GB (20 GB + (20 GB *2)). Cela active de l'espace pour "
+"les instantannés de l'hyperviseur en complétement au disque virtuel qui "
+"représente les données du disque. Cela ne s'applique pas à KVM."
+
+#: ../../service_offerings.rst:376
+msgid ""
+"**(Optional)Storage Tags**: The tags that should be associated with the primary "
+"storage for this disk. Tags are a comma separated list of attributes of the "
+"storage. For example \"ssd,blue\". Tags are also added on Primary Storage. "
+"CloudStack matches tags on a disk offering to tags on the storage. If a tag is "
+"present on a disk offering that tag (or tags) must also be present on Primary "
+"Storage for the volume to be provisioned. If no such primary storage exists, "
+"allocation from the disk offering will fail.."
+msgstr ""
+"**(Optionnel) Etiquettes de stockage** : Les étiquettes qui devraient être "
+"associées avec le stockage primaire pour ce disque. Les étiquettes sont des "
+"listes d'attributs du stockage séparés par des virgules. Par exemple \"ssd,bleu"
+"\". Les étiquettes sont aussi ajoutées sur le stockage primaire. CloudStack "
+"fait correspondre les étiquettes de l'offre de disque aux étiquettes sur le "
+"stockage. Si une étiquette est présente sur une offre de disque cette ou ces "
+"étiquettes doivent aussi être présente sur le stockage primaire pour que le "
+"volume soit provisionné. S'il n'existe pas un tel stockage primaire, "
+"l'attribution depuis l'offre de disque va échouer."
+
+#: ../../service_offerings.rst:394
+msgid "Modifying or Deleting a Service Offering"
+msgstr "Modifier ou détruire une offre de service"
+
+#: ../../service_offerings.rst:396
+msgid ""
+"Service offerings cannot be changed once created. This applies to both compute "
+"offerings and disk offerings."
+msgstr ""
+"Les offres de service ne peuvent pas être changée une fois crée. Ceci "
+"s'applique à la fois aux offres de calcul et aux offres de disque."
+
+#: ../../service_offerings.rst:399
+msgid ""
+"A service offering can be deleted. If it is no longer in use, it is deleted "
+"immediately and permanently. If the service offering is still in use, it will "
+"remain in the database until all the virtual machines referencing it have been "
+"deleted. After deletion by the administrator, a service offering will not be "
+"available to end users that are creating new instances."
+msgstr ""
+"Une offre de service peut être supprimée. Si elle n'est plus utilisée, elle est "
+"détruite immédiatement et de façon permanente. Si l'offre de service est "
+"toujours utlisée, elle restera en base de données jusqu'à ce que toutes les "
+"machines virtuelles la référençant ont été supprimées. Après la suppression par "
+"l'administrateur, l'offre de service ne sera plus disponible pour les "
+"utilisateurs finaux qui créent de nouvelles instances."
+
+#: ../../service_offerings.rst:408
+msgid "System Service Offerings"
+msgstr "Offres de service système"
+
+#: ../../service_offerings.rst:410
+msgid ""
+"System service offerings provide a choice of CPU speed, number of CPUs, tags, "
+"and RAM size, just as other service offerings do. But rather than being used "
+"for virtual machine instances and exposed to users, system service offerings "
+"are used to change the default properties of virtual routers, console proxies, "
+"and other system VMs. System service offerings are visible only to the "
+"CloudStack root administrator. CloudStack provides default system service "
+"offerings. The CloudStack root administrator can create additional custom "
+"system service offerings."
+msgstr ""
+"Les offres de service système fournissent un choix de vitesse CPU, un nombre de "
+"CPUs, étiquettes et taille de RAM, comme d'autres offres de services le font. "
+"Mais plutôt qu'être utilisée pour les instances de machine virtuelle et être "
+"exposée aux utilisateurs, les offres de service système sont utilisée pour "
+"changer les propriétées par défaut des routeurs virtuels, des proxys console, "
+"et d'autres VMs systèmes. Les offres de service système sont visibles seulement "
+"par l'administrateur racine CloudStack. CloudStack fournit par défaut les "
+"offres de service système par défaut. L'administrateur racine de CloudStack "
+"peut créer des offres de services systèmes additionnelles."
+
+#: ../../service_offerings.rst:419
+msgid ""
+"When CloudStack creates a virtual router for a guest network, it uses default "
+"settings which are defined in the system service offering associated with the "
+"network offering. You can upgrade the capabilities of the virtual router by "
+"applying a new network offering that contains a different system service "
+"offering. All virtual routers in that network will begin using the settings "
+"from the new service offering."
+msgstr ""
+"Quand CloudStack crée un routeur virtuel pour un réseau invité, il utilise les "
+"paramètres par défaut qui sont définis dans l'offre de service associée avec "
+"l'offre réseau. Vous pouvez mettre à jour les capacités du routeur virtuel en "
+"appliquant une nouvelle offre qui contient une offre de service différente. "
+"Tous les routeurs virtuels dans ce réseau vont démarrer en utilisant les "
+"configurations de la nouvelle offre de service."
+
+#: ../../service_offerings.rst:428
+msgid "Creating a New System Service Offering"
+msgstr "Créer une Nouvelle offre de service système"
+
+#: ../../service_offerings.rst:430
+msgid "To create a system service offering:"
+msgstr "Pour créer une offre de service système :"
+
+#: ../../service_offerings.rst:436
+msgid "In Select Offering, choose System Offering."
+msgstr "Dans Choisir l'offre, choisir Offre système."
+
+#: ../../service_offerings.rst:438
+msgid "Click Add System Service Offering."
+msgstr "Cliquer sur Ajouter une offre de service système."
+
+#: ../../service_offerings.rst:442
+msgid "Name. Any desired name for the system offering."
+msgstr "Nom. N'importe quel nom pour l'offre système."
+
+#: ../../service_offerings.rst:444
+msgid ""
+"Description. A short description of the offering that can be displayed to users"
+msgstr ""
+"Description. Une description courte pour l'offre qui peut être affichée aux "
+"utilisateurs."
+
+#: ../../service_offerings.rst:447
+msgid ""
+"System VM Type. Select the type of system virtual machine that this offering is "
+"intended to support."
+msgstr ""
+"Type de VM système. Sélectionner le type de machine virtuelle système que cette "
+"offre est destinée à supporter."
+
+#: ../../service_offerings.rst:450
+msgid ""
+"Storage type. The type of disk that should be allocated. Local allocates from "
+"storage attached directly to the host where the system VM is running. Shared "
+"allocates from storage accessible via NFS."
+msgstr ""
+"Type de stockage. Le type de disque qui peut être alloué. L'allocation locale "
+"depuis un stockage attaché directement à l'hôte où la VM système fonctionne. "
+"Les partagées allouent depuis un stockage accessible via NFS."
+
+#: ../../service_offerings.rst:455
+msgid ""
+"# of CPU cores. The number of cores which should be allocated to a system VM "
+"with this offering"
+msgstr ""
+"# de coeurs CPU : le nombre de coeurs qui devraient être alloués à la VM "
+"système avec cette offre."
+
+#: ../../service_offerings.rst:458
+msgid ""
+"CPU (in MHz). The CPU speed of the cores that the system VM is allocated. For "
+"example, \"2000\" would provide for a 2 GHz clock."
+msgstr ""
+"CPU (en MHz). La vitesse CPU des coeurs alloués à la VM système. Par exemple, "
+"\"2000\" devrait fournir une vitesse d'horloge de 2Ghz. "
+
+#: ../../service_offerings.rst:461
+msgid ""
+"Memory (in MB). The amount of memory in megabytes that the system VM should be "
+"allocated. For example, \"2048\" would provide for a 2 GB RAM allocation."
+msgstr ""
+"Mémoire (en MB). La quantité de mémoire en mégabytes qui devrait être allouée à "
+"la VM système. Par exemple, \"2048\" devrait fournir une allocation de 2 GB de "
+"RAM."
+
+#: ../../service_offerings.rst:465
+msgid "Network Rate. Allowed data transfer rate in MB per second."
+msgstr ""
+"Vitesse réseau. Vitesse de transfert de données autorisé en MB par seconde."
+
+#: ../../service_offerings.rst:467
+msgid ""
+"Offer HA. If yes, the administrator can choose to have the system VM be "
+"monitored and as highly available as possible."
+msgstr ""
+"Offre HA. Si oui, l'administrateur peut choisir d'avoir la VM système de "
+"monitorée et d'être aussi hautement disponible que possible."
+
+#: ../../service_offerings.rst:470
+msgid ""
+"Storage Tags. The tags that should be associated with the primary storage used "
+"by the system VM."
+msgstr ""
+"Etiquettes de stockage. Les étiquettes qui sont associées avec le stockage "
+"primaire utilisé par la VM système."
+
+#: ../../service_offerings.rst:473
+msgid "Host Tags. (Optional) Any tags that you use to organize your hosts"
+msgstr ""
+"Etiquettes d'hôtes. (Optionnel) N'importe quelle étiquette que vous utilisez "
+"pour organiser vos hôtes."
+
+#: ../../service_offerings.rst:475
+msgid ""
+"CPU cap. Whether to limit the level of CPU usage even if spare capacity is "
+"available."
+msgstr ""
+"CPU cap. Pour limiter le taux d'utilisation du CPU si la capacité de réserve "
+"est disponible."
+
+#: ../../service_offerings.rst:478
+msgid ""
+"Public. Indicate whether the service offering should be available all domains "
+"or only some domains. Choose Yes to make it available to all domains. Choose No "
+"to limit the scope to a subdomain; CloudStack will then prompt for the "
+"subdomain's name."
+msgstr ""
+"Public. Indique si l'offre de service devrait être disponible dans tous les "
+"domaines ou seulement certains domaines. Choisir Oui pour le rendre disponible "
+"à tous les domaines. Choisir No pour limiter la portée à un sous-domaine ; "
+"CloudStack va alors demander le nom du sous-domaine."
+
+#: ../../service_offerings.rst:487
+msgid "Network Throttling"
+msgstr "Régulation du réseau"
+
+#: ../../service_offerings.rst:489
+msgid ""
+"Network throttling is the process of controlling the network access and "
+"bandwidth usage based on certain rules. CloudStack controls this behaviour of "
+"the guest networks in the cloud by using the network rate parameter. This "
+"parameter is defined as the default data transfer rate in Mbps (Megabits Per "
+"Second) allowed in a guest network. It defines the upper limits for network "
+"utilization. If the current utilization is below the allowed upper limits, "
+"access is granted, else revoked."
+msgstr ""
+"La régulation du réseau est le processus de contrôle de l'accès au réseau et de "
+"l'utilisation de la bande passante selon certaines règles. CloudStack contrôle "
+"ce comportement des réseaux invités dans le cloud en utilisant un paramètre de "
+"vitesse du réseau. Ce paramètre est défini comme la vitesse de transfert par "
+"défaut des données en Mbps (Megabits par secondes) autorisée sur un réseau "
+"invité. Il défini les limites supérieures de l'utilisation du réseau. Si "
+"l'utilisation courante est inférieure aux limites hautes autorisées, alors "
+"l'accès est autorisé, sinon il sera refusé."
+
+#: ../../service_offerings.rst:497
+msgid ""
+"You can throttle the network bandwidth either to control the usage above a "
+"certain limit for some accounts, or to control network congestion in a large "
+"cloud environment. The network rate for your cloud can be configured on the "
+"following:"
+msgstr ""
+"Vous pouvez réguler la bande passante du réseau soit pour contrôler "
+"l'utilisation au delà de certaines limites pour certains comptes, ou pour "
+"contrôler la congestion du réseau dans un grand environnement cloud. La vitesse "
+"du réseau de votre cloud peut être configuré selon ce qui suit :"
+
+#: ../../service_offerings.rst:502
+msgid "Network Offering"
+msgstr "Offre réseau"
+
+#: ../../service_offerings.rst:504
+msgid "Service Offering"
+msgstr "Offre de service"
+
+#: ../../service_offerings.rst:506
+msgid "Global parameter"
+msgstr "Paramètre Global"
+
+#: ../../service_offerings.rst:508
+msgid ""
+"If network rate is set to NULL in service offering, the value provided in the "
+"vm.network.throttling.rate global parameter is applied. If the value is set to "
+"NULL for network offering, the value provided in the network.throttling.rate "
+"global parameter is considered."
+msgstr ""
+"Si le taux du réseau est fixé à NULL dans l'offre de service, la valeur fournie "
+"par le paramètre global vm.network.throttling.rate est appliquée. Si la valeur "
+"est fixée à NULL pour l'offre réseau, la valeur fournie par le paramètre global "
+"network.throttling.rate est pris en considération. "
+
+#: ../../service_offerings.rst:513
+msgid ""
+"For the default public, storage, and management networks, network rate is set "
+"to 0. This implies that the public, storage, and management networks will have "
+"unlimited bandwidth by default. For default guest networks, network rate is set "
+"to NULL. In this case, network rate is defaulted to the global parameter value."
+msgstr ""
+"Pour les réseaux public par défaut, stockage et de gestion, la vitesse du "
+"réseau est fixé à 0. Cela implique que les réseaux public par défaut, stockage "
+"et de gestion auront une bande passante illimitée par défaut. Pour le réseau "
+"invité par défaut, la vitesse du réseau est fixée à NULL. Dans ce cas, la "
+"vitesse du réseau est fixée par défaut à la valeur du paramètre global."
+
+#: ../../service_offerings.rst:519
+msgid ""
+"The following table gives you an overview of how network rate is applied on "
+"different types of networks in CloudStack."
+msgstr ""
+"Le tableau suivant donne une vue d'ensemble de comment la vitesse du réseau est "
+"appliquée sur différents types de réseaux dans CloudStack."
+
+#: ../../service_offerings.rst:525
+msgid "Networks"
+msgstr "Réseaux"
+
+#: ../../service_offerings.rst:525
+msgid "Network Rate Is Taken from"
+msgstr "La vitesse du réseau est fournie par"
+
+#: ../../service_offerings.rst:527
+msgid "Guest network of Virtual Router"
+msgstr "Réseau invité d'un Routeur Virtuel"
+
+#: ../../service_offerings.rst:527 ../../service_offerings.rst:528
+msgid "Guest Network Offering"
+msgstr "Offre de réseau invité"
+
+#: ../../service_offerings.rst:528
+msgid "Public network of Virtual Router"
+msgstr "Réseau public du Routeur Virtuel"
+
+#: ../../service_offerings.rst:529
+msgid "Storage network of Secondary Storage VM"
+msgstr "Réseau de stockage d'une VM de Stockage Secondaire"
+
+#: ../../service_offerings.rst:529 ../../service_offerings.rst:530
+#: ../../service_offerings.rst:531 ../../service_offerings.rst:532
+#: ../../service_offerings.rst:533 ../../service_offerings.rst:534
+#: ../../service_offerings.rst:535 ../../service_offerings.rst:536
+msgid "System Network Offering"
+msgstr "Offre de réseau système"
+
+#: ../../service_offerings.rst:530
+msgid "Management network of Secondary Storage VM"
+msgstr "Réseau de gestion d'une VM de Stockage Secondaire"
+
+#: ../../service_offerings.rst:531
+msgid "Storage network of Console Proxy VM"
+msgstr "Réseau de stockage d'une VM Console Proxy"
+
+#: ../../service_offerings.rst:532
+msgid "Management network of Console Proxy VM"
+msgstr "Réseau de gestion d'une VM Console Proxy"
+
+#: ../../service_offerings.rst:533
+msgid "Storage network of Virtual Router"
+msgstr "Réseau de stockage du Routeur Virtuel"
+
+#: ../../service_offerings.rst:534
+msgid "Management network of Virtual Router"
+msgstr "Réseau de gestion du Routeur Virtuel"
+
+#: ../../service_offerings.rst:535
+msgid "Public network of Secondary Storage VM"
+msgstr "Réseau public d'une VM de Stockage Secondaire"
+
+#: ../../service_offerings.rst:536
+msgid "Public network of Console Proxy VM"
+msgstr "Réseau public d'une VM Console Proxy"
+
+#: ../../service_offerings.rst:537
+msgid "Default network of a guest VM"
+msgstr "Réseau par défaut d'une VM invitée"
+
+#: ../../service_offerings.rst:537
+msgid "Compute Offering"
+msgstr "Offre de calcul"
+
+#: ../../service_offerings.rst:538
+msgid "Additional networks of a guest VM"
+msgstr "Réseaux additionnels pour une VM invitée"
+
+#: ../../service_offerings.rst:538
+msgid "Corresponding Network Offerings"
+msgstr "Offres de réseau correspondant"
+
+#: ../../service_offerings.rst:541
+msgid ""
+"A guest VM must have a default network, and can also have many additional "
+"networks. Depending on various parameters, such as the host and virtual switch "
+"used, you can observe a difference in the network rate in your cloud. For "
+"example, on a VMware host the actual network rate varies based on where they "
+"are configured (compute offering, network offering, or both); the network type "
+"(shared or isolated); and traffic direction (ingress or egress)."
+msgstr ""
+"Une VM invitée doit avoir un réseau par défaut, et peu aussi avoir plusieurs "
+"réseaux additionnels. En fonction de nombreux paramètres, comme l'hôte ou le "
+"commutateur virtuel utilisé, vous pouvez observer une différence de vitesse du "
+"réseau dans votre cloud. Par example, sur un hôte VMware la vitesse réseau "
+"actuelle varie en fonction de l'endroit où elle est configurée (offre de "
+"calcul, offre réseau, ou les deux) ; le type de réseau (partagé ou isolé) ; et "
+"la direction du trafic (entrant ou sortant)."
+
+#: ../../service_offerings.rst:549
+msgid ""
+"The network rate set for a network offering used by a particular network in "
+"CloudStack is used for the traffic shaping policy of a port group, for example: "
+"port group A, for that network: a particular subnet or VLAN on the actual "
+"network. The virtual routers for that network connects to the port group A, and "
+"by default instances in that network connects to this port group. However, if "
+"an instance is deployed with a compute offering with the network rate set, and "
+"if this rate is used for the traffic shaping policy of another port group for "
+"the network, for example port group B, then instances using this compute "
+"offering are connected to the port group B, instead of connecting to port group "
+"A."
+msgstr ""
+"La vitesse réseau fixée pour une offre de réseau utilisée par un réseau "
+"particulier dans CloudStack est utilisé pour la stratégie de mise en forme du "
+"trafic pour un groupe de port, par exemple : groupe de port A, pour ce réseau : "
+"un sous-réseau particulier ou un VLAN sur le réseau actuel. Les routeurs "
+"virtuel pour ce réseau connecte au groupe de port A, et par défaut les "
+"instances dans ce réseau se connectent à ce groupe de port. Toutefois, si une "
+"instance est déployée avec une offre de service avec une vitesse du réseau de "
+"fixée, et si cette vitesse est utilisée pour la stratégie de contrôle du trafic "
+"d'un autre groupe de port pour le réseau, par exemple le groupe de port B, "
+"alors les instances utilisant l'offre de calcule sont connectée sur le groupe "
+"de port B, au lieu de se connecter au groupe de port A."
+
+#: ../../service_offerings.rst:560
+msgid ""
+"The traffic shaping policy on standard port groups in VMware only applies to "
+"the egress traffic, and the net effect depends on the type of network used in "
+"CloudStack. In shared networks, ingress traffic is unlimited for CloudStack, "
+"and egress traffic is limited to the rate that applies to the port group used "
+"by the instance if any. If the compute offering has a network rate configured, "
+"this rate applies to the egress traffic, otherwise the network rate set for the "
+"network offering applies. For isolated networks, the network rate set for the "
+"network offering, if any, effectively applies to the ingress traffic. This is "
+"mainly because the network rate set for the network offering applies to the "
+"egress traffic from the virtual router to the instance. The egress traffic is "
+"limited by the rate that applies to the port group used by the instance if any, "
+"similar to shared networks."
+msgstr ""
+"La politique de gestion du trafic sur les groupes de ports standards dans "
+"VMware s'applique seulement sur le trafic sortant et les effets sur le réseau "
+"dépendent du type de trafic réseau utilisé dans CloudStack. Dans les réseaux "
+"partagés, le trafic entrant est illimité pour CloudStack et le trafic sortant "
+"est limité à la vitesse qui s'applique au groupe de port utilisé par l'instance "
+"au besoin. Si l'offre de calcul a une vitesse de réseau configurée, cette "
+"vitesse s'applique au trafic sortant, sinon c'est la vitesse du réseau fixée "
+"par l'offre réseau qui s'applique. Pour les réseaux isolés, la vitesse du "
+"réseau fixée pour l'offre de réseau, si elle existe, est effectivement "
+"appliquée au trafic entrant. Cela est dû en grande partie à la vitesse du "
+"réseau fixée pour l'offre de service qui s'applique au trafic sortant depuis le "
+"routeur virtuel de cette instance. Le trafic sortant est limité par la vitesse "
+"qui s'applique au groupe de port utilisé par l'instance, similairement aux "
+"réseaux partagés."
+
+#: ../../service_offerings.rst:574
+msgid "For example:"
+msgstr "Par exemple :"
+
+#: ../../service_offerings.rst:576
+msgid "Network rate of network offering = 10 Mbps"
+msgstr "Vitesse de réseau pour l'offre réseau = 10 Mbps"
+
+#: ../../service_offerings.rst:578
+msgid "Network rate of compute offering = 200 Mbps"
+msgstr "Vitesse de réseau pour l'offre de calcul = 200 Mbps"
+
+#: ../../service_offerings.rst:580
+msgid ""
+"In shared networks, ingress traffic will not be limited for CloudStack, while "
+"egress traffic will be limited to 200 Mbps. In an isolated network, ingress "
+"traffic will be limited to 10 Mbps and egress to 200 Mbps."
+msgstr ""
+"Dans les réseaux partagés, le trafic entrant ne sera pas limité pour "
+"CloudStack, tandis que le trafic sortant sera limité à 200 Mbps. Dans un réseau "
+"isolé, le trafic entrant sera limité à 10 Mbps et le trafic sortant à 200 Mbps."
+
+#: ../../service_offerings.rst:587
+msgid "Changing the Default System Offering for System VMs"
+msgstr "Changer l'Offre Système par Défaut pour les VMs Systèmes"
+
+#: ../../service_offerings.rst:589
+msgid ""
+"You can manually change the system offering for a particular System VM. "
+"Additionally, as a CloudStack administrator, you can also change the default "
+"system offering used for System VMs."
+msgstr ""
+"Vous pouvez changer manuellement l'offre système pour une VM système "
+"particulière. En complément, en tant qu'administrateur CloudStack, vous pouvez "
+"aussi changer l'offre système par défaut utilisée par les VMs Système."
+
+#: ../../service_offerings.rst:593
+msgid "Create a new system offering."
+msgstr "Créer une nouvelle offre système."
+
+#: ../../service_offerings.rst:595
+msgid "For more information, see Creating a New System Service Offering."
+msgstr ""
+"Pour plus d'information, voir Créer une nouvelle offre de service système."
+
+#: ../../service_offerings.rst:597
+msgid "Back up the database:"
+msgstr "Sauvegarder la base de données :"
+
+#: ../../service_offerings.rst:603
+msgid "Open an MySQL prompt:"
+msgstr "Ouvrir un invite MySQL :"
+
+#: ../../service_offerings.rst:609
+msgid "Run the following queries on the cloud database."
+msgstr "Lancer les requêtes suivantes dans la base de données du cloud."
+
+#: ../../service_offerings.rst:611
+msgid ""
+"In the disk\\_offering table, identify the original default offering and the "
+"new offering you want to use by default."
+msgstr ""
+"Dans la table disk\\_offering, identifier l'offre par défaut originale et la "
+"nouvelle offre que vous voulez utiliser par défaut."
+
+#: ../../service_offerings.rst:614
+msgid "Take a note of the ID of the new offering."
+msgstr "Noter l'ID de la nouvelle offre."
+
+#: ../../service_offerings.rst:620
+msgid "For the original default offering, set the value of unique\\_name to NULL."
+msgstr ""
+"Pour l'offre par défaut originale, fixer la valeur de unique\\_name à NULL."
+
+#: ../../service_offerings.rst:627
+msgid "Ensure that you use the correct value for the ID."
+msgstr "S'assurer que vous utilisez la valeur correcte pour l'ID."
+
+#: ../../service_offerings.rst:629
+msgid ""
+"For the new offering that you want to use by default, set the value of unique"
+"\\_name as follows:"
+msgstr ""
+"Pour la nouvelle offre que vous voulez utiliser par défaut, fixer la valeur de "
+"unique\\_name comme ceci :"
+
+#: ../../service_offerings.rst:632
+msgid ""
+"For the default Console Proxy VM (CPVM) offering,set unique\\_name to 'Cloud."
+"com-ConsoleProxy'. For the default Secondary Storage VM (SSVM) offering, set "
+"unique\\_name to 'Cloud.com-SecondaryStorage'. For example:"
+msgstr ""
+"Pour l'offre par défaut de la VM Console Proxy (CPVM), fixer unique\\_name à "
+"'Cloud.com-ConsoleProxy'. Pour l'offre par défaut de la VM de Stockage "
+"Secondaire (SSVM), fixer unique\\_name à 'Cloud.com-SecondaryStorage'. Par "
+"exemple :"
+
+#: ../../service_offerings.rst:641
+msgid ""
+"Restart CloudStack Management Server. Restarting is required because the "
+"default offerings are loaded into the memory at startup."
+msgstr ""
+"Redémarrer le serveur de gestion de CloudStack. Le redémarrage est requis parce "
+"que les offres par défaut sont stockées en mémoire au démarrage."
+
+#: ../../service_offerings.rst:648
+msgid ""
+"Destroy the existing CPVM or SSVM offerings and wait for them to be recreated. "
+"The new CPVM or SSVM are configured with the new offering."
+msgstr ""
+"Détruire les CPVM et SSVM existantes et attendre qu'elles soient recréées. Les "
+"nouvelles CPVM et SSVM sont configurées avec les nouvelles offres."

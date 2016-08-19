@@ -1,0 +1,146 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-08-27 12:13+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.8\n"
+
+# 29cfff43a2514946ad4c3499ebefbed6
+#: ../../administration.rst:18
+msgid "User Services"
+msgstr "Services utilisateurs"
+
+# d7001feee3bd4b298a4c17869c0c45dc
+#: ../../administration.rst:20
+msgid ""
+"In addition to the physical and logical infrastructure of your cloud and "
+"the CloudStack software and servers, you also need a layer of user services "
+"so that people can actually make use of the cloud. This means not just a "
+"user UI, but a set of options and resources that users can choose from, "
+"such as templates for creating virtual machines, disk storage, and more. If "
+"you are running a commercial service, you will be keeping track of what "
+"services and resources users are consuming and charging them for that "
+"usage. Even if you do not charge anything for people to use your cloud – "
+"say, if the users are strictly internal to your organization, or just "
+"friends who are sharing your cloud – you can still keep track of what "
+"services they use and how much of them."
+msgstr ""
+"En complément à l'infrastructure physique et logique de votre cloud et des "
+"serveurs et logiciels CloudStack, vous avez également besoin d'une couche "
+"de services utilisateurs pour que les utilisateurs puissent faire un usage "
+"du cloud. Cela ne signifie pas seulement une interface utilisateur, mais un "
+"ensemble d'options et de ressources parmi lesquels les utilisateurs peuvent "
+"se servir, comme les modèles pour créer des machines virtuelles, des "
+"disques de stockage, etc. Si vous gérer un service commercial, vous "
+"conserverez un suivi de quels services et quelles ressources les "
+"utilisateurs ont fait l'usage et leur facturerez. Même si vous ne facturez "
+"rien aux personnes qui utilisent votre cloud, en d'autres mots si les "
+"utilisateurs sont strictement internes à votre organisation, ou juste des "
+"amis qui partagent votre cloud, vous pouvez continuer à suivre quels "
+"services ils utilisent et combien le font."
+
+# 8691c3078d2741dabb85f469a7b58373
+#: ../../administration.rst:34
+msgid "Service Offerings, Disk Offerings, Network Offerings, and Templates"
+msgstr "Offres de service, offres de disque, offres de réseau et modèles"
+
+# 82a1a03c5a234653b024700134d18169
+#: ../../administration.rst:36
+msgid ""
+"A user creating a new instance can make a variety of choices about its "
+"characteristics and capabilities. CloudStack provides several ways to "
+"present users with choices when creating a new instance:"
+msgstr ""
+"Un utilisateur qui créé une nouvelle instance dispose de nombreux choix sur "
+"ses caractéristiques et ses capacités. CloudStack fourni plusieurs manières "
+"de présenter aux utilisateurs ses choix lors de la création d'une instance :"
+
+# 5b79acf1c4034cf09e56634938cbfd33
+#: ../../administration.rst:40
+msgid ""
+"Service Offerings, defined by the CloudStack administrator, provide a "
+"choice of CPU speed, number of CPUs, RAM size, tags on the root disk, and "
+"other choices. See Creating a New Compute Offering."
+msgstr ""
+"Les offres de service, définies par l'administrateur CloudStack, fourni un "
+"choix de vitesse CPU, de nombre de CPUs, de taille de RAM, d'étiquettes sur "
+"les disques racines, et d'autres choix. Voir Créer une nouvelle offre de "
+"calcul."
+
+# d71f7d3d0dda4061838347d6fc7e35fc
+#: ../../administration.rst:44
+msgid ""
+"Disk Offerings, defined by the CloudStack administrator, provide a choice "
+"of disk size and IOPS (Quality of Service) for primary data storage. See "
+"Creating a New Disk Offering."
+msgstr ""
+"Les offres de disques, définies par l'administrateur CloudStack, "
+"fournissent un choix de tailles de disque et d'IOPS (Qualité de service) "
+"pour les stockages primaires de données. Voir Créer une nouvelle offre de "
+"disque."
+
+# c00720676a8a4c4a9d423dd5f5743f4c
+#: ../../administration.rst:48
+msgid ""
+"Network Offerings, defined by the CloudStack administrator, describe the "
+"feature set that is available to end users from the virtual router or "
+"external networking devices on a given guest network. See Network Offerings."
+msgstr ""
+"Les offres de réseaux, définies par l'administrateur CloudStack, décrivent "
+"les fonctionnalités préparées qui sont disponibles aux utilisateurs finaux "
+"depuis le routeur virtuel ou un élément réseau externe sur le réseau "
+"invités défini. Voir Offres de réseaux."
+
+# 169ad751a60e44929103a91c102ac2a2
+#: ../../administration.rst:53
+msgid ""
+"Templates, defined by the CloudStack administrator or by any CloudStack "
+"user, are the base OS images that the user can choose from when creating a "
+"new instance. For example, CloudStack includes CentOS as a template. See "
+"Working with Templates."
+msgstr ""
+"Les modèles, définis par l'administrateur CloudStack ou par n'importe quel "
+"utilisateur CloudStack, sont les images d'OS de base que l'utilisateur peut "
+"choisir lors de la création d'une nouvelle instance. Par exemple, "
+"CloudStack inclue CentOS comme modèle. Voir Travailler avec les modèles."
+
+# 81b027ebc2094409b6f28288660792c7
+#: ../../administration.rst:58
+msgid ""
+"In addition to these choices that are provided for users, there is another "
+"type of service offering which is available only to the CloudStack root "
+"administrator, and is used for configuring virtual infrastructure "
+"resources. For more information, see Upgrading a Virtual Router with System "
+"Service Offerings."
+msgstr ""
+"En complément de ce choix qui sont fournis pour les utilisateurs, il y a un "
+"autre type d'offre de service qui est disponible seulement à "
+"l'administrateur racine de CloudStack, et est utilisé pour configurer les "
+"ressources d'infrastructure virtuelle. Pour plus d'information, voir Mettre "
+"à niveau un routeur virtuel avec des offres de services systèmes."

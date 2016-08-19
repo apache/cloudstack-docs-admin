@@ -1,0 +1,126 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-12-20 22:47+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
+
+# 89295dfc645a421eac4401834f1b5564
+#: ../../networking/static_nat.rst:18
+msgid "Static NAT"
+msgstr "Static NAT"
+
+# c3b2d053fab944578298ac1adf46e76e
+#: ../../networking/static_nat.rst:20
+msgid ""
+"A static NAT rule maps a public IP address to the private IP address of a "
+"VM in order to allow Internet traffic into the VM. The public IP address "
+"always remains the same, which is why it is called static NAT. This section "
+"tells how to enable or disable static NAT for a particular IP address."
+msgstr ""
+"Une règle de NAT statique associe une adresse IP publique à l'adresse IP "
+"privée d'une VM afin de permettre le trafic Internet vers la machine "
+"virtuelle. L'adresse IP publique reste toujours la même, raison pour "
+"laquelle cette solution est appelée static NAT. Cette section explique "
+"comment activer ou désactiver le static NAT pour une adresse IP "
+"particulière."
+
+# ffe605639e6844fa8170c65805372b4c
+#: ../../networking/static_nat.rst:28
+msgid "Enabling or Disabling Static NAT"
+msgstr "Activer ou désactiver le Static NAT"
+
+# 311e1bb870dd43bb98cd7ee6a01f42ca
+#: ../../networking/static_nat.rst:30
+msgid ""
+"If port forwarding rules are already in effect for an IP address, you "
+"cannot enable static NAT to that IP."
+msgstr ""
+"Si les règles de redirection de port sont déjà mise en oeuvre pour une "
+"adresse IP, vous ne pouvez pas activer le static NAT pour cette IP."
+
+# b89fc2e081874b24b0ad50ed843837e9
+#: ../../networking/static_nat.rst:33
+msgid ""
+"If a guest VM is part of more than one network, static NAT rules will "
+"function only if they are defined on the default network."
+msgstr ""
+"Si une VM invitée fait partie de plus d'un réseau, les règles de static NAT "
+"ne fonctionneront uniquement si elle sont définies sur le réseau par défaut."
+
+# e6dabe6070464d23926137799673505a
+#: ../../networking/static_nat.rst:36
+msgid "Log in to the CloudStack UI as an administrator or end user."
+msgstr ""
+"Se connecter à l'interface de CloudStack comme administrateur ou "
+"utilisateur final."
+
+# 726614a43cbf4c448770c40822676059
+#: ../../networking/static_nat.rst:38
+msgid "In the left navigation, choose Network."
+msgstr "Dans la navigation à gauche, choisissez Réseau."
+
+# 71505d3318714907a3abd5319833b78e
+#: ../../networking/static_nat.rst:40
+msgid "Click the name of the network where you want to work with."
+msgstr "Cliquez sur le nom du réseau avec lequel vous souhaitez travailler."
+
+# 0898722d18384a89a217a7a8e7cb6fbf
+#: ../../networking/static_nat.rst:42
+msgid "Click View IP Addresses."
+msgstr "Cliquez sur Voir les adresses IP."
+
+# 5e916ccbf7c94237b104827f38f2ca6a
+#: ../../networking/static_nat.rst:44
+msgid "Click the IP address you want to work with."
+msgstr "Cliquer sur l'adresse IP avec laquelle vous voulez travailler."
+
+# 4f5018aad8f14212a2d0c17d955b197a
+#: ../../networking/static_nat.rst:46
+msgid "Click the Static NAT |enabledisablenat.png| button."
+msgstr "Cliquer sur le bouton Static NAT |enabledisablenat.png|."
+
+# 001cc2e543c345afb265ff300a5435ca
+#: ../../networking/static_nat.rst:48
+msgid ""
+"The button toggles between Enable and Disable, depending on whether static "
+"NAT is currently enabled for the IP address."
+msgstr ""
+"Le bouton bascule entre Activer et Désactiver, selon que le static NAT est "
+"actuellement activé pour l'adresse IP."
+
+# 91178f93f90f4135b40823266a6ecb4e
+#: ../../networking/static_nat.rst:51
+msgid ""
+"If you are enabling static NAT, a dialog appears where you can choose the "
+"destination VM and click Apply."
+msgstr ""
+"Si vous activez le static NAT, une boite de dialogue apparaît dans laquelle "
+"vous pouvez choisir la VM cible et cliquer sur Appliquer."
