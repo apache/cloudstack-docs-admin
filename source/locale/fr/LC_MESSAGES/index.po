@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apache CloudStack
+# Administration Documentation package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-08-22 14:17+0200\n"
+"Last-Translator: \n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: ../../index.rst:23
+msgid "CloudStack Administration Documentation"
+msgstr "CloudStack : documentation d'administration"
+
+#: ../../index.rst:28
+msgid ""
+"This guide is aimed at Administrators of a CloudStack based Cloud, for "
+"Release Notes, Installation and General introduction to CloudStack see "
+"the following guides:"
+msgstr ""
+"Ce guide est destiné aux administrateurs d'un cloud basé sur CloudStack. "
+"Pour les notes de versions, l'installation et l'introduction générale à "
+"CloudStack, veuillez vous référer aux guides suivants :"
+
+#: ../../index.rst:32
+msgid "`Documentation Start <http://docs.cloudstack.apache.org>`_"
+msgstr "`Accueil de la documentation <http://docs.cloudstack.apache.org>`_"
+
+#: ../../index.rst:34
+msgid ""
+"`Installation Guide <http://docs.cloudstack.apache.org/projects/"
+"cloudstack-installation>`_"
+msgstr ""
+"`Guide d'installation <http://docs.cloudstack.apache.org/projects/"
+"cloudstack-installation>`_"
+
+#: ../../index.rst:36
+msgid ""
+"`Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-"
+"release-notes>`_"
+msgstr ""
+"`Notes de versions <http://docs.cloudstack.apache.org/projects/cloudstack-"
+"release-notes>`_"
+
+#: ../../index.rst:40
+msgid "User Interface"
+msgstr "Interface utilisateur"
+
+#: ../../index.rst:49
+msgid "Managing Accounts, Users and Domains"
+msgstr "Gérer les comptes, les utilisateurs et les domaines"
+
+#: ../../index.rst:58
+msgid "Using Projects to Organize User Resources"
+msgstr "Utiliser les projets pour organiser les ressources des utilisateurs"
+
+#: ../../index.rst:66
+msgid "Service Offerings"
+msgstr "Offres de services"
+
+#: ../../index.rst:75
+msgid "Setting up Networking for Users"
+msgstr "Configurer le réseau pour les utilisateurs"
+
+#: ../../index.rst:84
+msgid "Working with Virtual Machines"
+msgstr "Travailler avec des machines virtuelles"
+
+#: ../../index.rst:93
+msgid "Working with Templates"
+msgstr "Travailler avec des modèles"
+
+#: ../../index.rst:102
+msgid "Working with Hosts"
+msgstr "Travailler avec des hôtes"
+
+#: ../../index.rst:111
+msgid "Working with Storage"
+msgstr "Travailler avec le stockage"
+
+#: ../../index.rst:120
+msgid "Working with System Virtual Machines"
+msgstr "Travailler avec les machines virtuelles systèmes"
+
+#: ../../index.rst:129
+msgid "Working with Usage"
+msgstr "Travailler avec les statistiques d'utilisation"
+
+#: ../../index.rst:138
+msgid "Managing Networks and Traffic"
+msgstr "Gérer les réseaux et le trafic"
+
+#: ../../index.rst:148
+msgid "Managing the Cloud"
+msgstr "Gérer le cloud"
+
+#: ../../index.rst:157
+msgid "System Reliability and Availability"
+msgstr "Fiabilité et disponibilité du système"
+
+#: ../../index.rst:166
+msgid "Plugins"
+msgstr "Plugins"
+
+#: ../../index.rst:175
+msgid "Tuning"
+msgstr "Optimisations"
+
+#: ../../index.rst:184
+msgid "Events and Troubleshooting"
+msgstr "Les évènements et le dépannage"
+
+# 17401d6f4fa445e288e17f050447db52
+#~ msgid ""
+#~ "We are in the process of changing documentation format as well as "
+#~ "hosting mechanism. Please be patient with us as we migrate our entire "
+#~ "documentation to this new setup."
+#~ msgstr ""
+#~ "Nous sommes actuellement en train de changer le format de la "
+#~ "documentation ainsi que son hébergement. Merci d'être patient pendant "
+#~ "que nous migrons la totalité de la documentation vers ce nouveau "
+#~ "format."

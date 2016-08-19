@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-12-22 10:25+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
+
+# aaae14dc309846cf90268bd429550032
+#: ../../networking/multiple_subnets_in_shared_network.rst:18
+msgid "Multiple Subnets in Shared Network"
+msgstr "Plusieurs sous-réseaux au sein d'un Réseau Partagé"
+
+# e1e0546c06b44b948781bf1b155376b6
+#: ../../networking/multiple_subnets_in_shared_network.rst:20
+msgid ""
+"CloudStack provides you with the flexibility to add guest IP ranges from different subnets in Basic zones and security groups-enabled Advanced zones. For security groups-enabled Advanced zones, "
+"it implies multiple subnets can be added to the same VLAN. With the addition of this feature, you will be able to add IP address ranges from the same subnet or from a different one when IP "
+"address are exhausted. This would in turn allows you to employ higher number of subnets and thus reduce the address management overhead. You can delete the IP ranges you have added."
+msgstr ""
+"CloudStack offre la flexibilité d'ajouter des plages d'IP d'invité à partir de différents sous-réseaux dans les zones Basiques et dans les zones Avancées avec groupes de sécurité. Pour les zones "
+"avancées avec groupes de sécurité, cela implique que plusieurs sous-réseaux puissent être ajoutés au même VLAN. Grâce à cette fonctionnalité, vous pourrez ajouter des plages d'adresses IP à "
+"partir du même sous-réseau ou à partir d'un autre lorsque les adresses IP sont épuisées. Cela permet au final d'utiliser un plus grand nombre de sous-réseaux et de réduire ainsi la charge de "
+"travail liée à la gestion des adresses. Vous pouvez supprimer les plages IP que vous avez ajoutées."
+
+# d651b6e4b73a4c8897943f492f553be4
+#: ../../networking/multiple_subnets_in_shared_network.rst:32
+msgid "Prerequisites and Guidelines"
+msgstr "Prérequis et lignes directrives"
+
+# 321b92f77c9e47b581323b300949d477
+#: ../../networking/multiple_subnets_in_shared_network.rst:34
+msgid "This feature can only be implemented:"
+msgstr "Cette fonctionnalité ne peut seulement être implémentée :"
+
+# 693a867b887b40c39f9112ee79a514f3
+#: ../../networking/multiple_subnets_in_shared_network.rst:36
+msgid "on IPv4 addresses"
+msgstr "Sur des adresses IPv4"
+
+# d4bb9088f4ce439bb4aa86f2d6ca1226
+#: ../../networking/multiple_subnets_in_shared_network.rst:38
+msgid "if virtual router is the DHCP provider"
+msgstr "Si le routeur virtuel est le fournisseur DHCP"
+
+# b4bb01b3421b4a26af052b41ef2e9c74
+#: ../../networking/multiple_subnets_in_shared_network.rst:40
+msgid "on KVM, xenServer, and VMware hypervisors"
+msgstr "Sur les hyperviseurs KVM, xenServer et VMware"
+
+# 3ce0b6127bed4c878204268e02519b5f
+#: ../../networking/multiple_subnets_in_shared_network.rst:42
+msgid "Manually configure the gateway of the new subnet before adding the IP range."
+msgstr "Configurez manuellement la passerelle du nouveau sous-réseau avant d'ajouter la plage d'IP."
+
+# 92e9da161e084fd09cbd7a34e3a8ea59
+#: ../../networking/multiple_subnets_in_shared_network.rst:45
+msgid "CloudStack supports only one gateway for a subnet; overlapping subnets are not currently supported"
+msgstr "CloudStack supporte une seule passerelle par sous-réseau ; le chevauchement de réseau n'est pas actuellement pris en compte."
+
+# 0ccc8eb511c649519820d407c101fb3f
+#: ../../networking/multiple_subnets_in_shared_network.rst:50
+msgid "Adding Multiple Subnets to a Shared Network"
+msgstr "Ajout de plusieurs sous-réseaux à un Réseau Partagé"
+
+# 402388a40d1c4432adf97dcb94bc7e0a
+#: ../../networking/multiple_subnets_in_shared_network.rst:52
+msgid "Log in to the CloudStack UI as an administrator or end user."
+msgstr "Se connecter à l'interface de CloudStack comme administrateur ou utilisateur final."
+
+# c062e6ebc0b74be185c8e192c237a3d8
+#: ../../networking/multiple_subnets_in_shared_network.rst:54
+msgid "In the left navigation, choose Infrastructure."
+msgstr "Choisissez Infrastructure dans le panneau de navigation à gauche."
+
+# 9d6f09662ceb452bb8bf26c21696a7ff
+#: ../../networking/multiple_subnets_in_shared_network.rst:56
+msgid "On Zones, click View More, then click the zone to which you want to work with.."
+msgstr "Sur Zones, cliquer sur Voir plus, puis cliquer sur la zone avec laquelle vous voulez travailler."
+
+# 9a6c131e8dee4829a34a534324f96d6a
+#: ../../networking/multiple_subnets_in_shared_network.rst:59
+msgid "Click Physical Network."
+msgstr "Cliquer sur le réseau physique."
+
+# 412cf2ea6b7c4fc9a45dcfabca044210
+#: ../../networking/multiple_subnets_in_shared_network.rst:61
+msgid "In the Guest node of the diagram, click Configure."
+msgstr "Dans le noeud Invité du diagramme, cliquer sur Configurer."
+
+# 20271a4db3304ebd986eefb0dbe2304b
+#: ../../networking/multiple_subnets_in_shared_network.rst:63
+msgid "Click Networks."
+msgstr "Cliquer sur Réseaux."
+
+# d4d67c51b96a441984f094dad7440b53
+#: ../../networking/multiple_subnets_in_shared_network.rst:65
+msgid "Select the networks you want to work with."
+msgstr "Choisir les réseaux avec lesquelles vous voulez travailler."
+
+# dbda223b46514614bc24a96cbd967579
+#: ../../networking/multiple_subnets_in_shared_network.rst:67
+msgid "Click View IP Ranges."
+msgstr "Cliquer sur Voir les intervalles IP."
+
+# fd40e95e0dcc4b37ac83ea1764ccd1c5
+#: ../../networking/multiple_subnets_in_shared_network.rst:69
+msgid "Click Add IP Range."
+msgstr "Cliquer sur Ajouter un intervalle IP."
+
+# e57818339fdd4bea80a587551ff3bb27
+#: ../../networking/multiple_subnets_in_shared_network.rst:71
+msgid "The Add IP Range dialog is displayed, as follows:"
+msgstr "La boîte de dialogue Ajouter un intervalle IP s'affiche comme suit :"
+
+# 1adf38c68dd04551aeded2194d8d3bfb
+#: ../../networking/multiple_subnets_in_shared_network.rst:73
+msgid "|add-ip-range.png|"
+msgstr "|add-ip-range.png|"
+
+# 8d5c0e4efe1742f7988a60fe55223d66
+#: ../../networking/multiple_subnets_in_shared_network.rst:75
+msgid "Specify the following:"
+msgstr "Spécifier les informations suivantes :"
+
+# c5bd70e2ab5748e18b8bc2840088a41e
+#: ../../networking/multiple_subnets_in_shared_network.rst:77
+msgid "All the fields are mandatory."
+msgstr "Tous les champs sont obligatoires."
+
+# cefcd378eaf44ae5b0c6aaa2809a4fe4
+#: ../../networking/multiple_subnets_in_shared_network.rst:79
+msgid ""
+"**Gateway**: The gateway for the tier you create. Ensure that the gateway is within the Super CIDR range that you specified while creating the VPC, and is not overlapped with the CIDR of any "
+"existing tier within the VPC."
+msgstr ""
+"**Passerelle** : La passerelle pour le segment que vous créez. S'assurer que la passerelle est inclue dans l'intervalle du Super CIDR que vous avez spécifié lors de la création du VPC et qu'elle "
+"n'est pas en conflit avec un segment existant du VPC."
+
+# d63b707e5f374d5d807b5749f9cc44ad
+#: ../../networking/multiple_subnets_in_shared_network.rst:84
+msgid "**Netmask**: The netmask for the tier you create."
+msgstr "**Masque de sous-réseau** : Le masque de sous-réseau pour le segment que vous créez."
+
+# f5d499f2a9fa4a859f8563d9b68b29a3
+#: ../../networking/multiple_subnets_in_shared_network.rst:86
+msgid "For example, if the VPC CIDR is 10.0.0.0/16 and the network tier CIDR is 10.0.1.0/24, the gateway of the tier is 10.0.1.1, and the netmask of the tier is 255.255.255.0."
+msgstr "Par exemple, si le CIDR du VPC est 10.0.0.0/16 et que le réseau CIDR du tiers est 10.0.1.0/24, la passerelle du tiers est 10.0.1.1, et le masque de sous réseau du tiers est 255.255.255.0. "
+
+# 4aeabf0b77244ea994e1c9a3587421a7
+#: ../../networking/multiple_subnets_in_shared_network.rst:90
+msgid ""
+"**Start IP/ End IP**: A range of IP addresses that are accessible from the Internet and will be allocated to guest VMs. Enter the first and last IP addresses that define a range that CloudStack "
+"can assign to guest VMs ."
+msgstr ""
+"**IP de début, IP de fin** : Une plage d'adresses IP qui sera accessible depuis Internet et sera associée aux VM invités. Saisir la première et la dernière adresse qui définissent une plage que "
+"CloudStack peut assigner aux VM invités."
+
+# c54dd19ac3fc4b1abe5c8e2ba6021969
+#: ../../networking/multiple_subnets_in_shared_network.rst:95
+msgid "Click OK."
+msgstr "Cliquez sur OK."

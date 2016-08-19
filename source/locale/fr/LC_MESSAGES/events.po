@@ -1,0 +1,522 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apache CloudStack
+# Administration Documentation package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: 2016-10-09 17:45+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.9\n"
+
+#: ../../events.rst:18
+msgid "Event Notification"
+msgstr "Notification d'évènement"
+
+#: ../../events.rst:20
+msgid ""
+"An event is essentially a significant or meaningful change in the state of both "
+"virtual and physical resources associated with a cloud environment. Events are "
+"used by monitoring systems, usage and billing systems, or any other event-"
+"driven workflow systems to discern a pattern and make the right business "
+"decision. In CloudStack an event could be a state change of virtual or physical "
+"resources, an action performed by an user (action events), or policy based "
+"events (alerts)."
+msgstr ""
+"Un évènement est essentiellement un changement important ou significatif de "
+"l'état des ressources virtuelles ou physiques associées à l'environnement cloud."
+
+#: ../../events.rst:30
+msgid "Event Logs"
+msgstr "Journal d'évènements"
+
+#: ../../events.rst:32
+msgid ""
+"There are two types of events logged in the CloudStack Event Log. Standard "
+"events log the success or failure of an event and can be used to identify jobs "
+"or processes that have failed. There are also long running job events. Events "
+"for asynchronous jobs log when a job is scheduled, when it starts, and when it "
+"completes. Other long running synchronous jobs log when a job starts, and when "
+"it completes. Long running synchronous and asynchronous event logs can be used "
+"to gain more information on the status of a pending job or can be used to "
+"identify a job that is hanging or has not started. The following sections "
+"provide more information on these events.."
+msgstr ""
+"Il y a deux types d'évènements consignés dans le journal des évènements de "
+"CloudStack. Les évènements standard enregistrent le succès ou l'échec d'un "
+"évènement et peuvent être utilisés pour identifier les travaux ou les processus "
+"qui ont échoué. Il peut aussi y avoir des évènements de travaux longs. Les "
+"évènements pour les travaux asynchrones enregistrent lorsque le travail est "
+"programmé, lorsqu'il démarre et lorsqu'il est terminé. Les autres travaux long "
+"synchrones enregistrent quand le travail démarre et quand il est terminé. Les "
+"enregistrements d'évènements long synchrones et asynchrones peuvent être "
+"utilisés pour obtenir plus d'informations sur le statut d'un travail en cours "
+"ou peuvent être utilisés pour identifier un travail qui est suspendu ou qui n'a "
+"pas démarré. Les sections suivantes fournissent plus d'informations sur ces "
+"évènements."
+
+#: ../../events.rst:45
+msgid "Notification"
+msgstr "Notification"
+
+#: ../../events.rst:47
+msgid ""
+"Event notification framework provides a means for the Management Server "
+"components to publish and subscribe to CloudStack events. Event notification is "
+"achieved by implementing the concept of event bus abstraction in the Management "
+"Server."
+msgstr ""
+"Le framework de notification d'évènement fournit un moyen pour les composants "
+"du Serveur de Gestion de publier des évènements ou d'y souscrire. La "
+"notification d'évènement est obtenue en implémentant le concept d'abstraction "
+"de bus d'évènement dans le Serveur de Gestion."
+
+#: ../../events.rst:52
+msgid ""
+"A new event for state change, resource state change, is introduced as part of "
+"Event notification framework. Every resource, such as user VM, volume, NIC, "
+"network, public IP, snapshot, and template, is associated with a state machine "
+"and generates events as part of the state change. That implies that a change in "
+"the state of a resource results in a state change event, and the event is "
+"published in the corresponding state machine on the event bus. All the "
+"CloudStack events (alerts, action events, usage events) and the additional "
+"category of resource state change events, are published on to the events bus."
+msgstr ""
+"Un nouvel évènement par changement d'état de ressource est inséré au sein du "
+"framework de notification d'évènements. Chaque ressource, comme une VM "
+"utilisateur, un volume, une interface réseau, une IP publique, un instantané ou "
+"un modèle, est associé avec un état de machine et génère des évènements en tant "
+"que partie du changement d'état. Cela implique qu'un changement dans l'état "
+"d'une ressource résulte à un évènement de changement d'état  et que l'évènement "
+"est publié dans l'état de la machine correspondant sur le bus d'évènement. Tous "
+"les évènements CloudStack (alertes, évènements d'action, évènements "
+"d'utilisation) et la catégorie additionnelle des évènements de changement des "
+"états de ressources sont publiés sur le bus d'évènements."
+
+#: ../../events.rst:63
+msgid "Implementations"
+msgstr "Implémentations"
+
+#: ../../events.rst:64
+msgid ""
+"An event bus is introduced in the Management Server that allows the CloudStack "
+"components and extension plug-ins to subscribe to the events by using the "
+"Advanced Message Queuing Protocol (AMQP) client. In CloudStack, a default "
+"implementation of event bus is provided as a plug-in that uses the RabbitMQ "
+"AMQP client. The AMQP client pushes the published events to a compatible AMQP "
+"server. Therefore all the CloudStack events are published to an exchange in the "
+"AMQP server."
+msgstr ""
+"Un bus d'évènement est introduit dans le Serveur de Gestion ce qui autorise les "
+"composants CloudStack et ses plug-ins d'extension à souscrire aux évènements en "
+"utilisant le client Advanced Message Queuing Protocol (AMQP). Dans CloudStack, "
+"une implémentation par défaut du bus d'évènement est fourni comme un plug-in "
+"qui utilise le client AMQP RabbitMQ. Le client AMQP pousse les évènements "
+"publiés à un serveur AMQP compatible. Par conséquent, tous les évènements "
+"CloudStack sont publiés sur un échange du serveur AMQP."
+
+#: ../../events.rst:73
+msgid ""
+"Additionally, both an in-memory implementation and an Apache Kafka "
+"implementation are also available."
+msgstr ""
+"En complément, une implémentation en mémoire et une implémentation Apache Kafka "
+"sont toutes deux disponibles."
+
+#: ../../events.rst:77
+msgid "Use Cases"
+msgstr "Cas d'usages"
+
+#: ../../events.rst:79
+msgid "The following are some of the use cases:"
+msgstr "Les exemples suivants sont des cas d'usages :"
+
+#: ../../events.rst:81
+msgid ""
+"Usage or Billing Engines: A third-party cloud usage solution can implement a "
+"plug-in that can connects to CloudStack to subscribe to CloudStack events and "
+"generate usage data. The usage data is consumed by their usage software."
+msgstr ""
+"Moteurs de facturation ou d'utilisation. Une solution tiers d'utilisation du "
+"cloud peut implémenter un plugin qui peut se connecter à CloudStack pour "
+"s'abonner aux évènements CloudStack et généré des données d'utilisation. La "
+"donnée d'utilisation est utilisée par leur logiciel d'utilisation."
+
+#: ../../events.rst:86
+msgid ""
+"AMQP plug-in can place all the events on the a message queue, then a AMQP "
+"message broker can provide topic-based notification to the subscribers."
+msgstr ""
+"Le plugin AMQP place tous les évènements dans une file de messages, un courtier "
+"de messages AMQP peut ensuite fournir une notification basée sur les sujets aux "
+"abonnés."
+
+#: ../../events.rst:90
+msgid ""
+"Publish and Subscribe notification service can be implemented as a pluggable "
+"service in CloudStack that can provide rich set of APIs for event notification, "
+"such as topics-based subscription and notification. Additionally, the pluggable "
+"service can deal with multi-tenancy, authentication, and authorization issues."
+msgstr ""
+"Publier et souscrire au service de notifications peut être implémenté comme un "
+"service enfichable dans CloudStack qui peut fournir un ensemble riche d'API "
+"pour la notification d'évènements, comme une souscription ou une notification "
+"par sujets."
+
+#: ../../events.rst:98
+msgid "AMQP Configuration"
+msgstr "Configuration AMQP"
+
+#: ../../events.rst:100 ../../events.rst:209
+msgid ""
+"As a CloudStack administrator, perform the following one-time configuration to "
+"enable event notification framework. At run time no changes can control the "
+"behaviour."
+msgstr ""
+"En tant qu'administrateur CloudStack, effectuer la configuration suivante une "
+"fois pour activer le framework de notification d'évènement. En fonctionnement, "
+"aucun changement ne peut contrôler le comportement."
+
+#: ../../events.rst:104 ../../events.rst:219
+msgid "Create the folder ``/etc/cloudstack/management/META-INF/cloudstack/core``"
+msgstr "Créer le dossier ``/etc/cloudstack/management/META-INF/cloudstack/core``"
+
+#: ../../events.rst:106 ../../events.rst:221
+msgid "Inside that folder, open ``spring-event-bus-context.xml``."
+msgstr "Dans ce dossier, ouvrir ``spring-event-bus-context.xml``."
+
+#: ../../events.rst:108
+msgid "Define a bean named ``eventNotificationBus`` as follows:"
+msgstr "Définir un bean appelé ``eventNotificationBus`` comme ceci :"
+
+#: ../../events.rst:110
+msgid "name : Specify a name for the bean."
+msgstr "name : Spécifier un nom pour le bean."
+
+#: ../../events.rst:112
+msgid "server : The name or the IP address of the RabbitMQ AMQP server."
+msgstr "server : Le nom ou l'adresse IP du serveur RabbitMQ AMQP."
+
+#: ../../events.rst:114
+msgid "port : The port on which RabbitMQ server is running."
+msgstr "port : Le port sur lequel le serveur RabbitMQ fonctionne."
+
+#: ../../events.rst:116
+msgid ""
+"username : The username associated with the account to access the RabbitMQ "
+"server."
+msgstr ""
+"username :  Le nom d'utilisateur associé avec le compte pour accéder au serveur "
+"RabbitMQ."
+
+#: ../../events.rst:119
+msgid ""
+"password : The password associated with the username of the account to access "
+"the RabbitMQ server."
+msgstr ""
+"password : Le mot de passe associé avec le nom d'utilisateur du compte pour "
+"accéder au serveur RabbitMQ."
+
+#: ../../events.rst:122
+msgid ""
+"exchange : The exchange name on the RabbitMQ server where CloudStack events are "
+"published."
+msgstr ""
+"exchange : Le nom d'échange sur le serveur RabbitMQ où les évènements sont "
+"publiés."
+
+#: ../../events.rst:125
+msgid "A sample bean is given below:"
+msgstr "Un exemple de bean est donné ci-dessous :"
+
+#: ../../events.rst:148
+msgid ""
+"The ``eventNotificationBus`` bean represents the ``org.apache.cloudstack.mom."
+"rabbitmq.RabbitMQEventBus`` class."
+msgstr ""
+"Le bean ``eventNotificationBus`` bean représente la classe ``org.apache."
+"cloudstack.mom.rabbitmq.RabbitMQEventBus``."
+
+#: ../../events.rst:151
+msgid ""
+"If you want to use encrypted values for the username and password, you have to "
+"include a bean to pass those as variables from a credentials file."
+msgstr ""
+"Si vous voulez utiliser une valeur chiffré pour le nom d'utilisateur et le mot "
+"de passe, vous devez inclure un bean pour fournir ceux-ci comme variable depuis "
+"un fichier d'identification."
+
+#: ../../events.rst:154
+msgid "A sample is given below"
+msgstr "Un exemple est donné ci-dessous"
+
+#: ../../events.rst:194
+msgid ""
+"Create a new file in the same folder called ``cred.properties`` and the specify "
+"the values for username and password as jascrypt encrypted strings"
+msgstr ""
+"Créer un nouveau fichier dans le même dossier appelé ``cred.properties`` et "
+"spécifier les valeurs pour le nom d'utilisateur et le mot de passe avec des "
+"chaînes de caractères javascripts cryptées."
+
+#: ../../events.rst:196
+msgid "Sample, with ``guest`` as values for both fields:"
+msgstr "Par exemple, avec ``guest`` comme valeurs pour les deux champs :"
+
+#: ../../events.rst:204 ../../events.rst:241
+msgid "Restart the Management Server."
+msgstr "Redémarrez votre serveur de gestion."
+
+#: ../../events.rst:207
+msgid "Kafka Configuration"
+msgstr "Configuration Kafka"
+
+#: ../../events.rst:213
+msgid ""
+"Create an appropriate configuration file in ``/etc/cloudstack/management/kafka."
+"producer.properties`` which contains valid kafka configuration properties as "
+"documented in http://kafka.apache.org/documentation.html#newproducerconfigs The "
+"properties may contain an additional ``topic`` property which if not provided "
+"will default to ``cloudstack``. While ``key.serializer`` and ``value."
+"serializer`` are usually required for a producer to correctly start, they may "
+"be omitted and will default to ``org.apache.kafka.common.serialization."
+"StringSerializer``."
+msgstr ""
+"Créer un fichier de configuration approprié dans ``/etc/cloudstack/management/"
+"kafka.producer.properties`` qui contient les propriétés de configuration "
+"valides comme documenté dans http://kafka.apache.org/documentation."
+"html#newproducerconfigs. Les propriétés peuvent contenir une propriété "
+"additionnelle ``topic`` qui, si elle n'est pas fournie, sera par défaut "
+"``cloudstack``. Comme ``key.serializer`` et ``value.serializer`` sont en "
+"général requis pour un producteur pour démarrer correctement, ils peuvent être "
+"omis et prendront par défaut la valeur ``org.apache.kafka.common.serialization."
+"StringSerializer``."
+
+#: ../../events.rst:223
+msgid ""
+"Define a bean named ``eventNotificationBus`` with a single ``name`` attribute, "
+"A sample bean is given below:"
+msgstr ""
+"Définir un bean appelé ``eventNotificationBus``avec un seul attribut ``name``. "
+"Un exemple de bean est donné ci-dessous :"
+
+#: ../../events.rst:245
+msgid "Standard Events"
+msgstr "Evènements standards :"
+
+#: ../../events.rst:247 ../../events.rst:269
+msgid "The events log records three types of standard events."
+msgstr "Le journal d'évènements enregistre trois types d'évènements standards."
+
+#: ../../events.rst:249 ../../events.rst:271
+msgid ""
+"INFO. This event is generated when an operation has been successfully performed."
+msgstr ""
+"INFO. Cet évènement est généré lorsque une opération a été effectuée avec "
+"succès."
+
+#: ../../events.rst:252 ../../events.rst:274
+msgid "WARN. This event is generated in the following circumstances."
+msgstr "WARN. Cet évènement est généré dans les circonstances suivantes."
+
+#: ../../events.rst:254 ../../events.rst:276
+msgid "When a network is disconnected while monitoring a template download."
+msgstr ""
+"Quand un réseau est déconnecté lors de la surveillance du téléchargement d'un "
+"modèle."
+
+#: ../../events.rst:257 ../../events.rst:279
+msgid "When a template download is abandoned."
+msgstr "Quand un téléchargement de modèle est abandonné."
+
+#: ../../events.rst:259 ../../events.rst:281
+msgid ""
+"When an issue on the storage server causes the volumes to fail over to the "
+"mirror storage server."
+msgstr ""
+"Quand un problème sur le serveur de stockage provoque le basculement des "
+"volumes sur le serveur de stockage mirroir. "
+
+#: ../../events.rst:262 ../../events.rst:284
+msgid ""
+"ERROR. This event is generated when an operation has not been successfully "
+"performed"
+msgstr ""
+"ERROR. Cet évènement est généré lorsqu'une opération n'a pas été effectuée avec "
+"succès."
+
+#: ../../events.rst:267
+msgid "Long Running Job Events"
+msgstr "Évènements de l'exécution des longs travaux"
+
+#: ../../events.rst:289
+msgid "Event Log Queries"
+msgstr "Requête sur le journal d'évènements"
+
+#: ../../events.rst:291
+msgid ""
+"Database logs can be queried from the user interface. The list of events "
+"captured by the system includes:"
+msgstr ""
+"Les enregistrements de la base de données peuvent être requêtés depuis "
+"l'interface utilisateur. La liste des évènements capturés par le système "
+"incluent :"
+
+#: ../../events.rst:294
+msgid "Virtual machine creation, deletion, and on-going management operations"
+msgstr ""
+"La création, suppression et les opérations de gestion en cours des machines "
+"virtuelles"
+
+#: ../../events.rst:297
+msgid "Virtual router creation, deletion, and on-going management operations"
+msgstr ""
+"La création, suppression et les opérations de gestion en cours des routeurs "
+"virtuels"
+
+#: ../../events.rst:299
+msgid "Template creation and deletion"
+msgstr "La création et suppression de modèles"
+
+#: ../../events.rst:301
+msgid "Network/load balancer rules creation and deletion"
+msgstr "La création et suppression des règles de réseau/répartition de charge"
+
+#: ../../events.rst:303
+msgid "Storage volume creation and deletion"
+msgstr "La création et suppression de volume de stockage"
+
+#: ../../events.rst:305
+msgid "User login and logout"
+msgstr "La connexion et la déconnexion de l'utilisateur"
+
+#: ../../events.rst:309
+msgid "Deleting and Archiving Events and Alerts"
+msgstr "La suppression et l'archivage des évènements et des alertes"
+
+#: ../../events.rst:311
+msgid ""
+"CloudStack provides you the ability to delete or archive the existing alerts "
+"and events that you no longer want to implement. You can regularly delete or "
+"archive any alerts or events that you cannot, or do not want to resolve from "
+"the database."
+msgstr ""
+"CloudStack vous offre la possibilité de supprimé ou d'archiver les alertes et "
+"les évènements existant que vous ne voulez plus implémenter. Vous pouvez "
+"régulièrement supprimer ou archiver n'importe quelles alertes ou évènements que "
+"vous ne pouvez ou ne voulez plus résoudre depuis la base de données."
+
+#: ../../events.rst:316
+msgid ""
+"You can delete or archive individual alerts or events either directly by using "
+"the Quickview or by using the Details page. If you want to delete multiple "
+"alerts or events at the same time, you can use the respective context menu. You "
+"can delete alerts or events by category for a time period. For example, you can "
+"select categories such as **USER.LOGOUT**, **VM.DESTROY**, **VM.AG.UPDATE**, "
+"**CONFIGURATION.VALUE.EDI**, and so on. You can also view the number of events "
+"or alerts archived or deleted."
+msgstr ""
+"Vous pouvez supprimer ou archiver des alertes ou des évènements individuels "
+"soit en utilisant la vue rapide ou en utilisant la page Détails. Si vous voulez "
+"supprimer plusieurs alertes ou évènements en même temps, vous pouvez utiliser "
+"le menu contextuel respectif. Vous pouvez supprimer des alertes ou des "
+"évènements par catégories pour une période de temps. Par exemple, vous pouvez "
+"sélectionner les catégories comme **USER.LOGOUT**, **VM.DESTROY**, **VM.AG."
+"UPDATE**, **CONFIGURATION.VALUE.EDI** etc. Vous pouvez également voir le nombre "
+"d'évènements ou d'alertes archivés ou supprimés."
+
+#: ../../events.rst:325
+msgid ""
+"In order to support the delete or archive alerts, the following global "
+"parameters have been added:"
+msgstr ""
+"Pour supporter la suppression ou l'archivage des alertes, les paramètres "
+"globaux suivants ont été ajoutés :"
+
+#: ../../events.rst:328
+msgid ""
+"**alert.purge.delay**: The alerts older than specified number of days are "
+"purged. Set the value to 0 to never purge alerts automatically."
+msgstr ""
+"**alert.purge.delay** : Les alertes plus vieilles que le nombre de jours "
+"spécifié sont purgées. Mettre à 0 pour ne jamais purger les alertes."
+
+#: ../../events.rst:331
+msgid ""
+"**alert.purge.interval**: The interval in seconds to wait before running the "
+"alert purge thread. The default is 86400 seconds (one day)."
+msgstr ""
+"**alert.purge.interval** : L'intervalle en secondes à attendre avant de lancer "
+"le processus de purge des alertes. Le défaut est de 86400 secondes (un jour)."
+
+#: ../../events.rst:336
+msgid ""
+"Archived alerts or events cannot be viewed in the UI or by using the API. They "
+"are maintained in the database for auditing or compliance purposes."
+msgstr ""
+"Les alertes les évènements archivés ne peuvent pas être visualisés dans "
+"l'interface ou en utilisant l'API. Ils sont conservés en base de données à des "
+"fins d'audits ou de conformités."
+
+#: ../../events.rst:342
+msgid "Permissions"
+msgstr "Permissions"
+
+#: ../../events.rst:344
+msgid "Consider the following:"
+msgstr "Considérer ce qui suit :"
+
+#: ../../events.rst:346
+msgid "The root admin can delete or archive one or multiple alerts or events."
+msgstr ""
+"L'administrateur racine peut supprimer ou archiver une ou plusieurs alertes et "
+"évènements."
+
+#: ../../events.rst:349
+msgid "The domain admin or end user can delete or archive one or multiple events."
+msgstr ""
+"L'administrateur de domaine ou l'utilisateur peuvent supprimer ou archiver un "
+"ou plusieurs évènements."
+
+#: ../../events.rst:354
+msgid "Procedure"
+msgstr "Procédure"
+
+#: ../../events.rst:356
+msgid "Log in as administrator to the CloudStack UI."
+msgstr "Se connecter en tant qu'administrateur dans l'interface de CloudStack."
+
+#: ../../events.rst:358
+msgid "In the left navigation, click Events."
+msgstr "Dans le menu de navigation de gauche, cliquer sur Evènements."
+
+#: ../../events.rst:360
+msgid "Perform either of the following:"
+msgstr "Effectuer au choix :"
+
+#: ../../events.rst:362
+msgid "To archive events, click Archive Events, and specify event type and date."
+msgstr ""
+"Pour archiver les évènements, cliquer sur Archiver les évènements et spécifier "
+"le type d'évènement et la date."
+
+#: ../../events.rst:365
+msgid "To archive events, click Delete Events, and specify event type and date."
+msgstr ""
+"Pour archiver les évènements, cliquer sur Détruire les évènements et spécifier "
+"le type d'évènement et la date."
+
+#: ../../events.rst:368
+msgid "Click OK."
+msgstr "Cliquer sur OK."
