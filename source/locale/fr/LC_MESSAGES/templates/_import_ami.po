@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016, Apache Software Foundation
+# This file is distributed under the same license as the Apache CloudStack
+# Administration Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration Documentation 4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../templates/_import_ami.rst:18
+msgid "Importing Amazon Machine Images"
+msgstr ""
+
+#: ../../templates/_import_ami.rst:20
+msgid ""
+"The following procedures describe how to import an Amazon Machine Image "
+"(AMI) into CloudStack when using the XenServer hypervisor."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:23
+msgid ""
+"Assume you have an AMI file and this file is called CentOS\\_6.2\\_x64. "
+"Assume further that you are working on a CentOS host. If the AMI is a "
+"Fedora image, you need to be working on a Fedora host initially."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:27
+msgid ""
+"You need to have a XenServer host with a file-based storage repository "
+"(either a local ext3 SR or an NFS SR) to convert to a VHD once the image "
+"file has been customized on the Centos/Fedora host."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:32
+msgid ""
+"When copying and pasting a command, be sure the command has pasted as a "
+"single line before executing. Some document viewers may introduce "
+"unwanted line breaks in copied text."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:36
+msgid "To import an AMI:"
+msgstr ""
+
+#: ../../templates/_import_ami.rst:38
+msgid "Set up loopback on image file:"
+msgstr ""
+
+#: ../../templates/_import_ami.rst:45
+msgid ""
+"Install the kernel-xen package into the image. This downloads the PV "
+"kernel and ramdisk to the image."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:52
+msgid "Create a grub entry in /boot/grub/grub.conf."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:60
+msgid ""
+"Determine the name of the PV kernel that has been installed into the "
+"image."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:73
+msgid ""
+"Xen kernels/ramdisk always end with \"xen\". For the kernel version you "
+"choose, there has to be an entry for that version under lib/modules, "
+"there has to be an initrd and vmlinuz corresponding to that. Above, the "
+"only kernel that satisfies this condition is 2.6.18-164.15.1.el5xen."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:79
+msgid ""
+"Based on your findings, create an entry in the grub.conf file. Below is "
+"an example entry."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:92
+msgid "Edit etc/fstab, changing “sda1” to “xvda” and changing “sdb” to “xvdb”."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:104
+msgid ""
+"Enable login via the console. The default console device in a XenServer "
+"system is xvc0. Ensure that etc/inittab and etc/securetty have the "
+"following lines respectively:"
+msgstr ""
+
+#: ../../templates/_import_ami.rst:115
+msgid ""
+"Ensure the ramdisk supports PV disk and PV network. Customize this for "
+"the kernel version you have determined above."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:125
+msgid "Change the password."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:135
+msgid "Exit out of chroot."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:141
+msgid "Check `etc/ssh/sshd_config` for lines allowing ssh login using a password."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:150
+msgid ""
+"If you need the template to be enabled to reset passwords from the "
+"CloudStack UI or API, install the password change script into the image "
+"at this point. See :ref:`adding-password-management-to-templates`."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:154
+msgid "Unmount and delete loopback mount."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:161
+msgid ""
+"Copy the image file to your XenServer host's file-based storage "
+"repository. In the example below, the Xenserver is \"xenhost\". This "
+"XenServer has an NFS repository whose uuid is a9c5b8c8-536b-a193-a6dc-"
+"51af3e5ff799."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:170
+msgid "Log in to the Xenserver and create a VDI the same size as the image."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:180
+msgid "Import the image file into the VDI. This may take 10–20 minutes."
+msgstr ""
+
+#: ../../templates/_import_ami.rst:186
+msgid ""
+"Locate a the VHD file. This is the file with the VDI’s UUID as its name. "
+"Compress it and upload it to your web server."
+msgstr ""
+

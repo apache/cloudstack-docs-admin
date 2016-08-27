@@ -1,26 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:04+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-08-27 13:06+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.8\n"
 
 # 36cc316d379647279da05d191cf9e9b5
 #: ../../management.rst:18
 msgid "Managing the Cloud"
-msgstr ""
+msgstr "Gérer le cloud"
 
 # 0dc09dfbe9e34a9cb51831005d8fc025
 #: ../../management.rst:21
@@ -34,8 +36,8 @@ msgid ""
 "cloud. Tags are useful for categorizing resources. For example, you can tag "
 "a user VM with a value that indicates the user's city of residence. In this "
 "case, the key would be \"city\" and the value might be \"Toronto\" or "
-"\"Tokyo.\" You can then request CloudStack to find all resources that have a"
-" given tag; for example, VMs for users in a given city."
+"\"Tokyo.\" You can then request CloudStack to find all resources that have "
+"a given tag; for example, VMs for users in a given city."
 msgstr ""
 
 # 6388318fab6c44f58fd92b854f510717
@@ -155,12 +157,12 @@ msgstr ""
 msgid ""
 "PRODUCT manages different types of hosts that contains one or more physical "
 "CPU sockets. CPU socket is considered as a unit of measure used for "
-"licensing and billing cloud infrastructure. PRODUCT provides both UI and API"
-" support to collect the CPU socket statistics for billing purpose. The "
+"licensing and billing cloud infrastructure. PRODUCT provides both UI and "
+"API support to collect the CPU socket statistics for billing purpose. The "
 "Infrastructure tab has a new tab for CPU sockets. You can view the "
 "statistics for CPU sockets managed by PRODUCT, which in turn reflects the "
-"size of the cloud. The CPU Socket page will give you the number of hosts and"
-" sockets used for each host type."
+"size of the cloud. The CPU Socket page will give you the number of hosts "
+"and sockets used for each host type."
 msgstr ""
 
 # dec087784ccd48c49189c3f0ed1811a9
@@ -181,8 +183,8 @@ msgstr ""
 # 1f3a30df3d8746f291bc00e761d59f3e
 #: ../../management.rst:106
 msgid ""
-"The CPU Socket page is displayed. The page shows the number of hosts and CPU"
-" sockets based on hypervisor types."
+"The CPU Socket page is displayed. The page shows the number of hosts and "
+"CPU sockets based on hypervisor types."
 msgstr ""
 
 # 3d662bf06abc42bd951d16844faada76
@@ -194,9 +196,9 @@ msgstr ""
 #: ../../management.rst:113
 msgid ""
 "The CloudStack Management Server stores database configuration information "
-"(e.g., hostname, port, credentials) in the file "
-"``/etc/cloudstack/management/db.properties``. To effect a change, edit this "
-"file on each Management Server, then restart the Management Server."
+"(e.g., hostname, port, credentials) in the file ``/etc/cloudstack/"
+"management/db.properties``. To effect a change, edit this file on each "
+"Management Server, then restart the Management Server."
 msgstr ""
 
 # a0530bddfe5a47a69ac27ef0a2c38a2e
@@ -208,8 +210,8 @@ msgstr ""
 #: ../../management.rst:121
 msgid ""
 "You may need to change the password for the MySQL account used by "
-"CloudStack. If so, you'll need to change the password in MySQL, and then add"
-" the encrypted password to ``/etc/cloudstack/management/db.properties``."
+"CloudStack. If so, you'll need to change the password in MySQL, and then "
+"add the encrypted password to ``/etc/cloudstack/management/db.properties``."
 msgstr ""
 
 # 803fea7347b74457808913e8d34560e4
@@ -235,8 +237,8 @@ msgstr ""
 #: ../../management.rst:150
 msgid ""
 "The next step is to encrypt the password and copy the encrypted password to "
-"CloudStack's database configuration "
-"(``/etc/cloudstack/management/db.properties``)."
+"CloudStack's database configuration (``/etc/cloudstack/management/db."
+"properties``)."
 msgstr ""
 
 # 08fe5ba4a2844019b7c34948af80d3e9
@@ -248,15 +250,15 @@ msgstr ""
 #: ../../management.rst:162
 msgid ""
 "Note that this is for the file encryption type. If you're using the web "
-"encryption type then you'll use "
-"password=\"management\\_server\\_secret\\_key\""
+"encryption type then you'll use password=\"management\\_server\\_secret"
+"\\_key\""
 msgstr ""
 
 # 41348185b9bc4aa59d47266350f37bea
 #: ../../management.rst:166
 msgid ""
-"Now, you'll update ``/etc/cloudstack/management/db.properties`` with the new"
-" ciphertext. Open ``/etc/cloudstack/management/db.properties`` in a text "
+"Now, you'll update ``/etc/cloudstack/management/db.properties`` with the "
+"new ciphertext. Open ``/etc/cloudstack/management/db.properties`` in a text "
 "editor, and update these parameters:"
 msgstr ""
 
@@ -276,17 +278,17 @@ msgstr ""
 #: ../../management.rst:187
 msgid ""
 "The system provides alerts and events to help with the management of the "
-"cloud. Alerts are notices to an administrator, generally delivered by "
-"e-mail, notifying the administrator that an error has occurred in the cloud."
-" Alert behavior is configurable."
+"cloud. Alerts are notices to an administrator, generally delivered by e-"
+"mail, notifying the administrator that an error has occurred in the cloud. "
+"Alert behavior is configurable."
 msgstr ""
 
 # ff3195bd128540cca761c8b00697d461
 #: ../../management.rst:192
 msgid ""
 "Events track all of the user and administrator actions in the cloud. For "
-"example, every guest VM start creates an associated event. Events are stored"
-" in the Management Server’s database."
+"example, every guest VM start creates an associated event. Events are "
+"stored in the Management Server’s database."
 msgstr ""
 
 # 6b6c7d267ebc4ecdba5787f75ed95d52
@@ -322,8 +324,8 @@ msgstr ""
 msgid ""
 "In addition to showing administrator alerts on the Dashboard in the "
 "CloudStack UI and sending them in email, CloudStack can also send the same "
-"alerts to external SNMP or Syslog management software. This is useful if you"
-" prefer to use an SNMP or Syslog manager to monitor your cloud."
+"alerts to external SNMP or Syslog management software. This is useful if "
+"you prefer to use an SNMP or Syslog manager to monitor your cloud."
 msgstr ""
 
 # ae64dcb892834822b7480195c2882a8c
@@ -428,8 +430,8 @@ msgstr ""
 msgid ""
 "The following example shows how to configure two SNMP managers at IP "
 "addresses 10.1.1.1 and 10.1.1.2. Substitute your own IP addresses, ports, "
-"and communities. Do not change the other values (name, threshold, class, and"
-" layout values)."
+"and communities. Do not change the other values (name, threshold, class, "
+"and layout values)."
 msgstr ""
 
 # 57b464a769fd4128a163f5613f5f1c96
@@ -599,4 +601,4 @@ msgstr ""
 # 02d90290579d496098aed77584f7a2d3
 #: ../../management.rst:510
 msgid "To start the Management Server:"
-msgstr ""
+msgstr "Pour démarrer le serveur de gestion :"

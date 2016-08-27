@@ -1,26 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:04+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-08-25 16:20+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.8\n"
 
 # 7499b008b97e41b59d4cdc3835758f36
 #: ../../api.rst:18
 msgid "CloudStack API"
-msgstr ""
+msgstr "L'API CloudStack"
 
 # 7a40beffc6484f108ad5202cb2a4e7c3
 #: ../../api.rst:20
@@ -48,9 +50,9 @@ msgstr ""
 # 1f57015e966c480795b141ba3f87b86a
 #: ../../api.rst:31
 msgid ""
-"See `the Developer’s Guide "
-"<https://cwiki.apache.org/confluence/display/CLOUDSTACK/Development+101>`_ "
-"and `the API Reference <http://cloudstack.apache.org/docs/api/>`_."
+"See `the Developer’s Guide <https://cwiki.apache.org/confluence/display/"
+"CLOUDSTACK/Development+101>`_ and `the API Reference <http://cloudstack."
+"apache.org/docs/api/>`_."
 msgstr ""
 
 # de3d35bb699f45f495251ceb69a2c238
@@ -69,10 +71,11 @@ msgstr ""
 # f37cbbabb4af4c76977b51277f5cefa3
 #: ../../api.rst:42
 msgid ""
-"CloudStack supports pluggable authenticators. By default, CloudStack assumes"
-" it is provisioned with the user’s password, and as a result authentication "
-"is done locally. However, external authentication is possible as well. For "
-"example, see Using an LDAP Server for User Authentication."
+"CloudStack supports pluggable authenticators. By default, CloudStack "
+"assumes it is provisioned with the user’s password, and as a result "
+"authentication is done locally. However, external authentication is "
+"possible as well. For example, see Using an LDAP Server for User "
+"Authentication."
 msgstr ""
 
 # a1cd31f63e9a4fe6869e80cdd8f2274f

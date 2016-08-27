@@ -1,514 +1,531 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
-# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+# This file is distributed under the same license as the Apache CloudStack
+# Administration Documentation package.
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"POT-Creation-Date: 2016-08-22 13:55+0200\n"
 "PO-Revision-Date: 2014-06-30 12:04+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.3.4\n"
 
-# a1ba7b5ddeaa4674a16ca755b4399374
 #: ../../systemvm.rst:18
 msgid "Working with System Virtual Machines"
 msgstr ""
 
-# 8adf74bd899541a180455ab6582554ec
 #: ../../systemvm.rst:20
 msgid ""
-"CloudStack uses several types of system virtual machines to perform tasks in"
-" the cloud. In general CloudStack manages these system VMs and creates, "
-"starts, and stops them as needed based on scale and immediate needs. "
-"However, the administrator should be aware of them and their roles to assist"
-" in debugging issues."
+"CloudStack uses several types of system virtual machines to perform tasks"
+" in the cloud. In general CloudStack manages these system VMs and "
+"creates, starts, and stops them as needed based on scale and immediate "
+"needs. However, the administrator should be aware of them and their roles"
+" to assist in debugging issues."
 msgstr ""
 
-# 9309f035653a42c2a2abfdaced6acabe
 #: ../../systemvm.rst:28
 msgid "The System VM Template"
 msgstr ""
 
-# c845974251da4739b29ae9338d9f85f0
 #: ../../systemvm.rst:30
 msgid ""
-"The System VMs come from a single template. The System VM has the following "
-"characteristics:"
+"The System VMs come from a single template. The System VM has the "
+"following characteristics:"
 msgstr ""
 
-# 6ce60c193c5547e38390bda23ad9acff
 #: ../../systemvm.rst:33
 msgid ""
-"Debian 6.0 (\"Squeeze\"), 2.6.32 kernel with the latest security patches "
+"Debian 7.8 (\"wheezy\"), 3.2.0 kernel with the latest security patches "
 "from the Debian security APT repository"
 msgstr ""
 
-# 7ba8f1dd850e4472b93271c07b12e27e
 #: ../../systemvm.rst:36
 msgid ""
-"Has a minimal set of packages installed thereby reducing the attack surface"
+"Has a minimal set of packages installed thereby reducing the attack "
+"surface"
 msgstr ""
 
-# 157f5d425def480e9b24095a62b2f059
 #: ../../systemvm.rst:39
-msgid "32-bit for enhanced performance on Xen/VMWare"
+msgid "64-bit for enhanced performance on Xen/VMWare"
 msgstr ""
 
-# 7a44b4350ff6457cab519a552bd9afca
 #: ../../systemvm.rst:41
 msgid ""
-"pvops kernel with Xen PV drivers, KVM virtio drivers, and VMware tools for "
-"optimum performance on all hypervisors"
+"pvops kernel with Xen PV drivers, KVM virtio drivers, and VMware tools "
+"for optimum performance on all hypervisors"
 msgstr ""
 
-# 3e0764891a5141e2b34368e7bb8aeb84
 #: ../../systemvm.rst:44
 msgid "Xen tools inclusion allows performance monitoring"
 msgstr ""
 
-# 60aeed2365974b86a64bdf02460e8ef7
 #: ../../systemvm.rst:46
 msgid ""
 "Latest versions of HAProxy, iptables, IPsec, and Apache from debian "
 "repository ensures improved security and speed"
 msgstr ""
 
-# 5dab0ffe88944ef3ad1ceb02e640ed9d
 #: ../../systemvm.rst:49
-msgid ""
-"Latest version of JRE from Sun/Oracle ensures improved security and speed"
+msgid "Latest version of JRE from Sun/Oracle ensures improved security and speed"
 msgstr ""
 
-# 9f806f6735e64fb786b5ab22d695493f
 #: ../../systemvm.rst:54
 msgid "Changing the Default System VM Template"
 msgstr ""
 
-# 88cf932e61dd41a8bc1c583aa0bd38b7
 #: ../../systemvm.rst:56
 msgid ""
-"CloudStack allows you to change the default 32-bit System VM template to "
-"64-bit one. Using the 64-bit template, upgrade the virtual router to manage "
-"larger number of connection in your network."
+"Using the 64-bit template should be use with a System Offering of at "
+"least 512MB of memory."
 msgstr ""
 
-# a4f753c8b20b411495b4077d429fadda
-#: ../../systemvm.rst:60
+#: ../../systemvm.rst:59
 msgid ""
 "Based on the hypervisor you use, download the 64-bit template from the "
 "following location:"
 msgstr ""
 
-# 0c56be6861554fe2b5519acffca4bbbf
-#: ../../systemvm.rst:64
+#: ../../systemvm.rst:65
 msgid "Hypervisor"
 msgstr ""
 
-# 2d2c7eabf8364232911d6ea74c1ebce2
-#: ../../systemvm.rst:64
+#: ../../systemvm.rst:65
 msgid "Download Location"
 msgstr ""
 
-# 18c32afddeff4951a466847a983335fe
-#: ../../systemvm.rst:66
+#: ../../systemvm.rst:67
 msgid "XenServer"
 msgstr ""
 
-# 6ea0f846b0a34711b7c0090cb48d8c32
-#: ../../systemvm.rst:66
-msgid ""
-"http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15"
-"-master-xen.vhd.bz2"
+#: ../../systemvm.rst:67
+msgid "|sysvm64-url-xen|"
 msgstr ""
 
-# e8a51da6f6614114a91e4006eedfc912
-#: ../../systemvm.rst:67
+#: ../../systemvm.rst:68
 msgid "KVM"
 msgstr ""
 
-# fe251bca2b854129890cba8e7ac9bbbf
-#: ../../systemvm.rst:67
-msgid ""
-"http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15"
-"-master-kvm.qcow2.bz2"
+#: ../../systemvm.rst:68
+msgid "|sysvm64-url-kvm|"
 msgstr ""
 
-# 2d498240d20c4683ab11ac2232135a16
+#: ../../systemvm.rst:69
+msgid "VMware"
+msgstr ""
+
+#: ../../systemvm.rst:69
+msgid "|sysvm64-url-vmware|"
+msgstr ""
+
 #: ../../systemvm.rst:70
+msgid "Hyper-V"
+msgstr ""
+
+#: ../../systemvm.rst:70
+msgid "|sysvm64-url-hyperv|"
+msgstr ""
+
+#: ../../systemvm.rst:73
 msgid "As an administrator, log in to the CloudStack UI"
 msgstr ""
 
-# cb836b9320584dfe917198280919b2a8
-#: ../../systemvm.rst:72
+#: ../../systemvm.rst:75
 msgid "Register the 64 bit template."
 msgstr ""
 
-# c8cab1a649c94d0ba1393b80e7bf411b
-#: ../../systemvm.rst:74
+#: ../../systemvm.rst:77
 msgid "For example: KVM64bitTemplate"
 msgstr ""
 
-# d88c6f133f114456914ec8807ccef386
-#: ../../systemvm.rst:76
+#: ../../systemvm.rst:79
 msgid "While registering the template, select Routing."
 msgstr ""
 
-# b7e2b731ae7e4c789be6af9ed2d185af
-#: ../../systemvm.rst:78
+#: ../../systemvm.rst:81
 msgid "Navigate to Infrastructure > Zone > Settings."
 msgstr ""
 
-# b58d5557ddeb454fbae55b570e2c68f0
-#: ../../systemvm.rst:80
+#: ../../systemvm.rst:83
 msgid ""
 "Set the name of the 64-bit template, KVM64bitTemplate, in the "
 "*``router.template.kvm``* global parameter."
 msgstr ""
 
-# 951cf2ccd5d34614a87679078d22599c
-#: ../../systemvm.rst:83
+#: ../../systemvm.rst:86
 msgid ""
 "If you are using a XenServer 64-bit template, set the name in the "
 "*``router.template.xen``* global parameter."
 msgstr ""
 
-# 534ac4d13b2a4560aa420c9aa2fb9e57
-#: ../../systemvm.rst:86
+#: ../../systemvm.rst:89
 msgid ""
 "Any new virtual router created in this Zone automatically picks up this "
 "template."
 msgstr ""
 
-# be4168abcbfd4eed8d7d73b2284d3ac4
-#: ../../systemvm.rst:89
+#: ../../systemvm.rst:92
 msgid "Restart the Management Server."
 msgstr "Redémarrez votre serveur de gestion."
 
-# 266b4692ed0b4fb4bae8eb4d1ce9af1f
-#: ../../systemvm.rst:93
+#: ../../systemvm.rst:96
 msgid "Multiple System VM Support for VMware"
 msgstr ""
 
-# 2e1e78598bc94637b2c8fdfb6387a908
-#: ../../systemvm.rst:95
+#: ../../systemvm.rst:98
 msgid ""
 "Every CloudStack zone has single System VM for template processing tasks "
-"such as downloading templates, uploading templates, and uploading ISOs. In a"
-" zone where VMware is being used, additional System VMs can be launched to "
-"process VMware-specific tasks such as taking snapshots and creating private "
-"templates. The CloudStack management server launches additional System VMs "
-"for VMware-specific tasks as the load increases. The management server "
-"monitors and weights all commands sent to these System VMs and performs "
-"dynamic load balancing and scaling-up of more System VMs."
+"such as downloading templates, uploading templates, and uploading ISOs. "
+"In a zone where VMware is being used, additional System VMs can be "
+"launched to process VMware-specific tasks such as taking snapshots and "
+"creating private templates. The CloudStack management server launches "
+"additional System VMs for VMware-specific tasks as the load increases. "
+"The management server monitors and weights all commands sent to these "
+"System VMs and performs dynamic load balancing and scaling-up of more "
+"System VMs."
 msgstr ""
 
-# 37fb441bcdb34d6fb7432fa98ef8886b
-#: ../../systemvm.rst:107
+#: ../../systemvm.rst:110
 msgid "Console Proxy"
 msgstr ""
 
-# 9217568c55be47b7bd405187d23f7777
-#: ../../systemvm.rst:109
+#: ../../systemvm.rst:112
 msgid ""
 "The Console Proxy is a type of System Virtual Machine that has a role in "
-"presenting a console view via the web UI. It connects the user’s browser to "
-"the VNC port made available via the hypervisor for the console of the guest."
-" Both the administrator and end user web UIs offer a console connection."
+"presenting a console view via the web UI. It connects the user’s browser "
+"to the VNC port made available via the hypervisor for the console of the "
+"guest. Both the administrator and end user web UIs offer a console "
+"connection."
 msgstr ""
 
-# f0a0de282eec4d69a9f65b3ff7114cf8
-#: ../../systemvm.rst:115
+#: ../../systemvm.rst:118
 msgid ""
 "Clicking a console icon brings up a new window. The AJAX code downloaded "
 "into that window refers to the public IP address of a console proxy VM. "
-"There is exactly one public IP address allocated per console proxy VM. The "
-"AJAX application connects to this IP. The console proxy then proxies the "
-"connection to the VNC port for the requested VM on the Host hosting the "
-"guest."
+"There is exactly one public IP address allocated per console proxy VM. "
+"The AJAX application connects to this IP. The console proxy then proxies "
+"the connection to the VNC port for the requested VM on the Host hosting "
+"the guest."
 msgstr ""
 
-# b8ee3c97a12f494fadd3971c927e4f87
-#: ../../systemvm.rst:123
-msgid ""
-"The hypervisors will have many ports assigned to VNC usage so that multiple "
-"VNC sessions can occur simultaneously."
-msgstr ""
-
-# 04dcecfe7e024822a311ba18520f6cce
 #: ../../systemvm.rst:126
 msgid ""
-"There is never any traffic to the guest virtual IP, and there is no need to "
-"enable VNC within the guest."
+"The hypervisors will have many ports assigned to VNC usage so that "
+"multiple VNC sessions can occur simultaneously."
 msgstr ""
 
-# 15e8724d26714949a10f88914e7038db
 #: ../../systemvm.rst:129
 msgid ""
-"The console proxy VM will periodically report its active session count to "
-"the Management Server. The default reporting interval is five seconds. This "
-"can be changed through standard Management Server configuration with the "
-"parameter consoleproxy.loadscan.interval."
+"There is never any traffic to the guest virtual IP, and there is no need "
+"to enable VNC within the guest."
 msgstr ""
 
-# 67b327e6f92f4c69a649679cf88b933c
-#: ../../systemvm.rst:134
+#: ../../systemvm.rst:132
 msgid ""
-"Assignment of guest VM to console proxy is determined by first determining "
-"if the guest VM has a previous session associated with a console proxy. If "
-"it does, the Management Server will assign the guest VM to the target "
-"Console Proxy VM regardless of the load on the proxy VM. Failing that, the "
-"first available running Console Proxy VM that has the capacity to handle new"
-" sessions is used."
+"The console proxy VM will periodically report its active session count to"
+" the Management Server. The default reporting interval is five seconds. "
+"This can be changed through standard Management Server configuration with"
+" the parameter consoleproxy.loadscan.interval."
 msgstr ""
 
-# 0fcca189c0b0490fb490988079cca591
-#: ../../systemvm.rst:141
+#: ../../systemvm.rst:137
 msgid ""
-"Console proxies can be restarted by administrators but this will interrupt "
-"existing console sessions for users."
+"Assignment of guest VM to console proxy is determined by first "
+"determining if the guest VM has a previous session associated with a "
+"console proxy. If it does, the Management Server will assign the guest VM"
+" to the target Console Proxy VM regardless of the load on the proxy VM. "
+"Failing that, the first available running Console Proxy VM that has the "
+"capacity to handle new sessions is used."
 msgstr ""
 
-# 9c3b4c70f4cf47379b07b5f24863023b
-#: ../../systemvm.rst:146
+#: ../../systemvm.rst:144
+msgid ""
+"Console proxies can be restarted by administrators but this will "
+"interrupt existing console sessions for users."
+msgstr ""
+
+#: ../../systemvm.rst:149
 msgid "Using a SSL Certificate for the Console Proxy"
 msgstr ""
 
-# 7be31349d45949dfa61f79105ade746f
-#: ../../systemvm.rst:149
+#: ../../systemvm.rst:151
 msgid ""
-"In the past CloudStack used the ``realhostip.com`` dynamic  DNS resolution "
-"service. As this service will be shut down as of June 30th, 2014, CloudStack"
-" has stopped using the service as of version 4.3."
+"By default, the console viewing functionality uses plaintext HTTP. In any"
+" production environment, the console proxy connection should be encrypted"
+" via SSL at the mininum."
 msgstr ""
 
-# ff149d60a5d74070bb252689b6e724ab
-#: ../../systemvm.rst:154
-msgid ""
-"By default, the console viewing functionality uses plaintext HTTP. In any "
-"production environment, the console proxy connection should be encrypted via"
-" SSL at the mininum."
-msgstr ""
-
-# 471907f542334e94b211495c26beacff
-#: ../../systemvm.rst:158
+#: ../../systemvm.rst:155
 msgid ""
 "A CloudStack administrator has 2 ways to secure the console proxy "
 "communication with SSL:"
 msgstr ""
 
-# bd5c72a779c74100ada4a4e0ebd65633
-#: ../../systemvm.rst:161
+#: ../../systemvm.rst:158
 msgid "Set up a SSL wild-card certificate and domain name resolution"
 msgstr ""
 
-# 9d2106a856664feba8d3ed31ffef47b3
-#: ../../systemvm.rst:163
+#: ../../systemvm.rst:160
 msgid "Set up SSL certificate for specific FQDN and configure load-balancer"
 msgstr ""
 
-# fbea784e67f546259f790571d5c68d02
-#: ../../systemvm.rst:167
+#: ../../systemvm.rst:164
 msgid "Changing the Console Proxy SSL Certificate and Domain"
 msgstr ""
 
-# 0ef9de23136a444a802cb1fb49929072
-#: ../../systemvm.rst:169
+#: ../../systemvm.rst:166
 msgid ""
-"The administrator can configure SSL encryption  by selecting a domain and "
-"uploading a new SSL certificate and private key. The domain must run a DNS "
-"service that is capable of resolving queries for addresses of the form aaa-"
-"bbb-ccc-ddd.your.domain to an IPv4 IP address in the form aaa.bbb.ccc.ddd, "
-"for example, 202.8.44.1. To change the console proxy domain, SSL "
-"certificate, and private key:"
+"The administrator can configure SSL encryption  by selecting a domain and"
+" uploading a new SSL certificate and private key. The domain must run a "
+"DNS service that is capable of resolving queries for addresses of the "
+"form aaa-bbb-ccc-ddd.your.domain to an IPv4 IP address in the form "
+"aaa.bbb.ccc.ddd, for example, 202.8.44.1. To change the console proxy "
+"domain, SSL certificate, and private key:"
 msgstr ""
 
-# 21ed531476934988b073b6db592f8ded
-#: ../../systemvm.rst:176
+#: ../../systemvm.rst:173
 msgid ""
-"Set up dynamic name resolution or populate all possible DNS names in your "
-"public IP range into your existing DNS server with the format aaa-bbb-ccc-"
-"ddd.consoleproxy.company.com -> aaa.bbb.ccc.ddd."
+"Set up dynamic name resolution or populate all possible DNS names in your"
+" public IP range into your existing DNS server with the format aaa-bbb-"
+"ccc-ddd.consoleproxy.company.com -> aaa.bbb.ccc.ddd."
 msgstr ""
 
-# 8e0e99fee7274b59a2f75b2439a28528
-#: ../../systemvm.rst:181
+#: ../../systemvm.rst:178
 msgid ""
-"In these steps you will notice *consoleproxy.company.com* -For security best"
-" practices, we recommend creating a wildcard SSL certificate on a separate "
-"subdomain so in the event that the certificate is compromised, a malicious "
-"user cannot impersonate a company.com domain."
+"In these steps you will notice *consoleproxy.company.com* -For security "
+"best practices, we recommend creating a wildcard SSL certificate on a "
+"separate subdomain so in the event that the certificate is compromised, a"
+" malicious user cannot impersonate a company.com domain."
 msgstr ""
 
-# 8840c66ff2704cbca38c9c9f5daddc09
-#: ../../systemvm.rst:187
+#: ../../systemvm.rst:184
 msgid ""
-"Generate the private key and certificate signing request (CSR). When you are"
-" using openssl to generate private/public key pairs and CSRs, for the "
-"private key that you are going to paste into the CloudStack UI, be sure to "
-"convert it into PKCS#8 format."
+"Generate the private key and certificate signing request (CSR). When you "
+"are using openssl to generate private/public key pairs and CSRs, for the "
+"private key that you are going to paste into the CloudStack UI, be sure "
+"to convert it into PKCS#8 format."
 msgstr ""
 
-# efd9b8a8ee594499800d89e3257cef8c
-#: ../../systemvm.rst:192
+#: ../../systemvm.rst:189
 msgid "Generate a new 2048-bit private key"
 msgstr ""
 
-# 95cd5c1544fd480784d73f497d0474a9
-#: ../../systemvm.rst:198
+#: ../../systemvm.rst:195
 msgid ""
 "Generate a new certificate CSR. Ensure the creation of a wildcard "
 "certificate, eg ``*.consoleproxy.company.com``"
 msgstr ""
 
-# 8501f0bd21d3496f9a95f55217ad5715
-#: ../../systemvm.rst:205
+#: ../../systemvm.rst:202
 msgid ""
-"Head to the website of your favorite trusted Certificate Authority, purchase"
-" an SSL certificate, and submit the CSR. You should receive a valid "
-"certificate in return"
+"Head to the website of your favorite trusted Certificate Authority, "
+"purchase an SSL certificate, and submit the CSR. You should receive a "
+"valid certificate in return"
 msgstr ""
 
-# c5e0a99a8e5548a7b30a82aad6008419
-#: ../../systemvm.rst:209
+#: ../../systemvm.rst:206
 msgid "Convert your private key format into PKCS#8 encrypted format."
 msgstr ""
 
-# 21138c806f2e48abab8f0748512628e2
-#: ../../systemvm.rst:215
+#: ../../systemvm.rst:212
 msgid ""
 "Convert your PKCS#8 encrypted private key into the PKCS#8 format that is "
 "compliant with CloudStack"
 msgstr ""
 
-# 021b9614a4c740eb995d66bb07551c5d
-#: ../../systemvm.rst:222
+#: ../../systemvm.rst:219
 msgid ""
 "In the Update SSL Certificate screen of the CloudStack UI, paste the "
 "following:"
 msgstr ""
 
-# 93d3977b1fbf4bdcaa3cb7c106025be0
-#: ../../systemvm.rst:225
+#: ../../systemvm.rst:222
 msgid "The certificate you've just generated."
 msgstr ""
 
-# f8f025d190ce4094a3dd63915b29267f
-#: ../../systemvm.rst:227
+#: ../../systemvm.rst:224
 msgid "The private key you've just generated."
 msgstr ""
 
-# a44d63f6a2084e029bf84c965e10cae2
-#: ../../systemvm.rst:229
+#: ../../systemvm.rst:226
 msgid ""
 "The desired domain name, prefixed with ``*.``; for example, "
 "``*.consoleproxy.company.com``"
 msgstr ""
 
-# d69ea42c636247548be90fe1cb7c5f51
-#: ../../systemvm.rst:231
+#: ../../systemvm.rst:228
 msgid "|update-ssl.png|"
 msgstr ""
 
-# b0dd0973913649e1876bac396552c02e
-#: ../../systemvm.rst:233
+#: ../../systemvm.rst:230
 msgid ""
-"This stops all currently running console proxy VMs, then restarts them with "
-"the new certificate and key. Users might notice a brief interruption in "
-"console availability."
+"This stops all currently running console proxy VMs, then restarts them "
+"with the new certificate and key. Users might notice a brief interruption"
+" in console availability."
 msgstr ""
 
-# 88d8a0760f5641a6a3d5dac7f7ecb8e2
-#: ../../systemvm.rst:237
+#: ../../systemvm.rst:234
 msgid ""
 "The Management Server generates URLs of the form \"aaa-bbb-ccc-"
-"ddd.consoleproxy.company.com\" after this change is made. The new console "
-"requests will be served with the new DNS domain name, certificate, and key."
+"ddd.consoleproxy.company.com\" after this change is made. The new console"
+" requests will be served with the new DNS domain name, certificate, and "
+"key."
 msgstr ""
 
-# d9ae75c0be0d474f8707a09850ff25db
+#: ../../systemvm.rst:240
+msgid "Uploading ROOT CA and Intermediate CA"
+msgstr ""
+
+#: ../../systemvm.rst:241
+msgid ""
+"If you need to upload custom certificate with ROOT CA and intermediate "
+"CA, you can find more details here: "
+"https://cwiki.apache.org/confluence/display/CLOUDSTACK/Procedure+to+Replace+realhostip.com+with+Your+Own+Domain+Name"
+msgstr ""
+
 #: ../../systemvm.rst:244
+msgid "IMPORTANT NOTES:"
+msgstr ""
+
+#: ../../systemvm.rst:246
+msgid ""
+"In order to avoid errors and problems while uploading custom "
+"certificates, please check following:"
+msgstr ""
+
+#: ../../systemvm.rst:248
+msgid ""
+"1. While doing URL encoding of ROOT CA and any Intermediate CA, be sure "
+"that the plus signs (\"+\") inside certificates are not replaced by space"
+" (\" \"), because some URL/string encoding tools tend to do that."
+msgstr ""
+
+#: ../../systemvm.rst:251
+msgid ""
+"2. If you are renewing certificates it might happen you need to upload "
+"new ROOT CA and Intermediate CA, together with new Server Certificate and"
+" key. In this case please be sure to use same names for certificates "
+"during API upload of certificate, example:"
+msgstr ""
+
+#: ../../systemvm.rst:254
+msgid ""
+"http://123.123.123.123:8080/client/api?command=uploadCustomCertificate&...&name=root1..."
+" "
+"http://123.123.123.123:8080/client/api?command=uploadCustomCertificate&...&name=intermed1..."
+msgstr ""
+
+#: ../../systemvm.rst:257
+msgid ""
+"Here names are \"root1\" and \"intermed1\". If you used other names "
+"previously, please check the cloud.keystore table to obtain used names."
+msgstr ""
+
+#: ../../systemvm.rst:260
+msgid ""
+"If you still have problems and folowing errors in management.log while "
+"destroying CPVM:"
+msgstr ""
+
+#: ../../systemvm.rst:262
+msgid "Unable to build keystore for CPVMCertificate due to CertificateException"
+msgstr ""
+
+#: ../../systemvm.rst:263
+msgid "Cold not find and construct a valid SSL certificate"
+msgstr ""
+
+#: ../../systemvm.rst:265
+msgid ""
+"that means that still some of the Root/intermediate/server certificates "
+"or the key is not in a good format, or incorrectly encoded or multiply "
+"Root CA/Intemediate CA present in database by mistake."
+msgstr ""
+
+#: ../../systemvm.rst:267
+msgid ""
+"Other way to renew Certificates (Root,Intermediates,Server certificates "
+"and key) - although not recommended unless you fill comfortable - is to "
+"directly edit the database, while still respect the main requirement that"
+" the private key is PKCS8 encoded, while Root CA, Intemediate and Server "
+"certificates are still in default PEM format (no URL encoding needed "
+"here). After editing the database, please restart management server, and "
+"destroy SSVM and CPVM after that, so the new SSVM and CPVM with new "
+"certificates are created."
+msgstr ""
+
+#: ../../systemvm.rst:275
 msgid "Load-balancing Console Proxies"
 msgstr ""
 
-# baf2bcf57fed4f82aa193fd45f2f2140
-#: ../../systemvm.rst:245
+#: ../../systemvm.rst:276
 msgid ""
-"An alternative to using dynamic DNS or creating a range of DNS entries as "
-"described in the last section would be to create a SSL certificate for a "
-"specific domain name, configure CloudStack to use that particular FQDN, and "
-"then configure a load balancer to load balance the console proxy's IP "
-"address behind the FQDN. As the functionality for this is still new, please "
-"see "
-"https://cwiki.apache.org/confluence/display/CLOUDSTACK/Realhost+IP+changes "
-"for more details."
+"An alternative to using dynamic DNS or creating a range of DNS entries as"
+" described in the last section would be to create a SSL certificate for a"
+" specific domain name, configure CloudStack to use that particular FQDN, "
+"and then configure a load balancer to load balance the console proxy's IP"
+" address behind the FQDN. As the functionality for this is still new, "
+"please see "
+"https://cwiki.apache.org/confluence/display/CLOUDSTACK/Realhost+IP+changes"
+" for more details."
 msgstr ""
 
-# f8bc0488fcae4eed874f0719dcbd03dc
-#: ../../systemvm.rst:256
+#: ../../systemvm.rst:287
 msgid "Virtual Router"
 msgstr ""
 
-# 5aa09837be9b4cbbb6e84ebaabca6559
-#: ../../systemvm.rst:258
+#: ../../systemvm.rst:289
 msgid ""
-"The virtual router is a type of System Virtual Machine. The virtual router "
-"is one of the most frequently used service providers in CloudStack. The end "
-"user has no direct access to the virtual router. Users can ping the virtual "
-"router and take actions that affect it (such as setting up port forwarding),"
-" but users do not have SSH access into the virtual router."
+"The virtual router is a type of System Virtual Machine. The virtual "
+"router is one of the most frequently used service providers in "
+"CloudStack. The end user has no direct access to the virtual router. "
+"Users can ping the virtual router and take actions that affect it (such "
+"as setting up port forwarding), but users do not have SSH access into the"
+" virtual router."
 msgstr ""
 
-# b1afb70840d04ed6917b9fd0e68a312b
-#: ../../systemvm.rst:265
+#: ../../systemvm.rst:296
 msgid ""
-"There is no mechanism for the administrator to log in to the virtual router."
-" Virtual routers can be restarted by administrators, but this will interrupt"
-" public network access and other services for end users. A basic test in "
-"debugging networking issues is to attempt to ping the virtual router from a "
-"guest VM. Some of the characteristics of the virtual router are determined "
-"by its associated system service offering."
+"There is no mechanism for the administrator to log in to the virtual "
+"router. Virtual routers can be restarted by administrators, but this will"
+" interrupt public network access and other services for end users. A "
+"basic test in debugging networking issues is to attempt to ping the "
+"virtual router from a guest VM. Some of the characteristics of the "
+"virtual router are determined by its associated system service offering."
 msgstr ""
 
-# a07561d1be02426f9c20ec39d37ebfda
-#: ../../systemvm.rst:274
+#: ../../systemvm.rst:305
 msgid "Configuring the Virtual Router"
 msgstr ""
 
-# 33b921e943764375b7e2833cd80501f1
-#: ../../systemvm.rst:276
+#: ../../systemvm.rst:307
 msgid "You can set the following:"
 msgstr ""
 
-# f4bf9f0a9f5341ce9751734831cb4100
-#: ../../systemvm.rst:278
+#: ../../systemvm.rst:309
 msgid "IP range"
 msgstr ""
 
-# 63e37af44a1644428067b31b62f0c6b2
-#: ../../systemvm.rst:280
+#: ../../systemvm.rst:311
 msgid "Supported network services"
 msgstr ""
 
-# e1a2e37b67a14415b27cdce549422c45
-#: ../../systemvm.rst:282
+#: ../../systemvm.rst:313
 msgid "Default domain name for the network serviced by the virtual router"
 msgstr ""
 
-# a78c71c42d6b400e8c6a037d8be60b00
-#: ../../systemvm.rst:284
+#: ../../systemvm.rst:315
 msgid "Gateway IP address"
 msgstr ""
 
-# c17203f5ab7c4339ab3bf6d4b276357c
-#: ../../systemvm.rst:286
+#: ../../systemvm.rst:317
 msgid ""
 "How often CloudStack fetches network usage statistics from CloudStack "
 "virtual routers. If you want to collect traffic metering data from the "
@@ -517,439 +534,412 @@ msgid ""
 "network usage statistics, set it to 0."
 msgstr ""
 
-# db1198a11ec947f18c4cf2244c33eb08
-#: ../../systemvm.rst:294
+#: ../../systemvm.rst:325
 msgid "Upgrading a Virtual Router with System Service Offerings"
 msgstr ""
 
-# 35a9d4cee92b4a9fb1654d44110881fa
-#: ../../systemvm.rst:296
+#: ../../systemvm.rst:327
 msgid ""
-"When CloudStack creates a virtual router, it uses default settings which are"
-" defined in a default system service offering. See `“System Service "
+"When CloudStack creates a virtual router, it uses default settings which "
+"are defined in a default system service offering. See `“System Service "
 "Offerings” <#system-service-offerings>`_. All the virtual routers in a "
-"single guest network use the same system service offering. You can upgrade "
-"the capabilities of the virtual router by creating and applying a custom "
-"system service offering."
+"single guest network use the same system service offering. You can "
+"upgrade the capabilities of the virtual router by creating and applying a"
+" custom system service offering."
 msgstr ""
 
-# cd27cfafbeca4a8dbe03d9b84184a373
-#: ../../systemvm.rst:303
+#: ../../systemvm.rst:334
 msgid ""
 "Define your custom system service offering. See `“Creating a New System "
-"Service Offering” <#creating-a-new-system-service-offering>`_. In System VM "
-"Type, choose Domain Router."
+"Service Offering” <#creating-a-new-system-service-offering>`_. In System "
+"VM Type, choose Domain Router."
 msgstr ""
 
-# 59d868f989f44a7daf1bfbc0e292db28
-#: ../../systemvm.rst:308
+#: ../../systemvm.rst:339
 msgid ""
 "Associate the system service offering with a network offering. See "
-"`“Creating a New Network Offering” <networking.html#creating-a-new-network-"
-"offering>`_."
+"`“Creating a New Network Offering” <networking.html#creating-a-new-"
+"network-offering>`_."
 msgstr ""
 
-# dfa56664a39341bcbf503aa23d46f1d4
-#: ../../systemvm.rst:312
+#: ../../systemvm.rst:343
 msgid ""
-"Apply the network offering to the network where you want the virtual routers"
-" to use the new system service offering. If this is a new network, follow "
-"the steps in Adding an Additional Guest Network on page 66. To change the "
-"service offering for existing virtual routers, follow the steps in "
-"`“Changing the Network Offering on a Guest Network” <networking2.html"
-"#changing-the-network-offering-on-a-guest-network>`_."
+"Apply the network offering to the network where you want the virtual "
+"routers to use the new system service offering. If this is a new network,"
+" follow the steps in Adding an Additional Guest Network on page 66. To "
+"change the service offering for existing virtual routers, follow the "
+"steps in `“Changing the Network Offering on a Guest Network” "
+"<networking2.html#changing-the-network-offering-on-a-guest-network>`_."
 msgstr ""
 
-# 24d02637553648a99ee527214679997f
-#: ../../systemvm.rst:321
+#: ../../systemvm.rst:352
 msgid "Best Practices for Virtual Routers"
 msgstr ""
 
-# 9264d919f1d24e30b3ff39600891fd32
-#: ../../systemvm.rst:323
+#: ../../systemvm.rst:354
 msgid ""
-"WARNING: Restarting a virtual router from a hypervisor console deletes all "
-"the iptables rules. To work around this issue, stop the virtual router and "
-"start it from the CloudStack UI."
+"WARNING: Restarting a virtual router from a hypervisor console deletes "
+"all the iptables rules. To work around this issue, stop the virtual "
+"router and start it from the CloudStack UI."
 msgstr ""
 
-# f0a98ab823014588ba7a79e496358417
-#: ../../systemvm.rst:328
+#: ../../systemvm.rst:359
 msgid ""
-"Do not use the destroyRouter API when only one router is available in the "
-"network, because restartNetwork API with the cleanup=false parameter can't "
-"recreate it later. If you want to destroy and recreate the single router "
-"available in the network, use the restartNetwork API with the cleanup=true "
-"parameter."
+"Do not use the destroyRouter API when only one router is available in the"
+" network, because restartNetwork API with the cleanup=false parameter "
+"can't recreate it later. If you want to destroy and recreate the single "
+"router available in the network, use the restartNetwork API with the "
+"cleanup=true parameter."
 msgstr ""
 
-# c9fe7a0ac42f4b8ba7e912ff1ccd88a6
-#: ../../systemvm.rst:336
+#: ../../systemvm.rst:367
 msgid "Service Monitoring Tool for Virtual Router"
 msgstr ""
 
-# 8c7761b870df47549d73c8e0a8e21ec0
-#: ../../systemvm.rst:338
+#: ../../systemvm.rst:369
 msgid ""
-"Various services running on the CloudStack virtual routers can be monitored "
-"by using a Service Monitoring tool. The tool ensures that services are "
-"successfully running until CloudStack deliberately disables them. If a "
-"service goes down, the tool automatically restarts the service, and if that "
-"does not help bringing up the service, an alert as well as an event is "
-"generated indicating the failure. A new global parameter, "
-"``network.router.enableservicemonitoring``, has been introduced to control "
-"this feature. The default value is false, implies, monitoring is disabled. "
-"When you enable, ensure that the Management Server and the router are "
-"restarted."
+"Various services running on the CloudStack virtual routers can be "
+"monitored by using a Service Monitoring tool. The tool ensures that "
+"services are successfully running until CloudStack deliberately disables "
+"them. If a service goes down, the tool automatically restarts the "
+"service, and if that does not help bringing up the service, an alert as "
+"well as an event is generated indicating the failure. A new global "
+"parameter, ``network.router.enableservicemonitoring``, has been "
+"introduced to control this feature. The default value is false, implies, "
+"monitoring is disabled. When you enable, ensure that the Management "
+"Server and the router are restarted."
 msgstr ""
 
-# eb435554762a44ae9561f7c121329709
-#: ../../systemvm.rst:349
+#: ../../systemvm.rst:380
 msgid ""
-"Monitoring tool can help to start a VR service, which is crashed due to an "
-"unexpected reason. For example:"
+"Monitoring tool can help to start a VR service, which is crashed due to "
+"an unexpected reason. For example:"
 msgstr ""
 
-# c64d62fa24064373919f92f8bb26dab6
-#: ../../systemvm.rst:352
+#: ../../systemvm.rst:383
 msgid "The services crashed due to defects in the source code."
 msgstr ""
 
-# 19f8982ead484814b9812242f98822cf
-#: ../../systemvm.rst:354
+#: ../../systemvm.rst:385
 msgid ""
 "The services that are terminated by the OS when memory or CPU is not "
 "sufficiently available for the service."
 msgstr ""
 
-# 88522e16c4ad4587887f207c3cb1de9f
-#: ../../systemvm.rst:358
+#: ../../systemvm.rst:389
 msgid ""
-"Only those services with daemons are monitored. The services that are failed"
-" due to errors in the service/daemon configuration file cannot be restarted "
-"by the Monitoring tool. VPC networks are not supported."
+"Only those services with daemons are monitored. The services that are "
+"failed due to errors in the service/daemon configuration file cannot be "
+"restarted by the Monitoring tool. VPC networks are not supported."
 msgstr ""
 
-# d6dde7af5158444683442aab05bf244e
-#: ../../systemvm.rst:362
+#: ../../systemvm.rst:393
 msgid "The following services are monitored in a VR:"
 msgstr ""
 
-# 919f0a593e4c494588e1859a5fccfae0
-# b9653f8b1d8744999883790ea0990b01
-#: ../../systemvm.rst:364 ../../systemvm.rst:424
+#: ../../systemvm.rst:395 ../../systemvm.rst:455
 msgid "DNS"
 msgstr ""
 
-# c8fa5957a2504e62afaf2aef337a064b
-#: ../../systemvm.rst:366
+#: ../../systemvm.rst:397
 msgid "HA Proxy"
 msgstr ""
 
-# d5ed20a1e7744cb0b70dcfa442d18ee0
-#: ../../systemvm.rst:368
+#: ../../systemvm.rst:399
 msgid "SSH"
 msgstr ""
 
-# 9a5f6db0ba8441d4ad47c0946c9230bb
-#: ../../systemvm.rst:370
+#: ../../systemvm.rst:401
 msgid "Apache Web Server"
 msgstr ""
 
-# 6f2ae7c39bfd4fd3b950701b42e2f0fa
-#: ../../systemvm.rst:372
+#: ../../systemvm.rst:403
 msgid "The following networks are supported:"
 msgstr ""
 
-# 6ed18a5a0c7f48feacc05607c212daf6
-#: ../../systemvm.rst:374
+#: ../../systemvm.rst:405
 msgid "Isolated Networks"
 msgstr ""
 
-# fd2ab5e43ac34e0fa5bade7bde71c5cf
-#: ../../systemvm.rst:376
+#: ../../systemvm.rst:407
 msgid "Shared Networks in both Advanced and Basic zone"
 msgstr ""
 
-# fb5714c33d284b61af774529226b1346
-#: ../../systemvm.rst:378
+#: ../../systemvm.rst:409
 msgid "VPC networks are not supported"
 msgstr ""
 
-# d22c1884f61f4ed5b1e3c6c1b2b8b218
-#: ../../systemvm.rst:380
+#: ../../systemvm.rst:411
 msgid ""
-"This feature is supported on the following hypervisors: XenServer, VMware, "
-"and KVM."
+"This feature is supported on the following hypervisors: XenServer, "
+"VMware, and KVM."
 msgstr ""
 
-# 209b4c2a4ff24293988606ece94dcc3d
-#: ../../systemvm.rst:385
+#: ../../systemvm.rst:416
 msgid "Enhanced Upgrade for Virtual Routers"
 msgstr ""
 
-# fe5f961e7475463681b5ffacfc66cadd
-#: ../../systemvm.rst:387
+#: ../../systemvm.rst:418
 msgid ""
-"Upgrading VR is made flexible. The CloudStack administrators will be able to"
-" control the sequence of the VR upgrades. The sequencing is based on "
+"Upgrading VR is made flexible. The CloudStack administrators will be able"
+" to control the sequence of the VR upgrades. The sequencing is based on "
 "Infrastructure hierarchy, such as by Cluster, Pod, or Zone, and "
 "Administrative (Account) hierarchy, such as by Tenant or Domain. As an "
-"administrator, you can also determine when a particular customer service, "
-"such as VR, is upgraded within a specified upgrade interval. Upgrade "
+"administrator, you can also determine when a particular customer service,"
+" such as VR, is upgraded within a specified upgrade interval. Upgrade "
 "operation is enhanced to increase the upgrade speed by allowing as many "
 "upgrade operations in parallel as possible."
 msgstr ""
 
-# 0a2326eddab447b690fd8118e9f41940
-#: ../../systemvm.rst:396
+#: ../../systemvm.rst:427
 msgid ""
-"During the entire duration of the upgrade, users cannot launch new services "
-"or make changes to an existing service."
+"During the entire duration of the upgrade, users cannot launch new "
+"services or make changes to an existing service."
 msgstr ""
 
-# 4fb42cca852e4f548c30cb9034654413
-#: ../../systemvm.rst:399
+#: ../../systemvm.rst:430
 msgid ""
 "Additionally, using multiple versions of VRs in a single instance is "
-"supported. In the Details tab of a VR, you can view the version and whether "
-"it requires upgrade. During the Management Server upgrade, CloudStack checks"
-" whether VR is at the latest version before performing any operation on the "
-"VR. To support this, a new global parameter, *``router.version.check``*, has"
-" been added. This parameter is set to true by default, which implies minimum"
-" required version is checked before performing any operation. No operation "
-"is performed if the VR is not at the required version. Services of the older"
-" version VR continue to be available, but no further operations can be "
-"performed on the VR until it is upgraded to the latest version. This will be"
-" a transient state until the VR is upgraded. This will ensure that the "
-"availability of VR services and VR state is not impacted due to the "
-"Management Server upgrade."
+"supported. In the Details tab of a VR, you can view the version and "
+"whether it requires upgrade. During the Management Server upgrade, "
+"CloudStack checks whether VR is at the latest version before performing "
+"any operation on the VR. To support this, a new global parameter, "
+"*``router.version.check``*, has been added. This parameter is set to true"
+" by default, which implies minimum required version is checked before "
+"performing any operation. No operation is performed if the VR is not at "
+"the required version. Services of the older version VR continue to be "
+"available, but no further operations can be performed on the VR until it "
+"is upgraded to the latest version. This will be a transient state until "
+"the VR is upgraded. This will ensure that the availability of VR services"
+" and VR state is not impacted due to the Management Server upgrade."
 msgstr ""
 
-# 0567e75c33134bcea3a1caa72a5aaa00
-#: ../../systemvm.rst:414
+#: ../../systemvm.rst:445
 msgid ""
 "The following service will be available even if the VR is not upgraded. "
-"However, no changes for any of the services can be sent to the VR, until it "
-"is upgraded:"
+"However, no changes for any of the services can be sent to the VR, until "
+"it is upgraded:"
 msgstr ""
 
-# 48fcfc3f076b494e942f868e0372e0b9
-#: ../../systemvm.rst:418
+#: ../../systemvm.rst:449
 msgid "SecurityGroup"
 msgstr ""
 
-# 1bee20546a154520ba2788c22c1f3486
-#: ../../systemvm.rst:420
+#: ../../systemvm.rst:451
 msgid "UserData"
 msgstr ""
 
-# 60d206f07ef3446fa4fb2747aa88893b
-#: ../../systemvm.rst:422
+#: ../../systemvm.rst:453
 msgid "DHCP"
 msgstr ""
 
-# ace288f1a1044792b92215d6a79af5d1
-#: ../../systemvm.rst:426
+#: ../../systemvm.rst:457
 msgid "LB"
 msgstr ""
 
-# 4ccc43be9ec44655b59657daed06a562
-#: ../../systemvm.rst:428
+#: ../../systemvm.rst:459
 msgid "Port Forwarding"
 msgstr ""
 
-# 1ffbebe241a745ebaaea80aa5ff7e00e
-#: ../../systemvm.rst:430
+#: ../../systemvm.rst:461
 msgid "VPN"
 msgstr ""
 
-# 9bfb5e6221b142eab579bea52cded3a4
-#: ../../systemvm.rst:432
+#: ../../systemvm.rst:463
 msgid "Static NAT"
 msgstr ""
 
-# 2b905be150d94c69b81d0dfbcf8e70ec
-#: ../../systemvm.rst:434
+#: ../../systemvm.rst:465
 msgid "Source NAT"
 msgstr "Source NAT"
 
-# 952471d71a404a99b736c2438fd03018
-#: ../../systemvm.rst:436
+#: ../../systemvm.rst:467
 msgid "Firewall"
 msgstr ""
 
-# 4051d26b7c91408999d41f021c3ca178
-#: ../../systemvm.rst:438
+#: ../../systemvm.rst:469
 msgid "Gateway"
 msgstr ""
 
-# 69c89cdcc4844f728351fe01740e32ef
-#: ../../systemvm.rst:440
+#: ../../systemvm.rst:471
 msgid "NetworkACL"
 msgstr ""
 
-# 769b3ed7ed5c4ccf85d9386e5aea8b3f
-#: ../../systemvm.rst:444
+#: ../../systemvm.rst:475
 msgid "Supported Virtual Routers"
 msgstr ""
 
-# b3bd3d522cca4802afae131818e0df27
-#: ../../systemvm.rst:446
+#: ../../systemvm.rst:477
 msgid "VR"
 msgstr ""
 
-# 6378fb7b02b248cb8e34872a3d19b51d
-#: ../../systemvm.rst:448
+#: ../../systemvm.rst:479
 msgid "VPC VR"
 msgstr ""
 
-# dd5c03dc42ae4454a713ff50a2be91e9
-#: ../../systemvm.rst:450
+#: ../../systemvm.rst:481
 msgid "Redundant VR"
 msgstr ""
 
-# d9325031af0f4d1597f136b4d9f0e3e3
-#: ../../systemvm.rst:454
+#: ../../systemvm.rst:485
 msgid "Upgrading Virtual Routers"
 msgstr ""
 
-# 975d8f6d95014399909cc0cd8a2b16c6
-#: ../../systemvm.rst:456
+#: ../../systemvm.rst:487
 msgid "Download the latest System VM template."
 msgstr ""
 
-# c25708086d324a38b701d238b7463924
-#: ../../systemvm.rst:458
+#: ../../systemvm.rst:489
 msgid "Download the latest System VM to all the primary storage pools."
 msgstr ""
 
-# c9378adb82f140be8f8663c096c895c5
-#: ../../systemvm.rst:460
+#: ../../systemvm.rst:491
 msgid "Upgrade the Management Server."
 msgstr ""
 
-# 40387558057548f98875005c7ceabeb7
-#: ../../systemvm.rst:462
-msgid ""
-"Upgrade CPVM and SSVM either from the UI or by using the following script:"
+#: ../../systemvm.rst:493
+msgid "Upgrade CPVM and SSVM either from the UI or by using the following script:"
 msgstr ""
 
-# d28d9ad5f0a0451bbff0baf5b102d9dd
-#: ../../systemvm.rst:469
+#: ../../systemvm.rst:500
 msgid ""
 "Even when the VRs are still on older versions, existing services will "
-"continue to be available to the VMs. The Management Server cannot perform "
-"any operations on the VRs until they are upgraded."
+"continue to be available to the VMs. The Management Server cannot perform"
+" any operations on the VRs until they are upgraded."
 msgstr ""
 
-# 2a8027346ddf4f988d4554184bcdb544
-#: ../../systemvm.rst:473
+#: ../../systemvm.rst:504
 msgid "Selectively upgrade the VRs:"
 msgstr ""
 
-# 6e59012980ce40deba2b51593d9d8901
-#: ../../systemvm.rst:475
+#: ../../systemvm.rst:506
 msgid "Log in to the CloudStack UI as the root administrator."
 msgstr ""
 
-# 728ae8ec4eb74571819bf5ec86b38073
-#: ../../systemvm.rst:477
+#: ../../systemvm.rst:508
 msgid "In the left navigation, choose Infrastructure."
 msgstr "Choisissez Infrastructure dans le panneau de navigation à gauche."
 
-# 2d56351b1a1644bda4f342dce58b51d7
-#: ../../systemvm.rst:479
+#: ../../systemvm.rst:510
 msgid "On Virtual Routers, click View More."
 msgstr ""
 
-# 9af9b62d86b14af2a745e1a359d1c940
-#: ../../systemvm.rst:481
+#: ../../systemvm.rst:512
 msgid "All the VRs are listed in the Virtual Routers page."
 msgstr ""
 
-# f19642bbaf564ca0a26f3e8dff683a65
-#: ../../systemvm.rst:483
+#: ../../systemvm.rst:514
 msgid ""
-"In Select View drop-down, select desired grouping based on your requirement."
+"In Select View drop-down, select desired grouping based on your "
+"requirement."
 msgstr ""
 
-# a76c013f7da8482eb097248fb3757989
-#: ../../systemvm.rst:486
+#: ../../systemvm.rst:517
 msgid "You can use either of the following:"
 msgstr ""
 
-# 0b60f1059d8e4b1faadac9b7a3113d8b
-#: ../../systemvm.rst:488
+#: ../../systemvm.rst:519
 msgid "Group by zone"
 msgstr ""
 
-# 5a12e32c9b0c4862a582cca80cd74030
-#: ../../systemvm.rst:490
+#: ../../systemvm.rst:521
 msgid "Group by pod"
 msgstr ""
 
-# a83f4a59498e44e09b79b5eb014f9d4f
-#: ../../systemvm.rst:492
+#: ../../systemvm.rst:523
 msgid "Group by cluster"
 msgstr ""
 
-# a1c022abb009480bb49288cdad2b5210
-#: ../../systemvm.rst:494
+#: ../../systemvm.rst:525
 msgid "Group by account"
 msgstr ""
 
-# 87a6b85df243430293aa4d5a55e00c4a
-#: ../../systemvm.rst:496
+#: ../../systemvm.rst:527
 msgid "Click the group which has the VRs to be upgraded."
 msgstr ""
 
-# 9e519d5a83be4513a0a20c665777a298
-#: ../../systemvm.rst:498
+#: ../../systemvm.rst:529
 msgid ""
 "For example, if you have selected Group by zone, select the name of the "
 "desired zone."
 msgstr ""
 
-# bd6d3d8bf8954923909c8147a4718053
-#: ../../systemvm.rst:501
+#: ../../systemvm.rst:532
 msgid "Click the Upgrade button to upgrade all the VRs. |vr-upgrade.png|"
 msgstr ""
 
-# 56d36b4fbb234438a6e0fce7d66a0ac1
-#: ../../systemvm.rst:503
+#: ../../systemvm.rst:534
 msgid "Click OK to confirm."
 msgstr ""
 
-# 2b7574a9be0e46a9bd04bff25c748a13
-#: ../../systemvm.rst:507
+#: ../../systemvm.rst:538
 msgid "Secondary Storage VM"
 msgstr ""
 
-# e941ae432ef24ea2a8b4987accf91257
-#: ../../systemvm.rst:509
+#: ../../systemvm.rst:540
 msgid ""
 "In addition to the hosts, CloudStack’s Secondary Storage VM mounts and "
 "writes to secondary storage."
 msgstr ""
 
-# f062d628750b4d5bbf97ac967cf17788
-#: ../../systemvm.rst:512
+#: ../../systemvm.rst:543
 msgid ""
-"Submissions to secondary storage go through the Secondary Storage VM. The "
-"Secondary Storage VM can retrieve templates and ISO images from URLs using a"
-" variety of protocols."
+"Submissions to secondary storage go through the Secondary Storage VM. The"
+" Secondary Storage VM can retrieve templates and ISO images from URLs "
+"using a variety of protocols."
 msgstr ""
 
-# cedfcfe3cd38411ca2633b120ab0d034
-#: ../../systemvm.rst:516
+#: ../../systemvm.rst:547
 msgid ""
 "The secondary storage VM provides a background task that takes care of a "
 "variety of secondary storage activities: downloading a new template to a "
 "Zone, copying templates between Zones, and snapshot backups."
 msgstr ""
 
-# c2a68c523bf14634b2f881ce767633cc
-#: ../../systemvm.rst:520
+#: ../../systemvm.rst:551
 msgid "The administrator can log in to the secondary storage VM if needed."
 msgstr ""
+
+# 6ce60c193c5547e38390bda23ad9acff
+#~ msgid ""
+#~ "Debian 6.0 (\"Squeeze\"), 2.6.32 kernel "
+#~ "with the latest security patches from"
+#~ " the Debian security APT repository"
+#~ msgstr ""
+
+# 157f5d425def480e9b24095a62b2f059
+#~ msgid "32-bit for enhanced performance on Xen/VMWare"
+#~ msgstr ""
+
+# 88cf932e61dd41a8bc1c583aa0bd38b7
+#~ msgid ""
+#~ "CloudStack allows you to change the "
+#~ "default 32-bit System VM template to "
+#~ "64-bit one. Using the 64-bit template,"
+#~ " upgrade the virtual router to manage"
+#~ " larger number of connection in your"
+#~ " network."
+#~ msgstr ""
+
+# 6ea0f846b0a34711b7c0090cb48d8c32
+#~ msgid ""
+#~ "http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15"
+#~ "-master-xen.vhd.bz2"
+#~ msgstr ""
+
+# fe251bca2b854129890cba8e7ac9bbbf
+#~ msgid ""
+#~ "http://download.cloud.com/templates/4.2/64bit/systemvmtemplate64-2013-07-15"
+#~ "-master-kvm.qcow2.bz2"
+#~ msgstr ""
+
+# 7be31349d45949dfa61f79105ade746f
+#~ msgid ""
+#~ "In the past CloudStack used the "
+#~ "``realhostip.com`` dynamic  DNS resolution "
+#~ "service. As this service will be "
+#~ "shut down as of June 30th, 2014,"
+#~ " CloudStack has stopped using the "
+#~ "service as of version 4.3."
+#~ msgstr ""
+
