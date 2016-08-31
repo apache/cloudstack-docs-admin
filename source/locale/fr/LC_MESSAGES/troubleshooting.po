@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-08-25 16:24+0200\n"
+"PO-Revision-Date: 2016-08-31 00:44+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -37,6 +37,11 @@ msgid ""
 "management/`. The CloudStack logs a variety of error messages. We recommend "
 "this command to find the problematic output in the Management Server log:."
 msgstr ""
+"Le serveur de gestion de CloudStack consigne toutes les activités du site "
+"web, du middle tier, et de la base de données à des fins de diagnostique "
+"dans `/var/log/cloudstack/management/`. CloudStack enregistre une variété "
+"de messages d'erreurs. Nous recommandons cette commande pour trouver la "
+"sortie problématique parmi les enregistrements du serveur de gestion :"
 
 # 3fc8e92bb3a741c3bd3a67d67cf0e9a3
 #: ../../troubleshooting.rst:30
@@ -45,6 +50,10 @@ msgid ""
 "single line before executing. Some document viewers may introduce unwanted "
 "line breaks in copied text."
 msgstr ""
+"Lors du copier/coller d'une commande, soyez certain que la commande est "
+"collée sur une seule ligne avant de l'exécuter. Certains lecteur de "
+"document peuvent introduire un saut de ligne indésirable dans le texte "
+"copié."
 
 # 845cfc971cf84bbca9edce162a942ad2
 #: ../../troubleshooting.rst:38
@@ -54,6 +63,11 @@ msgid ""
 "this job ID in the management server log. For example, suppose that you "
 "find the following ERROR message:"
 msgstr ""
+"CloudStack traite les requêtes avec un identifiant de travail. Si vous "
+"trouver une error dans les logs et que vous êtes intéressés dans le "
+"dépannage de ce problème, vous pouvez faire un grep pour cet ID de travail "
+"dans les logs du serveur de gestion. Par example, en supposant que vous "
+"trouviez le message ERROR suivant :"
 
 # f7529d9ff27a4e27bdad7d8a6435087a
 #: ../../troubleshooting.rst:47
@@ -61,6 +75,8 @@ msgid ""
 "Note that the job ID is 1076. You can track back the events relating to job "
 "1076 with the following grep:"
 msgstr ""
+"Noter que l'identifiant du travail est 1076. Vous pouvez tracer les "
+"évènements en relation avec le travail 1076 avec le grep suivant :"
 
 # 4da5450950cc43b79b6d4391e28f4f41
 #: ../../troubleshooting.rst:54
@@ -68,11 +84,13 @@ msgid ""
 "The CloudStack Agent Server logs its activities in `/var/log/cloudstack/"
 "agent/`."
 msgstr ""
+"L'agent CloudStack enregistre ses activités dans `/var/log/cloudstack/agent/"
+"`."
 
 # ba4670a0c5444406a2eb230cb99333d5
 #: ../../troubleshooting.rst:58
 msgid "Data Loss on Exported Primary Storage"
-msgstr ""
+msgstr "Données perdues sur un stockage primaire exporté."
 
 # b0ef204b69a54f32bd49070c4b9b6a91
 # 96d811275eea4240af38ec923db3c739
@@ -92,6 +110,8 @@ msgid ""
 "Loss of existing data on primary storage which has been exposed as a Linux "
 "NFS server export on an iSCSI volume."
 msgstr ""
+"La perte de données existante sur le stockage primaire qui a été exposé "
+"comme un export de serveur Linux NFS sur un volume ISCSI."
 
 # 77646ea81e804cb9ada6c17c6289cbbe
 # e5b68ba31d5948388069cf4e01357332
@@ -112,6 +132,9 @@ msgid ""
 "storage. When this occurs, the LVM is wiped and all data in the volume is "
 "lost"
 msgstr ""
+"Il est possible qu'un client depuis l'extérieur du pool attendu ait monté "
+"le stockage. Lorsque cela arrive, le LVM est corrompu et toutes les données "
+"du volume sont perdus."
 
 # 4934510ae4ce4c79a0ed5d6ee26fea0a
 # df9bd94f2f95481f93b741b643baedfb
@@ -131,11 +154,16 @@ msgid ""
 "When setting up LUN exports, restrict the range of IP addresses that are "
 "allowed access by specifying a subnet mask. For example:"
 msgstr ""
+"Lors de la configuration de l'exportation d'un LUN, restreindre la plage "
+"des adresses IP autorisées à y accéder en spécifiant un masque de sous "
+"réseau. Par exemple :"
 
 # 17f9dff87a0b4b848b2938ad46c42bfc
 #: ../../troubleshooting.rst:85
 msgid "Adjust the above command to suit your deployment needs."
 msgstr ""
+"Ajuster la commande ci-dessous pour correspondre aux besoins de votre "
+"déploiement."
 
 # 9dd74bb044b640dcb1b4e410db1a44e2
 #: ../../troubleshooting.rst:89
@@ -148,11 +176,13 @@ msgid ""
 "See the export procedure in the \"Secondary Storage\" section of the "
 "CloudStack Installation Guide"
 msgstr ""
+"Voir la procédure d'exportation dans la section \"Stockage secondaire\" du "
+"guide d'installation de CloudStack"
 
 # 08ecc200c09045599e0c1f960186fdc4
 #: ../../troubleshooting.rst:96
 msgid "Recovering a Lost Virtual Router"
-msgstr ""
+msgstr "Récupérer un routeur virtuel perdu"
 
 # db28bc81f196417980c31fd2d4b63f29
 #: ../../troubleshooting.rst:101
@@ -160,11 +190,13 @@ msgid ""
 "A virtual router is running, but the host is disconnected. A virtual router "
 "no longer functions as expected."
 msgstr ""
+"Un routeur virtuel fonctionne, mais l'hôte est déconnecté. Un routeur "
+"virtuel ne fonctionne plus comme attendu."
 
 # a6ac53ae9be44b4e8b3602647222e9ac
 #: ../../troubleshooting.rst:108
 msgid "The Virtual router is lost or down."
-msgstr ""
+msgstr "Le routeur virtuel est perdu ou stoppé."
 
 # 1bd58bc5e2314d0cbf2e0059b096bf0a
 #: ../../troubleshooting.rst:114
@@ -174,6 +206,11 @@ msgid ""
 "the backup router up and running (it is assumed this is in a redundant "
 "router setup):"
 msgstr ""
+"Si vous êtes certain que le routeur est définitivement stoppé, ou qu'il ne "
+"fonctionne plus comme attendu, le détruire. Vous devez en créer un de "
+"nouveau tout en conservant le routeur de secours démarré et en "
+"fonctionnement (ceci suppose qu'il s'agit d'une configuration avec routeur "
+"redondant) :"
 
 # 19e8516bc79a4b7faeb2645670f3a6a1
 #: ../../troubleshooting.rst:119
@@ -181,6 +218,8 @@ msgid ""
 "Force stop the router. Use the stopRouter API with forced=true parameter to "
 "do so."
 msgstr ""
+"Forcer l'arrêt du routeur. Utiliser l'API stopRouter avec le paramètre "
+"forced=true pour le faire."
 
 # 340f24e153484784bc1cf3b493c32ea3
 #: ../../troubleshooting.rst:122
@@ -188,11 +227,14 @@ msgid ""
 "Before you continue with destroying this router, ensure that the backup "
 "router is running. Otherwise the network connection will be lost."
 msgstr ""
+"Avant de continuer avec la destruction de ce routeur, assurez vous que le "
+"routeur de secours est en fonctionnement. Sinon la connexion au réseau sera "
+"perdue."
 
 # c2db1e8bd10547bfacb3e2d044ca6d06
 #: ../../troubleshooting.rst:126
 msgid "Destroy the router by using the destroyRouter API."
-msgstr ""
+msgstr "Détruire le routeur en utilisant l'API destroyRouter."
 
 # af3e07ca34034b49b6dba68eb7da16f3
 #: ../../troubleshooting.rst:128
@@ -201,6 +243,10 @@ msgid ""
 "cleanup=false parameter. For more information about redundant router setup, "
 "see Creating a New Network Offering."
 msgstr ""
+"Recréer le routeur manquant en utilisant l'API restartNetwork avec le "
+"paramètre cleanup=false. Pour plus d'information à propos de la "
+"configuration redondante des routeurs, voir Créer une nouvelle offre de "
+"réseau."
 
 # 25bdb5c7a6a7454ea25d62c3f0a02c57
 #: ../../troubleshooting.rst:132
@@ -208,17 +254,22 @@ msgid ""
 "For more information about the API syntax, see the API Reference at `http://"
 "cloudstack.apache.org/docs/api/ <http://cloudstack.apache.org/docs/api/>`_."
 msgstr ""
+"Pour plus d'information sur la syntaxe de l'API, voir la Référence de l'API "
+"à l'adresse `http://cloudstack.apache.org/docs/api/ <http://cloudstack."
+"apache.org/docs/api/>`_."
 
 # d1a32a2023024c72907911b8c7757cae
 #: ../../troubleshooting.rst:137
 msgid "Maintenance mode not working on vCenter"
-msgstr ""
+msgstr "Le mode de maintenance ne fonctionne pas sur un vCenter"
 
 # bd6813f30ddc4a0da8cf13b7725c9748
 #: ../../troubleshooting.rst:142
 msgid ""
 "Host was placed in maintenance mode, but still appears live in vCenter."
 msgstr ""
+"L'hôte a été placé en mode maintenance, mais apparaît toujours vivant dans "
+"le vCenter."
 
 # 7241c889dd0842189f0c38eda241d14b
 #: ../../troubleshooting.rst:148
@@ -226,21 +277,26 @@ msgid ""
 "The CloudStack administrator UI was used to place the host in scheduled "
 "maintenance mode. This mode is separate from vCenter's maintenance mode."
 msgstr ""
+"L'interface d'administration de CloudStack a été utilisée pour basculer "
+"l'hôte en mode de maintenance programmée. Ce mode est différent du mode de "
+"maintenance du vCenter."
 
 # a959d82ede064a89ad631ce910f8f7df
 #: ../../troubleshooting.rst:155
 msgid "Use vCenter to place the host in maintenance mode."
-msgstr ""
+msgstr "Utiliser le vCenter pour basculer l'hôte en mode maintenance."
 
 # f3c4a03f0b5042009b2e858d5b259496
 #: ../../troubleshooting.rst:159
 msgid "Unable to deploy VMs from uploaded vSphere template"
 msgstr ""
+"Impossible de déployer des VMs depuis un modèle téléchargé depuis vSphere"
 
 # f0d6310e9be647eda1506c7161d33a8b
 #: ../../troubleshooting.rst:164
 msgid "When attempting to create a VM, the VM will not deploy."
 msgstr ""
+"Lors de la tentative de création d'une VM, la VM ne va pas se déployer."
 
 # 82efe5f025f8468c99e720b0e00c067e
 #: ../../troubleshooting.rst:170
@@ -249,36 +305,40 @@ msgid ""
 "vSphere Client, it is possible the OVA contained an ISO image. If it does, "
 "the deployment of VMs from the template will fail."
 msgstr ""
+"Si le modèle a été créé en téléchargeant un fichier OVA qui a été créé en "
+"utilisant un client vSphere, il est possible que l'OVA contienne une image "
+"ISO. Si c'est le cas, le déploiement des VMs depuis le modèle va échouer."
 
 # c61b5fec4b5d4b75afac37386a78b766
 #: ../../troubleshooting.rst:178
 msgid "Remove the ISO and re-upload the template."
-msgstr ""
+msgstr "Ejecter l'ISO et télécharger de nouveau le modèle."
 
 # 7d4b56be6f504129860c6d5c12fd73d5
 #: ../../troubleshooting.rst:182
 msgid "Unable to power on virtual machine on VMware"
-msgstr ""
+msgstr "Impossible d'allumer une machine virtuelle sur VMware"
 
 # bb0c46e2f09647f9a260c9e676f72afb
 #: ../../troubleshooting.rst:187
 msgid "Virtual machine does not power on. You might see errors like:"
 msgstr ""
+"La machine virtuelle ne démarre pas. Vous devriez voir des erreurs comme :"
 
 # 92c768be206b4267bb993ce6b1b74d77
 #: ../../troubleshooting.rst:189
 msgid "Unable to open Swap File"
-msgstr ""
+msgstr "Impossible d'ouvrir le fichier Swap"
 
 # a63cf9eda829479b835aff2d3b017460
 #: ../../troubleshooting.rst:191
 msgid "Unable to access a file since it is locked"
-msgstr ""
+msgstr "Accès impossible à un fichier avec verrou"
 
 # 0deea4202b4b41d9a4fab5ae3dad09bf
 #: ../../troubleshooting.rst:193
 msgid "Unable to access Virtual machine configuration"
-msgstr ""
+msgstr "Accès impossible à la configuration d'une machine virtuelle"
 
 # 0605d083a0fa4569ad92e3ea1cfe6634
 #: ../../troubleshooting.rst:199
@@ -289,11 +349,17 @@ msgid ""
 "virtual machine attempts to power on, it can not access these critical "
 "files, and the virtual machine is unable to power on."
 msgstr ""
+"Une erreur connue sur les machines VMware. Les hôtes ESX verrouille "
+"certains fichiers et systèmes de fichiers de machine virtuelle critique "
+"pour prévenir de changement concurrent. Parfois, les fichiers ne sont pas "
+"déverouillés quand la machine virtuelle est éteinte. Quand la machine "
+"virtuelle essaie de redémarrer, elle ne peut pas accéder à ces fichiers "
+"critiques, et la machine virtuelle n'est pas capable de démarrer."
 
 # 177329a9571d49b5bce7dc8d84731724
 #: ../../troubleshooting.rst:209
 msgid "See the following:"
-msgstr ""
+msgstr "Voir ce qui suit :"
 
 # 344210667a0d414a89c35ba8bce56ca0
 #: ../../troubleshooting.rst:211
@@ -301,6 +367,9 @@ msgid ""
 "`VMware Knowledge Base Article <http://kb.vmware.com/selfservice/microsites/"
 "search.do?language=en_US&cmd=displayKC&externalId=10051/>`_"
 msgstr ""
+"`Article de la base de connaissance VMware  <http://kb.vmware.com/"
+"selfservice/microsites/search.do?"
+"language=en_US&cmd=displayKC&externalId=10051/>`_"
 
 # 7e82b8b3093b42cfb1088af2632abacf
 #: ../../troubleshooting.rst:216
@@ -358,12 +427,12 @@ msgstr ""
 # 6b44f2f662ed49199d66820be6f6de02
 #: ../../troubleshooting.rst:255
 msgid "On *host1 (kvm1)*"
-msgstr ""
+msgstr "Sur *host1 (kvm1)*"
 
 # 5120295551574a56817a504f54bfe602
 #: ../../troubleshooting.rst:263
 msgid "On *host2 (kvm2)*"
-msgstr ""
+msgstr "Sur *host2 (kvm2)*"
 
 # 417a511656394e62ab6533726322a54e
 #: ../../troubleshooting.rst:271
@@ -373,6 +442,11 @@ msgid ""
 "correctly, CloudStack networking wont work so fix the physical networking "
 "issues before you proceed to the next steps"
 msgstr ""
+"Si les pings ne fonctionne pas, utiliser *tcpdump(8)* un peu partout pour "
+"vérifier qui absorbe les paquets. En définitive, si les commutateurs ne "
+"sont pas configurés correctement, le réseau CloudStack ne fonctionnera pas "
+"alors corriger les pannes réseaux physiques avant de poursuivre avec les "
+"étapes suivantes"
 
 # 63be4a452fb043e1ad03834e2b6afc37
 #: ../../troubleshooting.rst:276
@@ -488,6 +562,9 @@ msgid ""
 "In a vast majority of the cases, the problem has turned out to be at the "
 "switching layer where the L3 switches were configured incorrectly."
 msgstr ""
+"Dans une grande majorité des cas, le problème s'est avéré être un problème "
+"de commutateur où la couche 3 des commutateurs était incorrectement "
+"configurée."
 
 # 5fff1dc7083a4412a9e4051f2e239180
 #: ../../troubleshooting.rst:454
@@ -496,3 +573,6 @@ msgid ""
 "on `Shapeblue's blog <http://shankerbalan.net/blog/internet-not-working-on-"
 "cloudstack-vms/>`_"
 msgstr ""
+"Cette section est une contribution de Shanker Balan et a été publié à "
+"l'origine sur le `Blog Shapeblue <http://shankerbalan.net/blog/internet-not-"
+"working-on-cloudstack-vms/>`_"
