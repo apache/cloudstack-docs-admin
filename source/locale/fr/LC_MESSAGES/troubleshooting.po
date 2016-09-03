@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-08-31 00:44+0200\n"
+"PO-Revision-Date: 2016-09-02 00:50+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -375,6 +375,8 @@ msgstr ""
 #: ../../troubleshooting.rst:216
 msgid "Load balancer rules fail after changing network offering"
 msgstr ""
+"Les règles du répartiteur de charge échouent après un changement d'offre "
+"réseau"
 
 # 8feb8c6245fb490d835881b4996a3504
 #: ../../troubleshooting.rst:221
@@ -382,6 +384,8 @@ msgid ""
 "After changing the network offering on a network, load balancer rules stop "
 "working."
 msgstr ""
+"Après le changement d'offre réseau sur un réseau, les règles du répartiteur "
+"de charge ne fonctionnent plus."
 
 # dea9609b31dc4131b77505535e3aca09
 #: ../../troubleshooting.rst:228
@@ -391,6 +395,10 @@ msgid ""
 "the network service offering changed to one that uses the CloudStack "
 "virtual router."
 msgstr ""
+"Les règles de répartitions de charge ont été créées lors de l'utilisation "
+"d'une offre de service qui inclue un répartiteur de charge physique externe "
+"comme un NetScaler, et plus tard l'offre de service réseau à changée pour "
+"une qui utilise un routeur virtuel CloudStack."
 
 # e344e7e16a5145ee9dfeb6c9057e6cb6
 #: ../../troubleshooting.rst:237
@@ -398,11 +406,13 @@ msgid ""
 "Create a firewall rule on the virtual router for each of your existing load "
 "balancing rules so that they continue to function."
 msgstr ""
+"Créer une règle de firewall sur le routeur virtuel pour chacune de vos "
+"règles de répartition de charge afin qu'elles continuent à fonctionner."
 
 # 8bc5100986b347c1a08bbeb52b64f7f7
 #: ../../troubleshooting.rst:242
 msgid "Troubleshooting Internet Traffic"
-msgstr ""
+msgstr "Dépanner le trafic Internet"
 
 # 5f383b9190f34ebcbdd6bb92b713ee21
 #: ../../troubleshooting.rst:244
@@ -410,11 +420,13 @@ msgid ""
 "Below are a few troubleshooting steps to check whats going wrong with your "
 "network..."
 msgstr ""
+"Ci-dessous les quelques étapes de dépannage pour vérifier ce qui ne va pas "
+"avec votre réseau..."
 
 # 07599df9fe734016810667b0edbc9a49
 #: ../../troubleshooting.rst:249
 msgid "Trouble Shooting Steps"
-msgstr ""
+msgstr "Étapes de dépannage"
 
 # 1a82d41b488b46c2bef892a561b3756c
 #: ../../troubleshooting.rst:251
@@ -423,6 +435,10 @@ msgid ""
 "verify if VLAN traffic is working by bringing up a tagged interface on the "
 "hosts and pinging between them as below..."
 msgstr ""
+"Les commutateurs doivent être configurés correctement pour laisser passer "
+"le trafic VLAN. Vous pouvez vérifier si le trafic VLAN fonctionne en "
+"montant une interface sur les hôtes et en pinguant entre eux comme ci-"
+"dessous..."
 
 # 6b44f2f662ed49199d66820be6f6de02
 #: ../../troubleshooting.rst:255
@@ -455,6 +471,9 @@ msgid ""
 "Apache_CloudStack/4.2.0/html/Installation_Guide/about-physical-networks."
 "html>`_ are set for the Zone."
 msgstr ""
+"S'assurer que les `Labels Trafics <http://cloudstack.apache.org/docs/en-US/"
+"Apache_CloudStack/4.2.0/html/Installation_Guide/about-physical-networks."
+"html>`_ sont renseignés pour cette Zone."
 
 # 997b8cf202374996adfbc66cf272e85d
 #: ../../troubleshooting.rst:278
@@ -463,6 +482,10 @@ msgid ""
 "and VMware types. You can configure traffic labels when you creating a new "
 "zone from the *Add Zone Wizard*."
 msgstr ""
+"Les labels de trafic doivent être renseignés sur tous les hyperviseurs "
+"incluant les types XenServer, KVM et VMware. Vous pouvez configurer les "
+"labels de trafic quand vous créez une nouvelle zone depuis l'*Assistant "
+"d'Ajout de Zone*."
 
 # 7f2757fe05a54b7890d5b634724bd166
 #: ../../troubleshooting.rst:284
@@ -470,11 +493,13 @@ msgid ""
 "On an existing zone, you can modify the traffic labels by going to "
 "*Infrastructure, Zones, Physical Network* tab."
 msgstr ""
+"Sur une zone existante, vous pouvez modifier les labels de trafic en allant "
+"sur l'onglet *Infrastructure, Zones, Réseau physique*."
 
 # de6b7290f1874731bab19679f2b1c123
 #: ../../troubleshooting.rst:289
 msgid "List labels using *CloudMonkey*"
-msgstr ""
+msgstr "Lister les labels en utilisant *CloudMonkey*"
 
 # d7be5d89abc2416a81c2e11ae80e5c5e
 #: ../../troubleshooting.rst:321
@@ -508,6 +533,9 @@ msgid ""
 "traffic labels must also be pre-created on the XenServer hosts before "
 "adding them to CloudStack."
 msgstr ""
+"Pré-créer les labels sur les hôtes XenServer. Similaire à la configuration "
+"du pont KVM, les labels de trafics doivent aussi être pré-créés sur les "
+"hôtes XenServer avant de les ajouter à CloudStack."
 
 # e75bf706d6a745c9a94ee34516e86d1f
 #: ../../troubleshooting.rst:385
@@ -529,6 +557,9 @@ msgid ""
 "having any Egress rules. The Egress rules only control forwarded traffic "
 "and not traffic that originates on the VR itself."
 msgstr ""
+"Le routeur virtuel (VR) devrait aussi être capable d'atteindre Internet "
+"sans avoir des règles Egress. Les règles Egress contrôlent seulement le "
+"trafic transféré et pas le trafic qui provient du VR lui-même."
 
 # fd961e75e43d4c48a4b779ef136e1d12
 #: ../../troubleshooting.rst:432
@@ -545,6 +576,8 @@ msgid ""
 "The VM Instances by default wont be able to access the Internet. Add Egress "
 "rules to permit traffic."
 msgstr ""
+"Les instances de VM ne peuvent pas accéder par défaut à Internet. Ajouter "
+"les règles Egress pour permettre le trafic."
 
 # 2d798a14dcd149af8197080268c1b12b
 #: ../../troubleshooting.rst:444
