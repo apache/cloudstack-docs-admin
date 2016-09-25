@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-08-29 00:10+0200\n"
+"PO-Revision-Date: 2016-09-06 00:30+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -37,6 +37,18 @@ msgid ""
 "to your organization, or just friends who are sharing your cloud – you can "
 "still keep track of what services they use and how much of them."
 msgstr ""
+"En complément à l'infrastructure physique et logique de votre cloud et des "
+"serveurs et logiciels CloudStack, vous avez également besoin d'une couche de "
+"services utilisateurs pour que les utilisateurs puissent faire un usage du "
+"cloud. Cela ne signifie pas seulement une interface utilisateur, mais un "
+"ensemble d'options et de ressources parmi lesquels les utilisateurs peuvent se "
+"servir, comme les modèles pour créer des machines virtuelles, des disques de "
+"stockage, etc. Si vous gérer un service commercial, vous conserverez un suivi "
+"de quels services et quelles ressources les utilisateurs ont fait l'usage et "
+"leur facturerez. Même si vous ne facturez rien aux personnes qui utilisent "
+"votre cloud, en d'autres mots si les utilisateurs sont strictement internes à "
+"votre organisation, ou juste des amis qui partagent votre cloud, vous pouvez "
+"continuer à suivre quels services ils utilisent et combien le font."
 
 #: ../../service_offerings.rst:34
 msgid "Service Offerings, Disk Offerings, Network Offerings, and Templates"
@@ -69,6 +81,9 @@ msgid ""
 "disk size and IOPS (Quality of Service) for primary data storage. See Creating "
 "a New Disk Offering."
 msgstr ""
+"Les offres de services, définies par l'administrateur CloudStack, fourni un "
+"choix de taille de disque et de IOPS (qualité de service) pour le stockage "
+"primaire des données. Voir créer une nouvelle offre de disque."
 
 #: ../../service_offerings.rst:48
 msgid ""
@@ -76,6 +91,10 @@ msgid ""
 "feature set that is available to end users from the virtual router or external "
 "networking devices on a given guest network. See Network Offerings."
 msgstr ""
+"Les offres de réseaux, définies par l'administrateur CloudStack, décrivent les "
+"fonctionnalitées qui sont disponibles aux utilisateurs finaux depuis le routeur "
+"virtuel ou un élément de réseau externe sur un réseau d'invité défini. Voir "
+"offres de réseaux."
 
 #: ../../service_offerings.rst:53
 msgid ""
@@ -84,6 +103,10 @@ msgid ""
 "instance. For example, CloudStack includes CentOS as a template. See Working "
 "with Templates."
 msgstr ""
+"Les modèles, définis par l'administrateur CloudStack ou par n'importe quel "
+"utilisateur, sont des images d'OS de base que les utilisateurs peuvent choisir "
+"lorsqu'ils créent une nouvelle instance. Par exemple, CloudStack inclue CentOS "
+"comme modèle. Voir Travailler avec les modèles."
 
 #: ../../service_offerings.rst:58
 msgid ""
@@ -93,6 +116,11 @@ msgid ""
 "For more information, see Upgrading a Virtual Router with System Service "
 "Offerings."
 msgstr ""
+"En plus de ces choix qui sont proposés aux utilisateurs, il y a un autre type "
+"d'offre de service qui n'est disponible qu'à l'administrateur racine de "
+"CloudStack et qui est utilisé pour configurer les ressources d'infrastructures "
+"virtuelles. Pour plus d'information, voir Mettre à jour un Routeur Virtuel avec "
+"les Offres de service système."
 
 #: ../../service_offerings.rst:66
 msgid "Compute and Disk Service Offerings"
@@ -106,6 +134,13 @@ msgid ""
 "they create a new VM. Based on the user’s selected offering, CloudStack emits "
 "usage records that can be integrated with billing systems."
 msgstr ""
+"Une offre de service est un ensemble de fonctionnalités matérielles virtuelles "
+"comme un nombre de coeur CPU et de vitesse, de mémoire et de taille disque. "
+"L'administrateur CloudStack peut configurer différentes offres que les "
+"utilisateurs finaux peuvent choisir depuis les offres disponibles lorsqu'ils "
+"créent leur nouvelle VM. Selon l'offre choisie par l'utilisateur, CloudStack "
+"émet un enregistrement d'utilisation qui peut être intégré avec le système de "
+"paiement."
 
 #: ../../service_offerings.rst:75
 msgid ""
@@ -117,6 +152,14 @@ msgid ""
 "administrator can define offerings that provide some flexibility to the users "
 "and can serve as the basis for several different VM configurations."
 msgstr ""
+"Certaines caractéristiques d'offres de service doivent être définies par "
+"l'administrateur CloudStack et les autres peuvent être laissées indéfinies de "
+"façon à ce que les utilisateurs finaux puissent saisir les valeurs qu'ils "
+"souhaitent. C'est utile pour réduire le nombre d'offres que l'administrateur "
+"doit définir. Au lieu de définir une offre de calcul pour chaque combinaison "
+"imaginable de valeurs que l'utilisateur peut désirer, l'administrateur peut "
+"définir les offres qui fournissent un peu de flexibilité aux utilisateurs et "
+"peuvent servir de base pour de nombres configurations différentes de VM. "
 
 #: ../../service_offerings.rst:84
 msgid "A service offering includes the following elements:"
@@ -213,6 +256,17 @@ msgid ""
 "by specifying custom values for the dynamic parameters. Memory, CPU and number "
 "of CPUs are considered as dynamic parameters."
 msgstr ""
+"CloudStack vous fournis la flexibilité de spécifier les valeurs désirées pour "
+"le nombre de CPU, la vitesse CPU, la mémoire lorsque vous déployez une VM. En "
+"tant qu'administrateur, vous créez une offre de calcul en la marquant comme "
+"personnalisée et les utilisateurs pourront personnaliser dynamiquement les "
+"offres de calcule en spécifiant la mémoire, le CPU au moment de la création ou "
+"de la mise à jour de VM. Une offre de calcul personnalisée est la même chose "
+"qu'une offre de calcul normale à l'exception que les valeurs des paramètres "
+"dynamiques seront fixées à zéro dans les ensembles de modèles donnés. Utiliser "
+"cette offre pour déployer une VM en spécifiant des valeurs personnalisées pour "
+"les paramètres dynamiques. La mémoire, CPU et nombres de CPU sont considérés "
+"comme des paramètres dynamiques."
 
 #: ../../service_offerings.rst:133
 msgid ""
@@ -223,6 +277,13 @@ msgid ""
 "be able to create a custom Compute Offering by filling in the desired values "
 "for number of CPU, CPU speed, and memory. See ? for more information on this."
 msgstr ""
+"Les offres de calcul dynamiques peuvent être utilisées dans les cas suivants : "
+"déployer une VM, changer l'offre de calcul d'une VM stoppée et augmenter "
+"l'offre de VMs en cours de fonctionnement. Pour supporter cette fonctionnalité, "
+"un nouveau champs, Personnalisé, a été ajouté à la page Créer une offre de "
+"calcul. Si le champs personnalisé est coché, l'utilisateur sera capable de "
+"créer une offre de calcul personnalisé en remplissant les valeurs désirées du "
+"nombre de CPU, de vitesse CPU et de mémoire. Voir ? pour plus d'informations."
 
 #: ../../service_offerings.rst:141
 msgid "*Recording Usage Events for Dynamically Assigned Resources*."
@@ -238,6 +299,12 @@ msgid ""
 "of a stopped or running VM. The values of the parameters, such as CPU, speed, "
 "RAM are recorded."
 msgstr ""
+"Pour supporter cette fonctionnalité, les évènements d'utilisation ont été "
+"améliorées pour enregistrer les évènements des ressources assignée "
+"dynamiquement. Les évènements d'utilisation sont enregistrés lorsque la VM est "
+"créée depuis une offre de calcul personnalisée et lors des changements d'offre "
+"de calcul d'une VM stoppée ou en fonctionnement. Les valeurs de ces paramètres, "
+"comme le CPU, la vitesse, la RAM sont enregistrés."
 
 #: ../../service_offerings.rst:151
 msgid "Creating a New Compute Offering"
@@ -269,17 +336,19 @@ msgstr "Cliquer sur Ajouter une offre de calcul."
 #: ../../service_offerings.rst:163 ../../service_offerings.rst:333
 #: ../../service_offerings.rst:440
 msgid "In the dialog, make the following choices:"
-msgstr ""
+msgstr "Dans la boîte de dialogue, faire les choix suivants :"
 
 #: ../../service_offerings.rst:165
 msgid "**Name**: Any desired name for the service offering."
-msgstr ""
+msgstr "**Nom** : N'importe quel nom souhaité pour l'offre de service."
 
 #: ../../service_offerings.rst:167 ../../service_offerings.rst:337
 msgid ""
 "**Description**: A short description of the offering that can be displayed to "
 "users"
 msgstr ""
+"**Description** : Une description courte pour l'offre qui peut être affichée "
+"aux utilisateurs"
 
 #: ../../service_offerings.rst:170
 msgid ""
@@ -287,6 +356,10 @@ msgid ""
 "from storage attached directly to the host where the system VM is running. "
 "Shared allocates from storage accessible via NFS."
 msgstr ""
+"**Type de stockage** : Le type de disque qui doit être alloué. Les allocations "
+"locales depuis les stockages directement attachés à l'hôte sur lequel la VM est "
+"en fonctionnement. Les allocations partagées depuis un stockage accessible via "
+"NFS."
 
 #: ../../service_offerings.rst:175
 msgid ""
@@ -294,6 +367,9 @@ msgid ""
 "a VM, changing the compute offering of a stopped VM and running VMs, which is "
 "nothing but scaling up."
 msgstr ""
+"**Personnalisée** : Offres de calcul personnalisée peuvent être utilisée dans "
+"les cas suivants : déployer une VM, changer l'offre de calcul pour des VM "
+"stoppées ou en fonctionnement."
 
 #: ../../service_offerings.rst:179
 msgid ""
@@ -302,12 +378,18 @@ msgid ""
 "offering. When you check this box, those three input fields are hidden in the "
 "dialog box."
 msgstr ""
+"Si le champ Personnalisé est validée, l'utilisateur final doit remplir les "
+"valeurs désirées pour le nombre de CPU, la vitesse CPU et la mémoire RAM lors "
+"du choix d'une offre de calcul personnalisée. Lorsque vous cochez la case, ces "
+"trois champs de saisie sont masquées dans la boîte de dialogue."
 
 #: ../../service_offerings.rst:184
 msgid ""
 "**# of CPU cores**: The number of cores which should be allocated to a system "
 "VM with this offering. If Custom is checked, this field does not appear."
 msgstr ""
+"**# de coeurs CPU** : le nombre de coeurs qui devraient être allouée à une VM "
+"système avec cette offre. Si Personnalisé est coché, ce champ n'apparaît pas."
 
 #: ../../service_offerings.rst:188
 msgid ""
@@ -315,6 +397,9 @@ msgid ""
 "For example, “2000” would provide for a 2 GHz clock. If Custom is checked, this "
 "field does not appear."
 msgstr ""
+"**CPU (en MHz)** : La vitesse CPU des coeurs qui sont alloués à cette VM "
+"système. Par exemple, \"2000\" fournira une fréquence d'horloge de 2GHz. Si "
+"Personnalisé est coché, ce champ n'apparaît pas."
 
 #: ../../service_offerings.rst:192
 msgid ""
@@ -322,36 +407,50 @@ msgid ""
 "be allocated. For example, “2048” would provide for a 2 GB RAM allocation. If "
 "Custom is checked, this field does not appear."
 msgstr ""
+"**Mémoire (en MB)** : La quantité de mémoire en mégabytes que la VM système "
+"aura d'alloué. Par exemple, “2048” devrait fournir une allocation de 2GB de "
+"RAM. Si Personnalisé est validé, ce champ n'apparaît pas."
 
 #: ../../service_offerings.rst:197
 msgid "**Network Rate**: Allowed data transfer rate in MB per second."
 msgstr ""
+"**Vitesse Réseau** : vitesse de transfert de données autorisée par seconde."
 
 #: ../../service_offerings.rst:199
 msgid "**Disk Read Rate**: Allowed disk read rate in bits per second."
 msgstr ""
+"**Taux de lecture disque** : taux de lecture disque autorisé en bits par "
+"seconde."
 
 #: ../../service_offerings.rst:201
 msgid "**Disk Write Rate**: Allowed disk write rate in bits per second."
 msgstr ""
+"**Taux d'écriture disque** : taux d'écriture disque autorisé en bits par "
+"seconde."
 
 #: ../../service_offerings.rst:203
 msgid ""
 "**Disk Read Rate**: Allowed disk read rate in IOPS (input/output operations per "
 "second)."
 msgstr ""
+"**Taux de lecture disque** : taux de lecture disque autorisé en IOPS (opération "
+"d'entrées/sorties par seconde)."
 
 #: ../../service_offerings.rst:206
 msgid ""
 "**Disk Write Rate**: Allowed disk write rate in IOPS (input/output operations "
 "per second)."
 msgstr ""
+"**Taux d'écriture disque** : taux d'écriture disque autorisé en IOPS "
+"(opérations d'entrées/sorties par seconde)."
 
 #: ../../service_offerings.rst:209
 msgid ""
 "**Offer HA**: If yes, the administrator can choose to have the system VM be "
 "monitored and as highly available as possible."
 msgstr ""
+"**Offre HA** : Si oui, l'administrateur peut choisir d'avoir la VM système de "
+"monitorée et d'être aussi hautement disponible que possible."
 
 #: ../../service_offerings.rst:212 ../../service_offerings.rst:347
 msgid ""
@@ -360,6 +459,11 @@ msgid ""
 "maximum IOPS enforced on the storage side). If leveraging QoS, make sure that "
 "the hypervisor or storage system supports this feature."
 msgstr ""
+"**Type de QoS** : Trois options : Vide (pas de qualité de service), hyperviseur "
+"(taux de limitation forcé du côté hyperviseur) et stockage (IOPS minimum et "
+"maximum garantis forcé du côté stockage). Si vous tirez parti de la QoS, soyez "
+"sur que le système de l'hyperviseur ou du stockage supporte cette "
+"fonctionnalité."
 
 #: ../../service_offerings.rst:218 ../../service_offerings.rst:353
 msgid ""
@@ -369,12 +473,20 @@ msgid ""
 "if the proper parameters are passed into CloudStack when creating the primary "
 "storage in question)."
 msgstr ""
+"**IOPS personnalisé** : si coché, l'utilisateur peut fixer ses propres IOPS. Si "
+"non coché, l'administrateur racine peut définir les valeurs. Si l'admin racine "
+"ne fixe pas les valeurs lors de l'utilisation de la QoS du stockage, les "
+"valeurs par défaut sont utilisés (les valeurs par défaut peuvent être changée "
+"si les paramètres par défaut sont passés à CloudStack lors de la création du "
+"stockage primaire en question)."
 
 #: ../../service_offerings.rst:225 ../../service_offerings.rst:360
 msgid ""
 "**Min IOPS**: Appears only if storage QoS is to be used. Set a guaranteed "
 "minimum number of IOPS to be enforced on the storage side."
 msgstr ""
+"**IOPS min** : apparaît seulement si la QoS du stockage doit être utilisée. "
+"Fixer un nombre de IOPS garanties forcé du côté du stockage."
 
 #: ../../service_offerings.rst:229 ../../service_offerings.rst:364
 msgid ""
@@ -382,6 +494,9 @@ msgid ""
 "of IOPS to be enforced on the storage side (the system may go above this limit "
 "in certain circumstances for short intervals)."
 msgstr ""
+"**IOPS Max** : Apparaît seulement si la QoS doit être utilisée. Fixer un nombre "
+"de IOPS maximum a forcer du côté stockage (le système peut aller au delà de ces "
+"limites dans certaines circonstances pour des intervalles courts)."
 
 #: ../../service_offerings.rst:233
 msgid ""
@@ -393,12 +508,22 @@ msgid ""
 "addition to the virtual disk that represents the root disk. This does not apply "
 "for KVM."
 msgstr ""
+"**Réserve d'instantanés sur l'Hyperviseur** : Pour les stockages gérés "
+"seulement. C'est une valeur qui est un pourcentage de la taille du disque "
+"racine. Si le disque racine est de 20GB et que la réserve d'instantanée sur "
+"l'hyperviseur est de 200%, le volume de stockage qui est réservé sur le dépôt "
+"de stockage (XenServer) ou sur le datastore (VMware) en question est taillée à "
+"60GB (20 GB + (20 GB * 2)). Ceci valide de l'espace pour les instantanés en "
+"complément du disque virtuel qui représente le disque racine. Ceci ne "
+"s'applique pas à KVM."
 
 #: ../../service_offerings.rst:241
 msgid ""
 "**Storage Tags**: The tags that should be associated with the primary storage "
 "used by the system VM."
 msgstr ""
+"**Etiquettes de stockage** : Les étiquettes qui devraient être associées avec "
+"le stockage primaire utilisé par la VM système."
 
 #: ../../service_offerings.rst:244
 msgid "**Host Tags**: (Optional) Any tags that you use to organize your hosts"
@@ -522,39 +647,45 @@ msgstr ""
 #: ../../service_offerings.rst:317 ../../service_offerings.rst:390
 #: ../../service_offerings.rst:483
 msgid "Click Add."
-msgstr ""
+msgstr "Cliquer sur Ajouter."
 
 #: ../../service_offerings.rst:321
 msgid "Creating a New Disk Offering"
-msgstr ""
+msgstr "Créer une Nouvelle offre de disque."
 
 #: ../../service_offerings.rst:323
 msgid "To create a new disk offering:"
-msgstr ""
+msgstr "Pour créer une nouvelle offre de disque :"
 
 #: ../../service_offerings.rst:329
 msgid "In Select Offering, choose Disk Offering."
-msgstr ""
+msgstr "Dans Sélectionner une offre, choisir Offre de disque."
 
 #: ../../service_offerings.rst:331
 msgid "Click Add Disk Offering."
-msgstr ""
+msgstr "Cliquer sur Ajouter une offre de disque."
 
 #: ../../service_offerings.rst:335
 msgid "**Name**: Any desired name for the disk offering."
-msgstr ""
+msgstr "**Nom** : N'importe quel nom souhaité pour l'offre de disque."
 
 #: ../../service_offerings.rst:340
 msgid ""
 "**Custom Disk Size**: If checked, the user can set their own disk size. If not "
 "checked, the root administrator must define a value in Disk Size."
 msgstr ""
+"**Taille de disque personnalisée** : Si cochée, l'utilisateur peut fixer sa "
+"propre taille de disque. Si non cochée, l'administrateur racine doit définir "
+"une taille de disque."
 
 #: ../../service_offerings.rst:344
 msgid ""
 "**Disk Size**: Appears only if Custom Disk Size is not selected. Define the "
 "volume size in GB (2^30 1GB = 1,073,741,824 Bytes)."
 msgstr ""
+"**Taille de disque** : Apparaît seulement si la taille de disque personnalisée "
+"n'est pas sélectionnée. Définir une taille de volume en GB (2^30 1GB = "
+"1,073,741,824 Bytes)."
 
 #: ../../service_offerings.rst:368
 msgid ""
@@ -580,13 +711,15 @@ msgstr ""
 
 #: ../../service_offerings.rst:394
 msgid "Modifying or Deleting a Service Offering"
-msgstr ""
+msgstr "Modifier ou détruire une offre de service"
 
 #: ../../service_offerings.rst:396
 msgid ""
 "Service offerings cannot be changed once created. This applies to both compute "
 "offerings and disk offerings."
 msgstr ""
+"Les offres de service ne peuvent pas être changée une fois crée. Ceci "
+"s'applique à la fois aux offres de calcul et aux offres de disque."
 
 #: ../../service_offerings.rst:399
 msgid ""
@@ -596,10 +729,16 @@ msgid ""
 "deleted. After deletion by the administrator, a service offering will not be "
 "available to end users that are creating new instances."
 msgstr ""
+"Une offre de service peut être supprimée. Si elle n'est plus utilisée, elle est "
+"détruite immédiatement et de façon permanente. Si l'offre de service est "
+"toujours utlisée, elle restera en base de données jusqu'à ce que toutes les "
+"machines virtuelles la référençant ont été supprimées. Après la suppression par "
+"l'administrateur, l'offre de service ne sera plus disponible pour les "
+"utilisateurs finaux qui créent de nouvelles instances."
 
 #: ../../service_offerings.rst:408
 msgid "System Service Offerings"
-msgstr ""
+msgstr "Offres de service système"
 
 #: ../../service_offerings.rst:410
 msgid ""
@@ -612,6 +751,15 @@ msgid ""
 "offerings. The CloudStack root administrator can create additional custom "
 "system service offerings."
 msgstr ""
+"Les offres de service système fournissent un choix de vitesse CPU, un nombre de "
+"CPUs, étiquettes et taille de RAM, comme d'autres offres de services le font. "
+"Mais plutôt qu'être utilisée pour les instances de machine virtuelle et être "
+"exposée aux utilisateurs, les offres de service système sont utilisée pour "
+"changer les propriétées par défaut des routeurs virtuels, des proxys console, "
+"et d'autres VMs systèmes. Les offres de service système sont visibles seulement "
+"par l'administrateur racine CloudStack. CloudStack fournit par défaut les "
+"offres de service système par défaut. L'administrateur racine de CloudStack "
+"peut créer des offres de services systèmes additionnelles."
 
 #: ../../service_offerings.rst:419
 msgid ""
@@ -622,37 +770,47 @@ msgid ""
 "offering. All virtual routers in that network will begin using the settings "
 "from the new service offering."
 msgstr ""
+"Quand CloudStack crée un routeur virtuel pour un réseau invité, il utilise les "
+"paramètres par défaut qui sont définis dans l'offre de service associée avec "
+"l'offre réseau. Vous pouvez mettre à jour les capacités du routeur virtuel en "
+"appliquant une nouvelle offre qui contient une offre de service différente. "
+"Tous les routeurs virtuels dans ce réseau vont démarrer en utilisant les "
+"configurations de la nouvelle offre de service."
 
 #: ../../service_offerings.rst:428
 msgid "Creating a New System Service Offering"
-msgstr ""
+msgstr "Créer une Nouvelle offre de service système"
 
 #: ../../service_offerings.rst:430
 msgid "To create a system service offering:"
-msgstr ""
+msgstr "Pour créer une offre de service système :"
 
 #: ../../service_offerings.rst:436
 msgid "In Select Offering, choose System Offering."
-msgstr ""
+msgstr "Dans Choisir l'offre, choisir Offre système."
 
 #: ../../service_offerings.rst:438
 msgid "Click Add System Service Offering."
-msgstr ""
+msgstr "Cliquer sur Ajouter une offre de service système."
 
 #: ../../service_offerings.rst:442
 msgid "Name. Any desired name for the system offering."
-msgstr ""
+msgstr "Nom. N'importe quel nom pour l'offre système."
 
 #: ../../service_offerings.rst:444
 msgid ""
 "Description. A short description of the offering that can be displayed to users"
 msgstr ""
+"Description. Une description courte pour l'offre qui peut être affichée aux "
+"utilisateurs."
 
 #: ../../service_offerings.rst:447
 msgid ""
 "System VM Type. Select the type of system virtual machine that this offering is "
 "intended to support."
 msgstr ""
+"Type de VM système. Sélectionner le type de machine virtuelle système que cette "
+"offre est destinée à supporter."
 
 #: ../../service_offerings.rst:450
 msgid ""
@@ -660,12 +818,17 @@ msgid ""
 "storage attached directly to the host where the system VM is running. Shared "
 "allocates from storage accessible via NFS."
 msgstr ""
+"Type de stockage. Le type de disque qui peut être alloué. L'allocation locale "
+"depuis un stockage attaché directement à l'hôte où la VM système fonctionne. "
+"Les partagées allouent depuis un stockage accessible via NFS."
 
 #: ../../service_offerings.rst:455
 msgid ""
 "# of CPU cores. The number of cores which should be allocated to a system VM "
 "with this offering"
 msgstr ""
+"# de coeurs CPU : le nombre de coeurs qui devraient être alloués à la VM "
+"système avec cette offre."
 
 #: ../../service_offerings.rst:458
 msgid ""
@@ -682,22 +845,29 @@ msgstr ""
 #: ../../service_offerings.rst:465
 msgid "Network Rate. Allowed data transfer rate in MB per second."
 msgstr ""
+"Vitesse réseau. Vitesse de transfert de données autorisé en MB par seconde."
 
 #: ../../service_offerings.rst:467
 msgid ""
 "Offer HA. If yes, the administrator can choose to have the system VM be "
 "monitored and as highly available as possible."
 msgstr ""
+"Offre HA. Si oui, l'administrateur peut choisir d'avoir la VM système de "
+"monitorée et d'être aussi hautement disponible que possible."
 
 #: ../../service_offerings.rst:470
 msgid ""
 "Storage Tags. The tags that should be associated with the primary storage used "
 "by the system VM."
 msgstr ""
+"Etiquettes de stockage. Les étiquettes qui sont associées avec le stockage "
+"primaire utilisé par la VM système."
 
 #: ../../service_offerings.rst:473
 msgid "Host Tags. (Optional) Any tags that you use to organize your hosts"
 msgstr ""
+"Etiquettes d'hôtes. (Optionnel) N'importe quelle étiquette que vous utilisez "
+"pour organiser vos hôtes."
 
 #: ../../service_offerings.rst:475
 msgid ""
@@ -715,7 +885,7 @@ msgstr ""
 
 #: ../../service_offerings.rst:487
 msgid "Network Throttling"
-msgstr ""
+msgstr "Étranglement du réseau"
 
 #: ../../service_offerings.rst:489
 msgid ""
@@ -738,15 +908,15 @@ msgstr ""
 
 #: ../../service_offerings.rst:502
 msgid "Network Offering"
-msgstr ""
+msgstr "Offre réseau"
 
 #: ../../service_offerings.rst:504
 msgid "Service Offering"
-msgstr ""
+msgstr "Offre de service"
 
 #: ../../service_offerings.rst:506
 msgid "Global parameter"
-msgstr ""
+msgstr "Paramètre Global"
 
 #: ../../service_offerings.rst:508
 msgid ""
@@ -772,78 +942,78 @@ msgstr ""
 
 #: ../../service_offerings.rst:525
 msgid "Networks"
-msgstr ""
+msgstr "Réseaux"
 
 #: ../../service_offerings.rst:525
 msgid "Network Rate Is Taken from"
-msgstr ""
+msgstr "La vitesse du réseau est fournie par"
 
 #: ../../service_offerings.rst:527
 msgid "Guest network of Virtual Router"
-msgstr ""
+msgstr "Réseau invité d'un Routeur Virtuel"
 
 #: ../../service_offerings.rst:527 ../../service_offerings.rst:528
 msgid "Guest Network Offering"
-msgstr ""
+msgstr "Offre de réseau invité"
 
 #: ../../service_offerings.rst:528
 msgid "Public network of Virtual Router"
-msgstr ""
+msgstr "Réseau public du Routeur Virtuel"
 
 #: ../../service_offerings.rst:529
 msgid "Storage network of Secondary Storage VM"
-msgstr ""
+msgstr "Réseau de stockage d'une VM de Stockage Secondaire"
 
 #: ../../service_offerings.rst:529 ../../service_offerings.rst:530
 #: ../../service_offerings.rst:531 ../../service_offerings.rst:532
 #: ../../service_offerings.rst:533 ../../service_offerings.rst:534
 #: ../../service_offerings.rst:535 ../../service_offerings.rst:536
 msgid "System Network Offering"
-msgstr ""
+msgstr "Offre de réseau système"
 
 #: ../../service_offerings.rst:530
 msgid "Management network of Secondary Storage VM"
-msgstr ""
+msgstr "Réseau de gestion d'une VM de Stockage Secondaire"
 
 #: ../../service_offerings.rst:531
 msgid "Storage network of Console Proxy VM"
-msgstr ""
+msgstr "Réseau de stockage d'une VM Console Proxy"
 
 #: ../../service_offerings.rst:532
 msgid "Management network of Console Proxy VM"
-msgstr ""
+msgstr "Réseau de gestion d'une VM Console Proxy"
 
 #: ../../service_offerings.rst:533
 msgid "Storage network of Virtual Router"
-msgstr ""
+msgstr "Réseau de stockage du Routeur Virtuel"
 
 #: ../../service_offerings.rst:534
 msgid "Management network of Virtual Router"
-msgstr ""
+msgstr "Réseau de gestion du Routeur Virtuel"
 
 #: ../../service_offerings.rst:535
 msgid "Public network of Secondary Storage VM"
-msgstr ""
+msgstr "Réseau public d'une VM de Stockage Secondaire"
 
 #: ../../service_offerings.rst:536
 msgid "Public network of Console Proxy VM"
-msgstr ""
+msgstr "Réseau public d'une VM Console Proxy"
 
 #: ../../service_offerings.rst:537
 msgid "Default network of a guest VM"
-msgstr ""
+msgstr "Réseau par défaut d'une VM invitée"
 
 #: ../../service_offerings.rst:537
 msgid "Compute Offering"
-msgstr ""
+msgstr "Offre de calcul"
 
 #: ../../service_offerings.rst:538
 msgid "Additional networks of a guest VM"
-msgstr ""
+msgstr "Réseaux additionnels pour une VM invitée"
 
 #: ../../service_offerings.rst:538
 msgid "Corresponding Network Offerings"
-msgstr ""
+msgstr "Offres de réseau correspondant"
 
 #: ../../service_offerings.rst:541
 msgid ""
@@ -887,15 +1057,15 @@ msgstr ""
 
 #: ../../service_offerings.rst:574
 msgid "For example:"
-msgstr ""
+msgstr "Par exemple :"
 
 #: ../../service_offerings.rst:576
 msgid "Network rate of network offering = 10 Mbps"
-msgstr ""
+msgstr "Vitesse de réseau pour l'offre réseau = 10 Mbps"
 
 #: ../../service_offerings.rst:578
 msgid "Network rate of compute offering = 200 Mbps"
-msgstr ""
+msgstr "Vitesse de réseau pour l'offre de calcul = 200 Mbps"
 
 #: ../../service_offerings.rst:580
 msgid ""
@@ -917,47 +1087,53 @@ msgstr ""
 
 #: ../../service_offerings.rst:593
 msgid "Create a new system offering."
-msgstr ""
+msgstr "Créer une nouvelle offre système."
 
 #: ../../service_offerings.rst:595
 msgid "For more information, see Creating a New System Service Offering."
 msgstr ""
+"Pour plus d'information, voir Créer une nouvelle offre de service système."
 
 #: ../../service_offerings.rst:597
 msgid "Back up the database:"
-msgstr ""
+msgstr "Sauvegarder la base de données :"
 
 #: ../../service_offerings.rst:603
 msgid "Open an MySQL prompt:"
-msgstr ""
+msgstr "Ouvrir un invite MySQL :"
 
 #: ../../service_offerings.rst:609
 msgid "Run the following queries on the cloud database."
-msgstr ""
+msgstr "Lancer les requêtes suivantes dans la base de données du cloud."
 
 #: ../../service_offerings.rst:611
 msgid ""
 "In the disk\\_offering table, identify the original default offering and the "
 "new offering you want to use by default."
 msgstr ""
+"Dans la table disk\\_offering, identifier l'offre par défaut originale et la "
+"nouvelle offre que vous voulez utiliser par défaut."
 
 #: ../../service_offerings.rst:614
 msgid "Take a note of the ID of the new offering."
-msgstr ""
+msgstr "Noter l'ID de la nouvelle offre."
 
 #: ../../service_offerings.rst:620
 msgid "For the original default offering, set the value of unique\\_name to NULL."
 msgstr ""
+"Pour l'offre par défaut originale, fixer la valeur de unique\\_name à NULL."
 
 #: ../../service_offerings.rst:627
 msgid "Ensure that you use the correct value for the ID."
-msgstr ""
+msgstr "S'assurer que vous utilisez la valeur correcte pour l'ID."
 
 #: ../../service_offerings.rst:629
 msgid ""
 "For the new offering that you want to use by default, set the value of unique"
 "\\_name as follows:"
 msgstr ""
+"Pour la nouvelle offre que vous voulez utiliser par défaut, fixer la valeur de "
+"unique\\_name comme ceci :"
 
 #: ../../service_offerings.rst:632
 msgid ""
@@ -965,15 +1141,23 @@ msgid ""
 "com-ConsoleProxy'. For the default Secondary Storage VM (SSVM) offering, set "
 "unique\\_name to 'Cloud.com-SecondaryStorage'. For example:"
 msgstr ""
+"Pour l'offre par défaut de la VM Console Proxy (CPVM), fixer unique\\_name à "
+"'Cloud.com-ConsoleProxy'. Pour l'offre par défaut de la VM de Stockage "
+"Secondaire (SSVM), fixer unique\\_name à 'Cloud.com-SecondaryStorage'. Par "
+"exemple :"
 
 #: ../../service_offerings.rst:641
 msgid ""
 "Restart CloudStack Management Server. Restarting is required because the "
 "default offerings are loaded into the memory at startup."
 msgstr ""
+"Redémarrer le serveur de gestion de CloudStack. Le redémarrage est requis parce "
+"que les offres par défaut sont stockées en mémoire au démarrage."
 
 #: ../../service_offerings.rst:648
 msgid ""
 "Destroy the existing CPVM or SSVM offerings and wait for them to be recreated. "
 "The new CPVM or SSVM are configured with the new offering."
 msgstr ""
+"Détruire les CPVM et SSVM existantes et attendre qu'elles soient recréées. Les "
+"nouvelles CPVM et SSVM sont configurées avec les nouvelles offres."

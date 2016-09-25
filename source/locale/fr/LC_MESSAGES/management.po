@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-08-27 13:06+0200\n"
+"PO-Revision-Date: 2016-09-06 00:05+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Gérer le cloud"
 # 0dc09dfbe9e34a9cb51831005d8fc025
 #: ../../management.rst:21
 msgid "Using Tags to Organize Resources in the Cloud"
-msgstr ""
+msgstr "Utiliser les étiquettes pour organiser les ressources dans le Cloud"
 
 # 3ead5d7ddceb4d98a278abeeed0683c2
 #: ../../management.rst:23
@@ -150,7 +150,7 @@ msgstr ""
 # 489808dcb1c9407cbe2bd271c02ce89a
 #: ../../management.rst:89
 msgid "Reporting CPU Sockets"
-msgstr ""
+msgstr "Rapport des sockets CPU"
 
 # 7d8f4e987714451e9db1c9e749f8b1ca
 #: ../../management.rst:91
@@ -190,7 +190,7 @@ msgstr ""
 # 3d662bf06abc42bd951d16844faada76
 #: ../../management.rst:111
 msgid "Changing the Database Configuration"
-msgstr ""
+msgstr "Changer la configuration de la base de données"
 
 # 638ca3cbc00844789edafb4eb0e60df5
 #: ../../management.rst:113
@@ -204,7 +204,7 @@ msgstr ""
 # a0530bddfe5a47a69ac27ef0a2c38a2e
 #: ../../management.rst:119
 msgid "Changing the Database Password"
-msgstr ""
+msgstr "Changer le mot de passe de la base de données"
 
 # 6ede044a32ac422baed2cd80afc2e114
 #: ../../management.rst:121
@@ -244,7 +244,7 @@ msgstr ""
 # 08fe5ba4a2844019b7c34948af80d3e9
 #: ../../management.rst:160
 msgid "File encryption type"
-msgstr ""
+msgstr "Type de cryptage de fichiers"
 
 # a985e48a20754561ae6daee44e6d79a8
 #: ../../management.rst:162
@@ -272,7 +272,7 @@ msgstr ""
 # b42158e718f44c4ab881833d2dbc0929
 #: ../../management.rst:185
 msgid "Administrator Alerts"
-msgstr ""
+msgstr "Alertes pour administrateur"
 
 # f35a6a1c63244c84b73055d401027bf8
 #: ../../management.rst:187
@@ -317,7 +317,7 @@ msgstr ""
 # 267b4ae8b12e42d69f646aa22992388d
 #: ../../management.rst:208
 msgid "Sending Alerts to External SNMP and Syslog Managers"
-msgstr ""
+msgstr "Envoyer les alertes à un SNMP externe et à des serveurs Syslog"
 
 # 030acb1fc907414196ead65866a918b0
 #: ../../management.rst:210
@@ -350,7 +350,7 @@ msgstr ""
 # 0ead10e6a3664baf84b6199d70dfb243
 #: ../../management.rst:334
 msgid "SNMP Alert Details"
-msgstr ""
+msgstr "Détails des alertes SNMP"
 
 # 77c8d073d21f41859f495f2b0120f7ef
 #: ../../management.rst:336
@@ -367,7 +367,7 @@ msgstr ""
 # be99b465676b4d13ae21a9bd33ff94ef
 #: ../../management.rst:343
 msgid "Syslog Alert Details"
-msgstr ""
+msgstr "Détails des alertes Syslog"
 
 # 653fb8fc18ea4f17ab01fe630ed6783b
 #: ../../management.rst:345
@@ -381,12 +381,12 @@ msgstr ""
 # 7c74aa344fe948a39e5bff24928b78fa
 #: ../../management.rst:354
 msgid "For example:"
-msgstr ""
+msgstr "Par exemple :"
 
 # b3bcf49651e44cc189085099c9309174
 #: ../../management.rst:361
 msgid "Configuring SNMP and Syslog Managers"
-msgstr ""
+msgstr "Configurer SNMP et les serveurs Syslog"
 
 # b5638ebd1bd5442ab77995897186ed0c
 #: ../../management.rst:363
@@ -469,7 +469,7 @@ msgstr ""
 # 6e66a0c8054b4278923a1680c1d13f92
 #: ../../management.rst:435
 msgid "Deleting an SNMP or Syslog Manager"
-msgstr ""
+msgstr "Retirer un serveur SNMP ou un serveur Syslog"
 
 # daed36b7b2304574be3a327f0fdaae34
 #: ../../management.rst:437
@@ -482,7 +482,7 @@ msgstr ""
 # 13024d28ec5a4e0d9d54dc264f048c4c
 #: ../../management.rst:443
 msgid "Customizing the Network Domain Name"
-msgstr ""
+msgstr "Personnaliser le Nom de domaine du réseau"
 
 # 47fe94d226e941e8971730847123ac7e
 #: ../../management.rst:445
@@ -573,7 +573,7 @@ msgstr ""
 # b6795b367f9a4a56bd542d1303ef6706
 #: ../../management.rst:493
 msgid "Stopping and Restarting the Management Server"
-msgstr ""
+msgstr "Arrêter et redémarrer le serveur de gestion"
 
 # bbd28a885afc4bd6918951b631b80c85
 #: ../../management.rst:495
@@ -581,6 +581,8 @@ msgid ""
 "The root administrator will need to stop and restart the Management Server "
 "from time to time."
 msgstr ""
+"L'administrateur racine va devoir stopper et redémarrer le serveur de "
+"gestion de temps en temps."
 
 # 0d670244a1804343a1935015f8eaa6fb
 #: ../../management.rst:498
@@ -590,6 +592,10 @@ msgid ""
 "to put the new parameter value into effect consistently throughout the "
 "cloud.."
 msgstr ""
+"Par exemple, après avoir changé un paramètre de configuration global, un "
+"redémarrage est requis. Si vous avez plusieurs noeuds de serveurs de "
+"gestion, tous les redémarrer pour rendre la nouvelle valeur du paramètre "
+"effectivement permanente dans le cloud."
 
 # 180fc3fdda44467f97b04959693747c5
 #: ../../management.rst:503
@@ -597,6 +603,9 @@ msgid ""
 "To stop the Management Server, issue the following command at the operating "
 "system prompt on the Management Server node:"
 msgstr ""
+"Pour stopper le serveur de gestion, exécuter la commande suivante à "
+"l'invite de commande du système d'exploitation sur le noeud du serveur de "
+"gestion."
 
 # 02d90290579d496098aed77584f7a2d3
 #: ../../management.rst:510
