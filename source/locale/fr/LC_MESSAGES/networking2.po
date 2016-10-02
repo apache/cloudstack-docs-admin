@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-31 14:08-0400\n"
-"PO-Revision-Date: 2016-09-23 00:10+0200\n"
+"PO-Revision-Date: 2016-09-29 23:49+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 
 # 4c134b7a710148a3ab2766ead2eecc37
 #: ../../networking2.rst:18
@@ -32,6 +32,10 @@ msgid ""
 "private LAN. The CloudStack virtual router is the main component providing "
 "networking features for guest traffic."
 msgstr ""
+"Dans CloudStack, les VMs invitées peuvent communiquer ensemble en utilisant les "
+"infrastructures partagées avec la sécurité et la perception que les utilisateurs "
+"ont un LAN privé. Le routeur virtuel CloudStack est le composant principal "
+"fournissant les fonctionnalités réseaux pour le trafic invité."
 
 # c845ad86dd2c41e091ae6234539d6672
 #: ../../networking2.rst:26
@@ -74,6 +78,15 @@ msgid ""
 "traffic. If multiple public VLAN is used, the router will have multiple public "
 "interfaces."
 msgstr ""
+"Typiquement, le serveur de gestion crée automatiquement un routeur virtuel pour "
+"chaque réseau. Un routeur virtuel est une machine virtuelle spéciale qui "
+"fonctionne sur les hôtes. Chaque routeur virtuel dans un réseau isolé à trois "
+"interfaces réseaux. Si plusieurs VLAN publics sont utilisés, le routeur aura "
+"plusieurs interfaces publiques. Son interface eth0 servira de passerelle pour le "
+"trafic invité et a comme adresse IP 10.1.1.1. Son interface eth1 est utilisée "
+"par le système pour configurer le routeur virtuel. Son interface eth2 a une "
+"adresse IP publique d'assignée pour le trafic publique. Si de multiples VLAN "
+"publics sont utilisés, le routeur aura plusieurs interfaces publiques."
 
 # b252663b377641b6a497a33ae549a1c3
 #: ../../networking2.rst:48
@@ -82,6 +95,10 @@ msgid ""
 "each guest VM within the IP range assigned for the network. The user can "
 "manually reconfigure guest VMs to assume different IP addresses."
 msgstr ""
+"Le routeur virtuel fournit le service DHCP qui va automatiquement assigner une "
+"adresse IP pour chaque VM invitée dans l'intervalle d'IP assignées au réseau. "
+"L'utilisateur peut manuellement reconfigurer les VMs invités pour adopter "
+"différentes adresses IP."
 
 # 08366e677b394ff486de117a98b53a1c
 #: ../../networking2.rst:53
@@ -89,11 +106,13 @@ msgid ""
 "Source NAT is automatically configured in the virtual router to forward outbound "
 "traffic for all guest VMs"
 msgstr ""
+"Le Source Nat est automatiquement configuré dans le routeur virtuel pour "
+"transférer le trafic sortant de toutes les VMs invitées."
 
 # 8db3692749f44d209bc4b6643b4bed42
 #: ../../networking2.rst:57
 msgid "Networking in a Pod"
-msgstr ""
+msgstr "Le réseau dans un Pod"
 
 # f92d73cb904740b69bb3044663745ef9
 #: ../../networking2.rst:59
@@ -103,16 +122,21 @@ msgid ""
 "physical uplink to each switch. Bonded NICs are supported as well. The pod-level "
 "switch is a pair of redundant gigabit switches with 10 G uplinks."
 msgstr ""
+"L'image suivante illustre la configuration du réseau au sein d'un seul pod; Les "
+"hôtes sont connectés à un commutateur de niveau pod. Au minimum, les hôtes "
+"devraient avoir un lien montant vers chaque commutateur. Les agrégats "
+"d'interfaces réseaux sont également supportés. Le commutateur du pod est une "
+"pair de commutateurs gigabits redondants avec des liens à 10G."
 
 # 3cf0b62b19c942899bbf90f9c3e111be
 #: ../../networking2.rst:65
 msgid "|networksinglepod.png|"
-msgstr ""
+msgstr "|networksinglepod.png|"
 
 # 61fa2a0f3f6046b2a1d038ab3e5ea255
 #: ../../networking2.rst:67
 msgid "Servers are connected as follows:"
-msgstr ""
+msgstr "Les serveurs sont connectés comme ceci :"
 
 # 9dd3a988270c471db1794e964c4a56c7
 #: ../../networking2.rst:71
@@ -120,17 +144,23 @@ msgid ""
 "Storage devices are connected to only the network that carries management "
 "traffic."
 msgstr ""
+"Les périphériques de stockages ne sont connectés qu'au réseau qui transporte le "
+"trafic de gestion."
 
 # 2e2c8c8881fa4cd5be1de3eec14c1d1c
 #: ../../networking2.rst:76
 msgid ""
 "Hosts are connected to networks for both management traffic and public traffic."
 msgstr ""
+"Les hôtes sont connectés aux réseaux pour à la fois le trafic de gestion et le "
+"trafic publique."
 
 # 3e2f4aed8c924b9e80395bdf1e1c2f73
 #: ../../networking2.rst:81
 msgid "Hosts are also connected to one or more networks carrying guest traffic."
 msgstr ""
+"Les hôtes sont aussi connectés à un ou plusieurs réseaux qui transportent le "
+"trafic invité."
 
 # d85f7dccd3784410a2b1d16863f27a73
 #: ../../networking2.rst:84
@@ -139,21 +169,25 @@ msgid ""
 "network interface as well as redundant switch fabric in order to maximize "
 "throughput and improve reliability."
 msgstr ""
+"Nous recommandons l'utilisation de plusieurs cartes physique Ethernet qui "
+"implémente chacune interface réseau comme une fabrique redondante de commutateur "
+"dans le but d'optimiser le débit et améliorer la fiabilité."
 
 # d776e46765c84e1181b3e580c688c626
 #: ../../networking2.rst:89
 msgid "Networking in a Zone"
-msgstr ""
+msgstr "Le réseau dans une Zone"
 
 # d239d21a20c649aba205a75b8c13f10d
 #: ../../networking2.rst:91
 msgid "The following figure illustrates the network setup within a single zone."
 msgstr ""
+"La figure suivante illustre la configuration du réseau au sein d'une seule zone."
 
 # a576182d84c04ab98566ba031289abb1
 #: ../../networking2.rst:93
 msgid "|networksetupzone.png|"
-msgstr ""
+msgstr "|networksetupzone.png|"
 
 # f9ec1f6b949e428b918524444e4e4c2d
 #: ../../networking2.rst:95
@@ -163,6 +197,10 @@ msgid ""
 "space. Each pod is assigned IP addresses in the 192.168.\\*.0/24 Class C private "
 "address space."
 msgstr ""
+"Un parefeu pour le trafic de gestion opère dans le mode NAT. Le réseau assigne "
+"typiquement des adresses IP dans l'espace d'adressage du réseau privé de classe "
+"B 192.168.0.0/16. Chaque pod se voit assigné des adresses IP dans l'espace privé "
+"de classe C 192.168.\\*.0/24."
 
 # f0acacb8a1ac4f92b32c742e22c0aa30
 #: ../../networking2.rst:100
@@ -170,11 +208,13 @@ msgid ""
 "Each zone has its own set of public IP addresses. Public IP addresses from "
 "different zones do not overlap."
 msgstr ""
+"Chaque zone à son propre ensemble d'adresses IP publiques. Les adresses IP "
+"publiques depuis différentes zones ne doivent pas se chevaucher."
 
 # 48df0d18a8e448909a0b484414468735
 #: ../../networking2.rst:104
 msgid "Basic Zone Physical Network Configuration"
-msgstr ""
+msgstr "Configuration du réseau physique d'une zone basique "
 
 # 20494f4a5f604216bed0571fa51a7ddb
 #: ../../networking2.rst:106
@@ -184,11 +224,15 @@ msgid ""
 "by guest VMs. When you first add a zone to CloudStack, you set up the guest "
 "network through the Add Zone screens."
 msgstr ""
+"Dans un réseau basique, configurer le réseau physique est assez simple. Vous "
+"devez seulement configurer un réseau invité pour transporter le trafic généré "
+"par les VMs invitées. Quand vous ajouter pour la première fois une zone à "
+"CloudStack, vous configurer le réseau invité par les écrans Ajouter une zone."
 
 # b5ca7152b69d4a2d8fcc434cb9267f7c
 #: ../../networking2.rst:112
 msgid "Advanced Zone Physical Network Configuration"
-msgstr ""
+msgstr "Configuration du réseau physique d'une zone basique "
 
 # 954218a2f4204be989c2436ecd73edc1
 #: ../../networking2.rst:114
@@ -197,11 +241,14 @@ msgid ""
 "Server how the physical network is set up to carry different kinds of traffic in "
 "isolation."
 msgstr ""
+"A l'intérieur d'une zone qui utilise le réseau avancé, vous devez dire au "
+"serveur de gestion comment le réseau physique est configuré pour transporter "
+"différents types de trafics isolés."
 
 # b3ba0f73a0df4d36a3cb4f204c4dee2d
 #: ../../networking2.rst:119
 msgid "Configure Guest Traffic in an Advanced Zone"
-msgstr ""
+msgstr "Configurer le trafic public dans une Zone Avancée"
 
 # ecd9d16a0a0c4dff9373a2dbf58e4c09
 #: ../../networking2.rst:121
@@ -209,6 +256,8 @@ msgid ""
 "These steps assume you have already logged in to the CloudStack UI. To configure "
 "the base guest network:"
 msgstr ""
+"Ces étapes assume que vous êtes déjà connecté dans l'interface CloudStack. Pour "
+"configurer le réseau invité de base :"
 
 # 78523deb5f20412383b00c879c3b21aa
 #: ../../networking2.rst:126
@@ -216,52 +265,57 @@ msgid ""
 "In the left navigation, choose Infrastructure. On Zones, click View More, then "
 "click the zone to which you want to add a network."
 msgstr ""
+"Dans le menu de gauche, choisir Infrastructure. Dans Zones, cliquer sur Voir "
+"Plus, puis cliquer sur la zone à laquelle vous voulez ajouter un réseau."
 
 # 6257a61390924cb3bd8aeeac1a071780
 # 991bb1da835442988405cc08b7001c28
 # 61c9a678d28f40d599b72b6c2670f13d
 #: ../../networking2.rst:131 ../../networking2.rst:215 ../../networking2.rst:1597
 msgid "Click the Network tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet Réseau."
 
 # 81ea8b8553864a83843ba71e6bf101af
 # 2d5debf29d7e42428b6c6d0ea25b7b92
 # e156f160e7c64f60a6d9c5bd8b8164a9
 #: ../../networking2.rst:135 ../../networking2.rst:219 ../../networking2.rst:1601
 msgid "Click Add guest network."
-msgstr ""
+msgstr "Cliquer sur Ajouter un réseau invité."
 
 # 7b664064e09a4c25ac5afbc839d6bf94
 #: ../../networking2.rst:137
 msgid "The Add guest network window is displayed:"
-msgstr ""
+msgstr "La fenêtre Ajouter un réseau invité est affichée :"
 
 # 467663954a4745be91a92b1d95b23080
 #: ../../networking2.rst:139
 msgid "|addguestnetwork.png|"
-msgstr ""
+msgstr "|addguestnetwork.png|"
 
 # a7bd588835354863bf7622de307358f6
 # e19b9c5096354c629c5cb237adbb7845
 # d0d70642a5104df08ab13289bdd0c02b
 #: ../../networking2.rst:143 ../../networking2.rst:4200 ../../networking2.rst:5082
 msgid "Provide the following information:"
-msgstr ""
+msgstr "Fournir l'information suivante :"
 
 # 02150922f26d47f3b7a13ca653f96421
 #: ../../networking2.rst:147
 msgid "**Name**. The name of the network. This will be user-visible"
-msgstr ""
+msgstr "**Nom** : Le nom du réseau. Cela sera visible de l'utilisateur."
 
 # 71b93ff5fc154455a9e31bb96fc71d72
 #: ../../networking2.rst:151
 msgid "**Display Text**: The description of the network. This will be user-visible"
 msgstr ""
+"**Texte affiché**: La description du réseau. Cela sera visible de l'utilisateur."
 
 # 3aa2ff94b2f3453caf3cf8a60cf57294
 #: ../../networking2.rst:156
 msgid "**Zone**: The zone in which you are configuring the guest network."
 msgstr ""
+"**Zone** : La zone pour laquelle vous êtes en train de configurer le réseau "
+"invité."
 
 # 8020d9a242d94611b622a7fbbf730632
 #: ../../networking2.rst:160
@@ -269,16 +323,20 @@ msgid ""
 "**Network offering**: If the administrator has configured multiple network "
 "offerings, select the one you want to use for this network"
 msgstr ""
+"**Offre réseau** : Si l'administrateur a configuré plusieurs offres de réseau, "
+"sélectionnez celle que vous voulez utiliser pour ce réseau."
 
 # 409cf198865e4ed4a4ceda18fb9c08f8
 #: ../../networking2.rst:165
 msgid "**Guest Gateway**: The gateway that the guests should use"
-msgstr ""
+msgstr "**Passerelle invitée** : La passerelle que les invités devraient utiliser."
 
 # 1b24f9a1dc1a468fa60412939100a476
 #: ../../networking2.rst:169
 msgid "**Guest Netmask**: The netmask in use on the subnet the guests will use"
 msgstr ""
+"**Masque de sous réseau invité** : Le masque de sous réseau utilisé sur le sous "
+"réseau que les invités vont utiliser."
 
 # 91173c96c5184ed8a0542f56f340c125
 # 6968c572935348d89aa2cfe9419c00cd
@@ -300,12 +358,12 @@ msgstr ""
 #: ../../networking2.rst:5118 ../../networking2.rst:5211 ../../networking2.rst:5458
 #: ../../networking2.rst:5499 ../../networking2.rst:6953
 msgid "Click OK."
-msgstr ""
+msgstr "Cliquez sur OK."
 
 # bb8994cf25ed4d0f9c1738b0a288a66d
 #: ../../networking2.rst:177
 msgid "Configure Public Traffic in an Advanced Zone"
-msgstr ""
+msgstr "Configurer le trafic public dans une Zone Avancée"
 
 # 53d266b50a684d08b2b57469d0ba2117
 #: ../../networking2.rst:179
@@ -313,37 +371,39 @@ msgid ""
 "In a zone that uses advanced networking, you need to configure at least one "
 "range of IP addresses for Internet traffic."
 msgstr ""
+"Dans une zone qui utilise un réseau avancé, vous devez configurer au moins une "
+"plage d'adresses IP pour le trafic Internet. "
 
 # 173ecef5b8d34d51b8690fdff5bcfc1f
 #: ../../networking2.rst:183
 msgid "Configuring a Shared Guest Network"
-msgstr ""
+msgstr "Configurer un réseau invité partagé"
 
 # 93a4d181244541b381a3a70d1daea74e
 # 55cf11dd995e463eb0015820a7998825
 # 648d4dddf66542dd975f89802e4efaec
 #: ../../networking2.rst:187 ../../networking2.rst:761 ../../networking2.rst:1569
 msgid "Log in to the CloudStack UI as administrator."
-msgstr ""
+msgstr "Se connecter à l'interface de CloudStack comme administrateur."
 
 # ef46dafa14464c0580eef19b6347e754
 # f88933a8ce404a74b4dbfb012972639e
 # 1a1e2e9b76e842d2ad6653556d716440
 #: ../../networking2.rst:191 ../../networking2.rst:1363 ../../networking2.rst:1573
 msgid "In the left navigation, choose Infrastructure."
-msgstr ""
+msgstr "Dans le panneau de navigation à gauche, choisir Infrastructure."
 
 # e6266ec66e47425eaefdebd94b55e3d6
 # 9b6fa85ad73145c2a68b917e13c4dd74
 #: ../../networking2.rst:195 ../../networking2.rst:1577
 msgid "On Zones, click View More."
-msgstr ""
+msgstr "Dans zones, cliquez sur Voir tout."
 
 # ae18ac4302694c399605762c754adc89
 # a83fd7a01a4d4702815c49eabf8d6f45
 #: ../../networking2.rst:199 ../../networking2.rst:1581
 msgid "Click the zone to which you want to add a guest network."
-msgstr ""
+msgstr "Cliquer sur la zone à laquelle vous voulez ajouter un réseau invité."
 
 # 35ace6a71a514813adb835b0e291e59a
 # 92a70044e0a64276aca71c727238658c
@@ -352,25 +412,25 @@ msgstr ""
 #: ../../networking2.rst:203 ../../networking2.rst:777 ../../networking2.rst:898
 #: ../../networking2.rst:1585
 msgid "Click the Physical Network tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet Réseau Physique."
 
 # 7d1c35e3c6fb45268f88743d4f33fc4a
 # 5d24c24102dc463b8df955cea14e8321
 #: ../../networking2.rst:207 ../../networking2.rst:1589
 msgid "Click the physical network you want to work with."
-msgstr ""
+msgstr "Cliquer sur le réseau physique avec lequel vous voulez travailler."
 
 # d69f9202aba443119708b15355371054
 # b50eb62ce8e94fdf956d6c49a9d8c539
 #: ../../networking2.rst:211 ../../networking2.rst:1593
 msgid "On the Guest node of the diagram, click Configure."
-msgstr ""
+msgstr "Sur le noeud Invité du diagramme, cliquer sur Configurer."
 
 # 61f94d523e2b4257ac005b54b2300cd1
 # e69e4aa9dc5d4b77b59760f32d4410e5
 #: ../../networking2.rst:221 ../../networking2.rst:1603
 msgid "The Add guest network window is displayed."
-msgstr ""
+msgstr "La fenêtre Ajouter un réseau invité est affichée :"
 
 # 4af18c5d61a6456caf73f7a9369e2fee
 # cd3004192b7247d6b3d8df85d071c687
@@ -392,13 +452,13 @@ msgstr ""
 #: ../../networking2.rst:3177 ../../networking2.rst:5166 ../../networking2.rst:5592
 #: ../../networking2.rst:6347 ../../networking2.rst:6741
 msgid "Specify the following:"
-msgstr ""
+msgstr "Spécifier les informations suivantes :"
 
 # 8779be8d9d6846f085dbce3da3461bc3
 # b0b915aaeb67486684b659dc291d6454
 #: ../../networking2.rst:229 ../../networking2.rst:1611
 msgid "**Name**: The name of the network. This will be visible to the user."
-msgstr ""
+msgstr "**Nom** : Le nom du réseau. Cela sera visible de l'utilisateur."
 
 # 5074f17c728f4f3a8a7f794e8374c034
 # 0a5db820304048068d1845c134b8df63
@@ -407,23 +467,25 @@ msgid ""
 "**Description**: The short description of the network that can be displayed to "
 "users."
 msgstr ""
+"**Description** : La description courte du réseau qui peut être affichée aux "
+"utilisateurs."
 
 # 2b82a4bc6aa046f3b00d043934c959d7
 # 41c1edb5305a4945842709a1c5cf1ad6
 #: ../../networking2.rst:239 ../../networking2.rst:1621
 msgid "**VLAN ID**: The unique ID of the VLAN."
-msgstr ""
+msgstr "**ID VLAN** : L'ID unique du VLAN."
 
 # 418bb2fcab5742fb987163b73807d96b
 #: ../../networking2.rst:243
 msgid "**Isolated VLAN ID**: The unique ID of the Secondary Isolated VLAN."
-msgstr ""
+msgstr "**ID du VLAN isolé** : L'ID unique du VLAN secondaire isolé."
 
 # f26b6b49568f43ac84898deb5855609f
 # 969c263588994f74ac62592a499a4b31
 #: ../../networking2.rst:248 ../../networking2.rst:1633
 msgid "**Scope**: The available scopes are Domain, Account, Project, and All."
-msgstr ""
+msgstr "**Portée** : Les portées possibles sont Domaine, Compte, Projet et Tous."
 
 # 178c532fedf44f0fb1a2993bf0f625a0
 # 15faa541a4ce4327913cfce7e0c3f217
@@ -434,6 +496,10 @@ msgid ""
 "select Subdomain Access, the guest network is available to all the sub domains "
 "within the selected domain."
 msgstr ""
+"**Domaine** : Sélectionner Domaine limite la portée de ce réseau invité au "
+"domaine que vous spécifiez. Le réseau ne sera pas disponible pour les autres "
+"domaines.Si vous sélectionnez Accès Sous Domaine, le réseau invité est "
+"disponible à tous les sous domaines au sein du domaine sélectionné."
 
 # 91422a2eb500489a88e0a6f4b976e5c8
 # eb7d195938c445079e17b8d4de34c9b0
@@ -442,6 +508,8 @@ msgid ""
 "**Account**: The account for which the guest network is being created for. You "
 "must specify the domain the account belongs to."
 msgstr ""
+"**Compte** : Le compte pour lequel le réseau invité est créé. Vous devez "
+"spécifier le domaine auquel appartient le compte."
 
 # acbed03163c746f394f0b6065ac5d267
 # b6481103a23442a698dd33a8241fd4a5
@@ -450,6 +518,8 @@ msgid ""
 "**Project**: The project for which the guest network is being created for. You "
 "must specify the domain the project belongs to."
 msgstr ""
+"**Projet** : Le projet pour lequel le réseau invité est créé. Vous devez "
+"spécifier le domaine auquel le projet appartient."
 
 # 7515546501ea4a229f3d24cb1957114c
 # 14055c49cff34a97af7586b6692b395f
@@ -458,6 +528,8 @@ msgid ""
 "**All**: The guest network is available for all the domains, account, projects "
 "within the selected zone."
 msgstr ""
+"**Tous** : Le réseau invité est disponible pour tous les domaines, comptes, "
+"projets au sein de la zone sélectionnée."
 
 # 9e7d75c438d04916a6c8e41212a5add4
 # d311a00faddf44fb969a7362e8525846
@@ -466,18 +538,22 @@ msgid ""
 "**Network Offering**: If the administrator has configured multiple network "
 "offerings, select the one you want to use for this network."
 msgstr ""
+"**Offre réseau** : Si l'administrateur a configuré plusieurs offres de réseau, "
+"sélectionnez celle que vous voulez utiliser pour ce réseau."
 
 # 3b34a00342f74aabb8f06ef47a71928f
 # cec7265b43cc44c985fc19c1aada24ca
 #: ../../networking2.rst:284 ../../networking2.rst:1669
 msgid "**Gateway**: The gateway that the guests should use."
-msgstr ""
+msgstr "**Passerelle** : La passerelle que les invités devraient utiliser."
 
 # e8b1ed0c13f24b28b17097da6a906553
 # e376b4730d514e9cb67f58490f5323da
 #: ../../networking2.rst:288 ../../networking2.rst:1673
 msgid "**Netmask**: The netmask in use on the subnet the guests will use."
 msgstr ""
+"**Masque de sous réseau** : Le masque de sous réseau du réseau que les "
+"utilisateurs vont utiliser."
 
 # e95322f93824448f8b5213679edb09a1
 # f9867bf0fe584ea68c8d8697b398a35d
@@ -486,12 +562,16 @@ msgid ""
 "**IP Range**: A range of IP addresses that are accessible from the Internet and "
 "are assigned to the guest VMs."
 msgstr ""
+"**Plage IP** : Une plage d'adresses IP qui sont accessibles depuis l'Internet "
+"est qui sont assignées aux VMs invitées."
 
 # e30dfcdbb56b4fdab7ac50d318f8cfee
 #: ../../networking2.rst:295
 msgid ""
 "If one NIC is used, these IPs should be in the same CIDR in the case of IPv6."
 msgstr ""
+"Si une interface est utilisée, ces IP devrait être dans le même CIDR dans le cas "
+"de l'IPv6."
 
 # c999c7758e4644bb960bd36b4934a153
 #: ../../networking2.rst:300
@@ -500,6 +580,10 @@ msgid ""
 "the CIDR that describes the IPv6 addresses in use in the guest networks in this "
 "zone. To allot IP addresses from within a particular address block, enter a CIDR."
 msgstr ""
+"**IPv6 CIDR** : Le préfixe réseau qui défini le sous réseau du réseau invité. "
+"C'est le CIDR qui décrit les adresses IPv6 en usage dans les réseaux invités de "
+"cette zone. Pour autoriser les adresses IP depuis un bloc d'adresse particulier, "
+"entrer un CIDR."
 
 # 06222d5aca4f4401b3e50b9562eafd93
 # bdec8ee29ad7416da22dd28dfee5836c
@@ -508,6 +592,9 @@ msgid ""
 "**Network Domain**: A custom DNS suffix at the level of a network. If you want "
 "to assign a special domain name to the guest VM network, specify a DNS suffix."
 msgstr ""
+"**Domaine Réseau** : Un suffixe DNS personnalisé au niveau du réseau. Si vous "
+"voulez assigner un nom de domaine spécial au réseau des VM invitées, spécifier "
+"un suffixe DNS."
 
 # 6cbf270deb434c49a37109538320e729
 # e3f042ecf42f48179722b1f43ed74365
@@ -517,12 +604,12 @@ msgstr ""
 #: ../../networking2.rst:313 ../../networking2.rst:1688 ../../networking2.rst:3215
 #: ../../networking2.rst:3256 ../../networking2.rst:4559
 msgid "Click OK to confirm."
-msgstr ""
+msgstr "Cliquer OK pour confirmer."
 
 # 6dae7352ba9441b4ab5afb0eb736de8e
 #: ../../networking2.rst:316
 msgid "Using Multiple Guest Networks"
-msgstr ""
+msgstr "Utiliser plusieurs Réseaux d'Invités "
 
 # 2b127f6d5dfd4f3aa7e896c69fa530fc
 #: ../../networking2.rst:318
@@ -532,6 +619,10 @@ msgid ""
 "domain name associated with the network by specifying a DNS suffix for each "
 "network."
 msgstr ""
+"Dans les zones qui utilisent le réseau avancé, des réseaux additionnels pour le "
+"trafic invité peuvent être ajouté à n'importe quel moment après l'installation "
+"initiale. Vous pouvez aussi personnaliser le nom de domaine associé avec le "
+"réseau en spécifiant un suffix DNS pour chaque réseau."
 
 # 57493d5abb6d42e29119db9cfbd72df0
 #: ../../networking2.rst:323
@@ -540,6 +631,10 @@ msgid ""
 "networks after it has been created, although the user can go into the guest and "
 "remove the IP address from the NIC on a particular network."
 msgstr ""
+"Les réseaux d'une VM sont définie à la création de la VM. Une VM ne peut pas "
+"ajouter ou supprimer des réseaux après qu'elle ait été créée, bien que "
+"l'utilisateur peut aller dans son inviter et supprimer l'adresse IP sur la carte "
+"réseau d'un réseau particulier."
 
 # df560b1f84f74fa096be5526e9f253c2
 #: ../../networking2.rst:328
@@ -550,6 +645,12 @@ msgid ""
 "default network. The administrator can control which networks are available as "
 "the default network."
 msgstr ""
+"Chaque VM a juste un réseau par défaut. La réponse du serveur DHCP du routeur "
+"virtuel configurera la passerelle par défaut de l'invité comme ça pour le réseau "
+"par défaut. Plusieurs réseaux qui ne sont pas par défaut peuvent être ajoutés à "
+"un invité en complément du seul réseau, ce qui nécessite le réseau par défaut. "
+"L'administrateur peut contrôler quels réseaux sont disponible comme réseau par "
+"défaut."
 
 # 1b89ed0c211f490d9ab7e3873f785995
 #: ../../networking2.rst:334
@@ -560,11 +661,17 @@ msgid ""
 "zone-wide networks provide little or no isolation between guests.Networks that "
 "are assigned to a specific account provide strong isolation."
 msgstr ""
+"Des réseaux supplémentaire peuvent être disponible pour tous les comptes ou être "
+"assigné à un compte spécifique. Les réseaux qui sont disponibles à tous les "
+"comptes sont à l'échelle de la zone. Tout utilisateur avec un accès à la zone "
+"peut créer une VM avec un accès à ce réseau. Ces réseaux à l'échelle de la zone "
+"fournissent un peu ou pas du tout d'isolation entre les invités. Les réseaux qui "
+"sont assignés à un compte spécifique fournissent une isolation plus solide."
 
 # 03479d92c4f3472fbf1c837f78ae38b9
 #: ../../networking2.rst:342
 msgid "Adding an Additional Guest Network"
-msgstr ""
+msgstr "Ajouter un réseau invité supplémentaire"
 
 # dcc9b20e05d94a90a82df638e638d914
 # bf1857069dbe437da757dd8117d7a8f6
@@ -619,6 +726,8 @@ msgstr ""
 #: ../../networking2.rst:6784 ../../networking2.rst:6823
 msgid "Log in to the CloudStack UI as an administrator or end user."
 msgstr ""
+"Se connecter à l'interface de CloudStack comme administrateur ou utilisateur "
+"final."
 
 # c650c895a3ac4ff2851197288859be98
 # 65e8807d38054bd1b0027a7155f8085f
@@ -660,23 +769,24 @@ msgstr ""
 #: ../../networking2.rst:6269 ../../networking2.rst:6579 ../../networking2.rst:6663
 #: ../../networking2.rst:6788 ../../networking2.rst:6827
 msgid "In the left navigation, choose Network."
-msgstr ""
+msgstr "Dans la navigation à gauche, choisissez Réseau."
 
 # f6aa7a61ff37420d9f141635bdbce188
 #: ../../networking2.rst:354
 msgid "Click Add guest network. Provide the following information:"
-msgstr ""
+msgstr "Cliquer sur Ajouter un réseau invité. Donner les informations suivantes :"
 
 # 94e3451e541243a590fc75a1c6838168
 #: ../../networking2.rst:358
 msgid "**Name**: The name of the network. This will be user-visible."
-msgstr ""
+msgstr "**Nom** : Le nom du réseau. Cela sera visible de l'utilisateur."
 
 # 24a87a4d530b4a8c9af892bd51a53c2b
 #: ../../networking2.rst:362
 msgid ""
 "**Display Text**: The description of the network. This will be user-visible."
 msgstr ""
+"**Texte affiché**: La description du réseau. Cela sera visible de l'utilisateur."
 
 # 4491ce6396264b9f805777eca895a720
 #: ../../networking2.rst:367
@@ -685,6 +795,10 @@ msgid ""
 "domain, and therefore each zone has a different IP range for the guest network. "
 "The administrator must configure the IP range for each zone."
 msgstr ""
+"**Zone**. Le nom de la zone à laquelle le réseau s'applique. Chaque zone est un "
+"domaine de diffusion, et par conséquent, chaque zone a une plage d'IP différente "
+"comme réseau d'invité. L'administrateur doit configurer la plage d'IP pour "
+"chaque zone."
 
 # 738c6e4f1dac40f6ae58cfa12e3fafb6
 #: ../../networking2.rst:374
@@ -692,27 +806,31 @@ msgid ""
 "**Network offering**: If the administrator has configured multiple network "
 "offerings, select the one you want to use for this network."
 msgstr ""
+"**Offre réseau** : Si l'administrateur a configuré plusieurs offres de réseau, "
+"sélectionnez celle que vous voulez utiliser pour ce réseau."
 
 # 4d5b30b8ae754940bd24bf9ce873f62c
 #: ../../networking2.rst:380
 msgid "**Guest Gateway**: The gateway that the guests should use."
-msgstr ""
+msgstr "**Passerelle invitée** : La passerelle que les invités devraient utiliser."
 
 # d2cc46c6e57d4a74b0f41b06645d7905
 #: ../../networking2.rst:384
 msgid "**Guest Netmask**: The netmask in use on the subnet the guests will use."
 msgstr ""
+"**Masque de sous réseau invité** : Le masque de sous réseau utilisé sur le sous "
+"réseau que les invités vont utiliser."
 
 # 0eef322a01b1441c968f5d08a7d1205d
 # 0fd1c8972f504925a86019b475f8cf7a
 #: ../../networking2.rst:389 ../../networking2.rst:4032
 msgid "Click Create."
-msgstr ""
+msgstr "Cliquez sur Créer."
 
 # de4eb821eff84801b56973e967b9870e
 #: ../../networking2.rst:392
 msgid "Reconfiguring Networks in VMs"
-msgstr ""
+msgstr "Reconfigurer les Réseaux dans les VMs"
 
 # 0f2fe4ab745e4f7fb65fe812f7d64f1a
 #: ../../networking2.rst:394
@@ -722,18 +840,24 @@ msgid ""
 "can also change the default network of a virtual machine. With this "
 "functionality, hybrid or traditional server loads can be accommodated with ease."
 msgstr ""
+"CloudStack vous offre la possibilité de déplacer des VMs d'un réseau à un autre "
+"et de reconfigurer son réseau. Vous pouvez retirer une VM d'un réseau et "
+"l'ajouter à un nouveau réseau. Vous pouvez aussi changer le réseau par défaut "
+"d'une machine virtuelle. Avec cette fonctionnalité, les charges d'un serveur "
+"traditionnel ou hybride peut être facilement adapté."
 
 # 74ad1316798b4f60a8f0033d2c970d86
 #: ../../networking2.rst:400
 msgid "This feature is supported on XenServer, VMware, and KVM hypervisors."
 msgstr ""
+"Cette fonctionnalité est supportée sur les hyperviseurs XenServer, VMware et KVM."
 
 # 65c68a2b86274b91a6ec6ed32d0eb511
 # b0f423eb9e1444fa8072955fb8cbe955
 # c9a7dedb4fe74538a84d59bba4b0ea21
 #: ../../networking2.rst:403 ../../networking2.rst:1526 ../../networking2.rst:2416
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prérequis"
 
 # bc2166808aa14a3d84e34f7a073eda9b
 #: ../../networking2.rst:405
@@ -741,48 +865,52 @@ msgid ""
 "Ensure that vm-tools are running on guest VMs for adding or removing networks to "
 "work on VMware hypervisor."
 msgstr ""
+"S'assurer que les vm-tools fonctionnent sur les VMs invités pour ajouter ou "
+"retirer les réseaux pour que cela fonctionne sur les hyperviseur VMware."
 
 # 5edc5eb13c714fdcb4bc76dfefee938a
 #: ../../networking2.rst:409
 msgid "Adding a Network"
-msgstr ""
+msgstr "Ajouter un réseau"
 
 # e9c46729b8e44e9b86983fc1d062228c
 # 69e1fa7916874968ad5f68de2af2cbc4
 # 53892275c4d84a16b7aa19e912822afe
 #: ../../networking2.rst:417 ../../networking2.rst:482 ../../networking2.rst:513
 msgid "In the left navigation, click Instances."
-msgstr ""
+msgstr "Sur la gauche, cliquez sur Instances"
 
 # 237aa96a8b6047e2abb22526bd4bac7c
 # 2b3f21ea21b24697b7196dc8f6846009
 # 274e34eca30542b289b9dccb8063fa1f
 #: ../../networking2.rst:421 ../../networking2.rst:486 ../../networking2.rst:517
 msgid "Choose the VM that you want to work with."
-msgstr ""
+msgstr "Choisir la VM avec laquelle vous voulez travailler."
 
 # a616e6054be2484499468033d21dea1c
 # 7df447c421184ebd8362e78e05a81058
 # 57cb30b5f480462abef7c6f73b23f46e
 #: ../../networking2.rst:425 ../../networking2.rst:490 ../../networking2.rst:521
 msgid "Click the NICs tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet Interface."
 
 # dccdbd5be35b43fda6baf17f2c628af7
 #: ../../networking2.rst:429
 msgid "Click Add network to VM."
-msgstr ""
+msgstr "Cliquer sur Ajouter un réseau à une VM."
 
 # 05af00bbbfae48b0869d614090792531
 #: ../../networking2.rst:431
 msgid "The Add network to VM dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Ajouter un réseau à une VM est affichée."
 
 # 9d15b4dcf3c8457785334338c368aa26
 #: ../../networking2.rst:435
 msgid ""
 "In the drop-down list, select the network that you would like to add this VM to."
 msgstr ""
+"Dans la liste déroulante, sélectionner le réseau que vous aimeriez ajouter à "
+"cette VM."
 
 # 9747107d35eb413e81aa96529adf5506
 #: ../../networking2.rst:438
@@ -790,90 +918,93 @@ msgid ""
 "A new NIC is added for this network. You can view the following details in the "
 "NICs page:"
 msgstr ""
+"Une nouvelle interface réseau est ajoutée pour ce réseau. Vous pouvez voir les "
+"détails suivants dans la page de l'interface :"
 
 # 96ffcc74f3da41ee9f7fade2c284e2cc
 #: ../../networking2.rst:443
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 # 0930c07f915e4e8f8321b47ce1b2546c
 #: ../../networking2.rst:447
 msgid "Network Name"
-msgstr ""
+msgstr "Nom du réseau"
 
 # 2166ea3836e64777968d20d97a551782
 #: ../../networking2.rst:451
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 # ebba5967ce5b40c6a4b9557338f01ce6
 # 3d4b724e0c8241c1ba31b6395bc04008
 # 5af256fd3dbb4fdd841ef05a4ec9b838
 #: ../../networking2.rst:455 ../../networking2.rst:4442 ../../networking2.rst:4567
 msgid "IP Address"
-msgstr ""
+msgstr "Adresse IP"
 
 # a5e87e2a4b4d4ddd80f323f49ceee587
 # ad200504779f4909905c825a837ecb20
 #: ../../networking2.rst:459 ../../networking2.rst:4571
 msgid "Gateway"
-msgstr ""
+msgstr "Passerelle"
 
 # b15a081ce5664e48891a6f018aa8f161
 #: ../../networking2.rst:463
 msgid "Netmask"
-msgstr ""
+msgstr "Masque de sous-réseau"
 
 # 297b7172628240e1a2c5b8cabc302f62
 #: ../../networking2.rst:467
 msgid "Is default"
-msgstr ""
+msgstr "Par défaut ?"
 
 # 8a2efed9a7e74c7f9fe0f1d5eb5d090c
 #: ../../networking2.rst:471
 msgid "CIDR (for IPv6)"
-msgstr ""
+msgstr "CIDR (pour IPv6)"
 
 # 9398952782e64b64b3867a3fe12fd7bc
 #: ../../networking2.rst:474
 msgid "Removing a Network"
-msgstr ""
+msgstr "Supprimer un réseau"
 
 # a093eadb6ac145cbae36f5faaaa2c9a1
 #: ../../networking2.rst:494
 msgid "Locate the NIC you want to remove."
-msgstr ""
+msgstr "Repérer l'interface que vous voulez retirer."
 
 # 5785d874c0944a0caf08db20f4f9e446
 #: ../../networking2.rst:498
 msgid "Click Remove NIC button. |remove-nic.png|"
-msgstr ""
+msgstr "Cliquer sur le bouton Supprimer une interface. |remove-nic.png|"
 
 # c2771766c44443d1bb463bd5a0f9ecef
 # ed60114d9fff4ae6871302c0c6b0aed2
 #: ../../networking2.rst:502 ../../networking2.rst:533
 msgid "Click Yes to confirm."
-msgstr ""
+msgstr "Cliquer sur Oui pour confirmer."
 
 # 6b25b8b44f294113afdfb3b97d2eac02
 #: ../../networking2.rst:505
 msgid "Selecting the Default Network"
-msgstr ""
+msgstr "Sélectionner le réseau par défaut."
 
 # 86d95a73e3274acc9285a47537212537
 #: ../../networking2.rst:525
 msgid "Locate the NIC you want to work with."
-msgstr ""
+msgstr "Repérer l'interface avec laquelle vous voulez travailler."
 
 # 998ed551fd1a45f4ac897f9f38552afe
 #: ../../networking2.rst:529
 msgid "Click the Set default NIC button. |set-default-nic.png|."
 msgstr ""
+"Cliquer sur le bouton Définir une interface par défaut. |set-default-nic.png|."
 
 # df5fbaabb7364cf599673d6b129dc3a4
 #: ../../networking2.rst:536
 msgid "Changing the Network Offering on a Guest Network"
-msgstr ""
+msgstr "Changer l'offre de réseau pour un réseau invités."
 
 # 7fc2bd82deb7433b8d2b5f310500de46
 #: ../../networking2.rst:538
@@ -881,6 +1012,8 @@ msgid ""
 "A user or administrator can change the network offering that is associated with "
 "an existing guest network."
 msgstr ""
+"Un utilisateur ou un administrateur peut changer l'offre de réseau qui est "
+"associée avec un réseau d'invité existant."
 
 # 9961a724d3c9484ca0b4c1d5978d448c
 #: ../../networking2.rst:547
@@ -889,23 +1022,29 @@ msgid ""
 "router to one that uses external devices as network service providers, you must "
 "first stop all the VMs on the network."
 msgstr ""
+"Si vous êtes en train de changer d'une offre de réseau qui utilise le routeur "
+"virtuel CloudStack vers une qui utilise des périphériques externes comme "
+"fournisseurs de services réseaux, vous devez d'abord stopper toutes les VMs de "
+"ce réseau."
 
 # 449cac531ff847d796c389fb42f64c5c
 # 44aa044295ce4f078b84c89406c09bb3
 #: ../../networking2.rst:557 ../../networking2.rst:696
 msgid "Click the name of the network you want to modify."
-msgstr ""
+msgstr "Cliquer sur le nom du réseau que vous voulez modifier."
 
 # 013515a624984a4181813aa619128c01
 # fb4f4c6fee5a4d54a8210453ae8fea0b
 #: ../../networking2.rst:561 ../../networking2.rst:700
 msgid "In the Details tab, click Edit. |edit-icon.png|"
-msgstr ""
+msgstr "Dans l'onglet Détails, cliquer sur Editer. |edit-icon.png|"
 
 # 2af58d6970ae4fa49f1d797131ae88e5
 #: ../../networking2.rst:565
 msgid "In Network Offering, choose the new network offering, then click Apply."
 msgstr ""
+"Dans Offre de Réseau, choisir la nouvelle offre de réseau, puis cliquer sur "
+"Appliquer."
 
 # bc3a2c3c3d324782ae47b4da0e17c214
 #: ../../networking2.rst:568
@@ -914,6 +1053,9 @@ msgid ""
 "to let you know that if you change the network offering, the CIDR will be "
 "affected."
 msgstr ""
+"Une invite est affichée demandant si vous voulez conserver le CIDR existant. "
+"Ceci vous permet de savoir que si vous changer l'offre de réseau, le CIDR sera "
+"réaffecté."
 
 # 1b6db56bbeec4098851005614591b4f2
 #: ../../networking2.rst:572
@@ -921,6 +1063,9 @@ msgid ""
 "If you upgrade between virtual router as a provider and an external network "
 "device as provider, acknowledge the change of CIDR to continue, so choose Yes."
 msgstr ""
+"Si vous évoluez entre un routeur virtuel comme fournisseur et un périphérique "
+"réseau externe comme fournisseur, accepter le changement du CIDR pour continuer "
+"en cliquant sur Oui."
 
 # 146e4502698d4bedb783dec26532e410
 #: ../../networking2.rst:578
@@ -928,16 +1073,18 @@ msgid ""
 "Wait for the update to complete. Don't try to restart VMs until the network "
 "change is complete."
 msgstr ""
+"Attendre que la mise à jour soit finie. Ne pas essayer de redémarrer les VMs "
+"tant que le changement du réseau ne soit pas fini."
 
 # 4ae7ada6f8e841c4bab421568ca6c79c
 #: ../../networking2.rst:583
 msgid "If you stopped any VMs, restart them."
-msgstr ""
+msgstr "Si vous avez stoppé des VMs, redémarrer les."
 
 # 9725e5abe5b24d5b9b938be30e1e60f9
 #: ../../networking2.rst:586
 msgid "IP Reservation in Isolated Guest Networks"
-msgstr ""
+msgstr "La réservation d'IP dans les réseaux isolés invité."
 
 # 2160ad6d081d44638ebbdfb06dbfae1f
 #: ../../networking2.rst:588
@@ -968,7 +1115,7 @@ msgstr ""
 # 90bf1a7d2c754ac4902085a1fd1ba748
 #: ../../networking2.rst:610
 msgid "IP Reservation Considerations"
-msgstr ""
+msgstr "Considérations sur la réservation d'IP"
 
 # bc5248dcc785447289018e7cdfcbae8a
 #: ../../networking2.rst:612
