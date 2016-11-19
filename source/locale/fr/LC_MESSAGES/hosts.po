@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-09-16 17:04+0200\n"
+"PO-Revision-Date: 2016-10-26 12:22+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Last-Translator: \n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #: ../../hosts.rst:18
 msgid "Working with Hosts"
@@ -255,28 +255,34 @@ msgid ""
 "If you are disabling or enabling a zone, find the name of the zone in the "
 "list, and click the Enable/Disable button. |enable-disable.png|"
 msgstr ""
+"Si vous êtes en train de désactiver ou d'activer une zone, trouver le nom de "
+"la zone dans la liste, et cliquer sur le bouton Activer/Désactiver. |enable-"
+"disable.png|"
 
 #: ../../hosts.rst:136
 msgid ""
 "If you are disabling or enabling a pod or cluster, click the name of the zone "
 "that contains the pod or cluster."
 msgstr ""
+"Si vous êtes en train de désactiver ou d'activer un pod ou un cluster, cliquer "
+"sur le nom de la zone qui contient le pod ou le cluster."
 
 #: ../../hosts.rst:139
 msgid "Click the Compute tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet Offre de calcul."
 
 #: ../../hosts.rst:141
 msgid "In the Pods or Clusters node of the diagram, click View All."
 msgstr ""
+"Dans les noeuds Pods ou les Clusters du diagramme, cliquer sur Totu voir."
 
 #: ../../hosts.rst:143
 msgid "Click the pod or cluster name in the list."
-msgstr ""
+msgstr "Cliquer sur le nom du pod ou du cluster dans la liste."
 
 #: ../../hosts.rst:145
 msgid "Click the Enable/Disable button. |enable-disable.png|"
-msgstr ""
+msgstr "Cliquer sur le bouton Activer/Désactiver. |enable-disable.png|"
 
 #: ../../hosts.rst:149
 msgid "Removing Hosts"
@@ -287,6 +293,8 @@ msgid ""
 "Hosts can be removed from the cloud as needed. The procedure to remove a host "
 "depends on the hypervisor type."
 msgstr ""
+"Les hôtes peuvent être supprimés du cloud si besoin. La procédure pour "
+"supprimer un hôte dépend du type de l'hyperviseur."
 
 #: ../../hosts.rst:156
 msgid "Removing XenServer and KVM Hosts"
@@ -298,29 +306,36 @@ msgid ""
 "maintenance mode. This will ensure that all of the VMs on it have been "
 "migrated to other Hosts. To remove a Host from the cloud:"
 msgstr ""
+"Un noeud ne peut pas être supprimé d'un cluster jusqu'à ce qu'il ait été placé "
+"en mode maintenance. Cela va assurer que toutes les VM ont été migrées vers "
+"d'autres hôtes. Pour retirer un hôte du cloud :"
 
 #: ../../hosts.rst:162
 msgid "Place the node in maintenance mode."
-msgstr ""
+msgstr "Placer le noeud en mode maintenance."
 
 #: ../../hosts.rst:164
 msgid ""
 "See `“Scheduled Maintenance and Maintenance Mode for Hosts” <#scheduled-"
 "maintenance-and-maintenance-mode-for-hosts>`_."
 msgstr ""
+"Voir `“Maintenance programmée et mode de maintenance pour les hôtes” "
+"<#scheduled-maintenance-and-maintenance-mode-for-hosts>`_."
 
 #: ../../hosts.rst:167
 msgid "For KVM, stop the cloud-agent service."
-msgstr ""
+msgstr "Pour KVM, stopper le service cloud-agent."
 
 #: ../../hosts.rst:169
 msgid "Use the UI option to remove the node."
-msgstr ""
+msgstr "Utiliser l'option de l'interface pour supprimer le noeud."
 
 #: ../../hosts.rst:171
 msgid ""
 "Then you may power down the Host, re-use its IP address, re-install it, etc"
 msgstr ""
+"Alors vous pouvez éteindre l'hôte, réutiliser son adresse IP, le réinstaller, "
+"etc."
 
 #: ../../hosts.rst:176
 msgid "Removing vSphere Hosts"
@@ -334,6 +349,12 @@ msgid ""
 "the host. CloudStack will not direct commands to a host that has been removed "
 "using CloudStack. However, the host may still exist in the vCenter cluster."
 msgstr ""
+"Pour retirer ce type d'hôte, dans un premier temps, le placer en mode "
+"maintenance, comme décrit dans `“Maintenance programmée et mode de maintenance "
+"pour les hôtes” <#scheduled-maintenance-and-maintenance-mode-for-hosts>`_. "
+"Utiliser ensuite CloudStack pour supprimer l'hôte. CloudStack ne va pas "
+"diriger de commandes à un hôte qui a été supprimé en utilisant CloudStack. "
+"Toutefois l'hôte peut toujours exister dans le cluster dans le vCenter."
 
 #: ../../hosts.rst:187
 msgid "Re-Installing Hosts"
@@ -345,6 +366,9 @@ msgid ""
 "removing it. If a host is down and cannot be placed in maintenance mode, it "
 "should still be removed before the re-install."
 msgstr ""
+"Vous pouvez réinstaller un hôte après l'avoir placé dans le mode maintenance "
+"et l'avoir supprimé. Si un hôte est arrêté et ne peut pas être placé en mode "
+"maintenance, il pourra toujours être supprimé après l'avoir ré-installé."
 
 #: ../../hosts.rst:195
 msgid "Maintaining Hypervisors on Hosts"
@@ -364,6 +388,8 @@ msgstr ""
 #: ../../hosts.rst:207
 msgid "The lack of up-do-date hotfixes can lead to data corruption and lost VMs."
 msgstr ""
+"L'absence des dernières mise à jour peut mener à la corruption de données et "
+"la perte de VM."
 
 #: ../../hosts.rst:209
 msgid ""
@@ -372,6 +398,11 @@ msgid ""
 "Knowledge_Base/Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/"
 "Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_."
 msgstr ""
+"(XenServer) Pour plus d'informations, voir `Mises à jour hautement "
+"recommandées pour XenServer dans la base de connaissance CloudStack<http://"
+"docs.cloudstack.org/Knowledge_Base/"
+"Possible_VM_corruption_if_XenServer_Hotfix_is_not_Applied/"
+"Highly_Recommended_Hotfixes_for_XenServer_5.6_SP2>`_."
 
 #: ../../hosts.rst:215
 msgid "Changing Host Password"
@@ -382,14 +413,17 @@ msgid ""
 "The password for a XenServer Node, KVM Node, or vSphere Node may be changed in "
 "the database. Note that all Nodes in a Cluster must have the same password."
 msgstr ""
+"Le mot de passe pour un noeud XenServer, un noeud KVM ou un noeud vSphere peut "
+"être changé dans la base de données. Notez que tous les noeuds d'un cluster "
+"doivent avoir le même mot de passe."
 
 #: ../../hosts.rst:221
 msgid "To change a Node's password:"
-msgstr ""
+msgstr "Pour changer un mot de passe sur un noeud :"
 
 #: ../../hosts.rst:223
 msgid "Identify all hosts in the cluster."
-msgstr ""
+msgstr "Identifier tous les hôtes dans le cluster."
 
 #: ../../hosts.rst:225
 msgid ""
@@ -397,6 +431,10 @@ msgid ""
 "and the password known to CloudStack will not match. Operations on the cluster "
 "will fail until the two passwords match."
 msgstr ""
+"Changer le mot de passe sur tous les hôtes du cluster. Maintenant le mot de "
+"passe pour l'hôte et le mot de passe connu par CloudStack ne correspondent "
+"plus. Les opérations dans le cluster vont échouer jusqu'à ce que les 2 mots de "
+"passe correspondent."
 
 #: ../../hosts.rst:229
 msgid ""
@@ -404,6 +442,9 @@ msgid ""
 "encrypt the new password using the database key before adding it to the "
 "database."
 msgstr ""
+"Si le mot de passe dans la base de données est crypté, il est (probablement) "
+"nécessaire de crypter le nouveau mot de passe en utilisant la clef de la base "
+"de données avant de l'ajouter dans la base de données."
 
 #: ../../hosts.rst:240
 msgid ""
@@ -418,6 +459,8 @@ msgid ""
 "This should return a single ID. Record the set of such IDs for these hosts. "
 "Now retrieve the host_details row id for the host"
 msgstr ""
+"Cela devrait retourner un seul ID. L'enregistrer l'ensemble de ces ID pour ces "
+"hôtes.  Maintenant récupérer le numéro de la ligne host_details pour cet hôte."
 
 #: ../../hosts.rst:256
 msgid ""
@@ -432,7 +475,7 @@ msgstr "Sur-allocation et Limites d'Offre de Service."
 
 #: ../../hosts.rst:268
 msgid "(Supported for XenServer, KVM, and VMware)"
-msgstr ""
+msgstr "(Supporté par XenServer, KVM et VMware)"
 
 #: ../../hosts.rst:270
 msgid ""
@@ -456,12 +499,16 @@ msgid ""
 "Over-provisioning ratios are dynamically substituted in CloudStack's capacity "
 "calculations. For example:"
 msgstr ""
+"Les rations d'Over-provisionning sont dynamiquement substitué dans les calculs "
+"de capacités de CloudStack. Par exemple :"
 
 #: ../../hosts.rst:284
 msgid ""
 "Capacity = 2 GB Over-provisioning factor = 2 Capacity after over-provisioning "
 "= 4 GB"
 msgstr ""
+"Capacité = 2 GB facteur d'Over-provisionning = 2 Capacité après over-"
+"provisionning = 4 GB"
 
 #: ../../hosts.rst:288
 msgid "With this configuration, suppose you deploy 3 VMs of 1 GB each:"
@@ -469,7 +516,7 @@ msgstr ""
 
 #: ../../hosts.rst:290
 msgid "Used = 3 GB Free = 1 GB"
-msgstr ""
+msgstr "Utilisé = 3 GB Libre = 1 GB"
 
 #: ../../hosts.rst:293
 msgid ""
@@ -638,11 +685,11 @@ msgstr ""
 
 #: ../../hosts.rst:417
 msgid "Log in as administrator to the CloudStack UI."
-msgstr ""
+msgstr "Se connecter en tant qu'administrateur dans l'interface de CloudStack."
 
 #: ../../hosts.rst:421
 msgid "Under Clusters, click View All."
-msgstr ""
+msgstr "Sous Clusters, cliquer sur Voir tout."
 
 #: ../../hosts.rst:423
 msgid "Select the cluster you want to work with, and click the Edit button."
@@ -735,29 +782,31 @@ msgstr ""
 
 #: ../../hosts.rst:495
 msgid "VLAN IDs"
-msgstr ""
+msgstr "ID VLAN"
 
 #: ../../hosts.rst:495
 msgid "Traffic type"
-msgstr ""
+msgstr "Type de trafic"
 
 #: ../../hosts.rst:495
 msgid "Scope"
-msgstr ""
+msgstr "Portée"
 
 #: ../../hosts.rst:497
 msgid "less than 500"
-msgstr ""
+msgstr "Moins de 500"
 
 #: ../../hosts.rst:497
 msgid "Management traffic."
-msgstr ""
+msgstr "Trafic de gestion."
 
 #: ../../hosts.rst:497
 msgid ""
 "Reserved for administrative purposes.  CloudStack software can access this, "
 "hypervisors, system VMs."
 msgstr ""
+"Réservé pour des besoins administratifs. Le logiciel CloudStack, les "
+"hyperviseurs et les VMs système peuvent y accéder."
 
 #: ../../hosts.rst:498
 msgid "500-599"
@@ -765,11 +814,11 @@ msgstr "500-599"
 
 #: ../../hosts.rst:498
 msgid "VLAN carrying public traffic."
-msgstr ""
+msgstr "VLAN transportant le trafic public."
 
 #: ../../hosts.rst:498
 msgid "CloudStack accounts."
-msgstr ""
+msgstr "Comptes CloudStack."
 
 #: ../../hosts.rst:499
 msgid "600-799"
@@ -777,11 +826,13 @@ msgstr "600-799"
 
 #: ../../hosts.rst:499 ../../hosts.rst:500
 msgid "VLANs carrying guest traffic."
-msgstr ""
+msgstr "VLAN transportant le trafic invité."
 
 #: ../../hosts.rst:499
 msgid "CloudStack accounts. Account-specific VLAN is chosen from this pool."
 msgstr ""
+"Comptes CloudStack. Le VLAN spécifique au compte est choisi depuis cette "
+"réserve."
 
 #: ../../hosts.rst:500
 msgid "800-899"
@@ -792,6 +843,8 @@ msgid ""
 "CloudStack accounts. Account-specific VLAN chosen by CloudStack admin to "
 "assign to that account."
 msgstr ""
+"Comptes CloudStack. Le VLAN spécifique au compte choisi par l'administrateur "
+"CloudStack pour être assigneé à ce compte."
 
 #: ../../hosts.rst:501
 msgid "900-999"
@@ -799,7 +852,7 @@ msgstr "900-999"
 
 #: ../../hosts.rst:501
 msgid "VLAN carrying guest traffic"
-msgstr ""
+msgstr "VLAN transportant le trafic public."
 
 #: ../../hosts.rst:501
 msgid "CloudStack accounts. Can be scoped by project, domain, or all accounts."
@@ -811,11 +864,11 @@ msgstr "Supérieur à 1000"
 
 #: ../../hosts.rst:502
 msgid "Reserved for future use"
-msgstr ""
+msgstr "Réservé pour un usage futur."
 
 #: ../../hosts.rst:507
 msgid "Adding Non Contiguous VLAN Ranges"
-msgstr ""
+msgstr "Ajouter des intervalles de VLAN non contiguës."
 
 #: ../../hosts.rst:509
 msgid ""
@@ -828,10 +881,12 @@ msgstr ""
 #: ../../hosts.rst:515
 msgid "Log in to the CloudStack UI as an administrator or end user."
 msgstr ""
+"Se connecter à l'interface de CloudStack comme administrateur ou utilisateur "
+"final."
 
 #: ../../hosts.rst:517
 msgid "Ensure that the VLAN range does not already exist."
-msgstr ""
+msgstr "S'assurer que l'intervalle VLAN n'existe pas déjà."
 
 #: ../../hosts.rst:519
 msgid "In the left navigation, choose Infrastructure."
@@ -841,40 +896,46 @@ msgstr "Choisissez Infrastructure dans le panneau de navigation à gauche."
 msgid ""
 "On Zones, click View More, then click the zone to which you want to work with."
 msgstr ""
+"Sur Zones, cliquer sur Voir plus, puis cliquer sur la zone avec laquelle vous "
+"voulez travailler."
 
 #: ../../hosts.rst:524
 msgid "Click Physical Network."
-msgstr ""
+msgstr "Cliquer sur le réseau physique."
 
 #: ../../hosts.rst:526
 msgid "In the Guest node of the diagram, click Configure."
-msgstr ""
+msgstr "Dans le noeud Invité du diagramme, cliquer sur Configurer."
 
 #: ../../hosts.rst:528
 msgid "Click Edit |edit-icon.png|."
-msgstr ""
+msgstr "Cliquer sur Editer |edit-icon.png|."
 
 #: ../../hosts.rst:530
 msgid "The VLAN Ranges field now is editable."
-msgstr ""
+msgstr "Le champ intervalle VLAN est maintenant éditable."
 
 #: ../../hosts.rst:532
 msgid "Specify the start and end of the VLAN range in comma-separated list."
 msgstr ""
+"Spécifier le début et la fin de l'intervalle VLAN dans une liste séparée par "
+"une virgule."
 
 #: ../../hosts.rst:534
 msgid ""
 "Specify all the VLANs you want to use, VLANs not specified will be removed if "
 "you are adding new ranges to the existing list."
 msgstr ""
+"Spécifier tous les VLAN que vous voulez utiliser, les VLAN non spécifiés "
+"seront supprimés si vous ajoutez une nouvelle plage à la liste existante."
 
 #: ../../hosts.rst:537
 msgid "Click Apply."
-msgstr ""
+msgstr "Cliquer sur Appliquer."
 
 #: ../../hosts.rst:541
 msgid "Assigning VLANs to Isolated Networks"
-msgstr ""
+msgstr "Assigner les VLAN à des réseaux isolés."
 
 #: ../../hosts.rst:543
 msgid ""
@@ -911,27 +972,27 @@ msgstr ""
 
 #: ../../hosts.rst:563
 msgid "**Guest Type**: Select Isolated."
-msgstr ""
+msgstr "**Type d'invité** : Sélectionner Isolé."
 
 #: ../../hosts.rst:565
 msgid "**Specify VLAN**: Select the option."
-msgstr ""
+msgstr "**Spécifier le VLAN** : Sélectionner l'option."
 
 #: ../../hosts.rst:567
 msgid "For more information, see the CloudStack Installation Guide."
-msgstr ""
+msgstr "Pour plus d'informations, voir le Guide d'Installation de CloudStack."
 
 #: ../../hosts.rst:569
 msgid "Using this network offering, create a network."
-msgstr ""
+msgstr "Utiliser l'offre de réseau, créer un réseau."
 
 #: ../../hosts.rst:571
 msgid "You can create a VPC tier or an Isolated network."
-msgstr ""
+msgstr "Vous pouvez créer un tier VPC ou un réseau isolé."
 
 #: ../../hosts.rst:573
 msgid "Specify the VLAN when you create the network."
-msgstr ""
+msgstr "Spécifier le VLAN lorsque vous créez le réseau."
 
 #: ../../hosts.rst:575
 msgid ""
@@ -980,7 +1041,7 @@ msgstr "Description"
 
 #: ../../hosts.rst:607
 msgid "outofbandmanagement.action.timeout"
-msgstr ""
+msgstr "outofbandmanagement.action.timeout"
 
 #: ../../hosts.rst:607
 msgid "60"
@@ -993,7 +1054,7 @@ msgstr ""
 
 #: ../../hosts.rst:608
 msgid "outofbandmanagement.ipmitool.interface"
-msgstr ""
+msgstr "outofbandmanagement.ipmitool.interface"
 
 #: ../../hosts.rst:608
 msgid "lanplus"
@@ -1007,7 +1068,7 @@ msgstr ""
 
 #: ../../hosts.rst:609
 msgid "outofbandmanagement.ipmitool.path"
-msgstr ""
+msgstr "outofbandmanagement.ipmitool.path"
 
 #: ../../hosts.rst:609
 msgid "/usr/bin/ipmitool"
@@ -1093,3 +1154,6 @@ msgid ""
 "If a host is in maintenance mode, Root admins are still allowed to perform "
 "power management actions but in the UI a warning is displayed."
 msgstr ""
+"Si un hôte est en mode maintenance, les administrateurs Root sont toujours "
+"autorisés à effectuer des actions de gestion d'allumage ou d'extinction mais "
+"dans l'interface une alerte est affichée."

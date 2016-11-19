@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-09-19 23:41+0200\n"
+"PO-Revision-Date: 2016-11-19 12:21+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Last-Translator: \n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../../templates.rst:18
 msgid "Working with Templates"
@@ -1191,6 +1191,9 @@ msgid ""
 "line before executing. Some document viewers may introduce unwanted line breaks "
 "in copied text."
 msgstr ""
+"Lors du copier/coller d'une commande, soyez certain que la commande est collée "
+"sur une seule ligne avant de l'exécuter. Certains lecteur de document peuvent "
+"introduire un saut de ligne indésirable dans le texte copié."
 
 #: ../../templates/_import_ami.rst:36
 msgid "To import an AMI:"
@@ -1372,7 +1375,7 @@ msgstr ""
 
 #: ../../templates/_convert_hyperv.rst:44
 msgid "Option two:"
-msgstr ""
+msgstr "Option deux :"
 
 #: ../../templates/_convert_hyperv.rst:46
 msgid ""

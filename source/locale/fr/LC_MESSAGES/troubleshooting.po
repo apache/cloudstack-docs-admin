@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-09-02 00:50+0200\n"
+"PO-Revision-Date: 2016-10-09 11:59+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Last-Translator: \n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 
 # 453abc0964244620ab303e8bbdd16340
 #: ../../troubleshooting.rst:18
@@ -511,6 +511,12 @@ msgid ""
 "physical bridges on the KVM hosts, you need to create them **before** "
 "before adding the host to Cloudstack."
 msgstr ""
+"Les labels de trafic KVM nécessitent d'être nommés comme *\"cloudbr0\"*, *"
+"\"cloudbr2\"*, *\"cloudbrN\"* etc et le pont correspondant doit exister sur "
+"les hôtes KVM. Si vous créez des labels/ponts avec n'importe quel autre "
+"nom, CloudStack (au moins les versions anciennes le font) semble les "
+"ignorer. CloudStack ne crée pas les ponts physiques sur les hôtes KVM, vous "
+"devez les créer **avant** d'ajouter l'hôte dans CloudStack."
 
 # 4d5d185d16bb4379b29d90b15b9e9855
 #: ../../troubleshooting.rst:340
@@ -525,6 +531,16 @@ msgid ""
 "You can verify traffic using tcpdump on the virtual, physical and bridge "
 "interfaces."
 msgstr ""
+"L'interface publique du Routeur Virtuel, de la SSVM et de la CPVM doivent "
+"être attachées à l'interface physique sur l'hôte. Dans l'exemple ci-"
+"dessous, *cloudbr0* est l'interface publique et CloudStack a correctement "
+"crée le pont des interfaces virtuelles. L'attachement de l'interface "
+"virtuelle à l'interface physique est automatiquement effectuée par "
+"CloudStack, en s'appuyant sur le paramètre de label du trafic pour la zone. "
+"Si vous avez fourni les paramètres correctes et que vous n'avez toujours "
+"pas de connexion Internet, vérifier la couche réseau avant de débugger plus "
+"loin. Vous pouvez vérifier le trafic en utilisant tcpdump sur les "
+"interfaces virtuelles, les interfaces physiques et les ponts."
 
 # f261f43d727440edbeaf4c36ca611f7c
 #: ../../troubleshooting.rst:372
@@ -549,6 +565,15 @@ msgid ""
 "incorrectly assigned traffic labels. Fix the SSVM/CPVM issues before you "
 "debug VR issues."
 msgstr ""
+"Internet devrait être accessible depuis à la fois les instances SSVM et "
+"CPVM par défaut. Leurs IP publiques seront également directement pingable "
+"depuis Internet. Merci de prendre note que ces tests ne fonctionneront que "
+"si vos commutateurs et les labels de trafic sont correctement configurés "
+"dans votre environnement. Si vos SSVM/CPVM ne peuvent pas joindre Internet, "
+"il y a peu de chance que le Routeur Virtuel puisse également le faire, ce "
+"qui indique un problème de commutateur ou de labels de trafic mal "
+"attribués. Fixer les problèmes SSVM/CPVM avant de débugger les problèmes de "
+"VR."
 
 # c1f11bc2b9ea470382b5f863e8d1a146
 #: ../../troubleshooting.rst:417
@@ -569,6 +594,10 @@ msgid ""
 "*Ingress* rules under *Network, Guest Network, IP Address, Firewall* "
 "setting page."
 msgstr ""
+"Toutefois, les adresses IP publique de Source NAT du Routeur Virtuel (VR) "
+"**ne seront pas** accessible tant que les règles entrantes ne sont pas en "
+"place. Vous pouvez ajouter les règles *Ingress*  sous la page de "
+"configuration *Réseau, Réseau Invité, Adresse IP, Parefeu*."
 
 # 7a1ba3d03cd64a0cb60486d361453ebd
 #: ../../troubleshooting.rst:439
@@ -588,6 +617,12 @@ msgid ""
 "incorrect. No IPtables/route changes are required on the SSVM, CPVM or the "
 "VR. Go back and double check all your settings."
 msgstr ""
+"Certains utilisateurs ont rapportés qu'en réinitialisant les règles "
+"IPTables (ou en changeant les routes) sur la SSVM, CPVM ou sur le Routeur "
+"Virtuel font fonctionner internet. Ce n'est pas un comportement normal et "
+"cela suggère que vos paramètres réseaux sont incorrectes. Aucun changement "
+"de règles IPTables ou de route ne sont nécessaires sur la SSVM, CPVM ou le "
+"VR. Revenir et refaire une vérification de tous vos paramètres."
 
 # e14dab36e181467a9fd09fb6d0283176
 #: ../../troubleshooting.rst:451

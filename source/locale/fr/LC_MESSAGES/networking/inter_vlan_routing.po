@@ -1,26 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:05+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-10-17 23:52+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.9\n"
 
 # 536a6b6a19a04686832c0c8f3202472a
 #: ../../networking/inter_vlan_routing.rst:18
 msgid "About Inter-VLAN Routing (nTier Apps)"
-msgstr ""
+msgstr "A propos du routage Inter-VLAN (Applications NTiers)"
 
 # 01903cae08524fb18fb51475e29cccc5
 #: ../../networking/inter_vlan_routing.rst:20
@@ -34,26 +36,42 @@ msgid ""
 "virtual router, which facilitates communication between the VMs. In effect, "
 "you can segment VMs by means of VLANs into different networks that can host "
 "multi-tier applications, such as Web, Application, or Database. Such "
-"segmentation by means of VLANs logically separate application VMs for higher"
-" security and lower broadcasts, while remaining physically connected to the "
-"same device."
+"segmentation by means of VLANs logically separate application VMs for "
+"higher security and lower broadcasts, while remaining physically connected "
+"to the same device."
 msgstr ""
+"Le routage Inter-VLAN (Applications nTiers) est la capacité de router le "
+"réseau entre les VLANs. Cette fonctionnalité vous permet de bâtir des "
+"Clouds Privés Virtuels (VPC), un segment isolé de votre cloud, qui peut "
+"contenir des applications multi-tier. Ces tiers sont déployés sur des "
+"différents VLANs qui peuvent communiquer avec les uns les autres. Vous "
+"provisionnez les VLANs aux tiers que vous créez, et les VMs peuvent être "
+"déployés sur différents tiers. Les VLANs sont connectés à un routeur "
+"virtuel, ce qui facilite la communication entre les VMs. En effet, vous "
+"pouvez segmenter les VMs au moyen de VLANs en différents réseaux qui "
+"peuvent accueillir des applications multi-tier, comme le Web, l'Application "
+"ou la base de données. Une telle segmentation au moyen de VLANs sépare les "
+"VMs de l'application logiquement pour plus de sécurité et pour des domaines "
+"de broadcasts réduit, alors qu'elles restent connectées physiquement au "
+"même périphérique."
 
 # d835d5a69985471085a5688b045c4e38
 #: ../../networking/inter_vlan_routing.rst:33
 msgid "This feature is supported on XenServer, KVM, and VMware hypervisors."
 msgstr ""
+"Cette fonctionnalité est supportée sur les hyperviseurs XenServer, KVM et "
+"VMware."
 
 # 7aecd1ac66b84f9cb92b03fea7d5edde
 #: ../../networking/inter_vlan_routing.rst:35
 msgid "The major advantages are:"
-msgstr ""
+msgstr "Les avantages majeurs sont :"
 
 # dca4c4be393c4d7bbcda75f49ffc8efc
 #: ../../networking/inter_vlan_routing.rst:37
 msgid ""
-"The administrator can deploy a set of VLANs and allow users to deploy VMs on"
-" these VLANs. A guest VLAN is randomly alloted to an account from a pre-"
+"The administrator can deploy a set of VLANs and allow users to deploy VMs "
+"on these VLANs. A guest VLAN is randomly alloted to an account from a pre-"
 "specified set of guest VLANs. All the VMs of a certain tier of an account "
 "reside on the guest VLAN allotted to that account."
 msgstr ""
@@ -63,6 +81,8 @@ msgstr ""
 msgid ""
 "A VLAN allocated for an account cannot be shared between multiple accounts."
 msgstr ""
+"Un VLAN alloué pour un compte ne peut pas être partagé entre plusieurs "
+"comptes."
 
 # 4e04be2a6cef4fa8973d317232221018
 #: ../../networking/inter_vlan_routing.rst:45
@@ -86,28 +106,30 @@ msgid ""
 "The administrator can create the following gateways to send to or receive "
 "traffic from the VMs:"
 msgstr ""
+"L'administrateur peut créer les passerelles suivantes pour envoyer ou "
+"recevoir le trafic depuis les VM :"
 
 # 5d91169a83a5400b8408b6ce4ccb84f5
 #: ../../networking/inter_vlan_routing.rst:56
 msgid ""
-"**VPN Gateway**: For more information, see `\"Creating a VPN gateway for the"
-" VPC\" <#creating-a-vpn-gateway-for-the-vpc>`_."
+"**VPN Gateway**: For more information, see `\"Creating a VPN gateway for "
+"the VPC\" <#creating-a-vpn-gateway-for-the-vpc>`_."
 msgstr ""
 
 # 1f0ed1ecf964455ab40301bdf5ab2dc2
 #: ../../networking/inter_vlan_routing.rst:59
 msgid ""
 "**Public Gateway**: The public gateway for a VPC is added to the virtual "
-"router when the virtual router is created for VPC. The public gateway is not"
-" exposed to the end users. You are not allowed to list it, nor allowed to "
-"create any static routes."
+"router when the virtual router is created for VPC. The public gateway is "
+"not exposed to the end users. You are not allowed to list it, nor allowed "
+"to create any static routes."
 msgstr ""
 
 # b843201a793749bb924d48f21be04e09
 #: ../../networking/inter_vlan_routing.rst:64
 msgid ""
-"**Private Gateway**: For more information, see \":ref:`adding-priv-gw-"
-"vpc`\"."
+"**Private Gateway**: For more information, see \":ref:`adding-priv-gw-vpc`"
+"\"."
 msgstr ""
 
 # a4ac63d4b99a4edd968087d0f622647a
@@ -121,13 +143,13 @@ msgstr ""
 # 50735b7154a64b7880f5543c4792b1c0
 #: ../../networking/inter_vlan_routing.rst:70
 msgid "For example:"
-msgstr ""
+msgstr "Par exemple :"
 
 # bdd41dc64438436aac12d9f1c8d5a8bc
 #: ../../networking/inter_vlan_routing.rst:72
 msgid ""
-"**VLANs and Public Gateway**: For example, an application is deployed in the"
-" cloud, and the Web application VMs communicate with the Internet."
+"**VLANs and Public Gateway**: For example, an application is deployed in "
+"the cloud, and the Web application VMs communicate with the Internet."
 msgstr ""
 
 # f2c3b70246534d5aabdd3954a25ba1eb
@@ -142,26 +164,30 @@ msgstr ""
 #: ../../networking/inter_vlan_routing.rst:81
 msgid ""
 "The administrator can define Network Access Control List (ACL) on the "
-"virtual router to filter the traffic among the VLANs or between the Internet"
-" and a VLAN. You can define ACL based on CIDR, port range, protocol, type "
-"code (if ICMP protocol is selected) and Ingress/Egress type."
+"virtual router to filter the traffic among the VLANs or between the "
+"Internet and a VLAN. You can define ACL based on CIDR, port range, "
+"protocol, type code (if ICMP protocol is selected) and Ingress/Egress type."
 msgstr ""
 
 # 95cd03acfa2948c682ec51eaf24346be
 #: ../../networking/inter_vlan_routing.rst:87
 msgid ""
-"The following figure shows the possible deployment scenarios of a Inter-VLAN"
-" setup:"
+"The following figure shows the possible deployment scenarios of a Inter-"
+"VLAN setup:"
 msgstr ""
+"La figure suivante montre les scénarios possibles d'une configuration Inter-"
+"VLAN :"
 
 # a9f3216208ba417681d8885848d2a414
 #: ../../networking/inter_vlan_routing.rst:90
 msgid "|mutltier.png|"
-msgstr ""
+msgstr "|mutltier.png|"
 
 # 785b1c5286424a3680f6ffa4fa40de5a
 #: ../../networking/inter_vlan_routing.rst:92
 msgid ""
-"To set up a multi-tier Inter-VLAN deployment, see \":ref:`configuring-"
-"vpc`\"."
+"To set up a multi-tier Inter-VLAN deployment, see \":ref:`configuring-vpc`"
+"\"."
 msgstr ""
+"Pour configurer un déploiement multi-tiers Inter-VLAN, voir \":ref:"
+"`configuring-vpc`\"."

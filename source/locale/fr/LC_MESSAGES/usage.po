@@ -1,21 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:05+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-10-09 19:28+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.9\n"
 
 # f960d1bdf1ff4edcab85c8de14d937d9
 #: ../../usage.rst:18
@@ -102,8 +104,8 @@ msgstr ""
 # b91f29141e0f4cdaaa81be318e86c10e
 #: ../../usage.rst:62
 msgid ""
-"The following table shows the global configuration settings that control the"
-" behavior of the Usage Server."
+"The following table shows the global configuration settings that control "
+"the behavior of the Usage Server."
 msgstr ""
 
 # 1e76426d14bf4fc6915a0e1c79ef2b9a
@@ -119,23 +121,23 @@ msgstr ""
 # 1fcaf07a4ddb4e8c958cd1b6ef8cfe91
 #: ../../usage.rst:69
 msgid "usage.aggregation.timezone"
-msgstr ""
+msgstr "usage.aggregation.timezone"
 
 # fb381c2892df4ea7b1c44440f03ba556
 #: ../../usage.rst:71
 msgid ""
 "Time zone of usage records. Set this if the usage records and daily job "
 "execution are in different time zones. For example, with the following "
-"settings, the usage job will run at PST 00:15 and generate usage records for"
-" the 24 hours from 00:00:00 GMT to 23:59:59 GMT:"
+"settings, the usage job will run at PST 00:15 and generate usage records "
+"for the 24 hours from 00:00:00 GMT to 23:59:59 GMT:"
 msgstr ""
 
 # 509f3bce303a4ab7a526dcc19e3c3e50
 #: ../../usage.rst:82
 msgid ""
 "Valid values for the time zone are specified in `Appendix A, *Time Zones* "
-"<http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones"
-"#time-zones>`_"
+"<http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time"
+"%20zones#time-zones>`_"
 msgstr ""
 
 # 3133231b20dd4c9da1fe9fd7d09136a3
@@ -146,15 +148,14 @@ msgstr ""
 # 22dabfab93eb4361b26eb9088cad5134
 #: ../../usage.rst:87
 msgid "usage.execution.timezone"
-msgstr ""
+msgstr "usage.execution.timezone"
 
 # a27f0dcfc71847ee846e80cb1b5c6e66
 #: ../../usage.rst:89
 msgid ""
 "The time zone of usage.stats.job.exec.time. Valid values for the time zone "
-"are specified in `Appendix A, *Time Zones* "
-"<http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones"
-"#time-zones>`_"
+"are specified in `Appendix A, *Time Zones* <http://docs.cloudstack.apache."
+"org/en/latest/dev.html?highlight=time%20zones#time-zones>`_"
 msgstr ""
 
 # 101b64630291428aa4dce0f295b51f96
@@ -165,14 +166,14 @@ msgstr ""
 # e5296f4116c949e282dda12b62a2e31b
 #: ../../usage.rst:95
 msgid "usage.sanity.check.interval"
-msgstr ""
+msgstr "usage.sanity.check.interval"
 
 # 12e3d1486808475ba2d50b4b1f480b20
 #: ../../usage.rst:97
 msgid ""
 "The number of days between sanity checks. Set this in order to periodically "
-"search for records with erroneous data before issuing customer invoices. For"
-" example, this checks for VM usage records created after the VM was "
+"search for records with erroneous data before issuing customer invoices. "
+"For example, this checks for VM usage records created after the VM was "
 "destroyed, and similar checks for templates, volumes, and so on. It also "
 "checks for usage times longer than the aggregation range. If any issue is "
 "found, the alert ALERT\\_TYPE\\_USAGE\\_SANITY\\_RESULT = 21 is sent."
@@ -181,7 +182,7 @@ msgstr ""
 # d6a51defdc9b4ca1900dca6ee38d488b
 #: ../../usage.rst:105
 msgid "usage.stats.job.aggregation.range"
-msgstr ""
+msgstr "usage.stats.job.aggregation.range"
 
 # f200ecf1491a41c58c58d607a2030621
 #: ../../usage.rst:107
@@ -200,8 +201,8 @@ msgid ""
 "last run. CloudStack assumes that you require processing once per day for "
 "the previous, complete day’s records. For example, if the current day is "
 "October 7, then it is assumed you would like to process records for October "
-"6, from midnight to midnight. CloudStack assumes this “midnight to midnight”"
-" is relative to the usage.execution.timezone."
+"6, from midnight to midnight. CloudStack assumes this “midnight to "
+"midnight” is relative to the usage.execution.timezone."
 msgstr ""
 
 # 657e01fff8404e7086e1a5cd318ed5b9
@@ -212,24 +213,24 @@ msgstr ""
 # 8e231a3dfe9b4ac494f5ae8dc3e03001
 #: ../../usage.rst:123
 msgid "usage.stats.job.exec.time"
-msgstr ""
+msgstr "usage.stats.job.exec.time"
 
 # 05f6de4a7dd947ceba3246443c6e2ace
 #: ../../usage.rst:125
 msgid ""
-"The time when the Usage Server processing will start. It is specified in "
-"24-hour format (HH:MM) in the time zone of the server, which should be GMT. "
+"The time when the Usage Server processing will start. It is specified in 24-"
+"hour format (HH:MM) in the time zone of the server, which should be GMT. "
 "For example, to start the Usage job at 10:30 GMT, enter “10:30”."
 msgstr ""
 
 # 54677f1477574ba58b744ade5f531ddd
 #: ../../usage.rst:129
 msgid ""
-"If usage.stats.job.aggregation.range is also set, and its value is not 1440,"
-" then its value will be added to usage.stats.job.exec.time to get the time "
-"to run the Usage Server job again. This is repeated until 24 hours have "
-"elapsed, and the next day's processing begins again at "
-"usage.stats.job.exec.time."
+"If usage.stats.job.aggregation.range is also set, and its value is not "
+"1440, then its value will be added to usage.stats.job.exec.time to get the "
+"time to run the Usage Server job again. This is repeated until 24 hours "
+"have elapsed, and the next day's processing begins again at usage.stats.job."
+"exec.time."
 msgstr ""
 
 # 870bef8e0dc54e1a87ab39acc1c59e7b
@@ -249,12 +250,12 @@ msgstr ""
 # 910e4a77b6c34e64ad844e417ab623d5
 #: ../../usage.rst:142
 msgid "enable.usage.server = true"
-msgstr ""
+msgstr "enable.usage.server = true"
 
 # 078da3cc8569439c9002cbbb7337d936
 #: ../../usage.rst:144
 msgid "usage.execution.timezone = America/New\\_York"
-msgstr ""
+msgstr "usage.execution.timezone = America/New\\_York"
 
 # 42e66162ae97481083688b89c626c8cc
 #: ../../usage.rst:146
@@ -267,7 +268,7 @@ msgstr ""
 # 5ba2fd5fa7004081a393783418655cdd
 #: ../../usage.rst:150
 msgid "usage.stats.job.aggregation.range = 1440"
-msgstr ""
+msgstr "usage.stats.job.aggregation.range = 1440"
 
 # 1c9ce06adfa54705878ac2e20fcc8462
 #: ../../usage.rst:152
@@ -280,9 +281,9 @@ msgstr ""
 # 1e914c7e818e47d8b13676d7f92bbe0b
 #: ../../usage.rst:157
 msgid ""
-"Because the special value 1440 has been used for "
-"usage.stats.job.aggregation.range, the Usage Server will ignore the data "
-"between midnight and 2 AM. That data will be included in the next day's run."
+"Because the special value 1440 has been used for usage.stats.job."
+"aggregation.range, the Usage Server will ignore the data between midnight "
+"and 2 AM. That data will be included in the next day's run."
 msgstr ""
 
 # 40d99d806e4949158aa5ab2e841cfa2a
@@ -295,8 +296,8 @@ msgstr ""
 msgid ""
 "CloudStack provides several administrator control points for capping "
 "resource usage by users. Some of these limits are global configuration "
-"parameters. Others are applied at the ROOT domain and may be overridden on a"
-" per-account basis."
+"parameters. Others are applied at the ROOT domain and may be overridden on "
+"a per-account basis."
 msgstr ""
 
 # 229ad89efb9c4cb0ab03a6ce99f44f23
@@ -335,7 +336,7 @@ msgstr ""
 # 8f803160c7ef4b258545cf19783a2cb2
 #: ../../usage.rst:186
 msgid "max.account.public.ips"
-msgstr ""
+msgstr "max.account.public.ips"
 
 # 33a9e7f75edb450eb385f759769e8a27
 #: ../../usage.rst:186
@@ -345,7 +346,7 @@ msgstr ""
 # 9d54d7043dfa4cfdba9892d7b4987d27
 #: ../../usage.rst:188
 msgid "max.account.snapshots"
-msgstr ""
+msgstr "max.account.snapshots"
 
 # 53e9c6336fc343f58d5d0f0c982ecd16
 #: ../../usage.rst:188
@@ -355,7 +356,7 @@ msgstr ""
 # 6979458b8f824d9ea8eb1a932cb3700a
 #: ../../usage.rst:190
 msgid "max.account.templates"
-msgstr ""
+msgstr "max.account.templates"
 
 # a450954b78c549129d90f452f3261c83
 #: ../../usage.rst:190
@@ -365,7 +366,7 @@ msgstr ""
 # e090c2956d874c139e10f94be47e21bd
 #: ../../usage.rst:192
 msgid "max.account.user.vms"
-msgstr ""
+msgstr "max.account.user.vms"
 
 # d30280c4822b48cf86341f0c6f0e9f40
 #: ../../usage.rst:192
@@ -375,7 +376,7 @@ msgstr ""
 # ecaf59ece9264e429a9664b72c83c9d5
 #: ../../usage.rst:194
 msgid "max.account.volumes"
-msgstr ""
+msgstr "max.account.volumes"
 
 # 352d53dede964c53adaba408485377bb
 #: ../../usage.rst:194
@@ -385,7 +386,7 @@ msgstr ""
 # 4855308d9e7f453ca68c4f73a23b7da2
 #: ../../usage.rst:196
 msgid "max.template.iso.size"
-msgstr ""
+msgstr "max.template.iso.size"
 
 # c3cf19fabb7b41c6bfeda6bfcb0d40c6
 #: ../../usage.rst:196
@@ -395,7 +396,7 @@ msgstr ""
 # e2bd816e02a74341ac3b504ef37abf9b
 #: ../../usage.rst:198
 msgid "max.volume.size.gb"
-msgstr ""
+msgstr "max.volume.size.gb"
 
 # ac589029cbaa451fb486f219b27caf43
 #: ../../usage.rst:198
@@ -405,7 +406,7 @@ msgstr ""
 # 3b152b7effc14a2098e6b2f885125e11
 #: ../../usage.rst:200
 msgid "network.throttling.rate"
-msgstr ""
+msgstr "network.throttling.rate"
 
 # d66b6e2b68304b4d97dae0d72709be2f
 #: ../../usage.rst:200
@@ -417,21 +418,21 @@ msgstr ""
 # e01d028d0d5643a3a283f12888581998
 #: ../../usage.rst:202
 msgid "snapshot.max.hourly"
-msgstr ""
+msgstr "snapshot.max.hourly"
 
 # 305a224a1c5946ab949570233597705b
 #: ../../usage.rst:202
 msgid ""
-"Maximum recurring hourly snapshots to be retained for a volume. If the limit"
-" is reached, early snapshots from the start of the hour are deleted so that "
-"newer ones can be saved. This limit does not apply to manual snapshots. If "
-"set to 0, recurring hourly snapshots can not be scheduled"
+"Maximum recurring hourly snapshots to be retained for a volume. If the "
+"limit is reached, early snapshots from the start of the hour are deleted so "
+"that newer ones can be saved. This limit does not apply to manual "
+"snapshots. If set to 0, recurring hourly snapshots can not be scheduled"
 msgstr ""
 
 # 7734cc014872464a8d8672c1190ff731
 #: ../../usage.rst:204
 msgid "snapshot.max.daily"
-msgstr ""
+msgstr "snapshot.max.daily"
 
 # ddca821bebdf4a12a2b4fb3d9e089efe
 #: ../../usage.rst:204
@@ -445,29 +446,29 @@ msgstr ""
 # 90b70954860841d5a31b17b85cc10f84
 #: ../../usage.rst:206
 msgid "snapshot.max.weekly"
-msgstr ""
+msgstr "snapshot.max.weekly"
 
 # 8ee51877c42a40da9039bdc877f388c5
 #: ../../usage.rst:206
 msgid ""
-"Maximum recurring weekly snapshots to be retained for a volume. If the limit"
-" is reached, snapshots from the beginning of the week are deleted so that "
-"newer ones can be saved. This limit does not apply to manual snapshots. If "
-"set to 0, recurring weekly snapshots can not be scheduled"
+"Maximum recurring weekly snapshots to be retained for a volume. If the "
+"limit is reached, snapshots from the beginning of the week are deleted so "
+"that newer ones can be saved. This limit does not apply to manual "
+"snapshots. If set to 0, recurring weekly snapshots can not be scheduled"
 msgstr ""
 
 # 65aa1a30aab34f218756e423bac8f482
 #: ../../usage.rst:208
 msgid "snapshot.max.monthly"
-msgstr ""
+msgstr "snapshot.max.monthly"
 
 # 631eba2a40fe48f3b4f179dfe6e9fdc7
 #: ../../usage.rst:208
 msgid ""
 "Maximum recurring monthly snapshots to be retained for a volume. If the "
 "limit is reached, snapshots from the beginning of the month are deleted so "
-"that newer ones can be saved. This limit does not apply to manual snapshots."
-" If set to 0, recurring monthly snapshots can not be scheduled."
+"that newer ones can be saved. This limit does not apply to manual "
+"snapshots. If set to 0, recurring monthly snapshots can not be scheduled."
 msgstr ""
 
 # dce0ccf760cb481290483d2e6c7439e4
@@ -498,7 +499,7 @@ msgstr ""
 # b80deb66aa1244279f48b9e17db7f7a0
 #: ../../usage.rst:227
 msgid "CPUs"
-msgstr ""
+msgstr "CPU"
 
 # a7c54e874cae4016b7a1d2a17c5a7a89
 #: ../../usage.rst:229
@@ -529,12 +530,12 @@ msgstr ""
 #: ../../usage.rst:239 ../../usage.rst:345 ../../usage.rst:416
 #: ../../usage.rst:750
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 # 23d6c966c2c94a1f986282a729352f38
 #: ../../usage.rst:241
 msgid "max.account.cpus"
-msgstr ""
+msgstr "max.account.cpus"
 
 # cdd19d9379ec43648cd224ba64a960dd
 # 2ca1b2c4fdc44e0e940da7f75cb5788b
@@ -546,7 +547,7 @@ msgstr ""
 # 4979d3f2676e4809a49cc696c48d2f8d
 #: ../../usage.rst:243
 msgid "max.account.ram (MB)"
-msgstr ""
+msgstr "max.account.ram (MB)"
 
 # f3c0b37fc2ea4617b811cef9791eda3b
 # 00fb0cdbac5b4ad291bc50a5e1219a47
@@ -557,7 +558,7 @@ msgstr ""
 # 45df7928f7174808a2083dd11add33c0
 #: ../../usage.rst:245
 msgid "max.account.primary.storage (GB)"
-msgstr ""
+msgstr "max.account.primary.storage (GB)"
 
 # 1ee6c5009abd4668a5dd0a640a18c8ea
 # 254b02916fc34ad6a649c8c990d4f41a
@@ -570,7 +571,7 @@ msgstr ""
 # cdeb23ce821d4c3196c6ea784f4367b6
 #: ../../usage.rst:247
 msgid "max.account.secondary.storage (GB)"
-msgstr ""
+msgstr "max.account.secondary.storage (GB)"
 
 # c51c46bd539f4093a4393f2d6d4e9b79
 # 982aa6e78c6f4ecda0f24acd5f6564d3
@@ -583,22 +584,22 @@ msgstr ""
 # 01081c6a660a44f5851d914915a1281b
 #: ../../usage.rst:249
 msgid "max.project.cpus"
-msgstr ""
+msgstr "max.project.cpus"
 
 # b7aede866d8a41298cf2c284450aea39
 #: ../../usage.rst:251
 msgid "max.project.ram (MB)"
-msgstr ""
+msgstr "max.project.ram (MB)"
 
 # 6a66f463c8a14145b745751a99ff5412
 #: ../../usage.rst:253
 msgid "max.project.primary.storage (GB)"
-msgstr ""
+msgstr "max.project.primary.storage (GB)"
 
 # 86d804726f994f5ea14d1a29e97eb968
 #: ../../usage.rst:255
 msgid "max.project.secondary.storage (GB)"
-msgstr ""
+msgstr "max.project.secondary.storage (GB)"
 
 # 8ea9def42949482d99838f5ebe00a5e2
 #: ../../usage.rst:261
@@ -651,9 +652,9 @@ msgstr ""
 #: ../../usage.rst:285
 msgid ""
 "If the admin reduces the resource limit for an account and set it to less "
-"than the resources that are currently being consumed, the existing "
-"VMs/templates/volumes are not destroyed. Limits are imposed only if the user"
-" under that account tries to execute a new operation using any of these "
+"than the resources that are currently being consumed, the existing VMs/"
+"templates/volumes are not destroyed. Limits are imposed only if the user "
+"under that account tries to execute a new operation using any of these "
 "resources. For example, the existing behavior in the case of a VM are:"
 msgstr ""
 
@@ -682,8 +683,8 @@ msgstr ""
 #: ../../usage.rst:303
 msgid ""
 "For example, if a domain has the CPU limit of 40 and the sub-domain D1 and "
-"account A1 can have limits of 30 each, but at any point of time the resource"
-" allocated to D1 and A1 should not exceed the limit of 40."
+"account A1 can have limits of 30 each, but at any point of time the "
+"resource allocated to D1 and A1 should not exceed the limit of 40."
 msgstr ""
 
 # cfc912fe9e294238a5a41841f8636ecf
@@ -723,7 +724,7 @@ msgstr ""
 # b83cbc0f83d7410e8b117351958fc591
 #: ../../usage.rst:330 ../../usage.rst:401
 msgid "Log in to the CloudStack UI."
-msgstr ""
+msgstr "Se connecter à l'interface CloudStack."
 
 # 530247f4ca1a4475ae86e656ceff6abb
 #: ../../usage.rst:332
@@ -868,7 +869,7 @@ msgstr ""
 # 8554c878b3db4319b1e9ff271f3f2e16
 #: ../../usage.rst:387 ../../usage.rst:478
 msgid "Click Apply."
-msgstr ""
+msgstr "Cliquer sur Appliquer."
 
 # 0aea17dfad1c43818257b74482bdc4ec
 #: ../../usage.rst:391
@@ -1063,8 +1064,8 @@ msgstr ""
 # 18c681fd6a6d4db7ac9c8d0c14546df8
 #: ../../usage.rst:500
 msgid ""
-"usage – String representation of the usage, including the units of usage "
-"(e.g. 'Hrs' for VM running time)"
+"usage – String representation of the usage, including the units of usage (e."
+"g. 'Hrs' for VM running time)"
 msgstr ""
 
 # b56f48c2ce7e4ef8a421781cd8ac72d9
@@ -1262,8 +1263,8 @@ msgstr ""
 #: ../../usage.rst:600 ../../usage.rst:634 ../../usage.rst:695
 #: ../../usage.rst:729
 msgid ""
-"usage – String representation of the usage, including the units of usage "
-"(e.g. 'Hrs' for hours)"
+"usage – String representation of the usage, including the units of usage (e."
+"g. 'Hrs' for hours)"
 msgstr ""
 
 # c2f1554e72084e81892a0b538a19c7f8
@@ -1317,8 +1318,8 @@ msgstr ""
 # f493ad9446bd4b0d84e50c9937d2b21c
 #: ../../usage.rst:667
 msgid ""
-"usage - String representation of the usage, including the units of usage "
-"(e.g. 'Hrs' for hours)"
+"usage - String representation of the usage, including the units of usage (e."
+"g. 'Hrs' for hours)"
 msgstr ""
 
 # 03d262a193f246749d1ed6f6df6d3930
@@ -1374,12 +1375,12 @@ msgstr ""
 # 78ead0d9336c42648a3ca740bc0c71c3
 #: ../../usage.rst:752
 msgid "1"
-msgstr ""
+msgstr "1"
 
 # e747e335348c4f96b8157b30a1f87074
 #: ../../usage.rst:752
 msgid "RUNNING\\_VM"
-msgstr ""
+msgstr "RUNNING\\_VM"
 
 # 477ac63f7f36460ea08116c949753044
 #: ../../usage.rst:752
@@ -1392,12 +1393,12 @@ msgstr ""
 # 64af61ae9a154740bc59c51cf93b8e50
 #: ../../usage.rst:762
 msgid "2"
-msgstr ""
+msgstr "2"
 
 # 7e1e8fb7beaf45439e7683227a55abb7
 #: ../../usage.rst:762
 msgid "ALLOCATED\\_VM"
-msgstr ""
+msgstr "ALLOCATED\\_VM"
 
 # 12dcdffa3a2f4d5faaece0b8ee808625
 #: ../../usage.rst:762
@@ -1410,12 +1411,12 @@ msgstr ""
 # 56a5110004de419981e5f220ae4e8552
 #: ../../usage.rst:774
 msgid "3"
-msgstr ""
+msgstr "3"
 
 # 9300fc0a0c054c8cb8cf1c50a798ccfe
 #: ../../usage.rst:774
 msgid "IP\\_ADDRESS"
-msgstr ""
+msgstr "IP\\_ADDRESS"
 
 # bdd7930fce7d439cac6b82c99e189623
 #: ../../usage.rst:774
@@ -1425,29 +1426,29 @@ msgstr ""
 # 8f41c0480a214679a34ebff91433884a
 #: ../../usage.rst:778
 msgid "4"
-msgstr ""
+msgstr "4"
 
 # 3468bfe1926344ed8b778f78f298e356
 #: ../../usage.rst:778
 msgid "NETWORK\\_BYTES\\_SENT"
-msgstr ""
+msgstr "NETWORK\\_BYTES\\_SENT"
 
 # 4fc69e9acd00430db5d7bdd162d53a88
 #: ../../usage.rst:778
 msgid ""
-"Tracks the total number of bytes sent by all the VMs for an account. "
-"Cloud.com does not currently track network traffic per VM."
+"Tracks the total number of bytes sent by all the VMs for an account. Cloud."
+"com does not currently track network traffic per VM."
 msgstr ""
 
 # 9c0a0d79a0ee491b99fc2f18847a9c29
 #: ../../usage.rst:786
 msgid "5"
-msgstr ""
+msgstr "5"
 
 # 8053534caf9a43cfbe6f344918e90568
 #: ../../usage.rst:786
 msgid "NETWORK\\_BYTES\\_RECEIVED"
-msgstr ""
+msgstr "NETWORK\\_BYTES\\_RECEIVED"
 
 # a09f77e6b1d540fdb4c9e398f8042f22
 #: ../../usage.rst:786
@@ -1459,47 +1460,47 @@ msgstr ""
 # 5d8944a3cb7d444aa82efaa09053af2d
 #: ../../usage.rst:795
 msgid "6"
-msgstr ""
+msgstr "6"
 
 # bd9f4acea1a34fb5ada48e39c65e7781
 #: ../../usage.rst:795
 msgid "VOLUME"
-msgstr ""
+msgstr "VOLUME"
 
 # e39b0cb9d477433db943c1dfbeb90bb5
 #: ../../usage.rst:795
 msgid ""
-"Tracks the total time a disk volume has been created to the time when it has"
-" been destroyed."
+"Tracks the total time a disk volume has been created to the time when it "
+"has been destroyed."
 msgstr ""
 
 # fb74bed3e64f40f4b1b99833cdfb858b
 #: ../../usage.rst:801
 msgid "7"
-msgstr ""
+msgstr "7"
 
 # 8dbe0a482b8740bcaba3e70100493143
 #: ../../usage.rst:801
 msgid "TEMPLATE"
-msgstr ""
+msgstr "TEMPLATE"
 
 # e01ba5c82149495a87253a75e8f1ee5c
 #: ../../usage.rst:801
 msgid ""
-"Tracks the total time a template (either created from a snapshot or uploaded"
-" to the cloud) has been created to the time it has been destroyed. The size "
-"of the template is also returned."
+"Tracks the total time a template (either created from a snapshot or "
+"uploaded to the cloud) has been created to the time it has been destroyed. "
+"The size of the template is also returned."
 msgstr ""
 
 # ea46b251003a4703b4db0e8e9ca83a4a
 #: ../../usage.rst:812
 msgid "8"
-msgstr ""
+msgstr "8"
 
 # f349c4660c004c8f81133723f6ac350c
 #: ../../usage.rst:812
 msgid "ISO"
-msgstr ""
+msgstr "ISO"
 
 # 7c32db79c4a944e294459472e67ef9a5
 #: ../../usage.rst:812
@@ -1511,12 +1512,12 @@ msgstr ""
 # b0dacdf41a1c4d989f2f39ef17257ecc
 #: ../../usage.rst:820
 msgid "9"
-msgstr ""
+msgstr "9"
 
 # 1405b90e80e34b8381a814756e95d768
 #: ../../usage.rst:820
 msgid "SNAPSHOT"
-msgstr ""
+msgstr "SNAPSHOT"
 
 # e5fa93c081164375acc3fd52345b1187
 #: ../../usage.rst:820
@@ -1528,30 +1529,30 @@ msgstr ""
 # 4f2594d3f1f24d2c9169fcfc149a62e9
 #: ../../usage.rst:826
 msgid "11"
-msgstr ""
+msgstr "11"
 
 # d37ae3d5c27447e4a1078346d90a373f
 #: ../../usage.rst:826
 msgid "LOAD\\_BALANCER\\_POLICY"
-msgstr ""
+msgstr "LOAD\\_BALANCER\\_POLICY"
 
 # 024b703ada76417194235a1d10290b53
 #: ../../usage.rst:826
 msgid ""
-"Tracks the total time a load balancer policy has been created to the time it"
-" has been removed. Cloud.com does not track whether a VM has been assigned "
-"to a policy."
+"Tracks the total time a load balancer policy has been created to the time "
+"it has been removed. Cloud.com does not track whether a VM has been "
+"assigned to a policy."
 msgstr ""
 
 # 6ebb8ff8421347ba8d0f37e13f9738a1
 #: ../../usage.rst:836
 msgid "12"
-msgstr ""
+msgstr "12"
 
 # 4f5ff172a156494c910377d3273476ca
 #: ../../usage.rst:836
 msgid "PORT\\_FORWARDING\\_RULE"
-msgstr ""
+msgstr "PORT\\_FORWARDING\\_RULE"
 
 # 00141f10a4c040fd9c1981d4c44a5d6b
 #: ../../usage.rst:836
@@ -1563,12 +1564,12 @@ msgstr ""
 # bc4b98fcdabc461a8ede71b5285838b0
 #: ../../usage.rst:842
 msgid "13"
-msgstr ""
+msgstr "13"
 
 # 6123d10ab7004c9b943a532e894e2e20
 #: ../../usage.rst:842
 msgid "NETWORK\\_OFFERING"
-msgstr ""
+msgstr "NETWORK\\_OFFERING"
 
 # ec1c84a50ae5471ba6539ff923b81caa
 #: ../../usage.rst:842
@@ -1580,12 +1581,12 @@ msgstr ""
 # 04d219bbd49540e7a4d433b51cb42d2b
 #: ../../usage.rst:847
 msgid "14"
-msgstr ""
+msgstr "14"
 
 # d70576ee50674251a6ee58e7a072795a
 #: ../../usage.rst:847
 msgid "VPN\\_USERS"
-msgstr ""
+msgstr "VPN\\_USERS"
 
 # 7031f45ce0894436b7ab77616de3681f
 #: ../../usage.rst:847
@@ -1637,18 +1638,18 @@ msgstr ""
 #: ../../usage.rst:907
 msgid ""
 "For network usage, the start date and end date again define the range in "
-"which the number of bytes transferred was calculated. If a user downloads 10"
-" MB and uploads 1 MB in one day, there will be two records, one showing the "
-"10 megabytes received and one showing the 1 megabyte sent."
+"which the number of bytes transferred was calculated. If a user downloads "
+"10 MB and uploads 1 MB in one day, there will be two records, one showing "
+"the 10 megabytes received and one showing the 1 megabyte sent."
 msgstr ""
 
 # de58fb769cc74ed3a62616b4158bd9e8
 #: ../../usage.rst:913
 msgid ""
 "There is one case where the start date and end date do not correspond to "
-"midnight and 11:59:59pm when daily aggregation is used. This occurs only for"
-" network usage records. When the usage server has more than one day's worth "
-"of unprocessed data, the old data will be included in the aggregation "
+"midnight and 11:59:59pm when daily aggregation is used. This occurs only "
+"for network usage records. When the usage server has more than one day's "
+"worth of unprocessed data, the old data will be included in the aggregation "
 "period. The start date in the usage record will show the date and time of "
 "the earliest event. For other types of usage, such as IP addresses and VMs, "
 "the old unprocessed data is not included in daily aggregation."

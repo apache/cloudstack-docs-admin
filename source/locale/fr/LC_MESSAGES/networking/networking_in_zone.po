@@ -1,37 +1,41 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:06+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-10-17 23:14+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.9\n"
 
 # 3080bd3d63ce42f7970a7e111d5cc46b
 #: ../../networking/networking_in_zone.rst:18
 msgid "Networking in a Zone"
-msgstr ""
+msgstr "Réseau dans une zone"
 
 # acc145c9dbbb43d0a4e7bcb5cdb804cb
 #: ../../networking/networking_in_zone.rst:20
 msgid ""
 "The following figure illustrates the network setup within a single zone."
 msgstr ""
+"La figure suivante illustre la configuration réseau au sein d'une seule "
+"zone."
 
 # a22b23e45435457b927cdcd248830e97
 #: ../../networking/networking_in_zone.rst:22
 msgid "|networksetupzone.png|"
-msgstr ""
+msgstr "|networksetupzone.png|"
 
 # 116d5e262cd547858fe9873be74c59da
 #: ../../networking/networking_in_zone.rst:24
@@ -41,6 +45,10 @@ msgid ""
 "address space. Each pod is assigned IP addresses in the 192.168.\\*.0/24 "
 "Class C private address space."
 msgstr ""
+"Un parefeu pour le trafic de gestion opère dans le mode NAT. Le réseau "
+"assigne typiquement des adresses IP dans l'espace d'adressage du réseau "
+"privé de classe B 192.168.0.0/16. Chaque pod se voit assigné des adresses "
+"IP dans l'espace privé de classe C 192.168.\\*.0/24."
 
 # 7a1eee0be4da4ed3aa3c0854ab4c2230
 #: ../../networking/networking_in_zone.rst:29
@@ -48,3 +56,5 @@ msgid ""
 "Each zone has its own set of public IP addresses. Public IP addresses from "
 "different zones do not overlap."
 msgstr ""
+"Chaque zone à son propre ensemble d'adresses IP publiques. Les adresses IP "
+"publiques depuis différentes zones ne doivent pas se chevaucher."

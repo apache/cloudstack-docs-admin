@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-31 14:08-0400\n"
-"PO-Revision-Date: 2016-09-29 23:49+0200\n"
+"PO-Revision-Date: 2016-11-19 11:52+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.11\n"
 
 # 4c134b7a710148a3ab2766ead2eecc37
 #: ../../networking2.rst:18
@@ -1127,18 +1127,20 @@ msgstr ""
 # 7c3b4a1806bc46caaec696068e353f33
 #: ../../networking2.rst:617
 msgid "IP Reservation is supported only in Isolated networks."
-msgstr ""
+msgstr "La réservation d'IP est supportée seulement dans les réseaux isolés."
 
 # a58ea815910f4eeebf5310fba2f2b4e6
 #: ../../networking2.rst:621
 msgid ""
 "IP Reservation can be applied only when the network is in Implemented state."
 msgstr ""
+"La réservation IP peut être appliquée seulement lorsque le réseau est dans "
+"l'état implémenté."
 
 # b1e7853953d34392be43f635d609444e
 #: ../../networking2.rst:626
 msgid "No IP Reservation is done by default."
-msgstr ""
+msgstr "Aucune réservation d'IP n'est effectuée par défaut."
 
 # c5d1c53bfa0a4acb8b354fa73f021b37
 #: ../../networking2.rst:630
@@ -1172,11 +1174,13 @@ msgid ""
 "For example, the following table describes three scenarios of guest network "
 "creation:"
 msgstr ""
+"Par exemple, le tableau suivant décris trois scénarios de création de réseau "
+"invité :"
 
 # 80174dfa477741e8a428588c2de692c5
 #: ../../networking2.rst:649
 msgid "Case"
-msgstr ""
+msgstr "Cas"
 
 # eef86be3eee44a648412010005fb2333
 # 5f16a478e68c498db89c7157f7a1baf2
@@ -1197,35 +1201,35 @@ msgstr ""
 #: ../../networking2.rst:5971 ../../networking2.rst:6063 ../../networking2.rst:6306
 #: ../../networking2.rst:6700
 msgid "CIDR"
-msgstr ""
+msgstr "CIDR"
 
 # 7190e9a05c824c698c369f059903140f
 #: ../../networking2.rst:649
 msgid "Network CIDR"
-msgstr ""
+msgstr "CIDR du réseau"
 
 # 7b3e79ea891f42948ec144865f44db13
 #: ../../networking2.rst:649
 msgid "Reserved IP Range for Non-CloudStack VMs"
-msgstr ""
+msgstr "Interval d'IP réservées pour les VMs Non-CloudStack"
 
 # 4c1abc1728ab4017a78ab13faa073d32
 #: ../../networking2.rst:649
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 # 95c1f9dcea57490f9baba27f6052d7df
 # c7dc34629f4a4f3380ad7fa0415823fe
 #: ../../networking2.rst:651 ../../networking2.rst:5253
 msgid "1"
-msgstr ""
+msgstr "1"
 
 # ca251edef20a4a09a96d4439f40e9fcc
 # 47ec19dde3c14d2daf3a5f567a8ab892
 # 96ce4f76ef034c6c8ad91aa5358390ea
 #: ../../networking2.rst:651 ../../networking2.rst:652 ../../networking2.rst:655
 msgid "10.1.1.0/24"
-msgstr ""
+msgstr "10.1.1.0/24"
 
 # 9553954ea80b4c108951c22f66b1f907
 # 9d8d02ccc8624c42ab63f95c1e6e61d2
@@ -1233,28 +1237,28 @@ msgstr ""
 # 3fe4ae27728949db852e351bdc3590a0
 #: ../../networking2.rst:651 ../../networking2.rst:655
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 # 4cefe96c4cd048d6ab5bba6b2b2b2c1f
 #: ../../networking2.rst:651
 msgid "No IP Reservation."
-msgstr ""
+msgstr "Aucune réservation d'IP."
 
 # 9743a326091e467d9b6bca3cd0e35000
 # 326ceea3093e4ad2bc955dd15a12fcaa
 #: ../../networking2.rst:652 ../../networking2.rst:5254
 msgid "2"
-msgstr ""
+msgstr "2"
 
 # 28839e89c7b84228a801613e0c9ed896
 #: ../../networking2.rst:652
 msgid "10.1.1.0/26"
-msgstr ""
+msgstr "10.1.1.0/26"
 
 # fb5379ee12174589ad3d2da83e61667c
 #: ../../networking2.rst:652
 msgid "10.1.1.64 to 10.1.1.254"
-msgstr ""
+msgstr "10.1.1.64 à 10.1.1.254"
 
 # a9558f6e733545849f81f3ae6fc11f08
 #: ../../networking2.rst:652
@@ -1266,7 +1270,7 @@ msgstr ""
 # b3beece5bd0f4a3d8a0234aa9980a330
 #: ../../networking2.rst:655
 msgid "3"
-msgstr ""
+msgstr "3"
 
 # 79c55aa2874f4650b96805d27acfee4e
 #: ../../networking2.rst:655
@@ -1279,7 +1283,7 @@ msgstr ""
 # d8ca4fc7bf014daa9437cc4d5c7eb4f6
 #: ../../networking2.rst:661 ../../networking2.rst:1774
 msgid "Limitations"
-msgstr ""
+msgstr "Limitations"
 
 # 6d66399f47684bc1940beb29a805e60c
 #: ../../networking2.rst:665
@@ -1299,7 +1303,7 @@ msgstr ""
 # 6edc84466bc24a3d85247cab80c0cd80
 #: ../../networking2.rst:676
 msgid "Best Practices"
-msgstr ""
+msgstr "Recommandations"
 
 # 4bd0b852d6474b84accb421f128331f4
 #: ../../networking2.rst:678
@@ -1312,7 +1316,7 @@ msgstr ""
 # e601241fba8a43feb30b4dcde1dc89a6
 #: ../../networking2.rst:684
 msgid "Reserving an IP Range"
-msgstr ""
+msgstr "Réserver un intervalle d'IP"
 
 # dd9d0df809aa420899439632c2e7019f
 #: ../../networking2.rst:702
@@ -1327,7 +1331,7 @@ msgstr ""
 # b2b4f195c2e847418d352a7e1ef06061
 #: ../../networking2.rst:710
 msgid "Click Apply."
-msgstr ""
+msgstr "Cliquer sur Appliquer."
 
 # d33d489b7f234940bc59878574087127
 #: ../../networking2.rst:712
@@ -1407,30 +1411,30 @@ msgstr ""
 # 6230bfd5086842d69df7366e01ad5977
 #: ../../networking2.rst:765 ../../networking2.rst:886 ../../networking2.rst:3054
 msgid "In the left navigation bar, click Infrastructure."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur Infrastructure."
 
 # 732571fdd87e45b2ba3d0c99d319dada
 # 0a044cf03cd04706a971cfd6747f3972
 #: ../../networking2.rst:769 ../../networking2.rst:890
 msgid "In Zones, click View All."
-msgstr ""
+msgstr "Dans Zones, cliquer sur Voir toutes."
 
 # 718b87bdd1b24472a05561bc487af593
 # f0113ce9f8584511a94348c59e5098e9
 # 11d188714878411189998fcd7fb05a07
 #: ../../networking2.rst:773 ../../networking2.rst:894 ../../networking2.rst:3062
 msgid "Choose the zone you want to work with."
-msgstr ""
+msgstr "Choisir la zone avec laquelle vous voulez travailler."
 
 # e2c9d117a33a4ca698597ea697c642a8
 #: ../../networking2.rst:781
 msgid "In the Public node of the diagram, click Configure."
-msgstr ""
+msgstr "Dans le noeud Public du diagramme, cliquer sur Configure."
 
 # b587547f92d54da6a66fb328a1f90aa1
 #: ../../networking2.rst:785
 msgid "Click the IP Ranges tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet intervalle IP."
 
 # 71762e4009804e12af198d32409f6abe
 #: ../../networking2.rst:787
@@ -1447,17 +1451,17 @@ msgstr ""
 # 023883e725b743e790c6c7d378fae5d1
 #: ../../networking2.rst:796
 msgid "Locate the IP range you want to work with."
-msgstr ""
+msgstr "Localiser l'intervalle d'IP avec lequel vous voulez travailler."
 
 # 727f9c60c5a149af95962b79fb673136
 #: ../../networking2.rst:800
 msgid "Click Add Account |addAccount-icon.png| button."
-msgstr ""
+msgstr "Cliquer sur le bouton Ajouter un compte |addAccount-icon.png|."
 
 # 98609249ea444461a727d851b23bdb4a
 #: ../../networking2.rst:802
 msgid "The Add Account dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Ajouter un compte est affichée."
 
 # 91a874f4d53548b5a54dd26c7a8070c4
 #: ../../networking2.rst:810
@@ -1477,42 +1481,42 @@ msgstr ""
 # a7351c3fc8aa4e6ab6f6de9982df895a
 #: ../../networking2.rst:826
 msgid "**Gateway**"
-msgstr ""
+msgstr "**Passerelle**"
 
 # a8212080596548efb06b7f360af77801
 #: ../../networking2.rst:830
 msgid "**Netmask**"
-msgstr ""
+msgstr "**Masque de sous-réseau**"
 
 # 2bac81ea68b044c99364b2e06d943f9e
 #: ../../networking2.rst:834
 msgid "**VLAN**"
-msgstr ""
+msgstr "**VLAN**"
 
 # a4fe8a556467404db7fc7ce462d9d690
 #: ../../networking2.rst:838
 msgid "**Start IP**"
-msgstr ""
+msgstr "**IP de départ**"
 
 # b86850aa7e104d75b25613535bda6ad1
 #: ../../networking2.rst:842
 msgid "**End IP**"
-msgstr ""
+msgstr "**IP de fin**"
 
 # 0cb6e7bb5c24462ca8eba42cba3c2ba0
 #: ../../networking2.rst:846
 msgid "**Account**: Perform the following:"
-msgstr ""
+msgstr "**Compte** : Effectuer au choix :"
 
 # ba26e0ab36b64d9a9e00350c439eb9ec
 #: ../../networking2.rst:850
 msgid "Click Account."
-msgstr ""
+msgstr "Cliquer sur Compte."
 
 # 7ef94c9e8e0b407d82dc09a915d88b3e
 #: ../../networking2.rst:852
 msgid "The Add Account page is displayed."
-msgstr ""
+msgstr "La page Ajouter un compte est affichée."
 
 # 2e18417b732143f89ffa9ab5c5767d1d
 #: ../../networking2.rst:860
@@ -1537,7 +1541,7 @@ msgstr ""
 #: ../../networking2.rst:3595 ../../networking2.rst:3751 ../../networking2.rst:3984
 #: ../../networking2.rst:5732
 msgid "Click Add."
-msgstr ""
+msgstr "Cliquer sur Ajouter."
 
 # 6ef67854e5d346c7913e58e20a2b72f4
 #: ../../networking2.rst:877
@@ -1618,12 +1622,12 @@ msgstr ""
 # d244bec96a6742dcba6445489ebe5218
 #: ../../networking2.rst:953
 msgid "Use Cases"
-msgstr ""
+msgstr "Cas d'usages"
 
 # 6bb7477d1acc4f3fbd79cd0dbfc2ca5e
 #: ../../networking2.rst:955
 msgid "Some of the use cases are described below:"
-msgstr ""
+msgstr "Les exemples suivants sont des cas d'usages :"
 
 # deaccf09c30b469a945f6c92f5b3e9e8
 #: ../../networking2.rst:959
@@ -1651,7 +1655,7 @@ msgstr ""
 # 3f3eba9611d84d6aae271d271019803b
 #: ../../networking2.rst:976 ../../networking2.rst:1194 ../../networking2.rst:6425
 msgid "Guidelines"
-msgstr ""
+msgstr "Lignes directrices"
 
 # 3e292b09263b4b97bfd6c423204dbc2f
 #: ../../networking2.rst:978
@@ -1663,17 +1667,17 @@ msgstr ""
 # 95785c3d19f449f78cc05d757ee25d24
 #: ../../networking2.rst:982
 msgid "Assigning Additional IPs to a VM"
-msgstr ""
+msgstr "Assigner des IPs additionnelles à une VM"
 
 # 59a152d36896406a8e27bc6d934ee420
 #: ../../networking2.rst:986
 msgid "Log in to the CloudStack UI."
-msgstr ""
+msgstr "Se connecter à l'interface CloudStack."
 
 # 62ef4fc700f2458282be770129fbe8f3
 #: ../../networking2.rst:990
 msgid "In the left navigation bar, click Instances."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur Instances."
 
 # e481a0bf01464ec993e94b0b35787eed
 #: ../../networking2.rst:994
@@ -1683,17 +1687,19 @@ msgstr ""
 # 040e0aa0901c4a738201d7f2b345c0f1
 #: ../../networking2.rst:998
 msgid "In the Details tab, click NICs."
-msgstr ""
+msgstr "Dans l'onglet Détails, cliquer sur Interfaces."
 
 # 783db8f186394495ad0ab1546a97951e
 #: ../../networking2.rst:1002
 msgid "Click View Secondary IPs."
-msgstr ""
+msgstr "Cliquer sur Voir les IPs secondaires."
 
 # 81df8a9f3f814aaa861dd841284985ef
 #: ../../networking2.rst:1006
 msgid "Click Acquire New Secondary IP, and click Yes in the confirmation dialog."
 msgstr ""
+"Cliquez sur Obtenir une nouvelle adresse IP, et cliquez sur Oui dans la boîte de "
+"dialogue de confirmation."
 
 # 5bee3ae73622433aaf3ff3502d16bfcb
 #: ../../networking2.rst:1009
@@ -1709,6 +1715,9 @@ msgid ""
 "Within a few moments, the new IP address should appear with the state Allocated. "
 "You can now use the IP address in Port Forwarding or StaticNAT rules."
 msgstr ""
+"Au bout de quelques instants, la nouvelle adresse IP devrait apparaître dans "
+"l'état Allouée. Vous pouvez maintenant utiliser l'adresse IP pour la redirection "
+"de port ou les règles de NAT statiques."
 
 # 91390ddfe5794441a909d512aaf69b16
 #: ../../networking2.rst:1018
@@ -1730,7 +1739,7 @@ msgstr ""
 # 9a799b4a628a476f9d231bc81b470264
 #: ../../networking2.rst:1030
 msgid "About Multiple IP Ranges"
-msgstr ""
+msgstr "A propos de plusieurs intervalles d'IP"
 
 # 028ff8cab15f440e877ecf3ac468a1a2
 #: ../../networking2.rst:1032
@@ -1772,11 +1781,12 @@ msgstr ""
 #: ../../networking2.rst:1055
 msgid "This feature is supported on KVM, xenServer, and VMware hypervisors."
 msgstr ""
+"Cette fonctionnalité est supportée sur les hyperviseurs XenServer, VMware et KVM."
 
 # ed378b716b614e5ea18ea508d7ecccb8
 #: ../../networking2.rst:1058
 msgid "About Elastic IP"
-msgstr ""
+msgstr "A propos d'Elastic IP"
 
 # cb979912025d4652b170b423b3323451
 #: ../../networking2.rst:1060
@@ -1805,7 +1815,7 @@ msgstr ""
 # d254f6b5f23f4583bf38593e35204bd5
 #: ../../networking2.rst:1077
 msgid "|eip-ns-basiczone.png|"
-msgstr ""
+msgstr "|eip-ns-basiczone.png|"
 
 # ec87f8235ad14731b88fa165faf2855f
 #: ../../networking2.rst:1079
@@ -1912,12 +1922,12 @@ msgstr ""
 # 16c8dc460b214f4894425176314b9cb3
 #: ../../networking2.rst:1153
 msgid "Portable IPs"
-msgstr ""
+msgstr "IPs portable"
 
 # 3a5bf095b28f463397be53d043c810c8
 #: ../../networking2.rst:1156
 msgid "About Portable IP"
-msgstr ""
+msgstr "A propos des IP portables"
 
 # 5458a5ed86214e4c93481bcc51808719
 #: ../../networking2.rst:1158
@@ -1939,7 +1949,7 @@ msgstr ""
 # 891115e5cf6a48ada1f4095573352338
 #: ../../networking2.rst:1171
 msgid "IP is statically allocated"
-msgstr ""
+msgstr "L'IP est allouée de manière statique"
 
 # 4d10cf62b6c743b8b592cc802be6cc92
 #: ../../networking2.rst:1175
@@ -1991,7 +2001,7 @@ msgstr ""
 # 1938f07ea2c94222a20b08898972dc0c
 #: ../../networking2.rst:1217
 msgid "Click View Portable IP."
-msgstr ""
+msgstr "Cliquer sur voir l'IP Portable."
 
 # 3fd59fc0c5804ab58ed115888d070d9d
 #: ../../networking2.rst:1221
@@ -2031,7 +2041,7 @@ msgstr ""
 # 5c4576cb4d01410ea44f66b3560eec1c
 #: ../../networking2.rst:1254
 msgid "Acquiring a Portable IP"
-msgstr ""
+msgstr "Aquérir une IP portable"
 
 # fd1b3a3c5e574a7ebb4e782d04f0746b
 # 3ec5393b7aa8486ca2b52df1597e7a98
@@ -2054,30 +2064,30 @@ msgstr ""
 #: ../../networking2.rst:3339 ../../networking2.rst:3382 ../../networking2.rst:3456
 #: ../../networking2.rst:3870
 msgid "Click View IP Addresses."
-msgstr ""
+msgstr "Cliquez sur Voir les adresses IP."
 
 # 667a207d51d24ec19784a9167e8565b8
 # 5605f1edaf4a463a84ae99cdd32825a4
 #: ../../networking2.rst:1274 ../../networking2.rst:3300
 msgid "Click Acquire New IP."
-msgstr ""
+msgstr "Cliquer sur Acquérir une nouvelle IP."
 
 # 6f484ad19a9e4e70b96bf198ddbcf3f4
 # ac45a6f42e5e42a29e4eb09f827d12a3
 #: ../../networking2.rst:1276 ../../networking2.rst:3302
 msgid "The Acquire New IP window is displayed."
-msgstr ""
+msgstr "La fenêtre Acquérir une nouvelle IP est affichée."
 
 # a62089adc7304fe1a0c39b6e337ddca2
 # 9baf10608a674ae292c3dea0a0859da7
 #: ../../networking2.rst:1280 ../../networking2.rst:3306
 msgid "Specify whether you want cross-zone IP or not."
-msgstr ""
+msgstr "Spécifier si vous voulez une IP transverse à la zone ou non."
 
 # 3bb7d4dc99f341248a9c5c892bc12485
 #: ../../networking2.rst:1284
 msgid "Click Yes in the confirmation dialog."
-msgstr ""
+msgstr "Cliquer sur Oui dans la boite de dialogue de confirmation."
 
 # 38c1b6967ebb4ec9852ba01c1f005f98
 # 197a1c50649d486ca45fb94f4900aa2d
@@ -2086,11 +2096,14 @@ msgid ""
 "Within a few moments, the new IP address should appear with the state Allocated. "
 "You can now use the IP address in port forwarding or static NAT rules."
 msgstr ""
+"Après quelques instants, la nouvelle adresse IP devrait apparaître avec l'état "
+"Allouée. Vous pouvez utiliser l'adresse IP dans la redirection de port ou les "
+"règles de NATage statiques."
 
 # 524a4bfc4e03495584030002db87273b
 #: ../../networking2.rst:1291
 msgid "Transferring Portable IP"
-msgstr ""
+msgstr "Transférer une IP Portable"
 
 # 68465770f0cb4381ac7ce0eb0b65ecbc
 #: ../../networking2.rst:1293
@@ -2150,12 +2163,12 @@ msgstr ""
 # 4764589edb39403a9fd8558614490a61
 #: ../../networking2.rst:1338
 msgid "if virtual router is the DHCP provider"
-msgstr ""
+msgstr "Si le routeur virtuel est le fournisseur DHCP"
 
 # b1541de5c3f0486faa35809ad77b0359
 #: ../../networking2.rst:1342
 msgid "on KVM, xenServer, and VMware hypervisors"
-msgstr ""
+msgstr "Sur les hyperviseurs KVM, xenServer et VMware"
 
 # 2422d92308cd49628de0caa0efcad9c7
 #: ../../networking2.rst:1346
@@ -2184,12 +2197,12 @@ msgstr ""
 # 2b58f0a641ae4d80a61839330e31435b
 #: ../../networking2.rst:1372
 msgid "Click Physical Network."
-msgstr ""
+msgstr "Cliquer sur le réseau physique."
 
 # 01147d3437e04c6c93201551e05eec93
 #: ../../networking2.rst:1380
 msgid "Click Networks."
-msgstr ""
+msgstr "Cliquer sur Réseaux."
 
 # f5611c1c2d6f4bc2935f6fcb462429ac
 #: ../../networking2.rst:1384
@@ -2214,7 +2227,7 @@ msgstr ""
 # b80689bd7547487da595f615e2462e55
 #: ../../networking2.rst:1396
 msgid "|add-ip-range.png|"
-msgstr ""
+msgstr "|add-ip-range.png|"
 
 # ecfac85bd0504455b3d64af38c930d89
 # b0284174465747738037a24f289b32cd
@@ -2290,7 +2303,7 @@ msgstr ""
 # d86c07b7947d412799db280d59e3f9e5
 #: ../../networking2.rst:1456
 msgid "About Private VLAN"
-msgstr ""
+msgstr "A propos des VLAN Privés"
 
 # 892b94b696954a8e9527248d969742c6
 #: ../../networking2.rst:1458
@@ -2450,12 +2463,12 @@ msgstr ""
 # 3334596753684a6cae9e21d47cf11119
 #: ../../networking2.rst:1691
 msgid "Security Groups"
-msgstr ""
+msgstr "Groupes de sécurités"
 
 # e6afa18d968443a988f9cda5396370a6
 #: ../../networking2.rst:1694
 msgid "About Security Groups"
-msgstr ""
+msgstr "A propos des groupes de sécurité"
 
 # 12db6b6e0abb441ca307862c39b2f3a7
 #: ../../networking2.rst:1696
@@ -2513,7 +2526,7 @@ msgstr ""
 # 7d25ba3d47574104ae0d8c4085970ddc
 #: ../../networking2.rst:1729
 msgid "Adding a Security Group"
-msgstr ""
+msgstr "Ajouter un groupe de sécurité"
 
 # 4a52e8eaf7f5498e9cac0ef8d3e753bb
 #: ../../networking2.rst:1731
@@ -2534,12 +2547,12 @@ msgstr ""
 # 721d38433467434482cb1c4486f14572
 #: ../../networking2.rst:1747
 msgid "Click Add Security Group."
-msgstr ""
+msgstr "Cliquer sur Ajouter un groupe de sécurité."
 
 # 02ecffe07c904fc2a4c3fa6a392afd04
 #: ../../networking2.rst:1751
 msgid "Provide a name and description."
-msgstr ""
+msgstr "Fournir un nom et une description."
 
 # 3e0ee4bc42fc4ea2a3189f69cde928db
 #: ../../networking2.rst:1757
@@ -2606,7 +2619,7 @@ msgstr ""
 # e64a176e0d1a4f50992f36b58586ff9e
 #: ../../networking2.rst:1800
 msgid "Enabling Security Groups"
-msgstr ""
+msgstr "Activer les groupes de sécurités."
 
 # 6ad796b8b65541758fa9ac87509ecbc2
 #: ../../networking2.rst:1802
@@ -2700,7 +2713,7 @@ msgstr ""
 # 0ca36e66c67f4b0fbc6e9642f98244e2
 #: ../../networking2.rst:1878
 msgid "|httpaccess.png|"
-msgstr ""
+msgstr "|httpaccess.png|"
 
 # 0e328d3fe5ff4d199d094778ca339694
 #: ../../networking2.rst:1882
@@ -2864,7 +2877,7 @@ msgstr ""
 # 04cb1b68ff3b48edabc301bf64ccf560
 #: ../../networking2.rst:1992
 msgid "MPX"
-msgstr ""
+msgstr "MPX"
 
 # 2d07236e0fb24abc935fc25da378dc09
 #: ../../networking2.rst:1994
@@ -2884,7 +2897,7 @@ msgstr ""
 # b9ff4330d7774617b6ae9a5e7a8a6f1d
 #: ../../networking2.rst:2001
 msgid "VPX"
-msgstr ""
+msgstr "VPX"
 
 # 9005b76458ad41a483ee097a591c21db
 #: ../../networking2.rst:2003
@@ -2903,7 +2916,7 @@ msgstr ""
 # b4d1336da974407c9db6af169f5b24ff
 #: ../../networking2.rst:2009
 msgid "SDX"
-msgstr ""
+msgstr "SDX"
 
 # 62d3529ceb9a40a5a2112aff3c4ee083
 #: ../../networking2.rst:2011
@@ -2995,12 +3008,12 @@ msgstr ""
 # 9fc121277fb04877af683ce49e88b40b
 #: ../../networking2.rst:2097
 msgid "Unblock SNMP in iptables."
-msgstr ""
+msgstr "Débloquer SNMP dans iptables."
 
 # ce86c5292fa840f194d550efe25863bf
 #: ../../networking2.rst:2105
 msgid "Start the SNMP service:"
-msgstr ""
+msgstr "Démarrer le service SNMP :"
 
 # c68c4cc6430e45fb8625e65486ad2c89
 #: ../../networking2.rst:2113
@@ -3109,7 +3122,7 @@ msgstr ""
 # ffe7e0e1d6a54f58847e94107290cdea
 #: ../../networking2.rst:2188
 msgid "Load Balancer Rules"
-msgstr ""
+msgstr "Règles de répartition de charge"
 
 # c4c2a4ed95bf4c308ca4f5e48b75081b
 #: ../../networking2.rst:2190
@@ -3132,7 +3145,7 @@ msgstr ""
 # aee5ead118ba49d2af6fd663749cb21a
 #: ../../networking2.rst:2206
 msgid "Adding a Load Balancer Rule"
-msgstr ""
+msgstr "Ajouter une règle de répartition de charge"
 
 # ef9ec7e8608f4622a42b9006e67332f1
 #: ../../networking2.rst:2218
@@ -3497,12 +3510,12 @@ msgstr ""
 # 2f62ff61696a4b28b1fe7a6e9ed379af
 #: ../../networking2.rst:2478
 msgid "Configuration"
-msgstr ""
+msgstr "Configuration"
 
 # 6ecf74a9baef420b8f4cf0f4a633ee47
 #: ../../networking2.rst:2482
 msgid "|autoscaleateconfig.png|"
-msgstr ""
+msgstr "|autoscaleateconfig.png|"
 
 # f28a8f2eaa864c579595a69d9339a432
 #: ../../networking2.rst:2486
@@ -3943,7 +3956,7 @@ msgstr ""
 # 89319188219b404eb12377733494db5a
 #: ../../networking2.rst:2830
 msgid "|gslb.png|"
-msgstr ""
+msgstr "|gslb.png|"
 
 # b984591edede4102820e3e91af964094
 #: ../../networking2.rst:2832
@@ -4265,7 +4278,7 @@ msgstr ""
 # 71afbe01841a4e11a0fcc15b17786d36
 #: ../../networking2.rst:3058
 msgid "In Zones, click View More."
-msgstr ""
+msgstr "Dans Zones, cliquer sur Voir plus."
 
 # e790f063f0054d8fa2f47e81ff50ca59
 #: ../../networking2.rst:3066
@@ -4286,7 +4299,7 @@ msgstr ""
 # 21cd237381d44ee58898516d998a4372
 #: ../../networking2.rst:3078
 msgid "Click NetScaler."
-msgstr ""
+msgstr "Citrix NetScaler."
 
 # 5bca2c9d180b435bb43c10f72d8b4f50
 #: ../../networking2.rst:3082
@@ -4411,7 +4424,7 @@ msgstr ""
 # b9b04ceabaa9463d85a4faf511f47d57
 #: ../../networking2.rst:3173
 msgid "|gslb-add.png|"
-msgstr ""
+msgstr "|gslb-add.png|"
 
 # 3cc1ebf185774545998478f479bffa85
 #: ../../networking2.rst:3181
@@ -4574,7 +4587,7 @@ msgstr ""
 #: ../../networking2.rst:5550 ../../networking2.rst:5876 ../../networking2.rst:5963
 #: ../../networking2.rst:6055 ../../networking2.rst:6298 ../../networking2.rst:6692
 msgid "Static NAT"
-msgstr ""
+msgstr "NAT statique"
 
 # b1f96220fd994b41b5fa5fdebccab0b4
 #: ../../networking2.rst:3353
@@ -4588,7 +4601,7 @@ msgstr ""
 # d98473b1ef2041a7877e6841336bbe2f
 #: ../../networking2.rst:3360
 msgid "Enabling or Disabling Static NAT"
-msgstr ""
+msgstr "Activer ou désactiver un NAT Statique"
 
 # 66e31a75defd4e2e88802eaa37a23902
 # 507d4788f25d423c84d95132346afd2b
@@ -4662,7 +4675,7 @@ msgstr ""
 # 9229b4cb0661463cab6efc5582184abc
 #: ../../networking2.rst:3418
 msgid "Firewall Rules"
-msgstr ""
+msgstr "Règles du parefeu"
 
 # d51a292426874329a0951777c1772476
 #: ../../networking2.rst:3420
@@ -4701,7 +4714,7 @@ msgstr ""
 # 9ceb40041acc44ed8cb1dbd759ffa528
 #: ../../networking2.rst:3440
 msgid "To create a firewall rule:"
-msgstr ""
+msgstr "Pour créer une règle de parefeu :"
 
 # c2c48ea9ba7d4778bc6bc6820adf83f0
 #: ../../networking2.rst:3464
@@ -4817,7 +4830,7 @@ msgstr ""
 # 615b7e1b5d4a4afba201cbd868ebcae4
 #: ../../networking2.rst:3565
 msgid "|egress-firewall-rule.png|"
-msgstr ""
+msgstr "|egress-firewall-rule.png|"
 
 # 3b0e293e06344c648450ac61d33c6e86
 #: ../../networking2.rst:3569
@@ -4876,7 +4889,7 @@ msgstr ""
 # 675178fcb7144053a9b257ebdc760670
 #: ../../networking2.rst:3611
 msgid "Allow"
-msgstr ""
+msgstr "Autoriser"
 
 # db1c618c19734644b9f8f3714393f25c
 #: ../../networking2.rst:3613
@@ -4892,7 +4905,7 @@ msgstr ""
 # 6870c74dca5142b0a048f825f2f357dc
 #: ../../networking2.rst:3620 ../../networking2.rst:5253 ../../networking2.rst:5254
 msgid "Deny"
-msgstr ""
+msgstr "Refuser"
 
 # 8766188244b541e08448f923693d31d9
 #: ../../networking2.rst:3622
@@ -4934,7 +4947,7 @@ msgstr ""
 # e7fccdf8282c4f6c8d7a6e5836840c19
 #: ../../networking2.rst:3649 ../../networking2.rst:6181 ../../networking2.rst:6486
 msgid "Click Add Network Offering."
-msgstr ""
+msgstr "Cliquer sur Ajouter une offre de réseau."
 
 # 9c68f5258ad84445be883d57d0570c1e
 #: ../../networking2.rst:3653
@@ -5029,7 +5042,7 @@ msgstr ""
 # 94e2eab0e63b4fc3857c9bd41223a42c
 #: ../../networking2.rst:3724
 msgid "Click the Configuration tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet Configuration."
 
 # 44faf09e38934875bdb4123f711051b7
 # 5bd7a3feb2a74eedb79b444a48452c5d
@@ -5791,7 +5804,7 @@ msgstr ""
 # c3fa00baefd74a0eab971c38b2e19251
 #: ../../networking2.rst:4198
 msgid "|addvpncustomergateway.png|"
-msgstr ""
+msgstr "|addvpncustomergateway.png|"
 
 # fd022a19e85d42918e285828af4c3698
 #: ../../networking2.rst:4204
@@ -6088,7 +6101,7 @@ msgstr ""
 # 63e805ab6ce6420d97103dc7a20b5506
 #: ../../networking2.rst:4540
 msgid "|createvpnconnection.png|"
-msgstr ""
+msgstr "|createvpnconnection.png|"
 
 # e897f05865fe4bf3b6daee5504dcf357
 #: ../../networking2.rst:4544
@@ -6410,7 +6423,7 @@ msgstr ""
 # 8da1d43a48f54d3cadd9a2ab40446452
 #: ../../networking2.rst:4837
 msgid "|mutltier.png|"
-msgstr ""
+msgstr "|mutltier.png|"
 
 # b5b5c31e4e374e9c80fbb2bb5d5178cd
 #: ../../networking2.rst:4839
@@ -6426,7 +6439,7 @@ msgstr ""
 # cf430774172c4664b8c8126dc2f8f2a9
 #: ../../networking2.rst:4847
 msgid "About Virtual Private Clouds"
-msgstr ""
+msgstr "A propos des Clouds Privés Virtuels"
 
 # 06c06ce2f5fe4b2e8a3464b3c4becf6a
 #: ../../networking2.rst:4849
@@ -6438,6 +6451,13 @@ msgid ""
 "define network tiers within your VPC network range, which in turn enables you to "
 "group similar kinds of instances based on IP address range."
 msgstr ""
+"Un Cloud Privé Virtuel CloudStack est une partie privée, isolée de CloudStack. "
+"Un VPC peut avoir sa propre topologie de réseau virtuel qui ressemble à un "
+"réseau physique traditionnel. Vous pouvez lancer des VMs dans le réseau virtuel "
+"qui peuvent avoir des adresses privées dans l'intervalle de votre choix, par "
+"exemple : 10.10.10.0/16. Vous pouvez définir des parties de réseau dans "
+"l'étendue du réseau de votre VPC, permettant le regroupement des types "
+"d'instances similaires en fonction de leur intervalle d'adresse IP."
 
 # 46308016994049eb85cdc73e86db616e
 #: ../../networking2.rst:4857
@@ -6445,16 +6465,19 @@ msgid ""
 "For example, if a VPC has the private range 10.0.0.0/16, its guest networks can "
 "have the network ranges 10.0.1.0/24, 10.0.2.0/24, 10.0.3.0/24, and so on."
 msgstr ""
+"Par exemple, si un VPC dispose de la plage privée d'adresses IP 10.0.0.0/16, ses "
+"réseaux invités peuvent être dans les plages réseaux 10.0.1.0/24, 10.0.2.0/24, "
+"10.0.3.0/24, etc."
 
 # ef383bc8b7d54a0785f2b4828b5290ee
 #: ../../networking2.rst:4862
 msgid "Major Components of a VPC:"
-msgstr ""
+msgstr "Composants majeurs d'un VPC"
 
 # b90235f5e79947b7a57dee0d5c08e244
 #: ../../networking2.rst:4864
 msgid "A VPC is comprised of the following network components:"
-msgstr ""
+msgstr "Un VPC est constitué des composants réseaux suivants :"
 
 # 9a373d73d3ae48309685ddecb2399f89
 #: ../../networking2.rst:4868
@@ -6462,6 +6485,8 @@ msgid ""
 "**VPC**: A VPC acts as a container for multiple isolated networks that can "
 "communicate with each other via its virtual router."
 msgstr ""
+"**VPC**: Un VPC agit comme un conteneur pour plusieurs réseaux isolés qui "
+"peuvent communiquer les uns les autres via son routeur virtuel."
 
 # 4d1cc64429d44838942ce9d9290d09f6
 #: ../../networking2.rst:4873
@@ -6470,6 +6495,10 @@ msgid ""
 "CIDR list, where you can place groups of resources, such as VMs. The tiers are "
 "segmented by means of VLANs. The NIC of each tier acts as its gateway."
 msgstr ""
+"**Segments réseaux** : chaque segment agit comme un réseau isolé avec ses "
+"propres VLANs et listes CIDR, dans lequel vous pouvez placer des groupes de "
+"ressources, comme des VM. Les segments sont segmentés par l'utilisation des "
+"VLANs. L'interface de chaque segment agit comme sa passerelle."
 
 # 4e202e5460e24d838d858dc82fd70fee
 #: ../../networking2.rst:4880
@@ -6480,6 +6509,11 @@ msgid ""
 "corresponding NIC and IP exist in the virtual router. The virtual router "
 "provides DNS and DHCP services through its IP."
 msgstr ""
+"**Routeur Virtuel** : Un routeur virtuel est automatiquement créé et démarré "
+"lorsque vous créez un VPC. Le routeur virtuel connecte les segments et dirige le "
+"trafic entre la passerelle publique, les passerelles VPN et les instances NAT. "
+"Pour chaque segment, une interface et une IP correspondante existent dans le "
+"routeur virtuel. Le routeur virtuel fourni les services DNS et DHCP via ses IP."
 
 # 5620f9a835ae40ac9f844be5648dafad
 #: ../../networking2.rst:4889
@@ -6539,7 +6573,7 @@ msgstr ""
 # daf38611958e42f7b832673319b348fb
 #: ../../networking2.rst:4931
 msgid "Network Architecture in a VPC"
-msgstr ""
+msgstr "Architecture Réseau dans un VPC"
 
 # cc60b077b9ff4de19f842b6afab2e62b
 #: ../../networking2.rst:4933
@@ -6714,7 +6748,7 @@ msgstr ""
 # d6e7cab15dfe4412bd18e44c210098b5
 #: ../../networking2.rst:5058
 msgid "Adding a Virtual Private Cloud"
-msgstr ""
+msgstr "Ajouter un Cloud Privé Virtuel"
 
 # aebf60ad9d2040f5a4693f4948d8ee9f
 #: ../../networking2.rst:5060
@@ -6732,7 +6766,7 @@ msgstr ""
 # 5c49f3b134ab451fb0baebec74eb6d02
 #: ../../networking2.rst:5080
 msgid "|add-vpc.png|"
-msgstr ""
+msgstr "|add-vpc.png|"
 
 # fa0553b67cec41e993031eaa2cfdaf13
 #: ../../networking2.rst:5086
@@ -6777,7 +6811,7 @@ msgstr ""
 # 4cfebf8fa1714d45b8ad960ae9f7ab29
 #: ../../networking2.rst:5121
 msgid "Adding Tiers"
-msgstr ""
+msgstr "Ajouter des Segments"
 
 # c329d2c258cc49dba5536840ef027842
 #: ../../networking2.rst:5123
@@ -6788,12 +6822,17 @@ msgid ""
 "provide inexpensive, low latency network connectivity to other tiers within the "
 "VPC."
 msgstr ""
+"Les Segments sont des endroits distincts à l'intérieur d'un VPC qui agissent "
+"comme des réseaux isolés, et qui n'ont pas accès aux autres tiers par défaut. "
+"Les Segments sont configurés sur différents VLANs qui peuvent communiquer entre "
+"eux en utilisant un routeur virtuel. Les Tiers fournissent un moyen simple et à "
+"faible latence pour se connecter avec d'autres tiers au sein d'un VPC."
 
 # 28ee0841ce014e79a7a281d4bb216ebc
 # c6dc02263cdf449d9a13e9076217f576
 #: ../../networking2.rst:5141 ../../networking2.rst:6794
 msgid "All the VPC that you have created for the account is listed in the page."
-msgstr ""
+msgstr "Tous les VPC que vous avez créé sur ce compte sont listés dans cette page."
 
 # c99084307ecd4209897fc97c610b02b1
 #: ../../networking2.rst:5145
@@ -6801,12 +6840,17 @@ msgid ""
 "The end users can see their own VPCs, while root and domain admin can see any "
 "VPC they are authorized to see."
 msgstr ""
+"L'utilisateur final peut voir ses propres VPCs, alors que l'administrateur du "
+"domaine ou le root peuvent voir n'importe quel VPC qu'ils sont autorisés à "
+"visualiser."
 
 # 1470c73ac281442a9cd21cee278957a9
 # 7c8420344fe944869eb9ffe03433dc65
 #: ../../networking2.rst:5150 ../../networking2.rst:6799
 msgid "Click the Configure button of the VPC for which you want to set up tiers."
 msgstr ""
+"Cliquez sur le bouton Configurer du VPC pour lequel vous désirez configurer un "
+"segment."
 
 # c0383203b6324f44bca1f8d64372fd12
 #: ../../networking2.rst:5155
@@ -6816,12 +6860,12 @@ msgstr ""
 # 71dfd71fa8254a17b162b5ecbea81465
 #: ../../networking2.rst:5157
 msgid "The Add new tier dialog is displayed, as follows:"
-msgstr ""
+msgstr "La boîte de dialogue Ajouter un nouveau segment s'affiche comme suit :"
 
 # 74a521a42b084463aec6f5c6b7a135d8
 #: ../../networking2.rst:5159
 msgid "|add-tier.png|"
-msgstr ""
+msgstr "|add-tier.png|"
 
 # cd56a1cb2ee5401699918cb0e48192d6
 #: ../../networking2.rst:5161
@@ -6829,6 +6873,8 @@ msgid ""
 "If you have already created tiers, the VPC diagram is displayed. Click Create "
 "Tier to add a new tier."
 msgstr ""
+"Si vous avez déjà créé un segment, le diagramme du VPC est affiché. Cliquez sur "
+"Créer un segment pour en ajouter un nouveau."
 
 # 08999394431847eb807438afe40264eb
 #: ../../networking2.rst:5172
@@ -6848,6 +6894,8 @@ msgstr ""
 msgid ""
 "In a VPC, only one tier can be created by using LB-enabled network offering."
 msgstr ""
+"Dans un VPC, un seul segment peut être créé en utilisant une offre réseau avec "
+"répartition de charge activée."
 
 # cb1a1e05c80349aba5c29f7eb19fb029
 #: ../../networking2.rst:5193
@@ -6870,7 +6918,7 @@ msgstr ""
 # 2c2c9c5c56b24b02b949731d057ccece
 #: ../../networking2.rst:5215
 msgid "Continue with configuring access control list for the tier."
-msgstr ""
+msgstr "Continuer avec la configuration des contrôle d'accès pour ce segment."
 
 # fe50554812f144079082cb76d478f030
 #: ../../networking2.rst:5220
@@ -6920,44 +6968,44 @@ msgstr ""
 # e83245e0845e43b2974a692e326ac4d0
 #: ../../networking2.rst:5251
 msgid "Rule"
-msgstr ""
+msgstr "Règle"
 
 # 80ab5b23b00f4d199c8b9abbf436bb6c
 #: ../../networking2.rst:5251
 msgid "Protocol"
-msgstr ""
+msgstr "Protocole"
 
 # fd729c57b4ea4e5eba4b9567d5fb91c0
 #: ../../networking2.rst:5251
 msgid "Traffic type"
-msgstr ""
+msgstr "Type de trafic"
 
 # c829bf78c58d40288a0ea4fc4372babf
 #: ../../networking2.rst:5251
 msgid "Action"
-msgstr ""
+msgstr "Action"
 
 # 428dd3d46f624c17b6333ea245a479d1
 # 0044bb0439f34285b617e17b26a24c31
 #: ../../networking2.rst:5253 ../../networking2.rst:5254
 msgid "All"
-msgstr ""
+msgstr "Tout"
 
 # fab35c06087d44a7874a0f5bcd4b49a3
 #: ../../networking2.rst:5253
 msgid "Ingress"
-msgstr ""
+msgstr "Règles entrantes"
 
 # 28a1e4dff1af4530b1bc7247d7231156
 # f074d55a63a84bdd93f4679ef5703083
 #: ../../networking2.rst:5253 ../../networking2.rst:5254
 msgid "0.0.0.0/0"
-msgstr ""
+msgstr "0.0.0.0/0"
 
 # b4f811fade53417f914ba70fdda841eb
 #: ../../networking2.rst:5254
 msgid "Egress"
-msgstr ""
+msgstr "Règles sortantes"
 
 # 8cc5201e9ef74389bf852a8c965d8c58
 #: ../../networking2.rst:5258
@@ -7146,7 +7194,7 @@ msgstr ""
 # 14772476c28c4746811457f94c763124
 #: ../../networking2.rst:5489
 msgid "Click the Replace ACL List icon. |replace-acl-icon.png|"
-msgstr ""
+msgstr "Cliquer sur l'icone Remplacer la liste d'ACL. |replace-acl-icon.png|"
 
 # c4482d85ed6040e0978d138c1416283a
 #: ../../networking2.rst:5491
@@ -7199,7 +7247,7 @@ msgstr ""
 # 1d19d16a595c4323b72e7afcfa725bee
 #: ../../networking2.rst:5588
 msgid "|add-new-gateway-vpc.png|"
-msgstr ""
+msgstr "add-new-gateway-vpc.png|"
 
 # 8413e5ef903842ec837e56605289465f
 #: ../../networking2.rst:5596
@@ -7347,6 +7395,8 @@ msgstr ""
 #: ../../networking2.rst:5694
 msgid "In the Detail tab, click the Replace ACL button. |replace-acl-icon.png|"
 msgstr ""
+"Dans l'onglet Détail, cliquer sur le bouton Remplacer les ACL. |replace-acl-icon."
+"png|"
 
 # 0a1a67c900a645b587377ce0696fcc69
 #: ../../networking2.rst:5697
@@ -7434,7 +7484,7 @@ msgstr ""
 # 71ad9ca13d4c4362972cdf2637e41c93
 #: ../../networking2.rst:5777
 msgid "|add-vm-vpc.png|"
-msgstr ""
+msgstr "|add-vm-vpc.png|"
 
 # 2f2516ad2c5942d999843c0a9a68933e
 #: ../../networking2.rst:5779
@@ -7505,7 +7555,7 @@ msgstr ""
 # 69378b350f8540138b3659036450b93e
 #: ../../networking2.rst:5824
 msgid "|addvm-tier-sharednw.png|"
-msgstr ""
+msgstr "|addvm-tier-sharednw.png|"
 
 # c32a2db50b2b44dfa529d303ae7737ca
 #: ../../networking2.rst:5828
@@ -7630,7 +7680,7 @@ msgstr ""
 # addd4d2aaf5345c486dcddaf20d41069
 #: ../../networking2.rst:6104
 msgid "|select-vmstatic-nat.png|"
-msgstr ""
+msgstr "|select-vmstatic-nat.png|"
 
 # e794f8894d7c4c4fb1d144b53ba3eef5
 #: ../../networking2.rst:6108
@@ -7958,7 +8008,7 @@ msgstr ""
 # b3129b5c753047129a01b1ba3c4fede8
 #: ../../networking2.rst:6422
 msgid "|vpc-lb.png|"
-msgstr ""
+msgstr "|vpc-lb.png|"
 
 # 8b1b1a74897143cb88a7542e79cf51f3
 #: ../../networking2.rst:6429
@@ -8361,7 +8411,7 @@ msgstr ""
 # 5fbd5c95b15941c29f95b337f8ebade8
 #: ../../networking2.rst:6944
 msgid "Click the Edit button."
-msgstr ""
+msgstr "Cliquer sur le bouton Editer."
 
 # 706e3f3239cb45f2a6f669847cf5c0ff
 #: ../../networking2.rst:6948

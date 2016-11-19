@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-09-06 00:05+0200\n"
+"PO-Revision-Date: 2016-10-09 19:29+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Last-Translator: \n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 
 # 36cc316d379647279da05d191cf9e9b5
 #: ../../management.rst:18
@@ -70,87 +70,87 @@ msgstr ""
 # 0d735394ca9f48f8a4ef3c5d0a25741d
 #: ../../management.rst:55
 msgid "The following API commands have the \"tags\" input parameter:"
-msgstr ""
+msgstr "Les commandes d'API suivantes ont le paramètre d'entrée \"tags\" : "
 
 # 6d986331aa5d4971bab13111a8471d36
 #: ../../management.rst:57
 msgid "listVirtualMachines"
-msgstr ""
+msgstr "listVirtualMachines"
 
 # b0e2702f6aed49a8831ae5c2983a18c9
 #: ../../management.rst:59
 msgid "listVolumes"
-msgstr ""
+msgstr "listVolumes"
 
 # 97c53594680a4cecb64e3f1a5ea2a2f3
 #: ../../management.rst:61
 msgid "listSnapshots"
-msgstr ""
+msgstr "listSnapshots"
 
 # 0217180a24604d579084142d07f11299
 #: ../../management.rst:63
 msgid "listNetworks"
-msgstr ""
+msgstr "listNetworks"
 
 # dcf958a652304820818033fc441226e7
 #: ../../management.rst:65
 msgid "listTemplates"
-msgstr ""
+msgstr "listTemplates"
 
 # 296660956a3b4ce5b02c4c7f1272e889
 #: ../../management.rst:67
 msgid "listIsos"
-msgstr ""
+msgstr "listIsos"
 
 # 69e88bee17394199a778180f3304fbf0
 #: ../../management.rst:69
 msgid "listFirewallRules"
-msgstr ""
+msgstr "listFirewallRules"
 
 # 7954e7afc0334bc7bfcf16492195bb49
 #: ../../management.rst:71
 msgid "listPortForwardingRules"
-msgstr ""
+msgstr "listPortForwardingRules"
 
 # d273e10141d84eecbdc74ec901700d11
 #: ../../management.rst:73
 msgid "listPublicIpAddresses"
-msgstr ""
+msgstr "listPublicIpAddresses"
 
 # b3e40262a34d4590bed84b8d5fc62798
 #: ../../management.rst:75
 msgid "listSecurityGroups"
-msgstr ""
+msgstr "listSecurityGroups"
 
 # e8f6e365e1da4b499d6b852d6c3e1162
 #: ../../management.rst:77
 msgid "listLoadBalancerRules"
-msgstr ""
+msgstr "listLoadBalancerRules"
 
 # 3c8faeeede5147fb911f022fd5858210
 #: ../../management.rst:79
 msgid "listProjects"
-msgstr ""
+msgstr "listProjects"
 
 # a9805315805e4d75b977c3428bcde48a
 #: ../../management.rst:81
 msgid "listVPCs"
-msgstr ""
+msgstr "listVPCs"
 
 # bfab0c32d8364cd9a3e762e7992888f1
 #: ../../management.rst:83
 msgid "listNetworkACLs"
-msgstr ""
+msgstr "listNetworkACLs"
 
 # 46fab81fefa1469eb87698342b0f045e
 #: ../../management.rst:85
 msgid "listStaticRoutes"
-msgstr ""
+msgstr "listStaticRoutes"
 
 # 489808dcb1c9407cbe2bd271c02ce89a
 #: ../../management.rst:89
 msgid "Reporting CPU Sockets"
-msgstr "Rapport des sockets CPU"
+msgstr "Rapport sur les sockets CPU"
 
 # 7d8f4e987714451e9db1c9e749f8b1ca
 #: ../../management.rst:91

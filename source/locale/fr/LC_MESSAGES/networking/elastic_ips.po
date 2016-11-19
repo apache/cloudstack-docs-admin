@@ -1,21 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:05+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-10-17 23:50+0200\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.9\n"
 
 # 68f25b7a2e514065b563d7ccdd72f355
 #: ../../networking/elastic_ips.rst:18
@@ -50,7 +52,7 @@ msgstr ""
 # deef19d6b1414dbb967743f1b7cef2df
 #: ../../networking/elastic_ips.rst:37
 msgid "|eip-ns-basiczone.png|"
-msgstr ""
+msgstr "|eip-ns-basiczone.png|"
 
 # a1f02d4922ed4bbb8941ccc048f0b0b4
 #: ../../networking/elastic_ips.rst:39
@@ -59,9 +61,10 @@ msgid ""
 "point for the CloudStack instances, and firewall is the default entry or "
 "exit point for the rest of the data center. Netscaler provides LB services "
 "and staticNAT service to the guest networks. The guest traffic in the pods "
-"and the Management Server are on different subnets / VLANs. The policy-based"
-" routing in the data center core switch sends the public traffic through the"
-" NetScaler, whereas the rest of the data center goes through the firewall."
+"and the Management Server are on different subnets / VLANs. The policy-"
+"based routing in the data center core switch sends the public traffic "
+"through the NetScaler, whereas the rest of the data center goes through the "
+"firewall."
 msgstr ""
 
 # 28c78bf967714b33884e97cfa4ca307b
@@ -80,8 +83,8 @@ msgstr ""
 # 23a70289953d415c81e8dd6ebc86423c
 #: ../../networking/elastic_ips.rst:54
 msgid ""
-"Each VM will have its own private IP. When the user VM starts, Static NAT is"
-" provisioned on the NetScaler device by using the Inbound Network Address "
+"Each VM will have its own private IP. When the user VM starts, Static NAT "
+"is provisioned on the NetScaler device by using the Inbound Network Address "
 "Translation (INAT) and Reverse NAT (RNAT) rules between the public IP and "
 "the private IP."
 msgstr ""
@@ -115,10 +118,10 @@ msgstr ""
 msgid ""
 "The user acquires a public IP (Elastic IP). This public IP is associated "
 "with the account, but will not be mapped to any private IP. However, the "
-"user can enable Static NAT to associate this IP to the private IP of a VM in"
-" the account. The Static NAT rule for the public IP can be disabled at any "
-"time. When Static NAT is disabled, a new public IP is allocated from the "
-"pool, which is not necessarily be the same one allocated initially."
+"user can enable Static NAT to associate this IP to the private IP of a VM "
+"in the account. The Static NAT rule for the public IP can be disabled at "
+"any time. When Static NAT is disabled, a new public IP is allocated from "
+"the pool, which is not necessarily be the same one allocated initially."
 msgstr ""
 
 # a8f5524c22bd4ddf82fd8d2d6240b94f
@@ -128,9 +131,9 @@ msgid ""
 "flexibility to choose not to allocate a public IP by default. You can use "
 "the Associate Public IP option to turn on or off the automatic public IP "
 "assignment in the EIP-enabled Basic zones. If you turn off the automatic "
-"public IP assignment while creating a network offering, only a private IP is"
-" assigned to a VM when the VM is deployed with that network offering. Later,"
-" the user can acquire an IP for the VM and enable static NAT."
+"public IP assignment while creating a network offering, only a private IP "
+"is assigned to a VM when the VM is deployed with that network offering. "
+"Later, the user can acquire an IP for the VM and enable static NAT."
 msgstr ""
 
 # 89cea0807df84e08bd3c61dbf7579d80

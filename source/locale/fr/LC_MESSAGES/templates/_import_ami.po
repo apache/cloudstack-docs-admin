@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration Documentation 4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-09-18 13:59+0200\n"
+"PO-Revision-Date: 2016-11-19 12:19+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../../templates/_import_ami.rst:18
 msgid "Importing Amazon Machine Images"
-msgstr ""
+msgstr "Importer des images de Machines Amazon"
 
 #: ../../templates/_import_ami.rst:20
 msgid ""
@@ -49,14 +49,17 @@ msgid ""
 "line before executing. Some document viewers may introduce unwanted line breaks "
 "in copied text."
 msgstr ""
+"Lors du copier/coller d'une commande, soyez certain que la commande est collée "
+"sur une seule ligne avant de l'exécuter. Certains lecteur de document peuvent "
+"introduire un saut de ligne indésirable dans le texte copié."
 
 #: ../../templates/_import_ami.rst:36
 msgid "To import an AMI:"
-msgstr ""
+msgstr "Pour importer un AMI"
 
 #: ../../templates/_import_ami.rst:38
 msgid "Set up loopback on image file:"
-msgstr ""
+msgstr "Configurer la boucle interne sur le fichier image :"
 
 #: ../../templates/_import_ami.rst:45
 msgid ""
@@ -66,12 +69,12 @@ msgstr ""
 
 #: ../../templates/_import_ami.rst:52
 msgid "Create a grub entry in /boot/grub/grub.conf."
-msgstr ""
+msgstr "Créer une entrée grub dans /boot/grub/grub.conf."
 
 #: ../../templates/_import_ami.rst:60
 msgid ""
 "Determine the name of the PV kernel that has been installed into the image."
-msgstr ""
+msgstr "Déterminer le nom du kernel PV qui a été installé dans l'image."
 
 #: ../../templates/_import_ami.rst:73
 msgid ""
@@ -90,6 +93,8 @@ msgstr ""
 #: ../../templates/_import_ami.rst:92
 msgid "Edit etc/fstab, changing “sda1” to “xvda” and changing “sdb” to “xvdb”."
 msgstr ""
+"Editer le fichier /etc/fstab, changer \"sda1\" par \"xvda\" et changer \"sdb\" "
+"par \"xvdb\""
 
 #: ../../templates/_import_ami.rst:104
 msgid ""
@@ -106,15 +111,17 @@ msgstr ""
 
 #: ../../templates/_import_ami.rst:125
 msgid "Change the password."
-msgstr ""
+msgstr "Changer le mot de passe."
 
 #: ../../templates/_import_ami.rst:135
 msgid "Exit out of chroot."
-msgstr ""
+msgstr "Sortir du chroot."
 
 #: ../../templates/_import_ami.rst:141
 msgid "Check `etc/ssh/sshd_config` for lines allowing ssh login using a password."
 msgstr ""
+"Vérifier que `/etc/ssh/sshd_config` contienne les lignes autorisant la "
+"connexion SSH par mot de passe."
 
 #: ../../templates/_import_ami.rst:150
 msgid ""
@@ -125,7 +132,7 @@ msgstr ""
 
 #: ../../templates/_import_ami.rst:154
 msgid "Unmount and delete loopback mount."
-msgstr ""
+msgstr "Démonter et supprimer le montage en boucle interne."
 
 #: ../../templates/_import_ami.rst:161
 msgid ""
@@ -140,7 +147,7 @@ msgstr ""
 
 #: ../../templates/_import_ami.rst:180
 msgid "Import the image file into the VDI. This may take 10–20 minutes."
-msgstr ""
+msgstr "Importer le fichier image dans le VDI. Cela peut prendre 10-20 minutes."
 
 #: ../../templates/_import_ami.rst:186
 msgid ""
