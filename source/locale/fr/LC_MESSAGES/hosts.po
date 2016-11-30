@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-10-26 12:22+0200\n"
+"PO-Revision-Date: 2016-11-30 23:16+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Last-Translator: \n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../../hosts.rst:18
 msgid "Working with Hosts"
@@ -384,6 +384,15 @@ msgid ""
 "to date with the provided hypervisor patches. The hypervisor vendor is likely "
 "to refuse to support any system that is not up to date with patches."
 msgstr ""
+"Lorsque vous utilisez des logiciels hyperviseur sur des hôtes, assurez-vous "
+"que toutes les mises à jour fournies par le vendeur de l'hyperviseur soit "
+"appliquées. Suivez les sorties des correctifs de l'hyperviseur via les moyens "
+"du support du vendeur de l'hyperviseur, et appliquez les correctifs aussitôt "
+"que possible après leurs sorties. CloudStack ne va pas suivre ni vous notifier "
+"des correctifs requis pour l'hyperviseur. Il est essentiel que vos hôtes "
+"soient totalement à jour de leurs correctifs. Le vendeur de l'hyperviseur "
+"refusera probablement de supporter un système qui n'est pas à jour de "
+"correctifs."
 
 #: ../../hosts.rst:207
 msgid "The lack of up-do-date hotfixes can lead to data corruption and lost VMs."
@@ -453,6 +462,11 @@ msgid ""
 "IDs. For each hostname \"h\" (or vSphere cluster) that you are changing the "
 "password for, execute:"
 msgstr ""
+"Obtenir la liste des ID d'hôte pour les hôtes du même cluster pour lequel vous "
+"être en train de changer le mot de passe. Vous allez avoir besoin d'accéder à "
+"la base de données pour déterminer ces ID d'hôtes. Pour chaque nom d'hôte \"h"
+"\" (ou cluster vSphere) pour lequel vous voulez changer le mot de passe, "
+"exécuter :"
 
 #: ../../hosts.rst:249
 msgid ""
@@ -468,6 +482,9 @@ msgid ""
 "the passwords for hosts with host IDs 5 and 12 and host_details IDs 8 and 22 "
 "to \"password\"."
 msgstr ""
+"Mettre à jour les mots de passe pour l'hôte dans la base de données. Dans cet "
+"exemple, nous changeons les mots de passe pour les hôtes avec les ID d'hôte 5 "
+"et 12 et les ID host_details 8 et 22 avec le mot de passe \"password\"."
 
 #: ../../hosts.rst:266
 msgid "Over-Provisioning and Service Offering Limits"
@@ -485,6 +502,12 @@ msgid ""
 "resource capacity will be used. If the ratio is set to 1, no over-provisioning "
 "is done."
 msgstr ""
+"Les facteurs de sur-allocation de CPU et de mémoire (RAM) peuvent être "
+"paramétrés pour chaque cluster pour changer le nombre de VM qui peuvent "
+"fonctionner sur chaque hôte du cluster. Cela aide à optimiser l'utilisation "
+"des ressources. En augmentant le ration de sur-allocation, une plus grosse "
+"capacité de la ressource va être utilisée. Si le ration est fixé à 1, aucune "
+"sur-allocation n'est effectuée."
 
 #: ../../hosts.rst:276
 msgid ""
@@ -493,14 +516,18 @@ msgid ""
 "configuration variables. The default value of these variables is 1: over-"
 "provisioning is turned off by default."
 msgstr ""
+"L'administrateur peut aussi paramétrer les facteurs globaux par défaut de sur-"
+"allocation dans les variables de la configuration globale cpu.overprovisioning."
+"factor et mem.overprovisioning.factor. La valeur par défaut de ces variables "
+"est de 1 : la sur-allocation est désactivée par défaut."
 
 #: ../../hosts.rst:281
 msgid ""
 "Over-provisioning ratios are dynamically substituted in CloudStack's capacity "
 "calculations. For example:"
 msgstr ""
-"Les rations d'Over-provisionning sont dynamiquement substitué dans les calculs "
-"de capacités de CloudStack. Par exemple :"
+"Les facteurs d'Over-provisionning sont dynamiquement substitué dans les "
+"calculs de capacités de CloudStack. Par exemple :"
 
 #: ../../hosts.rst:284
 msgid ""
@@ -513,6 +540,7 @@ msgstr ""
 #: ../../hosts.rst:288
 msgid "With this configuration, suppose you deploy 3 VMs of 1 GB each:"
 msgstr ""
+"Avec cette configuration, en supposant que vous déployez 3 VM de 1 GB chacune :"
 
 #: ../../hosts.rst:290
 msgid "Used = 3 GB Free = 1 GB"
@@ -523,6 +551,9 @@ msgid ""
 "The administrator can specify a memory over-provisioning ratio, and can "
 "specify both CPU and memory over-provisioning ratios on a per-cluster basis."
 msgstr ""
+"L'administrateur peut spécifier un facteur de sur-allocation de mémoire, et "
+"peut spécifier à la fois les facteurs de sur-allocation de CPU et de mémoire "
+"par cluster."
 
 #: ../../hosts.rst:297
 msgid ""
@@ -535,6 +566,15 @@ msgid ""
 "utilization of resources, no matter where the CloudStack placement algorithm "
 "decides to place a VM."
 msgstr ""
+"Dans n'importe quel cloud, le nombre optimal de VM par hôte est affecté par "
+"des variables comme l'hyperviseur, le stockage et la configuration matérielle. "
+"Ils peuvent être différent pour chaque cluster dans le même cloud. Un simple "
+"paramètre global de sur-allocation ne peut pas représenter le meilleur moyen "
+"pour tous les différents cluster du cloud. Il doit être défini au niveau du "
+"plus petit dénominateur commun. La configuration par cluster fournie une "
+"granularité plus fine pour une meilleur utilisation des ressources, sans "
+"relation avec l'endroit où l'algorithme de placement de CloudStack décide de "
+"placer une VM."
 
 #: ../../hosts.rst:306
 msgid ""
@@ -545,6 +585,12 @@ msgid ""
 "an over-provisioning ratio of 1, and a lower-paying account to a cluster with "
 "a ratio of 2."
 msgstr ""
+"Les paramètres de sur-allocation peuvent être utilisés avec les ressources "
+"dédiées (assigner un cluster spécifique à un compte) pour effectivement offrir "
+"des niveaux de services différents à différents comptes. Par exemple, un "
+"compte payant pour un niveau de service plus cher peut être assigné à un "
+"cluster dédié avec un rapport de sur-allocation de 1, et un compte moins "
+"onéreux à un cluster avec un rapport de 2."
 
 #: ../../hosts.rst:313
 msgid ""
@@ -553,6 +599,10 @@ msgid ""
 "for that cluster. It is up to the administrator to be sure the host is "
 "actually suitable for the level of over-provisioning which has been set."
 msgstr ""
+"Lorsqu'un nouvel hôte est ajouté à un cluster, CloudStack supposera que l'hôte "
+"à la capacité d'exécuter la sur-allocation en CPU et en RAM configurée pour ce "
+"cluster. Il appartient à l'administrateur d'être sur que l'hôte est "
+"actuellement approprié au niveau de sur-allocation paramétré."
 
 #: ../../hosts.rst:321
 msgid "Limitations on Over-Provisioning in XenServer and KVM"
@@ -563,6 +613,8 @@ msgid ""
 "In XenServer, due to a constraint of this hypervisor, you can not use an over-"
 "provisioning factor greater than 4."
 msgstr ""
+"Dans XenServer, à cause d'une limitation de cet hyperviseur, vous ne pouvez "
+"pas utiliser un facteur plus grand que 4."
 
 #: ../../hosts.rst:326
 msgid ""
@@ -571,6 +623,10 @@ msgid ""
 "The hypervisor adjusts the memory within the set limits based on the memory "
 "contention."
 msgstr ""
+"L'hyperviseur KVM ne peut pas gérer l'allocation de mémoire dynamique aux VM. "
+"CloudStack défini le minimum et le maximum de quantité de mémoire qu'une VM "
+"peut utiliser. L'hyperviseur ajuste la mémoire dans les limites définies en "
+"fonction de la contention de la mémoire."
 
 #: ../../hosts.rst:333
 msgid "Requirements for Over-Provisioning"
@@ -583,6 +639,10 @@ msgid ""
 "and certain scripts. It is the administrator's responsibility to ensure that "
 "these requirements are met."
 msgstr ""
+"Plusieurs conditions préalables sont requises pour que la sur-allocation "
+"fonctionne correctement. Cette fonctionnalité est dépendante du type d'OS, des "
+"capacités de l'hyperviseur et de certains scripts. Il est de la responsabilité "
+"de l'administrateur de s'assurer que ces exigences soient réunies."
 
 #: ../../hosts.rst:342
 msgid "Balloon Driver"
@@ -594,6 +654,9 @@ msgid ""
 "communicates with the balloon driver to free up and make the memory available "
 "to a VM."
 msgstr ""
+"Toutes les machines virtuelles devraient avoir un driver de ballooning "
+"installé. L'hyperviseur communique avec le driver du ballooning pour libérer "
+"ou rendre la mémoire disponible à une machine virtuelle."
 
 #: ../../hosts.rst:350 ../../hosts.rst:380
 msgid "XenServer"
@@ -604,6 +667,8 @@ msgid ""
 "The balloon driver can be found as a part of xen pv or PVHVM drivers. The xen "
 "pvhvm drivers are included in upstream linux kernels 2.6.36+."
 msgstr ""
+"Le driver de ballooning sont fournis par les xen pv ou les drivers PVHVM. Les "
+"drivers pvhvm xen sont inclus dans les kernels linux supérieurs à 2.6.36+."
 
 #: ../../hosts.rst:357
 msgid "VMware"
@@ -615,6 +680,9 @@ msgid ""
 "that are deployed in a over-provisioned cluster should have the VMware tools "
 "installed."
 msgstr ""
+"Les drivers de ballooning sont fournis par les VMware tools. Toutes les VM qui "
+"sont déployées dans un cluster avec sur-allocation devraient avoir les VMware "
+"tools d'installés."
 
 #: ../../hosts.rst:365
 msgid "KVM"
@@ -626,6 +694,9 @@ msgid ""
 "installed in all Linux kernel versions 2.6.25 and greater. The administrator "
 "must set CONFIG\\_VIRTIO\\_BALLOON=y in the virtio configuration."
 msgstr ""
+"Toutes les VM doivent supporter les drivers virtio. Ces drivers sont installés "
+"dans toutes les versions du kernel Linux 2.6.25 et supérieur. L'administrateur "
+"doit paramètrer CONFIG\\_VIRTIO\\_BALLOON=y dans la configuration virtio."
 
 #: ../../hosts.rst:374
 msgid "Hypervisor capabilities"
@@ -633,13 +704,16 @@ msgstr "Capacités de l'hyperviseur"
 
 #: ../../hosts.rst:376
 msgid "The hypervisor must be capable of using the memory ballooning."
-msgstr ""
+msgstr "L'hyperviseur doit être capable d'utiliser le memory-balloning."
 
 #: ../../hosts.rst:382
 msgid ""
 "The DMC (Dynamic Memory Control) capability of the hypervisor should be "
 "enabled. Only XenServer Advanced and above versions have this feature."
 msgstr ""
+"La capacité DMC (Dynamic Memory Control) de l'hyperviseur devrait être "
+"activée. Seul XenServer Advanced et versions supérieures disposent de cette "
+"fonctionnalité."
 
 #: ../../hosts.rst:387
 msgid "VMware, KVM"
@@ -647,7 +721,7 @@ msgstr "VMware, KVM"
 
 #: ../../hosts.rst:389
 msgid "Memory ballooning is supported by default."
-msgstr ""
+msgstr "Le memory ballooning est supporté par défaut."
 
 #: ../../hosts.rst:393
 msgid "Setting Over-Provisioning Ratios"
@@ -660,6 +734,11 @@ msgid ""
 "and mem.overprovisioning.factor will be applied when a new cluster is created. "
 "Later, the ratios can be modified for an existing cluster."
 msgstr ""
+"Il existe deux façons pour l'administrateur racine de définir des rapport de "
+"sur-allocation du CPU et de la RAM. Tout d'abord, les paramètres de "
+"configuration globaux cpu.overprovisioning.factor et mem.overprovisioning."
+"factor seront appliqués lors de la création d'un nouveau cluster. Puis les "
+"facteurs pourront être modifiés pour un cluster existant."
 
 #: ../../hosts.rst:401
 msgid ""
@@ -670,6 +749,13 @@ msgid ""
 "ratios, to ensure that CloudStack is correctly tracking the amount of free "
 "capacity."
 msgstr ""
+"Seules les machines virtuelles déployées après la modification sont affectées "
+"par le nouveau paramètre. Si vous voulez que les machines virtuelles déployées "
+"avant la modification adoptent le nouveau facteur de sur-allocation, vous "
+"devrez arrêter et redémarrer les machines virtuelles. Lorsque cela est fait, "
+"CloudStack recalculera ou évaluera les capacités utilisées et réservées en "
+"fonction des nouveaux facteurs de sur-allocation pour s'assurer que CloudStack "
+"calcule correctement la quantité de capacité disponible."
 
 #: ../../hosts.rst:409
 msgid ""
@@ -678,10 +764,17 @@ msgid ""
 "to accommodate the new VMs. Just wait for the new used/available values to "
 "become available, to be sure there is room for all the new VMs you want."
 msgstr ""
+"Il est plus prudent de ne pas déployer de nouvelles machines virtuelles "
+"supplémentaires pendant que le re-calcul des capacités est en cours, au cas où "
+"les nouvelles valeurs de la capacité disponible ne seraient pas suffisamment "
+"élevées pour accueillir les nouvelles machines virtuelles. Il suffit "
+"d'attendre que les nouvelles valeurs utilisées / disponibles deviennent "
+"disponibles, pour être sûr qu'il y ait de la place pour toutes les nouvelles "
+"machines virtuelles que vous désirez."
 
 #: ../../hosts.rst:415
 msgid "To change the over-provisioning ratios for an existing cluster:"
-msgstr ""
+msgstr "Pour changer les facteurs de sur-allocation pour un cluster existant :"
 
 #: ../../hosts.rst:417
 msgid "Log in as administrator to the CloudStack UI."
@@ -694,6 +787,8 @@ msgstr "Sous Clusters, cliquer sur Voir tout."
 #: ../../hosts.rst:423
 msgid "Select the cluster you want to work with, and click the Edit button."
 msgstr ""
+"Sélectionner le cluster sur lequel vous voulez travailler, et cliquer sur le "
+"bouton Editer."
 
 #: ../../hosts.rst:425
 msgid ""
@@ -702,6 +797,10 @@ msgid ""
 "in these fields is the default value inherited from the global configuration "
 "settings."
 msgstr ""
+"Saisissez vos multiplicateurs de sur-allocation désirés dans les champs CPU "
+"overcommit ratio et RAM overcommit ratio. La valeur indiquée initialement dans "
+"ces champs est la valeur par défaut héritée des paramètres de configuration "
+"globaux."
 
 #: ../../hosts.rst:436
 msgid "Service Offering Limits and Over-Provisioning"
@@ -713,6 +812,10 @@ msgid ""
 "count. For example, a guest with a service offering of one core will have only "
 "one core available to it regardless of other activity on the Host."
 msgstr ""
+"Les limites d'offre de service (par exemple 1 GHz, 1 coeur) sont strictement "
+"appliquées pour le nombre de noyaux. Par exemple, un invité disposant d'une "
+"offre de service d'un coeur n'aura qu'un seul coeur disponible, indépendamment "
+"de toute autre activité sur l'hôte."
 
 #: ../../hosts.rst:443
 msgid ""
@@ -728,6 +831,18 @@ msgid ""
 "created from a 1 GHz service offering. CloudStack does not perform memory over-"
 "provisioning."
 msgstr ""
+"Les limites de service offertes en gigahertz sont appliquées uniquement "
+"lorsqu'il y a contention des ressources CPU. Par exemple, supposons qu'un "
+"invité ait été créé avec une offre de service de 1 GHz sur un hôte disposant "
+"de coeurs à 2 GHz et que cet invité est le seul client en cours d'exécution "
+"sur l'hôte. L'invité aura à sa disposition la totalité des 2 GHz. Lorsque "
+"plusieurs invités tentent d'utiliser le CPU, un facteur de pondération est "
+"utilisé pour planifier les ressources CPU. Le poids est basé sur la vitesse "
+"d'horloge de l'offre de service. Les clients reçoivent une allocation CPU "
+"proportionnelle au GHz de leur offre de service. Par exemple, un invité créé à "
+"partir d'une offre de service à 2 GHz recevra l'équivalent de deux fois "
+"l'allocation CPU d'un invité créé à partir d'une offre de service à 1 GHz. "
+"CloudStack n'effectue pas de sur-allocation de la mémoire."
 
 #: ../../hosts.rst:457
 msgid "VLAN Provisioning"
@@ -738,6 +853,8 @@ msgid ""
 "CloudStack automatically creates and destroys interfaces bridged to VLANs on "
 "the hosts. In general the administrator does not need to manage this process."
 msgstr ""
+"CloudStack crée et détruit automatiquement les interfaces reliées aux VLAN sur "
+"les hôtes. En général, l'administrateur n'a pas besoin de gérer ce processus."
 
 #: ../../hosts.rst:463
 msgid ""
@@ -746,6 +863,10 @@ msgid ""
 "then they are destroyed when all guests that require them have been terminated "
 "or moved to another host."
 msgstr ""
+"CloudStack gère les VLAN différemment en fonction du type d'hyperviseur. Pour "
+"XenServer ou KVM, les VLAN sont créés uniquement sur les hôtes où ils seront "
+"utilisés, puis ils sont détruits lorsque tous les invités qui en ont besoin "
+"ont été supprimés ou déplacés vers un autre hôte."
 
 #: ../../hosts.rst:468
 msgid ""
@@ -756,6 +877,12 @@ msgid ""
 "Additionally, the VLANs are not removed from the Hosts when they are no longer "
 "needed."
 msgstr ""
+"Pour vSphere, les VLAN sont provisionnés sur tous les hôtes du cluster, même "
+"s'il n'y a pas d'invité nécessitant le VLAN en cours d'exécution sur un hôte "
+"particulier. Cela permet à l'administrateur d'effectuer une migration à chaud "
+"et autres fonctions du vCenter sans avoir à créer le VLAN sur l'hôte de "
+"destination. De plus, les VLAN ne sont pas supprimés des hôtes lorsqu'ils ne "
+"sont plus nécessaires."
 
 #: ../../hosts.rst:475
 msgid ""
@@ -769,6 +896,16 @@ msgid ""
 "each one with their own routers and the guest networks on different physical "
 "NICs."
 msgstr ""
+"Vous pouvez utiliser les mêmes VLAN sur différents réseaux physiques à "
+"condition que chaque réseau physique possède sa propre infrastructure de "
+"niveau 2, comme des commutateurs. Par exemple, vous pouvez spécifier une plage "
+"de VLAN de 500 à 1000 lors du déploiement des réseaux physiques A et B dans "
+"une configuration de type zone avancée. Cette fonctionnalité vous permet de "
+"configurer une infrastructure physique de niveau 2 supplémentaire sur une "
+"carte réseau physique différente et d'utiliser le même ensemble de VLAN si "
+"vous veniez à être à court de VLAN. Un autre avantage est que vous pouvez "
+"utiliser le même ensemble d'IP pour différents clients, chacun avec leurs "
+"propres routeurs et réseaux invités sur différentes interfaces physiques."
 
 #: ../../hosts.rst:487
 msgid "VLAN Allocation Example"
@@ -779,6 +916,8 @@ msgid ""
 "VLANs are required for public and guest traffic. The following is an example "
 "of a VLAN allocation scheme:"
 msgstr ""
+"Les VLAN sont requis pour le trafic public et privé. Voici un exemple de "
+"schéma d'allocation VLAN:"
 
 #: ../../hosts.rst:495
 msgid "VLAN IDs"
@@ -857,6 +996,8 @@ msgstr "VLAN transportant le trafic public."
 #: ../../hosts.rst:501
 msgid "CloudStack accounts. Can be scoped by project, domain, or all accounts."
 msgstr ""
+"Comptes CloudStack. Peut être limité à un projet, à un domaine ou pour tous "
+"les comptes."
 
 #: ../../hosts.rst:502
 msgid "greater than 1000"
@@ -877,6 +1018,11 @@ msgid ""
 "add multiple non contiguous VLAN ranges while creating a zone. You can also "
 "use the UpdatephysicalNetwork API to extend the VLAN range."
 msgstr ""
+"CloudStack vous offre la flexibilité d'ajouter des plages de VLAN non "
+"contiguës à votre réseau. L'administrateur peut mettre à jour une plage de "
+"VLAN existante ou ajouter plusieurs plages de VLAN non contiguës lors de la "
+"création d'une zone. Vous pouvez également utiliser l'API "
+"UpdatephysicalNetwork pour étendre la plage de VLAN."
 
 #: ../../hosts.rst:515
 msgid "Log in to the CloudStack UI as an administrator or end user."
@@ -943,6 +1089,10 @@ msgid ""
 "networks. As a Root admin, you can assign a VLAN ID when a network is created, "
 "just the way it's done for Shared networks."
 msgstr ""
+"CloudStack vous offre la possibilité de contrôler l'assignation de VLAN aux "
+"réseaux isolés. En tant qu'administrateur racine, vous pouvez attribuer un ID "
+"de VLAN lorsqu'un réseau est créé, comme c'est le cas pour les réseaux "
+"partagés."
 
 #: ../../hosts.rst:547
 msgid ""
@@ -954,6 +1104,13 @@ msgid ""
 "network. On each subsequent implementation of a network, a new VLAN can be "
 "assigned."
 msgstr ""
+"Le comportement précédent est également pris en charge - un VLAN est alloué de "
+"façon aléatoire à un réseau à partir de la plage VNET du réseau physique "
+"lorsque le réseau passe à l'état Implémenté. Le VLAN est libéré dans le pool "
+"VNET lorsque le réseau s'arrête par le Network Garbage Collection. Le VLAN "
+"peut être réutilisé soit par le même réseau lors de sa remise en œuvre, soit "
+"par n'importe quel autre réseau. Sur chaque implémentation ultérieure d'un "
+"réseau, un nouveau VLAN peut être assigné."
 
 #: ../../hosts.rst:555
 msgid ""
@@ -961,14 +1118,18 @@ msgid ""
 "are not aware of the physical network topology. They cannot even view what "
 "VLAN is assigned to a network."
 msgstr ""
+"Seul l'administrateur racine peut attribuer des VLAN car les utilisateurs "
+"réguliers ou l'administrateur de domaine ne connaissent pas la topologie du "
+"réseau physique. Ils ne peuvent même pas voir quel VLAN est affecté à un "
+"réseau."
 
 #: ../../hosts.rst:559
 msgid "To enable you to assign VLANs to Isolated networks,"
-msgstr ""
+msgstr "Pour vous permettre d'assigner des VLAN à des réseaux isolés,"
 
 #: ../../hosts.rst:561
 msgid "Create a network offering by specifying the following:"
-msgstr ""
+msgstr "Créer une offre de réseau en spécifiant ce qui suit :"
 
 #: ../../hosts.rst:563
 msgid "**Guest Type**: Select Isolated."
@@ -1000,16 +1161,21 @@ msgid ""
 "the state is changed to Setup. In this state, the network will not be garbage "
 "collected."
 msgstr ""
+"Lorsqu'un VLAN est spécifié, un CIDR et une passerelle sont affectés à ce "
+"réseau et l'état est changé à Setup. Dans cet état, le réseau ne sera pas "
+"récupérés."
 
 #: ../../hosts.rst:580
 msgid ""
 "You cannot change a VLAN once it's assigned to the network. The VLAN remains "
 "with the network for its entire life cycle."
 msgstr ""
+"Vous ne pouvez pas changer un VLAN une fois qu'il est affecté à un réseau. Le "
+"VLAN reste avec le réseau pendant tout son cycle de vie."
 
 #: ../../hosts.rst:591
 msgid "Out-of-band Management"
-msgstr ""
+msgstr "Gestion des Out-of-band"
 
 #: ../../hosts.rst:593
 msgid ""
@@ -1020,12 +1186,21 @@ msgid ""
 "band management driver in CloudStack that uses `ipmitool` for performing IPMI "
 "2.0 management operations."
 msgstr ""
+"CloudStack fournit aux administrateurs racine la possibilité de configurer et "
+"d'utiliser les interfaces out-of-band supportées (par exemple, IPMI, iLO, "
+"DRAC, etc.) sur un hôte physique pour gérer les opérations d'alimentation de "
+"l'hôte telles que marche, arrêt, reset, etc. Par défaut, les controlleurs IPMI "
+"2.0 sont pris en charge nativement par le pilote de gestion `IPMITOOL` out-of-"
+"band dans CloudStack qui utilise `ipmitool` pour effectuer des opérations de "
+"gestion IPMI 2.0."
 
 #: ../../hosts.rst:600
 msgid ""
 "Following are some global settings that control various aspects of this "
 "feature."
 msgstr ""
+"Voici quelques paramètres globaux qui contrôlent différents aspects de cette "
+"fonctionnalité."
 
 #: ../../hosts.rst:605
 msgid "Global setting"
@@ -1051,6 +1226,8 @@ msgstr "60"
 msgid ""
 "The out of band management action timeout in seconds, configurable per cluster"
 msgstr ""
+"Le délai d'attente de l'action du out of band management en secondes, "
+"configurable par cluster"
 
 #: ../../hosts.rst:608
 msgid "outofbandmanagement.ipmitool.interface"
@@ -1058,13 +1235,15 @@ msgstr "outofbandmanagement.ipmitool.interface"
 
 #: ../../hosts.rst:608
 msgid "lanplus"
-msgstr ""
+msgstr "lanplus"
 
 #: ../../hosts.rst:608
 msgid ""
 "The out of band management IpmiTool driver interface to use. Valid values are: "
 "lan, lanplus etc"
 msgstr ""
+"L'interface du pilote IpmiTool pour le out of band management à utiliser. Les "
+"valeurs valides sont: lan, lanplus, etc."
 
 #: ../../hosts.rst:609
 msgid "outofbandmanagement.ipmitool.path"
@@ -1077,10 +1256,12 @@ msgstr "/usr/bin/ipmitool"
 #: ../../hosts.rst:609
 msgid "The out of band management ipmitool path used by the IpmiTool driver"
 msgstr ""
+"Le chemin de l'ipmitool du out of band management utilisé par le pilote de "
+"l'IpmiTool"
 
 #: ../../hosts.rst:610
 msgid "outofbandmanagement.ipmitool.retries"
-msgstr ""
+msgstr "outofbandmanagement.ipmitool.retries"
 
 #: ../../hosts.rst:610
 msgid "1"
@@ -1089,6 +1270,7 @@ msgstr "1"
 #: ../../hosts.rst:610
 msgid "The out of band management IpmiTool driver retries option -R"
 msgstr ""
+"L'option de nouvelle essais -R du pilote IpmiTool du out of band management"
 
 #: ../../hosts.rst:611
 msgid "outofbandmanagement.sync.interval"
@@ -1101,6 +1283,8 @@ msgstr "300"
 #: ../../hosts.rst:611
 msgid "The out of band management background sync thread interval in seconds"
 msgstr ""
+"L'intervalle en secondes du thread de synchronisation en arrière-plan du "
+"gestionnaire out of band."
 
 #: ../../hosts.rst:612
 msgid "outofbandmanagement.sync.poolsize"
@@ -1122,6 +1306,12 @@ msgid ""
 "time when CloudStack management server starts. Rest of the global settings can "
 "be changed without requiring restarting of management server(s)."
 msgstr ""
+"Une modification des paramètres `outofbandmanagement.sync.interval` ou` "
+"outofbandmanagement.sync.poolsize` requiert le redémarrage des serveurs de "
+"gestion puisque le pool de threads et un thread de synchronisation en arrière-"
+"plan (état d'alimentation) sont configurés pendant le chargement lorsque le "
+"serveur de gestion CloudStack démarre. Le reste des paramètres globaux peut "
+"être modifié sans nécessiter le redémarrage du ou des serveurs de gestion."
 
 #: ../../hosts.rst:621
 msgid ""
@@ -1133,6 +1323,15 @@ msgid ""
 "`outofbandmanagement.action.timeout` / `outofbandmanagement.sync.poolsize` "
 "seconds to complete a background power-state sync scan in a single round."
 msgstr ""
+"Le `Outofbandmanagement.sync.poolsize` est le nombre maximal de scanners "
+"ipmitool en arrière plan d'état d'alimentation pouvant être exécutés à la "
+"fois. En fonction du nombre maximal d'hôtes que vous avez, vous pouvez "
+"augmenter / diminuer la valeur en fonction de la quantité de stress que votre "
+"serveur hôte de gestion peut supporter. Il faudra calculer le plus grand "
+"nombre d'hôtes out-of-band activés par la formule  * `outofbandmanagement."
+"action.timeout` / `outofbandmanagement.sync.poolsize` secondes pour compléter "
+"une analyse de synchronisation de l'état d'alimentation en arrière-plan en un "
+"seul tour."
 
 #: ../../hosts.rst:629
 msgid ""
@@ -1141,6 +1340,11 @@ msgid ""
 "`configureOutOfBandManagement` API. Next, the Root admin needs to enable it. "
 "The feature can be enabled or disabled across a zone or a cluster or a host,"
 msgstr ""
+"Pour utiliser cette fonctionnalité, l'administrateur racine doit d'abord "
+"configurer la gestion out-of-band pour un hôte à l'aide de l'interface "
+"utilisateur ou de l'API `configureOutOfBandManagement`. Ensuite, "
+"l'administrateur racine doit l'activer. La fonction peut être activée ou "
+"désactivée dans une zone, un cluster ou un hôte,"
 
 #: ../../hosts.rst:634
 msgid ""
@@ -1148,6 +1352,11 @@ msgid ""
 "not disabled at zone or cluster level), Root admins would be able to issue "
 "power management actions such as on, off, reset, cycle, soft and status."
 msgstr ""
+"Une fois que le management out-of-band est configuré et activé pour un hôte "
+"(et pourvu qu'il ne soit pas désactivée au niveau de la zone ou du cluster), "
+"les administrateurs racines sont en mesure d'exécuter des actions de gestion "
+"de l'alimentation telles que marche, arrêt, réinitialisation, cycle, logiciel "
+"et statut."
 
 #: ../../hosts.rst:638
 msgid ""

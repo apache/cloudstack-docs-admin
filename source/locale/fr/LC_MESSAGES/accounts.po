@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-08-31 00:30+0200\n"
+"PO-Revision-Date: 2016-11-20 18:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../../accounts.rst:18
 msgid "Managing Roles, Accounts, Users and Domains"
@@ -543,7 +543,7 @@ msgstr ""
 
 #: ../../accounts.rst:266
 msgid "Using an LDAP Server for User Authentication"
-msgstr "Utiliser un serveur LDAP pour l'autentification des utilisateurs"
+msgstr "Utiliser un serveur LDAP pour l'authentification des utilisateurs"
 
 #: ../../accounts.rst:268
 msgid ""

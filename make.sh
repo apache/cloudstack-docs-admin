@@ -14,6 +14,11 @@ sphinx-build -b html -d build/doctrees  -D language='fr' source build/html
 echo "Generation du PDF"
 make latexpdf
 
+echo "Generation du latex"
+make latex
+
+pandoc -s build/latex/CloudStackAdministrationDocumentation.tex -o build/CloudStackAdministrationDocumentation.rtf
+
 #echo "Copie en FTP"
 #ftp -n $HOST << END_SCRIPT
 #quote USER $USER

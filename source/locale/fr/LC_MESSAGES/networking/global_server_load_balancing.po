@@ -1,21 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:05+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-11-30 23:31+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
 
 # dcd5b9f2eedc4d1682f64e174cd2cef7
 #: ../../networking/global_server_load_balancing.rst:18
@@ -55,13 +57,13 @@ msgstr ""
 msgid ""
 "Global Server Load Balancing (GSLB) is an extension of load balancing "
 "functionality, which is highly efficient in avoiding downtime. Based on the "
-"nature of deployment, GSLB represents a set of technologies that is used for"
-" various purposes, such as load sharing, disaster recovery, performance, and"
-" legal obligations. With GSLB, workloads can be distributed across multiple "
-"data centers situated at geographically separated locations. GSLB can also "
-"provide an alternate location for accessing a resource in the event of a "
-"failure, or to provide a means of shifting traffic easily to simplify "
-"maintenance, or both."
+"nature of deployment, GSLB represents a set of technologies that is used "
+"for various purposes, such as load sharing, disaster recovery, performance, "
+"and legal obligations. With GSLB, workloads can be distributed across "
+"multiple data centers situated at geographically separated locations. GSLB "
+"can also provide an alternate location for accessing a resource in the "
+"event of a failure, or to provide a means of shifting traffic easily to "
+"simplify maintenance, or both."
 msgstr ""
 
 # ba32175058a043b081e7045d04a34334
@@ -79,11 +81,11 @@ msgstr ""
 msgid ""
 "**GSLB Site**: In CloudStack terminology, GSLB sites are represented by "
 "zones that are mapped to data centers, each of which has various network "
-"appliances. Each GSLB site is managed by a NetScaler appliance that is local"
-" to that site. Each of these appliances treats its own site as the local "
-"site and all other sites, managed by other appliances, as remote sites. It "
-"is the central entity in a GSLB deployment, and is represented by a name and"
-" an IP address."
+"appliances. Each GSLB site is managed by a NetScaler appliance that is "
+"local to that site. Each of these appliances treats its own site as the "
+"local site and all other sites, managed by other appliances, as remote "
+"sites. It is the central entity in a GSLB deployment, and is represented by "
+"a name and an IP address."
 msgstr ""
 
 # e6f8317f00944a5faf27bf059374e211
@@ -113,14 +115,15 @@ msgstr ""
 # 25269a15ffaf4c48880b969ed8e8ff0b
 #: ../../networking/global_server_load_balancing.rst:81
 msgid ""
-"**Load Balancing or Content Switching Virtual Servers**: According to Citrix"
-" NetScaler terminology, a load balancing or content switching virtual server"
-" represents one or many servers on the local network. Clients send their "
-"requests to the load balancing or content switching virtual server's virtual"
-" IP (VIP) address, and the virtual server balances the load across the local"
-" servers. After a GSLB virtual server selects a GSLB service representing "
-"either a local or a remote load balancing or content switching virtual "
-"server, the client sends the request to that virtual server's VIP address."
+"**Load Balancing or Content Switching Virtual Servers**: According to "
+"Citrix NetScaler terminology, a load balancing or content switching virtual "
+"server represents one or many servers on the local network. Clients send "
+"their requests to the load balancing or content switching virtual server's "
+"virtual IP (VIP) address, and the virtual server balances the load across "
+"the local servers. After a GSLB virtual server selects a GSLB service "
+"representing either a local or a remote load balancing or content switching "
+"virtual server, the client sends the request to that virtual server's VIP "
+"address."
 msgstr ""
 
 # a4ae12735c574a18995202afba84a585
@@ -154,18 +157,18 @@ msgid ""
 "Global server load balancing is used to manage the traffic flow to a web "
 "site hosted on two separate zones that ideally are in different geographic "
 "locations. The following is an illustration of how GLSB functionality is "
-"provided in CloudStack: An organization, xyztelco, has set up a public cloud"
-" that spans two zones, Zone-1 and Zone-2, across geographically separated "
-"data centers that are managed by CloudStack. Tenant-A of the cloud launches "
-"a highly available solution by using xyztelco cloud. For that purpose, they "
-"launch two instances each in both the zones: VM1 and VM2 in Zone-1 and VM5 "
-"and VM6 in Zone-2. Tenant-A acquires a public IP, IP-1 in Zone-1, and "
-"configures a load balancer rule to load balance the traffic between VM1 and "
-"VM2 instances. CloudStack orchestrates setting up a virtual server on the LB"
-" service provider in Zone-1. Virtual server 1 that is set up on the LB "
-"service provider in Zone-1 represents a publicly accessible virtual server "
-"that client reaches at IP-1. The client traffic to virtual server 1 at IP-1 "
-"will be load balanced across VM1 and VM2 instances."
+"provided in CloudStack: An organization, xyztelco, has set up a public "
+"cloud that spans two zones, Zone-1 and Zone-2, across geographically "
+"separated data centers that are managed by CloudStack. Tenant-A of the "
+"cloud launches a highly available solution by using xyztelco cloud. For "
+"that purpose, they launch two instances each in both the zones: VM1 and VM2 "
+"in Zone-1 and VM5 and VM6 in Zone-2. Tenant-A acquires a public IP, IP-1 in "
+"Zone-1, and configures a load balancer rule to load balance the traffic "
+"between VM1 and VM2 instances. CloudStack orchestrates setting up a virtual "
+"server on the LB service provider in Zone-1. Virtual server 1 that is set "
+"up on the LB service provider in Zone-1 represents a publicly accessible "
+"virtual server that client reaches at IP-1. The client traffic to virtual "
+"server 1 at IP-1 will be load balanced across VM1 and VM2 instances."
 msgstr ""
 
 # ab85065c7a794a62bb64bb4d17ff62c9
@@ -192,41 +195,42 @@ msgstr ""
 # 16e02bcf2da14fd48ec4af740ccfc445
 #: ../../networking/global_server_load_balancing.rst:144
 msgid "|gslb.png|"
-msgstr ""
+msgstr "|gslb.png|"
 
 # 7f93cb0f9f2e4bc58cfc7f308c019bda
 #: ../../networking/global_server_load_balancing.rst:146
 msgid ""
-"Tenant-A wishes to leverage the GSLB service provided by the xyztelco cloud."
-" Tenant-A configures a GSLB rule to load balance traffic across virtual "
-"server 1 at Zone-1 and virtual server 2 at Zone-2. The domain name is "
-"provided as A.xyztelco.com. CloudStack orchestrates setting up GSLB virtual "
-"server 1 on the GSLB service provider at Zone-1. CloudStack binds virtual "
-"server 1 of Zone-1 and virtual server 2 of Zone-2 to GLSB virtual server 1. "
-"GSLB virtual server 1 is configured to start monitoring the health of "
-"virtual server 1 and 2 in Zone-1. CloudStack will also orchestrate setting "
-"up GSLB virtual server 2 on GSLB service provider at Zone-2. CloudStack will"
-" bind virtual server 1 of Zone-1 and virtual server 2 of Zone-2 to GLSB "
-"virtual server 2. GSLB virtual server 2 is configured to start monitoring "
-"the health of virtual server 1 and 2. CloudStack will bind the domain "
-"A.xyztelco.com to both the GSLB virtual server 1 and 2. At this point, "
-"Tenant-A service will be globally reachable at A.xyztelco.com. The private "
-"DNS server for the domain xyztelcom.com is configured by the admin out-of-"
-"band to resolve the domain A.xyztelco.com to the GSLB providers at both the "
-"zones, which are configured as ADNS for the domain A.xyztelco.com. A client "
-"when sends a DNS request to resolve A.xyztelcom.com, will eventually get DNS"
-" delegation to the address of GSLB providers at zone 1 and 2. A client DNS "
-"request will be received by the GSLB provider. The GSLB provider, depending "
-"on the domain for which it needs to resolve, will pick up the GSLB virtual "
-"server associated with the domain. Depending on the health of the virtual "
-"servers being load balanced, DNS request for the domain will be resolved to "
-"the public IP associated with the selected virtual server."
+"Tenant-A wishes to leverage the GSLB service provided by the xyztelco "
+"cloud. Tenant-A configures a GSLB rule to load balance traffic across "
+"virtual server 1 at Zone-1 and virtual server 2 at Zone-2. The domain name "
+"is provided as A.xyztelco.com. CloudStack orchestrates setting up GSLB "
+"virtual server 1 on the GSLB service provider at Zone-1. CloudStack binds "
+"virtual server 1 of Zone-1 and virtual server 2 of Zone-2 to GLSB virtual "
+"server 1. GSLB virtual server 1 is configured to start monitoring the "
+"health of virtual server 1 and 2 in Zone-1. CloudStack will also "
+"orchestrate setting up GSLB virtual server 2 on GSLB service provider at "
+"Zone-2. CloudStack will bind virtual server 1 of Zone-1 and virtual server "
+"2 of Zone-2 to GLSB virtual server 2. GSLB virtual server 2 is configured "
+"to start monitoring the health of virtual server 1 and 2. CloudStack will "
+"bind the domain A.xyztelco.com to both the GSLB virtual server 1 and 2. At "
+"this point, Tenant-A service will be globally reachable at A.xyztelco.com. "
+"The private DNS server for the domain xyztelcom.com is configured by the "
+"admin out-of-band to resolve the domain A.xyztelco.com to the GSLB "
+"providers at both the zones, which are configured as ADNS for the domain A."
+"xyztelco.com. A client when sends a DNS request to resolve A.xyztelcom.com, "
+"will eventually get DNS delegation to the address of GSLB providers at zone "
+"1 and 2. A client DNS request will be received by the GSLB provider. The "
+"GSLB provider, depending on the domain for which it needs to resolve, will "
+"pick up the GSLB virtual server associated with the domain. Depending on "
+"the health of the virtual servers being load balanced, DNS request for the "
+"domain will be resolved to the public IP associated with the selected "
+"virtual server."
 msgstr ""
 
 # dcd79b8e29a442d098cb8090a4527144
 #: ../../networking/global_server_load_balancing.rst:175
 msgid "Configuring GSLB"
-msgstr ""
+msgstr "Configurer le GSLB"
 
 # af3fb04e787447d9976ebb989e847e3d
 #: ../../networking/global_server_load_balancing.rst:177
@@ -236,11 +240,11 @@ msgid ""
 "different servers in each zone in the region. Then on the NetScaler side, "
 "configure both NetScaler appliances that you plan to add to each zone as "
 "authoritative DNS (ADNS) servers. Next, create a GSLB site for each zone, "
-"configure GSLB virtual servers for each site, create GLSB services, and bind"
-" the GSLB services to the GSLB virtual servers. Finally, bind the domain to "
-"the GSLB virtual servers. The GSLB configurations on the two appliances at "
-"the two different zones are identical, although each sites load-balancing "
-"configuration is specific to that site."
+"configure GSLB virtual servers for each site, create GLSB services, and "
+"bind the GSLB services to the GSLB virtual servers. Finally, bind the "
+"domain to the GSLB virtual servers. The GSLB configurations on the two "
+"appliances at the two different zones are identical, although each sites "
+"load-balancing configuration is specific to that site."
 msgstr ""
 
 # f12e3e8dd3114cc6ab5febf7d770620a
@@ -260,9 +264,9 @@ msgstr ""
 # e675df400e4c40079a4b8ac2c3a3a007
 #: ../../networking/global_server_load_balancing.rst:195
 msgid ""
-"On the NetScaler side, configure GSLB as given in `Configuring Global Server"
-" Load Balancing (GSLB) <http://support.citrix.com/proddocs/topic/netscaler-"
-"traffic-management-10-map/ns-gslb-config-con.html>`_:"
+"On the NetScaler side, configure GSLB as given in `Configuring Global "
+"Server Load Balancing (GSLB) <http://support.citrix.com/proddocs/topic/"
+"netscaler-traffic-management-10-map/ns-gslb-config-con.html>`_:"
 msgstr ""
 
 # 8366d0a33b5d4328b32668eee7db43a7
@@ -292,29 +296,29 @@ msgstr ""
 # 6c3c9b0f00314c219b51b9ea4a817b37
 #: ../../networking/global_server_load_balancing.rst:211
 msgid ""
-"As per the example given above, the site names are A.xyztelco.com and "
-"B.xyztelco.com."
+"As per the example given above, the site names are A.xyztelco.com and B."
+"xyztelco.com."
 msgstr ""
 
 # 8bc45e9126194d24824f0e0e2d92ca1b
 #: ../../networking/global_server_load_balancing.rst:214
 msgid ""
-"For more information, see `Configuring a Basic GSLB Site "
-"<http://support.citrix.com/proddocs/topic/netscaler-traffic-"
-"management-10-map/ns-gslb-config-basic-site-tsk.html>`_."
+"For more information, see `Configuring a Basic GSLB Site <http://support."
+"citrix.com/proddocs/topic/netscaler-traffic-management-10-map/ns-gslb-"
+"config-basic-site-tsk.html>`_."
 msgstr ""
 
 # 7276993a8c1f4f089886c5bfce5f4f6e
 #: ../../networking/global_server_load_balancing.rst:217
 msgid "Configure a GSLB virtual server."
-msgstr ""
+msgstr "Configurer un serveur virtuel GSLB"
 
 # 8d0c82c139184d3992209af4d2e54a6c
 #: ../../networking/global_server_load_balancing.rst:219
 msgid ""
-"For more information, see `Configuring a GSLB Virtual Server "
-"<http://support.citrix.com/proddocs/topic/netscaler-traffic-"
-"management-10-map/ns-gslb-config-vsvr-tsk.html>`_."
+"For more information, see `Configuring a GSLB Virtual Server <http://"
+"support.citrix.com/proddocs/topic/netscaler-traffic-management-10-map/ns-"
+"gslb-config-vsvr-tsk.html>`_."
 msgstr ""
 
 # 7db75bd72fa44709ab7adb82ba26f318
@@ -325,9 +329,9 @@ msgstr ""
 # 7dd4d9aa1c394ed6859a00b0331f3e5b
 #: ../../networking/global_server_load_balancing.rst:224
 msgid ""
-"For more information, see `Configuring a GSLB Service "
-"<http://support.citrix.com/proddocs/topic/netscaler-traffic-"
-"management-10-map/ns-gslb-config-svc-tsk.html>`_."
+"For more information, see `Configuring a GSLB Service <http://support."
+"citrix.com/proddocs/topic/netscaler-traffic-management-10-map/ns-gslb-"
+"config-svc-tsk.html>`_."
 msgstr ""
 
 # 30745365545f4cbca1a5ff6fa73a495f
@@ -339,8 +343,8 @@ msgstr ""
 #: ../../networking/global_server_load_balancing.rst:229
 msgid ""
 "For more information, see `Binding GSLB Services to a GSLB Virtual Server "
-"<http://support.citrix.com/proddocs/topic/netscaler-traffic-"
-"management-10-map/ns-gslb-bind-svc-vsvr-tsk.html>`_."
+"<http://support.citrix.com/proddocs/topic/netscaler-traffic-management-10-"
+"map/ns-gslb-bind-svc-vsvr-tsk.html>`_."
 msgstr ""
 
 # 74f55b2693404f1d8b46b1960f0987db
@@ -354,8 +358,8 @@ msgstr ""
 #: ../../networking/global_server_load_balancing.rst:235
 msgid ""
 "For more information, see `Binding a Domain to a GSLB Virtual Server "
-"<http://support.citrix.com/proddocs/topic/netscaler-traffic-"
-"management-10-map/ns-gslb-bind-dom-vsvr-tsk.html>`_."
+"<http://support.citrix.com/proddocs/topic/netscaler-traffic-management-10-"
+"map/ns-gslb-bind-dom-vsvr-tsk.html>`_."
 msgstr ""
 
 # efe8d44a7dc84347bdc932507e0cf417
@@ -383,7 +387,7 @@ msgstr ""
 # a78f47a38a364e859b24e482f8eab174
 #: ../../networking/global_server_load_balancing.rst:247
 msgid "See \":ref:`adding-gslb-rule`\"."
-msgstr ""
+msgstr "Voir \":ref:`adding-gslb-rule`\"."
 
 # 17e3b59ea95e4eb39b1290cea67e4801
 #: ../../networking/global_server_load_balancing.rst:249
@@ -393,12 +397,12 @@ msgstr ""
 # d37f5840c4d34fa9aa990a0bb0610af9
 #: ../../networking/global_server_load_balancing.rst:251
 msgid "See \":ref:`assigning-lb-rule-gslb`\"."
-msgstr ""
+msgstr "Voir \":ref:`assigning-lb-rule-gslb`\"."
 
 # 2553447c986746b582a9f8b495396c3b
 #: ../../networking/global_server_load_balancing.rst:255
 msgid "Prerequisites and Guidelines"
-msgstr ""
+msgstr "Prérequis et lignes directrives"
 
 # 8627b5c519f04c4bb75b82af96f25418
 #: ../../networking/global_server_load_balancing.rst:257
@@ -452,8 +456,8 @@ msgstr ""
 # 1b374fea614b459eb39cfbe4f20478c9
 #: ../../networking/global_server_load_balancing.rst:278
 msgid ""
-"The users can load balance traffic across the availability zones in the same"
-" region or different regions."
+"The users can load balance traffic across the availability zones in the "
+"same region or different regions."
 msgstr ""
 
 # 62da6f878356420f9becc6fffbe1ae6d
@@ -465,18 +469,18 @@ msgstr ""
 #: ../../networking/global_server_load_balancing.rst:283
 msgid ""
 "The users can specify an unique name across the cloud for a globally load "
-"balanced service. The provided name is used as the domain name under the DNS"
-" name associated with the cloud."
+"balanced service. The provided name is used as the domain name under the "
+"DNS name associated with the cloud."
 msgstr ""
 
 # 1d6c20de63954971a720227985a74433
 #: ../../networking/global_server_load_balancing.rst:287
 msgid ""
 "The user-provided name along with the admin-provided DNS name is used to "
-"produce a globally resolvable FQDN for the globally load balanced service of"
-" the user. For example, if the admin has configured xyztelco.com as the DNS "
-"name for the cloud, and user specifies 'foo' for the GSLB virtual service, "
-"then the FQDN name of the GSLB virtual service is foo.xyztelco.com."
+"produce a globally resolvable FQDN for the globally load balanced service "
+"of the user. For example, if the admin has configured xyztelco.com as the "
+"DNS name for the cloud, and user specifies 'foo' for the GSLB virtual "
+"service, then the FQDN name of the GSLB virtual service is foo.xyztelco.com."
 msgstr ""
 
 # a7817e36fe2c4ea58737d1a5ae3db30b
@@ -530,7 +534,7 @@ msgstr ""
 # 46ba7c7f81d04aa78f0c04d3d045bc8a
 #: ../../networking/global_server_load_balancing.rst:319
 msgid "In Zones, click View More."
-msgstr ""
+msgstr "Dans Zones, cliquer sur Voir plus."
 
 # 1feb8d2e09014d9989264c48ece8fc81
 #: ../../networking/global_server_load_balancing.rst:321
@@ -556,7 +560,7 @@ msgstr ""
 # 1d32a851fb92436c8e045ccc828641f4
 #: ../../networking/global_server_load_balancing.rst:331
 msgid "Click NetScaler."
-msgstr ""
+msgstr "Cliquer sur NetScaler"
 
 # af72e8614fc44c60af3004624dba03b1
 #: ../../networking/global_server_load_balancing.rst:333
@@ -566,7 +570,7 @@ msgstr ""
 # 6290f4f42d054ac28661b16c5366b62f
 #: ../../networking/global_server_load_balancing.rst:335
 msgid "For NetScaler:"
-msgstr ""
+msgstr "Pour les NetScaler :"
 
 # 8e09b55d68a849d089029f2c893e3e97
 #: ../../networking/global_server_load_balancing.rst:337
@@ -583,9 +587,9 @@ msgstr ""
 # 212ab71ac16a49309da99e2870717faa
 #: ../../networking/global_server_load_balancing.rst:343
 msgid ""
-"**Type**: The type of device that is being added. It could be F5 Big Ip Load"
-" Balancer, NetScaler VPX, NetScaler MPX, or NetScaler SDX. For a comparison "
-"of the NetScaler types, see the CloudStack Administration Guide."
+"**Type**: The type of device that is being added. It could be F5 Big Ip "
+"Load Balancer, NetScaler VPX, NetScaler MPX, or NetScaler SDX. For a "
+"comparison of the NetScaler types, see the CloudStack Administration Guide."
 msgstr ""
 
 # 3d72c6cb5cbb49418002a5e3acf1617c
@@ -647,7 +651,7 @@ msgstr "Cliquez sur OK."
 # d1556618bd5d4d18862c048d52694dd4
 #: ../../networking/global_server_load_balancing.rst:377
 msgid "Adding a GSLB Rule"
-msgstr ""
+msgstr "Ajouter une règle GSLB"
 
 # c06bbbd0cb824ecc8ef3d7956571f739
 # 2b618c03ffb14afb99d7e63813820288
@@ -680,7 +684,7 @@ msgstr ""
 # f59a742f9f1b4f37b6f0bc0b062028d6
 #: ../../networking/global_server_load_balancing.rst:387
 msgid "Click Add GSLB."
-msgstr ""
+msgstr "Cliquer sur Ajouter un GSLB."
 
 # ca546577015a45af8ddcdc3d2ad22f3a
 #: ../../networking/global_server_load_balancing.rst:389
@@ -690,7 +694,7 @@ msgstr ""
 # b0b6437c269342ff9099b6da9a6d5b9f
 #: ../../networking/global_server_load_balancing.rst:391
 msgid "|gslb-add.png|"
-msgstr ""
+msgstr "|gslb-add.png|"
 
 # 767ce39d9a094fda85465381d3a93bad
 #: ../../networking/global_server_load_balancing.rst:393
@@ -705,8 +709,8 @@ msgstr ""
 # 82b72cbf0f8949fdab2de931138620c5
 #: ../../networking/global_server_load_balancing.rst:397
 msgid ""
-"**Description**: (Optional) A short description of the GSLB rule that can be"
-" displayed to users."
+"**Description**: (Optional) A short description of the GSLB rule that can "
+"be displayed to users."
 msgstr ""
 
 # 8a6b82bfcd3a469c838315b17f4cd014
@@ -748,7 +752,7 @@ msgstr ""
 #: ../../networking/global_server_load_balancing.rst:415
 #: ../../networking/global_server_load_balancing.rst:439
 msgid "Click OK to confirm."
-msgstr ""
+msgstr "Cliquer OK pour confirmer."
 
 # f61c6b78ef4940129243771e21d78f4c
 #: ../../networking/global_server_load_balancing.rst:421
@@ -778,7 +782,7 @@ msgstr ""
 # d8792daad4a94b4589452d5b61f75cd9
 #: ../../networking/global_server_load_balancing.rst:443
 msgid "Known Limitation"
-msgstr ""
+msgstr "Limitations connues"
 
 # 7424fdf000e3479c910e72fbbaaa0169
 #: ../../networking/global_server_load_balancing.rst:445

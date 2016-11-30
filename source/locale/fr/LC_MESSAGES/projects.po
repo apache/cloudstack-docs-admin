@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-08-27 23:41+0200\n"
+"PO-Revision-Date: 2016-11-20 18:33+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Last-Translator: \n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 # 4b4ac9e9d63047e88707cfbcf936a425
 #: ../../projects.rst:18
@@ -53,7 +53,7 @@ msgstr ""
 "utilisateur qu'à un projet. Par exemple, un cloud privé dans une compagnie "
 "de logiciel peut avoir tous les membres du département QA affecté à un "
 "projet, la compagnie peut ainsi surveiller les ressources employées durant "
-"les tests pendant que les membresdu projet peuvent plus facilement isoler "
+"les tests pendant que les membres du projet peuvent plus facilement isoler "
 "leurs efforts des autres utilisateurs du même cloud."
 
 # df157ec524304800a9ced5d428bd234c
@@ -105,7 +105,7 @@ msgstr ""
 "administrateur supprime un membre du projet, les ressources crées par cet "
 "utilisateur, comme les instances de VMs demeurent dans le projet. Ceci nous "
 "amène au sujet des propriétaires des ressources et quelles ressources "
-"peuvent être utlisées par un projet."
+"peuvent être utilisées par un projet."
 
 # dde002b5830f493b94778605a4014583
 #: ../../projects.rst:55
@@ -353,7 +353,7 @@ msgstr ""
 "L'administrateur de CloudStack peut fixer les limites par défaut globales "
 "pour contrôler la quantité de ressources qui peuvent appartenir à chaque "
 "projet dans le cloud. Cela permet de prévenir d'un usage incontrôlé des "
-"ressources comme les snapshots, les adresses IP et les instances de "
+"ressources comme les instantanés, les adresses IP et les instances de "
 "machines virtuelles. Les administrateurs de domaine peuvent passer outre "
 "ces limites de ressources pour des projets individuels de leurs domaines, "
 "tant que ces limites sont sous les valeurs globales par défaut fixée par "
@@ -588,7 +588,7 @@ msgid ""
 "projects."
 msgstr ""
 "Fixer à true pour autoriser les utilisateurs finaux à créer des projets. "
-"Fixer à false si vous voulez que seul l'administrateur racide de cloudstack "
+"Fixer à false si vous voulez que seul l'administrateur racine de cloudstack "
 "et les administrateurs de domaine puisse le faire."
 
 # c36ba31002c74ec98d2dcdec7bd9374e

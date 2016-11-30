@@ -1,37 +1,39 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:06+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-11-30 23:40+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
 
 # 25e21d9bd50e4db29764c09ec3255ea1
 #: ../../networking/ip_reservation_in_guest_networks.rst:18
 msgid "IP Reservation in Isolated Guest Networks"
-msgstr ""
+msgstr "La réservation IP dans les réseaux invités isolés."
 
 # f043acb1e27b49aebecf48876dca90d4
 #: ../../networking/ip_reservation_in_guest_networks.rst:20
 msgid ""
 "In isolated guest networks, a part of the guest IP address space can be "
-"reserved for non-CloudStack VMs or physical servers. To do so, you configure"
-" a range of Reserved IP addresses by specifying the CIDR when a guest "
-"network is in Implemented state. If your customers wish to have non-"
+"reserved for non-CloudStack VMs or physical servers. To do so, you "
+"configure a range of Reserved IP addresses by specifying the CIDR when a "
+"guest network is in Implemented state. If your customers wish to have non-"
 "CloudStack controlled VMs or physical servers on the same network, they can "
-"share a part of the IP address space that is primarily provided to the guest"
-" network."
+"share a part of the IP address space that is primarily provided to the "
+"guest network."
 msgstr ""
 
 # fe77cb19c33a475f9389f57e62e466e0
@@ -53,7 +55,7 @@ msgstr ""
 # 9428ab05bfce48cb9dce92078998854c
 #: ../../networking/ip_reservation_in_guest_networks.rst:43
 msgid "IP Reservation Considerations"
-msgstr ""
+msgstr "Considérations sur la réservation d'IP"
 
 # 5780d0b48e6f44cbb972018a31489ebb
 #: ../../networking/ip_reservation_in_guest_networks.rst:45
@@ -65,18 +67,20 @@ msgstr ""
 # cc50e370af0c450588c711e282c0ac93
 #: ../../networking/ip_reservation_in_guest_networks.rst:48
 msgid "IP Reservation is supported only in Isolated networks."
-msgstr ""
+msgstr "La réservation d'IP est supportée seulement dans les réseaux isolés."
 
 # 9543f099f9de4fc3a8a815cd3cb04f40
 #: ../../networking/ip_reservation_in_guest_networks.rst:50
 msgid ""
 "IP Reservation can be applied only when the network is in Implemented state."
 msgstr ""
+"La réservation IP peut être appliquée seulement lorsque le réseau est dans "
+"l'état implémenté."
 
 # c7bc13975b37474299e4a7a65c56ed75
 #: ../../networking/ip_reservation_in_guest_networks.rst:53
 msgid "No IP Reservation is done by default."
-msgstr ""
+msgstr "Aucune réservation d'IP n'est effectuée par défaut."
 
 # f7a970b25ef94f48bc75a5c8a5fd0a0c
 #: ../../networking/ip_reservation_in_guest_networks.rst:55
@@ -93,8 +97,8 @@ msgstr ""
 # 0710411bb18c4764970dffcc49fe5dab
 #: ../../networking/ip_reservation_in_guest_networks.rst:60
 msgid ""
-"You cannot apply IP Reservation if any VM is alloted with an IP address that"
-" is outside the Guest VM CIDR."
+"You cannot apply IP Reservation if any VM is alloted with an IP address "
+"that is outside the Guest VM CIDR."
 msgstr ""
 
 # ba005fe1c84e4e5d8d8b2f2cbd904deb
@@ -110,36 +114,38 @@ msgid ""
 "For example, the following table describes three scenarios of guest network "
 "creation:"
 msgstr ""
+"Par exemple, le tableau suivant décris trois scénarios de création de "
+"réseau invité :"
 
 # fd80ccd9ee7947c6a41f35a77766ba87
 #: ../../networking/ip_reservation_in_guest_networks.rst:70
 msgid "Case"
-msgstr ""
+msgstr "Cas"
 
 # 1b0d9124efce41c8bf2ff9c04f471053
 #: ../../networking/ip_reservation_in_guest_networks.rst:70
 msgid "CIDR"
-msgstr ""
+msgstr "CIDR"
 
 # 340cf6747d6449b09015c49437828468
 #: ../../networking/ip_reservation_in_guest_networks.rst:70
 msgid "Network CIDR"
-msgstr ""
+msgstr "CIDR du réseau"
 
 # ca9e89e3707343c6a6bb2e2c52dc4acd
 #: ../../networking/ip_reservation_in_guest_networks.rst:70
 msgid "Reserved IP Range for Non-CloudStack VMs"
-msgstr ""
+msgstr "Intervalle d'IP réservées pour les VMs Non-CloudStack"
 
 # e1395f7f735643f98e49f71acb302533
 #: ../../networking/ip_reservation_in_guest_networks.rst:70
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 # bfc721eb783042dbbd4049d97eeae50c
 #: ../../networking/ip_reservation_in_guest_networks.rst:72
 msgid "1"
-msgstr ""
+msgstr "1"
 
 # 07110191079642298d8d53f83f4a6fe7
 # a0e61e48b84a4bb297fead377ce043cf
@@ -148,38 +154,36 @@ msgstr ""
 #: ../../networking/ip_reservation_in_guest_networks.rst:73
 #: ../../networking/ip_reservation_in_guest_networks.rst:76
 msgid "10.1.1.0/24"
-msgstr ""
+msgstr "10.1.1.0/24"
 
 # 865ea8d88306424bab506a500520c22e
 # 184b1eac870b483f910546a5d5b37906
 # 70f4868471d54ac882b8093eb1db9f74
 # 3c040050888741f09b3cee5a8482aca4
 #: ../../networking/ip_reservation_in_guest_networks.rst:72
-#: ../../networking/ip_reservation_in_guest_networks.rst:72
-#: ../../networking/ip_reservation_in_guest_networks.rst:76
 #: ../../networking/ip_reservation_in_guest_networks.rst:76
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 # 24e526351c7b4686b16e030bc869d399
 #: ../../networking/ip_reservation_in_guest_networks.rst:72
 msgid "No IP Reservation."
-msgstr ""
+msgstr "Aucune réservation d'IP."
 
 # 81f560cf3b4c47bbb2b781add102de88
 #: ../../networking/ip_reservation_in_guest_networks.rst:73
 msgid "2"
-msgstr ""
+msgstr "2"
 
 # 725f92aed0d44be3bb5865f246acc29d
 #: ../../networking/ip_reservation_in_guest_networks.rst:73
 msgid "10.1.1.0/26"
-msgstr ""
+msgstr "10.1.1.0/26"
 
 # 02e4012c8ce94d95a0c5e4d5088637fd
 #: ../../networking/ip_reservation_in_guest_networks.rst:73
 msgid "10.1.1.64 to 10.1.1.254"
-msgstr ""
+msgstr "10.1.1.64 à 10.1.1.254"
 
 # 8fe36bed92d2475bbdd0fa903eb8c54b
 #: ../../networking/ip_reservation_in_guest_networks.rst:73
@@ -191,7 +195,7 @@ msgstr ""
 # e2c363737b654228a0ac0581ba4c55c8
 #: ../../networking/ip_reservation_in_guest_networks.rst:76
 msgid "3"
-msgstr ""
+msgstr "3"
 
 # 139e9ad2489d40738198ebfac4b14c45
 #: ../../networking/ip_reservation_in_guest_networks.rst:76
@@ -203,13 +207,13 @@ msgstr ""
 # 43bbd9a15792420cb8b1e694ad792cf2
 #: ../../networking/ip_reservation_in_guest_networks.rst:83
 msgid "Limitations"
-msgstr ""
+msgstr "Limitations"
 
 # 1ed6f796d3f04ed0b5c96512bc673c25
 #: ../../networking/ip_reservation_in_guest_networks.rst:85
 msgid ""
-"The IP Reservation is not supported if active IPs that are found outside the"
-" Guest VM CIDR."
+"The IP Reservation is not supported if active IPs that are found outside "
+"the Guest VM CIDR."
 msgstr ""
 
 # 28ed30440a3543f6b7744261f3f5c2e0
@@ -224,7 +228,7 @@ msgstr ""
 # f9aacfd3f1a94c7c8d3ca0910da962a9
 #: ../../networking/ip_reservation_in_guest_networks.rst:95
 msgid "Best Practices"
-msgstr ""
+msgstr "Recommandations"
 
 # c5d0950bef8a49ce9b373d64fcf22b86
 #: ../../networking/ip_reservation_in_guest_networks.rst:97
@@ -237,12 +241,14 @@ msgstr ""
 # 636d85b86d5a460788a233fd1cb49014
 #: ../../networking/ip_reservation_in_guest_networks.rst:104
 msgid "Reserving an IP Range"
-msgstr ""
+msgstr "Réserver un intervalle d'IP"
 
 # 34eb58849cb141e9898291a434cc05ba
 #: ../../networking/ip_reservation_in_guest_networks.rst:106
 msgid "Log in to the CloudStack UI as an administrator or end user."
 msgstr ""
+"Se connecter à l'interface de CloudStack comme administrateur ou "
+"utilisateur final."
 
 # 3dc484e1bd5145259125fe0fcf8ccf8c
 #: ../../networking/ip_reservation_in_guest_networks.rst:108
@@ -252,12 +258,12 @@ msgstr "Dans la navigation à gauche, choisissez Réseau."
 # e4559a4e7ddf4812890314b955dae344
 #: ../../networking/ip_reservation_in_guest_networks.rst:110
 msgid "Click the name of the network you want to modify."
-msgstr ""
+msgstr "Cliquer sur le nom du réseau que vous voulez modifier."
 
 # 9119b8d7ea884da4b996f8a191d30e0b
 #: ../../networking/ip_reservation_in_guest_networks.rst:112
 msgid "In the Details tab, click Edit. |ip-edit-icon.png|"
-msgstr ""
+msgstr "Dans l'onglet Détails, cliquer sur Editer. |edit-icon.png|"
 
 # 31eaf6bfc27e465e950da4b920fbad80
 #: ../../networking/ip_reservation_in_guest_networks.rst:114
@@ -272,7 +278,7 @@ msgstr ""
 # 41acec1236df4ddbad427f23127244b1
 #: ../../networking/ip_reservation_in_guest_networks.rst:118
 msgid "Click Apply."
-msgstr ""
+msgstr "Cliquer sur Appliquer."
 
 # 8213a6fd8f414bd2b710a4ee77b167ae
 #: ../../networking/ip_reservation_in_guest_networks.rst:120

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-10-09 19:29+0200\n"
+"PO-Revision-Date: 2016-11-30 23:23+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Last-Translator: \n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.11\n"
 
 # 36cc316d379647279da05d191cf9e9b5
 #: ../../management.rst:18
@@ -39,6 +39,14 @@ msgid ""
 "\"Tokyo.\" You can then request CloudStack to find all resources that have "
 "a given tag; for example, VMs for users in a given city."
 msgstr ""
+"Une étiquette est une paire clé-valeur qui stocke des métadonnées sur une "
+"ressource dans le cloud. Les étiquettes sont utiles pour catégoriser les "
+"ressources. Par exemple, vous pouvez étiqueter une VM utilisateur avec une "
+"valeur qui indique la ville de résidence de l'utilisateur. Dans ce cas, la "
+"clé serait «ville» et la valeur pourrait être «Toronto» ou «Tokyo». Vous "
+"pouvez alors demander à CloudStack de trouver toutes les ressources qui ont "
+"une étiquette donnée ; Par exemple, les VM pour les utilisateurs d'une "
+"ville donnée."
 
 # 6388318fab6c44f58fd92b854f510717
 #: ../../management.rst:30
@@ -48,6 +56,12 @@ msgid ""
 "security group, load balancer rule, project, VPC, network ACL, or static "
 "route. You can not tag a remote access VPN."
 msgstr ""
+"Vous pouvez étiqueter une machine virtuelle utilisateur, un volume, un "
+"instantané, un réseau invité, un modèle, une ISO, une règle de pare-feu, "
+"une règle de transfert de port, une adresse IP publique, un groupe de "
+"sécurité, une règle de répartition de charge, un projet, un VPC, une ACL "
+"réseau ou une route statique. Vous ne pouvez pas marquer un VPN à accès "
+"distant."
 
 # 87e95cabe82f4b7f86c2cd1cc303b912
 #: ../../management.rst:35
@@ -58,6 +72,14 @@ msgid ""
 "can be up to 255 characters long. Users can define tags on the resources "
 "they own, and administrators can define tags on any resources in the cloud."
 msgstr ""
+"Vous pouvez travailler avec des étiquettes via l'interface utilisateur ou "
+"via les commandes API createTags, deleteTags et listTags. Vous pouvez "
+"définir plusieurs étiquettes pour chaque ressource. Il n'y a pas de limite "
+"sur le nombre d'étiquettes que vous pouvez définir. Chaque étiquette peut "
+"comporter jusqu'à 255 caractères. Les utilisateurs peuvent définir des "
+"étiquettes sur les ressources dont ils sont les propriétaires et les "
+"administrateurs peuvent définir des étiquettes sur toutes les ressources du "
+"cloud."
 
 # c2db56ab546245ec9d37ccf72573c16c
 #: ../../management.rst:42
@@ -66,6 +88,10 @@ msgid ""
 "commands. The following example shows how to use this new parameter to find "
 "all the volumes having tag region=canada OR tag city=Toronto:"
 msgstr ""
+"Un paramètre d'entrée optionnel, \"tags\", existe sur plusieurs commandes "
+"list\\* API. L'exemple suivant montre comment utiliser ce nouveau paramètre "
+"pour trouver tous les volumes ayant l'étiquette region=canada OR etiquette "
+"city=Toronto:"
 
 # 0d735394ca9f48f8a4ef3c5d0a25741d
 #: ../../management.rst:55

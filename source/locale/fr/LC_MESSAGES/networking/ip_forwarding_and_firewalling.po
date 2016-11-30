@@ -1,21 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:05+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-11-30 23:36+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
 
 # 3ec46c2d67cb4acc87705b3f0985e5c8
 #: ../../networking/ip_forwarding_and_firewalling.rst:18
@@ -50,13 +52,13 @@ msgstr ""
 # 88ee727310bb4a5789291e8e48578dab
 #: ../../networking/ip_forwarding_and_firewalling.rst:35
 msgid "Firewall Rules"
-msgstr ""
+msgstr "Règles du parefeu"
 
 # 073cb21345c44ce2a3f2ce3446d4ad3a
 #: ../../networking/ip_forwarding_and_firewalling.rst:37
 msgid ""
-"By default, all incoming traffic to the public IP address is rejected by the"
-" firewall. To allow external traffic, you can open firewall ports by "
+"By default, all incoming traffic to the public IP address is rejected by "
+"the firewall. To allow external traffic, you can open firewall ports by "
 "specifying firewall rules. You can optionally specify one or more CIDRs to "
 "filter the source IPs. This is useful when you want to allow only incoming "
 "requests from certain IP addresses."
@@ -90,7 +92,7 @@ msgstr ""
 # e1408eeb730f4709bbba8852f79807fd
 #: ../../networking/ip_forwarding_and_firewalling.rst:57
 msgid "To create a firewall rule:"
-msgstr ""
+msgstr "Pour créer une règle de parefeu :"
 
 # 098b22043ec643559c039b39aa24d618
 # f62479b013c241a791c42b8843bd140d
@@ -100,6 +102,8 @@ msgstr ""
 #: ../../networking/ip_forwarding_and_firewalling.rst:245
 msgid "Log in to the CloudStack UI as an administrator or end user."
 msgstr ""
+"Se connecter à l'interface de CloudStack comme administrateur ou "
+"utilisateur final."
 
 # a633160d3ee343639365b9067af58eb1
 # c6c7495d464a4262ace3361c7cce9b5b
@@ -132,8 +136,8 @@ msgstr ""
 #: ../../networking/ip_forwarding_and_firewalling.rst:71
 msgid ""
 "**Source CIDR**: (Optional) To accept only traffic from IP addresses within "
-"a particular address block, enter a CIDR or a comma-separated list of CIDRs."
-" Example: 192.168.0.0/22. Leave empty to allow all CIDRs."
+"a particular address block, enter a CIDR or a comma-separated list of "
+"CIDRs. Example: 192.168.0.0/22. Leave empty to allow all CIDRs."
 msgstr ""
 
 # 4cb05fbe28ae408a8df34014da711575
@@ -152,9 +156,9 @@ msgstr ""
 #: ../../networking/ip_forwarding_and_firewalling.rst:83
 msgid ""
 "**ICMP Type and ICMP Code**: Used only if Protocol is set to ICMP. Provide "
-"the type and code required by the ICMP protocol to fill out the ICMP header."
-" Refer to ICMP documentation for more details if you are not sure what to "
-"enter"
+"the type and code required by the ICMP protocol to fill out the ICMP "
+"header. Refer to ICMP documentation for more details if you are not sure "
+"what to enter"
 msgstr ""
 
 # 41821a610d844daf8255026b71299059
@@ -164,7 +168,7 @@ msgstr ""
 #: ../../networking/ip_forwarding_and_firewalling.rst:163
 #: ../../networking/ip_forwarding_and_firewalling.rst:276
 msgid "Click Add."
-msgstr ""
+msgstr "Cliquer sur Ajouter."
 
 # eec2e0a57feb4eca85c58ac1b58b228b
 #: ../../networking/ip_forwarding_and_firewalling.rst:94
@@ -176,8 +180,8 @@ msgstr ""
 msgid ""
 "The egress traffic originates from a private network to a public network, "
 "such as the Internet. By default, the egress traffic is blocked in default "
-"network offerings, so no outgoing traffic is allowed from a guest network to"
-" the Internet. However, you can control the egress traffic in an Advanced "
+"network offerings, so no outgoing traffic is allowed from a guest network "
+"to the Internet. However, you can control the egress traffic in an Advanced "
 "zone by creating egress firewall rules. When an egress firewall rule is "
 "applied, the traffic specific to the rule is allowed and the remaining "
 "traffic is blocked. When all the firewall rules are removed the default "
@@ -187,7 +191,7 @@ msgstr ""
 # 80fbdba2a681463894376f620458c160
 #: ../../networking/ip_forwarding_and_firewalling.rst:107
 msgid "Prerequisites and Guidelines"
-msgstr ""
+msgstr "Prérequis et lignes directrives"
 
 # 998ae537c5664319b836e769ab967fc3
 #: ../../networking/ip_forwarding_and_firewalling.rst:109
@@ -207,8 +211,8 @@ msgstr ""
 # 85bdd2e7a708485bae147bfa93cdcb1b
 #: ../../networking/ip_forwarding_and_firewalling.rst:116
 msgid ""
-"Allow the egress traffic from specified source CIDR. The Source CIDR is part"
-" of guest network CIDR."
+"Allow the egress traffic from specified source CIDR. The Source CIDR is "
+"part of guest network CIDR."
 msgstr ""
 
 # d9af348ce95e47a0bae91a55488b1155
@@ -227,8 +231,8 @@ msgstr ""
 #: ../../networking/ip_forwarding_and_firewalling.rst:124
 msgid ""
 "The default policy is Allow for the new network offerings, whereas on "
-"upgrade existing network offerings with firewall service providers will have"
-" the default egress policy Deny."
+"upgrade existing network offerings with firewall service providers will "
+"have the default egress policy Deny."
 msgstr ""
 
 # ee1ee0417255469abce66dbfd40f9611
@@ -246,22 +250,22 @@ msgstr ""
 # 4c11dfc739f94ce0995b7c7bdf566e5d
 #: ../../networking/ip_forwarding_and_firewalling.rst:139
 msgid ""
-"To add an egress rule, click the Egress rules tab and fill out the following"
-" fields to specify what type of traffic is allowed to be sent out of VM "
-"instances in this guest network:"
+"To add an egress rule, click the Egress rules tab and fill out the "
+"following fields to specify what type of traffic is allowed to be sent out "
+"of VM instances in this guest network:"
 msgstr ""
 
 # a476fe8da41b43168b89c7b558afcb48
 #: ../../networking/ip_forwarding_and_firewalling.rst:143
 msgid "|egress-firewall-rule.png|"
-msgstr ""
+msgstr "|egress-firewall-rule.png|"
 
 # d56527f1ac864c5c9d47df9e55c225cf
 #: ../../networking/ip_forwarding_and_firewalling.rst:145
 msgid ""
-"**CIDR**: (Add by CIDR only) To send traffic only to the IP addresses within"
-" a particular address block, enter a CIDR or a comma-separated list of "
-"CIDRs. The CIDR is the base IP address of the destination. For example, "
+"**CIDR**: (Add by CIDR only) To send traffic only to the IP addresses "
+"within a particular address block, enter a CIDR or a comma-separated list "
+"of CIDRs. The CIDR is the base IP address of the destination. For example, "
 "192.168.0.0/22. To allow all CIDRs, set to 0.0.0.0/0."
 msgstr ""
 
@@ -300,9 +304,10 @@ msgid ""
 "The default egress policy for Isolated guest network is configured by using "
 "Network offering. Use the create network offering option to determine "
 "whether the default policy should be block or allow all the traffic to the "
-"public network from a guest network. Use this network offering to create the"
-" network. If no policy is specified, by default all the traffic is allowed "
-"from the guest network that you create by using this network offering."
+"public network from a guest network. Use this network offering to create "
+"the network. If no policy is specified, by default all the traffic is "
+"allowed from the guest network that you create by using this network "
+"offering."
 msgstr ""
 
 # 9b5e480b6757449ab8272d3e7a691110
@@ -313,30 +318,30 @@ msgstr ""
 # 9b8d4463d6024d8589cc801658fa7bab
 #: ../../networking/ip_forwarding_and_firewalling.rst:180
 msgid "Allow"
-msgstr ""
+msgstr "Allow"
 
 # 01d29e0665f84d548d9f41399d9258d8
 #: ../../networking/ip_forwarding_and_firewalling.rst:182
 msgid ""
 "If you select Allow for a network offering, by default egress traffic is "
 "allowed. However, when an egress rule is configured for a guest network, "
-"rules are applied to block the specified traffic and rest are allowed. If no"
-" egress rules are configured for the network, egress traffic is accepted."
+"rules are applied to block the specified traffic and rest are allowed. If "
+"no egress rules are configured for the network, egress traffic is accepted."
 msgstr ""
 
 # 63816b9551f04933aa99e27cc3dc34f1
 #: ../../networking/ip_forwarding_and_firewalling.rst:189
 msgid "Deny"
-msgstr ""
+msgstr "Deny"
 
 # 1952d7735fb746a6834bbdeed4c1eaa9
 #: ../../networking/ip_forwarding_and_firewalling.rst:191
 msgid ""
-"If you select Deny for a network offering, by default egress traffic for the"
-" guest network is blocked. However, when an egress rules is configured for a"
-" guest network, rules are applied to allow the specified traffic. While "
-"implementing a guest network, CloudStack adds the firewall egress rule "
-"specific to the default egress policy for the guest network."
+"If you select Deny for a network offering, by default egress traffic for "
+"the guest network is blocked. However, when an egress rules is configured "
+"for a guest network, rules are applied to allow the specified traffic. "
+"While implementing a guest network, CloudStack adds the firewall egress "
+"rule specific to the default egress policy for the guest network."
 msgstr ""
 
 # 238db98415e74782937deddd3970b285
@@ -352,22 +357,22 @@ msgstr ""
 # 5271ad0a1d4a4a27aa5597b044b42acf
 #: ../../networking/ip_forwarding_and_firewalling.rst:202
 msgid "Log in with admin privileges to the CloudStack UI."
-msgstr ""
+msgstr "Log in with admin privileges to the CloudStack UI."
 
 # fd49a59627284ffda66fef7096eaa709
 #: ../../networking/ip_forwarding_and_firewalling.rst:204
 msgid "In the left navigation bar, click Service Offerings."
-msgstr ""
+msgstr "In the left navigation bar, click Service Offerings."
 
 # 7fce8b96f6e64727bb6063766c828bdd
 #: ../../networking/ip_forwarding_and_firewalling.rst:206
 msgid "In Select Offering, choose Network Offering."
-msgstr ""
+msgstr "In Select Offering, choose Network Offering."
 
 # ef8895c197ff4343b04aecc73b5a9294
 #: ../../networking/ip_forwarding_and_firewalling.rst:208
 msgid "Click Add Network Offering."
-msgstr ""
+msgstr "Click Add Network Offering."
 
 # abb73d0d766d4d32a4bbe32137193cad
 #: ../../networking/ip_forwarding_and_firewalling.rst:210
@@ -399,14 +404,14 @@ msgstr ""
 # 29ffedbd547e431f95d82b075df5ea66
 #: ../../networking/ip_forwarding_and_firewalling.rst:224
 msgid "Port Forwarding"
-msgstr ""
+msgstr "Redirection de port"
 
 # d9efd9df178e4f7c8d81b2ba24a9fdbb
 #: ../../networking/ip_forwarding_and_firewalling.rst:226
 msgid ""
 "A port forward service is a set of port forwarding rules that define a "
-"policy. A port forward service is then applied to one or more guest VMs. The"
-" guest VM then has its inbound network access managed according to the "
+"policy. A port forward service is then applied to one or more guest VMs. "
+"The guest VM then has its inbound network access managed according to the "
 "policy defined by the port forwarding service. You can optionally specify "
 "one or more CIDRs to filter the source IPs. This is useful when you want to "
 "allow only incoming requests from certain IP addresses to be forwarded."
@@ -424,9 +429,9 @@ msgstr ""
 # 89ce910349884d8ea8a7b4f6aee10613
 #: ../../networking/ip_forwarding_and_firewalling.rst:239
 msgid ""
-"You cannot use port forwarding to open ports for an elastic IP address. When"
-" elastic IP is used, outside access is instead controlled through the use of"
-" security groups. See Security Groups."
+"You cannot use port forwarding to open ports for an elastic IP address. "
+"When elastic IP is used, outside access is instead controlled through the "
+"use of security groups. See Security Groups."
 msgstr ""
 
 # 263627f6e1de45999d0e9ab68c8a1a2d
@@ -460,14 +465,14 @@ msgstr ""
 #: ../../networking/ip_forwarding_and_firewalling.rst:257
 msgid ""
 "Choose an existing IP address or acquire a new IP address. See `\"Acquiring "
-"a New IP Address\" <#acquiring-a-new-ip-address>`_. Click the name of the IP"
-" address in the list."
+"a New IP Address\" <#acquiring-a-new-ip-address>`_. Click the name of the "
+"IP address in the list."
 msgstr ""
 
 # da392889cd304ce8973c2b4b8341665b
 #: ../../networking/ip_forwarding_and_firewalling.rst:261
 msgid "Click the Configuration tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet Configuration."
 
 # 4d02af0497b544d89616ff1ddf286767
 #: ../../networking/ip_forwarding_and_firewalling.rst:263
@@ -477,7 +482,7 @@ msgstr ""
 # ee9101e2c97447d4b23f89177c60e7ab
 #: ../../networking/ip_forwarding_and_firewalling.rst:265
 msgid "Fill in the following:"
-msgstr ""
+msgstr "Remplissez les champs suivants:"
 
 # e9d9402255ae405781f85b32409d3654
 #: ../../networking/ip_forwarding_and_firewalling.rst:267

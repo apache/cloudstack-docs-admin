@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-11-19 11:55+0100\n"
+"PO-Revision-Date: 2016-11-20 22:55+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -5392,6 +5392,10 @@ msgid ""
 "through the public gateway. In a VPC, the public gateway is not exposed to the "
 "end user; therefore, static routes are not support for the public gateway."
 msgstr ""
+"**Passerelle publique** : Le trafic vers et provenant d'Internet est routé vers "
+"le VPC par la passerelle publique. Dans un VPC, la passerelle publique n'est pas "
+"exposée à l'utilisateur final ; en conséquence, les routes statiques ne sont pas "
+"supportées pour la passerelle publique."
 
 #: ../../networking/virtual_private_cloud_config.rst:63
 msgid ""
@@ -5399,10 +5403,13 @@ msgid ""
 "VPC through the private gateway. For more information, see \":ref:`adding-priv-"
 "gw-vpc`\"."
 msgstr ""
+"**Passerelle privée** : tout le trafic provenant ou à destination d'un réseau "
+"privé est routé vers le VPC par la passerelle privée. Pour plus d'information, "
+"voir \":ref:`adding-priv-gw-vpc`\"."
 
 #: ../../networking/virtual_private_cloud_config.rst:67
 msgid "**VPN Gateway**: The VPC side of a VPN connection."
-msgstr ""
+msgstr "**Passerelle VPN** : Le pendant VPC d'une connexion VPN."
 
 #: ../../networking/virtual_private_cloud_config.rst:69
 msgid ""
@@ -5410,6 +5417,9 @@ msgid ""
 "VPC and your datacenter, home network, or co-location facility. For more "
 "information, see \":ref:`setting-s2s-vpn-conn`\"."
 msgstr ""
+"**Connexion VPN site-à-site** : Une connexion VPN matérielle entre votre PVC et "
+"votre datacenter, votre réseau domestique ou autres installations. Pour plus "
+"d'information, voir \":ref:`setting-s2s-vpn-conn`\"."
 
 #: ../../networking/virtual_private_cloud_config.rst:73
 msgid ""
@@ -5417,6 +5427,9 @@ msgid ""
 "information, see `\"Creating and Updating a VPN Customer Gateway\" <#creating-"
 "and-updating-a-vpn-customer-gateway>`_."
 msgstr ""
+"**Passerelle client** : le pendant client d'une connexion VPN. Pour plus "
+"d'informations, voir `\"Créer et mettre à jour une passerelle client\" "
+"<#creating-and-updating-a-vpn-customer-gateway>`_."
 
 #: ../../networking/virtual_private_cloud_config.rst:77
 msgid ""
@@ -5424,6 +5437,9 @@ msgid ""
 "instances to access the Internet via the public gateway. For more information, "
 "see \":ref:`enabling-disabling-static-nat-on-vpc`\"."
 msgstr ""
+"**Instance NAT** : Une instance qui fourni la translation de port pour que les "
+"instances puissent accéder à Internet via la passerelle publique. Pour plus "
+"d'informations, voir \":ref:`enabling-disabling-static-nat-on-vpc`\"."
 
 #: ../../networking/virtual_private_cloud_config.rst:81
 msgid ""
@@ -5433,6 +5449,12 @@ msgid ""
 "of any tier associated with the network ACL. For more information, see \":ref:"
 "`conf-net-acl`\"."
 msgstr ""
+"**ACL Réseau** : Une ACL réseau est un groupe d'entrées d'ACL réseau. Les "
+"entrées d'ACL réseau ne sont rien d'autre qu'un nombre de règles qui sont "
+"évaluées dans l'ordre, en commençant par la règle avec le plus petit numéro. Ces "
+"règles déterminent si le trafic est autorisé en entrée ou en sortie de n'importe "
+"quel segment associé avec l'ACL réseau. Pour plus d'informations, voir \":ref:"
+"`conf-net-acl`\"."
 
 #: ../../networking/virtual_private_cloud_config.rst:89
 msgid "Network Architecture in a VPC"
@@ -5442,64 +5464,72 @@ msgstr "Architecture Réseau dans un VPC"
 msgid ""
 "In a VPC, the following four basic options of network architectures are present:"
 msgstr ""
+"Dans un VPC, les quatres options basiques d'architectures réseaux suivantes sont "
+"présentes :"
 
 #: ../../networking/virtual_private_cloud_config.rst:94
 msgid "VPC with a public gateway only"
-msgstr ""
+msgstr "VPC avec une passerelle publique seulement"
 
 #: ../../networking/virtual_private_cloud_config.rst:96
 msgid "VPC with public and private gateways"
-msgstr ""
+msgstr "VPC avec des passerelles publiques et privées"
 
 #: ../../networking/virtual_private_cloud_config.rst:98
 msgid "VPC with public and private gateways and site-to-site VPN access"
-msgstr ""
+msgstr "VPC avec des passerelles publiques et privées et un accès VPN site à site"
 
 #: ../../networking/virtual_private_cloud_config.rst:100
 msgid "VPC with a private gateway only and site-to-site VPN access"
-msgstr ""
+msgstr "VPC avec une passerelle privée seulement et un accès VPN site à site"
 
 #: ../../networking/virtual_private_cloud_config.rst:104
 msgid "Connectivity Options for a VPC"
-msgstr ""
+msgstr "Options de connectivité pour un VPC"
 
 #: ../../networking/virtual_private_cloud_config.rst:106
 msgid "You can connect your VPC to:"
-msgstr ""
+msgstr "Vous pouvez connecter votre VPC à :"
 
 #: ../../networking/virtual_private_cloud_config.rst:108
 msgid "The Internet through the public gateway."
-msgstr ""
+msgstr "à Internet en passant par la passerelle publique."
 
 #: ../../networking/virtual_private_cloud_config.rst:110
 msgid ""
 "The corporate datacenter by using a site-to-site VPN connection through the VPN "
 "gateway."
 msgstr ""
+"au centre de données de l'entreprise en utilisant une connexion VPN site à site "
+"en passant par la passerelle VPN."
 
 #: ../../networking/virtual_private_cloud_config.rst:113
 msgid ""
 "Both the Internet and your corporate datacenter by using both the public gateway "
 "and a VPN gateway."
 msgstr ""
+"A la fois à Internet et à votre centre de données interne en utilisant à la fois "
+"la passerelle publique et une passerelle VPN."
 
 #: ../../networking/virtual_private_cloud_config.rst:118
 msgid "VPC Network Considerations"
-msgstr ""
+msgstr "Considérations sur le réseau du VPC"
 
 #: ../../networking/virtual_private_cloud_config.rst:120
 msgid "Consider the following before you create a VPC:"
-msgstr ""
+msgstr "Prendre en compte ce qui suit avant de créer un VPC :"
 
 #: ../../networking/virtual_private_cloud_config.rst:122
 msgid "A VPC, by default, is created in the enabled state."
-msgstr ""
+msgstr "Un VPC, par défaut, est créé dans l'état activé."
 
 #: ../../networking/virtual_private_cloud_config.rst:124
 msgid ""
 "A VPC can be created in Advance zone only, and can't belong to more than one "
 "zone at a time."
 msgstr ""
+"Un VPC peut être créé dans une zone avancée seulement, et ne peut pas appartenir "
+"à plus d'une zone à la fois."
 
 #: ../../networking/virtual_private_cloud_config.rst:127
 msgid ""
@@ -5507,38 +5537,50 @@ msgid ""
 "it by using the max.account.vpcs global parameter, which controls the maximum "
 "number of VPCs an account is allowed to create."
 msgstr ""
+"Le nombre par défaut de VPC qu'un compte peut créer est de 20. Toutefois, vous "
+"pouvez le changer en utilisant le paramètre global max.accounts.vpcs, qui "
+"contrôle le nombre maximum de VPCs qu'un compte est autorisé à créer."
 
 #: ../../networking/virtual_private_cloud_config.rst:131
 msgid ""
 "The default number of tiers an account can create within a VPC is 3. You can "
 "configure this number by using the vpc.max.networks parameter."
 msgstr ""
+"Le nombre par défaut de segment qu'un compte peut créer dans un VPC est de 3. "
+"Vous pouvez configurer ce nombre en utilisant le paramètre vpc.max.networks."
 
 #: ../../networking/virtual_private_cloud_config.rst:135
 msgid ""
 "Each tier should have an unique CIDR in the VPC. Ensure that the tier's CIDR "
 "should be within the VPC CIDR range."
 msgstr ""
+"Chaque segment devrait avoir un CIDR unique dans le VPC. Assurez vous que le "
+"CIDR du segment est bien dans l'intervalle CIDR du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:138
 msgid "A tier belongs to only one VPC."
-msgstr ""
+msgstr "Un segment n'appartient qu'à un seul VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:140
 msgid "All network tiers inside the VPC should belong to the same account."
-msgstr ""
+msgstr "Tout segment réseau à l'intérieur du VPC doit appartenir au même compte."
 
 #: ../../networking/virtual_private_cloud_config.rst:142
 msgid ""
 "When a VPC is created, by default, a SourceNAT IP is allocated to it. The Source "
 "NAT IP is released only when the VPC is removed."
 msgstr ""
+"Lorsqu'un VPC est créé, par défaut, une IP Source NAT lui est allouée. L'adresse "
+"IP source NAT est libérée seulement lorsque le VPC est supprimé."
 
 #: ../../networking/virtual_private_cloud_config.rst:145
 msgid ""
 "A public IP can be used for only one purpose at a time. If the IP is a "
 "sourceNAT, it cannot be used for StaticNAT or port forwarding."
 msgstr ""
+"Une IP publique ne peut être utilisée que pour un seul besoin à la fois. Si l'IP "
+"est une IP source NAT, elle ne pourra pas être utilisée pour le NAT Statique ou "
+"la redirection de port."
 
 #: ../../networking/virtual_private_cloud_config.rst:148
 msgid ""
@@ -5546,6 +5588,9 @@ msgid ""
 "communicate with the Internet, enable NAT to an instance that you launch in your "
 "VPC."
 msgstr ""
+"Les instances peuvent seulement avoir une adresse IP privée que vous "
+"provisionnez. Pour communiquer avec Internet, activer le NAT pour une instance "
+"que vous lancez dans votre VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:152
 msgid ""
@@ -5553,15 +5598,20 @@ msgid ""
 "is limited by the value you specify in the vpc.max.networks parameter. The "
 "default value is three."
 msgstr ""
+"Seulement les nouveaux réseaux peuvent être ajoutés à un VPC. Le nombre maximum "
+"de réseaux par VPC est limité par la valeur que vous spécifiez dans le paramètre "
+"vpc.max.networks. La valeur par défaut est trois."
 
 #: ../../networking/virtual_private_cloud_config.rst:156
 msgid ""
 "The load balancing service can be supported by only one tier inside the VPC."
 msgstr ""
+"La service de répartition de charge ne peut être supporté que par un seul "
+"segment à l'intérieur du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:159
 msgid "If an IP address is assigned to a tier:"
-msgstr ""
+msgstr "Si une adresse IP est attribuée à un segment :"
 
 #: ../../networking/virtual_private_cloud_config.rst:161
 msgid ""
@@ -5569,20 +5619,27 @@ msgid ""
 "if you have tiers A and B, and a public IP1, you can create a port forwarding "
 "rule by using the IP either for A or B, but not for both."
 msgstr ""
+"Cette IP ne peut pas être utilisée par plus d'un segment à la fois dans le VPC. "
+"Par exemple, si vous avez les segments A et B et une IP1 publique, vous pouvez "
+"créer une règle de transmission de port en utilisant l'IP soit pour A ou B mais "
+"pas pour les deux."
 
 #: ../../networking/virtual_private_cloud_config.rst:166
 msgid ""
 "That IP can't be used for StaticNAT, load balancing, or port forwarding rules "
 "for another guest network inside the VPC."
 msgstr ""
+"Cette IP ne peut pas être utilisée pour du NAT Statique, pour la répartition de "
+"charge ou pour les règles de transmission de port pour un autre réseau invité au "
+"sein du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:169
 msgid "Remote access VPN is not supported in VPC networks."
-msgstr ""
+msgstr "Les accès distants VPN ne sont pas supportés dans les réseaux du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:173
 msgid "Adding a Virtual Private Cloud"
-msgstr ""
+msgstr "Ajouter un Cloud Privé Virtuel"
 
 #: ../../networking/virtual_private_cloud_config.rst:175
 msgid ""
@@ -5590,26 +5647,31 @@ msgid ""
 "the VPC network address space. You specify this set of addresses in the form of "
 "a Classless Inter-Domain Routing (CIDR) block."
 msgstr ""
+"Lorsque vous créer le VPC, vous fournissez simplement la zone et un ensemble "
+"d'adresses IP pour l'espace d'adresse du réseau du VPC. Vous spécifiez cet "
+"ensemble d'adresses dans le format d'un bloc Classless Inter-Domain Routing "
+"(CIDR)."
 
 #: ../../networking/virtual_private_cloud_config.rst:185
 msgid "Click Add VPC. The Add VPC page is displayed as follows:"
-msgstr ""
+msgstr "Cliquer sur Ajouter VPC. La page Ajouter VPC est affichée comme suivant :"
 
 #: ../../networking/virtual_private_cloud_config.rst:187
 msgid "|add-vpc.png|"
-msgstr ""
+msgstr "|add-vpc.png|"
 
 #: ../../networking/virtual_private_cloud_config.rst:191
 msgid "**Name**: A short name for the VPC that you are creating."
-msgstr ""
+msgstr "**Nom** : Un nom court pour le VPC que vous êtes en train de créer."
 
 #: ../../networking/virtual_private_cloud_config.rst:193
 msgid "**Description**: A brief description of the VPC."
-msgstr ""
+msgstr "**Description** :  Une description courte du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:195
 msgid "**Zone**: Choose the zone where you want the VPC to be available."
 msgstr ""
+"**Zone** :  Choisir la zone dans laquelle vous voulez que le VPC soit disponible."
 
 #: ../../networking/virtual_private_cloud_config.rst:197
 msgid ""
@@ -5617,6 +5679,10 @@ msgid ""
 "(guest networks) within a VPC. When you create a tier, ensure that its CIDR is "
 "within the Super CIDR value you enter. The CIDR must be RFC1918 compliant."
 msgstr ""
+"**Super CIDR pour les réseaux invités** :  définir l'intervalle CIDR pour tous "
+"les segments (réseaux invités) au sein du VPC. Lorsque vous créez un segment, "
+"assurez vous que son CIDR soit compris dans la valeur du Super CIDR que vous "
+"avez entré. Le CIDR doit être conforme à la RFC1918."
 
 #: ../../networking/virtual_private_cloud_config.rst:202
 msgid ""
@@ -5626,12 +5692,19 @@ msgid ""
 "domain. If the parameter is not specified, a DNS domain name is generated "
 "automatically."
 msgstr ""
+"**Domaine DNS pour les réseaux invités** : si vous voulez assigner un nom de "
+"domaine spécial, spécifier le suffixe DNS. Ce paramètre est appliqué à tous les "
+"segments au sein du VPC. Cela implique que tous les segments que vous créez dans "
+"le VPC appartiennent au même domaine DNS. Si le paramètre n'est pas spécifié, un "
+"nom de domaine DNS est généré automatiquement."
 
 #: ../../networking/virtual_private_cloud_config.rst:208
 msgid ""
 "**Public Load Balancer Provider**: You have two options: VPC Virtual Router and "
 "Netscaler."
 msgstr ""
+"**Fournisseur publique de répartition de charge** :  Vous avez deux options : "
+"Routeur Virtuel VPC et Netscaler."
 
 #: ../../networking/virtual_private_cloud_config.rst:215
 msgid "Adding Tiers"
@@ -5674,7 +5747,7 @@ msgstr ""
 
 #: ../../networking/virtual_private_cloud_config.rst:239
 msgid "Click Create network."
-msgstr ""
+msgstr "Cliquer sur Créer un réseau."
 
 #: ../../networking/virtual_private_cloud_config.rst:241
 msgid "The Add new tier dialog is displayed, as follows:"
@@ -5682,7 +5755,7 @@ msgstr "La boîte de dialogue Ajouter un nouveau segment s'affiche comme suit :"
 
 #: ../../networking/virtual_private_cloud_config.rst:243
 msgid "|add-tier.png|"
-msgstr ""
+msgstr "|add-tier.png|"
 
 #: ../../networking/virtual_private_cloud_config.rst:245
 msgid ""
@@ -5694,7 +5767,7 @@ msgstr ""
 
 #: ../../networking/virtual_private_cloud_config.rst:252
 msgid "**Name**: A unique name for the tier you create."
-msgstr ""
+msgstr "**Nom** : Un nom unique pour le segment que vous créez."
 
 #: ../../networking/virtual_private_cloud_config.rst:254
 msgid ""
@@ -5702,6 +5775,9 @@ msgid ""
 "Internal LB, DefaultIsolatedNetworkOfferingForVpcNetworksNoLB, "
 "DefaultIsolatedNetworkOfferingForVpcNetworks"
 msgstr ""
+"**Offre réseau** : Les offres par défaut de réseaux sont listées :  Internal LB, "
+"DefaultIsolatedNetworkOfferingForVpcNetworksNoLB, "
+"DefaultIsolatedNetworkOfferingForVpcNetworks"
 
 #: ../../networking/virtual_private_cloud_config.rst:259
 msgid ""
@@ -5712,18 +5788,22 @@ msgstr ""
 
 #: ../../networking/virtual_private_cloud_config.rst:267
 msgid "**VLAN**: The VLAN ID for the tier that the root admin creates."
-msgstr ""
+msgstr "**VLAN** :  L'ID du VLAN pour le segment que l'administrateur root créé."
 
 #: ../../networking/virtual_private_cloud_config.rst:269
 msgid ""
 "This option is only visible if the network offering you selected is VLAN-enabled."
 msgstr ""
+"Cette option n'est seulement visible que si l'offre réseau que vous avez "
+"sélectionné est VLAN-enabled."
 
 #: ../../networking/virtual_private_cloud_config.rst:272
 msgid ""
 "For more information, see `\"Assigning VLANs to Isolated Networks\" <hosts."
 "html#assigning-vlans-to-isolated-networks>`_."
 msgstr ""
+"Pour plus d'informations, voir `\"Assigner des VLANs à des réseaux isolés\" "
+"<hosts.html#assigning-vlans-to-isolated-networks>`_."
 
 #: ../../networking/virtual_private_cloud_config.rst:283
 msgid "Continue with configuring access control list for the tier."
@@ -5731,7 +5811,7 @@ msgstr "Continuer avec la configuration des contrôle d'accès pour ce segment."
 
 #: ../../networking/virtual_private_cloud_config.rst:289
 msgid "Configuring Network Access Control List"
-msgstr ""
+msgstr "Configurer une liste de contrôle d'accès réseau"
 
 #: ../../networking/virtual_private_cloud_config.rst:291
 msgid ""
@@ -5747,7 +5827,7 @@ msgstr ""
 
 #: ../../networking/virtual_private_cloud_config.rst:303
 msgid "About Network ACL Lists"
-msgstr ""
+msgstr "A propos des listes d'ACL réseau"
 
 #: ../../networking/virtual_private_cloud_config.rst:305
 msgid ""
@@ -5810,56 +5890,65 @@ msgstr "Créer les listes d'ACL"
 #: ../../networking/virtual_private_cloud_config.rst:366
 #: ../../networking/virtual_private_cloud_config.rst:393
 msgid "Select Network ACL Lists."
-msgstr ""
+msgstr "Sélectionner les listes d'ACL réseaux."
 
 #: ../../networking/virtual_private_cloud_config.rst:368
 msgid ""
 "The following default rules are displayed in the Network ACLs page: default"
 "\\_allow, default\\_deny."
 msgstr ""
+"Les règles par défaut suivantes sont affichées dans la page d'ACL réseau : "
+"default\\_allow, default\\_deny."
 
 #: ../../networking/virtual_private_cloud_config.rst:371
 msgid "Click Add ACL Lists, and specify the following:"
-msgstr ""
+msgstr "Cliquer sur Ajouter des listes d'ACL et spécifier ce qui suit :"
 
 #: ../../networking/virtual_private_cloud_config.rst:373
 msgid "**ACL List Name**: A name for the ACL list."
-msgstr ""
+msgstr "**Nom de la liste d'ACL** : Un nom pour la liste d'ACL."
 
 #: ../../networking/virtual_private_cloud_config.rst:375
 msgid ""
 "**Description**: A short description of the ACL list that can be displayed to "
 "users."
 msgstr ""
+"**Description** : Une description courte de la liste d'ACL qui peut être "
+"affichée aux utilisateurs."
 
 #: ../../networking/virtual_private_cloud_config.rst:380
 msgid "Creating an ACL Rule"
-msgstr ""
+msgstr "Créer une règle d'ACL"
 
 #: ../../networking/virtual_private_cloud_config.rst:395
 msgid ""
 "In addition to the custom ACL lists you have created, the following default "
 "rules are displayed in the Network ACLs page: default\\_allow, default\\_deny."
 msgstr ""
+"En complément aux listes d'ACL personnalisées que vous avez créés, les règles "
+"par défaut suivantes sont affichées dans la page d'ACL réseaux : default"
+"\\_allow, default\\_deny."
 
 #: ../../networking/virtual_private_cloud_config.rst:399
 #: ../../networking/virtual_private_cloud_config.rst:479
 msgid "Select the desired ACL list."
-msgstr ""
+msgstr "Sélectionner la liste d'ACL désirée."
 
 #: ../../networking/virtual_private_cloud_config.rst:401
 msgid "Select the ACL List Rules tab."
-msgstr ""
+msgstr "Sélectionner l'onglet Règles de liste d'ACL."
 
 #: ../../networking/virtual_private_cloud_config.rst:403
 msgid ""
 "To add an ACL rule, fill in the following fields to specify what kind of network "
 "traffic is allowed in the VPC."
 msgstr ""
+"Pour ajouter une règle d'ACL, remplir les champs suivants pour spécifier quel "
+"type de trafic réseau est autorisé dans le VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:406
 msgid "**Rule Number**: The order in which the rules are evaluated."
-msgstr ""
+msgstr "**Numéro de règle** : L'ordre dans lequel les règles sont évaluées."
 
 #: ../../networking/virtual_private_cloud_config.rst:408
 msgid ""
@@ -5873,6 +5962,7 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:415
 msgid "**Action**: What action to be taken. Allow traffic or block."
 msgstr ""
+"**Action** : Quelle action doit être prise. Autoriser le trafic ou le bloquer."
 
 #: ../../networking/virtual_private_cloud_config.rst:417
 msgid ""
@@ -5909,65 +5999,69 @@ msgstr ""
 
 #: ../../networking/virtual_private_cloud_config.rst:437
 msgid "Click Add. The ACL rule is added."
-msgstr ""
+msgstr "Cliquer sur Ajouter. La règle ACL est ajouée."
 
 #: ../../networking/virtual_private_cloud_config.rst:439
 msgid ""
 "You can edit the tags assigned to the ACL rules and delete the ACL rules you "
 "have created. Click the appropriate button in the Details tab."
 msgstr ""
+"Vous pouvez éditer les étiquettes assignées aux règles d'ACL et supprimer les "
+"règles d'ACL que vous avez créées. Cliquer sur le bouton approprié dans l'onglet "
+"Détails."
 
 #: ../../networking/virtual_private_cloud_config.rst:445
 msgid "Creating a Tier with Custom ACL List"
-msgstr ""
+msgstr "Créer un segment avec une liste d'ACL personnalisée."
 
 #: ../../networking/virtual_private_cloud_config.rst:447
 #: ../../networking/virtual_private_cloud_config.rst:463
 msgid "Create a VPC."
-msgstr ""
+msgstr "Créer un VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:449
 #: ../../networking/virtual_private_cloud_config.rst:469
 msgid "Create a custom ACL list."
-msgstr ""
+msgstr "Créer une liste d'ACL personnalisée."
 
 #: ../../networking/virtual_private_cloud_config.rst:451
 #: ../../networking/virtual_private_cloud_config.rst:471
 msgid "Add ACL rules to the ACL list."
-msgstr ""
+msgstr "Ajouter des règles d'ACL à une liste d'ACL."
 
 #: ../../networking/virtual_private_cloud_config.rst:453
 #: ../../networking/virtual_private_cloud_config.rst:465
 msgid "Create a tier in the VPC."
-msgstr ""
+msgstr "Créer un segment dans le VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:455
 msgid "Select the desired ACL list while creating a tier."
-msgstr ""
+msgstr "Sélectionner la liste d'ACL désirée lors de la création du segment."
 
 #: ../../networking/virtual_private_cloud_config.rst:461
 msgid "Assigning a Custom ACL List to a Tier"
-msgstr ""
+msgstr "Assigner une liste d'ACL personnalisée à un segment"
 
 #: ../../networking/virtual_private_cloud_config.rst:467
 msgid "Associate the tier with the default ACL rule."
-msgstr ""
+msgstr "Associer le segment avec la règle d'ACL par défaut."
 
 #: ../../networking/virtual_private_cloud_config.rst:473
 msgid "Select the tier for which you want to assign the custom ACL."
 msgstr ""
+"Sélectionner le segment pour lequel vous voulez assigner l'ACL personnalisée."
 
 #: ../../networking/virtual_private_cloud_config.rst:475
 msgid "Click the Replace ACL List icon. |replace-acl-icon.png|"
-msgstr ""
+msgstr "Cliquer sur l'icone Remplacer la liste d'ACL. |replace-acl-icon.png|"
 
 #: ../../networking/virtual_private_cloud_config.rst:477
 msgid "The Replace ACL List dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Remplacer la liste d'ACL est affichée."
 
 #: ../../networking/virtual_private_cloud_config.rst:487
 msgid "Adding a Private Gateway to a VPC"
-msgstr ""
+msgstr "Ajouter une passerelle privée à un VPC"
 
 #: ../../networking/virtual_private_cloud_config.rst:489
 msgid ""
@@ -5987,54 +6081,60 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:746
 #: ../../networking/virtual_private_cloud_config.rst:804
 msgid "The following options are displayed."
-msgstr ""
+msgstr "Les options suivantes sont affichées."
 
 #: ../../networking/virtual_private_cloud_config.rst:533
 msgid "Select Private Gateways."
-msgstr ""
+msgstr "Sélectionner Passerelles privées."
 
 #: ../../networking/virtual_private_cloud_config.rst:535
 msgid "The Gateways page is displayed."
-msgstr ""
+msgstr "La page Passerelles est affichée."
 
 #: ../../networking/virtual_private_cloud_config.rst:537
 msgid "Click Add new gateway:"
-msgstr ""
+msgstr "Cliquer sur Ajouter une nouvelle passerelle :"
 
 #: ../../networking/virtual_private_cloud_config.rst:539
 msgid "|add-new-gateway-vpc.png|"
-msgstr ""
+msgstr "add-new-gateway-vpc.png|"
 
 #: ../../networking/virtual_private_cloud_config.rst:543
 msgid "**Physical Network**: The physical network you have created in the zone."
-msgstr ""
+msgstr "**Réseau physique** : Le réseau physique que vous avez créé dans la zone."
 
 #: ../../networking/virtual_private_cloud_config.rst:546
 msgid "**IP Address**: The IP address associated with the VPC gateway."
-msgstr ""
+msgstr "**Adresse IP** :  L'adresse IP associée avec la passerelle du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:548
 msgid ""
 "**Gateway**: The gateway through which the traffic is routed to and from the VPC."
 msgstr ""
+"**Passerelle** : La passerelle par laquelle le trafic est routé depuis et vers "
+"le VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:551
 msgid "**Netmask**: The netmask associated with the VPC gateway."
 msgstr ""
+"**Masque de sous-réseaux** : Le masque de sous-réseaux associé avec la "
+"passerelle du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:553
 msgid "**VLAN**: The VLAN associated with the VPC gateway."
-msgstr ""
+msgstr "**VLAN** : Le VLAN associé avec la passerelle du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:555
 msgid ""
 "**Source NAT**: Select this option to enable the source NAT service on the VPC "
 "private gateway."
 msgstr ""
+"**Source NAT** : Sélectionner cette option pour activer le service de NAT source "
+"sur la passerelle privée du VPC."
 
 #: ../../networking/virtual_private_cloud_config.rst:558
 msgid "See \":ref:`source-nat-priv-gw`\"."
-msgstr ""
+msgstr "Voir \":ref:`source-nat-priv-gw`\"."
 
 #: ../../networking/virtual_private_cloud_config.rst:560
 msgid ""
@@ -6044,7 +6144,7 @@ msgstr ""
 
 #: ../../networking/virtual_private_cloud_config.rst:563
 msgid "See \":ref:`acl-priv-gw`\"."
-msgstr ""
+msgstr "Voir \":ref:`acl-priv-gw`\"."
 
 #: ../../networking/virtual_private_cloud_config.rst:565
 msgid ""
@@ -6081,7 +6181,7 @@ msgstr ""
 
 #: ../../networking/virtual_private_cloud_config.rst:593
 msgid "ACL on Private Gateway"
-msgstr ""
+msgstr "ACL sur une passerelle privée"
 
 #: ../../networking/virtual_private_cloud_config.rst:595
 msgid ""
@@ -6127,14 +6227,16 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:617
 msgid "In the Detail tab, click the Replace ACL button. |replace-acl-icon.png|"
 msgstr ""
+"Dans l'onglet Détail, cliquer sur le bouton Remplacer les ACL. |replace-acl-icon."
+"png|"
 
 #: ../../networking/virtual_private_cloud_config.rst:620
 msgid "The Replace ACL dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Remplacer la liste d'ACL est affichée."
 
 #: ../../networking/virtual_private_cloud_config.rst:622
 msgid "select the ACL rule, then click OK."
-msgstr ""
+msgstr "Cliquer sur Ajouter. La règle ACL est ajouée."
 
 #: ../../networking/virtual_private_cloud_config.rst:624
 msgid ""

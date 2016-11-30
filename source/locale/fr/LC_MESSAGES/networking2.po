@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-31 14:08-0400\n"
-"PO-Revision-Date: 2016-11-19 11:52+0100\n"
+"PO-Revision-Date: 2016-11-20 22:53+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -6434,7 +6434,7 @@ msgstr ""
 # 019f7c2e7a1c40289e074fc89915b010
 #: ../../networking2.rst:4844
 msgid "Configuring a Virtual Private Cloud"
-msgstr ""
+msgstr "Configurer un Cloud Privé Virtuel"
 
 # cf430774172c4664b8c8126dc2f8f2a9
 #: ../../networking2.rst:4847
@@ -6522,6 +6522,10 @@ msgid ""
 "through the public gateway. In a VPC, the public gateway is not exposed to the "
 "end user; therefore, static routes are not support for the public gateway."
 msgstr ""
+"**Passerelle publique** : Le trafic vers et provenant d'Internet est routé vers "
+"le VPC par la passerelle publique. Dans un VPC, la passerelle publique n'est pas "
+"exposée à l'utilisateur final ; en conséquence, les routes statiques ne sont pas "
+"supportées pour la passerelle publique."
 
 # c72e1f296d024bf6a636137059d31752
 #: ../../networking2.rst:4896
@@ -6530,11 +6534,14 @@ msgid ""
 "VPC through the private gateway. For more information, see \":ref:`adding-priv-"
 "gw-vpc`\"."
 msgstr ""
+"**Passerelle privée** : tout le trafic provenant ou à destination d'un réseau "
+"privé est routé vers le VPC par la passerelle privée. Pour plus d'information, "
+"voir \":ref:`adding-priv-gw-vpc`\"."
 
 # 741b3998454f43bbad3608dd86a74114
 #: ../../networking2.rst:4902
 msgid "**VPN Gateway**: The VPC side of a VPN connection."
-msgstr ""
+msgstr "**Passerelle VPN** : Le pendant VPC d'une connexion VPN."
 
 # 6487d4f72da84801ae40e38bcb8f7458
 #: ../../networking2.rst:4906
@@ -6543,6 +6550,9 @@ msgid ""
 "VPC and your datacenter, home network, or co-location facility. For more "
 "information, see \":ref:`setting-s2s-vpn-conn`\"."
 msgstr ""
+"**Connexion VPN site-à-site** : Une connexion VPN matérielle entre votre PVC et "
+"votre datacenter, votre réseau domestique ou autres installations. Pour plus "
+"d'information, voir \":ref:`setting-s2s-vpn-conn`\"."
 
 # d4b8df91ae5d4307835174a0c96640f1
 #: ../../networking2.rst:4912
@@ -6551,6 +6561,9 @@ msgid ""
 "information, see `\"Creating and Updating a VPN Customer Gateway\" <#creating-"
 "and-updating-a-vpn-customer-gateway>`_."
 msgstr ""
+"**Passerelle client** : le pendant client d'une connexion VPN. Pour plus "
+"d'informations, voir `\"Créer et mettre à jour une passerelle client\" "
+"<#creating-and-updating-a-vpn-customer-gateway>`_."
 
 # f97a3ebbcde34d3a82a37aa401487760
 #: ../../networking2.rst:4918
@@ -6559,6 +6572,9 @@ msgid ""
 "instances to access the Internet via the public gateway. For more information, "
 "see \":ref:`enabling-disabling-static-nat-on-vpc`\"."
 msgstr ""
+"**Instance NAT** : Une instance qui fourni la translation de port pour que les "
+"instances puissent accéder à Internet via la passerelle publique. Pour plus "
+"d'informations, voir \":ref:`enabling-disabling-static-nat-on-vpc`\"."
 
 # 0e9442c446e34500a845a7dff022554d
 #: ../../networking2.rst:4924
@@ -6569,6 +6585,12 @@ msgid ""
 "of any tier associated with the network ACL. For more information, see \":ref:"
 "`conf-net-acl`\"."
 msgstr ""
+"**ACL Réseau** : Une ACL réseau est un groupe d'entrées d'ACL réseau. Les "
+"entrées d'ACL réseau ne sont rien d'autre qu'un nombre de règles qui sont "
+"évaluées dans l'ordre, en commençant par la règle avec le plus petit numéro. Ces "
+"règles déterminent si le trafic est autorisé en entrée ou en sortie de n'importe "
+"quel segment associé avec l'ACL réseau. Pour plus d'informations, voir \":ref:"
+"`conf-net-acl`\"."
 
 # daf38611958e42f7b832673319b348fb
 #: ../../networking2.rst:4931
@@ -6580,41 +6602,43 @@ msgstr "Architecture Réseau dans un VPC"
 msgid ""
 "In a VPC, the following four basic options of network architectures are present:"
 msgstr ""
+"Dans un VPC, les quatres options basiques d'architectures réseaux suivantes sont "
+"présentes :"
 
 # f1eb7bb1a38f4dc68def9d12e7a3e178
 #: ../../networking2.rst:4938
 msgid "VPC with a public gateway only"
-msgstr ""
+msgstr "VPC avec une passerelle publique seulement"
 
 # b0e2f221d7b14320bbc1222a776de41f
 #: ../../networking2.rst:4942
 msgid "VPC with public and private gateways"
-msgstr ""
+msgstr "VPC avec des passerelles publiques et privées"
 
 # 0994c597eccb4d299d4dc9b107fb9fa7
 #: ../../networking2.rst:4946
 msgid "VPC with public and private gateways and site-to-site VPN access"
-msgstr ""
+msgstr "VPC avec des passerelles publiques et privées et un accès VPN site à site"
 
 # 870f363e446c47b4b668cb236c51be3b
 #: ../../networking2.rst:4950
 msgid "VPC with a private gateway only and site-to-site VPN access"
-msgstr ""
+msgstr "VPC avec une passerelle privée seulement et un accès VPN site à site"
 
 # 0875278053ce4aa7a964657f5ef7ca92
 #: ../../networking2.rst:4953
 msgid "Connectivity Options for a VPC"
-msgstr ""
+msgstr "Options de connectivité pour un VPC"
 
 # 5d9bd85e540b4cd89292060896221da5
 #: ../../networking2.rst:4955
 msgid "You can connect your VPC to:"
-msgstr ""
+msgstr "Vous pouvez connecter votre VPC à :"
 
 # d4a48f7eedb24cd0ada3d40f216fd98e
 #: ../../networking2.rst:4959
 msgid "The Internet through the public gateway."
-msgstr ""
+msgstr "à Internet en passant par la passerelle publique."
 
 # 24471a284e4241e0bd0c5c456168c7a8
 #: ../../networking2.rst:4963
@@ -6622,6 +6646,8 @@ msgid ""
 "The corporate datacenter by using a site-to-site VPN connection through the VPN "
 "gateway."
 msgstr ""
+"au centre de données de l'entreprise en utilisant une connexion VPN site à site "
+"en passant par la passerelle VPN."
 
 # 25fc02e4454849d4a573bd5dd0d7449a
 #: ../../networking2.rst:4968
@@ -6629,21 +6655,23 @@ msgid ""
 "Both the Internet and your corporate datacenter by using both the public gateway "
 "and a VPN gateway."
 msgstr ""
+"A la fois à Internet et à votre centre de données interne en utilisant à la fois "
+"la passerelle publique et une passerelle VPN."
 
 # de5ded73de514bd5a57ecb362fc2faff
 #: ../../networking2.rst:4972
 msgid "VPC Network Considerations"
-msgstr ""
+msgstr "Considérations sur le réseau du VPC"
 
 # 78994af1e78348c9ba1f4b1565241a38
 #: ../../networking2.rst:4974
 msgid "Consider the following before you create a VPC:"
-msgstr ""
+msgstr "Prendre en compte ce qui suit avant de créer un VPC :"
 
 # cb564008696f42c493ba11e1ed4f80dc
 #: ../../networking2.rst:4978
 msgid "A VPC, by default, is created in the enabled state."
-msgstr ""
+msgstr "Un VPC, par défaut, est créé dans l'état activé."
 
 # 000ae42b46f34e98836dd0ae06ce491f
 #: ../../networking2.rst:4982
@@ -6651,6 +6679,8 @@ msgid ""
 "A VPC can be created in Advance zone only, and can't belong to more than one "
 "zone at a time."
 msgstr ""
+"Un VPC peut être créé dans une zone avancée seulement, et ne peut pas appartenir "
+"à plus d'une zone à la fois."
 
 # 057235f5ffdf462bb0c747d2d3069fe8
 #: ../../networking2.rst:4987
@@ -6659,6 +6689,9 @@ msgid ""
 "it by using the max.account.vpcs global parameter, which controls the maximum "
 "number of VPCs an account is allowed to create."
 msgstr ""
+"Le nombre par défaut de VPC qu'un compte peut créer est de 20. Toutefois, vous "
+"pouvez le changer en utilisant le paramètre global max.accounts.vpcs, qui "
+"contrôle le nombre maximum de VPCs qu'un compte est autorisé à créer."
 
 # 6356075be5b54a679178f3b08844bb13
 #: ../../networking2.rst:4993
@@ -6666,6 +6699,8 @@ msgid ""
 "The default number of tiers an account can create within a VPC is 3. You can "
 "configure this number by using the vpc.max.networks parameter."
 msgstr ""
+"Le nombre par défaut de segment qu'un compte peut créer dans un VPC est de 3. "
+"Vous pouvez configurer ce nombre en utilisant le paramètre vpc.max.networks."
 
 # 14ee39b30ff7411188721f6d19152415
 #: ../../networking2.rst:4999
@@ -6673,16 +6708,18 @@ msgid ""
 "Each tier should have an unique CIDR in the VPC. Ensure that the tier's CIDR "
 "should be within the VPC CIDR range."
 msgstr ""
+"Chaque segment devrait avoir un CIDR unique dans le VPC. Assurez vous que le "
+"CIDR du segment est bien dans l'intervalle CIDR du VPC."
 
 # 227b4656e25549c3ae49cbd3eadee4da
 #: ../../networking2.rst:5004
 msgid "A tier belongs to only one VPC."
-msgstr ""
+msgstr "Un segment n'appartient qu'à un seul VPC."
 
 # 8c1c0a2daf2f454daf51a743c52d1875
 #: ../../networking2.rst:5008
 msgid "All network tiers inside the VPC should belong to the same account."
-msgstr ""
+msgstr "Tout segment réseau à l'intérieur du VPC doit appartenir au même compte."
 
 # 151ef843569c413592482f23408cc0b1
 #: ../../networking2.rst:5012
@@ -6690,6 +6727,8 @@ msgid ""
 "When a VPC is created, by default, a SourceNAT IP is allocated to it. The Source "
 "NAT IP is released only when the VPC is removed."
 msgstr ""
+"Lorsqu'un VPC est créé, par défaut, une IP Source NAT lui est allouée. L'adresse "
+"IP source NAT est libérée seulement lorsque le VPC est supprimé."
 
 # a4dbf6325246473c80fa288a2c05f46f
 #: ../../networking2.rst:5017
@@ -6697,6 +6736,9 @@ msgid ""
 "A public IP can be used for only one purpose at a time. If the IP is a "
 "sourceNAT, it cannot be used for StaticNAT or port forwarding."
 msgstr ""
+"Une IP publique ne peut être utilisée que pour un seul besoin à la fois. Si l'IP "
+"est une IP source NAT, elle ne pourra pas être utilisée pour le NAT Statique ou "
+"la redirection de port."
 
 # 66e9af0df38d44acbdfd5b4f7c7f2209
 #: ../../networking2.rst:5022
@@ -6705,6 +6747,9 @@ msgid ""
 "communicate with the Internet, enable NAT to an instance that you launch in your "
 "VPC."
 msgstr ""
+"Les instances peuvent seulement avoir une adresse IP privée que vous "
+"provisionnez. Pour communiquer avec Internet, activer le NAT pour une instance "
+"que vous lancez dans votre VPC."
 
 # a7fc2cd6204b4ccdb272b79d22b93120
 #: ../../networking2.rst:5028
@@ -6713,17 +6758,22 @@ msgid ""
 "is limited by the value you specify in the vpc.max.networks parameter. The "
 "default value is three."
 msgstr ""
+"Seulement les nouveaux réseaux peuvent être ajoutés à un VPC. Le nombre maximum "
+"de réseaux par VPC est limité par la valeur que vous spécifiez dans le paramètre "
+"vpc.max.networks. La valeur par défaut est trois."
 
 # 636571d03b1244af968495ed107bce4f
 #: ../../networking2.rst:5034
 msgid ""
 "The load balancing service can be supported by only one tier inside the VPC."
 msgstr ""
+"La service de répartition de charge ne peut être supporté que par un seul "
+"segment à l'intérieur du VPC."
 
 # 690bdd20a5e449298f4d89ca8d62c663
 #: ../../networking2.rst:5039
 msgid "If an IP address is assigned to a tier:"
-msgstr ""
+msgstr "Si une adresse IP est attribuée à un segment :"
 
 # 58b11a4dc63949a7a3052e4aa24933d5
 #: ../../networking2.rst:5043
@@ -6732,6 +6782,10 @@ msgid ""
 "if you have tiers A and B, and a public IP1, you can create a port forwarding "
 "rule by using the IP either for A or B, but not for both."
 msgstr ""
+"Cette IP ne peut pas être utilisée par plus d'un segment à la fois dans le VPC. "
+"Par exemple, si vous avez les segments A et B et une IP1 publique, vous pouvez "
+"créer une règle de transmission de port en utilisant l'IP soit pour A ou B mais "
+"pas pour les deux."
 
 # 856f012d37d643d8804e106bcbfc20f7
 #: ../../networking2.rst:5050
@@ -6739,11 +6793,14 @@ msgid ""
 "That IP can't be used for StaticNAT, load balancing, or port forwarding rules "
 "for another guest network inside the VPC."
 msgstr ""
+"Cette IP ne peut pas être utilisée pour du NAT Statique, pour la répartition de "
+"charge ou pour les règles de transmission de port pour un autre réseau invité au "
+"sein du VPC."
 
 # 4683db25b3ea4e4188deea16746ee8e9
 #: ../../networking2.rst:5055
 msgid "Remote access VPN is not supported in VPC networks."
-msgstr ""
+msgstr "Les accès distants VPN ne sont pas supportés dans les réseaux du VPC."
 
 # d6e7cab15dfe4412bd18e44c210098b5
 #: ../../networking2.rst:5058
@@ -6757,11 +6814,15 @@ msgid ""
 "the VPC network address space. You specify this set of addresses in the form of "
 "a Classless Inter-Domain Routing (CIDR) block."
 msgstr ""
+"Lorsque vous créer le VPC, vous fournissez simplement la zone et un ensemble "
+"d'adresses IP pour l'espace d'adresse du réseau du VPC. Vous spécifiez cet "
+"ensemble d'adresses dans le format d'un bloc Classless Inter-Domain Routing "
+"(CIDR)."
 
 # e96c8770c7a94c51a0e5abf05e27349d
 #: ../../networking2.rst:5078
 msgid "Click Add VPC. The Add VPC page is displayed as follows:"
-msgstr ""
+msgstr "Cliquer sur Ajouter VPC. La page Ajouter VPC est affichée comme suivant :"
 
 # 5c49f3b134ab451fb0baebec74eb6d02
 #: ../../networking2.rst:5080
@@ -6771,17 +6832,18 @@ msgstr "|add-vpc.png|"
 # fa0553b67cec41e993031eaa2cfdaf13
 #: ../../networking2.rst:5086
 msgid "**Name**: A short name for the VPC that you are creating."
-msgstr ""
+msgstr "**Nom** : Un nom court pour le VPC que vous êtes en train de créer."
 
 # 97f59ddee9cd4c10bc7c6f87d980837a
 #: ../../networking2.rst:5090
 msgid "**Description**: A brief description of the VPC."
-msgstr ""
+msgstr "**Description** :  Une description courte du VPC."
 
 # fb51bf0a8fcf42bf90044a947eeb19d5
 #: ../../networking2.rst:5094
 msgid "**Zone**: Choose the zone where you want the VPC to be available."
 msgstr ""
+"**Zone** :  Choisir la zone dans laquelle vous voulez que le VPC soit disponible."
 
 # d7698df9efa0453db3df61a65907f84e
 #: ../../networking2.rst:5098
@@ -6790,6 +6852,10 @@ msgid ""
 "(guest networks) within a VPC. When you create a tier, ensure that its CIDR is "
 "within the Super CIDR value you enter. The CIDR must be RFC1918 compliant."
 msgstr ""
+"**Super CIDR pour les réseaux invités** :  définir l'intervalle CIDR pour tous "
+"les segments (réseaux invités) au sein du VPC. Lorsque vous créez un segment, "
+"assurez vous que son CIDR soit compris dans la valeur du Super CIDR que vous "
+"avez entré. Le CIDR doit être conforme à la RFC1918."
 
 # 927e8a069df94b7ab7c15ce7c08682f2
 #: ../../networking2.rst:5105
@@ -6800,6 +6866,11 @@ msgid ""
 "domain. If the parameter is not specified, a DNS domain name is generated "
 "automatically."
 msgstr ""
+"**Domaine DNS pour les réseaux invités** : si vous voulez assigner un nom de "
+"domaine spécial, spécifier le suffixe DNS. Ce paramètre est appliqué à tous les "
+"segments au sein du VPC. Cela implique que tous les segments que vous créez dans "
+"le VPC appartiennent au même domaine DNS. Si le paramètre n'est pas spécifié, un "
+"nom de domaine DNS est généré automatiquement."
 
 # db3617bea0a7437a98e0ceb8acf7525b
 #: ../../networking2.rst:5113
@@ -6807,6 +6878,8 @@ msgid ""
 "**Public Load Balancer Provider**: You have two options: VPC Virtual Router and "
 "Netscaler."
 msgstr ""
+"**Fournisseur publique de répartition de charge** :  Vous avez deux options : "
+"Routeur Virtuel VPC et Netscaler."
 
 # 4cfebf8fa1714d45b8ad960ae9f7ab29
 #: ../../networking2.rst:5121
@@ -6855,7 +6928,7 @@ msgstr ""
 # c0383203b6324f44bca1f8d64372fd12
 #: ../../networking2.rst:5155
 msgid "Click Create network."
-msgstr ""
+msgstr "Cliquer sur Créer un réseau."
 
 # 71dfd71fa8254a17b162b5ecbea81465
 #: ../../networking2.rst:5157
@@ -6879,7 +6952,7 @@ msgstr ""
 # 08999394431847eb807438afe40264eb
 #: ../../networking2.rst:5172
 msgid "**Name**: A unique name for the tier you create."
-msgstr ""
+msgstr "**Nom** : Un nom unique pour le segment que vous créez."
 
 # b1d5cef8af774c368f4db6f7adb35ae4
 #: ../../networking2.rst:5176
@@ -6888,6 +6961,9 @@ msgid ""
 "Internal LB, DefaultIsolatedNetworkOfferingForVpcNetworksNoLB, "
 "DefaultIsolatedNetworkOfferingForVpcNetworks"
 msgstr ""
+"**Offre réseau** : Les offres par défaut de réseaux sont listées :  Internal LB, "
+"DefaultIsolatedNetworkOfferingForVpcNetworksNoLB, "
+"DefaultIsolatedNetworkOfferingForVpcNetworks"
 
 # a109edde2faf4ec4b1f5de31c2c91472
 #: ../../networking2.rst:5181
@@ -6900,13 +6976,15 @@ msgstr ""
 # cb1a1e05c80349aba5c29f7eb19fb029
 #: ../../networking2.rst:5193
 msgid "**VLAN**: The VLAN ID for the tier that the root admin creates."
-msgstr ""
+msgstr "**VLAN** :  L'ID du VLAN pour le segment que l'administrateur root créé."
 
 # 3a87f69636d34930b6e2382a6c0df8ed
 #: ../../networking2.rst:5195
 msgid ""
 "This option is only visible if the network offering you selected is VLAN-enabled."
 msgstr ""
+"Cette option n'est seulement visible que si l'offre réseau que vous avez "
+"sélectionné est VLAN-enabled."
 
 # 94a1b1fbefab4cd88665da31ab04dff5
 #: ../../networking2.rst:5198
@@ -6914,6 +6992,8 @@ msgid ""
 "For more information, see `\"Assigning VLANs to Isolated Networks\" <hosts."
 "html#assigning-vlans-to-isolated-networks>`_."
 msgstr ""
+"Pour plus d'informations, voir `\"Assigner des VLANs à des réseaux isolés\" "
+"<hosts.html#assigning-vlans-to-isolated-networks>`_."
 
 # 2c2c9c5c56b24b02b949731d057ccece
 #: ../../networking2.rst:5215
@@ -6923,7 +7003,7 @@ msgstr "Continuer avec la configuration des contrôle d'accès pour ce segment."
 # fe50554812f144079082cb76d478f030
 #: ../../networking2.rst:5220
 msgid "Configuring Network Access Control List"
-msgstr ""
+msgstr "Configurer une liste de contrôle d'accès réseau"
 
 # e6ac09ebbb494a58abe8f4e2b48ab189
 #: ../../networking2.rst:5222
@@ -6941,7 +7021,7 @@ msgstr ""
 # 98625caa21a9468fa1732748d2a17096
 #: ../../networking2.rst:5233
 msgid "About Network ACL Lists"
-msgstr ""
+msgstr "A propos des listes d'ACL réseau"
 
 # 09938c6b069c491ea32225bf40b4c1cb
 #: ../../networking2.rst:5235
@@ -7010,13 +7090,13 @@ msgstr "Règles sortantes"
 # 8cc5201e9ef74389bf852a8c965d8c58
 #: ../../networking2.rst:5258
 msgid "Creating ACL Lists"
-msgstr ""
+msgstr "Créer les listes d'ACL"
 
 # 1d2d971c7e064b558d73374bc47d82d0
 # 3404c28191eb451a91f3cfa59aefaba4
 #: ../../networking2.rst:5321 ../../networking2.rst:5363
 msgid "Select Network ACL Lists."
-msgstr ""
+msgstr "Sélectionner les listes d'ACL réseaux."
 
 # faf3ffe663364217b1a4616fa0286cf2
 #: ../../networking2.rst:5323
@@ -7024,16 +7104,18 @@ msgid ""
 "The following default rules are displayed in the Network ACLs page: default"
 "\\_allow, default\\_deny."
 msgstr ""
+"Les règles par défaut suivantes sont affichées dans la page d'ACL réseau : "
+"default\\_allow, default\\_deny."
 
 # f9e4f48e72cc497a8f9dcdbb42107837
 #: ../../networking2.rst:5328
 msgid "Click Add ACL Lists, and specify the following:"
-msgstr ""
+msgstr "Cliquer sur Ajouter des listes d'ACL et spécifier ce qui suit :"
 
 # 90439c9713414c43aa9c2e05eb942726
 #: ../../networking2.rst:5332
 msgid "**ACL List Name**: A name for the ACL list."
-msgstr ""
+msgstr "**Nom de la liste d'ACL** : Un nom pour la liste d'ACL."
 
 # d7606f1b49fa42f190dcf0037e7a7f82
 #: ../../networking2.rst:5336
@@ -7041,11 +7123,13 @@ msgid ""
 "**Description**: A short description of the ACL list that can be displayed to "
 "users."
 msgstr ""
+"**Description** : Une description courte de la liste d'ACL qui peut être "
+"affichée aux utilisateurs."
 
 # 48a4f463117347eb8b319809642e7da8
 #: ../../networking2.rst:5340
 msgid "Creating an ACL Rule"
-msgstr ""
+msgstr "Créer une règle d'ACL"
 
 # 2651d622eb634957a6d286e42b35b431
 #: ../../networking2.rst:5365
@@ -7053,17 +7137,20 @@ msgid ""
 "In addition to the custom ACL lists you have created, the following default "
 "rules are displayed in the Network ACLs page: default\\_allow, default\\_deny."
 msgstr ""
+"En complément aux listes d'ACL personnalisées que vous avez créés, les règles "
+"par défaut suivantes sont affichées dans la page d'ACL réseaux : default"
+"\\_allow, default\\_deny."
 
 # 8589eb86d31d49b0b8b3a066e403dea3
 # 9fe9f83f4eea466b8c268bff18971db7
 #: ../../networking2.rst:5371 ../../networking2.rst:5495
 msgid "Select the desired ACL list."
-msgstr ""
+msgstr "Sélectionner la liste d'ACL désirée."
 
 # 526f674e5a544241bfcb69fec29f6b30
 #: ../../networking2.rst:5375
 msgid "Select the ACL List Rules tab."
-msgstr ""
+msgstr "Sélectionner l'onglet Règles de liste d'ACL."
 
 # 6b315c7b1ebe42268824f83af55fae75
 #: ../../networking2.rst:5377
@@ -7071,11 +7158,13 @@ msgid ""
 "To add an ACL rule, fill in the following fields to specify what kind of network "
 "traffic is allowed in the VPC."
 msgstr ""
+"Pour ajouter une règle d'ACL, remplir les champs suivants pour spécifier quel "
+"type de trafic réseau est autorisé dans le VPC."
 
 # e9fd41991f514decba25f1e0b8bacf9a
 #: ../../networking2.rst:5382
 msgid "**Rule Number**: The order in which the rules are evaluated."
-msgstr ""
+msgstr "**Numéro de règle** : L'ordre dans lequel les règles sont évaluées."
 
 # 74e33543194246e9bf723eb7f8579770
 #: ../../networking2.rst:5386
@@ -7091,6 +7180,7 @@ msgstr ""
 #: ../../networking2.rst:5395
 msgid "**Action**: What action to be taken. Allow traffic or block."
 msgstr ""
+"**Action** : Quelle action doit être prise. Autoriser le trafic ou le bloquer."
 
 # 3a81766b5639471dad96fc442722931a
 #: ../../networking2.rst:5399
@@ -7133,7 +7223,7 @@ msgstr ""
 # 2a986f306a534501ac5ce1869c4879b2
 #: ../../networking2.rst:5429
 msgid "Click Add. The ACL rule is added."
-msgstr ""
+msgstr "Cliquer sur Ajouter. La règle ACL est ajouée."
 
 # 1ff7a90c1c8b4226b22c2f267b0cd329
 #: ../../networking2.rst:5431
@@ -7141,55 +7231,59 @@ msgid ""
 "You can edit the tags assigned to the ACL rules and delete the ACL rules you "
 "have created. Click the appropriate button in the Details tab."
 msgstr ""
+"Vous pouvez éditer les étiquettes assignées aux règles d'ACL et supprimer les "
+"règles d'ACL que vous avez créées. Cliquer sur le bouton approprié dans l'onglet "
+"Détails."
 
 # 497f804bbce846e084e10331e6e0079b
 #: ../../networking2.rst:5436
 msgid "Creating a Tier with Custom ACL List"
-msgstr ""
+msgstr "Créer un segment avec une liste d'ACL personnalisée."
 
 # d0c0bf84620447fc8dfa178137f97b16
 # d930dbc632b042b188ba54a843e568f1
 #: ../../networking2.rst:5440 ../../networking2.rst:5465
 msgid "Create a VPC."
-msgstr ""
+msgstr "Créer un VPC."
 
 # 25eee7556d974e60bbeb1f18e85c55df
 # 6ed43363cfac4b8987d1e2d72304c877
 #: ../../networking2.rst:5444 ../../networking2.rst:5477
 msgid "Create a custom ACL list."
-msgstr ""
+msgstr "Créer une liste d'ACL personnalisée."
 
 # 6dcc5bedc2554ba1a3e36b2e2b3645be
 # 5463933959af4e5288a81e194a5e6a58
 #: ../../networking2.rst:5448 ../../networking2.rst:5481
 msgid "Add ACL rules to the ACL list."
-msgstr ""
+msgstr "Ajouter des règles d'ACL à une liste d'ACL."
 
 # 029e9aecbf464779994d37ec61ad7314
 # 0413f59339f64f0b873ba87c7d559a84
 #: ../../networking2.rst:5452 ../../networking2.rst:5469
 msgid "Create a tier in the VPC."
-msgstr ""
+msgstr "Créer un segment dans le VPC."
 
 # d789fdcbc43847f981d99a6c6a203caf
 #: ../../networking2.rst:5454
 msgid "Select the desired ACL list while creating a tier."
-msgstr ""
+msgstr "Sélectionner la liste d'ACL désirée lors de la création du segment."
 
 # d2aee63fb26240c8ab5829112ee254c1
 #: ../../networking2.rst:5461
 msgid "Assigning a Custom ACL List to a Tier"
-msgstr ""
+msgstr "Assigner une liste d'ACL personnalisée à un segment"
 
 # b0606dffaee64d4994e5e57c20a1c455
 #: ../../networking2.rst:5473
 msgid "Associate the tier with the default ACL rule."
-msgstr ""
+msgstr "Associer le segment avec la règle d'ACL par défaut."
 
 # 6113c98ff3804f59808cc2f432c7312e
 #: ../../networking2.rst:5485
 msgid "Select the tier for which you want to assign the custom ACL."
 msgstr ""
+"Sélectionner le segment pour lequel vous voulez assigner l'ACL personnalisée."
 
 # 14772476c28c4746811457f94c763124
 #: ../../networking2.rst:5489
@@ -7199,12 +7293,12 @@ msgstr "Cliquer sur l'icone Remplacer la liste d'ACL. |replace-acl-icon.png|"
 # c4482d85ed6040e0978d138c1416283a
 #: ../../networking2.rst:5491
 msgid "The Replace ACL List dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Remplacer la liste d'ACL est affichée."
 
 # 8abffdce40894b3fafb845f68b82bc74
 #: ../../networking2.rst:5504
 msgid "Adding a Private Gateway to a VPC"
-msgstr ""
+msgstr "Ajouter une passerelle privée à un VPC"
 
 # 743a879733de4969814a821843950e18
 #: ../../networking2.rst:5506
@@ -7227,22 +7321,22 @@ msgstr ""
 # bc97c76d6cd648dc9717c2058744a84e
 #: ../../networking2.rst:5538 ../../networking2.rst:5864 ../../networking2.rst:5951
 msgid "The following options are displayed."
-msgstr ""
+msgstr "Les options suivantes sont affichées."
 
 # 394a3dcb6e3741b489d58eb9830c71e9
 #: ../../networking2.rst:5580
 msgid "Select Private Gateways."
-msgstr ""
+msgstr "Sélectionner Passerelles privées."
 
 # e4a0570c1e7a471cb5d358378b06e7fe
 #: ../../networking2.rst:5582
 msgid "The Gateways page is displayed."
-msgstr ""
+msgstr "La page Passerelles est affichée."
 
 # 6ca2b7325b9e4244a7785ff0e1ddbfd9
 #: ../../networking2.rst:5586
 msgid "Click Add new gateway:"
-msgstr ""
+msgstr "Cliquer sur Ajouter une nouvelle passerelle :"
 
 # 1d19d16a595c4323b72e7afcfa725bee
 #: ../../networking2.rst:5588
@@ -7252,28 +7346,32 @@ msgstr "add-new-gateway-vpc.png|"
 # 8413e5ef903842ec837e56605289465f
 #: ../../networking2.rst:5596
 msgid "**Physical Network**: The physical network you have created in the zone."
-msgstr ""
+msgstr "**Réseau physique** : Le réseau physique que vous avez créé dans la zone."
 
 # 0a11f680d5cf4a41a7a387b092f56f28
 #: ../../networking2.rst:5601
 msgid "**IP Address**: The IP address associated with the VPC gateway."
-msgstr ""
+msgstr "**Adresse IP** :  L'adresse IP associée avec la passerelle du VPC."
 
 # fd907890f582482d8e4cf0dd81960ff5
 #: ../../networking2.rst:5605
 msgid ""
 "**Gateway**: The gateway through which the traffic is routed to and from the VPC."
 msgstr ""
+"**Passerelle** : La passerelle par laquelle le trafic est routé depuis et vers "
+"le VPC."
 
 # 7487738adef9453d85604bfba671fa3f
 #: ../../networking2.rst:5610
 msgid "**Netmask**: The netmask associated with the VPC gateway."
 msgstr ""
+"**Masque de sous-réseaux** : Le masque de sous-réseaux associé avec la "
+"passerelle du VPC."
 
 # 16e78548659f4f26a1bda70303cc2316
 #: ../../networking2.rst:5614
 msgid "**VLAN**: The VLAN associated with the VPC gateway."
-msgstr ""
+msgstr "**VLAN** : Le VLAN associé avec la passerelle du VPC."
 
 # 4cdaeb9a18454c5a91c6210ae427c1a9
 #: ../../networking2.rst:5618
@@ -7281,11 +7379,13 @@ msgid ""
 "**Source NAT**: Select this option to enable the source NAT service on the VPC "
 "private gateway."
 msgstr ""
+"**Source NAT** : Sélectionner cette option pour activer le service de NAT source "
+"sur la passerelle privée du VPC."
 
 # c6b56cf49a42479893378e9da36129da
 #: ../../networking2.rst:5621
 msgid "See \":ref:`source-nat-priv-gw`\"."
-msgstr ""
+msgstr "Voir \":ref:`source-nat-priv-gw`\"."
 
 # c362a5b1af954f8c9a1fd9e40fb438db
 #: ../../networking2.rst:5625
@@ -7297,7 +7397,7 @@ msgstr ""
 # a6398dc9bed3442296a3f9cac8a90a34
 #: ../../networking2.rst:5628
 msgid "See \":ref:`acl-priv-gw`\"."
-msgstr ""
+msgstr "Voir \":ref:`acl-priv-gw`\"."
 
 # b9e1f64ee58f4a9fa3bdd10dd0cfaa4f
 #: ../../networking2.rst:5630
@@ -7340,7 +7440,7 @@ msgstr ""
 # 5eb31def4dea44a8b45223d8bfba9bc1
 #: ../../networking2.rst:5656
 msgid "ACL on Private Gateway"
-msgstr ""
+msgstr "ACL sur une passerelle privée"
 
 # 43dd38fb6bcb4da99519465cd2fee79e
 #: ../../networking2.rst:5658
@@ -7401,12 +7501,12 @@ msgstr ""
 # 0a1a67c900a645b587377ce0696fcc69
 #: ../../networking2.rst:5697
 msgid "The Replace ACL dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Remplacer la liste d'ACL est affichée."
 
 # b054350634fe4a6a93e997e7888de509
 #: ../../networking2.rst:5701
 msgid "select the ACL rule, then click OK."
-msgstr ""
+msgstr "Cliquer sur Ajouter. La règle ACL est ajouée."
 
 # 89bdf37574754f799764bcd9ea9b8154
 #: ../../networking2.rst:5703
