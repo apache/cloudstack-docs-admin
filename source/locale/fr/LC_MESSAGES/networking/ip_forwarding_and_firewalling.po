@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-11-30 23:36+0100\n"
+"PO-Revision-Date: 2016-12-18 23:39+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 # 3ec46c2d67cb4acc87705b3f0985e5c8
 #: ../../networking/ip_forwarding_and_firewalling.rst:18
 msgid "IP Forwarding and Firewalling"
-msgstr ""
+msgstr "Redirection IP et pare-feu"
 
 # 5bb709bf233742ce8f3a83dc5ce7cf26
 #: ../../networking/ip_forwarding_and_firewalling.rst:20
@@ -296,7 +296,7 @@ msgstr ""
 # f0100304289f4a67b01e8f6c52976a10
 #: ../../networking/ip_forwarding_and_firewalling.rst:167
 msgid "Configuring the Default Egress Policy"
-msgstr ""
+msgstr "Configurer la Stratégie par défaut Egress"
 
 # a802326f92404392beacd9675985c106
 #: ../../networking/ip_forwarding_and_firewalling.rst:169
@@ -313,7 +313,7 @@ msgstr ""
 # 9b5e480b6757449ab8272d3e7a691110
 #: ../../networking/ip_forwarding_and_firewalling.rst:177
 msgid "You have two options: Allow and Deny."
-msgstr ""
+msgstr "Vous avez 2 options : Autoriser et Refuser."
 
 # 9b8d4463d6024d8589cc801658fa7bab
 #: ../../networking/ip_forwarding_and_firewalling.rst:180
@@ -372,7 +372,7 @@ msgstr "In Select Offering, choose Network Offering."
 # ef8895c197ff4343b04aecc73b5a9294
 #: ../../networking/ip_forwarding_and_firewalling.rst:208
 msgid "Click Add Network Offering."
-msgstr "Click Add Network Offering."
+msgstr "Cliquer sur Ajouter une offre de réseau."
 
 # abb73d0d766d4d32a4bbe32137193cad
 #: ../../networking/ip_forwarding_and_firewalling.rst:210

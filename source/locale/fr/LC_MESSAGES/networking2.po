@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-31 14:08-0400\n"
-"PO-Revision-Date: 2016-11-20 22:53+0100\n"
+"PO-Revision-Date: 2016-12-22 15:54+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1096,6 +1096,13 @@ msgid ""
 "or physical servers on the same network, they can share a part of the IP address "
 "space that is primarily provided to the guest network."
 msgstr ""
+"Dans les réseaux d'invités isolés, une partie de l'espace d'adresse IP invité "
+"peut être réservée aux VM non CloudStack ou aux serveurs physiques. Pour ce "
+"faire, vous configurez une plage d'adresses IP réservées en spécifiant le CIDR "
+"lorsqu'un réseau invité est dans l'état Implémenté. Si vos clients souhaitent "
+"disposer de VM non contrôlées par CloudStack ou de serveurs physiques sur le "
+"même réseau, ils peuvent partager une partie de l'espace d'adressage IP qui est "
+"normalement fournie au réseau invité."
 
 # fbba0aa499f74b36b378c6c99ef2ea87
 #: ../../networking2.rst:596
@@ -1111,6 +1118,18 @@ msgid ""
 "of CloudStack to the same network and assign them the Reserved IP addresses. "
 "CloudStack guest VMs cannot acquire IPs from the Reserved IP Range."
 msgstr ""
+"Dans une zone Avancée, une plage d'adresses IP ou un CIDR est affecté à un "
+"réseau lorsque celui-ci est défini. Le routeur virtuel CloudStack agit comme "
+"serveur DHCP et utilise le CIDR pour attribuer des adresses IP aux machines "
+"virtuelles invitées. Si vous décidez de réserver le CIDR à des fins autres que "
+"CloudStack, vous pouvez spécifier une partie de la plage d'adresses IP ou le "
+"CIDR qui ne devrait être attribuée que par le service DHCP du routeur virtuel "
+"aux machines virtuelles invitées créées dans CloudStack. Les adresses IP "
+"restantes de ce réseau sont appelées Plage d'IP Réservée. Lorsque la réservation "
+"d'IP est configurée, l'administrateur peut ajouter des machines virtuelles ou "
+"des serveurs physiques qui ne font pas partie de CloudStack au même réseau et "
+"leur attribuer les adresses IP réservées. Les VM invitées CloudStack ne peuvent "
+"plus acquérir d'IP de cette plage d'IP réservée."
 
 # 90bf1a7d2c754ac4902085a1fd1ba748
 #: ../../networking2.rst:610
@@ -1123,6 +1142,8 @@ msgid ""
 "Consider the following before you reserve an IP range for non-CloudStack "
 "machines:"
 msgstr ""
+"Prenez en compte ce qui suit avant de réserver une plage d'IP pour les machines "
+"externes à CloudStack :"
 
 # 7c3b4a1806bc46caaec696068e353f33
 #: ../../networking2.rst:617
@@ -1146,6 +1167,8 @@ msgstr "Aucune réservation d'IP n'est effectuée par défaut."
 #: ../../networking2.rst:630
 msgid "Guest VM CIDR you specify must be a subset of the network CIDR."
 msgstr ""
+"Le CIDR des VM Invités que vous spécifiez doit être un sous-réseau du CIDR du "
+"réseau."
 
 # 71e39d8747064bfa95ff48adddf42e34
 #: ../../networking2.rst:634
@@ -1153,6 +1176,8 @@ msgid ""
 "Specify a valid Guest VM CIDR. IP Reservation is applied only if no active IPs "
 "exist outside the Guest VM CIDR."
 msgstr ""
+"Spécifiez un CIDR de VM Invités valide. La réservation d'IP n'est appliquée que "
+"si aucune IP active n'existe à l'extérieur du CIDR des VM invités."
 
 # 7cd262eb2864435f953ba2f8d9b2e0a0
 #: ../../networking2.rst:637
@@ -1160,6 +1185,8 @@ msgid ""
 "You cannot apply IP Reservation if any VM is alloted with an IP address that is "
 "outside the Guest VM CIDR."
 msgstr ""
+"Vous ne pouvez pas appliquer une réservation d'IP si une machine virtuelle s'est "
+"vue allouer une adresse IP se trouvant en dehors du CIDR des VM Invités."
 
 # e135731ad79443bcb5dd396201d24cf1
 #: ../../networking2.rst:642
@@ -1167,6 +1194,8 @@ msgid ""
 "To reset an existing IP Reservation, apply IP reservation by specifying the "
 "value of network CIDR in the CIDR field."
 msgstr ""
+"Pour réinitialiser une réservation d'IP existante, appliquez la réservation IP "
+"en spécifiant la valeur du réseau CIDR dans le champ CIDR."
 
 # 3019eee8f787404483287650255b0fe0
 #: ../../networking2.rst:645
@@ -1266,6 +1295,9 @@ msgid ""
 "IP Reservation configured by the UpdateNetwork API with guestvmcidr=10.1.1.0/26 "
 "or enter 10.1.1.0/26 in the CIDR field in the UI."
 msgstr ""
+"La réservation d'IP est configurée par l'API UpdateNetwork avec "
+"guestvmcidr=10.1.1.0/26 ou saisir 10.1.1.0/26 dans le champ CIDR de l'interface "
+"utilisateur."
 
 # b3beece5bd0f4a3d8a0234aa9980a330
 #: ../../networking2.rst:655
@@ -1278,6 +1310,9 @@ msgid ""
 "Removing IP Reservation by the UpdateNetwork API with guestvmcidr=10.1.1.0/24 or "
 "enter 10.1.1.0/24 in the CIDR field in the UI."
 msgstr ""
+"La suppression d'une réservation d'IP est effectuée par l'API UpdateNetwork avec "
+"guestvmcidr=10.1.1.0/24 ou saisir 10.1.1.0/24 dans le champ CIDR de l'interface "
+"utilisateur."
 
 # 69a8f32537914ac6a722239a9dc07582
 # d8ca4fc7bf014daa9437cc4d5c7eb4f6
@@ -1291,6 +1326,8 @@ msgid ""
 "The IP Reservation is not supported if active IPs that are found outside the "
 "Guest VM CIDR."
 msgstr ""
+"La réservation d'IP n'est pas supportée si des IP actives sont trouvées à "
+"l'extérieur du CIDR des VM invités."
 
 # db05ec3e0280485b9f6f8c5d902cbcc7
 #: ../../networking2.rst:670
@@ -1299,6 +1336,10 @@ msgid ""
 "offering with no external devices to one with external devices) IP Reservation "
 "becomes void if any. Reconfigure IP Reservation in the new re-implemeted network."
 msgstr ""
+"La mise à niveau d'une offre réseau qui provoque une modification de son CIDR "
+"(comme une mise à niveau d'une offre sans périphériques externes vers une avec "
+"un périphérique externe), fait que la réservation d'IP devient nulle, le cas "
+"échéant. Reconfigurez la réservation d'IP dans le nouveau réseau ré-implémenté."
 
 # 6edc84466bc24a3d85247cab80c0cd80
 #: ../../networking2.rst:676
@@ -1312,6 +1353,10 @@ msgid ""
 "to Implemented. If you apply reservation soon after the first guest VM is "
 "deployed, lesser conflicts occurs while applying reservation."
 msgstr ""
+"Appliquez la Réservation d'IP à un réseau invité dès que l'état du réseau passe "
+"à Implementé. Si vous appliquez la réservation peu de temps après le déploiement "
+"de la première VM invitée, des conflits mineurs surviennent lors de "
+"l'application de la réservation."
 
 # e601241fba8a43feb30b4dcde1dc89a6
 #: ../../networking2.rst:684
@@ -1321,12 +1366,12 @@ msgstr "Réserver un intervalle d'IP"
 # dd9d0df809aa420899439632c2e7019f
 #: ../../networking2.rst:702
 msgid "The CIDR field changes to editable one."
-msgstr ""
+msgstr "Le champ CIDR devient éditable."
 
 # 0ffc29b024624ccdb36d0ea407209d7f
 #: ../../networking2.rst:706
 msgid "In CIDR, specify the Guest VM CIDR."
-msgstr ""
+msgstr "Dans CIDR, spécifier le CIDR des VM invités."
 
 # b2b4f195c2e847418d352a7e1ef06061
 #: ../../networking2.rst:710
@@ -1339,6 +1384,8 @@ msgid ""
 "Wait for the update to complete. The Network CIDR and the Reserved IP Range are "
 "displayed on the Details page."
 msgstr ""
+"Attendre que la mise à jour soit finie. Le CIDR du réseau et la plage d'IP "
+"réservée sont affichées dans la page de Détails."
 
 # 06aed4f105fd47d283331f291310c288
 #: ../../networking2.rst:716
@@ -1404,7 +1451,7 @@ msgstr ""
 # 331f9e80ff07451f833ea2f1e6592f48
 #: ../../networking2.rst:757
 msgid "Dedicating IP Address Ranges to an Account"
-msgstr ""
+msgstr "Dédier un intervalle d'adressses IP à un compte"
 
 # cc9f01ca9cd04090b9ef074c6c68eb34
 # af5838600fdc41f68b104a44ea03d81a
@@ -1477,6 +1524,8 @@ msgstr ""
 #: ../../networking2.rst:817
 msgid "To create a new IP range and assign an account, perform the following:"
 msgstr ""
+"Pour créer un nouvel intervalle et l'assigner à un compte, effectuer les actions "
+"suivantes :"
 
 # a7351c3fc8aa4e6ab6f6de9982df895a
 #: ../../networking2.rst:826
@@ -1569,7 +1618,7 @@ msgstr ""
 # 1df8c107f4854732a4f8a3a50c9cec49
 #: ../../networking2.rst:910
 msgid "Click Dedicate VLAN Range."
-msgstr ""
+msgstr "Cliquer sur Dédier un intervalle de VLAN"
 
 # c02ef1fcb0e642a28e69bd463286ec33
 #: ../../networking2.rst:912
@@ -1590,7 +1639,7 @@ msgstr ""
 # fe1be017fe7644368cd98ae4c68575eb
 #: ../../networking2.rst:933
 msgid "Configuring Multiple IP Addresses on a Single NIC"
-msgstr ""
+msgstr "Configurer plusieurs adresses IP sur une seule interface réseau."
 
 # c38d77c3c3a04ece8ca7568348264c1c
 #: ../../networking2.rst:935
@@ -1601,6 +1650,12 @@ msgid ""
 "configurations: Basic, Advanced, and VPC. Security Groups, Static NAT and Port "
 "forwarding services are supported on these additional IPs."
 msgstr ""
+"CloudStack offre la possibilité d'associer plusieurs adresses IP privées par "
+"interface NIC sur les VM clients. En plus de l'IP primaire, vous pouvez affecter "
+"des adresses IP supplémentaires à l'interface NIC de la VM invitée. Cette "
+"fonctionnalité est prise en charge sur toutes les configurations réseau : "
+"Basique, Avancée et VPC. Les services de Groupes de sécurité, de NAT statique et "
+"de transfert de port sont pris en charge sur ces IP supplémentaires."
 
 # f6ae31a4bdbf477bb30c85f877c5c6b6
 #: ../../networking2.rst:942
@@ -1611,6 +1666,13 @@ msgid ""
 "additional guest IPs by using network configuration option in the CloudStack UI. "
 "You must specify the NIC to which the IP should be associated."
 msgstr ""
+"Comme toujours, vous pouvez spécifier une IP à partir du sous-réseau invité ; si "
+"elle n'est pas spécifiée, une IP est automatiquement récupérée à partir du sous-"
+"réseau VM invité. Vous pouvez afficher les IP associées à chaque NIC de la VM "
+"invité sur l'interface utilisateur. Vous pouvez appliquer du NAT sur ces IP "
+"supplémentaires de l'invité en utilisant l'option de configuration réseau dans "
+"l'interface utilisateur CloudStack. Vous devez spécifier la carte réseau à "
+"laquelle l'adresse IP doit être associée."
 
 # e122667851cc41cbb7ee1643ac94d437
 #: ../../networking2.rst:949
@@ -1618,6 +1680,9 @@ msgid ""
 "This feature is supported on XenServer, KVM, and VMware hypervisors. Note that "
 "Basic zone security groups are not supported on VMware."
 msgstr ""
+"Cette fonctionnalité est supportée sur les hyperviseurs XenServer, KVM et "
+"VMware. Notez que les groupes de sécurité dans les zones Basiques ne sont pas "
+"supportés sur VMware."
 
 # d244bec96a6742dcba6445489ebe5218
 #: ../../networking2.rst:953
@@ -1635,6 +1700,9 @@ msgid ""
 "Network devices, such as firewalls and load balancers, generally work best when "
 "they have access to multiple IP addresses on the network interface."
 msgstr ""
+"Les périphériques réseaux, comme les pare-feu ou les répartiteurs de charge, "
+"fonctionnent généralement mieux lorsqu'ils ont accès à plusieurs adresses IP sur "
+"l'interface réseau."
 
 # b3bb1a633fb0431687fc030d4f1135d3
 #: ../../networking2.rst:965
@@ -1642,6 +1710,9 @@ msgid ""
 "Moving private IP addresses between interfaces or instances. Applications that "
 "are bound to specific IP addresses can be moved between instances."
 msgstr ""
+"Déplacer des adresses IP privées entre interfaces ou instances. Les applications "
+"qui sont liées à des adresses IP spécifiques peuvent être déplacées entre les "
+"instances."
 
 # 5d372ef180164330a3adddfbf3c1cc0f
 #: ../../networking2.rst:971
@@ -1649,6 +1720,9 @@ msgid ""
 "Hosting multiple SSL Websites on a single instance. You can install multiple SSL "
 "certificates on a single instance, each associated with a distinct IP address."
 msgstr ""
+"Héberger plusieurs sites webs SSL sur une seule instance. Vous pouvez installer "
+"plusieurs certificats sur une seule instance, chacun associé avec une adresse IP "
+"distincte."
 
 # 37f9e5af46a34673a930879c2e5cba6f
 # c7db437925a34c6a87c825ef10de2e9a
@@ -1663,6 +1737,8 @@ msgid ""
 "To prevent IP conflict, configure different subnets when multiple networks are "
 "connected to the same VM."
 msgstr ""
+"Pour éviter des conflits IP, configurer différents sous-réseaux lorsque "
+"plusieurs réseaux sont connectés à la même VM."
 
 # 95785c3d19f449f78cc05d757ee25d24
 #: ../../networking2.rst:982
@@ -1682,7 +1758,7 @@ msgstr "Dans la barre de navigation de gauche, cliquer sur Instances."
 # e481a0bf01464ec993e94b0b35787eed
 #: ../../networking2.rst:994
 msgid "Click the name of the instance you want to work with."
-msgstr ""
+msgstr "Cliquez sur le nom de l'instance avec laquelle vous souhaitez travailler."
 
 # 040e0aa0901c4a738201d7f2b345c0f1
 #: ../../networking2.rst:998
@@ -1708,6 +1784,9 @@ msgid ""
 "automatically configure the acquired IP address on the VM. Ensure that the IP "
 "address configuration persist on VM reboot."
 msgstr ""
+"Vous devez configurer l'IP sur l'interface de la VM invitée manuellement. "
+"CloudStack ne va pas automatiquement configurer l'IP acquise sur la VM. Assurez "
+"vous que la configuration de l'adresse IP soit persistante après le redémarrage."
 
 # f5aed3f52f76443b9810ed9d0bd1d47c
 #: ../../networking2.rst:1013
@@ -1722,7 +1801,7 @@ msgstr ""
 # 91390ddfe5794441a909d512aaf69b16
 #: ../../networking2.rst:1018
 msgid "Port Forwarding and StaticNAT Services Changes"
-msgstr ""
+msgstr "Changements de services de redirection de port et de StaticNAT"
 
 # 178e8a8fb2244a73af81938965720ec0
 #: ../../networking2.rst:1020
@@ -1735,16 +1814,25 @@ msgid ""
 "configured. If vmguestip is passed, NAT is configured on the specified private "
 "IP of the VM. if not passed, NAT is configured on the primary IP of the VM."
 msgstr ""
+"Étant donné que plusieurs IP peuvent être associées par carte réseau, vous êtes "
+"autorisé à sélectionner l'adresse IP désirée pour les services Port Forwarding "
+"et StaticNAT. La valeur par défaut est l'adresse IP principale. Pour activer "
+"cette fonctionnalité, un paramètre optionnel supplémentaire 'vmguestip' est "
+"ajouté aux API du port forwarding et du StaticNAT (enableStaticNat, "
+"createIpForwardingRule) pour indiquer sur quelle adresse IP le NAT doit être "
+"configuré. Si vmguestip est passé, le NAT est configuré sur l'IP privée "
+"spécifiée de la VM. Si elle n'est pas passée, le NAT est configuré sur l'adresse "
+"IP principale de la VM."
 
 # 9a799b4a628a476f9d231bc81b470264
 #: ../../networking2.rst:1030
 msgid "About Multiple IP Ranges"
-msgstr "A propos de plusieurs intervalles d'IP"
+msgstr "A propos des intervalles IP multiples"
 
 # 028ff8cab15f440e877ecf3ac468a1a2
 #: ../../networking2.rst:1032
 msgid "The feature can only be implemented on IPv4 addresses."
-msgstr ""
+msgstr "Cette fonctionnalité ne peut être implémentée que sur les adresses IPv4."
 
 # e4d2239d0d0c410c8f96922f8da73fd8
 #: ../../networking2.rst:1034
@@ -1759,6 +1847,16 @@ msgid ""
 "capability of ``createVlanIpRange`` API is extended to add IP ranges also from a "
 "different subnet."
 msgstr ""
+"CloudStack offre la flexibilité d'ajouter des plages d'IP d'invité de différents "
+"sous-réseaux dans les zones Basiques et dans les zones Avancées avec groupes de "
+"sécurité. Pour les zones avancées avec groupes de sécurité, cela implique que "
+"plusieurs sous-réseaux puissent être ajoutés au même VLAN. Grâce à cette "
+"fonctionnalité, vous pourrez ajouter des plages d'adresses IP à partir du même "
+"sous-réseau ou à partir d'un autre lorsque les adresses IP sont épuisées. Cela "
+"permet au final d'utiliser un plus grand nombre de sous-réseaux et de réduire "
+"ainsi la charge de travail liée à la gestion des adresses. Pour prendre en "
+"charge cette fonctionnalité, la capacité de l'API `` createVlanIpRange`` est "
+"étendue pour ajouter des plages d'adresses IP à partir d'un autre sous-réseau."
 
 # 2881a530808e42f5be3d6298eeb47271
 #: ../../networking2.rst:1045
@@ -1767,6 +1865,10 @@ msgid ""
 "the IP range. Note that CloudStack supports only one gateway for a subnet; "
 "overlapping subnets are not currently supported."
 msgstr ""
+"Assurez-vous d'avoir manuellement configuré la passerelle du nouveau sous-réseau "
+"avant d'ajouter la plage d'IP. Notez que CloudStack supporte une seule "
+"passerelle par sous-réseau ; le chevauchement de réseau n'est pas actuellement "
+"pris en compte."
 
 # 003e5d07c0794227bc714b0f29892867
 #: ../../networking2.rst:1049
@@ -1776,6 +1878,12 @@ msgid ""
 "on which the DHCP server is running, CloudStack acquires a new IP from the same "
 "subnet. If no IP is available in the subnet, the remove operation fails."
 msgstr ""
+"Utilisez l'API ``deleteVlanRange`` pour supprimer les plages IP. Cette opération "
+"échoue si une IP parmi celles de la plage de suppression est en cours "
+"d'utilisation. Si la plage de suppression contient l'adresse IP d'un serveur "
+"DHCP est en cours d'exécution, CloudStack acquiert une nouvelle adresse IP à "
+"partir du même sous-réseau. Si aucune adresse IP n'est disponible dans le sous-"
+"réseau, l'opération de suppression échoue."
 
 # b8a91ec2e02844bd85db4f28846aad2b
 #: ../../networking2.rst:1055
@@ -1800,6 +1908,15 @@ msgid ""
 "replacing the VM which is down, the IP address can be reassigned to a new VM in "
 "your account."
 msgstr ""
+"Les adresses Elastic IP (EIP) sont les adresses IP associées à un compte et qui "
+"agissent comme des adresses IP statiques. Le propriétaire du compte a le "
+"contrôle complet sur les adresses IP Elastic qui appartiennent au compte. En "
+"tant que propriétaire d'un compte, vous pouvez allouer une IP élastique à une "
+"machine virtuelle de votre choix depuis la réserve d'EIP de votre compte. Plus "
+"tard, si nécessaire, vous pouvez réaffecter l'adresse IP à une machine virtuelle "
+"différente. Cette fonctionnalité est extrêmement utile lors de la défaillance "
+"d'une VM. Au lieu de remplacer la machine virtuelle qui est en panne, l'adresse "
+"IP peut être réaffectée à une nouvelle VM de votre compte."
 
 # a05811529f014d1aa52b2974f0bba51e
 #: ../../networking2.rst:1069
@@ -1811,6 +1928,13 @@ msgid ""
 "with EIP and ELB network services if a NetScaler device is deployed in your "
 "zone. Consider the following illustration for more details."
 msgstr ""
+"De manière similaire à une adresse IP publique, les adresses Elastic IP sont "
+"mappées à leurs adresses IP privées associées en utilisant du StaticNAT. Le "
+"service EIP est équipé du service StaticNAT (1:1) dans une zone basique avec EIP "
+"activé. L'offre réseau par défaut, "
+"DefaultSharedNetscalerEIPandELBNetworkOffering, fournit à votre réseau des "
+"services réseau EIP et ELB si un périphérique NetScaler est déployé dans votre "
+"zone. Considérez l'illustration suivante pour plus de détails."
 
 # d254f6b5f23f4583bf38593e35204bd5
 #: ../../networking2.rst:1077
@@ -1828,11 +1952,19 @@ msgid ""
 "center core switch sends the public traffic through the NetScaler, whereas the "
 "rest of the data center goes through the firewall."
 msgstr ""
+"Dans l'illustration, une appliance NetScaler est le point d'entrée ou de sortie "
+"par défaut pour les instances CloudStack et le pare-feu est l'entrée ou le point "
+"de sortie par défaut pour le reste du centre de données. Le Netscaler fournit "
+"des services de LB et un service staticNAT aux réseaux invités. Le trafic invité "
+"dans les pods et le serveur d'administration se trouvent sur différents sous-"
+"réseaux / VLAN. Le routage basé sur les stratégies dans le coeur de réseau du "
+"centre de données envoie le trafic public via le NetScaler, tandis que le reste "
+"du centre de données passe par le pare-feu."
 
 # cccbede2f664419a97a65174be17cfba
 #: ../../networking2.rst:1088
 msgid "The EIP work flow is as follows:"
-msgstr ""
+msgstr "Le workflow de l'EIP est le suivant :"
 
 # 748bdba8746d4237862652eeefe51b0c
 #: ../../networking2.rst:1092
@@ -1840,6 +1972,9 @@ msgid ""
 "When a user VM is deployed, a public IP is automatically acquired from the pool "
 "of public IPs configured in the zone. This IP is owned by the VM's account."
 msgstr ""
+"Lorsqu'une VM utilisateur est déployée, une IP publique est automatiquement "
+"acquise depuis la réserve d'IPs publiques configurée dans la zone. Cette IP "
+"appartient au compte de la VM."
 
 # b453f18754a649e5913c58ce4a28993b
 #: ../../networking2.rst:1098
@@ -1849,6 +1984,10 @@ msgid ""
 "Translation (INAT) and Reverse NAT (RNAT) rules between the public IP and the "
 "private IP."
 msgstr ""
+"Chaque VM va avoir sa propre IP privée. Lorsque la VM de l'utilisateur démarre, "
+"le Static Nat est provisionné sur le périphérique NetScaler en utilisant des "
+"règles d'Inbound Network Address Translation (INAT) et de Reverse NAT (RNAT) "
+"entre l'IP publique et l'IP privée"
 
 # 6e1a151b2c704623941c8c05d3a90134
 #: ../../networking2.rst:1104
@@ -1860,11 +1999,18 @@ msgid ""
 "IP address is replaced in the packets generated by a VM in the private network "
 "with the public IP address."
 msgstr ""
+"L'Inbound NAT (INAT - NAT entrant) est un type de NAT pris en charge par les "
+"NetScaler, dans lequel l'adresse IP de destination est remplacée dans les "
+"paquets provenant du réseau public, comme Internet, par l'adresse IP privée "
+"d'une machine virtuelle dans le réseau privé. Le Reverse NAT (RNAT) est un type "
+"de NAT pris en charge par les NetScaler, dans lequel l'adresse IP source dans "
+"les paquets générés par une machine virtuelle dans le réseau privé  est "
+"remplacée par l'adresse IP publique."
 
 # e64823a0214b46d8a6326da740b47131
 #: ../../networking2.rst:1113
 msgid "This default public IP will be released in two cases:"
-msgstr ""
+msgstr "Cette adresse IP publique par défaut sera libérée dans deux cas :"
 
 # ec3de61219d640b2baa722270d509f9b
 #: ../../networking2.rst:1117
@@ -1872,6 +2018,9 @@ msgid ""
 "When the VM is stopped. When the VM starts, it again receives a new public IP, "
 "not necessarily the same one allocated initially, from the pool of Public IPs."
 msgstr ""
+"Lorsque la VM est stoppée. Lorsque la VM redémarre, elle reçoit à nouveau une "
+"nouvelle IP publique, qui n'est pas nécessairement la même qui avait été "
+"initialement attribuée, depuis la réserve d'IP publiques."
 
 # 9429fa004e17414e88ed8a023486ac59
 #: ../../networking2.rst:1123
@@ -1883,6 +2032,13 @@ msgid ""
 "NAT is disabled, a new public IP is allocated from the pool, which is not "
 "necessarily be the same one allocated initially."
 msgstr ""
+"L'utilisateur acquiert une IP public (Elastic IP). Cette IP publique est "
+"associée au compte, mais ne sera pas mappée à une IP privée. Toutefois, "
+"l'utilisateur peut activer le NAT statique pour associer cette adresse IP à "
+"l'adresse IP privée d'une machine virtuelle de son compte. La règle de NAT "
+"statique pour l'IP publique peut être désactivée à tout moment. Lorsque le NAT "
+"statique est désactivé, une nouvelle IP publique est allouée à partir de la "
+"réserve, qui n'est pas nécessairement la même ayant été allouée initialement."
 
 # 469830a9248b4593a5aac71adbba4340
 #: ../../networking2.rst:1131
@@ -1895,6 +2051,15 @@ msgid ""
 "VM when the VM is deployed with that network offering. Later, the user can "
 "acquire an IP for the VM and enable static NAT."
 msgstr ""
+"Pour les déploiements où les IP publiques sont des ressources limitées, vous "
+"avez la possibilité de choisir de ne pas allouer une IP publique par défaut. "
+"Vous pouvez utiliser l'option Associer une IP publique pour activer ou "
+"désactiver l'affectation d'IP publique automatique dans les zones basiques ayant "
+"l'EIP activé. Si vous désactivez l'affectation d'IP publique automatique lors de "
+"la création d'une offre réseau, seule une adresse IP privée est affectée à une "
+"machine virtuelle lorsque la machine virtuelle est déployée avec cette offre "
+"réseau. Plus tard, l'utilisateur peut acquérir une adresse IP pour la VM et "
+"activer le NAT statique."
 
 # 0ecd0ac61194408a98281da0aadd9e1a
 #: ../../networking2.rst:1140
@@ -1902,6 +2067,9 @@ msgid ""
 "For more information on the Associate Public IP option, see `\"Creating a New "
 "Network Offering\" <networking.html#creating-a-new-network-offering>`_."
 msgstr ""
+"Pour plus d'informations sur l'option d'association d'IP publique, consulter `"
+"\"Créer une nouvelle offre de réseau\" <networking.html#creating-a-new-network-"
+"offering>`_."
 
 # 3cd8dd1307094741b10ebb57dc03d260
 #: ../../networking2.rst:1144
@@ -1910,6 +2078,10 @@ msgid ""
 "System VMs continue to get both public IP and private by default, irrespective "
 "of the network offering configuration."
 msgstr ""
+"La fonctionnalité d'association d'IP publique est conçue uniquement pour les VM "
+"utilisateur. Les VM systèmes continuent d'obtenir à la fois une adresse IP "
+"publique et une privée par défaut, sans tenir compte de la configuration de "
+"l'offre réseau."
 
 # 3ff9c04d9cd44e088c20dfd89e9b3b8b
 #: ../../networking2.rst:1148
@@ -1918,6 +2090,9 @@ msgid ""
 "services to create a shared network in the Basic zone will continue allocating "
 "public IPs to each user VM."
 msgstr ""
+"Les nouveaux déploiements qui utilisent l'offre de réseau partagé par défaut "
+"avec services EIP et ELB pour créer un réseau partagé dans une zone basique vont "
+"continuer d'allouer des IP publiques à chaque VM utilisateur."
 
 # 16c8dc460b214f4894425176314b9cb3
 #: ../../networking2.rst:1153
@@ -1940,11 +2115,20 @@ msgid ""
 "IPs can be use for any service within an advanced zone. You can also use "
 "portable IPs for EIP services in basic zones."
 msgstr ""
+"Les IP portables dans CloudStack sont des réserves d'adresses IP de niveau "
+"région, qui sont élastiques de nature, qui peuvent être transférées entre zones "
+"géographiquement séparées. En tant qu'administrateur, vous pouvez provisionner "
+"un ensemble d'IP publiques portables au niveau de la région et les rendre "
+"disponibles pour utilisation par les utilisateurs. Les utilisateurs peuvent "
+"acquérir des adresses IP portables si l'administrateur a fourni des IP portables "
+"au niveau de la région dont ils font partie. Ces IP peuvent être utilisées pour "
+"n'importe quel service dans une zone avancée. Vous pouvez également utiliser des "
+"adresses IP portables pour les services EIP dans les zones basiques."
 
 # 7315df7ef52e4cf1b934b6af1441d884
 #: ../../networking2.rst:1167
 msgid "The salient features of Portable IP are as follows:"
-msgstr ""
+msgstr "Les principales caractéristiques d'une IP portable sont :"
 
 # 891115e5cf6a48ada1f4095573352338
 #: ../../networking2.rst:1171
@@ -1954,27 +2138,30 @@ msgstr "L'IP est allouée de manière statique"
 # 4d10cf62b6c743b8b592cc802be6cc92
 #: ../../networking2.rst:1175
 msgid "IP need not be associated with a network"
-msgstr ""
+msgstr "Il n'est pas nécessaire d'associer une IP à un réseau"
 
 # 24d3e403f0aa4c39ad463d1fa0ae207d
 #: ../../networking2.rst:1179
 msgid "IP association is transferable across networks"
-msgstr ""
+msgstr "L'association d'IP est transférable entre les réseaux."
 
 # 74cb916a3d374a76b971841f8b2379a5
 #: ../../networking2.rst:1183
 msgid "IP is transferable across both Basic and Advanced zones"
 msgstr ""
+"Les IP sont transférables entre à la fois les zones basiques et les zones "
+"avancées."
 
 # 7d33ab9a52444bbe9b3f7b3128209e6b
 #: ../../networking2.rst:1187
 msgid "IP is transferable across VPC, non-VPC isolated and shared networks"
 msgstr ""
+"Une IP est transférable entre VPC et les réseaux partagés ou isolés non-VPC"
 
 # df1a612ddd7d4098a0ddf9b83ad8a93e
 #: ../../networking2.rst:1191
 msgid "Portable IP transfer is available only for static NAT."
-msgstr ""
+msgstr "Le transfert d'IP portable n'est disponible que pour le NAT static."
 
 # bb4f9954dc894d61abfa568fb2e16957
 #: ../../networking2.rst:1196
@@ -1982,21 +2169,23 @@ msgid ""
 "Before transferring to another network, ensure that no network rules (Firewall, "
 "Static NAT, Port Forwarding, and so on) exist on that portable IP."
 msgstr ""
+"Avant de transférer à un autre réseau, assurez vous qu'aucune règle réseau (Pare-"
+"feu, Static Nat, Redirection de port, etc.) n'existe sur cette IP portable."
 
 # 6219f205752d4e34a5f1fbf3a5de51cc
 #: ../../networking2.rst:1201
 msgid "Configuring Portable IPs"
-msgstr ""
+msgstr "Configuration des IP portables"
 
 # d64282ef04d447a599ddece7139055f7
 #: ../../networking2.rst:1209
 msgid "In the left navigation, click Regions."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur Régions."
 
 # 8b31c7af9d8541d79d6b98d0ed76d82d
 #: ../../networking2.rst:1213
 msgid "Choose the Regions that you want to work with."
-msgstr ""
+msgstr "Choisir les régions avec lesquelles vous voulez travailler."
 
 # 1938f07ea2c94222a20b08898972dc0c
 #: ../../networking2.rst:1217
@@ -2006,12 +2195,12 @@ msgstr "Cliquer sur voir l'IP Portable."
 # 3fd59fc0c5804ab58ed115888d070d9d
 #: ../../networking2.rst:1221
 msgid "Click Portable IP Range."
-msgstr ""
+msgstr "Cliquer sur la plage d'IP portable"
 
 # 289d79706e0d4aac949867e57202c169
 #: ../../networking2.rst:1223
 msgid "The Add Portable IP Range window is displayed."
-msgstr ""
+msgstr "La fenêtre Ajouter une plage d'IP portable s'affiche."
 
 # 6ba39db9be5d430986ffe15997a7b655
 #: ../../networking2.rst:1231
@@ -2020,6 +2209,9 @@ msgid ""
 "Internet and will be allocated to guest VMs. Enter the first and last IP "
 "addresses that define a range that CloudStack can assign to guest VMs."
 msgstr ""
+"**IP de début, IP de fin** : Une plage d'adresses IP qui sera accessible depuis "
+"Internet et sera associée aux VM invités. Saisir la première et la dernière "
+"adresse qui définissent une plage que CloudStack peut assigner aux VM invités."
 
 # a79eef6844454a7e8d9fe27202723b53
 #: ../../networking2.rst:1238
@@ -2027,16 +2219,20 @@ msgid ""
 "**Gateway**: The gateway in use for the Portable IP addresses you are "
 "configuring."
 msgstr ""
+"**Passerelle** : La passerelle à utiliser pour les adresses IP portables que "
+"vous êtes en train de configurer."
 
 # ade2b585b1ff4b51b25c1f72d1f5a03e
 #: ../../networking2.rst:1243
 msgid "**Netmask**: The netmask associated with the Portable IP range."
 msgstr ""
+"**Masque de sous-réseau** : Le masque de sous-réseau associé avec la plage d'IP "
+"portable."
 
 # 2cce53fcfa9e4ebdb7cec25d4dd3f797
 #: ../../networking2.rst:1247
 msgid "**VLAN**: The VLAN that will be used for public traffic."
-msgstr ""
+msgstr "**VLAN** : Le VLAN qui va être utilisé pour le trafic public."
 
 # 5c4576cb4d01410ea44f66b3560eec1c
 #: ../../networking2.rst:1254
@@ -2051,7 +2247,7 @@ msgstr "Aquérir une IP portable"
 #: ../../networking2.rst:1266 ../../networking2.rst:3292 ../../networking2.rst:3335
 #: ../../networking2.rst:3378 ../../networking2.rst:3452
 msgid "Click the name of the network where you want to work with."
-msgstr ""
+msgstr "Cliquez sur le nom du réseau avec lequel vous souhaitez travailler."
 
 # e986c959252444b99b7c5594762994fb
 # 2809642deff2421db1593ab57615dc68
@@ -2112,11 +2308,15 @@ msgid ""
 "enabled. However, when a portable IP is associated with a network, you can use "
 "it for any service in the network."
 msgstr ""
+"Une IP peut être transférée depuis un réseau vers un autre seulement si le "
+"Static NAT est activé. Cependant, lorsqu'une IP portable est associée à un "
+"réseau, vous pouvez l'utiliser pour n'importe quel service du réseau."
 
 # b51d59c49aad4d2c82dc7ff551a1e515
 #: ../../networking2.rst:1297
 msgid "To transfer a portable IP across the networks, execute the following API:"
 msgstr ""
+"Pour transférer une IP portable entre des réseaux, exécutez l'API suivante :"
 
 # baaa47d9664443df8004dbd797ca37f0
 #: ../../networking2.rst:1304
@@ -2124,11 +2324,14 @@ msgid ""
 "Replace the UUID with appropriate UUID. For example, if you want to transfer a "
 "portable IP to network X and VM Y in a network, execute the following:"
 msgstr ""
+"Remplacez l'UUID par l'UUID approprié. Par exemple, si vous souhaitez transférer "
+"une adresse IP portable vers le réseau X et une VM Y dans un réseau, exécutez "
+"les opérations suivantes:"
 
 # 2ab16bedc435498fa54a92c12d41873b
 #: ../../networking2.rst:1313
 msgid "Multiple Subnets in Shared Network"
-msgstr ""
+msgstr "Plusieurs sous-réseaux au sein d'un Réseau Partagé"
 
 # 052e7dd83a5d49f6830d255583296f7d
 #: ../../networking2.rst:1315
@@ -2142,23 +2345,32 @@ msgid ""
 "thus reduce the address management overhead. You can delete the IP ranges you "
 "have added."
 msgstr ""
+"CloudStack offre la flexibilité d'ajouter des plages d'IP d'invité à partir de "
+"différents sous-réseaux dans les zones Basiques et dans les zones Avancées avec "
+"groupes de sécurité. Pour les zones avancées avec groupes de sécurité, cela "
+"implique que plusieurs sous-réseaux puissent être ajoutés au même VLAN. Grâce à "
+"cette fonctionnalité, vous pourrez ajouter des plages d'adresses IP à partir du "
+"même sous-réseau ou à partir d'un autre lorsque les adresses IP sont épuisées. "
+"Cela permet au final d'utiliser un plus grand nombre de sous-réseaux et de "
+"réduire ainsi la charge de travail liée à la gestion des adresses. Vous pouvez "
+"supprimer les plages IP que vous avez ajoutées."
 
 # 39d6185c2a9142778ebfcfaa45d53ea4
 # a87fd7c6cc4d4983be85e89d3f15de49
 # dff9442af85b489c8e6c974a633e5646
 #: ../../networking2.rst:1326 ../../networking2.rst:2963 ../../networking2.rst:3510
 msgid "Prerequisites and Guidelines"
-msgstr ""
+msgstr "Prérequis et lignes directrives"
 
 # b12da91685134a71866c8fa74aeaa4de
 #: ../../networking2.rst:1330
 msgid "This feature can only be implemented:"
-msgstr ""
+msgstr "Cette fonctionnalité ne peut seulement être implémentée :"
 
 # 1393ad33a993459f81ea3de1149b6a09
 #: ../../networking2.rst:1334
 msgid "on IPv4 addresses"
-msgstr ""
+msgstr "Sur des adresses IPv4"
 
 # 4764589edb39403a9fd8558614490a61
 #: ../../networking2.rst:1338
@@ -2175,6 +2387,8 @@ msgstr "Sur les hyperviseurs KVM, xenServer et VMware"
 msgid ""
 "Manually configure the gateway of the new subnet before adding the IP range."
 msgstr ""
+"Configurez manuellement la passerelle du nouveau sous-réseau avant d'ajouter la "
+"plage d'IP."
 
 # bf5e159cb4c54583a861e417824b26a3
 #: ../../networking2.rst:1351
@@ -2182,17 +2396,21 @@ msgid ""
 "CloudStack supports only one gateway for a subnet; overlapping subnets are not "
 "currently supported"
 msgstr ""
+"CloudStack supporte une seule passerelle par sous-réseau ; le chevauchement de "
+"réseau n'est pas actuellement pris en compte."
 
 # 7e64cd24270240e9bef22bc1491bf837
 #: ../../networking2.rst:1355
 msgid "Adding Multiple Subnets to a Shared Network"
-msgstr ""
+msgstr "Ajout de plusieurs sous-réseaux à un Réseau Partagé"
 
 # 1f05243395c24667a0f7e9c75bbc190f
 #: ../../networking2.rst:1367
 msgid ""
 "On Zones, click View More, then click the zone to which you want to work with.."
 msgstr ""
+"Sur Zones, cliquer sur Voir plus, puis cliquer sur la zone avec laquelle vous "
+"voulez travailler."
 
 # 2b58f0a641ae4d80a61839330e31435b
 #: ../../networking2.rst:1372
@@ -2207,22 +2425,22 @@ msgstr "Cliquer sur Réseaux."
 # f5611c1c2d6f4bc2935f6fcb462429ac
 #: ../../networking2.rst:1384
 msgid "Select the networks you want to work with."
-msgstr ""
+msgstr "Choisir les réseaux avec lesquelles vous voulez travailler."
 
 # 8c8af6183f054d4b87cd5369985f279b
 #: ../../networking2.rst:1388
 msgid "Click View IP Ranges."
-msgstr ""
+msgstr "Cliquer sur Voir les intervalles IP."
 
 # 27bfee4a94154becadc04d190e2248f0
 #: ../../networking2.rst:1392
 msgid "Click Add IP Range."
-msgstr ""
+msgstr "Cliquer sur la plage d'IP portable"
 
 # 0b8e9d89d4724266b4f358cddb5b5dae
 #: ../../networking2.rst:1394
 msgid "The Add IP Range dialog is displayed, as follows:"
-msgstr ""
+msgstr "La boîte de dialogue Ajouter un intervalle IP s'affiche comme suit :"
 
 # b80689bd7547487da595f615e2462e55
 #: ../../networking2.rst:1396
@@ -2233,7 +2451,7 @@ msgstr "|add-ip-range.png|"
 # b0284174465747738037a24f289b32cd
 #: ../../networking2.rst:1402 ../../networking2.rst:5168
 msgid "All the fields are mandatory."
-msgstr ""
+msgstr "Tous les champs sont obligatoires."
 
 # 2a42d646d37c4df6add5bdf38ceca64d
 # d96a1cf974414215858b14602328707b
@@ -2243,12 +2461,18 @@ msgid ""
 "within the Super CIDR range that you specified while creating the VPC, and is "
 "not overlapped with the CIDR of any existing tier within the VPC."
 msgstr ""
+"**Passerelle** : La passerelle pour le segment que vous créez. S'assurer que la "
+"passerelle est inclue dans l'intervalle du Super CIDR que vous avez spécifié "
+"lors de la création du VPC et qu'elle n'est pas en conflit avec un segment "
+"existant du VPC."
 
 # 135026f2c8ab4d77a877e4d100640178
 # 035c6987b29147ebb036cad74b0ca7e2
 #: ../../networking2.rst:1413 ../../networking2.rst:5203
 msgid "**Netmask**: The netmask for the tier you create."
 msgstr ""
+"**Masque de sous-réseau** : Le masque de sous-réseau pour le segment que vous "
+"créez."
 
 # ff580244e12e4780b2df473d710b2271
 # 8323a108551a443f8e02e4e8bf7cb1cc
@@ -2258,6 +2482,9 @@ msgid ""
 "10.0.1.0/24, the gateway of the tier is 10.0.1.1, and the netmask of the tier is "
 "255.255.255.0."
 msgstr ""
+"Par exemple, si le CIDR du VPC est 10.0.0.0/16 et que le réseau CIDR du tiers "
+"est 10.0.1.0/24, la passerelle du tiers est 10.0.1.1, et le masque de sous "
+"réseau du tiers est 255.255.255.0. "
 
 # e68e024d0d01404c95c2dfc37f213a3e
 #: ../../networking2.rst:1421
@@ -2266,6 +2493,9 @@ msgid ""
 "Internet and will be allocated to guest VMs. Enter the first and last IP "
 "addresses that define a range that CloudStack can assign to guest VMs ."
 msgstr ""
+"**IP de début, IP de fin** : Une plage d'adresses IP qui sera accessible depuis "
+"Internet et sera associée aux VM invités. Saisir la première et la dernière "
+"adresse qui définissent une plage que CloudStack peut assigner aux VM invités."
 
 # 878c548f176b4ef18a4c21be8ace7a7b
 #: ../../networking2.rst:1431
@@ -2292,7 +2522,7 @@ msgstr ""
 # abb78195383c40838e8616f04b87f7f2
 #: ../../networking2.rst:1448
 msgid "Supported on KVM, XenServer, and VMware hypervisors"
-msgstr ""
+msgstr "Supportée par les hyperviseurs KVM, XenServer et VMware."
 
 # 2b02488a70fc420996644982994ac6eb
 #: ../../networking2.rst:1452
@@ -2532,17 +2762,18 @@ msgstr "Ajouter un groupe de sécurité"
 #: ../../networking2.rst:1731
 msgid "A user or administrator can define a new security group."
 msgstr ""
+"Un utilisateur ou un administrateur peut définir un nouveau groupe de sécurité."
 
 # a705e539e74940a78a8983f0585d2556
 # c227631e574645b2b6062f0bf192b879
 #: ../../networking2.rst:1739 ../../networking2.rst:1819
 msgid "In the left navigation, choose Network"
-msgstr ""
+msgstr "Dans la navigation à gauche, choisissez Réseau."
 
 # 7c3b2c1204ad4116b2771e974c0cf4c2
 #: ../../networking2.rst:1743
 msgid "In Select view, choose Security Groups."
-msgstr ""
+msgstr "Dans la zone de sélection, choisir Groupes de Sécurité."
 
 # 721d38433467434482cb1c4486f14572
 #: ../../networking2.rst:1747
@@ -2558,6 +2789,8 @@ msgstr "Fournir un nom et une description."
 #: ../../networking2.rst:1757
 msgid "The new security group appears in the Security Groups Details tab."
 msgstr ""
+"Le nouveau groupe de sécurité apparaît dans l'onglet Détails des Groupes de "
+"Sécurité."
 
 # 1b1ca02aa0b348c1b8d8e92f7dbe459d
 #: ../../networking2.rst:1761
@@ -2565,11 +2798,13 @@ msgid ""
 "To make the security group useful, continue to Adding Ingress and Egress Rules "
 "to a Security Group."
 msgstr ""
+"Pour rendre le groupe de sécurité utile, continuez par Ajouter des règles "
+"Ingress et Egress à un groupe de sécurité."
 
 # 6d68ff5e482a496ea71d636366da8518
 #: ../../networking2.rst:1765
 msgid "Security Groups in Advanced Zones (KVM Only)"
-msgstr ""
+msgstr "Groupes de Sécurité dans les Zones Avancées (KVM uniquement)"
 
 # bf3e0daa32bd4d928334c6593b3da60d
 #: ../../networking2.rst:1767
@@ -2585,6 +2820,7 @@ msgstr ""
 #: ../../networking2.rst:1776
 msgid "The following are not supported for this feature:"
 msgstr ""
+"Les éléments suivants ne sont pas pris en charge pour cette fonctionnalité :"
 
 # 8fc8b70b5cde4f87a62e5b1ca4a75e2a
 #: ../../networking2.rst:1780
@@ -2592,6 +2828,8 @@ msgid ""
 "Two IP ranges with the same VLAN and different gateway or netmask in security "
 "group-enabled shared network."
 msgstr ""
+"Deux plages d'IP avec le même VLAN et une passerelle ou masque de réseau "
+"différent dans un réseau partagé avec groupes de sécurité."
 
 # 9afc1351e88841e18eb5fe14fc168913
 #: ../../networking2.rst:1785
@@ -2599,22 +2837,27 @@ msgid ""
 "Two IP ranges with the same VLAN and different gateway or netmask in account-"
 "specific shared networks."
 msgstr ""
+"Deux plages d'IP avec le même VLAN et une passerelle ou un masque de réseau "
+"différent dans des réseaux partagés spécifiques à un compte."
 
 # 964239c4525b49c48d33e98fa19650e7
 #: ../../networking2.rst:1790
 msgid "Multiple VLAN ranges in security group-enabled shared network."
-msgstr ""
+msgstr "Plusieurs plages de VLAN dans un réseau partagé avec groupes de sécurité."
 
 # 0e18491db0744181b7e4947503a5bf06
 #: ../../networking2.rst:1794
 msgid "Multiple VLAN ranges in account-specific shared networks."
 msgstr ""
+"Plusieurs plages de VLAN dans des réseaux partagés spécifiques à un compte."
 
 # 05bc77a1a85b4d40ac91eb83feacc795
 #: ../../networking2.rst:1796
 msgid ""
 "Security groups must be enabled in the zone in order for this feature to be used."
 msgstr ""
+"Les groupes de sécurité doivent être activés dans la zone pour que cette "
+"fonctionnalité soit utilisée."
 
 # e64a176e0d1a4f50992f36b58586ff9e
 #: ../../networking2.rst:1800
@@ -2635,13 +2878,15 @@ msgstr ""
 # e2ba36a71c01454c872db51e3f32589d
 #: ../../networking2.rst:1811
 msgid "Adding Ingress and Egress Rules to a Security Group"
-msgstr ""
+msgstr "Ajout de règles Ingress et Egress à un Groupe de Sécurité"
 
 # a1a516287e0441a7bfff434dc4c25818
 #: ../../networking2.rst:1823
 msgid ""
 "In Select view, choose Security Groups, then click the security group you want ."
 msgstr ""
+"Dans la liste de choix, choisir Groupes de sécurité puis cliquer sur le groupe "
+"de sécurité désiré."
 
 # d6e55c16dfbc4f85a9169f71f66a2804
 #: ../../networking2.rst:1828
@@ -2708,7 +2953,7 @@ msgstr ""
 # 3903c6ce7d964ff99823291ab66fd97e
 #: ../../networking2.rst:1876
 msgid "The following example allows inbound HTTP access from anywhere:"
-msgstr ""
+msgstr "L'exemple qui suit autorise l'accès HTTP entrant depuis n'importe où :"
 
 # 0ca36e66c67f4b0fbc6e9642f98244e2
 #: ../../networking2.rst:1878
@@ -3096,6 +3341,8 @@ msgid ""
 "A static NAT rule that maps the public IP address to the private IP address of a "
 "VM."
 msgstr ""
+"Une règle de static NAT associe une adresse IP publique à l'adresse IP privée "
+"d'une VM."
 
 # c5fc12f27ace4872a52cb589ca35d678
 #: ../../networking2.rst:2174
@@ -3187,7 +3434,7 @@ msgstr ""
 # 130044af73ab495bab3655cce16db603
 #: ../../networking2.rst:2244 ../../networking2.rst:3732
 msgid "Fill in the following:"
-msgstr ""
+msgstr "Remplissez les champs suivants:"
 
 # 96cfbfac34a546b2aabfdd57984816d9
 # 2f3e7f66b6854ce1bf779bd548cb6f12
@@ -4510,7 +4757,7 @@ msgstr ""
 # 07d2c270666b4ce5b27e2329f4a46336
 #: ../../networking2.rst:3266
 msgid "Guest IP Ranges"
-msgstr ""
+msgstr "Plages IP invités"
 
 # 5ba35a4bec1d4cd086d34463a8fd3b26
 #: ../../networking2.rst:3268
@@ -4519,6 +4766,9 @@ msgid ""
 "user. This allows the users to configure their network in a fashion that will "
 "enable VPN linking between their guest network and their clients."
 msgstr ""
+"Les plages d'IP pour le trafic réseau invité est configuré par compte par "
+"l'utilisateur. Cela permet aux utilisateurs de configurer leur réseau de façon "
+"qui va activer le lien VPN entre son réseau invité et ses clients."
 
 # 24793eb079054dad8ef15f9ce2ce53ad
 #: ../../networking2.rst:3273
@@ -4528,11 +4778,16 @@ msgid ""
 "subnets. You can add or remove one IP range at a time. For more information, see "
 "`\"About Multiple IP Ranges\" <#about-multiple-ip-ranges>`_."
 msgstr ""
+"Sur des réseaux partagés dans une zone Basique et dans les réseaux Avancés avec "
+"Groupes de Sécurité, vous aurez la souplesse d'ajouter de nombreuses plages "
+"d'adresses IP invité depuis différents sous-réseaux. Vous pouvez ajouter ou "
+"supprimer une plage IP à la fois. Pour plus d'informations, voir `\"A propos des "
+"plages IP multiples\" <#about-multiple-ip-ranges>`_."
 
 # 1a16911ddff840da827812b45ff09025
 #: ../../networking2.rst:3280
 msgid "Acquiring a New IP Address"
-msgstr ""
+msgstr "Acquérir une nouvelle adresse IP"
 
 # 2959313cb3534153848362cb02ce12c0
 #: ../../networking2.rst:3308
@@ -4540,17 +4795,21 @@ msgid ""
 "If you want Portable IP click Yes in the confirmation dialog. If you want a "
 "normal Public IP click No."
 msgstr ""
+"Si vous voulez une IP portable, cliquez sur Oui dans la boîte de dialogue de "
+"confirmation. Si vous voulez une IP public normale, cliquez sur Non."
 
 # 83e09cc7cc8940f6aa9b890d0011f628
 #: ../../networking2.rst:3311
 msgid ""
 "For more information on Portable IP, see `\"Portable IPs\" <#portable-ips>`_."
 msgstr ""
+"Pour plus d'information sur une IP Portable, voir `\"IPs Portables\" <#portable-"
+"ips>`_."
 
 # e238190f4d8f4177ac72494fa5eb1d72
 #: ../../networking2.rst:3319
 msgid "Releasing an IP Address"
-msgstr ""
+msgstr "Libérer une adresse IP"
 
 # 84c5bd1b7c19450b9c9a23243730fa62
 #: ../../networking2.rst:3321
@@ -4559,16 +4818,19 @@ msgid ""
 "address. The IP address still belongs to the VPC; however, it can be picked up "
 "for any guest network again."
 msgstr ""
+"Lorsque la dernière règle pour une adresse IP est supprimée, vous pouvez libérer "
+"cette adresse IP. L'adresse IP appartient toujours au VPC ; toutefois elle peut "
+"être à nouveau reprise pour n'importe quel réseau invité."
 
 # cf51c9fcec0b45fa99f4d7aeeb1b1c06
 #: ../../networking2.rst:3343
 msgid "Click the IP address you want to release."
-msgstr ""
+msgstr "Cliquer sur l'adresse IP que vous voulez libérer."
 
 # e09fbcc9c5114e19a679764fe1714c1a
 #: ../../networking2.rst:3347
 msgid "Click the Release IP button. |ReleaseIPButton.png|"
-msgstr ""
+msgstr "Cliquer sur le bouton Libérer. |ReleaseIPButton.png|"
 
 # a1e27ff808d74a1ca5f49c2d72593b00
 # c329d8910228495faeb8d66b4e61c0b6
@@ -4587,7 +4849,7 @@ msgstr ""
 #: ../../networking2.rst:5550 ../../networking2.rst:5876 ../../networking2.rst:5963
 #: ../../networking2.rst:6055 ../../networking2.rst:6298 ../../networking2.rst:6692
 msgid "Static NAT"
-msgstr "NAT statique"
+msgstr "Static NAT"
 
 # b1f96220fd994b41b5fa5fdebccab0b4
 #: ../../networking2.rst:3353
@@ -4597,6 +4859,11 @@ msgid ""
 "remains the same, which is why it is called â€œstaticâ€ NAT. This section tells "
 "how to enable or disable static NAT for a particular IP address."
 msgstr ""
+"Une règle de NAT statique associe une adresse IP publique à l'adresse IP privée "
+"d'une VM afin de permettre le trafic Internet vers la machine virtuelle. "
+"L'adresse IP publique reste toujours la même, raison pour laquelle cette "
+"solution est appelée static NAT. Cette section explique comment activer ou "
+"désactiver le static NAT pour une adresse IP particulière."
 
 # d98473b1ef2041a7877e6841336bbe2f
 #: ../../networking2.rst:3360
@@ -4610,6 +4877,8 @@ msgid ""
 "If port forwarding rules are already in effect for an IP address, you cannot "
 "enable static NAT to that IP."
 msgstr ""
+"Si les règles de redirection de port sont déjà mise en oeuvre pour une adresse "
+"IP, vous ne pouvez pas activer le static NAT pour cette IP."
 
 # 28d0504840374a70bd1ec4eab3c57295
 # dd68e0b051b34d709557d0f739c568ac
@@ -4618,17 +4887,19 @@ msgid ""
 "If a guest VM is part of more than one network, static NAT rules will function "
 "only if they are defined on the default network."
 msgstr ""
+"Si une VM invitée fait partie de plus d'un réseau, les règles de static NAT ne "
+"fonctionneront uniquement si elle sont définies sur le réseau par défaut."
 
 # 4f6ac41af4434f21b7bbb61428e5bd46
 # 6f85b85b1cd24dbeb7fffdbd01f0afa2
 #: ../../networking2.rst:3386 ../../networking2.rst:3460
 msgid "Click the IP address you want to work with."
-msgstr ""
+msgstr "Cliquer sur l'adresse IP avec laquelle vous voulez travailler."
 
 # 326984a3cc3446ed806cf614b48f5841
 #: ../../networking2.rst:3390
 msgid "Click the Static NAT |enabledisablenat.png| button."
-msgstr ""
+msgstr "Cliquer sur le bouton Static NAT |enabledisablenat.png|."
 
 # a372a7da12b54432889a1a60bab4be8a
 #: ../../networking2.rst:3393
@@ -4636,6 +4907,8 @@ msgid ""
 "The button toggles between Enable and Disable, depending on whether static NAT "
 "is currently enabled for the IP address."
 msgstr ""
+"Le bouton bascule entre Activer et Désactiver, selon que le static NAT est "
+"actuellement activé pour l'adresse IP."
 
 # 78c5d4edd8db44cf9d448e10f2a89813
 #: ../../networking2.rst:3398
@@ -4643,11 +4916,13 @@ msgid ""
 "If you are enabling static NAT, a dialog appears where you can choose the "
 "destination VM and click Apply."
 msgstr ""
+"Si vous activez le static NAT, une boite de dialogue apparaît dans laquelle vous "
+"pouvez choisir la VM cible et cliquer sur Appliquer."
 
 # 88e457a0ae3145f49ab4f361af8d4a4a
 #: ../../networking2.rst:3402
 msgid "IP Forwarding and Firewalling"
-msgstr ""
+msgstr "Redirection IP et pare-feu"
 
 # 9abca0c542c1441f8b116871bcce046d
 #: ../../networking2.rst:3404
@@ -4930,17 +5205,17 @@ msgstr ""
 # c311057000004a4bb96e882cffcc28ce
 #: ../../networking2.rst:3637
 msgid "Log in with admin privileges to the CloudStack UI."
-msgstr ""
+msgstr "Se connecter avec les droits d'administrateur à l'interface CloudStack."
 
 # 25106537239545dc82409a24f0e06bd6
 #: ../../networking2.rst:3641
 msgid "In the left navigation bar, click Service Offerings."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur les Offres de Service."
 
 # 9289d78fd54546e3ac890ba5e790db43
 #: ../../networking2.rst:3645
 msgid "In Select Offering, choose Network Offering."
-msgstr ""
+msgstr "Dans Sélectionner une offre, choisir une offre réseau."
 
 # 09e3077c1dd044d899bb41898736a9b2
 # f6c2630b089b4f4ab8805c97a1cae4af
@@ -4974,7 +5249,7 @@ msgstr ""
 # fbdeecae49e641c1b71f8f62cb19d1e8
 #: ../../networking2.rst:3672
 msgid "Port Forwarding"
-msgstr ""
+msgstr "Redirection de port"
 
 # 242ca59ae1ec44818bf282c05c1a6171
 #: ../../networking2.rst:3674
@@ -5007,7 +5282,7 @@ msgstr ""
 # 31bccf868e794f2cbdddcca69224bad3
 #: ../../networking2.rst:3691
 msgid "To set up port forwarding:"
-msgstr ""
+msgstr "Pour configurer la redirection de port :"
 
 # 16dcd6a5ef644770900cdcce80794c67
 #: ../../networking2.rst:3699
@@ -5024,7 +5299,7 @@ msgstr ""
 # 67e6520d95a749bca1dfd8ee7d653c61
 #: ../../networking2.rst:3709
 msgid "In the left navigation bar, click Network."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur Réseau."
 
 # 8ec41137f3064dbf9b135e9131c01078
 #: ../../networking2.rst:3713
@@ -5072,7 +5347,7 @@ msgstr ""
 # 189bbad94193454d80e285996b14f052
 #: ../../networking2.rst:3754
 msgid "IP Load Balancing"
-msgstr ""
+msgstr "Répartition de charge IP"
 
 # 8bb4fc89584047a4979eb7ade38555ac
 #: ../../networking2.rst:3756
@@ -5080,23 +5355,26 @@ msgid ""
 "The user may choose to associate the same public IP for multiple guests. "
 "CloudStack implements a TCP-level load balancer with the following policies."
 msgstr ""
+"L'utilisateur peut choisir d'associer la même IP publique pour plusieurs "
+"invités. CloudStack implémente un répartiteur de charge de niveau TCP avec les "
+"règles suivantes."
 
 # 2d62543390a44d9b86be0973a26237e3
 # 71d3f562cf68451d95abf2e2855c938f
 # a91ad3d092144bad9c7c61b4fae3c2e9
 #: ../../networking2.rst:3762 ../../networking2.rst:6371 ../../networking2.rst:6644
 msgid "Round-robin"
-msgstr ""
+msgstr "Round-robin"
 
 # 8fd8ce7230194556b444745abd07c778
 #: ../../networking2.rst:3766
 msgid "Least connection"
-msgstr ""
+msgstr "La plus petite connexion"
 
 # 5f1fa380f5a1493cbb22ae41bd77eab0
 #: ../../networking2.rst:3770
 msgid "Source IP"
-msgstr ""
+msgstr "IP source"
 
 # e337b776e21743439b7207bfb4c76b76
 #: ../../networking2.rst:3772
@@ -5104,11 +5382,13 @@ msgid ""
 "This is similar to port forwarding but the destination may be multiple IP "
 "addresses."
 msgstr ""
+"C'est similaire à la redirection de port mais la destination peut être plusieurs "
+"adresses IP."
 
 # 348ae44471844fa39d0776a54c21522c
 #: ../../networking2.rst:3776
 msgid "DNS and DHCP"
-msgstr ""
+msgstr "DNS et DHCP"
 
 # e9f3ca6c9e6f429bb4fe851ef31d2037
 #: ../../networking2.rst:3778
@@ -5116,11 +5396,13 @@ msgid ""
 "The Virtual Router provides DNS and DHCP services to the guests. It proxies DNS "
 "requests to the DNS server configured on the Availability Zone."
 msgstr ""
+"Le routeur virtuel fourni les services DNS et DHCP aux invités. Il relaie les "
+"requêtes DNS aux serveurs DNS configurés dans la Zone disponible."
 
 # dd8cfae4c4df4db5abe405b9fc23f91c
 #: ../../networking2.rst:3783
 msgid "Remote Access VPN"
-msgstr ""
+msgstr "Accès distant VPN"
 
 # 421361e0532246a2b00b1aabc0663fa7
 #: ../../networking2.rst:3785
@@ -5418,7 +5700,7 @@ msgstr ""
 #: ../../networking2.rst:5890 ../../networking2.rst:5977 ../../networking2.rst:6069
 #: ../../networking2.rst:6312 ../../networking2.rst:6706
 msgid "Private Gateways"
-msgstr ""
+msgstr "Passerelles privées"
 
 # a9e24dfd29a3416d90e3051d7adbfd22
 # f868061634e14c84ad71294278a83859
@@ -5436,7 +5718,7 @@ msgstr ""
 #: ../../networking2.rst:5894 ../../networking2.rst:5981 ../../networking2.rst:6073
 #: ../../networking2.rst:6316 ../../networking2.rst:6710
 msgid "Public IP Addresses"
-msgstr ""
+msgstr "Adresses IP publiques"
 
 # 2e72f864a49742349a9ac3443b812ace
 # 34ef012f20b144bd90ebf24e0b12b44a
@@ -5472,7 +5754,7 @@ msgstr ""
 #: ../../networking2.rst:5902 ../../networking2.rst:5989 ../../networking2.rst:6081
 #: ../../networking2.rst:6324 ../../networking2.rst:6718
 msgid "Network ACL Lists"
-msgstr ""
+msgstr "Listes d'ACL réseau"
 
 # 4ea069860ba74bfdbaa2253dec4c494b
 # 13c12d90b1e84f96ad76cba5a47982c5
@@ -5491,7 +5773,7 @@ msgstr ""
 #: ../../networking2.rst:3955 ../../networking2.rst:5995 ../../networking2.rst:6087
 #: ../../networking2.rst:6330 ../../networking2.rst:6724
 msgid "The IP Addresses page is displayed."
-msgstr ""
+msgstr "La page des adresses IP est affichée."
 
 # b79d01255d3242b2bca0f5b82a3f42a7
 #: ../../networking2.rst:3959
@@ -5758,7 +6040,7 @@ msgstr ""
 # 7adc784ea1124f6f8fca7553c17ca916
 #: ../../networking2.rst:4159
 msgid "See \":ref:`configuring-vpc`\"."
-msgstr ""
+msgstr "Voir \":ref:`configuring-vpc`\"."
 
 # 9649c39af37946ccbc1cba0e6b044fda
 #: ../../networking2.rst:4163
@@ -6047,12 +6329,12 @@ msgstr ""
 # 0d9b83c3c7c14ceb89902aa2acd77eef
 #: ../../networking2.rst:4446
 msgid "Account"
-msgstr ""
+msgstr "Compte"
 
 # de092a05c0cb4352a757a99ec8ec10cc
 #: ../../networking2.rst:4450
 msgid "Domain"
-msgstr ""
+msgstr "Domaine"
 
 # f9de76d1de924804aada31d4d335a636
 #: ../../networking2.rst:4453
@@ -6067,14 +6349,14 @@ msgstr ""
 # c343d040bbf94652805f9913087df284
 #: ../../networking2.rst:4469
 msgid "All the VPCs that you create for the account are listed in the page."
-msgstr ""
+msgstr "Tous les VPC que vous avez créé pour ce compte sont listés dans la page."
 
 # 6ab7b79bc9384d7e80adc871af997847
 # 49acb49a732346378816e6bb92cf285d
 # 02fa5743f59b45619d573323e28ba038
 #: ../../networking2.rst:4481 ../../networking2.rst:4673 ../../networking2.rst:5536
 msgid "Click the Settings icon."
-msgstr ""
+msgstr "Cliquer sur l'icône Paramètres."
 
 # fc6f5140f3c942dca23fcfd1ab68c6a7
 # 51c44ccda83c4464a1e80005c54790fc
@@ -6137,7 +6419,7 @@ msgstr ""
 # d7d71c18469c485d9cf0c62d4e18ee44
 #: ../../networking2.rst:4575
 msgid "State"
-msgstr ""
+msgstr "Etat"
 
 # 7e17d8eed6e64a6bb98dfcc6688f7011
 #: ../../networking2.rst:4579
@@ -6291,7 +6573,7 @@ msgstr ""
 # 183bb10ab504444faae13d81f2319f23
 #: ../../networking2.rst:4743
 msgid "About Inter-VLAN Routing (nTier Apps)"
-msgstr ""
+msgstr "A propos du routage Inter-VLAN (Applications NTiers)"
 
 # 13ccb675390f4150acd57078694a88dd
 #: ../../networking2.rst:4745
@@ -6308,16 +6590,30 @@ msgid ""
 "application VMs for higher security and lower broadcasts, while remaining "
 "physically connected to the same device."
 msgstr ""
+"Le routage Inter-VLAN (Applications nTiers) est la capacité de router le réseau "
+"entre les VLANs. Cette fonctionnalité vous permet de bâtir des Clouds Privés "
+"Virtuels (VPC), un segment isolé de votre cloud, qui peut contenir des "
+"applications multi-tier. Ces tiers sont déployés sur des différents VLANs qui "
+"peuvent communiquer avec les uns les autres. Vous provisionnez les VLANs aux "
+"tiers que vous créez, et les VMs peuvent être déployées sur différents tiers. "
+"Les VLANs sont connectés à un routeur virtuel, ce qui facilite la communication "
+"entre les VMs. En effet, vous pouvez segmenter les VMs au moyen de VLANs en "
+"différents réseaux qui peuvent accueillir des applications multi-tier, comme le "
+"Web, l'Application ou la base de données. Une telle segmentation au moyen de "
+"VLANs sépare les VMs de l'application logiquement pour plus de sécurité et pour "
+"des domaines de broadcasts réduit, alors qu'elles restent connectées "
+"physiquement au même périphérique."
 
 # 8e00b9f53dfe4448b8fe2664f0725c1e
 #: ../../networking2.rst:4758
 msgid "This feature is supported on XenServer, KVM, and VMware hypervisors."
 msgstr ""
+"Cette fonctionnalité est supportée sur les hyperviseurs XenServer, KVM et VMware."
 
 # cf6ee1a9b0f24cf2b239f5c5ee3e1ccb
 #: ../../networking2.rst:4760
 msgid "The major advantages are:"
-msgstr ""
+msgstr "Les avantages majeurs sont :"
 
 # 9914db80271c45879b3763424ebbbe4e
 #: ../../networking2.rst:4764
@@ -6327,11 +6623,17 @@ msgid ""
 "set of guest VLANs. All the VMs of a certain tier of an account reside on the "
 "guest VLAN allotted to that account."
 msgstr ""
+"L'administrateur peut déployer un ensemble de VLAN et permettre aux utilisateurs "
+"de déployer des VM sur ces VLAN. Un VLAN invité est alloué aléatoirement à un "
+"compte à partir d'un ensemble prédéfini de VLAN invités. Toutes les machines "
+"virtuelles d'un segment spécifique d'un compte résident sur le VLAN invité "
+"réservé à ce compte."
 
 # 7c49b6960b3e4fe98267c66963d07a32
 #: ../../networking2.rst:4770
 msgid "A VLAN allocated for an account cannot be shared between multiple accounts."
 msgstr ""
+"Un VLAN alloué pour un compte ne peut pas être partagé entre plusieurs comptes."
 
 # 079fa9b5868843beb9ef64f20fd14208
 #: ../../networking2.rst:4774
@@ -6340,6 +6642,9 @@ msgid ""
 "application. In this scenario, the VMs that belong to the account are deployed "
 "on the VLANs allotted to that account."
 msgstr ""
+"L'administrateur peut autoriser les utilisateurs à créer leur propre VPC et "
+"déployer l'application. Dans ce scénario, les VM qui appartiennent au compte "
+"sont déployées sur les VLAN alloués à ce compte."
 
 # cdc5e1a97e7347ed92c034645cf61bb8
 #: ../../networking2.rst:4780
@@ -6347,6 +6652,9 @@ msgid ""
 "Both administrators and users can create multiple VPCs. The guest network NIC is "
 "plugged to the VPC virtual router when the first VM is deployed in a tier."
 msgstr ""
+"A la fois les administrateurs et les utilisateurs peuvent créer plusieurs VPC. "
+"L'interface NIC du réseau invité est connectée au routeur virtuel du VPC lorsque "
+"la première VM est déployée dans un segment."
 
 # b939e06705db41289dc97594160ccd4b
 #: ../../networking2.rst:4786
@@ -6354,6 +6662,8 @@ msgid ""
 "The administrator can create the following gateways to send to or receive "
 "traffic from the VMs:"
 msgstr ""
+"L'administrateur peut créer les passerelles suivantes pour envoyer ou recevoir "
+"le trafic depuis les VM :"
 
 # 3f3d39b2a9544b7dbe578450c863c442
 #: ../../networking2.rst:4791
@@ -6361,6 +6671,8 @@ msgid ""
 "**VPN Gateway**: For more information, see `\"Creating a VPN gateway for the VPC"
 "\" <#creating-a-vpn-gateway-for-the-vpc>`_."
 msgstr ""
+"**Passerelle VPN** : Pour plus d'informations, consultez \"Créer une passerelle "
+"VPN pour le VPC\" <#creating-a-vpn-gateway-for-the-vpc>`_."
 
 # 563958c0c69e44a79fb209179e6f5ef8
 #: ../../networking2.rst:4796
@@ -6370,12 +6682,18 @@ msgid ""
 "the end users. You are not allowed to list it, nor allowed to create any static "
 "routes."
 msgstr ""
+"**Passerelle publique** : La passerelle publique pour le VPC est ajoutée au "
+"routeur virtuel lorsque le routeur virtuel est créé pour le VPC. La passerelle "
+"publique n'est pas exposée aux utilisateurs finaux. Vous n'êtes pas autorisés à "
+"la lister, ni autorisé à créer des routes statiques."
 
 # 1178d5307b4a4df3b4982bb2985004e1
 #: ../../networking2.rst:4803
 msgid ""
 "**Private Gateway**: For more information, see \":ref:`adding-priv-gw-vpc`\"."
 msgstr ""
+"**Passerelle privée** : Pour plus d'informations consultez \":ref:`adding-priv-"
+"gw-vpc`\"."
 
 # c652b274f1d44ceebe3ea04ee8beb31c
 #: ../../networking2.rst:4807
@@ -6383,11 +6701,14 @@ msgid ""
 "Both administrators and users can create various possible destinations-gateway "
 "combinations. However, only one gateway of each type can be used in a deployment."
 msgstr ""
+"Les administrateurs et les utilisateurs peuvent créer diverses combinaisons "
+"possibles de destinations-passerelles. Cependant, une seule passerelle de chaque "
+"type peut être utilisée dans un déploiement."
 
 # 5d134a3e16ec432a972f90fb955629c9
 #: ../../networking2.rst:4811
 msgid "For example:"
-msgstr ""
+msgstr "Par exemple :"
 
 # 47a88da418a64634b2908fb3999fec58
 #: ../../networking2.rst:4815
@@ -6395,6 +6716,8 @@ msgid ""
 "**VLANs and Public Gateway**: For example, an application is deployed in the "
 "cloud, and the Web application VMs communicate with the Internet."
 msgstr ""
+"**VLAN et Passerelle publique** : Par exemple, une application est déployée dans "
+"le cloud, et les VM des serveurs d'applications Web communiquent avec Internet."
 
 # e5054d8177ff4ecd817c1e9b50370893
 #: ../../networking2.rst:4821
@@ -6403,6 +6726,10 @@ msgid ""
 "deployed in the cloud; the Web application VMs communicate with the Internet; "
 "and the database VMs communicate with the on-premise devices."
 msgstr ""
+"**VLAN, passerelle VPN et passerelle publique** : Par exemple, une application "
+"est déployée dans le cloud ;  les VM des serveurs d'applications Web "
+"communiquent avec Internet ; et les VM de base de données communiquent avec les "
+"dispositifs en local."
 
 # 9cf8b80f8da6486e8a190779839a52af
 #: ../../networking2.rst:4828
@@ -6412,6 +6739,11 @@ msgid ""
 "You can define ACL based on CIDR, port range, protocol, type code (if ICMP "
 "protocol is selected) and Ingress/Egress type."
 msgstr ""
+"L'administrateur peut définir la liste de contrôle d'accès réseau (ACL) sur le "
+"routeur virtuel pour filtrer le trafic entre les VLAN ou entre Internet et un "
+"VLAN. Vous pouvez définir des ACL en fonction du CIDR, de la plage de ports, du "
+"protocole, du code de type (si le protocole ICMP est sélectionné) et du type "
+"Ingress / Egress."
 
 # f03fcc7d11a24d6d9058d56e0690ee72
 #: ../../networking2.rst:4834
@@ -6419,6 +6751,8 @@ msgid ""
 "The following figure shows the possible deployment scenarios of a Inter-VLAN "
 "setup:"
 msgstr ""
+"La figure suivante montre les scénarios possibles d'une configuration Inter-"
+"VLAN :"
 
 # 8da1d43a48f54d3cadd9a2ab40446452
 #: ../../networking2.rst:4837
@@ -6430,6 +6764,8 @@ msgstr "|mutltier.png|"
 msgid ""
 "To set up a multi-tier Inter-VLAN deployment, see \":ref:`configuring-vpc`\"."
 msgstr ""
+"Pour configurer un déploiement multi-tiers Inter-VLAN, voir \":ref:`configuring-"
+"vpc`\"."
 
 # 019f7c2e7a1c40289e074fc89915b010
 #: ../../networking2.rst:4844
@@ -7017,6 +7353,15 @@ msgid ""
 "network ACL. The network ACLs can be created for the tiers only if the "
 "NetworkACL service is supported."
 msgstr ""
+"Définissez la liste de contrôle d'accès réseau (ACL) sur le routeur virtuel VPC "
+"pour contrôler le trafic entrant (ingress) et sortant (egress) entre les VPC des "
+"segments, les segments et Internet. Par défaut, tout le trafic entrant vers les "
+"réseaux invités est bloqué et tout le trafic sortant des réseaux invités est "
+"autorisé, une fois que vous ajoutez une règle ACL pour le trafic sortant, seul "
+"le trafic sortant spécifié dans cette règle ACL est autorisé, le reste est "
+"bloqué. Pour ouvrir les ports, vous devez créer une nouvelle ACL réseau. Les ACL "
+"réseau ne peuvent être créées pour les segments que si le service NetworkACL est "
+"pris en charge."
 
 # 98625caa21a9468fa1732748d2a17096
 #: ../../networking2.rst:5233
@@ -7035,6 +7380,15 @@ msgid ""
 "tiers within a VPC. A Tier is associated with a Network ACL at all the times. "
 "Each tier can be associated with only one ACL."
 msgstr ""
+"Dans la terminologie CloudStack, une ACL réseau est un groupe d'entrées d'ACL "
+"réseau. Les entrées d'ACL réseau ne sont rien d'autre que des règles numérotées "
+"qui sont évaluées dans l'ordre, en commençant par la règle numérotée la plus "
+"faible. Ces règles déterminent si le trafic est autorisé en entrée ou en sortie "
+"de n'importe quel segment associé à l'ACL réseau. Vous devez ajouter les entrées "
+"d'ACL réseau à la liste d'ACL réseau, puis associer la liste ACL réseau à un "
+"segment. L'ACL réseau est associée à un VPC et peut être affectée à plusieurs "
+"VPC de segments dans un VPC. Un segment peut être associé à une ACL réseau à "
+"tout moment. Chaque segment peut être associé à une seule ACL."
 
 # c66744937e154fa482ad3a3e61f312b8
 #: ../../networking2.rst:5245
@@ -7044,6 +7398,10 @@ msgid ""
 "tiers. Default network ACL cannot be removed or modified. Contents of the "
 "default Network ACL is:"
 msgstr ""
+"L'ACL réseau par défaut est utilisée lorsqu'aucune ACL n'est associée. Le "
+"comportement par défaut est de bloquer tout le trafic entrant et d'autoriser le "
+"trafic sortant depuis les segments. L'ACL réseau par défaut ne peut pas être "
+"supprimée ou modifiée. Le contenu de l'ACL réseau par défaut est :"
 
 # e83245e0845e43b2974a692e326ac4d0
 #: ../../networking2.rst:5251
@@ -7175,6 +7533,12 @@ msgid ""
 "list of CIDRs. The CIDR is the base IP address of the incoming traffic. For "
 "example, 192.168.0.0/22. To allow all CIDRs, set to 0.0.0.0/0."
 msgstr ""
+"**CIDR** : Le CIDR agit en tant que CIDR source pour les règles Ingress et en "
+"tant que CIDR de destination pour les règles Egress. Pour accepter le trafic "
+"uniquement depuis ou vers les adresses IP d'un bloc d'adresses particulier, "
+"entrez un CIDR ou une liste séparée par des virgules de CIDR. Le CIDR est "
+"l'adresse IP de base du trafic entrant. Par exemple, 192.168.0.0/22. Pour "
+"autoriser tous les CIDR, saisissez 0.0.0.0/0."
 
 # 56275e37fc8b4caea8702ef3e16f0361
 #: ../../networking2.rst:5395
@@ -7191,6 +7555,12 @@ msgid ""
 "or network monitoring data. All supports all the traffic. Other option is "
 "Protocol Number."
 msgstr ""
+"**Protocole**: Le protocole réseau que les sources utilisent pour envoyer le "
+"trafic vers le segment. Les protocoles TCP et UDP sont généralement utilisés "
+"pour l'échange de données et les communications avec l'utilisateur final. Le "
+"protocole ICMP est généralement utilisé pour envoyer des messages d'erreur ou "
+"des données de surveillance du réseau. All supporte tout le trafic. La dernière "
+"option est de fournir le numéro de protocole."
 
 # f182719948c24202b52f34f53d6237ca
 #: ../../networking2.rst:5408
@@ -7506,7 +7876,7 @@ msgstr "La boîte de dialogue Remplacer la liste d'ACL est affichée."
 # b054350634fe4a6a93e997e7888de509
 #: ../../networking2.rst:5701
 msgid "select the ACL rule, then click OK."
-msgstr "Cliquer sur Ajouter. La règle ACL est ajouée."
+msgstr "Sélectionner la règle d'ACL puis cliquer sur OK."
 
 # 89bdf37574754f799764bcd9ea9b8154
 #: ../../networking2.rst:5703
@@ -7569,7 +7939,7 @@ msgstr ""
 # 0331141edca34d0d88619127d2766371
 #: ../../networking2.rst:5748
 msgid "Deploying VMs to the Tier"
-msgstr ""
+msgstr "Déployer des VM dans un segment"
 
 # 704ce74d41e94806a21f067331377028
 #: ../../networking2.rst:5770
@@ -7589,7 +7959,7 @@ msgstr "|add-vm-vpc.png|"
 # 2f2516ad2c5942d999843c0a9a68933e
 #: ../../networking2.rst:5779
 msgid "The Add Instance page is displayed."
-msgstr ""
+msgstr "La page Ajouter une Instance est affichée."
 
 # 1d62201e441d48f788fa541062d4c596
 #: ../../networking2.rst:5781
@@ -7614,22 +7984,22 @@ msgstr ""
 # b14c4ec942684d4d8a32be3cc684ba90
 #: ../../networking2.rst:5794
 msgid "Log in to the CloudStack UI as an administrator."
-msgstr ""
+msgstr "Se connecter à l'interface de CloudStack comme administrateur."
 
 # 47af434606084162a5d43bfca5f9a35c
 #: ../../networking2.rst:5798
 msgid "In the left navigation, choose Instances."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, choisir Instances."
 
 # 75908924f9fe449db880b8f340e3e1b9
 #: ../../networking2.rst:5802
 msgid "Click Add Instance."
-msgstr ""
+msgstr "Cliquer sur Ajouter une instance."
 
 # 1129214998c14deca387e232b2b61a2c
 #: ../../networking2.rst:5806
 msgid "Select a zone."
-msgstr ""
+msgstr "Sélectionner une zone."
 
 # 447c3075519c4efcb0cce18f747c5fdc
 #: ../../networking2.rst:5810
@@ -7670,7 +8040,7 @@ msgstr ""
 # a466e870147241b7a6266b24ffb983be
 #: ../../networking2.rst:5833
 msgid "Acquiring a New IP Address for a VPC"
-msgstr ""
+msgstr "Acquérir une nouvelle adresse IP pour un VPC"
 
 # 2469c8b87a5b404695be7cd3d52d8540
 #: ../../networking2.rst:5835
@@ -7685,12 +8055,12 @@ msgstr ""
 # 20c45cce73544593af8aea069f4556ce
 #: ../../networking2.rst:5906
 msgid "Select IP Addresses."
-msgstr ""
+msgstr "Sélectionner les adresses IP."
 
 # e00bf099dd75477787b7732cadc10c50
 #: ../../networking2.rst:5908
 msgid "The Public IP Addresses page is displayed."
-msgstr ""
+msgstr "La page des adresses IP publiques est affichée."
 
 # decf033da44c4b64b64175bbace5e37d
 #: ../../networking2.rst:5912
@@ -7729,12 +8099,12 @@ msgstr ""
 # 275b1067e783409fa57673f2c9079c5f
 #: ../../networking2.rst:5993
 msgid "Select Public IP Addresses."
-msgstr ""
+msgstr "Sélectionner les adresses IP."
 
 # 03719974990f4be2ab4ef5acfece3c8e
 #: ../../networking2.rst:5999
 msgid "Click the IP you want to release."
-msgstr ""
+msgstr "Cliquer sur l'IP que vous voulez rendre."
 
 # 0cfc510897374fe28fa93542914d6cf3
 #: ../../networking2.rst:6003
@@ -8039,13 +8409,13 @@ msgstr ""
 # c5c7bc131cb24e8a89af17bc2ee39a95
 #: ../../networking2.rst:6375 ../../networking2.rst:6648
 msgid "Least connections"
-msgstr ""
+msgstr "Le moins de connexions"
 
 # 6c473e5828a34e0287d62955ca824812
 # a9615fbf431b46e4b58d02737e405bca
 #: ../../networking2.rst:6379 ../../networking2.rst:6652
 msgid "Source"
-msgstr ""
+msgstr "Source"
 
 # 1dc54356abfe4ffa8b1fba11d7728393
 #: ../../networking2.rst:6383
@@ -8293,11 +8663,23 @@ msgstr ""
 #: ../../networking2.rst:6760
 msgid "TCP"
 msgstr ""
+"**Protocole**: Le protocole réseau que les sources utilisent pour envoyer le "
+"trafic vers le segment. Les protocoles TCP et UDP sont généralement utilisés "
+"pour l'échange de données et les communications avec l'utilisateur final. Le "
+"protocole ICMP est généralement utilisé pour envoyer des messages d'erreur ou "
+"des données de surveillance du réseau. All supporte tout le trafic. La dernière "
+"option est de fournir le numéro de protocole."
 
 # a80d548790614268b9a37014436e3b33
 #: ../../networking2.rst:6764
 msgid "UDP"
 msgstr ""
+"**Protocole**: Le protocole réseau que les sources utilisent pour envoyer le "
+"trafic vers le segment. Les protocoles TCP et UDP sont généralement utilisés "
+"pour l'échange de données et les communications avec l'utilisateur final. Le "
+"protocole ICMP est généralement utilisé pour envoyer des messages d'erreur ou "
+"des données de surveillance du réseau. All supporte tout le trafic. La dernière "
+"option est de fournir le numéro de protocole."
 
 # 3045d1ed30694200ab89150942fe8a6a
 #: ../../networking2.rst:6768
@@ -8314,7 +8696,7 @@ msgstr ""
 # 4a6c93a072f04111a01f85167fd2755d
 #: ../../networking2.rst:6774
 msgid "Removing Tiers"
-msgstr ""
+msgstr "Retirer des segments"
 
 # 5142d19ad4794b65970714b4e4bbbec5
 #: ../../networking2.rst:6776
@@ -8383,11 +8765,13 @@ msgid ""
 "To restart a VPC, select the VPC, then click the Restart button. |restart-vpc."
 "png|"
 msgstr ""
+"Pour redémarrer un VPC, sélectionner le VPC puis cliquer sur le bouton "
+"Redémarrer. |restart-vpc.png|"
 
 # f535c4d4c6e542569b645467558a84ba
 #: ../../networking2.rst:6854
 msgid "Persistent Networks"
-msgstr ""
+msgstr "Réseaux persistants"
 
 # ac16a1f817024aa4ba3804fcab51f851
 #: ../../networking2.rst:6856
@@ -8396,6 +8780,9 @@ msgid ""
 "called a persistent network. A persistent network can be part of a VPC or a non-"
 "VPC environment."
 msgstr ""
+"Un réseau que vous pouvez provisionner sans avoir à déployer une quelconque VM "
+"est appelé réseau persistant. Un réseau persistant peut faire partie d'un "
+"environnement VPC ou non-VPC."
 
 # 69a29ed2704f4f48b0796699ad7a36eb
 #: ../../networking2.rst:6860
@@ -8408,6 +8795,15 @@ msgid ""
 "CloudStack in which physical devices can be deployed without having to run any "
 "VMs. Additionally, you can deploy physical devices on that network."
 msgstr ""
+"Lorsque vous créez d'autres types de réseau, un réseau n'est qu'une entrée de "
+"base de données jusqu'à ce que la première VM soit créée sur ce réseau. Lors de "
+"la création de la première VM, un ID de VLAN est attribué et le réseau est "
+"provisionné. En outre, lorsque la dernière VM est détruite, l'ID du VLAN est "
+"libéré et le réseau n'est plus disponible. Avec l'ajout d'un réseau persistant, "
+"vous aurez la possibilité de créer un réseau dans CloudStack dans lequel les "
+"périphériques physiques peuvent être déployés sans avoir à exécuter une "
+"quelconque machine virtuelle. En outre, vous pouvez déployer des périphériques "
+"physiques sur ce réseau."
 
 # 58f4be07725f415581616cb03772a7a7
 #: ../../networking2.rst:6869
@@ -8420,21 +8816,29 @@ msgid ""
 "network as persistent and therefore even if all its VMs are destroyed the "
 "services will not be discontinued."
 msgstr ""
+"L'un des avantages d'avoir un réseau persistant est de pouvoir créer un VPC avec "
+"un segment composé uniquement de périphériques physiques. Par exemple, vous "
+"pouvez créer un VPC pour une application à trois tiers, déployer des VM pour le "
+"couche Web et Application et utiliser des machines physiques pour la couche Base "
+"de données. Un autre cas d'utilisation est que si vous fournissez des services "
+"en utilisant du matériel physique, vous pouvez définir le réseau comme "
+"persistant et donc même si toutes ses machines virtuelles sont détruites, ses "
+"services ne seront pas interrompus."
 
 # 8ff007bee6954fe199b3c83d78392acf
 #: ../../networking2.rst:6879
 msgid "Persistent Network Considerations"
-msgstr ""
+msgstr "Considérations sur le Réseau Persistant"
 
 # f6f834bfef49425085d2d0742d6ef874
 #: ../../networking2.rst:6883
 msgid "Persistent network is designed for isolated networks."
-msgstr ""
+msgstr "Le réseau persistant est conçu pour les réseaux isolés."
 
 # 0bb5d0eb31464beaa3c07b2ff9af3aa2
 #: ../../networking2.rst:6887
 msgid "All default network offerings are non-persistent."
-msgstr ""
+msgstr "Toutes les offres de réseau par défaut sont non-persistantes."
 
 # 5051557b950f477e8d115a69bf8150d4
 #: ../../networking2.rst:6891
@@ -8442,6 +8846,9 @@ msgid ""
 "A network offering cannot be editable because changing it affects the behavior "
 "of the existing networks that were created using this network offering."
 msgstr ""
+"Une offre de réseau ne peut pas être éditable parce la changer affectent le "
+"fonctionnement des réseaux existants qui ont été créés en utilisant cette offre "
+"de service."
 
 # 593697221e614fe980bca6c00979e531
 #: ../../networking2.rst:6897
@@ -8450,6 +8857,9 @@ msgid ""
 "the network persistence. This in turn depends on whether persistent network is "
 "enabled in the selected network offering."
 msgstr ""
+"Lorsque vous créez un réseau invité, l'offre de réseau que vous sélectionnez "
+"définie la persistance du réseau. Cela dépend en fait si la persistance du "
+"réseau est activée dans l'offre de réseau sélectionnée."
 
 # 34302861eff548dd9e9007020f1c927b
 #: ../../networking2.rst:6903
@@ -8458,6 +8868,10 @@ msgid ""
 "an offering that has the Persistent option enabled. While setting this property, "
 "even if the network has no running VMs, the network is provisioned."
 msgstr ""
+"Un réseau existant peut devenir persistant en changeant son offre de réseau pour "
+"une offre qui a l'option de persistance activée. Lorsque cette propriété est "
+"configurée, même si le réseau n'a pas de VM en fonctionnement, le réseau est "
+"provisionné."
 
 # e3974307d7cd464eb0a6028ee8f57e4b
 #: ../../networking2.rst:6910
@@ -8467,6 +8881,10 @@ msgid ""
 "running VMs, during the next network garbage collection run the network is shut "
 "down."
 msgstr ""
+"Un réseau existant peut devenir non-persistent en changeant son offre de réseau "
+"pour une offre qui a l'option de persistance désactivée. SI le réseau n'a pas de "
+"VM en fonctionnement durant le prochain lancement du garbage collector, il sera "
+"stoppé."
 
 # 1c9032badc034107b57250169a03a890
 #: ../../networking2.rst:6917
@@ -8475,21 +8893,24 @@ msgid ""
 "if the network offering associated with the network is persistent, and shuts "
 "down the network only if it is non-persistent."
 msgstr ""
+"Lorsque la dernière VM d'un réseau est détruite, le garbage collector du réseau "
+"vérifie si l'offre de réseau associée avec le réseau est persistante et arrête "
+"ce réseau seulement si c'est non-persistant."
 
 # 56e305bc255e4c999e504e5acb010e4f
 #: ../../networking2.rst:6923
 msgid "Creating a Persistent Guest Network"
-msgstr ""
+msgstr "Créer un réseau invité Persistant."
 
 # 8ce284f6e33a44e5860a579e00f4fc80
 #: ../../networking2.rst:6925
 msgid "To create a persistent network, perform the following:"
-msgstr ""
+msgstr "Pour créer un réseau persistant, suivre les instructions suivantes :"
 
 # e3ce54a0de2342309210a549828f25b0
 #: ../../networking2.rst:6929
 msgid "Create a network offering with the Persistent option enabled."
-msgstr ""
+msgstr "Créer une offre réseau avec l'option Persistant activée."
 
 # 916c1c8c0ef34df2868a5a38c4dd609a
 #: ../../networking2.rst:6931
@@ -8497,16 +8918,19 @@ msgid ""
 "See `\"Creating a New Network Offering\" <networking.html#creating-a-new-network-"
 "offering>`_."
 msgstr ""
+"Voir `\"Créer une Nouvelle Offre Réseau\" <networking.html#creating-a-new-"
+"network-offering>`_."
 
 # 2fd5e35855fe4fa4bae6d7cc0d53b7d8
 #: ../../networking2.rst:6935
 msgid "Select Network from the left navigation pane."
-msgstr ""
+msgstr "Sélectionnez le réseau depuis le panneau de navigation à gauche."
 
 # 37e16c8d0d9044dbb0f2d02677062c8d
 #: ../../networking2.rst:6939
 msgid "Select the guest network that you want to offer this network service to."
 msgstr ""
+"Sélectionnez le réseau invité avec lequel vous voulez offrir ce service réseau."
 
 # 5fbd5c95b15941c29f95b337f8ebade8
 #: ../../networking2.rst:6944
@@ -8519,3 +8943,5 @@ msgid ""
 "From the Network Offering drop-down, select the persistent network offering you "
 "have just created."
 msgstr ""
+"Dans la liste de sélection Offre Réseau, sélectionnez l'offre de réseau "
+"persistant que vous venez à l'instant de créer."

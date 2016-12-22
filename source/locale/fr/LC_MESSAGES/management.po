@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-11-30 23:23+0100\n"
+"PO-Revision-Date: 2016-12-19 16:45+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -190,21 +190,30 @@ msgid ""
 "size of the cloud. The CPU Socket page will give you the number of hosts "
 "and sockets used for each host type."
 msgstr ""
+"PRODUCT gère différents types d'hôtes qui contiennent une ou plusieurs "
+"sockets de CPU physiques. La socket du CPU est considéré comme une unité de "
+"mesure utilisée les licences et la facturation de l'infrastructure cloud. "
+"PRODUCT fournit à la fois l'interface utilisateur et le support API pour "
+"collecter les statistiques du socket du CPU à des fins de facturation. "
+"L'onglet Infrastructure comporte un nouvel onglet pour les sockets CPU. "
+"Vous pouvez afficher les statistiques des sockets CPU gérés par PRODUCT, "
+"qui reflètent en retour la taille du cloud. La page Socket CPU vous donnera "
+"le nombre d'hôtes et de sockets utilisés pour chaque type d'hôte."
 
 # dec087784ccd48c49189c3f0ed1811a9
 #: ../../management.rst:100
 msgid "Log in to the PRODUCT UI."
-msgstr ""
+msgstr "Se connecter à l'interface utilisateur PRODUCT."
 
 # 012d9d141d8745a48fd182b1cab1f8f1
 #: ../../management.rst:102
 msgid "In the left navigation bar, click Infrastructure."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur Infrastructure."
 
 # 991d040f4ccc467f87019591608beea8
 #: ../../management.rst:104
 msgid "On CPU Sockets, click View all."
-msgstr ""
+msgstr "Sur Sockets CPU, cliquer sur Voir tout"
 
 # 1f3a30df3d8746f291bc00e761d59f3e
 #: ../../management.rst:106
@@ -212,6 +221,8 @@ msgid ""
 "The CPU Socket page is displayed. The page shows the number of hosts and "
 "CPU sockets based on hypervisor types."
 msgstr ""
+"La page Socket CPU est affichée. La page montre le nombre d'hôtes et de "
+"sockets CPU basé sur le type d'hyperviseur."
 
 # 3d662bf06abc42bd951d16844faada76
 #: ../../management.rst:111
@@ -226,6 +237,11 @@ msgid ""
 "management/db.properties``. To effect a change, edit this file on each "
 "Management Server, then restart the Management Server."
 msgstr ""
+"Le serveur de gestion CloudStack stocke les informations de configuration "
+"de sa base de données (par exemple nom de machine, port, mot de passes) "
+"dans le fichier ``/etc/cloudstack/management/db.properties``. Pour prendre "
+"en compte les changements, editer ce fichier sur chaque serveur de Gestion, "
+"puis redémarrer le serveur de gestion."
 
 # a0530bddfe5a47a69ac27ef0a2c38a2e
 #: ../../management.rst:119
@@ -239,6 +255,10 @@ msgid ""
 "CloudStack. If so, you'll need to change the password in MySQL, and then "
 "add the encrypted password to ``/etc/cloudstack/management/db.properties``."
 msgstr ""
+"Vous devrez peut-être modifier le mot de passe du compte MySQL utilisé par "
+"CloudStack. Dans ce cas, vous devrez changer le mot de passe dans MySQL, "
+"puis ajouter le mot de passe crypté dans ``/etc/cloudstack/management/db."
+"properties``."
 
 # 803fea7347b74457808913e8d34560e4
 #: ../../management.rst:126
@@ -246,6 +266,8 @@ msgid ""
 "Before changing the password, you'll need to stop CloudStack's management "
 "server and the usage engine if you've deployed that component."
 msgstr ""
+"Avant de changer le mot de passe, vous devrez stopper le serveur de gestion "
+"de CloudStack et le moteur d'usage si vous avez déployé ce composant."
 
 # 83b051e006ce4a898817788447a54253
 #: ../../management.rst:135
@@ -253,11 +275,15 @@ msgid ""
 "Next, you'll update the password for the CloudStack user on the MySQL "
 "server."
 msgstr ""
+"Ensuite, vous allez mettre à jour le mot de passe pour l'utilisateur "
+"CloudStack sur le serveur MySQL."
 
 # a6ed0f9a1e5f41d9883e8ab8e6ed7157
 #: ../../management.rst:142
 msgid "At the MySQL shell, you'll change the password and flush privileges:"
 msgstr ""
+"Au prompt de MySQL, vous allez changer le mot de passe et appliquer les "
+"privilèges :"
 
 # 5042ed8fa23b4aa6bf244fb7e8d21d0b
 #: ../../management.rst:150
@@ -266,6 +292,9 @@ msgid ""
 "CloudStack's database configuration (``/etc/cloudstack/management/db."
 "properties``)."
 msgstr ""
+"L'étape suivante consiste à crypter le mot de passe et à copier le mot de "
+"passe crypté dans la configuration de la base de données de CloudStack (``/"
+"etc/cloudstack/management/db.properties``)."
 
 # 08fe5ba4a2844019b7c34948af80d3e9
 #: ../../management.rst:160
@@ -279,6 +308,9 @@ msgid ""
 "encryption type then you'll use password=\"management\\_server\\_secret"
 "\\_key\""
 msgstr ""
+"Notez que cela concerne le type de cryptage de fichier. Si vous utilisez le "
+"type de cryptage web alors vous allez utiliser password=\"management"
+"\\_server\\_secret\\_key\""
 
 # 41348185b9bc4aa59d47266350f37bea
 #: ../../management.rst:166
@@ -287,6 +319,10 @@ msgid ""
 "new ciphertext. Open ``/etc/cloudstack/management/db.properties`` in a text "
 "editor, and update these parameters:"
 msgstr ""
+"Maintenant, vous allez mettre à jour ``/etc/cloudstack/management/db."
+"properties`` avec le nouveau ciphertext. Ouvrez ``/etc/cloudstack/"
+"management/db.properties`` dans un éditeur de texte et mettez à jour ces "
+"paramètres :"
 
 # 3224048da0604d5e8ff7b22550451ce5
 #: ../../management.rst:175
@@ -294,6 +330,8 @@ msgid ""
 "After copying the new password over, you can now start CloudStack (and the "
 "usage engine, if necessary)."
 msgstr ""
+"Après avoir copier le nouveau mot de passe, vous pouvez maintenant démarrer "
+"CloudStack (et le moteur d'usage, si nécessaire)."
 
 # b42158e718f44c4ab881833d2dbc0929
 #: ../../management.rst:185
@@ -308,6 +346,10 @@ msgid ""
 "mail, notifying the administrator that an error has occurred in the cloud. "
 "Alert behavior is configurable."
 msgstr ""
+"Le système fournit des alertes et des évènements pour aider à la gestion du "
+"cloud. Les alertes sont des avis pour les administrateurs, généralement "
+"délivrés par mail, le notifiant qu'une erreur s'est produite dans le cloud. "
+"Le comportement des alertes est configurable."
 
 # ff3195bd128540cca761c8b00697d461
 #: ../../management.rst:192
@@ -316,29 +358,41 @@ msgid ""
 "example, every guest VM start creates an associated event. Events are "
 "stored in the Management Server’s database."
 msgstr ""
+"Les événements tracent toutes les actions de l'utilisateur et de "
+"l'administrateur dans le cloud. Par exemple, chaque VM invitée démarrée "
+"crée un événement associé. Les événements sont stockés dans la base de "
+"données du serveur d'administration."
 
 # 6b6c7d267ebc4ecdba5787f75ed95d52
 #: ../../management.rst:196
 msgid ""
 "Emails will be sent to administrators under the following circumstances:"
 msgstr ""
+"Des emails seront envoyés aux administrateurs dans les circonstances "
+"suivantes :"
 
 # 239b319d590244788e6be621087e695a
 #: ../../management.rst:198
 msgid ""
 "The Management Server cluster runs low on CPU, memory, or storage resources"
 msgstr ""
+"Les ressources du cluster de serveurs de gestion sont faibles en CPU, en "
+"mémoire ou en ressources de stockage"
 
 # 11bbb0a3f5de4024ac7e944c1603e026
 #: ../../management.rst:201
 msgid ""
 "The Management Server loses heartbeat from a Host for more than 3 minutes"
 msgstr ""
+"Le serveur de gestion a perdu le battement de coeur d'un hôte depuis plus "
+"de 3 minutes."
 
 # f6a69a83f8bb45a193d273cbd63ac7bd
 #: ../../management.rst:204
 msgid "The Host cluster runs low on CPU, memory, or storage resources"
 msgstr ""
+"Les ressources du cluster d'hôtes sont faibles en CPU, en mémoire ou en "
+"ressources de stockage"
 
 # 267b4ae8b12e42d69f646aa22992388d
 #: ../../management.rst:208
@@ -353,11 +407,16 @@ msgid ""
 "alerts to external SNMP or Syslog management software. This is useful if "
 "you prefer to use an SNMP or Syslog manager to monitor your cloud."
 msgstr ""
+"En plus de montrer les alertes aux administrateurs sur le tableau de bord "
+"de l'interface utilisateur CloudStack et de leur envoyer par e-mail, "
+"CloudStack peut également envoyer les mêmes alertes à un logiciel externe "
+"de gestion SNMP ou Syslog. Ceci est utile si vous préférez utiliser un "
+"gestionnaire SNMP ou Syslog pour surveiller votre nuage."
 
 # ae64dcb892834822b7480195c2882a8c
 #: ../../management.rst:216
 msgid "The alerts which can be sent are:"
-msgstr ""
+msgstr "Les alertes qui peuvent être envoyées sont :"
 
 # 814ff89fb6f444fc96a8b87a532bc28f
 #: ../../management.rst:218
@@ -365,6 +424,8 @@ msgid ""
 "The following is the list of alert type numbers. The current alerts can be "
 "found by calling listAlerts."
 msgstr ""
+"Voici la liste des numéros de type d'alerte. Les alertes actuelles peuvent "
+"être trouvées en appelant listAlerts."
 
 # cac2d1c9d3a34cb29f25fc81630f96dc
 #: ../../management.rst:330
@@ -372,6 +433,8 @@ msgid ""
 "You can also display the most up to date list by calling the API command "
 "``listAlerts``."
 msgstr ""
+"Vous pouvez également afficher la liste la plus à jour en appelant la "
+"commande d'API ``listAlerts``."
 
 # 0ead10e6a3664baf84b6199d70dfb243
 #: ../../management.rst:334
@@ -381,7 +444,7 @@ msgstr "Détails des alertes SNMP"
 # 77c8d073d21f41859f495f2b0120f7ef
 #: ../../management.rst:336
 msgid "The supported protocol is SNMP version 2."
-msgstr ""
+msgstr "Le protocole supporté est le SNMP version 2."
 
 # 164535e01fe54071916fc21626d662af
 #: ../../management.rst:338
@@ -389,6 +452,8 @@ msgid ""
 "Each SNMP trap contains the following information: message, podId, "
 "dataCenterId, clusterId, and generationTime."
 msgstr ""
+"Chaque trap SNMP contient les informations suivantes : message, podId, "
+"dataCenterId, clusterId, et generationTime."
 
 # be99b465676b4d13ae21a9bd33ff94ef
 #: ../../management.rst:343
@@ -403,6 +468,10 @@ msgid ""
 "in the following format. If any field does not have a valid value, it will "
 "not be included."
 msgstr ""
+"CloudStack génère un message syslog pour chaque alerte. Chaque message "
+"syslog inclut les champs alertType, message, podId, dataCenterId et "
+"clusterId, dans le format suivant. Si un champ ne possède pas de valeur "
+"valide, il ne sera pas inclus."
 
 # 7c74aa344fe948a39e5bff24928b78fa
 #: ../../management.rst:354
@@ -420,6 +489,8 @@ msgid ""
 "To configure one or more SNMP managers or Syslog managers to receive alerts "
 "from CloudStack:"
 msgstr ""
+"Pour configurer un ou plusieurs gestionnaire SNMP ou Syslog pour qu'ils "
+"reçoivent les alertes depuis CloudStack :"
 
 # 377884390b154436a6ce3913008b664c
 #: ../../management.rst:366
@@ -430,11 +501,17 @@ msgid ""
 "to install this file, consult the documentation provided with the SNMP "
 "manager."
 msgstr ""
+"Dans le cadre d'un gestionnaire SNMP, installez le fichier de la MIB "
+"CloudStack sur votre système de gestion SNMP. Cela fait correspondre les "
+"OID SNMP aux traps d'interruption qui peuvent être plus facilement lus par "
+"les utilisateurs. Le fichier doit être accessible publiquement. Pour plus "
+"d'informations sur l'installation de ce fichier, consultez la documentation "
+"fournie avec le gestionnaire SNMP."
 
 # a32632406531434cbf5c4c261b1f69b6
 #: ../../management.rst:372
 msgid "Edit the file /etc/cloudstack/management/log4j-cloud.xml."
-msgstr ""
+msgstr "Editer le fichier /etc/cloudstack/management/log4j-cloud.xml."
 
 # 8ba1745b7c924d888e2595a379d2db32
 #: ../../management.rst:378
@@ -444,12 +521,18 @@ msgid ""
 "specify multiple external managers, separate the IP addresses and other "
 "configuration values with commas (,)."
 msgstr ""
+"Ajoutez une entrée en utilisant la syntaxe ci-dessous. Suivez l'exemple "
+"approprié selon que vous ajoutez un gestionnaire SNMP ou un gestionnaire "
+"Syslog. Pour spécifier plusieurs gestionnaires externes, séparez les "
+"adresses IP et les autres valeurs de configuration par des virgules (,)."
 
 # 6cd8468c57974817b400436e8e445394
 #: ../../management.rst:384
 msgid ""
 "The recommended maximum number of SNMP or Syslog managers is 20 for each."
 msgstr ""
+"Le nombre maximum recommandé de gestionnaires SNMP ou Syslog est de 20 de "
+"chaque."
 
 # d399f22c73ea4836a3776bd53493aaf9
 #: ../../management.rst:387
@@ -459,6 +542,10 @@ msgid ""
 "and communities. Do not change the other values (name, threshold, class, "
 "and layout values)."
 msgstr ""
+"L'exemple suivant montre comment configurer deux gestionnaires SNMP aux "
+"adresses IP 10.1.1.1 et 10.1.1.2. Remplacez avec vos propres adresses IP, "
+"ports et communautés. Ne modifiez pas les autres valeurs (nom, seuil, "
+"classe et valeurs de mise en page)."
 
 # 57b464a769fd4128a163f5613f5f1c96
 #: ../../management.rst:405
@@ -468,6 +555,10 @@ msgid ""
 "set Facility to any syslog-defined value, such as LOCAL0 - LOCAL7. Do not "
 "change the other values."
 msgstr ""
+"L'exemple suivant montre comment configurer deux gestionnaires Syslog aux "
+"adresses IP 10.1.1.1 et 10.1.1.2. Remplacez par vos propres adresses IP. "
+"Vous pouvez définir le niveau de Facility par une valeur définie par "
+"syslog, telle que LOCAL0 - LOCAL7. Ne modifiez pas les autres valeurs."
 
 # 9ac4b5f945144653a9fb6df9185afba4
 #: ../../management.rst:421
@@ -475,6 +566,8 @@ msgid ""
 "If your cloud has multiple Management Server nodes, repeat these steps to "
 "edit log4j-cloud.xml on every instance."
 msgstr ""
+"Si votre cloud est composé de plusieurs serveur de gestion, répéter ces "
+"étapes pour éditer log4j-cloud.xml sur chaque instance."
 
 # d82882ad1f8e447fb1ddbf2141ca0f1e
 #: ../../management.rst:424
@@ -482,6 +575,9 @@ msgid ""
 "If you have made these changes while the Management Server is running, wait "
 "a few minutes for the change to take effect."
 msgstr ""
+"Si vous avez effectué ces changements alors que le serveur de gestion "
+"fonctionnait, attendre quelques minutes pour que les changements prennent "
+"effets."
 
 # c74a110e35d5496db9637e208ca69f0c
 #: ../../management.rst:427
@@ -491,6 +587,10 @@ msgid ""
 "error in the syntax of the <appender> entry in log4j-cloud.xml. Check to be "
 "sure that the format and settings are correct."
 msgstr ""
+"**Dépannage :** Si aucune alerte ne s'affiche sur le gestionnaire SNMP ou "
+"Syslog configuré après un délai raisonnable, il est probable qu'il y ait "
+"une erreur dans la syntaxe de l'entrée <appender> dans log4j-cloud.xml. "
+"Assurez-vous que le format et les paramètres soient corrects."
 
 # 6e66a0c8054b4278923a1680c1d13f92
 #: ../../management.rst:435
@@ -504,6 +604,10 @@ msgid ""
 "receives alerts from CloudStack, remove the corresponding entry from the "
 "file ``/etc/cloudstack/management/log4j-cloud.xml``."
 msgstr ""
+"Pour retirer un gestionnaire externe SNMP ou Syslog de manière à ce qu'il "
+"ne reçoive plus d'alertes depuis CloudStack, retirer l'entrée "
+"correspondante dans le fichier ``/etc/cloudstack/management/log4j-cloud."
+"xml``."
 
 # 13024d28ec5a4e0d9d54dc264f048c4c
 #: ../../management.rst:443
@@ -518,11 +622,16 @@ msgid ""
 "installation, and a domain administrator can do so within their own domain. "
 "To specify a custom domain name and put it into effect, follow these steps."
 msgstr ""
+"L'administrateur racine peut optionnellement affecter un suffixe DNS "
+"personnalisé au niveau d'un réseau, d'un compte, d'un domaine, d'une zone "
+"ou de toute l'installation de CloudStack, et un administrateur de domaine "
+"peut le faire dans son propre domaine. Pour spécifier un nom de domaine "
+"personnalisé et le mettre en œuvre, procédez comme ceci :"
 
 # 12a0d889b85a42dfb2f7a37556be8592
 #: ../../management.rst:451
 msgid "Set the DNS suffix at the desired scope"
-msgstr ""
+msgstr "Définir le suffixe DNS sur la portée souhaitée"
 
 # 8f9f57e29f9c404d9930091f8630a427
 #: ../../management.rst:453
@@ -532,6 +641,10 @@ msgid ""
 "Network” <networking2#adding-an-additional-guest-network>`_ or with the "
 "updateNetwork command in the CloudStack API."
 msgstr ""
+"Au niveau du réseau, le suffixe DNS peut être attribué via l'interface "
+"utilisateur à la création d'un nouveau réseau, comme décrit dans `\"Ajout "
+"d'un réseau d'invités supplémentaire\" <networking2#adding-an-additional-"
+"guest-network>`_ ou via la commande updateNetwork de l'API CloudStack."
 
 # c091289d2eee46e89ea79afc752a76bf
 #: ../../management.rst:459
@@ -540,6 +653,10 @@ msgid ""
 "the appropriate CloudStack API commands: createAccount, editAccount, "
 "createDomain, editDomain, createZone, or editZone."
 msgstr ""
+"Au niveau du compte, du domaine ou de la zone, le suffixe DNS peut être "
+"attribué avec les commandes appropriées de l'API CloudStack : "
+"createAccount, editAccount, createDomain, editDomain, createZone ou "
+"editZone."
 
 # 3aa8bfbb66e6499eaf26bd3d496d6bf8
 #: ../../management.rst:464
@@ -549,6 +666,11 @@ msgid ""
 "modifying this global configuration, restart the Management Server to put "
 "the new setting into effect."
 msgstr ""
+"Au niveau global, utilisez le paramètre de configuration guest.domain."
+"suffix. Vous pouvez également utiliser la commande updateConfiguration de "
+"l'API CloudStack. Après avoir modifié cette configuration globale, "
+"redémarrez le serveur de gestion pour prendre en compte le nouveau "
+"paramètre."
 
 # ea55aed82e8440d191210e6219afd4b4
 #: ../../management.rst:469
@@ -557,6 +679,10 @@ msgid ""
 "CloudStack API command updateNetwork. This step is not necessary when the "
 "DNS suffix was specified while creating a new network."
 msgstr ""
+"Pour que le nouveau suffixe DNS prenne effet pour un réseau existant, "
+"appelez la commande updateNetwork de l'API CloudStack. Cette étape n'est "
+"pas nécessaire lorsque le suffixe DNS a été spécifié lors de la création "
+"d'un nouveau réseau."
 
 # c4c8780f62264aef9166fb7abb03b23d
 #: ../../management.rst:473
@@ -564,6 +690,7 @@ msgid ""
 "The source of the network domain that is used depends on the following "
 "rules."
 msgstr ""
+"La source du domaine du réseau qui est utilisée dépend des règles suivantes."
 
 # ed54e22f6c384a979fdd24525a23d6f4
 #: ../../management.rst:476
@@ -571,6 +698,8 @@ msgid ""
 "For all networks, if a network domain is specified as part of a network's "
 "own configuration, that value is used."
 msgstr ""
+"Pour tous les réseaux, si un domaine réseau est spécifié comme faisant "
+"partie de la configuration propre à son réseau, cette valeur est utilisée."
 
 # b62736506f044912b7508f5bcfca6b0b
 #: ../../management.rst:479
@@ -579,6 +708,9 @@ msgid ""
 "account is used. If none is specified, the system looks for a value in the "
 "domain, zone, and global configuration, in that order."
 msgstr ""
+"Pour un réseau spécifique à un compte, le domaine réseau spécifié pour le "
+"compte est utilisé. Si aucun n'est spécifié, le système recherche une "
+"valeur dans le domaine, la zone et la configuration globale, dans cet ordre."
 
 # e4424d33ec9549389255552629bbdd2a
 #: ../../management.rst:483
@@ -587,6 +719,9 @@ msgid ""
 "is used. If none is specified, the system looks for a value in the zone and "
 "global configuration, in that order."
 msgstr ""
+"Pour un réseau spécifique à un domaine, le domaine réseau spécifié pour le "
+"domaine est utilisé. Si aucun n'est spécifié, le système recherche une "
+"valeur dans la zone et dans la configuration globale, dans cet ordre."
 
 # 3d1ebf272ba647ef8f54fcd126b4806c
 #: ../../management.rst:487
@@ -595,6 +730,9 @@ msgid ""
 "used. If none is specified, the system looks for a value in the global "
 "configuration."
 msgstr ""
+"Pour un réseau spécifique à une zone, le domaine réseau spécifié pour la "
+"zone est utilisé. Si aucun n'est spécifié, le système recherche une valeur "
+"dans la configuration globale."
 
 # b6795b367f9a4a56bd542d1303ef6706
 #: ../../management.rst:493

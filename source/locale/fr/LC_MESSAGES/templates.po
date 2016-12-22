@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-11-19 12:21+0100\n"
+"PO-Revision-Date: 2016-12-22 16:08+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -993,6 +993,13 @@ msgid ""
 "`http://technet.microsoft.com/en-us/library/bb892849.aspx <http://technet."
 "microsoft.com/en-us/library/bb892849.aspx>`_"
 msgstr ""
+"Assurez vous que la clé de licence est correctement configurée. Si vous "
+"utilisez une clé MAK, vous pouvez juste saisir la clé MAK sur la VM Windows "
+"2008 R2. Vous ne devez pas introduire la MAK dans le Windows System Image "
+"Manager. Si vous utilisez un hôte KMS pour l'activation vous ne devez pas "
+"saisir de clé de produit. Des détails sur l'activation en volume de Windows "
+"peuvent être trouvés ici `http://technet.microsoft.com/en-us/library/bb892849."
+"aspx <http://technet.microsoft.com/en-us/library/bb892849.aspx>`_"
 
 #: ../../templates/_create_windows.rst:126
 msgid ""
@@ -1002,6 +1009,12 @@ msgid ""
 "Pass 7 oobeSystem configuration pass of your answer file. Under Settings, "
 "specify a password next to Value."
 msgstr ""
+"Vous devez automatiser la page Modifier le mot de passe administrateur. "
+"Développez le composant Microsoft-Windows-Shell-Setup (s'il n'est pas encore "
+"développé), développez UserAccounts, cliquez avec le bouton droit sur "
+"AdministratorPassword et ajoutez le paramètre de configuration Pass 7 "
+"oobeSystem de votre fichier de réponses. Sous Paramètres, spécifiez un mot de "
+"passe après Valeur."
 
 #: ../../templates/_create_windows.rst:133
 msgid "|change-admin-password.png|"
@@ -1013,6 +1026,9 @@ msgid ""
 "deployment. The steps above are the minimum needed to make Windows unattended "
 "setup work."
 msgstr ""
+"Vous devriez lire la documentation AIK et configurer beaucoup plus d'options "
+"pour pour convenir à votre déploiement Les étapes ci-dessus sont le minimum "
+"requis pour rendre fonctionnel la configuration sans assistance de Windows."
 
 #: ../../templates/_create_windows.rst:139
 msgid ""
@@ -1062,6 +1078,8 @@ msgid ""
 "Extract the content of \\\\support\\\\tools\\\\deploy.cab on the Windows "
 "installation CD into a directory called c:\\\\sysprep on the Windows 2003 R2 VM."
 msgstr ""
+"Extrayez le contenu de \\\\support\\\\tools\\\\deploy.cab du CD d'installation "
+"de Windows dans le répertoire appelé c:\\\\sysprep dans la VM Windows 2003 R2."
 
 #: ../../templates/_create_windows.rst:168
 msgid "Run c:\\\\sysprep\\\\setupmgr.exe to create the sysprep.inf file."
@@ -1116,6 +1134,10 @@ msgid ""
 "feature, the users will not actually use this password. This password will be "
 "reset by the instance manager after the guest boots up."
 msgstr ""
+"Saisissez un mot de passe par défaut pour l'administrateur. Si vous activez la "
+"fonctionnalité de réinitialisation de mot de passe, les utilisateurs "
+"n'utiliseront pas ce mot de passe. Ce mot de passe sera réinitialisé par le "
+"gestionnaire d'instance après les démarrage des invités."
 
 #: ../../templates/_create_windows.rst:196
 msgid "Leave Network Components at “Typical Settings”."
@@ -1440,11 +1462,11 @@ msgstr ""
 
 #: ../../templates/_convert_hyperv.rst:84
 msgid "Hypervisor. XenServer"
-msgstr ""
+msgstr "Hyperviseur. XenServer"
 
 #: ../../templates/_convert_hyperv.rst:86
 msgid "Format. VHD"
-msgstr ""
+msgstr "Format. VHD"
 
 #: ../../templates/_convert_hyperv.rst:88
 msgid "The template will be created, and you can create instances from it."

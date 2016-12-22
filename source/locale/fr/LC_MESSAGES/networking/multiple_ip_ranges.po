@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-11-19 12:09+0100\n"
+"PO-Revision-Date: 2016-12-22 10:13+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,13 @@ msgstr ""
 # cea4bcb571304273bc04b67f139f0140
 #: ../../networking/multiple_ip_ranges.rst:18
 msgid "About Multiple IP Ranges"
-msgstr ""
+msgstr "A propos des intervalles IP multiples"
 
 # fb1aec1297a645198cd0ecbc09f187eb
 #: ../../networking/multiple_ip_ranges.rst:20
 msgid "The feature can only be implemented on IPv4 addresses."
 msgstr ""
+"Cette fonctionnalité ne peut être implémentée que sur les adresses IPv4."
 
 # 3180ea2f13aa4565a8715d959ef1148d
 #: ../../networking/multiple_ip_ranges.rst:22
@@ -42,6 +43,17 @@ msgid ""
 "overhead. To support this feature, the capability of ``createVlanIpRange`` "
 "API is extended to add IP ranges also from a different subnet."
 msgstr ""
+"CloudStack offre la flexibilité d'ajouter des plages d'IP d'invité de "
+"différents sous-réseaux dans les zones Basiques et dans les zones Avancées "
+"avec groupes de sécurité. Pour les zones avancées avec groupes de "
+"sécurité, cela implique que plusieurs sous-réseaux puissent être ajoutés "
+"au même VLAN. Grâce à cette fonctionnalité, vous pourrez ajouter des "
+"plages d'adresses IP à partir du même sous-réseau ou à partir d'un autre "
+"lorsque les adresses IP sont épuisées. Cela permet au final d'utiliser un "
+"plus grand nombre de sous-réseaux et de réduire ainsi la charge de travail "
+"liée à la gestion des adresses. Pour prendre en charge cette "
+"fonctionnalité, la capacité de l'API `` createVlanIpRange`` est étendue "
+"pour ajouter des plages d'adresses IP à partir d'un autre sous-réseau."
 
 # d1d9636b0fd14b508f2570b3d7f5b7a2
 #: ../../networking/multiple_ip_ranges.rst:33
@@ -50,6 +62,10 @@ msgid ""
 "adding the IP range. Note that CloudStack supports only one gateway for a "
 "subnet; overlapping subnets are not currently supported."
 msgstr ""
+"Assurez-vous d'avoir manuellement configuré la passerelle du nouveau sous-"
+"réseau avant d'ajouter la plage d'IP. Notez que CloudStack supporte une "
+"seule passerelle par sous-réseau ; le chevauchement de réseau n'est pas "
+"actuellement pris en compte."
 
 # b1ed3bd81dfa4662bcf9ab17817d99e5
 #: ../../networking/multiple_ip_ranges.rst:37
@@ -60,6 +76,12 @@ msgid ""
 "IP from the same subnet. If no IP is available in the subnet, the remove "
 "operation fails."
 msgstr ""
+"Utilisez l'API ``deleteVlanRange`` pour supprimer les plages IP. Cette "
+"opération échoue si une IP parmi celles de la plage de suppression est en "
+"cours d'utilisation. Si la plage de suppression contient l'adresse IP d'un "
+"serveur DHCP est en cours d'exécution, CloudStack acquiert une nouvelle "
+"adresse IP à partir du même sous-réseau. Si aucune adresse IP n'est "
+"disponible dans le sous-réseau, l'opération de suppression échoue."
 
 # 5c66e6ebd5cc42728bccf16a99764a94
 #: ../../networking/multiple_ip_ranges.rst:43

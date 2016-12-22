@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2016-10-09 11:12+0200\n"
+"PO-Revision-Date: 2016-12-20 00:29+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Last-Translator: \n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../../virtual_machines.rst:18
 msgid "Working with Virtual Machines"
@@ -135,7 +135,7 @@ msgstr ""
 
 #: ../../virtual_machines.rst:75
 msgid "Best Practices for Virtual Machines"
-msgstr ""
+msgstr "Meilleurs pratiques pour les machines virtuels"
 
 #: ../../virtual_machines.rst:77
 msgid ""
@@ -167,7 +167,7 @@ msgstr ""
 
 #: ../../virtual_machines.rst:103
 msgid "Install Required Tools and Drivers"
-msgstr ""
+msgstr "Installez les outils et les pilotes requis"
 
 #: ../../virtual_machines.rst:105
 msgid "Be sure the following are installed on each VM:"
@@ -214,7 +214,7 @@ msgstr ""
 
 #: ../../virtual_machines.rst:133
 msgid "VM Lifecycle"
-msgstr ""
+msgstr "Cycle de vie d'une VM"
 
 #: ../../virtual_machines.rst:135
 msgid "Virtual machines can be in the following states:"
@@ -222,7 +222,7 @@ msgstr ""
 
 #: ../../virtual_machines.rst:137
 msgid "|basic-deployment.png|"
-msgstr ""
+msgstr "|basic-deployment.png|"
 
 #: ../../virtual_machines.rst:139
 msgid ""
@@ -241,7 +241,7 @@ msgstr ""
 
 #: ../../virtual_machines.rst:149
 msgid "A reboot is a stop followed by a start."
-msgstr ""
+msgstr "Un redémarrage est un arrêt suivi d'un démarrage."
 
 #: ../../virtual_machines.rst:151
 msgid ""
@@ -307,11 +307,11 @@ msgstr ""
 
 #: ../../virtual_machines.rst:186 ../../virtual_machines.rst:216
 msgid "Click Add Instance."
-msgstr ""
+msgstr "Cliquer sur Ajouter une instance."
 
 #: ../../virtual_machines.rst:188 ../../virtual_machines.rst:218
 msgid "Select a zone."
-msgstr ""
+msgstr "Sélectionner une zone."
 
 #: ../../virtual_machines.rst:190
 msgid ""
@@ -730,7 +730,7 @@ msgstr ""
 
 #: ../../virtual_machines.rst:484
 msgid "vmsnapshot.create.wait"
-msgstr ""
+msgstr "vmsnapshot.create.wait"
 
 #: ../../virtual_machines.rst:486
 msgid ""
@@ -1399,23 +1399,23 @@ msgstr ""
 
 #: ../../virtual_machines.rst:909
 msgid "Fedora 13"
-msgstr ""
+msgstr "Fedora 13"
 
 #: ../../virtual_machines.rst:911
 msgid "Fedora 12"
-msgstr ""
+msgstr "Fedora 12"
 
 #: ../../virtual_machines.rst:913
 msgid "Fedora 11"
-msgstr ""
+msgstr "Fedora 11"
 
 #: ../../virtual_machines.rst:915
 msgid "Fedora 10"
-msgstr ""
+msgstr "Fedora 10"
 
 #: ../../virtual_machines.rst:917
 msgid "Fedora 9"
-msgstr ""
+msgstr "Fedora 9"
 
 #: ../../virtual_machines.rst:919
 msgid "Other PV"
@@ -1423,35 +1423,35 @@ msgstr ""
 
 #: ../../virtual_machines.rst:921
 msgid "Debian GNU/Linux"
-msgstr ""
+msgstr "Debian GNU/Linux"
 
 #: ../../virtual_machines.rst:923
 msgid "CentOS 5.3"
-msgstr ""
+msgstr "CentOS 5.3"
 
 #: ../../virtual_machines.rst:925
 msgid "CentOS 5.4"
-msgstr ""
+msgstr "CentOS 5.4"
 
 #: ../../virtual_machines.rst:927
 msgid "CentOS 5.5"
-msgstr ""
+msgstr "CentOS 5.5"
 
 #: ../../virtual_machines.rst:929
 msgid "Red Hat Enterprise Linux 5.3"
-msgstr ""
+msgstr "Red Hat Enterprise Linux 5.3"
 
 #: ../../virtual_machines.rst:931
 msgid "Red Hat Enterprise Linux 5.4"
-msgstr ""
+msgstr "Red Hat Enterprise Linux 5.4"
 
 #: ../../virtual_machines.rst:933
 msgid "Red Hat Enterprise Linux 5.5"
-msgstr ""
+msgstr "Red Hat Enterprise Linux 5.5"
 
 #: ../../virtual_machines.rst:935
 msgid "Red Hat Enterprise Linux 6"
-msgstr ""
+msgstr "Red Hat Enterprise Linux 6"
 
 #: ../../virtual_machines.rst:938
 msgid ""

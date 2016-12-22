@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-11-20 22:49+0100\n"
+"PO-Revision-Date: 2016-12-20 22:52+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -492,6 +492,8 @@ msgid ""
 "Define Network Access Control List (ACL) on the VPC virtual router to control incoming (ingress) and outgoing (egress) traffic between the VPC tiers, and the tiers and Internet. By default, all incoming traffic to the guest networks is blocked and all outgoing traffic from guest networks is allowed, once you add an ACL rule for outgoing traffic, then only outgoing traffic specified "
 "in this ACL rule is allowed, the rest is blocked. To open the ports, you must create a new network ACL. The network ACLs can be created for the tiers only if the NetworkACL service is supported."
 msgstr ""
+"Définissez la liste de contrôle d'accès réseau (ACL) sur le routeur virtuel VPC pour contrôler le trafic entrant (ingress) et sortant (egress) entre les VPC des segments, les segments et Internet. Par défaut, tout le trafic entrant vers les réseaux invités est bloqué et tout le trafic sortant des réseaux invités est autorisé, une fois que vous ajoutez une règle ACL pour le trafic "
+"sortant, seul le trafic sortant spécifié dans cette règle ACL est autorisé, le reste est bloqué. Pour ouvrir les ports, vous devez créer une nouvelle ACL réseau. Les ACL réseau ne peuvent être créées pour les segments que si le service NetworkACL est pris en charge."
 
 # c9d908950964474eb10940d7ba15e7ba
 #: ../../networking/virtual_private_cloud_config.rst:303
@@ -504,11 +506,13 @@ msgid ""
 "In CloudStack terminology, Network ACL is a group of Network ACL items. Network ACL items are nothing but numbered rules that are evaluated in order, starting with the lowest numbered rule. These rules determine whether traffic is allowed in or out of any tier associated with the network ACL. You need to add the Network ACL items to the Network ACL, then associate the Network ACL "
 "with a tier. Network ACL is associated with a VPC and can be assigned to multiple VPC tiers within a VPC. A Tier is associated with a Network ACL at all the times. Each tier can be associated with only one ACL."
 msgstr ""
+"Dans la terminologie CloudStack, une ACL réseau est un groupe d'entrées d'ACL réseau. Les entrées d'ACL réseau ne sont rien d'autre que des règles numérotées qui sont évaluées dans l'ordre, en commençant par la règle numérotée la plus faible. Ces règles déterminent si le trafic est autorisé en entrée ou en sortie de n'importe quel segment associé à l'ACL réseau. Vous devez ajouter "
+"les entrées d'ACL réseau à la liste d'ACL réseau, puis associer la liste ACL réseau à un segment. L'ACL réseau est associée à un VPC et peut être affectée à plusieurs VPC de segments dans un VPC. Un segment peut être associé à une ACL réseau à tout moment. Chaque segment peut être associé à une seule ACL."
 
 # e213818eed1947258f8bcb2896c4b24a
 #: ../../networking/virtual_private_cloud_config.rst:315
 msgid "The default Network ACL is used when no ACL is associated. Default behavior is all the incoming traffic is blocked and outgoing traffic is allowed from the tiers. Default network ACL cannot be removed or modified. Contents of the default Network ACL is:"
-msgstr ""
+msgstr "L'ACL réseau par défaut est utilisée lorsqu'aucune ACL n'est associée. Le comportement par défaut est de bloquer tout le trafic entrant et d'autoriser le trafic sortant depuis les segments. L'ACL réseau par défaut ne peut pas être supprimée ou modifiée. Le contenu de l'ACL réseau par défaut est :"
 
 # e7163daf40764297bb4c9256f9b0db76
 #: ../../networking/virtual_private_cloud_config.rst:321
@@ -775,6 +779,8 @@ msgstr "**Numéro de règle** : L'ordre dans lequel les règles sont évaluées.
 #: ../../networking/virtual_private_cloud_config.rst:406
 msgid "**CIDR**: The CIDR acts as the Source CIDR for the Ingress rules, and Destination CIDR for the Egress rules. To accept traffic only from or to the IP addresses within a particular address block, enter a CIDR or a comma-separated list of CIDRs. The CIDR is the base IP address of the incoming traffic. For example, 192.168.0.0/22. To allow all CIDRs, set to 0.0.0.0/0."
 msgstr ""
+"**CIDR** : Le CIDR agit en tant que CIDR source pour les règles Ingress et en tant que CIDR de destination pour les règles Egress. Pour accepter le trafic uniquement depuis ou vers les adresses IP d'un bloc d'adresses particulier, entrez un CIDR ou une liste séparée par des virgules de CIDR. Le CIDR est l'adresse IP de base du trafic entrant. Par exemple, 192.168.0.0/22. Pour "
+"autoriser tous les CIDR, saisissez 0.0.0.0/0."
 
 # 5e7871dde2bc4878b9630e4f89ef78a5
 #: ../../networking/virtual_private_cloud_config.rst:413
@@ -785,6 +791,8 @@ msgstr "**Action** : Quelle action doit être prise. Autoriser le trafic ou le b
 #: ../../networking/virtual_private_cloud_config.rst:415
 msgid "**Protocol**: The networking protocol that sources use to send traffic to the tier. The TCP and UDP protocols are typically used for data exchange and end-user communications. The ICMP protocol is typically used to send error messages or network monitoring data. All supports all the traffic. Other option is Protocol Number."
 msgstr ""
+"**Protocole**: Le protocole réseau que les sources utilisent pour envoyer le trafic vers le segment. Les protocoles TCP et UDP sont généralement utilisés pour l'échange de données et les communications avec l'utilisateur final. Le protocole ICMP est généralement utilisé pour envoyer des messages d'erreur ou des données de surveillance du réseau. All supporte tout le trafic. La "
+"dernière option est de fournir le numéro de protocole."
 
 # f8c920b2724240f7bcce7a3ffa539142
 #: ../../networking/virtual_private_cloud_config.rst:422
@@ -1052,17 +1060,17 @@ msgstr ""
 # 175a8bc977814206b1b438e55d487d9d
 #: ../../networking/virtual_private_cloud_config.rst:615
 msgid "In the Detail tab, click the Replace ACL button. |replace-acl-icon.png|"
-msgstr ""
+msgstr "Dans l'onglet Détail, cliquer sur le bouton Remplacer les ACL. |replace-acl-icon.png|"
 
 # cb57cf7f56bd4ab7b815980fd401d492
 #: ../../networking/virtual_private_cloud_config.rst:618
 msgid "The Replace ACL dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Remplacer la liste d'ACL est affichée."
 
 # 52fd814724fc4614a6513bc716822b2e
 #: ../../networking/virtual_private_cloud_config.rst:620
 msgid "select the ACL rule, then click OK."
-msgstr ""
+msgstr "Sélectionner la règle d'ACL puis cliquer sur OK."
 
 # 0594c5c95e77436b9fba83680438d29f
 #: ../../networking/virtual_private_cloud_config.rst:622
@@ -1119,7 +1127,7 @@ msgstr ""
 # c95c27354e2b4308b6fe6cd594b07c4b
 #: ../../networking/virtual_private_cloud_config.rst:660
 msgid "Deploying VMs to the Tier"
-msgstr ""
+msgstr "Déployer des VM dans un segment"
 
 # d912fb084257494b9ea49a22d2952df6
 # 6a271ec843964a2392c14ea15bebcab2
@@ -1142,12 +1150,12 @@ msgstr ""
 # 2021d183ee7640019cdf5bdbfe5498f3
 #: ../../networking/virtual_private_cloud_config.rst:679
 msgid "|add-vm-vpc.png|"
-msgstr ""
+msgstr "|add-vm-vpc.png|"
 
 # 2d48018b840946fd8af8d726d139f5d0
 #: ../../networking/virtual_private_cloud_config.rst:681
 msgid "The Add Instance page is displayed."
-msgstr ""
+msgstr "La page Ajouter une Instance est affichée."
 
 # 3090bc6cae14453a973abac600b9c2cf
 #: ../../networking/virtual_private_cloud_config.rst:683
@@ -1157,7 +1165,7 @@ msgstr ""
 # dcd8e45c721b400eaba7cde1328bdc81
 #: ../../networking/virtual_private_cloud_config.rst:688
 msgid "Deploying VMs to VPC Tier and Shared Networks"
-msgstr ""
+msgstr "Déployer des VM à un segment VPC et à des réseaux partagés"
 
 # 17212685c197411da69afebe1fd43553
 #: ../../networking/virtual_private_cloud_config.rst:690
@@ -1167,22 +1175,22 @@ msgstr ""
 # fc5a14ca00a74032a5a578f32fe13799
 #: ../../networking/virtual_private_cloud_config.rst:695
 msgid "Log in to the CloudStack UI as an administrator."
-msgstr ""
+msgstr "Se connecter à l'interface de CloudStack comme administrateur."
 
 # 32b36a6c72fa45f99cc16fe65842edb4
 #: ../../networking/virtual_private_cloud_config.rst:697
 msgid "In the left navigation, choose Instances."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, choisir Instances."
 
 # 2f251266e8f84c3bb1eb88f9cbf3421b
 #: ../../networking/virtual_private_cloud_config.rst:699
 msgid "Click Add Instance."
-msgstr ""
+msgstr "Cliquer sur Ajouter une instance."
 
 # e9423e60b1d047809ea35f96287dc4cb
 #: ../../networking/virtual_private_cloud_config.rst:701
 msgid "Select a zone."
-msgstr ""
+msgstr "Sélectionner une zone."
 
 # 270e50111a9d4c328ccfd3e302a1712c
 #: ../../networking/virtual_private_cloud_config.rst:703
@@ -1232,12 +1240,12 @@ msgstr ""
 # f3548df663fd4502b857204d85782486
 #: ../../networking/virtual_private_cloud_config.rst:766
 msgid "Select IP Addresses."
-msgstr ""
+msgstr "Sélectionner les adresses IP."
 
 # 8b29cfd1cdcd4018ae63dfe1624f5e58
 #: ../../networking/virtual_private_cloud_config.rst:768
 msgid "The Public IP Addresses page is displayed."
-msgstr ""
+msgstr "La page des adresses IP publiques est affichée."
 
 # b571bcf25fd64067a9bc6c684f923ef4
 #: ../../networking/virtual_private_cloud_config.rst:770
@@ -1276,12 +1284,12 @@ msgstr ""
 # e80daef3c8c548fe905c71e3888d9d35
 #: ../../networking/virtual_private_cloud_config.rst:826 ../../networking/virtual_private_cloud_config.rst:887 ../../networking/virtual_private_cloud_config.rst:1053 ../../networking/virtual_private_cloud_config.rst:1321
 msgid "The IP Addresses page is displayed."
-msgstr ""
+msgstr "La page des adresses IP est affichée."
 
 # 7100a75c5b7f4e94af12eba67cc769d7
 #: ../../networking/virtual_private_cloud_config.rst:828
 msgid "Click the IP you want to release."
-msgstr ""
+msgstr "Cliquer sur l'IP que vous voulez rendre."
 
 # 5d08cda75ef64158bc169fa0b4d55bfd
 #: ../../networking/virtual_private_cloud_config.rst:830
@@ -1338,7 +1346,7 @@ msgstr ""
 # 2934b5d934b343aab14d143fb537ce07
 #: ../../networking/virtual_private_cloud_config.rst:898
 msgid "|select-vmstatic-nat.png|"
-msgstr ""
+msgstr "|select-vmstatic-nat.png|"
 
 # ba4894eec4ee4f8ab908308bf7f2b682
 #: ../../networking/virtual_private_cloud_config.rst:900
@@ -1433,7 +1441,7 @@ msgstr ""
 # f88397d4525c49d4b10ca8f6d24c5999
 #: ../../networking/virtual_private_cloud_config.rst:961 ../../networking/virtual_private_cloud_config.rst:1167
 msgid "Click Add Network Offering."
-msgstr ""
+msgstr "Cliquer sur Ajouter une offre de réseau."
 
 # 0b77090696474c0a9cab45f79b1c7986
 # e1cffd47fe2e4f3089c2620a68b839a1
@@ -1581,19 +1589,19 @@ msgstr ""
 # 2fe10525962546129f438019ddb43570
 #: ../../networking/virtual_private_cloud_config.rst:1076 ../../networking/virtual_private_cloud_config.rst:1272
 msgid "Round-robin"
-msgstr ""
+msgstr "Round-robin"
 
 # b89b8c35da0e4067aa0e2dfc46507db4
 # 384c8fd5fe8049389138586119a8e392
 #: ../../networking/virtual_private_cloud_config.rst:1078 ../../networking/virtual_private_cloud_config.rst:1274
 msgid "Least connections"
-msgstr ""
+msgstr "La plus petite connexion"
 
 # 75b481e88cb749ee9744fa2d4153d658
 # a656566824f644a7a9bf0c5aa7f7ce82
 #: ../../networking/virtual_private_cloud_config.rst:1080 ../../networking/virtual_private_cloud_config.rst:1276
 msgid "Source"
-msgstr ""
+msgstr "IP source"
 
 # 156eaabf00d6402fb1a6f26cdc8bdc3a
 #: ../../networking/virtual_private_cloud_config.rst:1082
@@ -1642,7 +1650,7 @@ msgstr "|vpc-lb.png|"
 # 6b5c736fe39c453f9df86d49e415bb0d
 #: ../../networking/virtual_private_cloud_config.rst:1125
 msgid "Guidelines"
-msgstr ""
+msgstr "Lignes directrices"
 
 # f48db5cf237f48c1b83470d2b3619c89
 #: ../../networking/virtual_private_cloud_config.rst:1127
@@ -1798,11 +1806,15 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1341
 msgid "TCP"
 msgstr ""
+"**Protocole**: Le protocole réseau que les sources utilisent pour envoyer le trafic vers le segment. Les protocoles TCP et UDP sont généralement utilisés pour l'échange de données et les communications avec l'utilisateur final. Le protocole ICMP est généralement utilisé pour envoyer des messages d'erreur ou des données de surveillance du réseau. All supporte tout le trafic. La "
+"dernière option est de fournir le numéro de protocole."
 
 # 65fd29db5c09403aad6a2b1688af4414
 #: ../../networking/virtual_private_cloud_config.rst:1343
 msgid "UDP"
 msgstr ""
+"**Protocole**: Le protocole réseau que les sources utilisent pour envoyer le trafic vers le segment. Les protocoles TCP et UDP sont généralement utilisés pour l'échange de données et les communications avec l'utilisateur final. Le protocole ICMP est généralement utilisé pour envoyer des messages d'erreur ou des données de surveillance du réseau. All supporte tout le trafic. La "
+"dernière option est de fournir le numéro de protocole."
 
 # 3092d0bc5e29456e9c83bf700d0989ed
 #: ../../networking/virtual_private_cloud_config.rst:1345
@@ -1817,7 +1829,7 @@ msgstr ""
 # fa091c39660d4a79ad8d7663f777f9b0
 #: ../../networking/virtual_private_cloud_config.rst:1352
 msgid "Removing Tiers"
-msgstr ""
+msgstr "Retirer des segments"
 
 # 23a5734e02084bdcb2075d5b7ff872ef
 #: ../../networking/virtual_private_cloud_config.rst:1354
@@ -1832,7 +1844,7 @@ msgstr ""
 # b4b3c46f5c7c43d2a38281a25cff0a95
 #: ../../networking/virtual_private_cloud_config.rst:1375
 msgid "Select the tier you want to remove."
-msgstr ""
+msgstr "Choisir le segment que vous voulez supprimer."
 
 # 1c7ac4dbb28d46be86f3ab4794676d8c
 #: ../../networking/virtual_private_cloud_config.rst:1377
@@ -1877,4 +1889,4 @@ msgstr ""
 # 5d731df0a6ca4174a2b9f85dba537a8a
 #: ../../networking/virtual_private_cloud_config.rst:1407
 msgid "To restart a VPC, select the VPC, then click the Restart button. |restart-vpc.png|"
-msgstr ""
+msgstr "Pour redémarrer un VPC, sélectionner le VPC puis cliquer sur le bouton Redémarrer. |restart-vpc.png|"

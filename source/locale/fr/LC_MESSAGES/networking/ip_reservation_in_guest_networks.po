@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-11-30 23:40+0100\n"
+"PO-Revision-Date: 2016-12-22 15:19+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,13 @@ msgid ""
 "share a part of the IP address space that is primarily provided to the "
 "guest network."
 msgstr ""
+"Dans les réseaux d'invités isolés, une partie de l'espace d'adresses IP "
+"invité peut être réservée aux VM non CloudStack ou aux serveurs physiques. "
+"Pour ce faire, vous configurez une plage d'adresses IP réservées en "
+"spécifiant le CIDR lorsqu'un réseau invité est dans l'état Implémenté. Si "
+"vos clients souhaitent disposer de VM non contrôlées par CloudStack ou de "
+"serveurs physiques sur le même réseau, ils peuvent partager une partie de "
+"l'espace d'adressage IP qui est normalement fournie au réseau invité."
 
 # fe77cb19c33a475f9389f57e62e466e0
 #: ../../networking/ip_reservation_in_guest_networks.rst:28
@@ -51,6 +58,18 @@ msgid ""
 "assign them the Reserved IP addresses. CloudStack guest VMs cannot acquire "
 "IPs from the Reserved IP Range."
 msgstr ""
+"Dans une zone Avancée, une plage d'adresses IP ou un CIDR est affecté à un "
+"réseau lorsque celui-ci est défini. Le routeur virtuel CloudStack agit "
+"comme serveur DHCP et utilise le CIDR pour attribuer des adresses IP aux VM "
+"invitées. Si vous décidez de réserver le CIDR à des fins autres que "
+"CloudStack, vous pouvez spécifier une partie de la plage d'adresses IP ou "
+"le CIDR qui ne devrait être attribuée que par le service DHCP du routeur "
+"virtuel aux VM invitées créées dans CloudStack. Les adresses IP restantes "
+"de ce réseau sont appelées Plage d'IP Réservée. Lorsque la réservation d'IP "
+"est configurée, l'administrateur peut ajouter des machines virtuelles ou "
+"des serveurs physiques qui ne font pas partie de CloudStack au même réseau "
+"et leur attribuer les adresses IP réservées. Les VM invitées CloudStack ne "
+"peuvent plus acquérir d'IP de cette plage d'IP réservées."
 
 # 9428ab05bfce48cb9dce92078998854c
 #: ../../networking/ip_reservation_in_guest_networks.rst:43
@@ -63,6 +82,8 @@ msgid ""
 "Consider the following before you reserve an IP range for non-CloudStack "
 "machines:"
 msgstr ""
+"Prenez en compte ce qui suit avant de réserver une plage d'IP pour les "
+"machines externes à CloudStack :"
 
 # cc50e370af0c450588c711e282c0ac93
 #: ../../networking/ip_reservation_in_guest_networks.rst:48
@@ -86,6 +107,8 @@ msgstr "Aucune réservation d'IP n'est effectuée par défaut."
 #: ../../networking/ip_reservation_in_guest_networks.rst:55
 msgid "Guest VM CIDR you specify must be a subset of the network CIDR."
 msgstr ""
+"Le CIDR des VM Invités que vous spécifiez doit être un sous-réseau du CIDR "
+"du réseau."
 
 # a96a64591c4d498ca7c95b1458def6f3
 #: ../../networking/ip_reservation_in_guest_networks.rst:57
@@ -93,6 +116,8 @@ msgid ""
 "Specify a valid Guest VM CIDR. IP Reservation is applied only if no active "
 "IPs exist outside the Guest VM CIDR."
 msgstr ""
+"Spécifiez un CIDR de VM Invités valide. La réservation d'IP n'est appliquée "
+"que si aucune IP active n'existe à l'extérieur du CIDR des VM invités."
 
 # 0710411bb18c4764970dffcc49fe5dab
 #: ../../networking/ip_reservation_in_guest_networks.rst:60
@@ -100,6 +125,9 @@ msgid ""
 "You cannot apply IP Reservation if any VM is alloted with an IP address "
 "that is outside the Guest VM CIDR."
 msgstr ""
+"Vous ne pouvez pas appliquer une réservation d'IP si une machine virtuelle "
+"s'est vue allouer une adresse IP se trouvant en dehors du CIDR des VM "
+"Invités."
 
 # ba005fe1c84e4e5d8d8b2f2cbd904deb
 #: ../../networking/ip_reservation_in_guest_networks.rst:63
@@ -107,6 +135,8 @@ msgid ""
 "To reset an existing IP Reservation, apply IP reservation by specifying the "
 "value of network CIDR in the CIDR field."
 msgstr ""
+"Pour réinitialiser une réservation d'IP existante, appliquez la réservation "
+"IP en spécifiant la valeur du réseau CIDR dans le champ CIDR."
 
 # 23bef4e190a54c2298a52b3acb439c57
 #: ../../networking/ip_reservation_in_guest_networks.rst:66
@@ -191,6 +221,9 @@ msgid ""
 "IP Reservation configured by the UpdateNetwork API with "
 "guestvmcidr=10.1.1.0/26 or enter 10.1.1.0/26 in the CIDR field in the UI."
 msgstr ""
+"Réservation d'IP configurée par l'API UpdateNetwork avec "
+"guestvmcidr=10.1.1.0/26 ou saisir 10.1.1.0/26 dans le champ CIDR de "
+"l'interface utilisateur."
 
 # e2c363737b654228a0ac0581ba4c55c8
 #: ../../networking/ip_reservation_in_guest_networks.rst:76
@@ -203,6 +236,9 @@ msgid ""
 "Removing IP Reservation by the UpdateNetwork API with "
 "guestvmcidr=10.1.1.0/24 or enter 10.1.1.0/24 in the CIDR field in the UI."
 msgstr ""
+"Supprimez une Réservation d'IP par l'API UpdateNetwork avec "
+"guestvmcidr=10.1.1.0/24 ou saisir 10.1.1.0/24 dans le champ CIDR de "
+"l'interface utilisateur."
 
 # 43bbd9a15792420cb8b1e694ad792cf2
 #: ../../networking/ip_reservation_in_guest_networks.rst:83
@@ -215,6 +251,8 @@ msgid ""
 "The IP Reservation is not supported if active IPs that are found outside "
 "the Guest VM CIDR."
 msgstr ""
+"La réservation d'IP n'est pas supportée si des IP actives sont trouvées à "
+"l'extérieur du CIDR des VM invités."
 
 # 28ed30440a3543f6b7744261f3f5c2e0
 #: ../../networking/ip_reservation_in_guest_networks.rst:88
@@ -224,6 +262,11 @@ msgid ""
 "Reservation becomes void if any. Reconfigure IP Reservation in the new re-"
 "implemeted network."
 msgstr ""
+"La mise à niveau d'une offre réseau qui provoque une modification de son "
+"CIDR (comme une mise à niveau d'une offre sans périphériques externes vers "
+"une avec des périphériques externes), fait que la réservation d'IP devient "
+"nulle le cas échéant. Reconfigurez la réservation d'IP dans le nouveau "
+"réseau ré-implémenté."
 
 # f9aacfd3f1a94c7c8d3ca0910da962a9
 #: ../../networking/ip_reservation_in_guest_networks.rst:95
@@ -237,6 +280,10 @@ msgid ""
 "changes to Implemented. If you apply reservation soon after the first guest "
 "VM is deployed, lesser conflicts occurs while applying reservation."
 msgstr ""
+"Appliquer la réservation d'IP à un réseau invité aussitôt que l'état du "
+"réseau change pour Implémenté. Si vous appliquez la réservation aussitôt "
+"après que la première VM invitée soit déployée, des conflits mineurs "
+"apparaissent lors de l'application de la réservation. "
 
 # 636d85b86d5a460788a233fd1cb49014
 #: ../../networking/ip_reservation_in_guest_networks.rst:104
@@ -268,12 +315,12 @@ msgstr "Dans l'onglet Détails, cliquer sur Editer. |edit-icon.png|"
 # 31eaf6bfc27e465e950da4b920fbad80
 #: ../../networking/ip_reservation_in_guest_networks.rst:114
 msgid "The CIDR field changes to editable one."
-msgstr ""
+msgstr "Le champ CIDR change pour devenir éditable."
 
 # f29831c8666d45218af0ae6769e46fff
 #: ../../networking/ip_reservation_in_guest_networks.rst:116
 msgid "In CIDR, specify the Guest VM CIDR."
-msgstr ""
+msgstr "Dans CIDR, spécifiez le CIDR des VM invités."
 
 # 41acec1236df4ddbad427f23127244b1
 #: ../../networking/ip_reservation_in_guest_networks.rst:118
@@ -286,3 +333,5 @@ msgid ""
 "Wait for the update to complete. The Network CIDR and the Reserved IP Range "
 "are displayed on the Details page."
 msgstr ""
+"Attendre que la mise à jour soit finie. Le CIDR du réseau et la plage d'IP "
+"réservée sont affichées dans la page de Détails."

@@ -1,42 +1,45 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:06+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2016-12-21 10:23+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
 
 # b67087ae536e4b77ac5668f8f3f73ba8
 #: ../../networking/security_groups.rst:18
 msgid "Security Groups"
-msgstr ""
+msgstr "Groupes de sécurité"
 
 # 1397d3fadf7d45779a890fb7156cf142
 #: ../../networking/security_groups.rst:21
 msgid "About Security Groups"
-msgstr ""
+msgstr "A propos des groupes de sécurité"
 
 # 965e0935679141b0bc89e0d82dc1cff8
 #: ../../networking/security_groups.rst:23
 msgid ""
-"Security groups provide a way to isolate traffic to VMs. A security group is"
-" a group of VMs that filter their incoming and outgoing traffic according to"
-" a set of rules, called ingress and egress rules. These rules filter network"
-" traffic according to the IP address that is attempting to communicate with "
-"the VM. Security groups are particularly useful in zones that use basic "
-"networking, because there is a single guest network for all guest VMs. In "
-"advanced zones, security groups are supported only on the KVM hypervisor."
+"Security groups provide a way to isolate traffic to VMs. A security group "
+"is a group of VMs that filter their incoming and outgoing traffic according "
+"to a set of rules, called ingress and egress rules. These rules filter "
+"network traffic according to the IP address that is attempting to "
+"communicate with the VM. Security groups are particularly useful in zones "
+"that use basic networking, because there is a single guest network for all "
+"guest VMs. In advanced zones, security groups are supported only on the KVM "
+"hypervisor."
 msgstr ""
 
 # 7cc1c024596546c4837b5e09cef7f7db
@@ -60,9 +63,9 @@ msgid ""
 "Any CloudStack user can set up any number of additional security groups. "
 "When a new VM is launched, it is assigned to the default security group "
 "unless another user-defined security group is specified. A VM can be a "
-"member of any number of security groups. Once a VM is assigned to a security"
-" group, it remains in that group for its entire lifetime; you can not move a"
-" running VM from one security group to another."
+"member of any number of security groups. Once a VM is assigned to a "
+"security group, it remains in that group for its entire lifetime; you can "
+"not move a running VM from one security group to another."
 msgstr ""
 
 # 1d91c7babdd54f38b62e9e65788a8a7c
@@ -84,12 +87,14 @@ msgstr ""
 # 7fa1798aea704a55b545171eb64a16bd
 #: ../../networking/security_groups.rst:58
 msgid "Adding a Security Group"
-msgstr ""
+msgstr "Ajouter un groupe de sécurité"
 
 # f7cc763899ad4df99b9e927ef37eabb4
 #: ../../networking/security_groups.rst:60
 msgid "A user or administrator can define a new security group."
 msgstr ""
+"Un utilisateur ou un administrateur peut définir un nouveau groupe de "
+"sécurité."
 
 # a026f1875e7f4cec8447b013bf2d7a78
 # 27e30ee65cbe485bb8e7370a38b75281
@@ -97,6 +102,8 @@ msgstr ""
 #: ../../networking/security_groups.rst:124
 msgid "Log in to the CloudStack UI as an administrator or end user."
 msgstr ""
+"Se connecter à l'interface de CloudStack comme administrateur ou "
+"utilisateur final."
 
 # 344ee6a79a674e88a4a61b24b0a01b42
 #: ../../networking/security_groups.rst:64
@@ -106,17 +113,17 @@ msgstr "Dans la navigation à gauche, choisissez Réseau."
 # 07579af87ecd4f1d8bd6e66835cb2958
 #: ../../networking/security_groups.rst:66
 msgid "In Select view, choose Security Groups."
-msgstr ""
+msgstr "Dans la zone de sélection, choisir Groupes de Sécurité."
 
 # 23507439460f427cb5be523f65e254fb
 #: ../../networking/security_groups.rst:68
 msgid "Click Add Security Group."
-msgstr ""
+msgstr "Cliquer sur Ajouter un groupe de sécurité."
 
 # a530b7d59d194fb18081a92d396a272a
 #: ../../networking/security_groups.rst:70
 msgid "Provide a name and description."
-msgstr ""
+msgstr "Fournir un nom et une description."
 
 # 237fc184482448589b8a2eb7c3c70e76
 #: ../../networking/security_groups.rst:72
@@ -127,6 +134,8 @@ msgstr "Cliquez sur OK."
 #: ../../networking/security_groups.rst:74
 msgid "The new security group appears in the Security Groups Details tab."
 msgstr ""
+"Le nouveau groupe de sécurité apparaît dans l'onglet Détails des Groupes de "
+"Sécurité."
 
 # df20adfc9c2e43b9b56c6f1119a9d73f
 #: ../../networking/security_groups.rst:76
@@ -134,11 +143,13 @@ msgid ""
 "To make the security group useful, continue to Adding Ingress and Egress "
 "Rules to a Security Group."
 msgstr ""
+"Pour rendre le groupe de sécurité utile, continuez par Ajouter des règles "
+"Ingress et Egress à un groupe de sécurité."
 
 # 0a506fc7186b4a0c8a15ae463c4793e1
 #: ../../networking/security_groups.rst:81
 msgid "Security Groups in Advanced Zones (KVM Only)"
-msgstr ""
+msgstr "Groupes de sécurité dans les Zones Avancées (KVM uniquement)"
 
 # b2a6fb8be2384189ae73c2430ce94159
 #: ../../networking/security_groups.rst:83
@@ -153,12 +164,13 @@ msgstr ""
 # 180782afad3643f1ba9672b7f6da72b3
 #: ../../networking/security_groups.rst:91
 msgid "Limitations"
-msgstr ""
+msgstr "Limitations"
 
 # 133ba38a19484e2e9122631ab38446fa
 #: ../../networking/security_groups.rst:93
 msgid "The following are not supported for this feature:"
 msgstr ""
+"Les éléments suivants ne sont pas pris en charge pour cette fonctionnalité :"
 
 # 7c46f4b3ab9f405b8ba2b599ffc1985e
 #: ../../networking/security_groups.rst:95
@@ -166,6 +178,8 @@ msgid ""
 "Two IP ranges with the same VLAN and different gateway or netmask in "
 "security group-enabled shared network."
 msgstr ""
+"Deux plages d'IP avec le même VLAN et une passerelle ou masque de réseau "
+"différent dans un réseau partagé avec groupes de sécurité."
 
 # 25d83dec92f045bda786a85257b3e1d1
 #: ../../networking/security_groups.rst:98
@@ -173,16 +187,20 @@ msgid ""
 "Two IP ranges with the same VLAN and different gateway or netmask in "
 "account-specific shared networks."
 msgstr ""
+"Deux plages d'IP avec le même VLAN et une passerelle ou un masque de réseau "
+"différent dans des réseaux partagés spécifiques à un compte."
 
 # 529f72b64c464f0cbbe8b287e8258f1a
 #: ../../networking/security_groups.rst:101
 msgid "Multiple VLAN ranges in security group-enabled shared network."
 msgstr ""
+"Plusieurs plages de VLAN dans un réseau partagé avec groupes de sécurité."
 
 # c9ffb5f82e6b45778e4e1b83b29ed310
 #: ../../networking/security_groups.rst:103
 msgid "Multiple VLAN ranges in account-specific shared networks."
 msgstr ""
+"Plusieurs plages de VLAN dans des réseaux partagés spécifiques à un compte."
 
 # 8488c958047d450bb250b38d098bc214
 #: ../../networking/security_groups.rst:105
@@ -190,11 +208,13 @@ msgid ""
 "Security groups must be enabled in the zone in order for this feature to be "
 "used."
 msgstr ""
+"Les groupes de sécurité doivent être activés dans la zone pour que cette "
+"fonctionnalité soit utilisée."
 
 # 6c5be222e8184b8ab28d3019648e9990
 #: ../../networking/security_groups.rst:110
 msgid "Enabling Security Groups"
-msgstr ""
+msgstr "Activer les groupes de sécurité."
 
 # b6b2af559254408ba42336e7fddf32e6
 #: ../../networking/security_groups.rst:112
@@ -210,12 +230,12 @@ msgstr ""
 # e09d51e1a259488eab79d1fb28954b59
 #: ../../networking/security_groups.rst:122
 msgid "Adding Ingress and Egress Rules to a Security Group"
-msgstr ""
+msgstr "Ajout de règles Ingress et Egress à un Groupe de Sécurité"
 
 # b24e5ca705b84ea4a6c0511ef2244936
 #: ../../networking/security_groups.rst:126
 msgid "In the left navigation, choose Network"
-msgstr ""
+msgstr "Dans la navigation à gauche, choisissez Réseau."
 
 # e6e52ad277a249ebb052f48c14687e98
 #: ../../networking/security_groups.rst:128
@@ -223,14 +243,16 @@ msgid ""
 "In Select view, choose Security Groups, then click the security group you "
 "want."
 msgstr ""
+"Dans la liste de choix, choisir Groupes de sécurité puis cliquer sur le "
+"groupe de sécurité désiré."
 
 # 4563cb9609194e7b8bfe401fa3b6219e
 #: ../../networking/security_groups.rst:131
 msgid ""
 "To add an ingress rule, click the Ingress Rules tab and fill out the "
 "following fields to specify what network traffic is allowed into VM "
-"instances in this security group. If no ingress rules are specified, then no"
-" traffic will be allowed in, except for responses to any traffic that has "
+"instances in this security group. If no ingress rules are specified, then "
+"no traffic will be allowed in, except for responses to any traffic that has "
 "been allowed out through an egress rule."
 msgstr ""
 
@@ -239,8 +261,8 @@ msgstr ""
 msgid ""
 "**Add by CIDR/Account**. Indicate whether the source of the traffic will be "
 "defined by IP address (CIDR) or an existing security group in a CloudStack "
-"account (Account). Choose Account if you want to allow incoming traffic from"
-" all VMs in another security group"
+"account (Account). Choose Account if you want to allow incoming traffic "
+"from all VMs in another security group"
 msgstr ""
 
 # 38c863d52b6c4f3b900f9268d71a3167
@@ -270,10 +292,10 @@ msgstr ""
 # 6d982263975e486e8e1b13fe56a83ed0
 #: ../../networking/security_groups.rst:155
 msgid ""
-"**CIDR**. (Add by CIDR only) To accept only traffic from IP addresses within"
-" a particular address block, enter a CIDR or a comma-separated list of "
-"CIDRs. The CIDR is the base IP address of the incoming traffic. For example,"
-" 192.168.0.0/22. To allow all CIDRs, set to 0.0.0.0/0."
+"**CIDR**. (Add by CIDR only) To accept only traffic from IP addresses "
+"within a particular address block, enter a CIDR or a comma-separated list "
+"of CIDRs. The CIDR is the base IP address of the incoming traffic. For "
+"example, 192.168.0.0/22. To allow all CIDRs, set to 0.0.0.0/0."
 msgstr ""
 
 # 10e7f63d3cf94152a51416bc737199ed
@@ -282,30 +304,31 @@ msgid ""
 "**Account, Security Group**. (Add by Account only) To accept only traffic "
 "from another security group, enter the CloudStack account and name of a "
 "security group that has already been defined in that account. To allow "
-"traffic between VMs within the security group you are editing now, enter the"
-" same name you used in step 7."
+"traffic between VMs within the security group you are editing now, enter "
+"the same name you used in step 7."
 msgstr ""
 
 # 9d70746377c24fdb80bdb73145dda1fe
 #: ../../networking/security_groups.rst:167
 msgid "The following example allows inbound HTTP access from anywhere:"
 msgstr ""
+"L'exemple qui suit autorise l'accès HTTP entrant depuis n'importe où :"
 
 # f1fa895a70e745a182f076db946d9d16
 #: ../../networking/security_groups.rst:169
 msgid "|httpaccess.png|"
-msgstr ""
+msgstr "|httpaccess.png|"
 
 # 25c1f9eee689482ab0a99049e45c6ceb
 #: ../../networking/security_groups.rst:171
 msgid ""
-"To add an egress rule, click the Egress Rules tab and fill out the following"
-" fields to specify what type of traffic is allowed to be sent out of VM "
-"instances in this security group. If no egress rules are specified, then all"
-" traffic will be allowed out. Once egress rules are specified, the following"
-" types of traffic are allowed out: traffic specified in egress rules; "
-"queries to DNS and DHCP servers; and responses to any traffic that has been "
-"allowed in through an ingress rule"
+"To add an egress rule, click the Egress Rules tab and fill out the "
+"following fields to specify what type of traffic is allowed to be sent out "
+"of VM instances in this security group. If no egress rules are specified, "
+"then all traffic will be allowed out. Once egress rules are specified, the "
+"following types of traffic are allowed out: traffic specified in egress "
+"rules; queries to DNS and DHCP servers; and responses to any traffic that "
+"has been allowed in through an ingress rule"
 msgstr ""
 
 # 83bfb97418d545549c3ea5c0a17c5985
@@ -356,11 +379,11 @@ msgid ""
 "**Account, Security Group**. (Add by Account only) To allow traffic to be "
 "sent to another security group, enter the CloudStack account and name of a "
 "security group that has already been defined in that account. To allow "
-"traffic between VMs within the security group you are editing now, enter its"
-" name."
+"traffic between VMs within the security group you are editing now, enter "
+"its name."
 msgstr ""
 
 # 39febf06883a4d248d1ac5ad19510065
 #: ../../networking/security_groups.rst:210
 msgid "Click Add."
-msgstr ""
+msgstr "Cliquer sur Ajouter."
