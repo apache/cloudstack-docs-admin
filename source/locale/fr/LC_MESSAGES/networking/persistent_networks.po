@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Apache CloudStack Administration RTD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2016-12-22 15:40+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
+
+# 4083b4f8962d4ce2add5a637beceaf4d
+#: ../../networking/persistent_networks.rst:18
+msgid "Persistent Networks"
+msgstr "Réseaux persistants"
+
+# 5157cfe530594f5f954a8a8e1525ce10
+#: ../../networking/persistent_networks.rst:20
+msgid ""
+"The network that you can provision without having to deploy any VMs on it "
+"is called a persistent network. A persistent network can be part of a VPC "
+"or a non-VPC environment."
+msgstr ""
+"Un réseau que vous pouvez provisionner sans avoir à déployer une quelconque "
+"VM est appelé réseau persistant. Un réseau persistant peut faire partie "
+"d'un environnement VPC ou non-VPC."
+
+# 469fa7c5517f4f82b49e9015b0027b0f
+#: ../../networking/persistent_networks.rst:24
+msgid ""
+"When you create other types of network, a network is only a database entry "
+"until the first VM is created on that network. When the first VM is "
+"created, a VLAN ID is assigned and the network is provisioned. Also, when "
+"the last VM is destroyed, the VLAN ID is released and the network is no "
+"longer available. With the addition of persistent network, you will have "
+"the ability to create a network in CloudStack in which physical devices can "
+"be deployed without having to run any VMs. Additionally, you can deploy "
+"physical devices on that network."
+msgstr ""
+"Lorsque vous créez d'autres types de réseau, un réseau n'est qu'une entrée "
+"de base de données jusqu'à ce que la première VM soit créée sur ce réseau. "
+"Lors de la création de la première VM, un ID de VLAN est attribué et le "
+"réseau est provisionné. En outre, lorsque la dernière VM est détruite, l'ID "
+"du VLAN est libéré et le réseau n'est plus disponible. Avec l'ajout d'un "
+"réseau persistant, vous aurez la possibilité de créer un réseau dans "
+"CloudStack dans lequel les périphériques physiques peuvent être déployés "
+"sans avoir à exécuter une quelconque machine virtuelle. En outre, vous "
+"pouvez déployer des périphériques physiques sur ce réseau."
+
+# 87f88f46858c41ba96f785b7c3122342
+#: ../../networking/persistent_networks.rst:33
+msgid ""
+"One of the advantages of having a persistent network is that you can create "
+"a VPC with a tier consisting of only physical devices. For example, you "
+"might create a VPC for a three-tier application, deploy VMs for Web and "
+"Application tier, and use physical machines for the Database tier. Another "
+"use case is that if you are providing services by using physical hardware, "
+"you can define the network as persistent and therefore even if all its VMs "
+"are destroyed the services will not be discontinued."
+msgstr ""
+"L'un des avantages d'avoir un réseau persistant est de pouvoir créer un VPC "
+"avec un segment composé uniquement de périphériques physiques. Par exemple, "
+"vous pouvez créer un VPC pour une application à trois tiers, déployer des "
+"VM pour le couche Web et Application et utiliser des machines physiques "
+"pour la couche Base de données. Un autre cas d'utilisation est que si vous "
+"fournissez des services en utilisant du matériel physique, vous pouvez "
+"définir le réseau comme persistant et donc même si toutes ses machines "
+"virtuelles sont détruites, ses services ne seront pas interrompus."
+
+# 68622842a6474e23b5b4ace4928a7f02
+#: ../../networking/persistent_networks.rst:44
+msgid "Persistent Network Considerations"
+msgstr "Considérations sur le Réseau Persistant"
+
+# bd289a0ef0dc4ef1b5a6acb8b9ad0c38
+#: ../../networking/persistent_networks.rst:46
+msgid "Persistent network is designed for isolated networks."
+msgstr "Le réseau persistant est conçu pour les réseaux isolés."
+
+# 10b2b9266df84efcb8fb9002316e3f11
+#: ../../networking/persistent_networks.rst:48
+msgid "All default network offerings are non-persistent."
+msgstr "Toutes les offres de réseau par défaut sont non-persistantes."
+
+# d9e8d354f6bc4b6f8194156ed112a537
+#: ../../networking/persistent_networks.rst:50
+msgid ""
+"A network offering cannot be editable because changing it affects the "
+"behavior of the existing networks that were created using this network "
+"offering."
+msgstr ""
+"Une offre de réseau ne peut pas être éditable parce la changer affectent le "
+"fonctionnement des réseaux existants qui ont été créés en utilisant cette "
+"offre de service."
+
+# 80b8615033b54141b06d3d7a311809bf
+#: ../../networking/persistent_networks.rst:54
+msgid ""
+"When you create a guest network, the network offering that you select "
+"defines the network persistence. This in turn depends on whether persistent "
+"network is enabled in the selected network offering."
+msgstr ""
+"Lorsque vous créez un réseau invité, l'offre de réseau que vous "
+"sélectionnez définie la persistance du réseau. Cela dépend en fait si la "
+"persistance du réseau est activée dans l'offre de réseau sélectionnée."
+
+# 5e5d6fc784af4dec8e15481000f5125f
+#: ../../networking/persistent_networks.rst:58
+msgid ""
+"An existing network can be made persistent by changing its network offering "
+"to an offering that has the Persistent option enabled. While setting this "
+"property, even if the network has no running VMs, the network is "
+"provisioned."
+msgstr ""
+"Un réseau existant peut devenir persistant en changeant son offre de réseau "
+"pour une offre qui a l'option de persistance activée. Lorsque cette "
+"propriété est configurée, même si le réseau n'a pas de VM en "
+"fonctionnement, le réseau est provisionné."
+
+# 30e1aaa119a34adcb9a57e513d705745
+#: ../../networking/persistent_networks.rst:63
+msgid ""
+"An existing network can be made non-persistent by changing its network "
+"offering to an offering that has the Persistent option disabled. If the "
+"network has no running VMs, during the next network garbage collection run "
+"the network is shut down."
+msgstr ""
+"Un réseau existant peut devenir non-persistent en changeant son offre de "
+"réseau pour une offre qui a l'option de persistance désactivée. SI le "
+"réseau n'a pas de VM en fonctionnement durant le prochain lancement du "
+"garbage collector, il sera stoppé."
+
+# 1fafa4f8c2e8475e984703fe2e4c29ba
+#: ../../networking/persistent_networks.rst:68
+msgid ""
+"When the last VM on a network is destroyed, the network garbage collector "
+"checks if the network offering associated with the network is persistent, "
+"and shuts down the network only if it is non-persistent."
+msgstr ""
+"Lorsque la dernière VM d'un réseau est détruite, le garbage collector du "
+"réseau vérifie si l'offre de réseau associée avec le réseau est persistante "
+"et arrête ce réseau seulement si c'est non-persistant."
+
+# 6302571eba5d408687957bd3759816c3
+#: ../../networking/persistent_networks.rst:75
+msgid "Creating a Persistent Guest Network"
+msgstr "Créer un réseau invité Persistant."
+
+# c3876e9bd8d449b489101f5ac1bae458
+#: ../../networking/persistent_networks.rst:77
+msgid "To create a persistent network, perform the following:"
+msgstr "Pour créer un réseau persistant, suivre les instructions suivantes :"
+
+# 99fe5f5c722844089e5bdbcdadb22fc0
+#: ../../networking/persistent_networks.rst:79
+msgid "Create a network offering with the Persistent option enabled."
+msgstr "Créer une offre réseau avec l'option Persistant activée."
+
+# 16d2470643ab4777a40f35f26a9de70c
+#: ../../networking/persistent_networks.rst:81
+msgid ""
+"See `\"Creating a New Network Offering\" <networking.html#creating-a-new-"
+"network-offering>`_."
+msgstr ""
+"Voir `\"Créer une Nouvelle Offre Réseau\" <networking.html#creating-a-new-"
+"network-offering>`_."
+
+# 267c8937d18548498e620897ef0e587e
+#: ../../networking/persistent_networks.rst:84
+msgid "Select Network from the left navigation pane."
+msgstr "Sélectionnez le réseau depuis le panneau de navigation à gauche."
+
+# bc4568a29a4149c797c11839057e9538
+#: ../../networking/persistent_networks.rst:86
+msgid ""
+"Select the guest network that you want to offer this network service to."
+msgstr ""
+"Sélectionnez le réseau invité avec lequel vous voulez offrir ce service "
+"réseau."
+
+# ecdb6f1a35444f46acd9620f3305b060
+#: ../../networking/persistent_networks.rst:89
+msgid "Click the Edit button."
+msgstr "Cliquez sur le bouton Editer."
+
+# 5bda22ffd010416cb80b2848179d18fa
+#: ../../networking/persistent_networks.rst:91
+msgid ""
+"From the Network Offering drop-down, select the persistent network offering "
+"you have just created."
+msgstr ""
+"Dans la liste de sélection Offre Réseau, sélectionnez l'offre de réseau "
+"persistant que vous venez à l'instant de créer."
+
+# fd7fed942171405cb30c3ea00f4111cb
+#: ../../networking/persistent_networks.rst:94
+msgid "Click OK."
+msgstr "Cliquez sur OK."
