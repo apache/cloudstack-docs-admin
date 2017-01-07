@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -14,6 +15,12 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
+=======
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apache CloudStack
+# Administration Documentation package.
+>>>>>>> 90ae7fbf97b86217bc4905ad51a4b8437f12b84d
 #
 # Translators:
 msgid ""
@@ -21,7 +28,11 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
+<<<<<<< HEAD
 "PO-Revision-Date: 2016-12-27 12:33+0100\n"
+=======
+"PO-Revision-Date: 2016-12-20 00:29+0100\n"
+>>>>>>> 90ae7fbf97b86217bc4905ad51a4b8437f12b84d
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -157,7 +168,11 @@ msgstr ""
 
 #: ../../virtual_machines.rst:82
 msgid "Monitor VMs for Max Capacity"
+<<<<<<< HEAD
 msgstr "Surveiller la capacité maximale de VM"
+=======
+msgstr ""
+>>>>>>> 90ae7fbf97b86217bc4905ad51a4b8437f12b84d
 
 #: ../../virtual_machines.rst:84
 msgid ""
@@ -230,7 +245,11 @@ msgstr "Cycle de vie d'une VM"
 
 #: ../../virtual_machines.rst:135
 msgid "Virtual machines can be in the following states:"
+<<<<<<< HEAD
 msgstr "Les machines virtuelles peuvent se trouver dans les états suivants :"
+=======
+msgstr ""
+>>>>>>> 90ae7fbf97b86217bc4905ad51a4b8437f12b84d
 
 #: ../../virtual_machines.rst:137
 msgid "|basic-deployment.png|"
