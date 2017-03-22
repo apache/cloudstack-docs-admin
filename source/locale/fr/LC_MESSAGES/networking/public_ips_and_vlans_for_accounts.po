@@ -21,14 +21,16 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2014-06-30 12:06+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-administration-rtd/language/fr/)\n"
+"PO-Revision-Date: 2017-03-21 22:55+0100\n"
+"Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
+"administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.11\n"
 
 # e16ce84ab27a470389c600bd7f1937e6
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:18
@@ -39,10 +41,10 @@ msgstr ""
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:20
 msgid ""
 "CloudStack provides you the ability to reserve a set of public IP addresses "
-"and VLANs exclusively for an account. During zone creation, you can continue"
-" defining a set of VLANs and multiple public IP ranges. This feature extends"
-" the functionality to enable you to dedicate a fixed set of VLANs and guest "
-"IP addresses for a tenant."
+"and VLANs exclusively for an account. During zone creation, you can "
+"continue defining a set of VLANs and multiple public IP ranges. This "
+"feature extends the functionality to enable you to dedicate a fixed set of "
+"VLANs and guest IP addresses for a tenant."
 msgstr ""
 
 # e0cd381debc1495fa88b0bed963e8b16
@@ -95,77 +97,79 @@ msgstr ""
 # 17f5e888607c4537816aa2f2e8b7c363
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:52
 msgid "Dedicating IP Address Ranges to an Account"
-msgstr ""
+msgstr "Dédier un intervalle d'adressses IP à un compte"
 
 # 5409cfc1bd6f4b41bdd23eee4d6b9396
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:54
 msgid "Log in to the CloudStack UI as administrator."
-msgstr ""
+msgstr "Se connecter à l'interface de CloudStack comme administrateur."
 
 # b8615267486a44ff8ee964b26529f16d
 # ba51a55851504a869dc0f28d293993ad
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:56
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:126
 msgid "In the left navigation bar, click Infrastructure."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur Infrastructure."
 
 # b1c57a90f0c843c4906f95e699dd7d13
 # 2a38ee721dc8442f850ff993fa52de59
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:58
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:128
 msgid "In Zones, click View All."
-msgstr ""
+msgstr "Dans Zones, cliquer sur Voir toutes."
 
 # defb870416a14ff0a7ea37bf68b8e890
 # 207025dba9b843299213868bf721e0d2
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:60
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:130
 msgid "Choose the zone you want to work with."
-msgstr ""
+msgstr "Choisir la zone avec laquelle vous voulez travailler."
 
 # 04eaa49757a64adf830002153cf8db20
 # cea8888967a844ccbb283c973f4b9482
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:62
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:132
 msgid "Click the Physical Network tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet Réseau Physique."
 
 # fd016a6c74fa4aceb46c592a01f82621
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:64
 msgid "In the Public node of the diagram, click Configure."
-msgstr ""
+msgstr "Dans le noeud Public du diagramme, cliquer sur Configure."
 
 # abe4deb76feb40fd9fa6dd1461e1dec3
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:66
 msgid "Click the IP Ranges tab."
-msgstr ""
+msgstr "Cliquer sur l'onglet intervalle IP."
 
 # 3686de2bd0e24c578fb64abcd3b86fbc
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:68
 msgid ""
-"You can either assign an existing IP range to an account, or create a new IP"
-" range and assign to an account."
+"You can either assign an existing IP range to an account, or create a new "
+"IP range and assign to an account."
 msgstr ""
 
 # 90bc5a3040c541cb95831323867cee7d
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:71
 msgid "To assign an existing IP range to an account, perform the following:"
 msgstr ""
+"Pour assigner un intervalle d'IP existant à un compte, effectuer les "
+"actions suivantes :"
 
 # 196250a3ddc54abc978d437ea8ba3f96
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:73
 msgid "Locate the IP range you want to work with."
-msgstr ""
+msgstr "Localiser l'intervalle d'IP avec lequel vous voulez travailler."
 
 # 0a707d3297ad4ccfa38f80baa7690816
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:75
 msgid "Click Add Account |addAccount-icon.png| button."
-msgstr ""
+msgstr "Cliquer sur le bouton Ajouter un compte |addAccount-icon.png|."
 
 # 3aaf2af3bb8f4c9485ae2e0ada7aee73
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:77
 msgid "The Add Account dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Ajouter un compte est affichée."
 
 # b99e236f412f4946af47669c8d62396e
 # eedc80b2aa5c4c8696da4d4b51a28179
@@ -197,46 +201,48 @@ msgstr ""
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:86
 msgid "To create a new IP range and assign an account, perform the following:"
 msgstr ""
+"Pour créer un nouvel intervalle et l'assigner à un compte, effectuer les "
+"actions suivantes :"
 
 # dd52a8808d1b44e7ba133f213439d71d
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:91
 msgid "**Gateway**"
-msgstr ""
+msgstr "**Passerelle**"
 
 # 781ca41349a949cca28101dfea1676d5
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:93
 msgid "**Netmask**"
-msgstr ""
+msgstr "**Masque de sous-réseau**"
 
 # 1b745bfb0a6443e1a0f947860308e044
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:95
 msgid "**VLAN**"
-msgstr ""
+msgstr "**VLAN**"
 
 # 9526ce220e2941459d408f259d6e9b30
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:97
 msgid "**Start IP**"
-msgstr ""
+msgstr "**IP de départ**"
 
 # a55c7588b51f4a84afa7fa78fc58ed5e
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:99
 msgid "**End IP**"
-msgstr ""
+msgstr "**IP de fin**"
 
 # 9282436854274ee485b8c2df6ba7f342
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:101
 msgid "**Account**: Perform the following:"
-msgstr ""
+msgstr "**Compte** : Effectuer au choix :"
 
 # 678fa43c9d524b8fbb3ca453d599d6f1
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:103
 msgid "Click Account."
-msgstr ""
+msgstr "Cliquer sur Compte."
 
 # 58e785cf6c3f4544af852a60e9ff4639
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:105
 msgid "The Add Account page is displayed."
-msgstr ""
+msgstr "La page Ajouter un compte est affichée."
 
 # c1b6c5a339b940b7907cfc3fd14b35d6
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:109
@@ -252,12 +258,12 @@ msgstr "Cliquez sur OK."
 # cbf3d4473399404684b33c48a92e0148
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:117
 msgid "Click Add."
-msgstr ""
+msgstr "Cliquer sur Ajouter."
 
 # 8d933442217c4288b95b7ed71f57b95f
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:121
 msgid "Dedicating VLAN Ranges to an Account"
-msgstr ""
+msgstr "Dédier des plages de VLAN à un compte"
 
 # d7e1ce8c0be24d57b606cd1a7b4ac29e
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:123
@@ -269,7 +275,7 @@ msgstr ""
 # 68317dc975da4182878b75c19ec73b1e
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:134
 msgid "In the Guest node of the diagram, click Configure."
-msgstr ""
+msgstr "Dans le noeud Invité du diagramme, cliquer sur Configurer."
 
 # de0ffdc9f48d4d068a50a53f85c49cea
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:136
@@ -279,7 +285,7 @@ msgstr ""
 # d7319cdb148746849dba29b0a020ce01
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:138
 msgid "Click Dedicate VLAN Range."
-msgstr ""
+msgstr "Cliquer sur Dédier un intervalle de VLAN"
 
 # 6037b47944d9429aad5df0dd7981dace
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:140

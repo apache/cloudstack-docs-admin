@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2016-12-18 23:44+0100\n"
+"PO-Revision-Date: 2017-03-22 22:16+0100\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -29,55 +29,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Last-Translator: \n"
+"Last-Translator: Antoine Le Morvan <antoine@le-morvan.com>\n"
 "X-Generator: Poedit 1.8.11\n"
 
 # 2ce5e59640934ab387652df180ce1583
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:18
 msgid "Isolation in Advanced Zone Using Private VLAN"
-msgstr ""
+msgstr "Isolation en Zone Avancée par Private VLAN"
 
 # 813ada1771994469abac6b243cbc4ed6
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:20
 msgid ""
 "Isolation of guest traffic in shared networks can be achieved by using "
-"Private VLANs (PVLAN). PVLANs provide Layer 2 isolation between ports "
-"within the same VLAN. In a PVLAN-enabled shared network, a user VM cannot "
-"reach other user VM though they can reach the DHCP server and gateway, this "
-"would in turn allow users to control traffic within a network and help them "
-"deploy multiple applications without communication between application as "
-"well as prevent communication with other users' VMs."
+"Private VLANs (PVLAN). PVLANs provide Layer 2 isolation between ports within "
+"the same VLAN. In a PVLAN-enabled shared network, a user VM cannot reach "
+"other user VM though they can reach the DHCP server and gateway, this would "
+"in turn allow users to control traffic within a network and help them deploy "
+"multiple applications without communication between application as well as "
+"prevent communication with other users' VMs."
 msgstr ""
+"L'isolation du trafic invité dans les réseaux partagés peut être obtenue en "
+"utilisant les Private VLANs  (PVLAN). Les PVLANs fournissent une isolation "
+"de niveau 2 entre les ports au sein du même VLAN. Dans un réseau partagé "
+"avec PVLAN, une VM utilisateur ne peut pas joindre la VM d'un autre "
+"utilisateur même si elles peuvent joindre leur serveur DHCP et la "
+"passerelle, cela permet aux utilisateurs de gérer leur trafic au sein d'un "
+"réseau et les aide à déployer plusieurs applications sans communication "
+"aussi bien entre elles qu'avec les VMs des autres utilisateurs."
 
 # 1f6fb3f08ede4dbcbd7c9017afd047dd
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:29
 msgid "Isolate VMs in a shared networks by using Private VLANs."
 msgstr ""
+"Isoler les VM dans des réseaux partagés en utilisant les Private VLANs."
 
 # c578b86e668046b18652e81289fd1811
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:31
 msgid "Supported on KVM, XenServer, and VMware hypervisors"
-msgstr ""
+msgstr "Supporté par les hyperviseurs KVM, XenServer et VMWare"
 
 # f410d2d58c4b4e91b95fec05d57cf0b8
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:33
 msgid ""
 "PVLAN-enabled shared network can be a part of multiple networks of a guest "
 "VM."
-msgstr ""
+msgstr "Un réseau partagé avec PVLAN peut être un des réseaux d'une VM invité."
 
 # 23d9d81e853644d8a8e311853c02a801
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:38
 msgid "About Private VLAN"
-msgstr "A propos des VLAN Privés"
+msgstr "A propos des Private VLAN"
 
 # a83e1c8b0ee2433b8776507d78fdd2b4
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:40
 msgid ""
 "In an Ethernet switch, a VLAN is a broadcast domain where hosts can "
-"establish direct communication with each another at Layer 2. Private VLAN "
-"is designed as an extension of VLAN standard to add further segmentation of "
-"the logical broadcast domain. A regular VLAN is a single broadcast domain, "
+"establish direct communication with each another at Layer 2. Private VLAN is "
+"designed as an extension of VLAN standard to add further segmentation of the "
+"logical broadcast domain. A regular VLAN is a single broadcast domain, "
 "whereas a private VLAN partitions a larger VLAN broadcast domain into "
 "smaller sub-domains. A sub-domain is represented by a pair of VLANs: a "
 "Primary VLAN and a Secondary VLAN. The original VLAN that is being divided "
@@ -86,38 +95,69 @@ msgid ""
 "only inside the Primary. Each Secondary VLAN has a specific VLAN ID "
 "associated to it, which differentiates one sub-domain from another."
 msgstr ""
+"Dans un commutateur Ethernet, un VLAN est un domaine de diffusion dans "
+"lequel les hôtes peuvent établir une communication directe entre eux au "
+"niveau de la couche 2. Les VLANs privés sont conçus comme une extension du "
+"standard VLAN pour ajouter une segmentation supplémentaire au domaine de "
+"diffusion logique. Un VLAN standard est un domaine de diffusion unique, "
+"tandis qu'un VLAN privé partitionne un plus grand domaine de diffusion VLAN "
+"en sous-domaines plus petits. Un sous-domaine est représenté par une paire "
+"de VLANs : un VLAN primaire et un VLAN secondaire. Le VLAN original qui est "
+"divisé en petits groupes est appelé Primary, ce qui implique que toutes les "
+"paires de VLAN d'un VLAN privé partagent le même VLAN primaire. Tous les "
+"VLAN secondaires existent uniquement à l'intérieur du Primary. Chaque VLAN "
+"secondaire dispose d'un identifiant de VLAN spécifique qui lui est associé, "
+"ce qui différencie un sous-domaine d'un autre."
 
 # 4b8abf8fe1534c228333ad081037a150
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:53
 msgid ""
 "Three types of ports exist in a private VLAN domain, which essentially "
-"determine the behaviour of the participating hosts. Each ports will have "
-"its own unique set of rules, which regulate a connected host's ability to "
+"determine the behaviour of the participating hosts. Each ports will have its "
+"own unique set of rules, which regulate a connected host's ability to "
 "communicate with other connected host within the same private VLAN domain. "
 "Configure each host that is part of a PVLAN pair can be by using one of "
 "these three port designation:"
 msgstr ""
+"Trois types de ports existent dans un domaine de VLAN privés, qui "
+"déterminent essentiellement le comportement des hôtes participants. Chaque "
+"port aura son propre ensemble unique de règles qui réglementent la capacité "
+"d'un hôte connecté à communiquer avec un autre hôte connecté dans le même "
+"domaine VLAN privé. Configurer chaque hôte faisant partie d'une paire de "
+"PVLAN peut être effectué en utilisant l'une de ces trois types de port :"
 
 # d369217099d04739b0c778e20ac02897
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:60
 msgid ""
-"**Promiscuous**: A promiscuous port can communicate with all the "
-"interfaces, including the community and isolated host ports that belong to "
-"the secondary VLANs. In Promiscuous mode, hosts are connected to "
-"promiscuous ports and are able to communicate directly with resources on "
-"both primary and secondary VLAN. Routers, DHCP servers, and other trusted "
-"devices are typically attached to promiscuous ports."
+"**Promiscuous**: A promiscuous port can communicate with all the interfaces, "
+"including the community and isolated host ports that belong to the secondary "
+"VLANs. In Promiscuous mode, hosts are connected to promiscuous ports and are "
+"able to communicate directly with resources on both primary and secondary "
+"VLAN. Routers, DHCP servers, and other trusted devices are typically "
+"attached to promiscuous ports."
 msgstr ""
+"**Promiscuous** : un port Promiscuous peut communiquer avec toutes les "
+"interfaces, incluant les ports de la communauté et les hôtes isolés qui "
+"appartiennent aux VLANs secondaires. En mode Promiscuous, les hôtes sont "
+"connectés aux ports promiscuous et sont capables de communiquer directement "
+"avec les ressources à la fois du VLAN primaire et secondaire. Les routeurs, "
+"les serveurs DHCP, et les autres périphériques de confiance sont typiquement "
+"attachés aux ports promiscuous."
 
 # 1e0c762b123d404eaedebd33003ad75b
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:68
 msgid ""
 "**Isolated VLANs**: The ports within an isolated VLAN cannot communicate "
 "with each other at the layer-2 level. The hosts that are connected to "
-"Isolated ports can directly communicate only with the Promiscuous "
-"resources. If your customer device needs to have access only to a gateway "
-"router, attach it to an isolated port."
+"Isolated ports can directly communicate only with the Promiscuous resources. "
+"If your customer device needs to have access only to a gateway router, "
+"attach it to an isolated port."
 msgstr ""
+"**VLANs isolés** : Les ports d'un VLAN isolé ne peuvent pas communiquer "
+"entre eux au niveau de la couche 2. Les hôtes connectés à des ports isolés "
+"ne peuvent seulement communiquer directement qu'avec les ressources "
+"Promiscuous. Si votre périphérique client a besoin d'avoir accès uniquement "
+"à un routeur/passerelle, connectez-le à un port isolé."
 
 # 15e3128ebacd47afb6aa943d0f2a5df1
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:74
@@ -127,15 +167,23 @@ msgid ""
 "the ports in other communities at the layer-2 level. In a Community mode, "
 "direct communication is permitted only with the hosts in the same community "
 "and those that are connected to the Primary PVLAN in promiscuous mode. If "
-"your customer has two devices that need to be isolated from other "
-"customers' devices, but to be able to communicate among themselves, deploy "
-"them in community ports."
+"your customer has two devices that need to be isolated from other customers' "
+"devices, but to be able to communicate among themselves, deploy them in "
+"community ports."
 msgstr ""
+"**VLAN communautaires** : Les ports au sein d'un VLAN communautaire peuvent "
+"communiquer entre eux et avec les ports promiscuous, mais ils ne peuvent pas "
+"communiquer avec les ports d'autres communautés au niveau de la couche 2. "
+"Dans un mode communautaire, la communication directe est autorisée "
+"uniquement avec les hôtes de la même communauté et ceux qui sont connectés "
+"au PVLAN primaire en mode promiscuous. Si votre client a deux périphériques "
+"qui doivent être isolés des périphériques d'autres clients, mais doivent "
+"pouvoir communiquer entre eux, déployez-les dans des ports communautaires."
 
 # 6a977183f6864375ada79a287e63bab3
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:84
 msgid "For further reading:"
-msgstr ""
+msgstr "Pour plus d'informations :"
 
 # ca791914bab54854b0b9c5cfdbb20be8
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:86
@@ -144,6 +192,9 @@ msgid ""
 "catalyst3750/software/release/12.2_25_see/configuration/guide/swpvlan."
 "html#wp1038379>`_"
 msgstr ""
+"`Comprendre les VLANs privés <http://www.cisco.com/en/US/docs/switches/lan/"
+"catalyst3750/software/release/12.2_25_see/configuration/guide/swpvlan."
+"html#wp1038379>`_"
 
 # e676f05feb9a46d6974a4ed7048edad2
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:89
@@ -151,6 +202,8 @@ msgid ""
 "`Cisco Systems' Private VLANs: Scalable Security in a Multi-Client "
 "Environment <http://tools.ietf.org/html/rfc5517>`_"
 msgstr ""
+"`Cisco Systems' Private VLANs: Scalable Security in a Multi-Client "
+"Environment <http://tools.ietf.org/html/rfc5517>`_"
 
 # d5429c82db8a47aa82c6bf7602605f93
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:92
@@ -158,6 +211,8 @@ msgid ""
 "`Private VLAN (PVLAN) on vNetwork Distributed Switch - Concept Overview "
 "(1010691) <http://kb.vmware.com>`_"
 msgstr ""
+"`VLAN Privés (PVLAN) sur les vNetwork Distributed Switch - Concept Overview "
+"(1010691) <http://kb.vmware.com>`_"
 
 # ad67b66852ee445b847bec89936c0d02
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:97
@@ -167,15 +222,18 @@ msgstr "Prérequis"
 # 1f2367cd590b456b9590a9b2616c8ad5
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:99
 msgid "Use a PVLAN supported switch."
-msgstr ""
+msgstr "Utiliser un switch supportant les PVLAN."
 
 # f2c1161babac465c93d8ff531d97174d
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:101
 msgid ""
-"See `Private VLAN Catalyst Switch Support Matrix <http://www.cisco.com/en/"
-"US/products/hw/switches/ps708/products_tech_note09186a0080094830.shtml>`_ "
-"for more information."
+"See `Private VLAN Catalyst Switch Support Matrix <http://www.cisco.com/en/US/"
+"products/hw/switches/ps708/products_tech_note09186a0080094830.shtml>`_ for "
+"more information."
 msgstr ""
+"Voir `La matrice de support des VLAN privés des commutateurs Catalyst "
+"<http://www.cisco.com/en/US/products/hw/switches/ps708/"
+"products_tech_note09186a0080094830.shtml>`_ pour plus d'informations."
 
 # d6805374b5244b3da5f5a39bbb521739
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:105
@@ -187,6 +245,13 @@ msgid ""
 "connected to the router in PVLAN promiscuous trunk mode, which would "
 "translate an isolated VLAN to primary VLAN for the PVLAN-unaware router."
 msgstr ""
+"Tous les commutateurs de la couche 2, qui sont PVLAN-aware, sont connectés "
+"les uns aux autres, et l'un d'entre eux est connecté à un routeur. Tous les "
+"ports connectés à l'hôte seront configurés en mode trunk. Open Management "
+"VLAN, VLAN primaire (public) et ports VLAN isolés secondaires. Configurez le "
+"port du commutateur connecté au routeur dans le mode PVLAN promiscuous "
+"trunk, qui devrait traduire un VLAN isolé en VLAN primaire pour le routeur "
+"qui lui n'a pas connaissance de PVLAN."
 
 # 3afd52bf2fa3442b8f0721d8bca53715
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:113
@@ -196,16 +261,23 @@ msgid ""
 "Catalyst PVLAN support switch, connect the switch to upper switch by using "
 "cables, one each for a PVLAN pair."
 msgstr ""
+"Notez que seul le Cisco Catalyst 4500 dispose du mode de trunk promiscuous "
+"PVLAN, permettant de connecter à la fois des VLAN normaux et des PVLAN à un "
+"commutateur incompatible avec PVLAN. Pour les autres commutateurs Catalyst "
+"supportant les PVLAN, connectez le commutateur au commutateur supérieur en "
+"utilisant un câble par paire de PVLAN."
 
 # 5ce2b463414844099564cd171152b994
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:118
 msgid "Configure private VLAN on your physical switches out-of-band."
 msgstr ""
+"Configurer les VLAN privés sur les commutateurs physiques  out-of-band."
 
 # 2cd1aebdb79742a3ab786e439ef69d89
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:120
 msgid "Before you use PVLAN on XenServer and KVM, enable Open vSwitch (OVS)."
 msgstr ""
+"Avant d'utiliser les PVLAN sur XenServer et KVM, activez Open vSwitch (OVS)."
 
 # 23029ff5d87847c3b9a551d1755aae1a
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:123
@@ -214,11 +286,14 @@ msgid ""
 "CloudStack managed to simulate PVLAN on OVS for XenServer and KVM by "
 "modifying the flow table."
 msgstr ""
+"OVS sur XenServer et KVM ne supporte pas les PVLAN nativement. Par "
+"conséquent, CloudStack s'arrange pour simuler les PVLAN sur OVS pour "
+"XenServer et KVM en modifiant la table des flux."
 
 # 1ab529fe7a53485da31a8085c5fc8181
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:129
 msgid "Creating a PVLAN-Enabled Guest Network"
-msgstr ""
+msgstr "Créer un réseau invité avec PVLAN"
 
 # 73811e0470e04b63a31d32549a8c882b
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:131
@@ -228,12 +303,12 @@ msgstr "Se connecter à l'interface de CloudStack comme administrateur."
 # f987d4525be34ae986962e374a48197f
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:133
 msgid "In the left navigation, choose Infrastructure."
-msgstr "Choisissez Infrastructure dans le panneau de navigation à gauche."
+msgstr "Choisir Infrastructure dans le panneau de navigation à gauche."
 
 # 81a7cad61d0c43e3989e9742e6efb902
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:135
 msgid "On Zones, click View More."
-msgstr "Dans zones, cliquez sur Voir tout."
+msgstr "Dans zones, cliquer sur Voir tout."
 
 # 62eb1c2209d34440987b38dc999dad75
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:137
@@ -286,8 +361,8 @@ msgid ""
 "**Description**: The short description of the network that can be displayed "
 "to users."
 msgstr ""
-"**Description** : La description courte du réseau qui peut être affichée "
-"aux utilisateurs"
+"**Description** : La description courte du réseau qui peut être affichée aux "
+"utilisateurs"
 
 # 17a0fe7f48cc4af3bbe7b8e52b6f6d1b
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:159
@@ -297,8 +372,7 @@ msgstr "**ID VLAN** : L'ID unique du VLAN."
 # 1656d47de54d42a788bc34e0a0c5f2e4
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:161
 msgid ""
-"**Secondary Isolated VLAN ID**: The unique ID of the Secondary Isolated "
-"VLAN."
+"**Secondary Isolated VLAN ID**: The unique ID of the Secondary Isolated VLAN."
 msgstr ""
 "**ID du VLAN secondaire isolé** : L'ID unique du VLAN secondaire isolé."
 
@@ -308,6 +382,8 @@ msgid ""
 "For the description on Secondary Isolated VLAN, see `About Private VLAN\" "
 "<#about-private-vlan>`_."
 msgstr ""
+"Pour la description des VLAN isolés secondaires, voir `\"A propos des VLAN "
+"privés\" <#about-private-vlan>`_."
 
 # 38765c8ae24048dba72826d07d096afe
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:167
@@ -324,9 +400,9 @@ msgid ""
 "domains within the selected domain."
 msgstr ""
 "**Domaine** : Sélectionner Domaine limite la portée de ce réseau invité au "
-"domaine que vous spécifiez. Le réseau ne sera pas disponible pour les "
-"autres domaines.Si vous sélectionnez Accès Sous Domaine, le réseau invité "
-"est disponible à tous les sous domaines au sein du domaine sélectionné."
+"domaine que vous spécifiez. Le réseau ne sera pas disponible pour les autres "
+"domaines.Si vous sélectionnez Accès Sous Domaine, le réseau invité est "
+"disponible à tous les sous domaines au sein du domaine sélectionné."
 
 # 7e174e9b956f4f2784d5196f1a30439f
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:176
@@ -362,7 +438,7 @@ msgid ""
 "offerings, select the one you want to use for this network."
 msgstr ""
 "**Offre réseau** : Si l'administrateur a configuré plusieurs offres de "
-"réseau, sélectionnez celle que vous voulez utiliser pour ce réseau."
+"réseau, sélectionner celle que vous voulez utiliser pour ce réseau."
 
 # ae2111debd664f179fe8eb3b251587ff
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:191
