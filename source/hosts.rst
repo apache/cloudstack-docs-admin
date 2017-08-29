@@ -588,7 +588,7 @@ To enable you to assign VLANs to Isolated networks,
 
 
 Out-of-band Management
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 CloudStack provides Root admins the ability to configure and use supported
 out-of-band management interface (e.g. IPMI, iLO, DRAC, etc.) on a physical
@@ -608,15 +608,14 @@ outofbandmanagement.action.timeout        60                              The ou
 outofbandmanagement.ipmitool.interface    lanplus                         The out of band management IpmiTool driver interface to use. Valid values are: lan, lanplus etc
 outofbandmanagement.ipmitool.path         /usr/bin/ipmitool               The out of band management ipmitool path used by the IpmiTool driver
 outofbandmanagement.ipmitool.retries      1                               The out of band management IpmiTool driver retries option -R
-outofbandmanagement.sync.interval         300                             The out of band management background sync thread interval in seconds
 outofbandmanagement.sync.poolsize         50                              The out of band management background sync thread pool size 50
 =======================================   =============================   ====================================================================================================
 
-A change in `outofbandmanagement.sync.interval` or `outofbandmanagement.sync.poolsize`
-settings requires restarting of management server(s) as the thread pool and a
-background (power state) sync thread are configured during load time when
-CloudStack management server starts. Rest of the global settings can be changed
-without requiring restarting of management server(s).
+A change in `outofbandmanagement.sync.poolsize` settings requires restarting of
+management server(s) as the thread pool and a background (power state) sync
+thread are configured during load time when CloudStack management server starts.
+Rest of the global settings can be changed without requiring restarting of
+management server(s).
 
 The `outofbandmanagement.sync.poolsize` is the maximum number of ipmitool
 background power state scanners that can run at a time. Based on the maximum
