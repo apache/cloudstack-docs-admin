@@ -636,3 +636,105 @@ power management actions such as on, off, reset, cycle, soft and status.
 
 If a host is in maintenance mode, Root admins are still allowed to perform
 power management actions but in the UI a warning is displayed.
+
+Security
+========
+
+Starting 4.11, CloudStack has an inbuilt certicate authority (CA) framework and
+a default 'root' CA provider which acts as a self-signed CA. The CA framework
+participates in certificate issuance, renewal, revocation, and propagation of
+certificates during setup of a host. This framework is primary used to
+secure communications between CloudStack management server(s), the
+KVM/LXC/SSVM/CPVM agent(s) and peer management server(s).
+
+Following are some global settings that control various aspects of this feature.
+
+.. cssclass:: table-striped table-bordered table-hover
+
+=======================================   ====================================================================
+Global setting                            Description
+=======================================   ====================================================================
+ca.framework.provider.plugin              The configured CA provider plugin
+ca.framework.cert.keysize                 The key size used for certificate generation
+ca.framework.cert.signature.algorithm     The certificate signature algorithm
+ca.framework.cert.validity.period         Certificate validity in days
+ca.framework.cert.automatic.renewal       Whether to auto-renew expiring certificate on hosts
+ca.framework.background.task.delay        The delay between each CA background task round in seconds
+ca.framework.cert.expiry.alert.period     The number of days to check and alert expiring certificates
+ca.plugin.root.private.key                (hidden/encrypted in database) Auto-generated CA private key
+ca.plugin.root.public.key                 (hidden/encrypted in database) CA public key
+ca.plugin.root.ca.certificate             (hidden/encrypted in database) CA certificate
+ca.plugin.root.issuer.dn                  The CA issue distinguished name used by the root CA provider
+ca.plugin.root.auth.strictness            Setting to enforce two-way SSL authentication and trust validation
+ca.plugin.root.allow.expired.cert         Setting to allow clients with expired certificates
+=======================================   ====================================================================
+
+A change in `ca.framework.background.task.delay` settings requires restarting of
+management server(s) as the thread pool and a background tasks are configured
+only when CloudStack management server(s) start.
+
+After upgrade to CloudStack 4.11+, the CA framework will by default use the
+`root` CA provider. This CA provider will auto-generate its private/public keys
+and CA certificate on first boot post-upgrade. For freshly installed
+environments, the `ca.plugin.root.auth.strictness` setting will be `true` to
+enforce two-way SSL authentication and trust validation between client and
+server components, however, it will be `false` on upgraded environments to
+be backward compatible with legacy behaviour of trusting all clients and
+servers, and one-way SSL authentication. Upgraded/existing environments can
+use the `provisionCertificate` API to renew/setup certificates for already
+connected agents/hosts, and once all the agents/hosts are secured they may
+enforce authentication and validation strictness by setting
+`ca.plugin.root.auth.strictness` to `true` and restarting the management
+server(s).
+
+Management Server Address Propagation
+-------------------------------------
+
+Historically, when multiple management servers are used a tcp-LB is used on
+port 8250 (default) of the management servers and the VIP/LB-IP is used as the
+`host` setting to be used by various CloudStack agents such as the KVM, CPVM,
+SSVM agents, who connect to the `host` on port 8250. However, starting
+CloudStack 4.11+ the `host` setting can accept comma separated list of
+management server IPs to which new CloudStack hosts/agents will get a shuffled
+list of the same to which they can cycle reconnections in a round-robin way.
+
+Securing Process
+----------------
+
+Agents while making connections/reconnections to management server will only
+validate server certificate and be able to present client certificate (issued to
+them) when `cloud.jks` is accessible to them. On older hosts that are setup
+prior to this feature the keystore won't be available, however, they can still
+connect to management server(s) if `ca.plugin.root.auth.strictness` is set to
+`false`. Management server(s) will check and setup their own `cloud.jks`
+keystore on startup, this keystore will be used for connecting to peer
+management server(s).
+
+When a new host is being setup, such as adding a KVM host or starting a systemvm
+host, the CA framework kicks in and uses ssh to execute `keystore-setup` to
+generate a new keystore file `cloud.jks.new`, save a random passphrase of the
+keystore in the agent's properties file and a CSR `cloud.csr` file. The CSR is
+then used to issue certificate for that agent/host and ssh is used to execute
+`keystore-cert-import` to import the issued certificate along with the CA
+certificate(s), the keystore is that renamed as `cloud.jks` replacing an
+previous keystore in-use. During this process, keys and certificates files are
+also stored in `cloud.key`, `cloud.crt`, `cloud.ca.crt` in the
+agent's configuration directory.
+
+When hosts are added out-of-band, for example a KVM host that is setup first
+outside of CloudStack and added to a cluster, the keystore file will not be
+available however the keystore and security could be setup by using keystore
+utility scripts manually. The `keystore-setup` can be ran first to generate a
+keystore and a CSR, then CloudStack CA can be used to issue certificate by
+providing the CSR to the `issueCertificate` API, and finally issued certificate
+and CA certificate(s) can be imported to the keystore using `keystore-cert-import`
+script.
+
+Following lists the usage of these scripts, when using these script use full
+paths, use the final keystore filename as `cloud.jks`, and the certificate/key
+content need to be encoded and provided such that newlines are replace with `^`
+and space are replaced with `~`:
+
+.. code:: bash
+   keystore-setup [properties filepath] [final keystore filepath] [keystore passphrase] [validity/days] [csr filepath]
+   keystore-cert-import [properties filepath] [final keystore file name/path] [mode: ssh|agent] [certificate file name/path] [certificate content] [ca-certificate file name/path] [ca-certificate content] [private key file name/path] [private key file name/path]
