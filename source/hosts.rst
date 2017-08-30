@@ -687,8 +687,8 @@ enforce authentication and validation strictness by setting
 `ca.plugin.root.auth.strictness` to `true` and restarting the management
 server(s).
 
-Management Server Address Propagation
--------------------------------------
+Server Address Usage
+--------------------
 
 Historically, when multiple management servers are used a tcp-LB is used on
 port 8250 (default) of the management servers and the VIP/LB-IP is used as the
@@ -735,6 +735,8 @@ paths, use the final keystore filename as `cloud.jks`, and the certificate/key
 content need to be encoded and provided such that newlines are replace with `^`
 and space are replaced with `~`:
 
-.. code:: bash
-   keystore-setup [properties filepath] [final keystore filepath] [keystore passphrase] [validity/days] [csr filepath]
-   keystore-cert-import [properties filepath] [final keystore file name/path] [mode: ssh|agent] [certificate file name/path] [certificate content] [ca-certificate file name/path] [ca-certificate content] [private key file name/path] [private key file name/path]
+   .. code:: bash
+
+   keystore-setup <properties file> <keystore file> <passphrase> <validity> <csr file>
+
+   keystore-cert-import <properties file> <keystore file> <mode: ssh|agent> <cert file> <cert content> <ca-cert file> <ca-cert content> <private-key file> <private key content:optional>
