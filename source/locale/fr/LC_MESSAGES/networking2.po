@@ -20,15 +20,15 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-31 14:08-0400\n"
-"PO-Revision-Date: 2017-03-22 22:16+0100\n"
+"PO-Revision-Date: 2017-08-07 21:45+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
-"Last-Translator: \n"
+"Last-Translator: Antoine Le Morvan <antoine@le-morvan.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.3\n"
 
 # 4c134b7a710148a3ab2766ead2eecc37
 #: ../../networking2.rst:18
@@ -1401,7 +1401,7 @@ msgstr ""
 # 06aed4f105fd47d283331f291310c288
 #: ../../networking2.rst:716
 msgid "Reserving Public IP Addresses and VLANs for Accounts"
-msgstr ""
+msgstr "Réserver des adresses IP publiques et des VLAN pour des comptes"
 
 # d29491316baf475184dbf3bd53bb19c3
 #: ../../networking2.rst:718
@@ -1412,6 +1412,11 @@ msgid ""
 "functionality to enable you to dedicate a fixed set of VLANs and guest IP "
 "addresses for a tenant."
 msgstr ""
+"Cloudstack vous offre la possibilité de réserver un ensemble d'adresses IP "
+"publique et de VLAN exclusives à un compte. Durant la création de la zone, vous "
+"pouvez continuer à définir un ensemble de VLANs et plusieurs intervalles "
+"d'adresses IP publiques. Cette fonctionnalité étend la possibilité que vous avez "
+"de dédier un ensemble fixe de VLAN et d'adresses IP invitées pour un client."
 
 # 68a3748797434d67bcbfc405a263a065
 #: ../../networking2.rst:724
@@ -1425,11 +1430,20 @@ msgid ""
 "have all been consumed. Both these configurations are configurable at the "
 "account level."
 msgstr ""
+"Notez que si un compte a utilisé tous les VLANs et les adresses IP qui lui sont "
+"dédiés, le compte pourra obtenir deux ressources supplémentaires du système. "
+"CloudStack fourni à l'administrateur racine 2 paramètres de configuration pour "
+"modifier ce comportement par défaut : use.system.public.ips et use.system.guest."
+"vlans. Ces paramètres globaux permettent à l'administrateur root de refuser "
+"qu'un compte puisse acquérir des IP publiques et des VLAN invités depuis le "
+"système si ce compte dispose de ressources dédiées et si ces ressources dédiées "
+"ont toutes été utilisées.  Ces deux configurations sont configurables au niveau "
+"du compte."
 
 # 40f4120539264e8fb5dbf5a7064d1fe9
 #: ../../networking2.rst:734
 msgid "This feature provides you the following capabilities:"
-msgstr ""
+msgstr "Cette fonctionnalité vous offre les possibilités suivantes :"
 
 # 9bf2889fc36847ebabce3e8f9b625163
 #: ../../networking2.rst:738
@@ -1437,27 +1451,31 @@ msgid ""
 "Reserve a VLAN range and public IP address range from an Advanced zone and "
 "assign it to an account"
 msgstr ""
+"Réserver un intervalle de VLAN et un intervalle d'adresses IP publiques depuis "
+"une zone Avancée et les assigner à un compte"
 
 # e1e3b63901214e39b4cd5ded0ff47ab6
 #: ../../networking2.rst:743
 msgid "Disassociate a VLAN and public IP address range from an account"
-msgstr ""
+msgstr "Dissocier un VLAN et un intervalle d'adresses IP publiques d'un compte"
 
 # a849c48967014ee4ab4c29e6250ac9bc
 #: ../../networking2.rst:747
 msgid "View the number of public IP addresses allocated to an account"
-msgstr ""
+msgstr "Voir le nombre d'adresses IP publiques allouées à un compte"
 
 # 4c148c9f929f4394861c0230a52f46ea
 #: ../../networking2.rst:751
 msgid ""
 "Check whether the required range is available and is conforms to account limits."
 msgstr ""
+"Vérifier si à la fois l'intervalle requis est disponible et si il est conforme "
+"aux limites du compte."
 
 # b03cc0c4939e4538b33463b1acfa081f
 #: ../../networking2.rst:754
 msgid "The maximum IPs per account limit cannot be superseded."
-msgstr ""
+msgstr "La limite maximale d'IP par compte ne peux pas être dépassée."
 
 # 331f9e80ff07451f833ea2f1e6592f48
 #: ../../networking2.rst:757
@@ -1500,6 +1518,8 @@ msgid ""
 "You can either assign an existing IP range to an account, or create a new IP "
 "range and assign to an account."
 msgstr ""
+"Vous pouvez soit assigner un intervalle d'IP existant à un compte ou créer un "
+"nouvel interval d'IP et l'assigner à un compte."
 
 # 89865009ad614a7caefc9d7e195d1f2c
 #: ../../networking2.rst:792
@@ -1527,18 +1547,19 @@ msgstr "La boîte de dialogue Ajouter un compte est affichée."
 #: ../../networking2.rst:810
 msgid "**Account**: The account to which you want to assign the IP address range."
 msgstr ""
+"**Compte** : Le compte auquel vous voulez assigner l'intervalle d'adresses IP."
 
 # d765ebdf04b540e9bb49f050bc9d5d1c
 #: ../../networking2.rst:815
 msgid "**Domain**: The domain associated with the account."
-msgstr ""
+msgstr "**Domaine** : Le domaine associé au compte."
 
 # 68e22a0328b543599b5c092cb1be55c8
 #: ../../networking2.rst:817
 msgid "To create a new IP range and assign an account, perform the following:"
 msgstr ""
-"Pour créer un nouvel intervalle et l'assigner à un compte, effectuer les actions "
-"suivantes :"
+"Pour créer un nouvel intervalle d'adresses IP et l'assigner à un compte, "
+"effectuer les actions suivantes :"
 
 # a7351c3fc8aa4e6ab6f6de9982df895a
 #: ../../networking2.rst:826
@@ -1585,12 +1606,13 @@ msgstr "La page Ajouter un compte est affichée."
 msgid ""
 "****Account****: The account to which you want to assign an IP address range."
 msgstr ""
+"**Compte** : Le compte auquel vous voulez assigner l'intervalle d'adresses IP."
 
 # 24326080425a4f7ba299c24defa8ee63
 # 3360555202854da8a230941d49441cb7
 #: ../../networking2.rst:865 ../../networking2.rst:930
 msgid "****Domain****: The domain associated with the account."
-msgstr ""
+msgstr "**Domaine** : Le domaine associé au compte."
 
 # 57dd5ad50af947868ed60fb4f4871b8e
 # fd71c947508a4b19a74d5e8e68ab028a
@@ -1616,6 +1638,8 @@ msgid ""
 "After the CloudStack Management Server is installed, log in to the CloudStack UI "
 "as administrator."
 msgstr ""
+"Après que le serveur de gestion de CloudStack soit installé, se connecter à "
+"l'interface UI en tant qu'administrateur."
 
 # f8bb5c0c781349a6ad62cac445eb11cc
 # eab05b15433e427aa1bb42cc204ab3e9
@@ -1626,33 +1650,36 @@ msgstr "Dans le noeud Invité du diagramme, cliquer sur Configurer."
 # 61505cd3d4344e769a534aed469c073d
 #: ../../networking2.rst:906
 msgid "Select the Dedicated VLAN Ranges tab."
-msgstr ""
+msgstr "Sélectionner l'onglet Intervalles de VLAN Dédiés."
 
 # 1df8c107f4854732a4f8a3a50c9cec49
 #: ../../networking2.rst:910
 msgid "Click Dedicate VLAN Range."
-msgstr "Cliquer sur Dédier un intervalle de VLAN"
+msgstr "Cliquer sur Dédier un intervalle de VLAN."
 
 # c02ef1fcb0e642a28e69bd463286ec33
 #: ../../networking2.rst:912
 msgid "The Dedicate VLAN Range dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Intervalle de VLAN Dédiés est affichée."
 
 # acd323fd8ca8468880666db446b5d222
 #: ../../networking2.rst:920
 msgid "****VLAN Range****: The VLAN range that you want to assign to an account."
 msgstr ""
+"**Intervalle de VLAN** : L'intervalle de VLAN que vous voulez assigner à un "
+"compte."
 
 # 1a79b0742f1a4aefa692f541aa4b5892
 #: ../../networking2.rst:925
 msgid ""
 "****Account****: The account to which you want to assign the selected VLAN range."
 msgstr ""
+"**Compte** : Le compte auquel vous voulez assigner l'intervalle d'adresses IP."
 
 # fe1be017fe7644368cd98ae4c68575eb
 #: ../../networking2.rst:933
 msgid "Configuring Multiple IP Addresses on a Single NIC"
-msgstr "Configurer plusieurs adresses IP sur une seule interface réseau."
+msgstr "Configurer plusieurs adresses IP sur une seule interface réseau"
 
 # c38d77c3c3a04ece8ca7568348264c1c
 #: ../../networking2.rst:935

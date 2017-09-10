@@ -21,21 +21,30 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-30 12:52+0200\n"
-"PO-Revision-Date: 2017-03-21 22:55+0100\n"
+<<<<<<< HEAD
+"PO-Revision-Date: 2017-07-19 11:56+0200\n"
+=======
+"PO-Revision-Date: 2017-08-07 21:45+0200\n"
+>>>>>>> 2413ecb688e4947d38e67620eb886be3bdeed09a
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Antoine Le Morvan <antoine@le-morvan.com>\n"
 "Language: fr\n"
+<<<<<<< HEAD
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Last-Translator: \n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.2\n"
+=======
+"X-Generator: Poedit 2.0.3\n"
+>>>>>>> 2413ecb688e4947d38e67620eb886be3bdeed09a
 
 # e16ce84ab27a470389c600bd7f1937e6
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:18
 msgid "Reserving Public IP Addresses and VLANs for Accounts"
-msgstr ""
+msgstr "Réserver des adresses IP publiques et des VLAN pour des comptes"
 
 # d20bf40a65964aee8e9477cfb99a8d76
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:20
@@ -46,6 +55,12 @@ msgid ""
 "feature extends the functionality to enable you to dedicate a fixed set of "
 "VLANs and guest IP addresses for a tenant."
 msgstr ""
+"Cloudstack vous offre la possibilité de réserver un ensemble d'adresses IP "
+"publique et de VLAN exclusives à un compte. Durant la création de la zone, "
+"vous pouvez continuer à définir un ensemble de VLANs et plusieurs "
+"intervalles d'adresses IP publiques. Cette fonctionnalité étend la "
+"possibilité que vous avez de dédier un ensemble fixe de VLAN et d'adresses "
+"IP invitées pour un client."
 
 # e0cd381debc1495fa88b0bed963e8b16
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:26
@@ -59,11 +74,20 @@ msgid ""
 "dedicated resources and these dedicated resources have all been consumed. "
 "Both these configurations are configurable at the account level."
 msgstr ""
+"Notez que si un compte a utilisé tous les VLANs et les adresses IP qui lui "
+"sont dédiés, le compte pourra obtenir deux ressources supplémentaires du "
+"système. CloudStack fourni à l'administrateur racine 2 paramètres de "
+"configuration pour modifier ce comportement par défaut : use.system.public."
+"ips et use.system.guest.vlans. Ces paramètres globaux permettent à "
+"l'administrateur root de refuser qu'un compte puisse acquérir des IP "
+"publiques et des VLAN invités depuis le système si ce compte dispose de "
+"ressources dédiées et si ces ressources dédiées ont toutes été utilisées.  "
+"Ces deux configurations sont configurables au niveau du compte."
 
 # baef2538501f4f729cd5b4f69fbbefaa
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:36
 msgid "This feature provides you the following capabilities:"
-msgstr ""
+msgstr "Cette fonctionnalité vous offre les possibilités suivantes :"
 
 # 4e16f6283a6e4f389b44d3af88cc4364
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:38
@@ -71,16 +95,19 @@ msgid ""
 "Reserve a VLAN range and public IP address range from an Advanced zone and "
 "assign it to an account"
 msgstr ""
+"Réserver un intervalle de VLAN et un intervalle d'adresses IP publiques "
+"depuis une zone Avancée et les assigner à un compte"
 
 # c67672fcea6c4ae69a5c3c7d8fbd6a33
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:41
 msgid "Disassociate a VLAN and public IP address range from an account"
 msgstr ""
+"Dissocier un VLAN et un intervalle d'adresses IP publiques d'un compte"
 
 # 8451f0b840ab420cb1589fcc1572e6c0
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:43
 msgid "View the number of public IP addresses allocated to an account"
-msgstr ""
+msgstr "Voir le nombre d'adresses IP publiques allouées à un compte"
 
 # 2a183b234d9c44b8b99fa31594f06e38
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:45
@@ -88,11 +115,13 @@ msgid ""
 "Check whether the required range is available and is conforms to account "
 "limits."
 msgstr ""
+"Vérifier si à la fois l'intervalle requis est disponible et si il est "
+"conforme aux limites du compte."
 
 # be8cff382a7748e4a75c68c3f8aa3dd7
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:48
 msgid "The maximum IPs per account limit cannot be superseded."
-msgstr ""
+msgstr "La limite maximale d'IP par compte ne peux pas être dépassée."
 
 # 17f5e888607c4537816aa2f2e8b7c363
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:52
@@ -148,6 +177,8 @@ msgid ""
 "You can either assign an existing IP range to an account, or create a new "
 "IP range and assign to an account."
 msgstr ""
+"Vous pouvez soit assigner un intervalle d'IP existant à un compte ou créer "
+"un nouvel interval d'IP et l'assigner à un compte."
 
 # 90bc5a3040c541cb95831323867cee7d
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:71
@@ -187,6 +218,8 @@ msgstr "Spécifier les informations suivantes :"
 msgid ""
 "**Account**: The account to which you want to assign the IP address range."
 msgstr ""
+"**Compte** : Le compte auquel vous voulez assigner l'intervalle d'adresses "
+"IP."
 
 # d15ca620e8154bf9ad213a256496e6e0
 # 09ac68b8a6f24e84b36a726d6058809b
@@ -195,14 +228,14 @@ msgstr ""
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:112
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:150
 msgid "**Domain**: The domain associated with the account."
-msgstr ""
+msgstr "**Domaine** : Le domaine associé au compte."
 
 # 06d6686b378e4a22a762e94353aee862
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:86
 msgid "To create a new IP range and assign an account, perform the following:"
 msgstr ""
-"Pour créer un nouvel intervalle et l'assigner à un compte, effectuer les "
-"actions suivantes :"
+"Pour créer un nouvel intervalle d'adresses IP et l'assigner à un compte, "
+"effectuer les actions suivantes :"
 
 # dd52a8808d1b44e7ba133f213439d71d
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:91
@@ -249,6 +282,8 @@ msgstr "La page Ajouter un compte est affichée."
 msgid ""
 "**Account**: The account to which you want to assign an IP address range."
 msgstr ""
+"**Compte** : Le compte auquel vous voulez assigner l'intervalle d'adresses "
+"IP."
 
 # e54b45158ec1469392091a64574cbb55
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:115
@@ -271,6 +306,8 @@ msgid ""
 "After the CloudStack Management Server is installed, log in to the "
 "CloudStack UI as administrator."
 msgstr ""
+"Après que le serveur de gestion de CloudStack soit installé, se connecter à "
+"l'interface UI en tant qu'administrateur."
 
 # 68317dc975da4182878b75c19ec73b1e
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:134
@@ -280,22 +317,24 @@ msgstr "Dans le noeud Invité du diagramme, cliquer sur Configurer."
 # de0ffdc9f48d4d068a50a53f85c49cea
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:136
 msgid "Select the Dedicated VLAN Ranges tab."
-msgstr ""
+msgstr "Sélectionner l'onglet Intervalles de VLAN Dédiés."
 
 # d7319cdb148746849dba29b0a020ce01
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:138
 msgid "Click Dedicate VLAN Range."
-msgstr "Cliquer sur Dédier un intervalle de VLAN"
+msgstr "Cliquer sur Dédier un intervalle de VLAN."
 
 # 6037b47944d9429aad5df0dd7981dace
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:140
 msgid "The Dedicate VLAN Range dialog is displayed."
-msgstr ""
+msgstr "La boîte de dialogue Intervalle de VLAN Dédiés est affichée."
 
 # 564cf1e324b54969924910efd7c3f00b
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:144
 msgid "**VLAN Range**: The VLAN range that you want to assign to an account."
 msgstr ""
+"**Intervalle de VLAN** : L'intervalle de VLAN que vous voulez assigner à un "
+"compte."
 
 # b2c4b566d49c4a3b99b3268f4e867233
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:147
@@ -303,3 +342,5 @@ msgid ""
 "**Account**: The account to which you want to assign the selected VLAN "
 "range."
 msgstr ""
+"**Compte** : Le compte auquel vous voulez assigner l'intervalle d'adresses "
+"IP."
