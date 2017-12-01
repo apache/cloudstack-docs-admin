@@ -79,8 +79,8 @@ Mac OSX provide native IPsec VPN client.
          :width: 400 px
 
 
-Microsoft Windows 8
--------------------
+Microsoft Windows
+-----------------
 
 Following instruction have been perform using Windows 8.1 using Native VPN client.
 
@@ -145,4 +145,37 @@ Following instruction have been perform using Windows 8.1 using Native VPN clien
 
    .. image:: ../_static/images/vpn/win14.png
       :align: center 
+      :width: 400 px
+
+Ubuntu
+------
+
+Following instruction have been perform using Ubuntu 17.10 using the network-manager-l2tp-gnome.
+
+#. Add VPN connection using network manager:
+
+   .. image:: ../_static/images/vpn/ubuntu1.png
+      :align: center
+      :width: 400 px
+
+#. Configure VPN settings:
+
+   .. image:: ../_static/images/vpn/ubuntu2.png
+      :align: center
+      :width: 400 px
+
+   .. image:: ../_static/images/vpn/ubuntu3.png
+      :align: center
+      :width: 400 px
+
+#. Add routing as required:
+
+   .. image:: ../_static/images/vpn/ubuntu4.png
+      :align: center
+      :width: 400 px
+
+#. Initiate VPN connection
+
+   .. image:: ../_static/images/vpn/ubuntu5.png
+      :align: center
       :width: 400 px
