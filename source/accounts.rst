@@ -132,11 +132,15 @@ out of the system, all root admin accounts are allowed all APIs.
 The dynamic-roles feature is enabled by default only for all new CloudStack
 installations since version `4.9.x <https://cwiki.apache.org/confluence/display/CLOUDSTACK/Dynamic+Role+Based+API+Access+Checker+for+CloudStack>`_.
 
-After an upgrade, existing deployments can be migrated to use this feature by
-running a migration tool by the CloudStack admin. The migration tool is located
-at ``/usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py``.
+In 4.11.x and above, existing deployment without any commands.properties file
+will be automatically migrated to dynamic roles. Admins may also enable dynamic
+roles by setting the global setting 'dynamic.apichecker.enabled' to true.
 
-During migration, this tool enables an internal flag in the database,
+After an upgrade, admins can also use this migration tool to migrate old rules
+from commands.properties file(s):
+``/usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py``.
+
+During migration, this tool enables the global setting in the database and
 copies existing static role-based rules from provided commands.properties file
 (typically at ``/etc/cloudstack/management/commands.properties``) to the database
 and renames the commands.properties file (typically to
@@ -159,17 +163,21 @@ Options:
     Host or IP of the MySQL server, default: 3306
 -f FILE
     The commands.properties file, default: /etc/cloudstack/management/commands.properties
+-D
+    Use the default role-rule permissions, and only enable dynamic roles
 -d
     Dry run and debug operations this tool will perform
 
 
-Example:
+Examples:
 
 sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -h localhost -p 3006 -f /etc/cloudstack/management/commands.properties
 
+sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -h localhost -p 3006 -D
+
 If you've multiple management servers, remove or rename the commands.properties
-file on all management servers typically in /etc/cloudstack/management path,
-after running the migration tool for the first management server
+file on the management servers typically in /etc/cloudstack/management path,
+after running the migration tool for the first management server.
 
 
 Dedicating Resources to Accounts and Domains
