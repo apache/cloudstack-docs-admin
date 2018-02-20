@@ -66,7 +66,7 @@ Best Practices for Primary Storage
    Offerings).
 
 
-Runtime Behavior of Primary Storage
+Runtime Behaviour of Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Root volumes are created automatically when a virtual machine is
@@ -414,7 +414,7 @@ may take several minutes for the volume to be moved to the new VM.
 VM Storage Migration
 ~~~~~~~~~~~~~~~~~~~~
 
-Supported in XenServer, KVM, and VMware.
+Supported in XenServer, VMware and KVM
 
 .. note:: 
    This procedure is different from moving disk volumes from one VM to 
@@ -446,6 +446,10 @@ the VM is running.
    running when the live migration operation is requested.
 
 
+For KVM, live storage migration is available from the 4.11 release
+and currently only supports migration from NFS/CEPH to SolidFire Managed Storage.
+
+
 Migrating a Data Volume to a New Storage Pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -458,10 +462,8 @@ There are two situations when you might want to migrate a disk:
    attach it to a new VM.
 
 
-Migrating Storage For a Running VM
+Migrating Storage For a Running VM on XenServer and VMware
 ''''''''''''''''''''''''''''''''''
-
-(Supported on XenServer and VMware)
 
 #. Log in to the CloudStack UI as a user or admin.
 
@@ -479,6 +481,45 @@ Migrating Storage For a Running VM
 
 #. Watch for the volume status to change to Migrating, then back to
    Ready.
+
+Migrating Storage For a Running VM on KVM
+'''''''''''''''''''''''''''''''''''''''''
+
+KVM live storage migration is currently supported only from CEPH and NFS to SolidFire Managed Storage,
+and is currently only supported via API call (i.e. we can use CloudMonkey)
+
+#. Identify the VM UUID to be migrated.
+
+#. Identify the volume(s) UUID(s) which are attached to VM and needs to be migrated.
+
+#. Identify the SolidFire pool UUID to which you want to migrate VM's volumes.
+
+#. Identify suitable KVM host UUID to which the VM will be live migrated.
+
+Using CloudMonkey issue the command as in example given below:
+
+```
+migrateVirtualMachineWithVolume virtualmachineid=ec5d3a84-2eb8-4a37-83f3-007b5013e3d9
+hostid=bee55404-68e9-4710-bb10-ab9f4a3d357d
+migrateto[0].pool=67654174-e2b6-4734-813d-2a4f0b027c0d migrateto[0].volume=ea390749-0194-4088-860c-71717c4efabe 
+migrateto[1].pool=67654174-e2b6-4734-813d-2a4f0b027c0d migrateto[1].volume=3b37927b-2cd2-46d1-aeca-18d4af46bda2
+```
+
+In the command above, new volumes are being created on SolidFire Managed Storage, 
+internal volume mirroring process is started via libvirt (from current storage NFS/CEPH to SolidFire)
+and at the end of the volume mirroring process, the VM live migration is done to the host defined above.
+
+In the command above we have "pairing" of volume and the storage pool to which to migrate specific volume to.
+In example above, we are migrating 2 volumes to the same SolidFire Storage Cluster, but optionally you could 
+migrate 2 volumes to 2 different SolidFire Storage Clusters.
+
+Order of volumes, as attached to VM, is NOT relevant - i.e. first volume in the migration command ( migrateto[0].volume )
+can be any DATA volume, while second volume ( migrateto[1].volume ) can be i.e. ROOT volume
+
+You can migrate only some or all of the volumes (attached to specific VM) to a new Storage Pool.
+
+Note, that depending on your configuration, you will need to change Compute/Data Disk Offerings, in case you have
+different storage tags set on CEPH/NFS versus tags on SolidFire (and in case your Compute/Data disk offerings reference these tags).
 
 
 Migrating Storage and Attaching to a Different VM
@@ -798,6 +839,64 @@ snapshot data.
    format, and will continue to work as expected.
 
 
+Disk caching (KVM)
+~~~~~~~~~~~~~~~~~~
+
+This is for advanced user only, since may cause issues with improper DB changes.
+
+Disk cache mode is the property of Compute Offering (ROOT disk) and Disk Offering (DATA disk).
+Currently, disk cache mode can only be set by editing "disk_offering" table inside "cloud" DB
+and can not be done via API/GUI (although there is "Write-cache Type" filed in the GUI on the "Add Disk Offering" wizard).
+Cache modes available are: write-back and write-through
+
+Before proceeding with changing cache mode on disks (Offerings), please make sure that you understand
+the consequences and limitations it might bring.
+
+#. If the guest storage is hosted on a clustered file system (or is read-only or is marked shareable), then the cache mode is ignored when determining if VM live migration can be allowed.
+#. If guest storage is hosted on shared storage (NFS/CEPH) libvirt will not allow VM live migration unless the cache mode is set to "none".
+#. This means that in case of NFS and CEPH, VM live migrations will not be possible, and this will also make it impossible to put host into maintenance mode (VMs being live migrated away from this host - will not work)
+
+In order to set disk write-back or write-through cache mode, we need to edit it's parent Compute Offering (for ROOT disk) or Disk Offering (for DATA disks). Please note that this means that all volumes/disks which are created from specific offering will inherit cache mode.
+
+```
+mysql> select id from disk_offering where name="8vCPU-64GB-HDD-STD-NFS";
++-----+
+| id  |
++-----+
+| 111 |
++-----+
+1 row in set (0.00 sec)
+
+mysql> select id from disk_offering where name="100GB-HDD-STD-NFS";
++-----+
+| id  |
++-----+
+| 114 |
++-----+
+1 row in set (0.00 sec)
+
+mysql> UPDATE disk_offering SET cache_mode='writeback' WHERE id in ('111','114');
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+```
+In example above, we have set the write-back cache mode for a single Compute Offering and single Data Disk Offering.
+In order for KVM to actually pick-up the cache mode we have set, we need to stop VM and start VM. VM Reboot ("Reboot Instance" button)
+via GUI will not be enough.
+
+After VM is started we can confirm that the both the ROOT and DATA disk of a VM have cache mode set to write-back:
+
+```
+root@ix1-c7-4:~# virsh dumpxml i-2-10-VM | grep cache -A2
+      <driver name='qemu' type='qcow2' cache='writeback'/>
+      <source file='/mnt/63a3ae7b-9ea9-3884-a772-1ea939ef6ec3/1b655159-ae10-41cf-8987-f1cfb47fe453'/>
+      <target dev='vda' bus='virtio'/>
+
+      <driver name='qemu' type='qcow2' cache='writeback'/>
+      <source file='/mnt/63a3ae7b-9ea9-3884-a772-1ea939ef6ec3/09bdadcb-ec6e-4dda-b37b-17b1a749257f'/>
+      <target dev='vdb' bus='virtio'/>
+```
+
+
 .. |AttachDiskButton.png| image:: _static/images/attach-disk-icon.png
    :alt: Attach Disk Button.
 .. |resize-volume-icon.png| image:: _static/images/resize-volume-icon.png
@@ -810,3 +909,4 @@ snapshot data.
    :alt: Detach Disk Button.
 .. |Migrateinstance.png| image:: _static/images/migrate-instance.png
    :alt: button to migrate a volume.
+
