@@ -498,12 +498,13 @@ and is currently only supported via API call (i.e. we can use CloudMonkey)
 
 Using CloudMonkey issue the command as in example given below:
 
-```
-migrateVirtualMachineWithVolume virtualmachineid=ec5d3a84-2eb8-4a37-83f3-007b5013e3d9
-hostid=bee55404-68e9-4710-bb10-ab9f4a3d357d
-migrateto[0].pool=67654174-e2b6-4734-813d-2a4f0b027c0d migrateto[0].volume=ea390749-0194-4088-860c-71717c4efabe 
-migrateto[1].pool=67654174-e2b6-4734-813d-2a4f0b027c0d migrateto[1].volume=3b37927b-2cd2-46d1-aeca-18d4af46bda2
-```
+.. code:: bash
+
+   migrateVirtualMachineWithVolume virtualmachineid=ec5d3a84-2eb8-4a37-83f3-007b5013e3d9
+   hostid=bee55404-68e9-4710-bb10-ab9f4a3d357d
+   migrateto[0].pool=67654174-e2b6-4734-813d-2a4f0b027c0d migrateto[0].volume=ea390749-0194-4088-860c-71717c4efabe 
+   migrateto[1].pool=67654174-e2b6-4734-813d-2a4f0b027c0d migrateto[1].volume=3b37927b-2cd2-46d1-aeca-18d4af46bda2
+
 
 In the command above, new volumes are being created on SolidFire Managed Storage, 
 internal volume mirroring process is started via libvirt (from current storage NFS/CEPH to SolidFire)
@@ -858,44 +859,42 @@ the consequences and limitations it might bring.
 
 In order to set disk write-back or write-through cache mode, we need to edit it's parent Compute Offering (for ROOT disk) or Disk Offering (for DATA disks). Please note that this means that all volumes/disks which are created from specific offering will inherit cache mode.
 
-```
-mysql> select id from disk_offering where name="8vCPU-64GB-HDD-STD-NFS";
-+-----+
-| id  |
-+-----+
-| 111 |
-+-----+
-1 row in set (0.00 sec)
+.. code:: 
 
-mysql> select id from disk_offering where name="100GB-HDD-STD-NFS";
-+-----+
-| id  |
-+-----+
-| 114 |
-+-----+
-1 row in set (0.00 sec)
+   mysql> select id from disk_offering where name="8vCPU-64GB-HDD-STD-NFS";
+   +-----+
+   | id  |
+   +-----+
+   | 111 |
+   +-----+
+   1 row in set (0.00 sec)
+   mysql> select id from disk_offering where name="100GB-HDD-STD-NFS";
+   +-----+
+   | id  |
+   +-----+
+   | 114 |
+   +-----+
+   1 row in set (0.00 sec)
+   mysql> UPDATE disk_offering SET cache_mode='writeback' WHERE id in ('111','114');
+   Query OK, 2 rows affected (0.00 sec)
+   Rows matched: 2  Changed: 2  Warnings: 0
 
-mysql> UPDATE disk_offering SET cache_mode='writeback' WHERE id in ('111','114');
-Query OK, 2 rows affected (0.00 sec)
-Rows matched: 2  Changed: 2  Warnings: 0
-```
-In example above, we have set the write-back cache mode for a single Compute Offering and single Data Disk Offering.
+In example above, we have set the write-back cache mode for a single Compute Offering and single Disk Offering.
 In order for KVM to actually pick-up the cache mode we have set, we need to stop VM and start VM. VM Reboot ("Reboot Instance" button)
 via GUI will not be enough.
 
 After VM is started we can confirm that the both the ROOT and DATA disk of a VM have cache mode set to write-back:
 
-```
-root@ix1-c7-4:~# virsh dumpxml i-2-10-VM | grep cache -A2
+.. code:: bash
+
+   root@ix1-c7-4:~# virsh dumpxml i-2-10-VM | grep cache -A2
       <driver name='qemu' type='qcow2' cache='writeback'/>
       <source file='/mnt/63a3ae7b-9ea9-3884-a772-1ea939ef6ec3/1b655159-ae10-41cf-8987-f1cfb47fe453'/>
       <target dev='vda' bus='virtio'/>
-
+      ...
       <driver name='qemu' type='qcow2' cache='writeback'/>
       <source file='/mnt/63a3ae7b-9ea9-3884-a772-1ea939ef6ec3/09bdadcb-ec6e-4dda-b37b-17b1a749257f'/>
       <target dev='vdb' bus='virtio'/>
-```
-
 
 .. |AttachDiskButton.png| image:: _static/images/attach-disk-icon.png
    :alt: Attach Disk Button.
