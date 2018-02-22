@@ -489,7 +489,7 @@ Adding a Private Gateway to a VPC
 A private gateway can be added by the root admin only. The VPC private
 network has 1:1 relationship with the NIC of the physical network. You
 can configure multiple private gateways to a single VPC. No gateways
-with duplicated VLAN and IP are allowed in the same data center.
+with duplicated VLAN and IP are allowed in the same data center (but you can use different VLANs for different gateways, but with same IP ranges/networks)
 
 #. Log in to the CloudStack UI as an administrator or end user.
 
@@ -500,8 +500,8 @@ with duplicated VLAN and IP are allowed in the same data center.
    All the VPCs that you have created for the account is listed in the
    page.
 
-#. Click the Configure button of the VPC to which you want to configure
-   load balancing rules.
+#. Click the Configure button of the VPC for which you want to configure
+   private gateway
 
    The VPC page is displayed where all the tiers you created are listed
    in a diagram.
@@ -541,7 +541,9 @@ with duplicated VLAN and IP are allowed in the same data center.
 #. Specify the following:
 
    -  **Physical Network**: The physical network you have created in the
-      zone.
+      zone - this is the network which caries GUEST TRAFFIC
+      
+      See ":ref:`guest-priv-gw`".
 
    -  **IP Address**: The IP address associated with the VPC gateway.
 
@@ -564,6 +566,23 @@ with duplicated VLAN and IP are allowed in the same data center.
 
    The new gateway appears in the list. You can repeat these steps to
    add more gateway for this VPC.
+
+
+.. _guest-priv-gw:
+
+GUEST TRAFFIC for Private Gateway
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When you provision Private Gateway with i.e. vlan id 1500, CloudStack will try to provision vlan interface with that vlan id on top of the physical interface which is defined for the selected physical network - i.e. if you defined "bond0" as the "traffic label" for the selected Physical Network, this means CloudStack will try to create "bond0.1500" vlan interface, and this will work just fine.
+
+But in some cases, you might not be able to use current Guest Physical Network - i.e. if you are already running VXLAN as isolation method with i.e. bond0.150 being used as Traffic Label (vlan 150 caries all VXLAN tunnels) then CloudStack would try to provision "bond0.150.1500" interface, which will not work.
+In similar fashion, if you are using cloudbrX as Traffic Label for your Guest network (VLAN used as isolation method), this means CloudStack will try to provision "cloudbrX.1500" interface, which will also not work. 
+
+In cases described above, you would perhaps want to create additional Guest Physical Network, and specify bond0 as the Traffic Label (to comply with example values given above) - and here CloudStack will provision "bond0.1500" interface, which will work as expected.
+
+In cases where you have 2 (or more) Guest Physical Networks, and you want one of them to be used for regular Guest Traffic (vlans, or vxlan tunnels), but you want another Guest Physical Network to be used for Private Gateway functionality (solution to the problem described above), then we need to make sure that we properly TAG both Guest Physical Networks and the needed Network Offerings - both the regular Network Offerings and also the hidden network offering that is used for Private Gateways (visible only inside DB), named "System-Private-Gateway-Network-Offering". 
+
+For instruction on how to use tags with Physical networks and Network Offerings, please see ":ref:`tagging-networks`".
 
 
 .. _source-nat-priv-gw:
@@ -777,7 +796,7 @@ associated to more than one network at a time.
    address in port forwarding, load balancing, and static NAT rules.
 
 
-Releasing an IP Address Alloted to a VPC
+Releasing an IP Address Allocated to a VPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The IP address is a limited resource. If you no longer need a particular
@@ -1438,3 +1457,53 @@ Editing, Restarting, and Removing a Virtual Private Cloud
    :alt: button to remove a VPC
 .. |restart-vpc.png| image:: /_static/images/restart-vpc.png
    :alt: button to restart a VPC
+
+
+.. _tagging-networks:
+
+Tagging Guest Physical Network and Network Offerings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In cases you have more than one Guest Physical Network, you might choose to use them for different purposes - i.e. to carry all "regular" VPC Guest Traffic (vlans/vxlans) on one Guest Physical Network, but use another Guest Physical Network for VPC Private Gateway (networks which are created as part of Private Gateway).
+
+Example above would be accomplished by assigning different tags on these two Guest Physical Networks, and then tag proper Guest Network offerings in certain way, as explained later.
+
+
+To edit tags in existing zone, for Guest Physical Networks, please do the following:
+
+#. Log in to the CloudStack UI as an administrator.
+
+#. Click on Infrastructure, then Zones, then particular Zone, then click on Physical Network tab, and from there select the correct Guest Network by clicking it, and again by clicking on "Guest / Configure" button.
+
+.. |tag-network1.png| image:: /_static/images/tag-network1.png
+   :alt: Tagging multiple Guest Physical Networks.
+
+
+#. In the presented screen, click on Edit button, and then you will be able to define tag for this particular Physical Network - set it to i.e. "guestvxlan".
+
+.. |tag-network2.png| image:: /_static/images/tag-network2.png
+   :alt: Tagging multiple Guest Physical Networks.
+
+#. Repeat this step for second (and any additional) Guest Physical Networks, and make sure to use different tag for each of networks (as needed). Here we set it to "guestprivgtw".
+
+.. |tag-network3.png| image:: /_static/images/tag-network3.png
+   :alt: Tagging multiple Guest Physical Networks.
+
+#. In this example above, we are setting tag "guestvxlan" for Guest Physical Network (bond0.150) that continues to carry VXLAN tunnels for VPCs, and we set tag "guestprivgtw" for Guest Physical Network (bond0) that will carry Private Gateway guest networks.
+
+Next, we need to edit tags on existing Guest Network Offerings. Depending on CloudStack versions, you will need to edit database records directly.
+
+General SQL query would look like following, but please use your own judgement to reflect your environment.
+ .. code:: bash
+
+   mysql> update network_offerings set tags="guestvxlan" where traffic_type="Guest";
+
+This would set tag for all existing Guest Network Offers.
+
+Now we want to put different tag on the hidden Network Offering that is used to provision Guest networks for Private Gateways.
+
+ .. code:: bash
+
+   mysql> update network_offerings set tags="guestprivgtw" where name="System-Private-Gateway-Network-Offering";
+
+From now one, whenever you provision regular Guest Network (private tiers, part of VPC), these networks will be created on Guest Physical Network with tag "guestvxlan", while Private Gateway Guest networks will be created on Guest Physical Network with tag "guestprivgtw".
