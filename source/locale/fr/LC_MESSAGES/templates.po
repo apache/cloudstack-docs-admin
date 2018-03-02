@@ -1556,11 +1556,11 @@ msgstr "Télécharger le fichier du script cloud-set-guest-password :"
 
 #: ../../templates/_password.rst:51
 msgid ""
-"`http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in "
-"<http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in>`_"
+"`https://download.cloudstack.org/templates/4.2/bindir/cloud-set-guest-password.in "
+"<https://download.cloudstack.org/templates/4.2/bindir/cloud-set-guest-password.in>`_"
 msgstr ""
-"`http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in "
-"<http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in>`_"
+"`https://download.cloudstack.org/templates/4.2/bindir/cloud-set-guest-password.in "
+"<https://download.cloudstack.org/templates/4.2/bindir/cloud-set-guest-password.in>`_"
 
 #: ../../templates/_password.rst:54
 msgid "Rename the file:"
