@@ -740,3 +740,10 @@ and space are replaced with `~`:
    keystore-setup <properties file> <keystore file> <passphrase> <validity> <csr file>
 
    keystore-cert-import <properties file> <keystore file> <mode: ssh|agent> <cert file> <cert content> <ca-cert file> <ca-cert content> <private-key file> <private key content:optional>
+
+Starting 4.11.1, a KVM host is considered secured when it has its keystore and
+certificates setup for both the agent and libvirtd process. A secured host will
+only allow and initiate TLS enabled live VM migration. This requires libvirtd
+to listen on default port 16514, and the port to be allowed in the firewall
+rules. Certificate renewal (using the `provisionCertificate` API) will restart
+both the libvirtd process and agent after deploying new certificates.
