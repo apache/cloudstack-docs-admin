@@ -1038,7 +1038,7 @@ Create an instance template that supports SSH Keys.
 
    .. sourcecode:: bash
 
-      wget http://downloads.sourceforge.net/project/cloudstack/SSH%20Key%20Gen%20Script/cloud-set-guest-sshkey.in?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fcloudstack%2Ffiles%2FSSH%2520Key%2520Gen%2520Script%2F&ts=1331225219&use_mirror=iweb
+      wget https://raw.githubusercontent.com/apache/cloudstack/master/setup/bindir/cloud-set-guest-sshkey.in
 
 #. Copy the file to /etc/init.d.
 
