@@ -86,6 +86,18 @@ advanced zone where KVM is the hypervisor. Using security groups in
 advanced zones rather than multiple VLANs allows a greater range of
 options for setting up guest isolation in a cloud.
 
+Setting for CentOS
+^^^^^^^^^^^^^^^^^^
+
+To use security groups on CentOS/RHEL/Fedora please enable bridge based
+filtering, ensure that default sysctl configuration file usually at
+/usr/lib/sysctl.d/00-system.conf set to following and run 'sysctl -p':
+
+.. note::
+   # Enable netfilter on bridges.
+   net.bridge.bridge-nf-call-ip6tables = 1
+   net.bridge.bridge-nf-call-iptables = 1
+   net.bridge.bridge-nf-call-arptables = 1
 
 Limitations
 ^^^^^^^^^^^
