@@ -88,16 +88,16 @@ The following API commands have the "tags" input parameter:
 Reporting CPU Sockets
 ---------------------
 
-PRODUCT manages different types of hosts that contains one or more
+CloudStack manages different types of hosts that contains one or more
 physical CPU sockets. CPU socket is considered as a unit of measure used
-for licensing and billing cloud infrastructure. PRODUCT provides both UI
+for licensing and billing cloud infrastructure. CloudStack provides both UI
 and API support to collect the CPU socket statistics for billing
 purpose. The Infrastructure tab has a new tab for CPU sockets. You can
-view the statistics for CPU sockets managed by PRODUCT, which in turn
+view the statistics for CPU sockets managed by CloudStack, which in turn
 reflects the size of the cloud. The CPU Socket page will give you the
 number of hosts and sockets used for each host type.
 
-1. Log in to the PRODUCT UI.
+1. Log in to the CloudStack UI.
 
 2. In the left navigation bar, click Infrastructure.
 
