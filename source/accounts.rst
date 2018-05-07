@@ -171,9 +171,14 @@ Options:
 
 Examples:
 
-sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -h localhost -p 3006 -f /etc/cloudstack/management/commands.properties
+.. sourcecode:: bash
 
-sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -h localhost -p 3006 -D
+   sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -H localhost -P 3006 -f /etc/cloudstack/management/commands.properties
+
+.. sourcecode:: bash
+   
+   sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -H localhost -P 3006 -D
+
 
 If you've multiple management servers, remove or rename the commands.properties
 file on the management servers typically in /etc/cloudstack/management path,
