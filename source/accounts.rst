@@ -136,6 +136,10 @@ After an upgrade, existing deployments can be migrated to use this feature by
 running a migration tool by the CloudStack admin. The migration tool is located
 at ``/usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py``.
 
+**NOTE: If you have not changed your commands.properties file at any time, then 
+it is recommended to use the -D (default) option as otherwise new API commands may 
+not be added to the dynamic roles database.**
+
 During migration, this tool enables an internal flag in the database,
 copies existing static role-based rules from provided commands.properties file
 (typically at ``/etc/cloudstack/management/commands.properties``) to the database
@@ -161,11 +165,18 @@ Options:
     The commands.properties file, default: /etc/cloudstack/management/commands.properties
 -d
     Dry run and debug operations this tool will perform
+-D
+    Use the default configuration for Dynamic Roles (does not import commands.properties)
 
 
 Example:
+ 
 
-sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -h localhost -p 3006 -f /etc/cloudstack/management/commands.properties
+.. sourcecode:: bash
+
+   sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -H localhost -P 3306 -f /etc/cloudstack/management/commands.properties
+
+   sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -H localhost -P 3306 -D
 
 If you've multiple management servers, remove or rename the commands.properties
 file on all management servers typically in /etc/cloudstack/management path,
