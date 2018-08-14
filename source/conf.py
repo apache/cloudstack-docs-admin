@@ -418,3 +418,7 @@ epub_copyright = u'2016, Apache Software Foundation'
 
 # If false, no index is generated.
 #epub_use_index = True
+
+rst_prolog = """
+.. include:: /archive_notice.rst 
+"""
