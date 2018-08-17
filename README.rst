@@ -13,6 +13,19 @@
    specific language governing permissions and limitations
    under the License.
 
+____
+
+WARNING
+=========
+
+::
+
+     THIS REPO HAS BEEN SUPERCEEDED - CONSOLIDATED DOCUMENTATION IS AT
+     https://github.com/apache/cloudstack-documentation
+       
+
+____
+
 
 Apache CloudStack
 =================
