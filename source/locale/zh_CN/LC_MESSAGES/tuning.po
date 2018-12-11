@@ -3,14 +3,13 @@
 # This file is distributed under the same license as the Apache CloudStack Administration Documentation package.
 # 
 # Translators:
-# darrentang <darrentang.dt@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-31 14:08-0400\n"
-"PO-Revision-Date: 2014-05-27 06:32+0000\n"
-"Last-Translator: darrentang <darrentang.dt@gmail.com>\n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
+"PO-Revision-Date: 2014-06-30 12:04+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/apache-cloudstack-administration-rtd/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,91 +17,91 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-# a09f44bbf5fe4885aa5f5856bae80ea4
+# 0c7c82c60c1c4ce4b2ec9838cc883b84
 #: ../../tuning.rst:18
 msgid "Tuning"
 msgstr "调优"
 
-# eb683307decf4141bcb683821c79ee03
+# 9a2a025467014e929276cfa1e9e73e71
 #: ../../tuning.rst:20
 msgid ""
 "This section provides tips on how to improve the performance of your cloud."
 msgstr "本节提示如何提高云性能。"
 
-# 0ae5216b7aa04aed8e4ba37ced396c59
-#: ../../tuning.rst:24
+# 9b00143dbb7b4b4b97baab2aa95815aa
+#: ../../tuning.rst:25
 msgid "Performance Monitoring"
 msgstr "性能监控"
 
-# 4b6618cc525444739c5aec508caf360f
-#: ../../tuning.rst:26
+# 43c6615bb7084bc58dbf0561984e39f3
+#: ../../tuning.rst:27
 msgid ""
 "Host and guest performance monitoring is available to end users and "
 "administrators. This allows the user to monitor their utilization of "
 "resources and determine when it is appropriate to choose a more powerful "
 "service offering or larger disk."
-msgstr "终端用户和管理员都可以对主机和虚拟机进行性能监控。这允许用户监控他们的资源利用情况并决定在适当的时候选择更强大的服务方案和更大的磁盘。"
+msgstr "终端用户和管理员都能使用宿主机和虚拟机的性能监控。性能监控将允许用户监控他们的资源利用并且帮助用户决定何时将需要选择一个更高性能的服务或者更大的硬盘。"
 
-# 276e9fb4d3d343ff908423a78692e732
-#: ../../tuning.rst:32
+# 470932b76e664973b7568b285a10a77d
+#: ../../tuning.rst:34
 msgid "Increase Management Server Maximum Memory"
 msgstr "增加管理服务器到最大内存"
 
-# 411d58758d4c45029bda78e8e3a11012
-#: ../../tuning.rst:34
+# 82b1560c6fbf421b952de1c8424aa4a2
+#: ../../tuning.rst:36
 msgid ""
 "If the Management Server is subject to high demand, the default maximum JVM "
 "memory allocation can be insufficient. To increase the memory:"
 msgstr "如果管理服务器用于高需求，默认JVM的最大内存分配可能不足。增加内存:"
 
-# d48e389d98ec45acb7f98d594f33935d
+# 1b69cb03d370442f913397dde140c37c
 #: ../../tuning.rst:39
 msgid "Edit the Tomcat configuration file:"
 msgstr "编辑Tomcat配置文件："
 
-# 279ab9737d40423aa83a711cc6156296
-#: ../../tuning.rst:47
+# d9a022a48b8a4076872b335db29f658c
+#: ../../tuning.rst:45
 msgid "Change the command-line parameter -XmxNNNm to a higher value of N."
 msgstr "改变命令行参数 -XmxNNNm中的N为更高的值。"
 
-# 4a5af47c21964e2f9365ab8534002b04
-#: ../../tuning.rst:49
+# bf5935dc78264c1baf8cd4984a631b98
+#: ../../tuning.rst:47
 msgid ""
 "For example, if the current value is -Xmx128m, change it to -Xmx1024m or "
 "higher."
 msgstr "例如，如果当前值为 -Xmx128m，则改为 -Xmx1024m或更高。"
 
-# 0b7931e36ac34cd8a33dc0c4a60e549e
-#: ../../tuning.rst:54
+# e4dda8bcace04b10a404493586f871a1
+#: ../../tuning.rst:50
 msgid "To put the new setting into effect, restart the Management Server."
 msgstr "将新的设置生效，重启管理服务。"
 
-# 922da07d183b4c1fb87754cee9ee711c
-#: ../../tuning.rst:60
+# 4b11c5fd61d0469480f110a7ebe528d0
+#: ../../tuning.rst:56
 msgid ""
 "For more information about memory issues, see \"FAQ: Memory\" at `Tomcat "
 "Wiki. <http://wiki.apache.org/tomcat/FAQ/Memory>`_"
 msgstr "欲了解更多管理内存问题的详细信息，请参阅\"FAQ:内存\" 在 `Tomcat Wiki. <http://wiki.apache.org/tomcat/FAQ/Memory>`_"
 
-# 2abdd3204b2647e7b0d236deba7e6dc7
-#: ../../tuning.rst:64
+# 588f5981eb3843ac91a1041e9f3bb832
+#: ../../tuning.rst:61
 msgid "Set Database Buffer Pool Size"
 msgstr "设置数据库缓冲池大小"
 
-# 3dc24e56555f45a3a78f54a9c01167cb
-#: ../../tuning.rst:66
+# 2a1e327a1aa04838bfefce6674d9ec3e
+#: ../../tuning.rst:63
 msgid ""
 "It is important to provide enough memory space for the MySQL database to "
 "cache data and indexes:"
 msgstr "为MySQL数据库提供足够的内存空间来缓存数据和索引是很重要的："
 
-# 1ad70fcf154640e0bd9f10edc5194af6
-#: ../../tuning.rst:71
+# 55bafed06cb5401fba6713f86660fe74
+#: ../../tuning.rst:66
 msgid "Edit the MySQL configuration file:"
 msgstr "编辑MySQL配置文件："
 
-# 98a251615df34d0ebe59198a671cfb7a
-#: ../../tuning.rst:79
+# a2719920b1ad4f2388c10ed8f19e5437
+#: ../../tuning.rst:72
 msgid ""
 "Insert the following line in the [mysqld] section, below the datadir line. "
 "Use a value that is appropriate for your situation. We recommend setting the"
@@ -111,26 +110,26 @@ msgid ""
 "assumes a dedicated server with 1024M of RAM."
 msgstr "在 [mysqld]部分的datadir下面插入如下行。使用适合您情况的值。如果MySQL和管理服务器在同一台服务器上面我们建议设置缓冲池为内存的40%，如果MySQL为专用的服务器我们建议设置为内存的70%。下面的示例假设一台专用的服务器的内存为1024M。"
 
-# f4b16571708a45d6bdccae5a0c4eea4f
-#: ../../tuning.rst:92
+# 30d79aae5ff745b789f7e402c61d4164
+#: ../../tuning.rst:83
 msgid "Restart the MySQL service."
 msgstr "重启MySQL服务."
 
-# e96855539cae48449d32a81ed8982be7
-#: ../../tuning.rst:98
+# b12c7032e74b411d9d9c7bc32a92a3ab
+#: ../../tuning.rst:89
 msgid ""
 "For more information about the buffer pool, see \"The InnoDB Buffer Pool\" "
 "at `MySQL Reference Manual <http://dev.mysql.com/doc/refman/5.5/en/innodb-"
 "buffer-pool.html>`_."
 msgstr "欲了解更多关于缓冲池的信息，请参阅\"InnoDB缓冲池\" `MySQL参考手册<http://dev.mysql.com/doc/refman/5.5/en/innodb-buffer-pool.html>`_."
 
-# 5bde2eb730ae44e1ac63a015a63a84ef
-#: ../../tuning.rst:103
+# 1cbfe60313d445848eb5e90f708b55a1
+#: ../../tuning.rst:95
 msgid "Set and Monitor Total VM Limits per Host"
 msgstr "设置和监控每个主机的总VM数限制"
 
-# 4d031105d275433294098273f33fe211
-#: ../../tuning.rst:105
+# 36520c7bbf2b4888813341615ca176fa
+#: ../../tuning.rst:97
 msgid ""
 "The CloudStack administrator should monitor the total number of VM instances"
 " in each cluster, and disable allocation to the cluster if the total is "
@@ -149,13 +148,13 @@ msgid ""
 "disable allocation of more VMs to the cluster."
 msgstr "管理员应该监视每个集群中的虚拟机实例的总数，如果总量快达到hypervisor允许的最大虚拟机数量时，不再向此群集分配虚拟机。并且，要注意为主机预留一定的计算能力，以防止群集中有主机发生故障,因为发生故障的主机上的虚拟机需要重新部署在这些预留主机上。请咨询您所选择hypervisor的文档，了解此hypervisor能支持的最大虚拟机数量，并将此数值设置在CloudStack的全局设置里。监控每个群集里虚拟机的活跃程序，并将活跃虚拟机保持在一个安全线内。这样，CloudStack就能允许偶尔的主机故障。举个示例：如果集群里有N个主机，而你只能让其中任一主机的停机时间不超过特定时间。那么，你能在此集群部署的最多虚拟主机数量值为：(N-1) \\* (每主机最大虚拟量数量限值)。一旦群集中的虚拟机达到此数量，必须在CloudStack的用户界面中禁止向此群集分配新的虚拟机。"
 
-# e32b5f442e7246fb98e590d27b87fbb5
-#: ../../tuning.rst:123
+# 87fad0d347f845e4b589cf1b70bfaad0
+#: ../../tuning.rst:116
 msgid "Configure XenServer dom0 Memory"
-msgstr "配置XenServer dom0的内存"
+msgstr "配置XenServer dom0内存"
 
-# 6614a82a183a4312bdbccca333889df7
-#: ../../tuning.rst:125
+# e6d8fead31da4d2880407fe308a0c13a
+#: ../../tuning.rst:118
 msgid ""
 "Configure the XenServer dom0 settings to allocate more memory to dom0. This "
 "can enable XenServer to handle larger numbers of virtual machines. We "

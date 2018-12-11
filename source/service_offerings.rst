@@ -209,6 +209,35 @@ To create a new compute offering:
    -  **Offer HA**: If yes, the administrator can choose to have the
       system VM be monitored and as highly available as possible.
 
+   -  **QoS Type**: Three options: Empty (no Quality of Service), hypervisor
+      (rate limiting enforced on the hypervisor side), and storage
+      (guaranteed minimum and maximum IOPS enforced on the storage
+      side). If leveraging QoS, make sure that the hypervisor or storage
+      system supports this feature.
+
+   -  **Custom IOPS**: If checked, the user can set their own IOPS. If not
+      checked, the root administrator can define values. If the root
+      admin does not set values when using storage QoS, default values
+      are used (the defauls can be overridden if the proper parameters
+      are passed into CloudStack when creating the primary storage in
+      question).
+
+   -  **Min IOPS**: Appears only if storage QoS is to be used. Set a
+      guaranteed minimum number of IOPS to be enforced on the storage
+      side.
+
+   -  **Max IOPS**: Appears only if storage QoS is to be used. Set a maximum
+      number of IOPS to be enforced on the storage side (the system may
+      go above this limit in certain circumstances for short intervals).
+
+   -  **Hypervisor Snapshot Reserve**: For managed storage only. This is
+      a value that is a percentage of the size of the root disk. For example:
+      if the root disk is 20 GB and Hypervisor Snapshot Reserve is 200%, the
+      storage volume that backs the storage repository (XenServer) or
+      datastore (VMware) in question is sized at 60 GB (20 GB + (20 GB * 2)).
+      This enables space for hypervisor snapshots in addition to the virtual
+      disk that represents the root disk. This does not apply for KVM.
+
    -  **Storage Tags**: The tags that should be associated with the
       primary storage used by the system VM.
 
@@ -283,40 +312,48 @@ To create a new disk offering:
 
 #. In the dialog, make the following choices:
 
-   -  Name. Any desired name for the disk offering.
+   -  **Name**: Any desired name for the disk offering.
 
-   -  Description. A short description of the offering that can be
+   -  **Description**: A short description of the offering that can be
       displayed to users
 
-   -  Custom Disk Size. If checked, the user can set their own disk
+   -  **Custom Disk Size**: If checked, the user can set their own disk
       size. If not checked, the root administrator must define a value
       in Disk Size.
 
-   -  Disk Size. Appears only if Custom Disk Size is not selected.
+   -  **Disk Size**: Appears only if Custom Disk Size is not selected.
       Define the volume size in GB.
 
-   -  QoS Type. Three options: Empty (no Quality of Service), hypervisor
+   -  **QoS Type**: Three options: Empty (no Quality of Service), hypervisor
       (rate limiting enforced on the hypervisor side), and storage
       (guaranteed minimum and maximum IOPS enforced on the storage
       side). If leveraging QoS, make sure that the hypervisor or storage
       system supports this feature.
 
-   -  Custom IOPS. If checked, the user can set their own IOPS. If not
+   -  **Custom IOPS**: If checked, the user can set their own IOPS. If not
       checked, the root administrator can define values. If the root
       admin does not set values when using storage QoS, default values
       are used (the defauls can be overridden if the proper parameters
       are passed into CloudStack when creating the primary storage in
       question).
 
-   -  Min IOPS. Appears only if storage QoS is to be used. Set a
+   -  **Min IOPS**: Appears only if storage QoS is to be used. Set a
       guaranteed minimum number of IOPS to be enforced on the storage
       side.
 
-   -  Max IOPS. Appears only if storage QoS is to be used. Set a maximum
+   -  **Max IOPS**: Appears only if storage QoS is to be used. Set a maximum
       number of IOPS to be enforced on the storage side (the system may
       go above this limit in certain circumstances for short intervals).
 
-   -  (Optional)Storage Tags. The tags that should be associated with
+   -  **Hypervisor Snapshot Reserve**: For managed storage only. This is
+      a value that is a percentage of the size of the data disk. For example:
+      if the data disk is 20 GB and Hypervisor Snapshot Reserve is 200%, the
+      storage volume that backs the storage repository (XenServer) or
+      datastore (VMware) in question is sized at 60 GB (20 GB + (20 GB * 2)).
+      This enables space for hypervisor snapshots in addition to the virtual
+      disk that represents the data disk. This does not apply for KVM.
+
+   -  **(Optional)Storage Tags**: The tags that should be associated with
       the primary storage for this disk. Tags are a comma separated list
       of attributes of the storage. For example "ssd,blue". Tags are
       also added on Primary Storage. CloudStack matches tags on a disk
@@ -325,7 +362,7 @@ To create a new disk offering:
       Storage for the volume to be provisioned. If no such primary
       storage exists, allocation from the disk offering will fail..
 
-   -  Public. Indicate whether the service offering should be available
+   -  **Public**: Indicate whether the service offering should be available
       all domains or only some domains. Choose Yes to make it available
       to all domains. Choose No to limit the scope to a subdomain;
       CloudStack will then prompt for the subdomain's name.

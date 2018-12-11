@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apache CloudStack Administration Documentation 4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-31 14:08-0400\n"
+"POT-Creation-Date: 2014-06-30 12:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,1481 +17,1481 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../usage.rst:18
-# 0337566b79334160ac7120790c9d0ac7
+# f960d1bdf1ff4edcab85c8de14d937d9
 msgid "Working with Usage"
 msgstr ""
 
 #: ../../usage.rst:20
-# ef6eee68a2ab4c3eb31cb3115bab6062
+# 15ed9c55a30744308390d710f71e001e
 msgid "The Usage Server is an optional, separately-installed part of CloudStack that provides aggregated usage records which you can use to create billing integration for CloudStack. The Usage Server works by taking data from the events log and creating summary usage records that you can access using the listUsageRecords API call."
 msgstr ""
 
 #: ../../usage.rst:26
-# 3f5a5a7bc4cc4528840d66c404992c64
+# 96a54f49657f4ecb814c7babc3d12cd5
 msgid "The usage records show the amount of resources, such as VM run time or template storage space, consumed by guest instances."
 msgstr ""
 
 #: ../../usage.rst:29
-# 7534ac8e2cf443e7801e747d7e156ec4
+# 55c9c7dee78b4ff284f8a3775ee15d80
 msgid "The Usage Server runs at least once per day. It can be configured to run multiple times per day."
 msgstr ""
 
-#: ../../usage.rst:33
-# ea7f343f907540088f49db087d846e0c
+#: ../../usage.rst:34
+# e3e786135adc456da195d8c62094e4cf
 msgid "Configuring the Usage Server"
 msgstr ""
 
-#: ../../usage.rst:35
-# 5aa6afef926b456384cf8fe5fef33e85
+#: ../../usage.rst:36
+# 6fb60ef9e16e4db0878d21a3d8ae162b
 msgid "To configure the usage server:"
 msgstr ""
 
-#: ../../usage.rst:39
-# 4a2672643b7e4281babb6fa1f2c8f5c6
+#: ../../usage.rst:38
+# 5adc62eff1f640a094ea087767a99266
 msgid "Be sure the Usage Server has been installed. This requires extra steps beyond just installing the CloudStack software. See Installing the Usage Server (Optional) in the Advanced Installation Guide."
 msgstr ""
 
-#: ../../usage.rst:45
-# b81ee209e7eb43f2b4440774ee120d74
+#: ../../usage.rst:42
+# 79b6062dbd284c60a7d174315e5ddf4f
 msgid "Log in to the CloudStack UI as administrator."
 msgstr ""
 
-#: ../../usage.rst:49
-# b71109d7bf9b4edd8cb8b8b3c62c7375
+#: ../../usage.rst:44
+# 19a9f5fbef3041d9b13807ca7c2cb8b9
 msgid "Click Global Settings."
 msgstr ""
 
-#: ../../usage.rst:53
-# d97b663ae09745498728fffc03e2f754
+#: ../../usage.rst:46
+# 667e5b8b21924fb69b4fa8afbf76896b
 msgid "In Search, type usage. Find the configuration parameter that controls the behavior you want to set. See the table below for a description of the available parameters."
 msgstr ""
 
-#: ../../usage.rst:59
-# b0484803860b4b1a99bb5c37475c7246
+#: ../../usage.rst:50
+# 8fa5855d775b43958fe08525d0e94aae
 msgid "In Actions, click the Edit icon."
 msgstr ""
 
-#: ../../usage.rst:63
-# 704d9670a22a4b81b84bd8f2aa97bb9a
+#: ../../usage.rst:52
+# 63178267fdd94998ab92da5146692648
 msgid "Type the desired value and click the Save icon."
 msgstr ""
 
-#: ../../usage.rst:67
-# f01266ae6922418997f31eb79d697cab
+#: ../../usage.rst:54
+# 5d851f4543c0408f8e57dce0857766a3
 msgid "Restart the Management Server (as usual with any global configuration change) and also the Usage Server:"
 msgstr ""
 
-#: ../../usage.rst:75
-# 7b5da1780fc444d2b67d97b1a97eabb7
+#: ../../usage.rst:62
+# b91f29141e0f4cdaaa81be318e86c10e
 msgid "The following table shows the global configuration settings that control the behavior of the Usage Server."
 msgstr ""
 
-#: ../../usage.rst:78
-# 0ca8d699a2cd4e91b01369666cbcb2ca
+#: ../../usage.rst:65
+# 1e76426d14bf4fc6915a0e1c79ef2b9a
 msgid "Parameter Name  Description"
 msgstr ""
 
-#: ../../usage.rst:80
-# a6789ec8fc34419ba8e0cc40f94d7f67
+#: ../../usage.rst:67
+# 668e6317ce104d72ab45c55b9411ea8e
 msgid "enable.usage.server  Whether the Usage Server is active."
 msgstr ""
 
-#: ../../usage.rst:82
-# f437a7fb1872449e9caf308fcfa5526f
+#: ../../usage.rst:69
+# 1fcaf07a4ddb4e8c958cd1b6ef8cfe91
 msgid "usage.aggregation.timezone"
 msgstr ""
 
-#: ../../usage.rst:84
-# 002d5b3110bb405a8848871cde0b96d5
+#: ../../usage.rst:71
+# fb381c2892df4ea7b1c44440f03ba556
 msgid "Time zone of usage records. Set this if the usage records and daily job execution are in different time zones. For example, with the following settings, the usage job will run at PST 00:15 and generate usage records for the 24 hours from 00:00:00 GMT to 23:59:59 GMT:"
 msgstr ""
 
-#: ../../usage.rst:95
-# c7f851a818984dcd81e65157bc3432f4
+#: ../../usage.rst:82
+# 509f3bce303a4ab7a526dcc19e3c3e50
 msgid "Valid values for the time zone are specified in `Appendix A, *Time Zones* <http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones#time-zones>`_"
 msgstr ""
 
-#: ../../usage.rst:97
-# 40b92c7b30364a0893e6e3026b182ae8
+#: ../../usage.rst:85
+# 3133231b20dd4c9da1fe9fd7d09136a3
 msgid "Default: GMT"
 msgstr ""
 
-#: ../../usage.rst:99
-# 7fa13665f2e44fc28418dc803fdee1b0
+#: ../../usage.rst:87
+# 22dabfab93eb4361b26eb9088cad5134
 msgid "usage.execution.timezone"
 msgstr ""
 
-#: ../../usage.rst:101
-# 03ddf36a6b6a42a891a0c341c43056f6
+#: ../../usage.rst:89
+# a27f0dcfc71847ee846e80cb1b5c6e66
 msgid "The time zone of usage.stats.job.exec.time. Valid values for the time zone are specified in `Appendix A, *Time Zones* <http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones#time-zones>`_"
 msgstr ""
 
-#: ../../usage.rst:104
-# e638a1f3e44e48da83a97b95361fe670
+#: ../../usage.rst:93
+# 101b64630291428aa4dce0f295b51f96
 msgid "Default: The time zone of the management server."
 msgstr ""
 
-#: ../../usage.rst:106
-# 336418dd41ec4a81934459e2c042fbf7
+#: ../../usage.rst:95
+# e5296f4116c949e282dda12b62a2e31b
 msgid "usage.sanity.check.interval"
 msgstr ""
 
-#: ../../usage.rst:108
-# 6db1762ecd314edeae225d23b32a5155
+#: ../../usage.rst:97
+# 12e3d1486808475ba2d50b4b1f480b20
 msgid "The number of days between sanity checks. Set this in order to periodically search for records with erroneous data before issuing customer invoices. For example, this checks for VM usage records created after the VM was destroyed, and similar checks for templates, volumes, and so on. It also checks for usage times longer than the aggregation range. If any issue is found, the alert ALERT\\_TYPE\\_USAGE\\_SANITY\\_RESULT = 21 is sent."
 msgstr ""
 
-#: ../../usage.rst:116
-# 6e8167cad8334e6db1221cfc494f72ff
+#: ../../usage.rst:105
+# d6a51defdc9b4ca1900dca6ee38d488b
 msgid "usage.stats.job.aggregation.range"
 msgstr ""
 
-#: ../../usage.rst:118
-# e01e74ee70b744fe8f79e8f35126362f
+#: ../../usage.rst:107
+# f200ecf1491a41c58c58d607a2030621
 msgid "The time period in minutes between Usage Server processing jobs. For example, if you set it to 1440, the Usage Server will run once per day. If you set it to 600, it will run every ten hours. In general, when a Usage Server job runs, it processes all events generated since usage was last run."
 msgstr ""
 
-#: ../../usage.rst:124
-# 72a14011c979446c83c67f906fbbd35e
+#: ../../usage.rst:113
+# 3fb2ba9c61a64f54bb226a97eff0e59f
 msgid "There is special handling for the case of 1440 (once per day). In this case the Usage Server does not necessarily process all records since Usage was last run. CloudStack assumes that you require processing once per day for the previous, complete day’s records. For example, if the current day is October 7, then it is assumed you would like to process records for October 6, from midnight to midnight. CloudStack assumes this “midnight to midnight” is relative to the usage.execution.timezone."
 msgstr ""
 
-#: ../../usage.rst:132
-# fff2920912c74d6ea4ecfe9d04f4326c
+#: ../../usage.rst:121
+# 657e01fff8404e7086e1a5cd318ed5b9
 msgid "Default: 1440"
 msgstr ""
 
-#: ../../usage.rst:134
-# dcb0cd40eeb94e38b3f968e426612b3d
+#: ../../usage.rst:123
+# 8e231a3dfe9b4ac494f5ae8dc3e03001
 msgid "usage.stats.job.exec.time"
 msgstr ""
 
-#: ../../usage.rst:136
-# a6a0f4fad3a14d5eadb8f19ebb248c50
+#: ../../usage.rst:125
+# 05f6de4a7dd947ceba3246443c6e2ace
 msgid "The time when the Usage Server processing will start. It is specified in 24-hour format (HH:MM) in the time zone of the server, which should be GMT. For example, to start the Usage job at 10:30 GMT, enter “10:30”."
 msgstr ""
 
-#: ../../usage.rst:140
-# 4d07c9c85f514d65bf442bf13e109864
+#: ../../usage.rst:129
+# 54677f1477574ba58b744ade5f531ddd
 msgid "If usage.stats.job.aggregation.range is also set, and its value is not 1440, then its value will be added to usage.stats.job.exec.time to get the time to run the Usage Server job again. This is repeated until 24 hours have elapsed, and the next day's processing begins again at usage.stats.job.exec.time."
 msgstr ""
 
-#: ../../usage.rst:146
-# 5111f12513a84c968c37d5b3255f5661
+#: ../../usage.rst:135
+# 870bef8e0dc54e1a87ab39acc1c59e7b
 msgid "Default: 00:15."
 msgstr ""
 
-#: ../../usage.rst:148
-# 691a7dadec4449ab885c9903e9de6d4d
+#: ../../usage.rst:137
+# 3c30b2b9e20f485c8ac878c1c8b62ef5
 msgid "For example, suppose that your server is in GMT, your user population is predominantly in the East Coast of the United States, and you would like to process usage records every night at 2 AM local (EST) time. Choose these settings:"
 msgstr ""
 
-#: ../../usage.rst:155
-# 854380bcaa4d4944a2e420a412fdd458
+#: ../../usage.rst:142
+# 910e4a77b6c34e64ad844e417ab623d5
 msgid "enable.usage.server = true"
 msgstr ""
 
-#: ../../usage.rst:159
-# 9552647831c040ddaf47d5c8fc277756
+#: ../../usage.rst:144
+# 078da3cc8569439c9002cbbb7337d936
 msgid "usage.execution.timezone = America/New\\_York"
 msgstr ""
 
-#: ../../usage.rst:163
-# 1aa8ef9c65f04460a33aba6389e20164
+#: ../../usage.rst:146
+# 42e66162ae97481083688b89c626c8cc
 msgid "usage.stats.job.exec.time = 07:00. This will run the Usage job at 2:00 AM EST. Note that this will shift by an hour as the East Coast of the U.S. enters and exits Daylight Savings Time."
 msgstr ""
 
-#: ../../usage.rst:169
-# 11423a0b34ff4d9c9197b18830cdb91f
+#: ../../usage.rst:150
+# 5ba2fd5fa7004081a393783418655cdd
 msgid "usage.stats.job.aggregation.range = 1440"
 msgstr ""
 
-#: ../../usage.rst:171
-# 45bcb1eac33046019e58feb7bc0457a1
+#: ../../usage.rst:152
+# 1c9ce06adfa54705878ac2e20fcc8462
 msgid "With this configuration, the Usage job will run every night at 2 AM EST and will process records for the previous day’s midnight-midnight as defined by the EST (America/New\\_York) time zone."
 msgstr ""
 
-#: ../../usage.rst:176
-# 40a9e9e40a5747bc89152657465138c2
+#: ../../usage.rst:157
+# 1e914c7e818e47d8b13676d7f92bbe0b
 msgid "Because the special value 1440 has been used for usage.stats.job.aggregation.range, the Usage Server will ignore the data between midnight and 2 AM. That data will be included in the next day's run."
 msgstr ""
 
-#: ../../usage.rst:182
-# 8859130b1f4e4118a9a83a2ecac3cf43
+#: ../../usage.rst:164
+# 40d99d806e4949158aa5ab2e841cfa2a
 msgid "Setting Usage Limits"
 msgstr ""
 
-#: ../../usage.rst:184
-# 67183fba4b79465a918f40539a1af8de
+#: ../../usage.rst:166
+# 579aaca84d1548508b091885f6e9e9da
 msgid "CloudStack provides several administrator control points for capping resource usage by users. Some of these limits are global configuration parameters. Others are applied at the ROOT domain and may be overridden on a per-account basis."
 msgstr ""
 
-#: ../../usage.rst:190
-# 4aac553e7c064eeab7acf5f41532e597
+#: ../../usage.rst:173
+# 229ad89efb9c4cb0ab03a6ce99f44f23
 msgid "Globally Configured Limits"
 msgstr ""
 
-#: ../../usage.rst:192
-# 37ace931a09a4cbb8686c2f6a35a51e2
+#: ../../usage.rst:175
+# e2b6313d1a4d4917a2544b4440379415
 msgid "In a zone, the guest virtual network has a 24 bit CIDR by default. This limits the guest virtual network to 254 running instances. It can be adjusted as needed, but this must be done before any instances are created in the zone. For example, 10.1.1.0/22 would provide for ~1000 addresses."
 msgstr ""
 
-#: ../../usage.rst:198
-# ae098636d8e648f3a914678156700e14
+#: ../../usage.rst:181
+# 84670b12426b4429831f536c401fc323
 msgid "The following table lists limits set in the Global Configuration:"
 msgstr ""
 
-#: ../../usage.rst:201
-#: ../../usage.rst:264
-#: ../../usage.rst:393
-#: ../../usage.rst:475
-# 4eb4df145b8e419e88f38cc31ce59ec5
-# 88da6c4bbb414d48a70762e6a87a8239
-# fd92835d48cb40a88c4fcd1120b360c8
-# ed9e4fe39d504bbfabc315a12eeb4f81
+#: ../../usage.rst:184
+#: ../../usage.rst:239
+#: ../../usage.rst:343
+#: ../../usage.rst:414
+# 7da9c9f6c4464762b975b5c84e4ebf9c
+# 146d490544914790b152209b009cacb9
+# 1bb822fa0c3e4b7db77988b5cf5efdbd
+# c79e2332c1ba4ad5883126f553ad5388
 msgid "Parameter Name"
 msgstr ""
 
-#: ../../usage.rst:201
-# 6ab99d8d306a4f868671e875f1e9686d
+#: ../../usage.rst:184
+# 69e6a02d3513471b89dca9419976e56b
 msgid "Definition"
 msgstr ""
 
-#: ../../usage.rst:203
-# 3181f7c34e2546de868e6a8c49b343cb
+#: ../../usage.rst:186
+# 8f803160c7ef4b258545cf19783a2cb2
 msgid "max.account.public.ips"
 msgstr ""
 
-#: ../../usage.rst:203
-# 52580eeb30b0494aacd46547a9a70f06
+#: ../../usage.rst:186
+# 33a9e7f75edb450eb385f759769e8a27
 msgid "Number of public IP addresses that can be owned by an account"
 msgstr ""
 
-#: ../../usage.rst:205
-# fb78fccf0cab4d608f3a9a4b50afc7de
+#: ../../usage.rst:188
+# 9d54d7043dfa4cfdba9892d7b4987d27
 msgid "max.account.snapshots"
 msgstr ""
 
-#: ../../usage.rst:205
-# 1f04bedfc70946aab381d1442e177e8b
+#: ../../usage.rst:188
+# 53e9c6336fc343f58d5d0f0c982ecd16
 msgid "Number of snapshots that can exist for an account"
 msgstr ""
 
-#: ../../usage.rst:207
-# eb091b2e7bc947318a0dc0eeb27fd55a
+#: ../../usage.rst:190
+# 6979458b8f824d9ea8eb1a932cb3700a
 msgid "max.account.templates"
 msgstr ""
 
-#: ../../usage.rst:207
-# 2900cbdf57044d8d849e01b90d7b484f
+#: ../../usage.rst:190
+# a450954b78c549129d90f452f3261c83
 msgid "Number of templates that can exist for an account"
 msgstr ""
 
-#: ../../usage.rst:209
-# e470b1824d0448d0bcaaef0003e0e758
+#: ../../usage.rst:192
+# e090c2956d874c139e10f94be47e21bd
 msgid "max.account.user.vms"
 msgstr ""
 
-#: ../../usage.rst:209
-# 45fc3b15f0f74fd9af1cfd0e3b57140e
+#: ../../usage.rst:192
+# d30280c4822b48cf86341f0c6f0e9f40
 msgid "Number of virtual machine instances that can exist for an account"
 msgstr ""
 
-#: ../../usage.rst:211
-# f552a012a4504f6a841f24ad45d78c4a
+#: ../../usage.rst:194
+# ecaf59ece9264e429a9664b72c83c9d5
 msgid "max.account.volumes"
 msgstr ""
 
-#: ../../usage.rst:211
-# 14bb2f91823c4d258090722dfff1a485
+#: ../../usage.rst:194
+# 352d53dede964c53adaba408485377bb
 msgid "Number of disk volumes that can exist for an account"
 msgstr ""
 
-#: ../../usage.rst:213
-# 050c07868c484da0ac186174142b1a02
+#: ../../usage.rst:196
+# 4855308d9e7f453ca68c4f73a23b7da2
 msgid "max.template.iso.size"
 msgstr ""
 
-#: ../../usage.rst:213
-# ae347d4cccf446ee8db6e10db1ffbbe5
+#: ../../usage.rst:196
+# c3cf19fabb7b41c6bfeda6bfcb0d40c6
 msgid "Maximum size for a downloaded template or ISO in GB"
 msgstr ""
 
-#: ../../usage.rst:215
-# 8873afe317eb48ebad10fb3d4fad05bb
+#: ../../usage.rst:198
+# e2bd816e02a74341ac3b504ef37abf9b
 msgid "max.volume.size.gb"
 msgstr ""
 
-#: ../../usage.rst:215
-# 292847e00d914fe9a87ed2fc6cb35196
+#: ../../usage.rst:198
+# ac589029cbaa451fb486f219b27caf43
 msgid "Maximum size for a volume in GB"
 msgstr ""
 
-#: ../../usage.rst:217
-# ad2a43dbb1674c4c89fd570d1d61adea
+#: ../../usage.rst:200
+# 3b152b7effc14a2098e6b2f885125e11
 msgid "network.throttling.rate"
 msgstr ""
 
-#: ../../usage.rst:217
-# 3acfdadda9ab43c685d660013eb62877
+#: ../../usage.rst:200
+# d66b6e2b68304b4d97dae0d72709be2f
 msgid "Default data transfer rate in megabits per second allowed per user (supported on XenServer)"
 msgstr ""
 
-#: ../../usage.rst:219
-# d1cb00d8c3ff4620a4118ee8a249bc92
+#: ../../usage.rst:202
+# e01d028d0d5643a3a283f12888581998
 msgid "snapshot.max.hourly"
 msgstr ""
 
-#: ../../usage.rst:219
-# d9d7ab38671b42a2a3a0317c58782ced
+#: ../../usage.rst:202
+# 305a224a1c5946ab949570233597705b
 msgid "Maximum recurring hourly snapshots to be retained for a volume. If the limit is reached, early snapshots from the start of the hour are deleted so that newer ones can be saved. This limit does not apply to manual snapshots. If set to 0, recurring hourly snapshots can not be scheduled"
 msgstr ""
 
-#: ../../usage.rst:221
-# b1f9cffb6fe647ad92ea2c6d5d289791
+#: ../../usage.rst:204
+# 7734cc014872464a8d8672c1190ff731
 msgid "snapshot.max.daily"
 msgstr ""
 
-#: ../../usage.rst:221
-# 704f71e544f345d09065347025c7cde4
+#: ../../usage.rst:204
+# ddca821bebdf4a12a2b4fb3d9e089efe
 msgid "Maximum recurring daily snapshots to be retained for a volume. If the limit is reached, snapshots from the start of the day are deleted so that newer ones can be saved. This limit does not apply to manual snapshots. If set to 0, recurring daily snapshots can not be scheduled"
 msgstr ""
 
-#: ../../usage.rst:223
-# 601336d47b0f418780ce30ebd5a32095
+#: ../../usage.rst:206
+# 90b70954860841d5a31b17b85cc10f84
 msgid "snapshot.max.weekly"
 msgstr ""
 
-#: ../../usage.rst:223
-# 5640652f34584cbb8e42774ff9737df1
+#: ../../usage.rst:206
+# 8ee51877c42a40da9039bdc877f388c5
 msgid "Maximum recurring weekly snapshots to be retained for a volume. If the limit is reached, snapshots from the beginning of the week are deleted so that newer ones can be saved. This limit does not apply to manual snapshots. If set to 0, recurring weekly snapshots can not be scheduled"
 msgstr ""
 
-#: ../../usage.rst:225
-# b2ef6f891d434c94a29c4965b9c39566
+#: ../../usage.rst:208
+# 65aa1a30aab34f218756e423bac8f482
 msgid "snapshot.max.monthly"
 msgstr ""
 
-#: ../../usage.rst:225
-# a5cad05dc86f49a38f79efa242145811
+#: ../../usage.rst:208
+# 631eba2a40fe48f3b4f179dfe6e9fdc7
 msgid "Maximum recurring monthly snapshots to be retained for a volume. If the limit is reached, snapshots from the beginning of the month are deleted so that newer ones can be saved. This limit does not apply to manual snapshots. If set to 0, recurring monthly snapshots can not be scheduled."
 msgstr ""
 
-#: ../../usage.rst:228
-# a9bb337b48804353bf8145ab56aadc02
+#: ../../usage.rst:211
+# dce0ccf760cb481290483d2e6c7439e4
 msgid "To modify global configuration parameters, use the global configuration screen in the CloudStack UI. See Setting Global Configuration Parameters"
 msgstr ""
 
-#: ../../usage.rst:233
-# 19348124e5c641fd87314245b0b13f1c
+#: ../../usage.rst:216
+# adacfb1bcc74482cbac23e9a14c1803c
 msgid "Limiting Resource Usage"
 msgstr ""
 
-#: ../../usage.rst:235
-# 79afe19dfc844449944f0572513152de
+#: ../../usage.rst:218
+# 354d5dde0afe47a982710d8800da3315
 msgid "CloudStack allows you to control resource usage based on the types of resources, such as CPU, RAM, Primary storage, and Secondary storage. A new set of resource types has been added to the existing pool of resources to support the new customization model—need-basis usage, such as large VM or small VM. The new resource types are now broadly classified as CPU, RAM, Primary storage, and Secondary storage. The root administrator is able to impose resource usage limit by the following resource types for Domain, Project, and Accounts."
 msgstr ""
 
-#: ../../usage.rst:246
-# a9ae7f3a467e463eab0552d8f074f9bb
+#: ../../usage.rst:227
+# b80deb66aa1244279f48b9e17db7f7a0
 msgid "CPUs"
 msgstr ""
 
-#: ../../usage.rst:250
-# d1e8543092ca4e278cb463f77f1d2d2d
+#: ../../usage.rst:229
+# a7c54e874cae4016b7a1d2a17c5a7a89
 msgid "Memory (RAM)"
 msgstr ""
 
-#: ../../usage.rst:254
-# 9bc201d30c4f454aa76e9ea96d490920
+#: ../../usage.rst:231
+# 3db51597d1dd4f328899070b88325384
 msgid "Primary Storage (Volumes)"
 msgstr ""
 
-#: ../../usage.rst:258
-# 2eb3b21cf5ff4e0c9db68b1d2027d48a
+#: ../../usage.rst:233
+# 6de9a84059e7408e85e9fdb47dbb341d
 msgid "Secondary Storage (Snapshots, Templates, ISOs)"
 msgstr ""
 
-#: ../../usage.rst:260
-# ba99ec918f874b8082b08d81454b8fca
+#: ../../usage.rst:235
+# 36f9c552269b44e49eb2f86fa2bd98c8
 msgid "To control the behaviour of this feature, the following configuration parameters have been added:"
 msgstr ""
 
-#: ../../usage.rst:264
-#: ../../usage.rst:395
-#: ../../usage.rst:477
-#: ../../usage.rst:1006
-# 701e7e16a99445b99fc60cffc35a1613
-# 895a22fc7c014f04bd420cec4b2209d1
-# 191142d4e5a34f1a981be02aab78a4e9
-# f2dd174ed4ca4418983cfaa634ead8a3
+#: ../../usage.rst:239
+#: ../../usage.rst:345
+#: ../../usage.rst:416
+#: ../../usage.rst:750
+# fc46eaac2efd4bf289bbd9025fd78502
+# 160c8719552a4684880d4f4a8ada714c
+# 947dba25316d4d74959935b65c8c5a33
+# 161ab30e9a60413d90729511c5fe9ec1
 msgid "Description"
 msgstr ""
 
-#: ../../usage.rst:266
-# c9b3ff00335343b584b50bb9d670e66b
+#: ../../usage.rst:241
+# 23d6c966c2c94a1f986282a729352f38
 msgid "max.account.cpus"
 msgstr ""
 
-#: ../../usage.rst:266
-#: ../../usage.rst:274
-# 808381505f1949dcbe071d0118def06a
-# e576ee036df54d8fb5e8e54071303efb
+#: ../../usage.rst:241
+#: ../../usage.rst:249
+# cdd19d9379ec43648cd224ba64a960dd
+# 2ca1b2c4fdc44e0e940da7f75cb5788b
 msgid "Maximum number of CPU cores that can be used for an account. Default is 40."
 msgstr ""
 
-#: ../../usage.rst:268
-# 6babe6b036e849c1935af0fdb317a503
+#: ../../usage.rst:243
+# 4979d3f2676e4809a49cc696c48d2f8d
 msgid "max.account.ram (MB)"
 msgstr ""
 
-#: ../../usage.rst:268
-#: ../../usage.rst:276
-# 0d3c447ef2b44034ac9f10ef0a6cf757
-# 83ccac909d944ba784f4c8286642b875
+#: ../../usage.rst:243
+#: ../../usage.rst:251
+# f3c0b37fc2ea4617b811cef9791eda3b
+# 00fb0cdbac5b4ad291bc50a5e1219a47
 msgid "Maximum RAM that can be used for an account. Default is 40960."
 msgstr ""
 
-#: ../../usage.rst:270
-# 7ff408b8265a47cfaf763eb727c7f173
+#: ../../usage.rst:245
+# 45df7928f7174808a2083dd11add33c0
 msgid "max.account.primary.storage (GB)"
 msgstr ""
 
-#: ../../usage.rst:270
-#: ../../usage.rst:278
-# 91e413d1b9bb4711b508311ddd9347c6
-# 20a5043887eb49b1a52d77e4cc334412
+#: ../../usage.rst:245
+#: ../../usage.rst:253
+# 1ee6c5009abd4668a5dd0a640a18c8ea
+# 254b02916fc34ad6a649c8c990d4f41a
 msgid "Maximum primary storage space that can be used for an account. Default is 200."
 msgstr ""
 
-#: ../../usage.rst:272
-# 5f6df194148e43a7b3c27106ce4b7ae9
+#: ../../usage.rst:247
+# cdeb23ce821d4c3196c6ea784f4367b6
 msgid "max.account.secondary.storage (GB)"
 msgstr ""
 
-#: ../../usage.rst:272
-#: ../../usage.rst:280
-# 694920973fbe4b3a9c30a8be9d0bed46
-# 97892a16f5464907b6ecdee7beac3914
+#: ../../usage.rst:247
+#: ../../usage.rst:255
+# c51c46bd539f4093a4393f2d6d4e9b79
+# 982aa6e78c6f4ecda0f24acd5f6564d3
 msgid "Maximum secondary storage space that can be used for an account. Default is 400."
 msgstr ""
 
-#: ../../usage.rst:274
-# 145cd18bd90944c29a70a7031636b807
+#: ../../usage.rst:249
+# 01081c6a660a44f5851d914915a1281b
 msgid "max.project.cpus"
 msgstr ""
 
-#: ../../usage.rst:276
-# c40411dfaeb04da3867c26ce7f18cf93
+#: ../../usage.rst:251
+# b7aede866d8a41298cf2c284450aea39
 msgid "max.project.ram (MB)"
 msgstr ""
 
-#: ../../usage.rst:278
-# 472152eee1784c32878c18418221acdb
+#: ../../usage.rst:253
+# 6a66f463c8a14145b745751a99ff5412
 msgid "max.project.primary.storage (GB)"
 msgstr ""
 
-#: ../../usage.rst:280
-# e7351bedf5464f369b0c6475fc3826bb
+#: ../../usage.rst:255
+# 86d804726f994f5ea14d1a29e97eb968
 msgid "max.project.secondary.storage (GB)"
 msgstr ""
 
-#: ../../usage.rst:285
-# fc4d573c924648f3b8d5cfb5701bfe79
+#: ../../usage.rst:261
+# 8ea9def42949482d99838f5ebe00a5e2
 msgid "User Permission"
 msgstr ""
 
-#: ../../usage.rst:287
-# 992a6cf60f4d464eaa582363722fe802
+#: ../../usage.rst:263
+# 31b6a320c933489c96b4ce8db09ee012
 msgid "The root administrator, domain administrators and users are able to list resources. Ensure that proper logs are maintained in the ``vmops.log`` and ``api.log`` files."
 msgstr ""
 
-#: ../../usage.rst:293
-# 41185d18c788495bb86298b0d85badd0
+#: ../../usage.rst:267
+# 41b569e3765441d69d540fed030e34e2
 msgid "The root admin will have the privilege to list and update resource limits."
 msgstr ""
 
-#: ../../usage.rst:298
-# 76a4aba5c62647b4b43b704d8cfdb5ea
+#: ../../usage.rst:270
+# 9f791a84c2014d73b5f8b74f287ad010
 msgid "The domain administrators are allowed to list and change these resource limits only for the sub-domains and accounts under their own domain or the sub-domains."
 msgstr ""
 
-#: ../../usage.rst:304
-# a87d4ac1c2e346ffa3b116567c1a2d0a
+#: ../../usage.rst:274
+# df23a35291874e2d9f7af5d93db4dae4
 msgid "The end users will the privilege to list resource limits. Use the listResourceLimits API."
 msgstr ""
 
-#: ../../usage.rst:308
-# aca61571889f482e9ae39fde99d3d2c6
+#: ../../usage.rst:279
+# 474425750935446e84565dc2a2f561b6
 msgid "Limit Usage Considerations"
 msgstr ""
 
-#: ../../usage.rst:312
-# 96374a37482c4635afc8f21dd613d978
+#: ../../usage.rst:281
+# c96935ecfc1545448c6a31bf7e9bcefa
 msgid "Primary or Secondary storage space refers to the stated size of the volume and not the physical size— the actual consumed size on disk in case of thin provisioning."
 msgstr ""
 
-#: ../../usage.rst:318
-# 8ebf7be7aceb49d9abe430f6d3214d7f
+#: ../../usage.rst:285
+# 003d62e3a41b4ec0838c1ad1e22ab0c8
 msgid "If the admin reduces the resource limit for an account and set it to less than the resources that are currently being consumed, the existing VMs/templates/volumes are not destroyed. Limits are imposed only if the user under that account tries to execute a new operation using any of these resources. For example, the existing behavior in the case of a VM are:"
 msgstr ""
 
-#: ../../usage.rst:327
-# 89e003933f074f23bbc0599f15cdff5f
+#: ../../usage.rst:292
+# 61f14d0421dc4f27885ac8f93946dbe6
 msgid "migrateVirtualMachine: The users under that account will be able to migrate the running VM into any other host without facing any limit issue."
 msgstr ""
 
-#: ../../usage.rst:333
-# 4adef6c4f48a4141b8994845fa47579d
+#: ../../usage.rst:296
+# 287edb83794948b4b1509e7c1ed82b17
 msgid "recoverVirtualMachine: Destroyed VMs cannot be recovered."
 msgstr ""
 
-#: ../../usage.rst:337
-# bc957aef4ad4410aac019444739d39a4
+#: ../../usage.rst:298
+# 2b57273cf486489e856ef1a97146d73a
 msgid "For any resource type, if a domain has limit X, sub-domains or accounts under that domain can have there own limits. However, the sum of resource allocated to a sub-domain or accounts under the domain at any point of time should not exceed the value X."
 msgstr ""
 
-#: ../../usage.rst:342
-# 24a983cb8b67474abde79f6889217547
+#: ../../usage.rst:303
+# 9f35315b3f6b4560abe71837984f2ed7
 msgid "For example, if a domain has the CPU limit of 40 and the sub-domain D1 and account A1 can have limits of 30 each, but at any point of time the resource allocated to D1 and A1 should not exceed the limit of 40."
 msgstr ""
 
-#: ../../usage.rst:349
-# 30fe62ee367f4359a9a57e89756d466d
+#: ../../usage.rst:308
+# cfc912fe9e294238a5a41841f8636ecf
 msgid "If any operation needs to pass through two of more resource limit check, then the lower of 2 limits will be enforced, For example: if an account has the VM limit of 10 and CPU limit of 20, and a user under that account requests 5 VMs of 4 CPUs each. The user can deploy 5 more VMs because VM limit is 10. However, the user cannot deploy any more instances because the CPU limit has been exhausted."
 msgstr ""
 
-#: ../../usage.rst:357
-# e2ebbbc8967b45cc9998475e4dbd9d24
+#: ../../usage.rst:317
+# fd7e43ba4fc2492cb1117d9f171cb475
 msgid "Limiting Resource Usage in a Domain"
 msgstr ""
 
-#: ../../usage.rst:359
-# bb8ae3e9878c46f89162dc7fdc092f1b
+#: ../../usage.rst:319
+# d7bae8b0c64640aaab9b686ccb641ca1
 msgid "CloudStack allows the configuration of limits on a domain basis. With a domain limit in place, all users still have their account limits. They are additionally limited, as a group, to not exceed the resource limits set on their domain. Domain limits aggregate the usage of all accounts in the domain as well as all the accounts in all the sub-domains of that domain. Limits set at the root domain level apply to the sum of resource usage by the accounts in all the domains and sub-domains below that root domain."
 msgstr ""
 
-#: ../../usage.rst:368
-# 103a30006f7741ac9db713d266a5260a
+#: ../../usage.rst:328
+# 42cc77754b864082aff2b2d5e091fa0f
 msgid "To set a domain limit:"
 msgstr ""
 
-#: ../../usage.rst:372
-#: ../../usage.rst:454
-# 70f50a6779ea4f7594118e18b47895fe
-# 48c0bb0248954742bd447c868ebdf0a8
+#: ../../usage.rst:330
+#: ../../usage.rst:401
+# bb5fc3b2710e4ea59810c1d28209dfc2
+# b83cbc0f83d7410e8b117351958fc591
 msgid "Log in to the CloudStack UI."
 msgstr ""
 
-#: ../../usage.rst:376
-# b2c05194969c4e2e8ad740be41b6d06d
+#: ../../usage.rst:332
+# 530247f4ca1a4475ae86e656ceff6abb
 msgid "In the left navigation tree, click Domains."
 msgstr ""
 
-#: ../../usage.rst:380
-# 7011345e6a9840ce90707e5370d8b01c
+#: ../../usage.rst:334
+# a9bff41fd28c435cbb09170c5b103277
 msgid "Select the domain you want to modify. The current domain limits are displayed."
 msgstr ""
 
-#: ../../usage.rst:383
-#: ../../usage.rst:465
-# 6aeb808f62f34735a7d07e7d86d372a2
-# 30925ced880840748118903c27bffadd
+#: ../../usage.rst:337
+#: ../../usage.rst:408
+# 519c174598aa4e55b86e899664c75018
+# 182d21886ebb4a09aebb0ef93e1fba63
 msgid "A value of -1 shows that there is no limit in place."
 msgstr ""
 
-#: ../../usage.rst:387
-# d45e49e7b252469a978dfaade17de643
+#: ../../usage.rst:339
+# b83647ec9f344cccbf360b1f8b85c119
 msgid "Click the Edit button |editbutton.png|"
 msgstr ""
 
-#: ../../usage.rst:391
-#: ../../usage.rst:473
-# 3644e560828a437a8efd7294c1146c57
-# dcb185144b264299ada24bfd162ca230
+#: ../../usage.rst:341
+#: ../../usage.rst:412
+# c209d72330bd40f887995563563a6337
+# 99aa0e22f71d481eb51b72047c456f3a
 msgid "Edit the following as per your requirement:"
 msgstr ""
 
-#: ../../usage.rst:397
-#: ../../usage.rst:479
-# 0e98068650894afca9c4cad2ba57d012
-# d99b60d3d6cc4a2ebc4bb48e70492e46
+#: ../../usage.rst:347
+#: ../../usage.rst:418
+# cd271c3e43ea4c79a12f3f84924b6307
+# f889d8a628fd4b0ba7972855f0dbdc45
 msgid "Instance Limits"
 msgstr ""
 
-#: ../../usage.rst:399
-# 1490bec5c5af4b6aac1977fae7406bd9
+#: ../../usage.rst:349
+# 5ef71e88c22848aeb261dfceed3f0ad3
 msgid "The number of instances that can be used in a domain."
 msgstr ""
 
-#: ../../usage.rst:401
-#: ../../usage.rst:485
-# 6b1b4dc40c63424a9bee7ff075229e64
-# 6b59062ccedf4877b9bcbf68577231ac
+#: ../../usage.rst:351
+#: ../../usage.rst:424
+# 8eb91b3c4b884b1886b84388b430c4b5
+# 50f79b10ffa84d4e8d63df31d54a18bc
 msgid "Public IP Limits"
 msgstr ""
 
-#: ../../usage.rst:403
-# ad257ba8e044423d828023c39de3ad02
+#: ../../usage.rst:353
+# 9c123828b8bd44759ea889e13f4ab4bb
 msgid "The number of public IP addresses that can be used in a domain."
 msgstr ""
 
-#: ../../usage.rst:405
-#: ../../usage.rst:491
-# dcdfcfad513b4222b5331ce5736ef137
-# d9ca60a77d4849b193ae25ff879389d0
+#: ../../usage.rst:355
+#: ../../usage.rst:430
+# 682adde29cb64e42b391dcb5e5cdc9ad
+# f9ffeebe6c1a4111ab27c1b8d080143f
 msgid "Volume Limits"
 msgstr ""
 
-#: ../../usage.rst:407
-# 1eb1867ffda449a6bb66c6ec8f065967
+#: ../../usage.rst:357
+# 57ca197f678f416c961a36d6a71f9bf5
 msgid "The number of disk volumes that can be created in a domain."
 msgstr ""
 
-#: ../../usage.rst:409
-#: ../../usage.rst:497
-# b6f42f973d934cb999c41c20e433d8fe
-# 10261a1b88ae4d2a8e58d52c1de12d25
+#: ../../usage.rst:359
+#: ../../usage.rst:436
+# 014dffd5f65443088674d2ee9df38979
+# ae967a3a9a714ab2892d18c80a55f652
 msgid "Snapshot Limits"
 msgstr ""
 
-#: ../../usage.rst:411
-# 4b257bf3dce344af8eadcef3141b57b9
+#: ../../usage.rst:361
+# 11f338d7f95041eaa7b84b9960a9f12f
 msgid "The number of snapshots that can be created in a domain."
 msgstr ""
 
-#: ../../usage.rst:413
-#: ../../usage.rst:503
-# b7ee911b551c44f7919c853b78b4425f
-# 86f76db28bb548458cb440dba9aa78cc
+#: ../../usage.rst:363
+#: ../../usage.rst:442
+# 07a01397e2404e18a667da23df9e7bf3
+# 6ba3ca1a17df418cac4387d71ddd7656
 msgid "Template Limits"
 msgstr ""
 
-#: ../../usage.rst:415
-# 420b972a03034c3f8eb40442e16f668a
+#: ../../usage.rst:365
+# 6dc70a7ce5ec48f3bcf254b4a20b4145
 msgid "The number of templates that can be registered in a domain."
 msgstr ""
 
-#: ../../usage.rst:417
-#: ../../usage.rst:509
-# 3e038058f17d4b0da96787cea06872d7
-# be00e5ab52c04e94a69c4a70e2881d6c
+#: ../../usage.rst:367
+#: ../../usage.rst:448
+# 3bf5c725f231453cb6152f1bade12d17
+# 0b2a474b089d426d850f25818db1d152
 msgid "VPC limits"
 msgstr ""
 
-#: ../../usage.rst:419
-# b7d308b327c04f1ab4e8b5f302af61ab
+#: ../../usage.rst:369
+# 6041d380cc8b460e838d34d542c0fe6f
 msgid "The number of VPCs that can be created in a domain."
 msgstr ""
 
-#: ../../usage.rst:421
-#: ../../usage.rst:515
-# fce16fe529af4a7293745ff0c030b9cb
-# 443d6a522d9840e2a18dd44f0289166f
+#: ../../usage.rst:371
+#: ../../usage.rst:454
+# 6167d0a236e346cdac41980cca4b61a1
+# efac374c510144af805a206947596f0d
 msgid "CPU limits"
 msgstr ""
 
-#: ../../usage.rst:423
-# d71cdb39c26d44ce8f7dc1d458970d6f
+#: ../../usage.rst:373
+# c3bb1f4173a04335bd9f9a2aa60ffb7f
 msgid "The number of CPU cores that can be used for a domain."
 msgstr ""
 
-#: ../../usage.rst:425
-#: ../../usage.rst:521
-# 636111c4340a4e8d81ea9a1408617fff
-# 8cd52cd9a5764bb0b4e8df8a94c725ab
+#: ../../usage.rst:375
+#: ../../usage.rst:460
+# 5b77e8eb1eed4b89a6add832c6efa78d
+# 0f97c6c6f6bd48d49582e4a5773420a0
 msgid "Memory limits (MB)"
 msgstr ""
 
-#: ../../usage.rst:427
-# 3b5d06b9763040d885a0698e6fbdbb6a
+#: ../../usage.rst:377
+# 46ff0275d44b492790fbf06cfcc202f9
 msgid "The number of RAM that can be used for a domain."
 msgstr ""
 
-#: ../../usage.rst:429
-#: ../../usage.rst:527
-# c6b3a361e0414c88a4d5c44b76a273ea
-# d77e6bda798a4106ab33783525f2e4f2
+#: ../../usage.rst:379
+#: ../../usage.rst:466
+# cfada3bdc3304c91b6093699cc7aba26
+# e09ca8ab179747818fc4be09918773c3
 msgid "Primary Storage limits (GB)"
 msgstr ""
 
-#: ../../usage.rst:431
-# 9fd1366af3c34b8ebc3569a0ee410c57
+#: ../../usage.rst:381
+# fadd0e1341ce4a40a364f8e7e5cbd720
 msgid "The primary storage space that can be used for a domain."
 msgstr ""
 
-#: ../../usage.rst:433
-#: ../../usage.rst:533
-# 7a3d9175a9a24b8aaa8450632df0a763
-# 172a382bbcdf4f84bb58871b61c9425b
+#: ../../usage.rst:383
+#: ../../usage.rst:472
+# 94e6ad3512c64a968eba503aae4228e9
+# 88b20b1a22f5450abfd0371827b8a662
 msgid "Secondary Storage limits (GB)"
 msgstr ""
 
-#: ../../usage.rst:435
-# 141ca6b4f0ff49fb83194c64faaa2785
+#: ../../usage.rst:385
+# af7bbd32f2d744bbb6bc8bc38f2a6fff
 msgid "The secondary storage space that can be used for a domain."
 msgstr ""
 
-#: ../../usage.rst:439
-#: ../../usage.rst:541
-# 05f0937c41c248c2a42d5b01086833af
-# a30d9a7a173147dfad893988bb11c62c
+#: ../../usage.rst:387
+#: ../../usage.rst:478
+# 9c4e390eeaf74125aff2fabb290d7508
+# 8554c878b3db4319b1e9ff271f3f2e16
 msgid "Click Apply."
 msgstr ""
 
-#: ../../usage.rst:442
-# e64546c23abc46f69e958e6ba2f6a45e
+#: ../../usage.rst:391
+# 0aea17dfad1c43818257b74482bdc4ec
 msgid "Default Account Resource Limits"
 msgstr ""
 
-#: ../../usage.rst:444
-# d39e8db38abb47f7bb88354317f3c717
+#: ../../usage.rst:393
+# 5aec04d06e414d8c85567ee7ad5fa5a2
 msgid "You can limit resource use by accounts. The default limits are set by using Global configuration parameters, and they affect all accounts within a cloud. The relevant parameters are those beginning with max.account, for example: max.account.snapshots."
 msgstr ""
 
-#: ../../usage.rst:449
-# 785d6083ab194768bf8fd0e111052af4
+#: ../../usage.rst:398
+# 49c964b0ef8840ef953d87ef3115cf7f
 msgid "To override a default limit for a particular account, set a per-account resource limit."
 msgstr ""
 
-#: ../../usage.rst:458
-# 234f93b230d546038672b7b7fabb3bb6
+#: ../../usage.rst:403
+# 7954a55684b74afbb3e48736fb619dfe
 msgid "In the left navigation tree, click Accounts."
 msgstr ""
 
-#: ../../usage.rst:462
-# c46ae3c1e44c48eb8b3c1b418b6dd7a6
+#: ../../usage.rst:405
+# 30a0c7b93a044a24b1bbcab3362c9130
 msgid "Select the account you want to modify. The current limits are displayed."
 msgstr ""
 
-#: ../../usage.rst:469
-# 6ef5ea22b14643cca72f87c8f6f3ec87
+#: ../../usage.rst:410
+# 247dcfe79c914ac0a42c2bb5f617c3b2
 msgid "Click the Edit button. |editbutton.png|"
 msgstr ""
 
-#: ../../usage.rst:481
-# bcacb6c61c5643d59e3f18626a386e80
+#: ../../usage.rst:420
+# a5b53a96d84f4cb993b2539562072ba0
 msgid "The number of instances that can be used in an account."
 msgstr ""
 
-#: ../../usage.rst:483
-#: ../../usage.rst:489
-#: ../../usage.rst:495
-#: ../../usage.rst:501
-#: ../../usage.rst:507
-#: ../../usage.rst:513
-# 5219fe5416b143daad66670634c102c4
-# 3a80e105e27b4fe1aa28988ee3df905b
-# 3c1d4c98816f438b948a9ba94bac3dff
-# 71f315d93a394970a010d89c3b8cd47b
-# da4f44de38794f3ba45677eab7816383
-# cc29ea692bbe4e10ac190932bb654c87
+#: ../../usage.rst:422
+#: ../../usage.rst:428
+#: ../../usage.rst:434
+#: ../../usage.rst:440
+#: ../../usage.rst:446
+#: ../../usage.rst:452
+# 4f148fb22eeb4cd5867de40af5d6957d
+# f6aef839dc7e4814a93524ac42691632
+# c8a80cc9dabc47b7908b2be9906b47e6
+# b1fc64706b924e37bcdf44b959b1a10b
+# a4c96e4f6931454c803ad5d310dd832a
+# 37ebe0cf9b3644a59962fb5255cd1e7c
 msgid "The default is 20."
 msgstr ""
 
-#: ../../usage.rst:487
-# 2975c69d82ae46719fe87557b9340482
+#: ../../usage.rst:426
+# b71498e20d9c45f5b4e6246502846b7a
 msgid "The number of public IP addresses that can be used in an account."
 msgstr ""
 
-#: ../../usage.rst:493
-# cb4700fde09a4bf393a2e6f7f2368957
+#: ../../usage.rst:432
+# a7a78f1d32244bd7ae3f36a8706565ec
 msgid "The number of disk volumes that can be created in an account."
 msgstr ""
 
-#: ../../usage.rst:499
-# dc40e0f30ee94e799f0206e7c1e8e07e
+#: ../../usage.rst:438
+# f22d973606cc4fe68cdf2ef0d22fb7b9
 msgid "The number of snapshots that can be created in an account."
 msgstr ""
 
-#: ../../usage.rst:505
-# 853d74cbd7dd482f8df89f4b8dce104a
+#: ../../usage.rst:444
+# 78aa50a7ed74400c8d0a3bcc278ed06b
 msgid "The number of templates that can be registered in an account."
 msgstr ""
 
-#: ../../usage.rst:511
-# 288f9071013747059feb9d3da84c2355
+#: ../../usage.rst:450
+# 17544e59335b42c2b1dcb5439be274a4
 msgid "The number of VPCs that can be created in an account."
 msgstr ""
 
-#: ../../usage.rst:517
-# 3f289b8a9f0448ea9c4e5da62d340a93
+#: ../../usage.rst:456
+# dab1fd7da66d424fa313f0a8da2fd672
 msgid "The number of CPU cores that can be used for an account."
 msgstr ""
 
-#: ../../usage.rst:519
-# 38ebe4cd1c664c47a588d311025f7d69
+#: ../../usage.rst:458
+# f8813118e7014ec4b09e2ce57e9826a0
 msgid "The default is 40."
 msgstr ""
 
-#: ../../usage.rst:523
-# 696083649ee5486b9a14674a296d3994
+#: ../../usage.rst:462
+# 5ee54380b1c7418aa85f1b4aa3d18f5c
 msgid "The number of RAM that can be used for an account."
 msgstr ""
 
-#: ../../usage.rst:525
-# 920dfc71a5b14a5fa400d697dfb7cc6f
+#: ../../usage.rst:464
+# 463fe26a18c747bdba2e4c943174df89
 msgid "The default is 40960."
 msgstr ""
 
-#: ../../usage.rst:529
-# b2455dd2cd2e4e6193381252d5c91530
+#: ../../usage.rst:468
+# 483d95c867804bd7a67bd7c5db5d7250
 msgid "The primary storage space that can be used for an account."
 msgstr ""
 
-#: ../../usage.rst:531
-# 99fcd0a0086c4a25940fafc2e2f61f29
+#: ../../usage.rst:470
+# b5792f85ad5748629247339cddc34442
 msgid "The default is 200."
 msgstr ""
 
-#: ../../usage.rst:535
-# a491b8aa13c54bfd9ba29c7e0f5510c2
+#: ../../usage.rst:474
+# cf2794b976cb4597a1c7c46023d92939
 msgid "The secondary storage space that can be used for an account."
 msgstr ""
 
-#: ../../usage.rst:537
-# b38daf6fd3f54c9fb4aca46e83dd6d05
+#: ../../usage.rst:476
+# e31012695d1342b893a7afc797d9efc8
 msgid "The default is 400."
 msgstr ""
 
-#: ../../usage.rst:545
-# 3b7fd66c0dbe4d9395e99d3fda42744f
+#: ../../usage.rst:482
+# 58fd1b50da564cbfbe626a0c715242a2
 msgid "Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:548
-# 23e146a6c80f40faad4f402fb96f69d3
+#: ../../usage.rst:485
+# bd6e6ad5dd4441038efbfa8256d54fbb
 msgid "Virtual Machine Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:550
-# b18a9612524b4defa9435bd2af0808fa
+#: ../../usage.rst:487
+# f4090312493645f999618d3518704fe4
 msgid "For running and allocated virtual machine usage, the following fields exist in a usage record:"
 msgstr ""
 
-#: ../../usage.rst:555
-#: ../../usage.rst:625
-#: ../../usage.rst:726
-#: ../../usage.rst:787
-#: ../../usage.rst:894
-#: ../../usage.rst:955
-# b7e355e1118447e2ab1db44f43eb678e
-# f7b98329db784060812bbff8bf46b00e
-# 8d470f7dd5d243da9c56213943473ecf
-# 6069dd2ad3aa4c408d1048d2f3fa005e
-# 37b469072184449b94d3535ae468bffe
-# 7c8f0dc188cb45309cc91a5c67b6b9a3
+#: ../../usage.rst:490
+#: ../../usage.rst:531
+#: ../../usage.rst:590
+#: ../../usage.rst:624
+#: ../../usage.rst:685
+#: ../../usage.rst:719
+# 1ea8ad4e82f849199566823e669d2e60
+# cb746968f7ea4c6eaeae3a8696c37487
+# 800271ae9863449db8b5d5a7a20f41be
+# 40d84f3b7c0243a2b680c8c5ee6fe699
+# b060e5d0dfc94db5a3dc884d3afc9829
+# 34a867e377074d8b8b7a9d16f17250f8
 msgid "account – name of the account"
 msgstr ""
 
-#: ../../usage.rst:559
-#: ../../usage.rst:629
-#: ../../usage.rst:730
-#: ../../usage.rst:791
-#: ../../usage.rst:898
-#: ../../usage.rst:959
-# e1e34a37ba1d498585eaab30e2351742
-# 026f620f0e294b169c97fdb92ba57ecf
-# 30917b31f13c40179982bf003c13d5b2
-# b78545017e5b4064903c7f09ff6cd401
-# acfd26101a794b8e9a48f436dbbd01a9
-# b3a301e04b424468a2b699c872d1ff3a
+#: ../../usage.rst:492
+#: ../../usage.rst:533
+#: ../../usage.rst:592
+#: ../../usage.rst:626
+#: ../../usage.rst:687
+#: ../../usage.rst:721
+# 0c884e63b3b6479d8ee0a652be74d5d4
+# 374676d104da4bb795381a260c95ddf1
+# cdf46e85f5ce46b6b29adc8183f20bc5
+# 0afdb6434c584c61acb197cf1a10f04c
+# 871a1002f0e34f38a9d8b6511ac9c04e
+# e13b8b9c705048e583810469fcd0a485
 msgid "accountid – ID of the account"
 msgstr ""
 
-#: ../../usage.rst:563
-#: ../../usage.rst:633
-#: ../../usage.rst:734
-#: ../../usage.rst:795
-#: ../../usage.rst:902
-#: ../../usage.rst:963
-# 15be8f85307f42a0b06f5e97b57c4e7f
-# cd486a947a304246a98f9893e3e00557
-# 79d393b3b1f14871bf02b50c422421f9
-# bf901bb97d6f47f5b916b329cac5ce26
-# cf82083852df4a67b8f82a8b17ff8d38
-# 271309f9bfab4620acc24e2f5a375f2d
+#: ../../usage.rst:494
+#: ../../usage.rst:535
+#: ../../usage.rst:594
+#: ../../usage.rst:628
+#: ../../usage.rst:689
+#: ../../usage.rst:723
+# 422137b0ab2b4696a321d367b6d26f6d
+# 86455aead7614969ab37a2e295a26530
+# 0c7934f2579a497cb68757e53895fe18
+# cd40f5f568ed41969adeb774e54813da
+# bdd3a9da32134e1e8ca88e1d720abcef
+# e797f39fdbc04ecbbbe2bdc559a0b118
 msgid "domainid – ID of the domain in which this account resides"
 msgstr ""
 
-#: ../../usage.rst:567
-#: ../../usage.rst:637
-#: ../../usage.rst:738
-#: ../../usage.rst:799
-#: ../../usage.rst:906
-#: ../../usage.rst:967
-# 1ac00861f5ac4e1f9e6c74777a6a6eca
-# 18ab3268a73d453195129ad3a1bd3dab
-# ba80f684ac1e4667b879233f20723c3d
-# 4384bfa6f64146438dc81cfbe82e8987
-# 06a1afeaa8664be5944707d630da307d
-# a2ce895fafd04583ac774cf156786df2
+#: ../../usage.rst:496
+#: ../../usage.rst:537
+#: ../../usage.rst:596
+#: ../../usage.rst:630
+#: ../../usage.rst:691
+#: ../../usage.rst:725
+# d938ef5bbcc140c3a43fe372485e16af
+# 0e8bcce04fb34321a8e64ed6f0511dc6
+# 989ad97f092f4ef38b22b0112e749925
+# a74af98e8b4f4970805d2c13cdf90c37
+# 07ebb7ef423743fa8f659f3ab930b615
+# 7f6481f066a049c68b8df922020b9f23
 msgid "zoneid – Zone where the usage occurred"
 msgstr ""
 
-#: ../../usage.rst:571
-#: ../../usage.rst:641
-#: ../../usage.rst:742
-#: ../../usage.rst:803
-#: ../../usage.rst:910
-#: ../../usage.rst:971
-# 4e304294d1424ed787da24b1cbe632bf
-# 9b796d3f857b4c298c92d93c80d31584
-# 7fdfbfc30a354983b9c12308e1976ef3
-# 688751ec77e249f4bf58e1ad0cba8768
-# fe7cdd70966543dca1a3cc526ee07500
-# 0c59a00f82af422babd5a77980e812ec
+#: ../../usage.rst:498
+#: ../../usage.rst:539
+#: ../../usage.rst:598
+#: ../../usage.rst:632
+#: ../../usage.rst:693
+#: ../../usage.rst:727
+# 603607ff4edb47e9a79f7310b5606576
+# 54a63f2835ce4ebcab6a5e8f61822468
+# 6c1cd88b31ef47699a96c86e2dc2fd57
+# a97e62aec444404ba90732a66e38ba16
+# 851e49d28b7748bc84040d925da26fc0
+# cdf33c6ee5c24ddd843c0c573f0236c9
 msgid "description – A string describing what the usage record is tracking"
 msgstr ""
 
-#: ../../usage.rst:575
-# 9bef56bf42ff4bec9ff2e9bb16072e4c
+#: ../../usage.rst:500
+# 18c681fd6a6d4db7ac9c8d0c14546df8
 msgid "usage – String representation of the usage, including the units of usage (e.g. 'Hrs' for VM running time)"
 msgstr ""
 
-#: ../../usage.rst:580
-#: ../../usage.rst:645
-#: ../../usage.rst:751
-#: ../../usage.rst:812
-#: ../../usage.rst:919
-#: ../../usage.rst:931
-#: ../../usage.rst:980
-#: ../../usage.rst:992
-# e639456f21ae4b7294943056663a4b83
-# 78fc89b23a9241f784b08190352c8f17
-# fea2f14a640c406d8639087c670a0a59
-# 734f38e6f69c41d3959da554e5e174bb
-# 2c43f4b99f624f0694765d97d03a3133
-# 2009c00147bd45b6904fd38e30dc7bbf
-# b3dd2416c8cf4a7b847db345892636b9
-# a8ab363fa03b4e0bac77a4d12f9d84df
+#: ../../usage.rst:503
+#: ../../usage.rst:541
+#: ../../usage.rst:603
+#: ../../usage.rst:637
+#: ../../usage.rst:698
+#: ../../usage.rst:704
+#: ../../usage.rst:732
+#: ../../usage.rst:738
+# b56f48c2ce7e4ef8a421781cd8ac72d9
+# 367c8fbc6c3040e1b454649a311e5f24
+# 7a9a014a24af4f13afdf4091e920b2c7
+# 5ea8dfa3838546fea2bc64e05c8c673a
+# 3d7a93e77f944490999348ecfa138347
+# 65753a35c9384d9488a6ba39494069d9
+# 72b65cd48a914780a818c78d2b39df45
+# defb130ed24d43fcbdd05f28d6551b33
 msgid "usagetype – A number representing the usage type (see Usage Types)"
 msgstr ""
 
-#: ../../usage.rst:584
-#: ../../usage.rst:649
-#: ../../usage.rst:755
-#: ../../usage.rst:816
-#: ../../usage.rst:923
-#: ../../usage.rst:984
-# fa25ba78790940ce9c81f39bf7771531
-# 94514edf37854f9281d8bd02aa335609
-# acd0fa0b9e3642638023b78708ba7d52
-# 688683e918054191b46f54f1173303bc
-# 40bc7564d68946fa9702312b5692111e
-# ea864a184c9f4400a0a2f754fedd82f3
+#: ../../usage.rst:505
+#: ../../usage.rst:543
+#: ../../usage.rst:605
+#: ../../usage.rst:639
+#: ../../usage.rst:700
+#: ../../usage.rst:734
+# dead7906f5ff49c88d8e41f0a3140bd3
+# 8ee236cbfec44c23a571ce1209509110
+# 51b806027dda42548e0b46c7e5f0c468
+# 2b60dfbda65048239a38cba051b05cd8
+# da840cc63b26444a8154da21e65d5f6b
+# 0f380999106d476eae77a3f78ab9bd69
 msgid "rawusage – A number representing the actual usage in hours"
 msgstr ""
 
-#: ../../usage.rst:588
-#: ../../usage.rst:939
-#: ../../usage.rst:943
-# b3bf8f9450024875b00dffc676334381
-# 72dc579445cf44438333e64d076dd4db
-# 6e37cc43677a4185befdfb76040dd76b
+#: ../../usage.rst:507
+#: ../../usage.rst:708
+#: ../../usage.rst:710
+# e398aeba3cd0401992be1f2f12e5fc91
+# e9e71b3111f84185baca323877a352fd
+# 28490f43f8cd44f4bf26a2abb77429ed
 msgid "virtualMachineId – The ID of the virtual machine"
 msgstr ""
 
-#: ../../usage.rst:592
-# f7235acfed7044978392f3d934ece97b
+#: ../../usage.rst:509
+# adce21eabe0243be8c394e06dd5f7790
 msgid "name – The name of the virtual machine"
 msgstr ""
 
-#: ../../usage.rst:596
-# 2df0848f8a4f42568e119c9d7d29a727
+#: ../../usage.rst:511
+# 6b520c414595424cad27b0ae57527c1f
 msgid "offeringid – The ID of the service offering"
 msgstr ""
 
-#: ../../usage.rst:600
-# 5bd83bab0e0a4f6ba6c55054e85c83eb
+#: ../../usage.rst:513
+# 9329a1f52e57454a9b515f46ce1e110c
 msgid "templateid – The ID of the template or the ID of the parent template. The parent template value is present when the current template was created from a volume."
 msgstr ""
 
-#: ../../usage.rst:606
-# b623aaa31f4a41609d3a766dbbc266a7
+#: ../../usage.rst:517
+# d061eac093024ebb867ea323cb34bbc0
 msgid "usageid – Virtual machine"
 msgstr ""
 
-#: ../../usage.rst:610
-#: ../../usage.rst:767
-# 6a34753a5ffe4b88987b17fe58117df1
-# c577b82ea72f485cbd49efa5aa440607
+#: ../../usage.rst:519
+#: ../../usage.rst:611
+# 047ce224b91448ba964e79cc572efd1e
+# db530f7238e94cb295d4cf30edceb4bc
 msgid "type – Hypervisor"
 msgstr ""
 
-#: ../../usage.rst:614
-#: ../../usage.rst:661
-#: ../../usage.rst:779
-#: ../../usage.rst:837
-#: ../../usage.rst:947
-#: ../../usage.rst:996
-# a2b44295f13e4ba98617f6459e465a37
-# dcc85c1318a74646ab89f15fae94e929
-# e8c7e84d490e44d78444e65214200082
-# 9770ba4689364876ba4ef9372159e7c9
-# 1ce8c0863df3409e8857338c5a87d0d8
-# 7a0a24dd0d2f44eaa688daabf2da6e9c
+#: ../../usage.rst:521
+#: ../../usage.rst:549
+#: ../../usage.rst:617
+#: ../../usage.rst:650
+#: ../../usage.rst:712
+#: ../../usage.rst:740
+# 13784faf965d4cae937aa6cdbbb601b3
+# f723716e1445424cbc729bcae6910bae
+# 193cb9ce321c4844bfc67c7421b46b78
+# 3362120577564331af89079c96e60819
+# 48e9160ce71b475d961c452d6984a6fc
+# ed62c302bb274df094275fbf56674a91
 msgid "startdate, enddate – The range of time for which the usage is aggregated; see Dates in the Usage Record"
 msgstr ""
 
-#: ../../usage.rst:618
-# 87c6f3a716f94e7ab8419c6a0e40665f
+#: ../../usage.rst:526
+# eedaa3906dfd445e8bccefccc0c58cf6
 msgid "Network Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:620
-# caa3dfd36b9846c8b39e6ee4109f3f60
+#: ../../usage.rst:528
+# a62195cc17e14143a58822cf0c485c0e
 msgid "For network usage (bytes sent/received), the following fields exist in a usage record."
 msgstr ""
 
-#: ../../usage.rst:653
-# 35da263687c546ef981a6184c650e0b1
+#: ../../usage.rst:545
+# e2aa41ae9fda438280903d7de43e9fa7
 msgid "usageid – Device ID (virtual router ID or external device ID)"
 msgstr ""
 
-#: ../../usage.rst:657
-# 4f07d5b20ad64f2f98ee95b228e8bc2d
+#: ../../usage.rst:547
+# cba1335aecd94359b17f04495d757350
 msgid "type – Device type (domain router, external load balancer, etc.)"
 msgstr ""
 
-#: ../../usage.rst:665
-# de5e410ac9ac4c0e95cbf32877b38e3b
+#: ../../usage.rst:554
+# f60aa591df79401691c6f36e9a9372cd
 msgid "IP Address Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:667
-# 78c0ae94aad9451fbc17b139ac592178
+#: ../../usage.rst:556
+# 8c83a518ebf94bda95be14bed415fbdd
 msgid "For IP address usage the following fields exist in a usage record."
 msgstr ""
 
-#: ../../usage.rst:671
-#: ../../usage.rst:845
-# 1001f3ef83a3471599363668140e611c
-# 87506d34d23849e999f41a90f0e0585d
+#: ../../usage.rst:558
+#: ../../usage.rst:657
+# 872facde9d324938a2dc358b6f91d3d6
+# a38435a4207846d386ed6690dbeb757c
 msgid "account - name of the account"
 msgstr ""
 
-#: ../../usage.rst:675
-#: ../../usage.rst:849
-# 0a347a476a6f4465adc7648b145d9e13
-# 45147a5415414feaa29f4adf0867a62c
+#: ../../usage.rst:560
+#: ../../usage.rst:659
+# c2361416c29c4fbd838cca88df7fce39
+# bc06c74f16144181bca49330654a8470
 msgid "accountid - ID of the account"
 msgstr ""
 
-#: ../../usage.rst:679
-#: ../../usage.rst:853
-# bdce765bf0ef41df9a40c8a859c79485
-# e8c3fbe59cbb429894c293078923df6c
+#: ../../usage.rst:562
+#: ../../usage.rst:661
+# 7ad667e8f90242c5b4cacb1421dc53a2
+# e6e2d964ef1a4c8b94bc42f08beea530
 msgid "domainid - ID of the domain in which this account resides"
 msgstr ""
 
-#: ../../usage.rst:683
-#: ../../usage.rst:857
-# 700974b57fd44957b826e34572177ab7
-# c21235c6b75d438d85b8057cb2d0a501
+#: ../../usage.rst:564
+#: ../../usage.rst:663
+# c05809fe04764a479c42fe337b8f32a7
+# 051704b34aa84fecb879697aa4461b9c
 msgid "zoneid - Zone where the usage occurred"
 msgstr ""
 
-#: ../../usage.rst:687
-#: ../../usage.rst:861
-# b6586df549a74fd1b4afa690b0e12ac8
-# 3f9507fea4424e28a5053bc9de564425
+#: ../../usage.rst:566
+#: ../../usage.rst:665
+# ef2388373bf042c79862477f5068f84f
+# ac7162ddbf9b4f07a70378f7cb4f1376
 msgid "description - A string describing what the usage record is tracking"
 msgstr ""
 
-#: ../../usage.rst:691
-# e452ef9c4fe94507b8101ce28484e653
+#: ../../usage.rst:568
+# 680a2939f1ab4cd0b4c7d7ba19346be0
 msgid "usage - String representation of the usage, including the units of usage"
 msgstr ""
 
-#: ../../usage.rst:696
-#: ../../usage.rst:870
-#: ../../usage.rst:882
-# b6cb74da5c8b4f119df10d28162abdaf
-# 476d4b86321e419fb217ec240a902e5c
-# 9ea53be1624442bfa13824d94cc10c97
+#: ../../usage.rst:571
+#: ../../usage.rst:670
+#: ../../usage.rst:676
+# 552772e8c5f745518dc6484ef776e37b
+# 8b658740424143e0804a450732cc90d5
+# 79adc7a2a02248f8a0ee7771272a5624
 msgid "usagetype - A number representing the usage type (see Usage Types)"
 msgstr ""
 
-#: ../../usage.rst:700
-#: ../../usage.rst:874
-# ab04998bb97140f9869fc42034d21075
-# e9cf568981ba4cdda04c84338e7cf7cb
+#: ../../usage.rst:573
+#: ../../usage.rst:672
+# 565c646fcbed4427bf835e888529e76c
+# af9345ffb0554f0eb0ad166c00406ea8
 msgid "rawusage - A number representing the actual usage in hours"
 msgstr ""
 
-#: ../../usage.rst:704
-# c4dd2f456c2c41a09936672e513ca634
+#: ../../usage.rst:575
+# 1ce3b40124484eefb27601e1907f939a
 msgid "usageid - IP address ID"
 msgstr ""
 
-#: ../../usage.rst:708
-#: ../../usage.rst:886
-# 374f362f0e62453f9a1e286a4098b80c
-# 9d53d00bcf374d8a965d7bdb030e03a0
+#: ../../usage.rst:577
+#: ../../usage.rst:678
+# abfd139b052e4864afc695aba432783c
+# a5cbc24cefb54a2996cf860cf2b1e75c
 msgid "startdate, enddate - The range of time for which the usage is aggregated; see Dates in the Usage Record"
 msgstr ""
 
-#: ../../usage.rst:713
-# e0fedba7f0d44912b8b66044224e26a9
+#: ../../usage.rst:580
+# 7631780188e9474f8a1041b55d0ac20b
 msgid "issourcenat - Whether source NAT is enabled for the IP address"
 msgstr ""
 
-#: ../../usage.rst:717
-# 54327477db6a4fc0a5edc3ebe3bece46
+#: ../../usage.rst:582
+# 85f7d46f4fd5425cad1b87a37ec9ecf7
 msgid "iselastic - True if the IP address is elastic."
 msgstr ""
 
-#: ../../usage.rst:720
-# e6f2bace17244b43af803f2dda9c3068
+#: ../../usage.rst:586
+# fd56a0a694804aa884be5fdefcfd3320
 msgid "Disk Volume Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:722
-# 0c0c23e5bf654ac49834841997c2f6bb
+#: ../../usage.rst:588
+# dc66789696474008bbbc81eb24bec679
 msgid "For disk volumes, the following fields exist in a usage record."
 msgstr ""
 
-#: ../../usage.rst:746
-#: ../../usage.rst:807
-#: ../../usage.rst:914
-#: ../../usage.rst:975
-# be28f6050bb94084bb656efc502ac189
-# 2d215ba8acb44195bea83a442070fbbd
-# e7cf1890be9c4bed99ef1a6ff8cb5c4b
-# 84493a2ef1494522a1f9761ed36de673
+#: ../../usage.rst:600
+#: ../../usage.rst:634
+#: ../../usage.rst:695
+#: ../../usage.rst:729
+# 4a12e3d8b23f40078657c836a946af1e
+# d33548fd1fe240509c2c86f75c6bd701
+# 38cb41b0bdc94d2e94ee5c3a6492e281
+# 95202bd84a0e4a61991829c07c2c0720
 msgid "usage – String representation of the usage, including the units of usage (e.g. 'Hrs' for hours)"
 msgstr ""
 
-#: ../../usage.rst:759
-# b1e806b2412543a9ac138c0bceed3ac7
+#: ../../usage.rst:607
+# c2f1554e72084e81892a0b538a19c7f8
 msgid "usageid – The volume ID"
 msgstr ""
 
-#: ../../usage.rst:763
-#: ../../usage.rst:824
-# ba95fc6f138d4d6d9eee73ac54807567
-# 447cf10b356f43b583376cb3762a49e2
+#: ../../usage.rst:609
+#: ../../usage.rst:643
+# b7525535c67b49b98b4d922f07293bcb
+# c781024621454a418e050f006e91921c
 msgid "offeringid – The ID of the disk offering"
 msgstr ""
 
-#: ../../usage.rst:771
-# 4f952183cc3944d6b58d2764e2b3483e
+#: ../../usage.rst:613
+# 543db09e00804cd787e00be0867a5c6e
 msgid "templateid – ROOT template ID"
 msgstr ""
 
-#: ../../usage.rst:775
-# 6239c472f1174d7486c4373f3f91b852
+#: ../../usage.rst:615
+# f2ab3e39617449bf8a68f1fbc0eb4fbe
 msgid "size – The amount of storage allocated"
 msgstr ""
 
-#: ../../usage.rst:783
-# 0b8e217bf8664b26910d0336284d2685
+#: ../../usage.rst:622
+# e54797d2c60c4441ac584d3abb0f9c77
 msgid "Template, ISO, and Snapshot Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:820
-# 8e86814eb5504fd7aabdd42b9ecd30dc
+#: ../../usage.rst:641
+# 60eda22a3c7d4756847f64ff53b961e2
 msgid "usageid – The ID of the the template, ISO, or snapshot"
 msgstr ""
 
-#: ../../usage.rst:828
-# b62090bf985a4410b04c8cdebd58f05e
+#: ../../usage.rst:645
+# 3562063eefc04af28187703974e45228
 msgid "templateid – – Included only for templates (usage type 7). Source template ID."
 msgstr ""
 
-#: ../../usage.rst:833
-# 3b4e511d50554530abbc0f26a25b931a
+#: ../../usage.rst:648
+# 9fbfbc974f184b2983595a2d4fed5cdb
 msgid "size – Size of the template, ISO, or snapshot"
 msgstr ""
 
-#: ../../usage.rst:841
-# 03cd150724624caab3641ef9a3fde274
+#: ../../usage.rst:655
+# aa26900876304f758262788c79483c44
 msgid "Load Balancer Policy or Port Forwarding Rule Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:865
-# 1988ac276c19468ab601b81781e1529c
+#: ../../usage.rst:667
+# f493ad9446bd4b0d84e50c9937d2b21c
 msgid "usage - String representation of the usage, including the units of usage (e.g. 'Hrs' for hours)"
 msgstr ""
 
-#: ../../usage.rst:878
-# 0bb591c7914846548e7b36b597a37b90
+#: ../../usage.rst:674
+# 03d262a193f246749d1ed6f6df6d3930
 msgid "usageid - ID of the load balancer policy or port forwarding rule"
 msgstr ""
 
-#: ../../usage.rst:890
-# 5b356b33fefd4c119e70c313d74e255b
+#: ../../usage.rst:683
+# b01513d3fd8e466ba943f21dd926c03a
 msgid "Network Offering Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:927
-# 4080c653f1fa4ac2b72572385a12cc7c
+#: ../../usage.rst:702
+# d5c5360548e6437882e13f383f854c51
 msgid "usageid – ID of the network offering"
 msgstr ""
 
-#: ../../usage.rst:935
-# df1d1f4e37554d8998d72b642a45e94c
+#: ../../usage.rst:706
+# 1dd0260b113b4149979baeec2b430e69
 msgid "offeringid – Network offering ID"
 msgstr ""
 
-#: ../../usage.rst:951
-# e4e67d8c23ed4921811a4a624f9fca5d
+#: ../../usage.rst:717
+# 2e3b410e70064b95997310d4b2f2d6bb
 msgid "VPN User Usage Record Format"
 msgstr ""
 
-#: ../../usage.rst:988
-# 8b9aa4e21f1d4e7cac5643ff605c5b70
+#: ../../usage.rst:736
+# 78984789b8f74fcb9ae0dc8712b092fa
 msgid "usageid – VPN user ID"
 msgstr ""
 
-#: ../../usage.rst:1001
-# 48f6a187d7534e2aad5d1126010a8dd7
+#: ../../usage.rst:745
+# 371ab2afddac4c8ebe7b59df3a7e3150
 msgid "Usage Types"
 msgstr ""
 
-#: ../../usage.rst:1003
-# f951beabc0db44fb826fb17761d72ca0
+#: ../../usage.rst:747
+# bb807347fed448728c3e17662b8b1ebc
 msgid "The following table shows all usage types."
 msgstr ""
 
-#: ../../usage.rst:1006
-# ae77cdba18f94b57a8941a2844af363d
+#: ../../usage.rst:750
+# 9d81d10d8b5343f19edc1316cfbf4854
 msgid "Type ID"
 msgstr ""
 
-#: ../../usage.rst:1006
-# b40f4bfeab6f4b7d82c8df177efc5494
+#: ../../usage.rst:750
+# e5f69db4f5e44d94804a6a1fa96b3da8
 msgid "Type Name"
 msgstr ""
 
-#: ../../usage.rst:1008
-# 2e79133f6c254a3ea34f062b3b00adfe
+#: ../../usage.rst:752
+# 78ead0d9336c42648a3ca740bc0c71c3
 msgid "1"
 msgstr ""
 
-#: ../../usage.rst:1008
-# 6fc25c417b3c4e73a34a2f6127a5526d
+#: ../../usage.rst:752
+# e747e335348c4f96b8157b30a1f87074
 msgid "RUNNING\\_VM"
 msgstr ""
 
-#: ../../usage.rst:1008
-# 553837efadde440abfa7687270684afa
+#: ../../usage.rst:752
+# 477ac63f7f36460ea08116c949753044
 msgid "Tracks the total running time of a VM per usage record period. If the VM is upgraded during the usage period, you will get a separate Usage Record for the new upgraded VM."
 msgstr ""
 
-#: ../../usage.rst:1018
-# 6b2ede664c0940b99b0572bae4a790b9
+#: ../../usage.rst:762
+# 64af61ae9a154740bc59c51cf93b8e50
 msgid "2"
 msgstr ""
 
-#: ../../usage.rst:1018
-# 80b324130a704587aff102829b0c6426
+#: ../../usage.rst:762
+# 7e1e8fb7beaf45439e7683227a55abb7
 msgid "ALLOCATED\\_VM"
 msgstr ""
 
-#: ../../usage.rst:1018
-# 95f4ba653c114aaca66ccbf6ad5575a1
+#: ../../usage.rst:762
+# 12dcdffa3a2f4d5faaece0b8ee808625
 msgid "Tracks the total time the VM has been created to the time when it has been destroyed. This usage type is also useful in determining usage for specific templates such as Windows-based templates."
 msgstr ""
 
-#: ../../usage.rst:1030
-# 70ee8dc453b44a559e3611d4905431eb
+#: ../../usage.rst:774
+# 56a5110004de419981e5f220ae4e8552
 msgid "3"
 msgstr ""
 
-#: ../../usage.rst:1030
-# 384d4585b8d94f55a0c45b67e9a8c681
+#: ../../usage.rst:774
+# 9300fc0a0c054c8cb8cf1c50a798ccfe
 msgid "IP\\_ADDRESS"
 msgstr ""
 
-#: ../../usage.rst:1030
-# 3edd301131ca4260b92e5eae2d72a822
+#: ../../usage.rst:774
+# bdd7930fce7d439cac6b82c99e189623
 msgid "Tracks the public IP address owned by the account."
 msgstr ""
 
-#: ../../usage.rst:1034
-# 9bbb8b348a364049b6b15d3e160ab7c9
+#: ../../usage.rst:778
+# 8f41c0480a214679a34ebff91433884a
 msgid "4"
 msgstr ""
 
-#: ../../usage.rst:1034
-# 62cac7d5101249369ba98a37698c3545
+#: ../../usage.rst:778
+# 3468bfe1926344ed8b778f78f298e356
 msgid "NETWORK\\_BYTES\\_SENT"
 msgstr ""
 
-#: ../../usage.rst:1034
-# 58fa7365227e461ba6b9a1d6f922e939
+#: ../../usage.rst:778
+# 4fc69e9acd00430db5d7bdd162d53a88
 msgid "Tracks the total number of bytes sent by all the VMs for an account. Cloud.com does not currently track network traffic per VM."
 msgstr ""
 
-#: ../../usage.rst:1042
-# 0c96ae6238c149b28be7bb9f9ad262a6
+#: ../../usage.rst:786
+# 9c0a0d79a0ee491b99fc2f18847a9c29
 msgid "5"
 msgstr ""
 
-#: ../../usage.rst:1042
-# 8a0cb74bfd7347ba92b20d2d362c4c21
+#: ../../usage.rst:786
+# 8053534caf9a43cfbe6f344918e90568
 msgid "NETWORK\\_BYTES\\_RECEIVED"
 msgstr ""
 
-#: ../../usage.rst:1042
-# b7299005f8554e048e5ccf902d01381f
+#: ../../usage.rst:786
+# a09f77e6b1d540fdb4c9e398f8042f22
 msgid "Tracks the total number of bytes received by all the VMs for an account. Cloud.com does not currently track network traffic per VM."
 msgstr ""
 
-#: ../../usage.rst:1051
-# 7bb40a3d83364d27abda2ddee3127c13
+#: ../../usage.rst:795
+# 5d8944a3cb7d444aa82efaa09053af2d
 msgid "6"
 msgstr ""
 
-#: ../../usage.rst:1051
-# eb746069f1d94e08922bb968616c8aa6
+#: ../../usage.rst:795
+# bd9f4acea1a34fb5ada48e39c65e7781
 msgid "VOLUME"
 msgstr ""
 
-#: ../../usage.rst:1051
-# e9368a4fb8534f63ba8424870d3075f3
+#: ../../usage.rst:795
+# e39b0cb9d477433db943c1dfbeb90bb5
 msgid "Tracks the total time a disk volume has been created to the time when it has been destroyed."
 msgstr ""
 
-#: ../../usage.rst:1057
-# 24d7abf2ee5a4c609bad7caab9af4a62
+#: ../../usage.rst:801
+# fb74bed3e64f40f4b1b99833cdfb858b
 msgid "7"
 msgstr ""
 
-#: ../../usage.rst:1057
-# a9213fe9713049ae96283bcf490d4308
+#: ../../usage.rst:801
+# 8dbe0a482b8740bcaba3e70100493143
 msgid "TEMPLATE"
 msgstr ""
 
-#: ../../usage.rst:1057
-# 8c5b8c19ee504e05bb60ec1609708714
+#: ../../usage.rst:801
+# e01ba5c82149495a87253a75e8f1ee5c
 msgid "Tracks the total time a template (either created from a snapshot or uploaded to the cloud) has been created to the time it has been destroyed. The size of the template is also returned."
 msgstr ""
 
-#: ../../usage.rst:1068
-# c2abf324066b4e4cab56b7216871a359
+#: ../../usage.rst:812
+# ea46b251003a4703b4db0e8e9ca83a4a
 msgid "8"
 msgstr ""
 
-#: ../../usage.rst:1068
-# 2a3df63ab62844d0a3726eb47b69e9d4
+#: ../../usage.rst:812
+# f349c4660c004c8f81133723f6ac350c
 msgid "ISO"
 msgstr ""
 
-#: ../../usage.rst:1068
-# 9ae612e4f42b4ea5b61a1e0019f6cb83
+#: ../../usage.rst:812
+# 7c32db79c4a944e294459472e67ef9a5
 msgid "Tracks the total time an ISO has been uploaded to the time it has been removed from the cloud. The size of the ISO is also returned."
 msgstr ""
 
-#: ../../usage.rst:1076
-# 5004f945801c4d21b59b522676de23c3
+#: ../../usage.rst:820
+# b0dacdf41a1c4d989f2f39ef17257ecc
 msgid "9"
 msgstr ""
 
-#: ../../usage.rst:1076
-# 7cbcaf5ded5f4812b51f49dce1c44b64
+#: ../../usage.rst:820
+# 1405b90e80e34b8381a814756e95d768
 msgid "SNAPSHOT"
 msgstr ""
 
-#: ../../usage.rst:1076
-# aa3ea6e95b98436f9ccc3d0dd076e294
+#: ../../usage.rst:820
+# e5fa93c081164375acc3fd52345b1187
 msgid "Tracks the total time from when a snapshot has been created to the time it have been destroyed."
 msgstr ""
 
-#: ../../usage.rst:1082
-# b64bb9ece22e4adebc65e6a42b82e2cc
+#: ../../usage.rst:826
+# 4f2594d3f1f24d2c9169fcfc149a62e9
 msgid "11"
 msgstr ""
 
-#: ../../usage.rst:1082
-# f4c8701f91d54e6a9481feae36f73a77
+#: ../../usage.rst:826
+# d37ae3d5c27447e4a1078346d90a373f
 msgid "LOAD\\_BALANCER\\_POLICY"
 msgstr ""
 
-#: ../../usage.rst:1082
-# 5c8b784f8c9947fb87a3d39c29ef5947
+#: ../../usage.rst:826
+# 024b703ada76417194235a1d10290b53
 msgid "Tracks the total time a load balancer policy has been created to the time it has been removed. Cloud.com does not track whether a VM has been assigned to a policy."
 msgstr ""
 
-#: ../../usage.rst:1092
-# 492651ba27f04885a8b3a8e8b4faa817
+#: ../../usage.rst:836
+# 6ebb8ff8421347ba8d0f37e13f9738a1
 msgid "12"
 msgstr ""
 
-#: ../../usage.rst:1092
-# 55510ef40e1344ada16cdea064718be6
+#: ../../usage.rst:836
+# 4f5ff172a156494c910377d3273476ca
 msgid "PORT\\_FORWARDING\\_RULE"
 msgstr ""
 
-#: ../../usage.rst:1092
-# 0ec6b93728df42439989a39dfd6ee1ba
+#: ../../usage.rst:836
+# 00141f10a4c040fd9c1981d4c44a5d6b
 msgid "Tracks the time from when a port forwarding rule was created until the time it was removed."
 msgstr ""
 
-#: ../../usage.rst:1098
-# 695922a0cadf4a5ea3e7c57d0667b4f3
+#: ../../usage.rst:842
+# bc4b98fcdabc461a8ede71b5285838b0
 msgid "13"
 msgstr ""
 
-#: ../../usage.rst:1098
-# 7a50f4ca25a542b89e077cc7ab8af9fe
+#: ../../usage.rst:842
+# 6123d10ab7004c9b943a532e894e2e20
 msgid "NETWORK\\_OFFERING"
 msgstr ""
 
-#: ../../usage.rst:1098
-# 286a423ed17c4338b633f9bb54d9e1e5
+#: ../../usage.rst:842
+# ec1c84a50ae5471ba6539ff923b81caa
 msgid "The time from when a network offering was assigned to a VM until it is removed."
 msgstr ""
 
-#: ../../usage.rst:1103
-# a60708e3e8594601a4b1b2105134c5aa
+#: ../../usage.rst:847
+# 04d219bbd49540e7a4d433b51cb42d2b
 msgid "14"
 msgstr ""
 
-#: ../../usage.rst:1103
-# 15ae51ac66614bc287c41414f7c09109
+#: ../../usage.rst:847
+# d70576ee50674251a6ee58e7a072795a
 msgid "VPN\\_USERS"
 msgstr ""
 
-#: ../../usage.rst:1103
-# a7fa63344c7a4ca4bce4e5f2fc4db7c2
+#: ../../usage.rst:847
+# 7031f45ce0894436b7ab77616de3681f
 msgid "The time from when a VPN user is created until it is removed."
 msgstr ""
 
-#: ../../usage.rst:1110
-# 086989197eba4ea0b04de3d594e67f9a
+#: ../../usage.rst:854
+# da745a0b82b6445e998e6d31a0f107b7
 msgid "Example response from listUsageRecords"
 msgstr ""
 
-#: ../../usage.rst:1112
-# 6186119d4c2442f3b774acb989e55d89
+#: ../../usage.rst:856
+# 73da4de663384d6ba278d517dc44eeef
 msgid "All CloudStack API requests are submitted in the form of a HTTP GET/POST with an associated command and any parameters. A request is composed of the following whether in HTTP or HTTPS:"
 msgstr ""
 
-#: ../../usage.rst:1143
-# fa32f5bc7d9043b69396e40e9c707274
+#: ../../usage.rst:888
+# b1267ab3f74744b8966d6c8dce38d38a
 msgid "Dates in the Usage Record"
 msgstr ""
 
-#: ../../usage.rst:1145
-# d6aaa516cd40419c9be627b88a616e2c
+#: ../../usage.rst:890
+# f9638c3a7a0c4939922d9b03330f3a5a
 msgid "Usage records include a start date and an end date. These dates define the period of time for which the raw usage number was calculated. If daily aggregation is used, the start date is midnight on the day in question and the end date is 23:59:59 on the day in question (with one exception; see below). A virtual machine could have been deployed at noon on that day, stopped at 6pm on that day, then started up again at 11pm. When usage is calculated on that day, there will be 7 hours of running VM usage (usage type 1) and 12 hours of allocated VM usage (usage type 2). If the same virtual machine runs for the entire next day, there will 24 hours of both running VM usage (type 1) and allocated VM usage (type 2)."
 msgstr ""
 
-#: ../../usage.rst:1157
-# e3fe8feb8604460f9930592cef0bc680
+#: ../../usage.rst:902
+# aa505995145d4de796ce7a54c69e8c04
 msgid "Note: The start date is not the time a virtual machine was started, and the end date is not the time when a virtual machine was stopped. The start and end dates give the time range within which usage was calculated."
 msgstr ""
 
-#: ../../usage.rst:1162
-# 50f292d2f9ac4b3f880517d684fe569e
+#: ../../usage.rst:907
+# ffee51b332cd4e589de90c6abf2b8476
 msgid "For network usage, the start date and end date again define the range in which the number of bytes transferred was calculated. If a user downloads 10 MB and uploads 1 MB in one day, there will be two records, one showing the 10 megabytes received and one showing the 1 megabyte sent."
 msgstr ""
 
-#: ../../usage.rst:1168
-# 629cfc1088724d7ea55ee7b728cb3b32
+#: ../../usage.rst:913
+# de58fb769cc74ed3a62616b4158bd9e8
 msgid "There is one case where the start date and end date do not correspond to midnight and 11:59:59pm when daily aggregation is used. This occurs only for network usage records. When the usage server has more than one day's worth of unprocessed data, the old data will be included in the aggregation period. The start date in the usage record will show the date and time of the earliest event. For other types of usage, such as IP addresses and VMs, the old unprocessed data is not included in daily aggregation."
 msgstr ""
 
