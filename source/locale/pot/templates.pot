@@ -928,7 +928,7 @@ msgid "Download the script file cloud-set-guest-password:"
 msgstr ""
 
 #: ../../templates/_password.rst:51
-msgid "`http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in <http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in>`_"
+msgid "`http://download.cloudstack.org/templates/4.2/bindir/cloud-set-guest-password.in <http://download.cloudstack.org/templates/4.2/bindir/cloud-set-guest-password.in>`_"
 msgstr ""
 
 #: ../../templates/_password.rst:54
